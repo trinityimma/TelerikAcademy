@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Table with Letters</title>
+    <style>
+        .wide { width: 2em; }
+
+        .t-left { text-align: left; }
+        .t-center { text-align: center; }
+        .t-right { text-align: right; }
+
+        .t-top { vertical-align: top; }
+        .t-middle { vertical-align: middle; }
+        .t-bottom { vertical-align: bottom; }
+    </style>
+</head>
+<body>
+    <table border="1" class="t-center">
+        <colgroup>
+            <col span=3 />
+            <col class="wide" />
+            <col class="wide" />
+        </colgroup>
+        <tr>
+            <td colspan="3">Title goes here</td>
+            <td>A</td>
+            <td class="t-right">B</td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="t-left">C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+            <td class="t-right">G</td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td colspan="2">I</td>
+            <td rowspan="2" class="t-right t-bottom">J</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+        </tr>
+        <tr>
+            <td class="t-right">N</td>
+            <td colspan="4">O</td>
+        </tr>
+    </table>
+</body>
+</html>
