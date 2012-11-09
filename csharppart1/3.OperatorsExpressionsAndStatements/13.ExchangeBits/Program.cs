@@ -20,14 +20,14 @@ class Program
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << j)) : (n | 1 << j);
 
         // Add leading zeros
-        Console.WriteLine(new String('0', 32 - (Convert.ToString(n, 2).Length)) + Convert.ToString(n, 2));
+        Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
         return n;
     }
 
     static void Main()
     {
         int n = 56;
-        Console.WriteLine(new String('0', 32 - (Convert.ToString(n, 2).Length)) + Convert.ToString(n, 2));
+        Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
         n = exchange(n, 3, 24);
         n = exchange(n, 4, 25);
         n = exchange(n, 5, 26);

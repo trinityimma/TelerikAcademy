@@ -19,13 +19,13 @@ class Program
         int p = 3;
         int q = 24;
         int k = 3;
-        Console.WriteLine(new String('0', 32 - (Convert.ToString(n, 2).Length)) + Convert.ToString(n, 2));
+        Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
 
         while (k-- != 0)
         {
             n = exchange(n, p++, q++);
         }
 
-        Console.WriteLine(new String('0', 32 - (Convert.ToString(n, 2).Length)) + Convert.ToString(n, 2));
+        Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
     }
 }
