@@ -1,4 +1,6 @@
-﻿using System;
+﻿// Write an expression that checks if given integer is odd or even.
+
+using System;
 
 class Program
 {

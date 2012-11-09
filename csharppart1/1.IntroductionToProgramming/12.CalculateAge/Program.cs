@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Write a program to read your age from the console and print how old you will
+// be after 10 years.
+
+using System;
 
 class Program
 {
