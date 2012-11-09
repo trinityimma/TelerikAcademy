@@ -1,3 +1,3 @@
 http://telerikacademy.com/
 
-http://htmlpreview.github.com/?https://github.com/jasssonpet/TelerikAcademy/blob/master/html-basics/2.HTMLTables/3.Calculator.html
+http://htmlpreview.github.com/?https://github.com/jasssonpet/TelerikAcademy/blob/master/html-basics/3.HTMLFormsFrames/1.RegistrationForm.html
