@@ -5,7 +5,7 @@ using System;
 
 class Program
 {
-    static int exchange(int n, int i, int j)
+    static int Exchange(int n, int i, int j)
     {
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << j)) : (n | 1 << j);
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << i)) : (n | 1 << i);
@@ -23,7 +23,7 @@ class Program
 
         while (k-- != 0)
         {
-            n = exchange(n, p++, q++);
+            n = Exchange(n, p++, q++);
         }
 
         Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));

@@ -21,7 +21,7 @@ class Program
         int rh = 2;
 
         bool isInCircle = Math.Pow(px - kx, 2) + Math.Pow(py - ky, 2) < Math.Pow(kr, 2);
-        bool isOutOfRectangle = 
+        bool isOutOfRectangle =
             px < rx ||
             px > rx + rw ||
             py > ry ||

@@ -5,7 +5,8 @@ using System;
 
 class Program
 {
-    static bool isPrime(int n)
+    // Taken from http://projecteuler.net/problem=7
+    static bool IsPrime(int n)
     {
         if (n == 1)
         {
@@ -48,7 +49,6 @@ class Program
     static void Main()
     {
         int a = 37;
-        bool prime = isPrime(a);
-        Console.WriteLine("{0} is prime: {1}", a, prime);
+        bool prime = IsPrime(a);
     }
 }

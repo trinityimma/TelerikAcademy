@@ -5,7 +5,7 @@ using System;
 
 class Program
 {
-    static int exchange(int n, int i, int j)
+    static int Exchange(int n, int i, int j)
     {
         // Swapping two integers
         // i ^= j;
@@ -28,8 +28,8 @@ class Program
     {
         int n = 56;
         Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
-        n = exchange(n, 3, 24);
-        n = exchange(n, 4, 25);
-        n = exchange(n, 5, 26);
+        n = Exchange(n, 3, 24);
+        n = Exchange(n, 4, 25);
+        n = Exchange(n, 5, 26);
     }
 }

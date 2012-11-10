@@ -14,6 +14,5 @@ class Program
         {
             Console.Write((char)i);
         }
-        Console.WriteLine();
     }
 }

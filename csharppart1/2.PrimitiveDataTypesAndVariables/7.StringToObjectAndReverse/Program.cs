@@ -14,6 +14,5 @@ class Program
         string world = "World";
         object HelloWorldObject = hello + " " + world;
         string HelloWorldString = (string)HelloWorldObject;
-        Console.WriteLine(HelloWorldString);
     }
 }
