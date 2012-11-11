@@ -3,17 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <title>Welcome to Runners Home&trade;</title>
+    <style>
+        article ul, article li, article p {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li:before { content: "- "; }
+    </style>
 </head>
 <body>
     <header>
         <p>Hello, Stranger!</p>
         <h1>Welcome to Runners Home&trade;</h1>
     </header>
-    <section>
-        <p>Runners Home&trade; is dedicated to providing you with:<br />
-        - the most up-to-date information on running races<br />
-        - the best resources for runners.</p>
-    </section>
+    <article>
+        <p>Runners Home&trade; is dedicated to providing you with:</p>
+        <ul>
+            <li>the most up-to-date information on running races</li>
+            <li>the best resources for runners.</li>
+        </ul>
+    </article>
     <hr />
     <footer>
         <p>&copy; 2007 Runners Home. All rights reserved.</p>
