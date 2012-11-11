@@ -1,8 +1,8 @@
 ## C# Part I
 
-1. Course Overview | [Introduction to Programming](TelerikAcademy/blob/master/csharppart1/1.IntroductionToProgramming) - 27.10.2012
-* [Primitive Data Types and Variables Demos](TelerikAcademy/blob/master/csharppart1/2.PrimitiveDataTypesAndVariables) - 3.11.2012
-* [Operators Expressions and Statements](TelerikAcademy/blob/master/csharppart1/3.OperatorsExpressionsAndStatements) - 10.11.2012
+1. Course Overview | [Introduction to Programming](TelerikAcademy/blob/master/csharppart1/1.IntroductionToProgramming) - ([assignment](TelerikAcademy/blob/master/html-basics/1.IntroductionToProgramming/README.md)) - 27.10.2012
+* [Primitive Data Types and Variables Demos](TelerikAcademy/blob/master/csharppart1/2.PrimitiveDataTypesAndVariables) - ([assignment](TelerikAcademy/blob/master/html-basics/2.PrimitiveDataTypesAndVariables/README.md)) - 3.11.2012
+* [Operators Expressions and Statements](TelerikAcademy/blob/master/csharppart1/3.OperatorsExpressionsAndStatements) - ([assignment](TelerikAcademy/blob/master/html-basics/3.OperatorsExpressionsAndStatements/README.md)) - 10.11.2012
 * Console Input Output
 * Conditional Statements
 * Loops
