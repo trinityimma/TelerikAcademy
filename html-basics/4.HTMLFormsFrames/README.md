@@ -18,7 +18,7 @@ Construct the following Grid component:
 * Try to make a HTML page, that looks just like the example
 * Not required to style for the homework
 
-## Exercise 4
+## Exercise 4*
 Create the following HTML Page
 * Hint: Use Fieldsets and Nested tables
 
