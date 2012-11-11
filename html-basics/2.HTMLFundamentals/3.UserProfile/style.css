@@ -1,0 +1,13 @@
+body { background: #ccecff; }
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0;
+    padding-right: 20px;
+}
+
+article dt { font-style: italic; }

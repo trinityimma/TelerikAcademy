@@ -3,16 +3,34 @@
 <head>
     <meta charset="utf-8" />
     <title>Member Registration</title>
-    <style>
-        form p { margin: 0; }
-    </style>
+    <link rel="stylesheet" href="bootstrap.css">
 </head>
 <body>
-    <form>
-        <p><label>Member name: <input required name="memberName"></label> <strong>*req</strong></p>
-        <p><label>Email: <input required name="email" type="email"></label> <strong>*req</strong></p>
-        <p><label>School: <input required name="school"></label> <strong>*req</strong></p>
-        <p><input type="image" src="submit.png" name="submit" alt="submit"></p>
+    <form class="form-horizontal">
+        <dl class="control-group">
+            <dt><label for="memberName" class="control-label">Member name:</label></dt>
+            <dd class="controls">
+                <input autofocus type="text" class="span3" name="memberName" id="memberName" />
+                <span class="help-inline">*req</span>
+            </dd>
+        </dl>
+        <dl class="control-group">
+            <dt><label for="email" class="control-label">Email:</label></dt>
+            <dd class="controls">
+                <input type="email" class="span3" name="email" id="email" />
+                <span class="help-inline">*req</span>
+            </dd>
+        </dl>
+        <dl class="control-group">
+            <dt><label for="school" class="control-label">School:</label></dt>
+            <dd class="controls">
+                <input type="text" class="span3" name="school" id="school" />
+                <span class="help-inline">*req</span>
+            </dd>
+        </dl>
+        <div class="form-actions">
+            <input type="image" src="submit.png" name="submit" alt="submit" />
+        </div>
     </form>
 </body>
 </html>

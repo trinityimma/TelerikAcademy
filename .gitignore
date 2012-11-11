@@ -1,11 +1,11 @@
-#Node Modules
+# Node Modules
 node_modules/
 
 # Build and Object Folders
 bin/
 obj/
 
-#User Specific Files
+# User Specific Files
 *.user
 *.suo
 
