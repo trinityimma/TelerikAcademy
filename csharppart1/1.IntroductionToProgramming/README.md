@@ -15,4 +15,4 @@
 * Write a program that prints the first 10 members of the sequence: **2, -3, 4, -5, 6, -7, ...**
 * Provide a short list with information about the most popular programming languages. How do they differ from C#?
 * Describe the difference between C# and .NET Framework.
-* *Write a program to read your age from the console and print how old you will be after **10 years**.
+* \*Write a program to read your age from the console and print how old you will be after **10 years**.
