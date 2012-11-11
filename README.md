@@ -11,8 +11,8 @@
 ## HTML Basics
 
 1. Course Overview | Web Front End Tools - 26.10.2012
-* [HTML Fundamentals](TelerikAcademy/tree/master/html-basics/1.HTMLFundamentals) - ([assignment](TelerikAcademy/tree/master/html-basics/1.HTMLFundamentals/README.md)) - 2.11.2012
-* [HTML Tables](TelerikAcademy/tree/master/html-basics/2.HTMLTables) - ([assignment](TelerikAcademy/tree/master/html-basics/2.HTMLTables/README.md)) - 9.11.2012
-* [HTML Forms Frames](TelerikAcademy/tree/master/html-basics/3.HTMLFormsFrames) - ([assignment](TelerikAcademy/tree/master/html-basics/3.HTMLFormsFrames/README.md)) - 9.11.2012
+* [HTML Fundamentals](TelerikAcademy/tree/master/html-basics/2.HTMLFundamentals) - ([assignment](TelerikAcademy/tree/master/html-basics/2.HTMLFundamentals/README.md)) - 2.11.2012
+* [HTML Tables](TelerikAcademy/tree/master/html-basics/3.HTMLTables) - ([assignment](TelerikAcademy/tree/master/html-basics/3.HTMLTables/README.md)) - 9.11.2012
+* [HTML Forms Frames](TelerikAcademy/tree/master/html-basics/4.HTMLFormsFrames) - ([assignment](TelerikAcademy/tree/master/html-basics/4.HTMLFormsFrames/README.md)) - 9.11.2012
 * Semantic Web
 * Sample Test
