@@ -3,14 +3,14 @@
 ## Exercise 1
 Create Web Pages like the following using tables:
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/1.FreshFruits.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/1.FreshFruits/index.png)
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/1.TableWithLetters.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/1.TableWithLetters/index.png)
 
 ## Exercise 2
 Create a Web Page like the following using forms:
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/2.MemberRegistration.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/2.MemberRegistration/index.png)
 
 ## Exercise 3
 Create a Calculator-like table. You should use:
@@ -19,4 +19,4 @@ Create a Calculator-like table. You should use:
 * `Textbox` for the result
 * Do not make the same styles as the example
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/3.Calculator.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/html-basics/3.HTMLTables/3.Calculator/index.png)
