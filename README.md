@@ -1,3 +1,5 @@
+# Trimester I | Part I
+
 ## C# Part I
 
 1. Course Overview | [Introduction to Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/csharppart1/1.IntroductionToProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/csharppart1/1.IntroductionToProgramming/README.md)) - 27.10.2012
