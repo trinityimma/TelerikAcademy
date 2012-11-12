@@ -4,9 +4,9 @@ class Program
 {
     static int Exchange(int n, int i, int j)
     {
-        // Swapping two integers: i ^= j, j ^= i, i ^= j;
-        // Getting the nth byte: (n >> i) & 1
-        // Setting the pth byte: (v == 0) ? (n & ~(1 << p)) : (n | 1 << p)
+        // Swapping i and j: i ^= j, j ^= i, i ^= j;
+        // Getting the pth byte: (n >> p) & 1
+        // Setting the pth byte to v: (v == 0) ? (n & ~(1 << p)) : (n | 1 << p)
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << j)) : (n | 1 << j);
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << i)) : (n | 1 << i);
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << j)) : (n | 1 << j);

@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "11.FallingRocks", "11.FallingRocks\11.FallingRocks.csproj", "{DC74C77D-7E17-4E42-AA98-D91BF55582D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.CompanyAndManagerData", "3.CompanyAndManagerData\3.CompanyAndManagerData.csproj", "{A11860D8-277A-41AF-944D-9D71836BF9E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.MathMaxWithoutRelationalOperators", "5.MathMaxWithoutRelationalOperators\5.MathMaxWithoutRelationalOperators.csproj", "{8D581F14-8FA2-44E8-9931-8AC0D1980AD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.QuadraticEquationSolver", "6.QuadraticEquationSolver\6.QuadraticEquationSolver.csproj", "{7C7126F9-7DF8-4AC1-A840-A48357D93652}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.NumbersDivisibleByFive", "4.NumbersDivisibleByFive\4.NumbersDivisibleByFive.csproj", "{A3AA7B35-16A7-49B8-83B5-5F4710BC28D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.SumOfThreeNumbers", "1.SumOfThreeNumbers\1.SumOfThreeNumbers.csproj", "{8E054ACE-66AB-48EC-894A-6066F5F58A78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.AreaAndPerimeterOfCircle", "2.AreaAndPerimeterOfCircle\2.AreaAndPerimeterOfCircle.csproj", "{56369570-EA30-4364-86C5-6837A9006240}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.SumOfKNumbers", "7.SumOfKNumbers\7.SumOfKNumbers.csproj", "{162DDA8F-53D3-4A3F-9DB5-60183B706656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.GetFirstKNumbers", "8.GetFirstKNumbers\8.GetFirstKNumbers.csproj", "{CAAFDFA5-9E15-43F8-9227-B227E85C458E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.FibonacciNumbers", "9.FibonacciNumbers\9.FibonacciNumbers.csproj", "{76526FD9-51BC-4056-8ECA-9B2C36D183F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.LeibnizSeries", "10.LeibnizSeries\10.LeibnizSeries.csproj", "{2DF632DA-62D0-42DF-AFAA-2930D5C515B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC74C77D-7E17-4E42-AA98-D91BF55582D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC74C77D-7E17-4E42-AA98-D91BF55582D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC74C77D-7E17-4E42-AA98-D91BF55582D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC74C77D-7E17-4E42-AA98-D91BF55582D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A11860D8-277A-41AF-944D-9D71836BF9E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A11860D8-277A-41AF-944D-9D71836BF9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A11860D8-277A-41AF-944D-9D71836BF9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A11860D8-277A-41AF-944D-9D71836BF9E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D581F14-8FA2-44E8-9931-8AC0D1980AD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D581F14-8FA2-44E8-9931-8AC0D1980AD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D581F14-8FA2-44E8-9931-8AC0D1980AD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D581F14-8FA2-44E8-9931-8AC0D1980AD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C7126F9-7DF8-4AC1-A840-A48357D93652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C7126F9-7DF8-4AC1-A840-A48357D93652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C7126F9-7DF8-4AC1-A840-A48357D93652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C7126F9-7DF8-4AC1-A840-A48357D93652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AA7B35-16A7-49B8-83B5-5F4710BC28D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AA7B35-16A7-49B8-83B5-5F4710BC28D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AA7B35-16A7-49B8-83B5-5F4710BC28D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AA7B35-16A7-49B8-83B5-5F4710BC28D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E054ACE-66AB-48EC-894A-6066F5F58A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E054ACE-66AB-48EC-894A-6066F5F58A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E054ACE-66AB-48EC-894A-6066F5F58A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E054ACE-66AB-48EC-894A-6066F5F58A78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56369570-EA30-4364-86C5-6837A9006240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56369570-EA30-4364-86C5-6837A9006240}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56369570-EA30-4364-86C5-6837A9006240}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56369570-EA30-4364-86C5-6837A9006240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{162DDA8F-53D3-4A3F-9DB5-60183B706656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{162DDA8F-53D3-4A3F-9DB5-60183B706656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{162DDA8F-53D3-4A3F-9DB5-60183B706656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{162DDA8F-53D3-4A3F-9DB5-60183B706656}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAAFDFA5-9E15-43F8-9227-B227E85C458E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAAFDFA5-9E15-43F8-9227-B227E85C458E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAAFDFA5-9E15-43F8-9227-B227E85C458E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAAFDFA5-9E15-43F8-9227-B227E85C458E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76526FD9-51BC-4056-8ECA-9B2C36D183F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76526FD9-51BC-4056-8ECA-9B2C36D183F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76526FD9-51BC-4056-8ECA-9B2C36D183F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76526FD9-51BC-4056-8ECA-9B2C36D183F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DF632DA-62D0-42DF-AFAA-2930D5C515B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DF632DA-62D0-42DF-AFAA-2930D5C515B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DF632DA-62D0-42DF-AFAA-2930D5C515B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DF632DA-62D0-42DF-AFAA-2930D5C515B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
