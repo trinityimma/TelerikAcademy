@@ -1,15 +1,23 @@
-﻿// Write a program that exchanges bits {p, p+1, …, p+k-1) with bits {q, q+1, …,
-// q+k-1} of given 32-bit unsigned integer.
-
-using System;
+﻿using System;
 
 class Program
 {
     static int Exchange(int n, int i, int j)
     {
+        // Swapping two integers
+        // i ^= j;
+        // j ^= i;
+        // i ^= j;
+        // Getting the nth byte
+        // (n >> i) & 1
+        // Setting the pth byte
+        // (v == 0) ? (n & ~(1 << p)) : (n | 1 << p)
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << j)) : (n | 1 << j);
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << i)) : (n | 1 << i);
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << j)) : (n | 1 << j);
+
+        // Add leading zeros
+        Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
         return n;
     }
 
@@ -25,7 +33,5 @@ class Program
         {
             n = Exchange(n, p++, q++);
         }
-
-        Console.WriteLine(Convert.ToString(n, 2).PadLeft(32, '0'));
     }
 }

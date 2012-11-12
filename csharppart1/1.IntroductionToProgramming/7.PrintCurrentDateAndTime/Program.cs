@@ -1,6 +1,4 @@
-﻿// Create a console application that prints the current date and time.
-
-using System;
+﻿using System;
 
 class Program
 {

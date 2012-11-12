@@ -1,11 +1,8 @@
-﻿// Write an expression that checks if given positive integer number n (n ≤ 100)
-// is prime. E.g. 37 is prime.
-
-using System;
+﻿using System;
 
 class Program
 {
-    // Taken from http://projecteuler.net/problem=7
+    // Source: http://projecteuler.net/problem=7
     static bool IsPrime(int n)
     {
         if (n == 1)

@@ -1,6 +1,4 @@
-﻿// Modify the application to print your name.
-
-using System;
+﻿using System;
 
 class Program
 {

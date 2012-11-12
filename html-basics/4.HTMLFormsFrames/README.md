@@ -1,4 +1,4 @@
-# HTML Forms Frames
+# HTML Forms, Frames
 
 ## Exercise 1
 Create a Web form that looks like this sample:

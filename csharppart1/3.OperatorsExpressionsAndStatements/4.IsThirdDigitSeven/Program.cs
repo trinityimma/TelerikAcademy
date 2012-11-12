@@ -1,7 +1,4 @@
-﻿// Write an expression that checks for given integer if its third digit
-// (right-to-left) is 7. E. g. 1732 -> true.
-
-using System;
+﻿using System;
 
 class Program
 {

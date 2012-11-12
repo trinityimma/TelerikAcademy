@@ -1,7 +1,4 @@
-﻿// Write an expression that calculates rectangle's area by given width and
-// height.
-
-using System;
+﻿using System;
 
 class Program
 {

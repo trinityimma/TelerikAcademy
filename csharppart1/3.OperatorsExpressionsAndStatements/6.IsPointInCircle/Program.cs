@@ -1,7 +1,4 @@
-﻿// Write an expression that checks if given point (x,  y) is within a circle
-// K(O, 5).
-
-using System;
+﻿using System;
 
 class Program
 {

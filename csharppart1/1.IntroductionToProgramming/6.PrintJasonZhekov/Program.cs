@@ -1,6 +1,4 @@
-﻿// Create console application that prints your first and last name.
-
-using System;
+﻿using System;
 
 class Program
 {

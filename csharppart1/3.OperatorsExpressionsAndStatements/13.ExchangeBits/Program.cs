@@ -1,7 +1,4 @@
-﻿// Write a program that exchanges bits 3, 4 and 5 with bits 24, 25 and 26 of
-// given 32-bit unsigned integer.
-
-using System;
+﻿using System;
 
 class Program
 {
@@ -13,7 +10,7 @@ class Program
         // i ^= j;
         // Getting the nth byte
         // (n >> i) & 1
-        // Setting the nth byte
+        // Setting the pth byte
         // (v == 0) ? (n & ~(1 << p)) : (n | 1 << p)
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << j)) : (n | 1 << j);
         n = ((n >> i) & 1 ^ (n >> j) & 1) == 0 ? (n & ~(1 << i)) : (n | 1 << i);
