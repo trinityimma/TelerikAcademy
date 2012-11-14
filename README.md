@@ -7,7 +7,7 @@
 * [Operators, Expressions and Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/csharppart1/3.OperatorsExpressionsAndStatements) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/csharppart1/3.OperatorsExpressionsAndStatements/README.md)) - 10.11.2012
 * [Console Input/Output](https://github.com/jasssonpet/TelerikAcademy/tree/master/csharppart1/4.ConsoleInputOutput) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/csharppart1/4.ConsoleInputOutput/README.md)) - 17.11.2012
 * [Conditional Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/csharppart1/5.ConditionalStatements) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/csharppart1/5.ConditionalStatements/README.md)) - 24.11.2012
-* Loops - 01.12.2012
+* [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/csharppart1/6.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/csharppart1/6.Loops/README.md)) - 01.12.2012
 * Sample Test - 15.12.2012
 
 ## HTML Basics
