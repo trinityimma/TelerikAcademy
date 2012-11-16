@@ -1,13 +1,18 @@
 body { background: #ccecff; }
+ul, li {
+	margin: 0;
+	padding: 0;
+}
+a:visited { color: #999; }
 
 nav ul {
     padding: 0;
 }
-
 nav li {
     display: inline-block;
     margin: 0;
     padding-right: 20px;
 }
 
-article dt { font-style: italic; }
+
+article dt, .italic { font-style: italic; }
