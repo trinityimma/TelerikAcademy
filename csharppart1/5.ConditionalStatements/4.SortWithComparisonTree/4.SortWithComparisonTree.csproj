@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8067CB49-815C-4BE5-B64E-CD607A395BA5}</ProjectGuid>
+    <ProjectGuid>{7DEA5D6B-FB3F-4799-AFE9-FA09871B3379}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_4.SortWIthComparisonTree</RootNamespace>
-    <AssemblyName>4.SortWIthComparisonTree</AssemblyName>
+    <RootNamespace>_4.SortWithComparisonTree</RootNamespace>
+    <AssemblyName>4.SortWithComparisonTree</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
