@@ -4,53 +4,61 @@
     <meta charset="utf-8" />
     <title>Calculator</title>
     <style>
-        .calculator textarea {
+        form {
+            margin: 0 auto;
             padding: 4px;
-            width: 174px;
-            text-align: right;
-            resize: none;
+            width: 192px;
+            border: 4px solid #999;
         }
-        .calculator div {
+        form ul {
             overflow: hidden;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
         }
-        .calculator button {
-            float: left;
-            margin: 0 8px 8px 0;
+        form li { float: left; }
+        form input {
+            margin: 4px;
+            border: 1px solid #ddd;
+            box-shadow: 1px 1px 0 #ddd;
+            color: #444;
+        }
+        form input[type="text"] {
+            padding: 4px 8px;
+            width: 166px;
+            text-align: right;
+            font-size: 18px;
+        }
+        form input[type="button"] {
             width: 40px;
             height: 40px;
             text-align: center;
+            font-size: 18px;
         }
-        .calculator .wide { width: 88px; }
+        form input.wide { width: 88px; }
     </style>
 </head>
+
 <body>
-    <div class="calculator">
-        <textarea rows="1">123</textarea>
-        <form>
-            <div>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>+</button>
-            </div>
-            <div>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>-</button>
-            </div>
-            <div>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>*</button>
-            </div>
-            <div>
-                <button class="wide">0</button>
-                <button>.</button>
-                <button>/</button>
-            </div>
-        </form>
-    </div>
+    <form class="calculator">
+        <input type="text" value="123" />
+        <ul>
+            <li><input type="button" value="1" /></li>
+            <li><input type="button" value="2" /></li>
+            <li><input type="button" value="3" /></li>
+            <li><input type="button" value="+" /></li>
+            <li><input type="button" value="4" /></li>
+            <li><input type="button" value="5" /></li>
+            <li><input type="button" value="6" /></li>
+            <li><input type="button" value="-" /></li>
+            <li><input type="button" value="7" /></li>
+            <li><input type="button" value="8" /></li>
+            <li><input type="button" value="9" /></li>
+            <li><input type="button" value="*" /></li>
+            <li><input type="button" value="0" class="wide" /></li>
+            <li><input type="button" value="." /></li>
+            <li><input type="button" value="/" /></li>
+        </ul>
+    </form>
 </body>
 </html>

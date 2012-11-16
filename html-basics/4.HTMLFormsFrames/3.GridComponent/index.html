@@ -8,12 +8,17 @@
             margin:0;
             padding: 0;
         }
-        table { border-spacing: 0; }
-        table thead, table tfoot { background: #ddd; }
-        table thead, table caption { text-align: left; }
-        table thead input[type="text"] { width: 50px; }
-        table tfoot li { display: inline-block; }
-        a.active { outline: 1px solid #f00; }
+        table, th, td {
+            padding: 4px;
+            border: 1px solid #000;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        thead, tfoot { background: #ddd; }
+        thead, caption { text-align: left; }
+        thead input[type="text"] { width: 50px; }
+        tfoot li { display: inline-block; }
+        a.active { outline: 1px solid #00f; }
         .f-left {
             float: left;
             padding-right: 10px;
@@ -21,9 +26,11 @@
         .f-right { float: right; }
     </style>
 </head>
+
 <body>
-    <table border="1">
+    <table>
         <caption>Drag a column header and drop it here to group by that column</caption>
+
         <thead>
             <tr>
                 <th>ProductID</th>
@@ -42,6 +49,7 @@
                 <td><input type="checkbox" class="filter" /></td>
             </tr>
         </thead>
+
         <tfoot>
             <tr>
                 <td colspan="100%">
@@ -62,18 +70,23 @@
                         <li><a href="#">&#x21D2;</a></li>
                         <li><a href="#">&#x25B6;</a></li>
                     </ul>
-                    <label class="f-left">
-                        Page size:
-                        <select name="pageSize">
-                            <option selected value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="30">30</option>
-                        </select>
-                    </label>
+
+                    <form class="f-left">
+                        <label>
+                            Page size:
+                            <select>
+                                <option selected value="10">10</option>
+                                <option value="20">20</option>
+                                <option value="30">30</option>
+                            </select>
+                        </label>
+                    </form>
+
                     <p class="f-right">335104 items in 33511 pages</p>
                 </td>
             </tr>
         </tfoot>
+
         <tbody>
             <tr>
                 <td>1</td>
