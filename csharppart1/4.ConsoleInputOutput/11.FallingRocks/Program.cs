@@ -30,7 +30,7 @@ class Program
 
     static void CalculateFPS()
     {
-        fps += collision ? -15 : 0.5;
+        fps += collision ? -15 : .5;
         fps = Math.Min(Math.Max(fps, minFps), maxFps);
     }
 
