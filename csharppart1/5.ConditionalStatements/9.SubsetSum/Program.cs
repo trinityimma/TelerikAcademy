@@ -3,7 +3,7 @@
 class Program
 {
     static int[] n = { 3, -2, 1, 1, 8 };
-    static int[] m = new int[5]; // Combination indeces of n
+    static int[] m = new int[5]; // Combination indeces of n, TODO: bit array
     static int k; // (k+1)-combination
 
     static void Check()
