@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Table with Letters</title>
+    <style>
+        table, th, td {
+            padding: 4px;
+            border: 1px solid #000;
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        .wide { width: 2em; }
+        .t-left { text-align: left; }
+        .t-center { text-align: center; }
+        .t-right { text-align: right; }
+        .t-top { vertical-align: top; }
+        .t-middle { vertical-align: middle; }
+        .t-bottom { vertical-align: bottom; }
+    </style>
+</head>
+
+<body>
+    <table class="t-center">
+        <colgroup>
+            <col span="3" />
+            <col span="2" class="wide" />
+        </colgroup>
+        <tr>
+            <td colspan="3">Title goes here</td>
+            <td>A</td>
+            <td class="t-right">B</td>
+        </tr>
+        <tr>
+            <td rowspan="3" class="t-left">C</td>
+            <td>D</td>
+            <td>E</td>
+            <td>F</td>
+            <td class="t-right">G</td>
+        </tr>
+        <tr>
+            <td>H</td>
+            <td colspan="2">I</td>
+            <td rowspan="2" class="t-right t-bottom">J</td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>L</td>
+            <td>M</td>
+        </tr>
+        <tr>
+            <td class="t-right">N</td>
+            <td colspan="4">O</td>
+        </tr>
+    </table>
+</body>
+</html>
