@@ -3,29 +3,37 @@
 <head>
     <meta charset="utf-8" />
     <title>Sublists</title>
+    <style>
+        .roman { list-style: upper-roman; }
+        .alpha { list-style: lower-alpha; }
+        .decimal { list-style: decimal; }
+        .circle { list-style: circle; }
+        .square { list-style: square; }
+        .disc { list-style: disc; }
+    </style>
 </head>
 
 <body>
     <p>Preceding Text</p>
-    <ol type="I">
+    <ol class="roman">
         <li>
             List Item 1
-            <ol type="a">
+            <ol class="alpha">
                 <li>Nested Item 1.1</li>
                 <li>Nested Item 1.2</li>
             </ol>
         </li>
         <li>
             List Item 2
-            <ol type="1">
+            <ol class="decimal">
                 <li>Nested Item 2.1</li>
                 <li>
                     Nested Item 2.2
-                    <ul type="circle">
+                    <ul class="circle">
                         <li>Nested Item 2.2.1</li>
                         <li>
                             Nested Item 2.2.2
-                            <ul type="square">
+                            <ul class="square">
                                 <li>Nested Item 2.2.2.1</li>
                                 <li>Nested Item 2.2.2.2</li>
                             </ul>
@@ -38,7 +46,7 @@
         </li>
         <li>
             List Item 3
-            <ul type="disc">
+            <ul class="disc">
                 <li>Nested Item 3.1</li>
                 <li>Nested Item 3.2</li>
                 <li>Nested Item 3.3</li>
