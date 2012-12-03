@@ -1,4 +1,4 @@
-# Sample Exam
+# Exam Preparation
 
 1. [Cartesian Coordinate System](#1-cartesian-coordinate-system)
 * [Miss Cat](#2-miss-cat)
