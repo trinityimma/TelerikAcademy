@@ -1,7 +1,5 @@
 # Sample Exam
 
-# Contents
-
 1. [Cartesian Coordinate System](#1-cartesian-coordinate-system)
 * [Miss Cat](#2-miss-cat)
 * [Forest Road](#3-forest-road)
@@ -273,13 +271,27 @@ Example: 20 in the binary numeral system looks like this: **10100**. The number 
             20<br />
             1337<br />
             2147483648<br />
-            4000000000
+            4000000000<br />
+            0<br />
+            6<br />
+            1<br />
+            4<br />
+            16<br />
+            64<br />
+            256<br />
+            1024
         </td>
         <td>
             3<br />
             5<br />
             31<br />
-            19
+            19<br />
+            0<br />
+            2<br />
+            4<br />
+            6<br />
+            8<br />
+            10
         </td>
     </tr>
 </table>
