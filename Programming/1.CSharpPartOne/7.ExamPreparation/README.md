@@ -129,12 +129,12 @@ Your task is to write a computer program that finds the number of the cat that i
     </tr>
     <tr>
         <td>
-            5<br />
-            1<br />
-            2<br />
-            3<br />
-            1<br />
-            2
+            5<br />
+            1<br />
+            2<br />
+            3<br />
+            1<br />
+            2
         </td>
         <td>1</td>
     </tr>
@@ -272,6 +272,16 @@ Example: 20 in the binary numeral system looks like this: **10100**. The number 
             1337<br />
             2147483648<br />
             4000000000<br />
+        </td>
+         <td>
+            3<br />
+            5<br />
+            31<br />
+            19<br />
+        </td>
+    </tr>
+    <tr>
+        <td>
             0<br />
             6<br />
             1<br />
@@ -282,10 +292,6 @@ Example: 20 in the binary numeral system looks like this: **10100**. The number 
             1024
         </td>
         <td>
-            3<br />
-            5<br />
-            31<br />
-            19<br />
             0<br />
             2<br />
             4<br />

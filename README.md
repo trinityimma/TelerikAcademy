@@ -27,5 +27,5 @@
 ## C# Part II
 1. Course Overview - 12.01.2013
 
-## CSS Overview
+## CSS Styling
 1. Course Overview - 14.12.2012
