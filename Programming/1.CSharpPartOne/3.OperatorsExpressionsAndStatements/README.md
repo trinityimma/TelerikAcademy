@@ -13,7 +13,7 @@
 * Write an expression that extracts from a given integer `i` the value of a given bit number `b`. Example: i=5; b=2 -> value=1.
 * We are given integer `n`, value `v` (v=0 or 1) and a position `p`. Write a sequence of operators that modifies n to hold the value v at the position p from the binary representation of n. Example:
 
-		n = 5 (00000101), p=3, v=1 -> 13 (00001101)
-		n = 5 (00000101), p=2, v=0 ->  1 (00000001)
+        n = 5 (00000101), p=3, v=1 -> 13 (00001101)
+        n = 5 (00000101), p=2, v=0 ->  1 (00000001)
 * Write a program that exchanges bits **3, 4 and 5** with bits **24, 25 and 26** of given 32-bit unsigned integer.
 * \*Write a program that exchanges bits **{p, p+1, …, p+k-1)** with bits **{q, q+1, …, q+k-1}** of given 32-bit unsigned integer.

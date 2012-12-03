@@ -14,10 +14,12 @@ class Program
 
     // Constants
     static string player = "(O)";
+    static string playerColor = "White";
     static char[] rockCharacters = { '^', '@', '*', '&', '+', '%', '$', '#', '!', '.', ';' };
     static String[] rockColors = { "Green", "Yellow", "Red" };
     static int rockMaxWidth = 3;
     static int rockBottomPaddingAtStart = rockMaxWidth + player.Length;
+    static string resultColor = "Gray";
     static int minFps = 15, maxFps = 40;
     static Random randomGenerator = new Random();
 
@@ -43,15 +45,18 @@ class Program
     static void CheckCollision()
     {
         for (int i = 0; i < rocks.GetLength(0); i++)
+        {
             collision = collision || rocks[i, 1] == playerPositionY && rocks[i, 0] + rocks[i, 2] > playerPositionX && playerPositionX + player.Length > rocks[i, 0];
+            if (collision) break;
+        }
     }
 
     static void DrawResult()
     {
-        PrintAtPosition(0, 0, "Speed: " + (int)(fps - minFps) + " Result: " + (int)result, "Gray");
+        PrintAtPosition(0, 0, "Speed: " + (int)(fps - minFps) + " Result: " + (int)result, resultColor);
     }
 
-    // ROCKS
+    // Rocks
     static void GetRock(int i)
     {
         rocks[i, 2] = 1 + randomGenerator.Next(rockMaxWidth); // width
@@ -101,7 +106,7 @@ class Program
         for (int i = 0; i < rocks.GetLength(0); i++) DrawRock(i);
     }
 
-    // PLAYER
+    // Player
     static void CenterPlayer()
     {
         playerPositionX = (Console.WindowWidth - player.Length) / 2;
@@ -110,16 +115,16 @@ class Program
 
     static void DrawPlayer()
     {
-        PrintAtPosition(playerPositionX, playerPositionY, player, "White");
+        PrintAtPosition(playerPositionX, playerPositionY, player, playerColor);
     }
 
     static void MovePlayer(ConsoleKeyInfo keyInfo)
     {
         if (keyInfo.Key == ConsoleKey.LeftArrow && playerPositionX > 0) playerPositionX--;
-        if (keyInfo.Key == ConsoleKey.RightArrow && playerPositionX + player.Length < Console.WindowWidth) playerPositionX++;
+        if (keyInfo.Key == ConsoleKey.RightArrow && playerPositionX + player.Length - 1 < Console.WindowWidth - 1) playerPositionX++;
 
         if (keyInfo.Key == ConsoleKey.UpArrow && playerPositionY > 0) playerPositionY--;
-        if (keyInfo.Key == ConsoleKey.DownArrow && playerPositionY - 1 < Console.WindowWidth) playerPositionY++;
+        if (keyInfo.Key == ConsoleKey.DownArrow && playerPositionY < Console.WindowHeight - 1) playerPositionY++;
     }
 
     static void Main()

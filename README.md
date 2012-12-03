@@ -8,7 +8,9 @@
 * [Console Input/Output](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/4.ConsoleInputOutput) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/4.ConsoleInputOutput/README.md)) - 17.11.2012
 * [Conditional Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/5.ConditionalStatements) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/5.ConditionalStatements/README.md)) - 24.11.2012
 * [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/6.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/6.Loops/README.md)) - 01.12.2012
-* Sample Test - 15.12.2012
+* Sample Test | [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/7.ExamPreparation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/7.ExamPreparation/README.md)) - 15.12.2012
+* Test - 22.12.2012
+* Exam - 29.12.2012
 
 ## HTML Basics
 
@@ -20,14 +22,10 @@
 * Sample Test - 23.11.2012
 * Test - 01.12.2012
 
-<!-- ---
-
-## C# Part II
-
-## CSS Overview
-
 ---
 
-## Object-oriented Programming
+## C# Part II
+1. Course Overview - 12.01.2013
 
-## Slice and Dice -->
+## CSS Overview
+1. Course Overview - 14.12.2012
