@@ -1,0 +1,161 @@
+@import compass/css3
+
+// Hide until the scripts have loaded
+.ng-cloak
+    display: none!important
+
+// JavaScript disabled
+.nojs .form-horizontal
+    display: none
+
+.hide-text
+    position: absolute
+    top: -10000px
+
+// INPUT
+.input
+    textarea
+        white-space: nowrap
+
+    input[type="number"] + ul
+        display: inline
+
+    input:disabled, textarea:disabled
+        color: #999
+
+    a
+        text-decoration: underline
+
+    .control-label
+        font-weight: bold
+
+    .inline
+        margin: 3px 0 0
+
+    .help-block
+        padding: 0
+
+// KEYBOARD SHORTCUTS
+.touch .alert-info
+    display: none
+
+.game:focus
+    outline: 0
+
+.game:not(:focus) .alert-info > strong
+    text-decoration: line-through
+
+.alert-info
+    padding-right: 14px // No close button
+
+    li
+        position: relative
+
+        &:not(:first-child):before
+            content: '|'
+            left: -3px
+            position: absolute
+
+    code
+        color: #777
+        font-weight: bold
+
+    i
+        opacity: .6
+
+    .inline
+        display: inline-block
+        margin: 0
+
+// TOWERS
+$tableWidth: 591px
+$tableWidthNotScrolled: 621px
+$cellCount: 10
+
+.towers
+    position: relative
+
+    form
+        margin: 0 0 9px
+
+    input
+        margin: 0
+        width: $tableWidth
+
+    .vertical
+        @include transform(rotate(90deg))
+        position: absolute
+        bottom: floor($tableWidth / 2) + 10px
+        right: ceil(-$tableWidth / 2) + 10px
+
+    .inline
+        margin-top: 26px
+
+    .badge
+        @include transition-property(background, color)
+        @include transition-duration(300ms)
+
+.blurred
+    @include filter(blur(2px))
+
+.table-bordered
+    table-layout: fixed
+    width: auto
+    display: inline-block
+    @include transition(all 333ms)
+
+    &.not-scrolled
+        td
+            $cellSize: ($tableWidthNotScrolled - 1px) / $cellCount - 1px // 1px border
+            width: $cellSize
+            ling-height: $cellSize
+
+    td
+        $cellSize: ($tableWidth - 1px) / $cellCount - 1px // 1px border
+        width: $cellSize
+        line-height: $cellSize
+        padding: 0
+        color: #999
+        text-align: center
+        font-size: 25px
+
+    span
+        @include transition-property(background, color)
+        @include transition-duration(500ms)
+        display: block
+
+    .put
+        background: #DFF0D8
+        color: #444
+
+    .take
+        background: #F2DEDE
+        color: #444
+
+    .fall
+        background: #FCF8E3
+        color: #966
+
+    .small
+        font-size: 22px
+
+// CONTROLS
+.controls
+    input[type="range"].span4
+        width: 300px
+
+    .well
+        padding-top: 0
+        padding-bottom: 0
+
+    .label-warning
+        @include transition(background 150ms ease-in)
+
+    .muted i
+        opacity: .6
+
+// FOOTER
+.footer
+    padding: 30px 0
+    border-top: 1px solid #E5E5E5
+    background: #F5F5F5

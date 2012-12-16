@@ -1,0 +1,108 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Mocha Spec Runner</title>
+
+    <link rel="stylesheet" href="lib/mocha/mocha.css">
+</head>
+
+<body>
+    <div id="mocha"></div>
+
+    <script src="lib/mocha/mocha.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+    <script src="lib/chai.js"></script>
+    <script>expect = chai.expect</script>
+
+    <script>
+        var LiveReload; // Hide leak error
+
+        (function() {
+            describe('Testing game result.', function() {
+                var worker;
+
+                function run(field, moves, result, done) {
+                    var worker = new Worker('../scripts/workerController.js');
+
+                    worker.addEventListener('message', function(e) {
+                        if (e.data.result != null) {
+                            expect(e.data.result).to.equal(result);
+                            done();
+                        }
+                    }, false);
+
+                    worker.postMessage({
+                        field: field,
+                        moves: moves
+                    });
+                }
+
+                it('Game', function(done) {
+                    run(
+                        [
+                            [1, 2, 3, 4],
+                            [5, 6, 7, 8],
+                            [9, 1, 8, 7],
+                            [1, 2, 3, 4]
+                        ],
+                        [
+                            ["put", 2, 3],
+                            ["take", 3, 1]
+                        ],
+                        27,
+                        done
+                    );
+                });
+
+                it('Game', function(done) {
+                    run(
+                        [
+                            [1, 2, 3],
+                            [5, 6, 7],
+                            [1, 2, 3]
+                        ],
+                        [
+                            ["take", 0, 2],
+                            ["take", 0, 2],
+                            ["take", 0, 2],
+                            ["take", 0, 2]
+                        ],
+                        5,
+                        done
+                    );
+                });
+
+                it('Game', function(done) {
+                    run(
+                        [
+                            [0]
+                        ],
+                        [
+                            ["take", 0, 0]
+                        ],
+                        0,
+                        done
+                    );
+                });
+
+                it('Game', function(done) {
+                    run(
+                        [
+                            [1000]
+                        ],
+                        [
+                            ["put", 0, 0]
+                        ],
+                        -1,
+                        done
+                    );
+                });
+            });
+        })();
+    </script>
+
+    <script src="runner/mocha.js"></script>
+</body>
+</html>
