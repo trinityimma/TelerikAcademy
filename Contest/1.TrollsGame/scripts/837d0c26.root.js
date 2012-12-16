@@ -1,1 +1,0 @@
-this.GAME = angular.module('game', ['ui.directives']);
