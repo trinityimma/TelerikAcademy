@@ -19,7 +19,6 @@ GAME.controller 'gameController', [
 
         cssTransitionDuration = 1000 # Change this to 0 and increase fps for instant animations
         autoplayedMoves = 0
-        autoplayMovesLimit = 3
 
         moves = []
         change = 0
