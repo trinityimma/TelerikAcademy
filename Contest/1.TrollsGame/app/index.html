@@ -286,11 +286,8 @@
                                         Резултат:
                                         <span class="badge">{{ currentResult }}</span>
                                     </li>
-                                    <li data-ng-show="towers.hasScrollbars()">
-                                        Редове:
-                                        <span class="badge" data-ng-class="towers.scrollingRow && 'badge-inverse'">
-                                            {{ towers._row + 1 }}-{{ towers._row + towers.count }}
-                                        </span>
+                                    <li>Размер:
+                                        <span class="badge">{{ field.length }}</span>
                                     </li>
                                     <li data-ng-show="towers.hasScrollbars()">
                                         Колони:
@@ -298,8 +295,11 @@
                                             {{ towers._col + 1 }}-{{ towers._col + towers.count }}
                                         </span>
                                     </li>
-                                    <li>Размер:
-                                        <span class="badge">{{ field.length }}</span>
+                                    <li data-ng-show="towers.hasScrollbars()">
+                                        Редове:
+                                        <span class="badge" data-ng-class="towers.scrollingRow && 'badge-inverse'">
+                                            {{ towers._row + 1 }}-{{ towers._row + towers.count }}
+                                        </span>
                                     </li>
                                 </ul>
                             </div>
@@ -321,7 +321,7 @@
                     <table class="table table-bordered"
                       data-ng-class="!towers.hasScrollbars() && 'not-scrolled' || towers.scrollingMove && 'blurred'">
                         <tr data-ng-repeat="row in towers.field">
-                            <td data-ng-repeat="cell in row" data-ng-class="{{ cell.value > 999 && 'small' }}">
+                            <td data-ng-repeat="cell in row" data-ng-class="cell.value > 999 && 'small'">
                                 <span data-ng-class="cell.type">{{ !(cell.value > 0) && '0' || cell.value }}</span>
                             </td>
                         </tr>

@@ -23,6 +23,9 @@ GAME.controller 'gameController', [
         moves = []
         change = 0
 
+        # No animations at max speed
+        getDelay = (t) -> if +$scope.fps.current is $scope.fps.max then 0 else t
+
         onBeforeMove = ->
             $scope.moving = true
             $scope.currentAnimation += change
@@ -33,9 +36,9 @@ GAME.controller 'gameController', [
                     $scope.towers.makeVisible moves[0].point # Change view midanimation
                     $timeout ->
                         $scope.towers.scrollingMove = false
-                        $timeout onAfterScroll, cssTransitionDuration / 3 + 1000 / $scope.fps.current
-                    , cssTransitionDuration / 3
-                , cssTransitionDuration / 3
+                        $timeout onAfterScroll, getDelay cssTransitionDuration / 3 + 1000 / $scope.fps.current
+                    , getDelay cssTransitionDuration / 3
+                , getDelay cssTransitionDuration / 3
             else onAfterScroll()
 
         onBeforeScroll = ->
@@ -60,7 +63,7 @@ GAME.controller 'gameController', [
             # Start current move
             $timeout ->
                 onMove if change is 1 then 0 else moves.length - 1
-            , cssTransitionDuration + 1000 / $scope.fps.current
+            , getDelay cssTransitionDuration + 1000 / $scope.fps.current
 
         onMove = (i) ->
             move = moves[i]
@@ -90,7 +93,7 @@ GAME.controller 'gameController', [
                 # Call next
                 $timeout ->
                     onMove(i + change)
-                , 1000 / $scope.fps.current
+                , getDelay 1000 / $scope.fps.current
             # No more moves
             else
                 onAfterMove()
@@ -127,7 +130,7 @@ GAME.controller 'gameController', [
                                 document.querySelector('.game').dispatchEvent evt
                             catch e
                     else $scope.playPause()
-            , 1000 / $scope.fps.current
+            , getDelay 1000 / $scope.fps.current
 
         # TODO: use $q.defer()
         $scope.goForward = ($event) ->
