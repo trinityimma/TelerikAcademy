@@ -24,7 +24,7 @@
                 var worker;
 
                 function run(field, moves, result, done) {
-                    var worker = new Worker('../scripts/8eb56ff6.workerController.js');
+                    var worker = new Worker('../scripts/workerController.js');
 
                     worker.addEventListener('message', function(e) {
                         if (e.data.result != null) {
