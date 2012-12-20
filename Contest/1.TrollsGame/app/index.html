@@ -318,11 +318,18 @@
                     </form>
 
                     <!-- TOWERS -->
-                    <table class="table table-bordered"
-                      data-ng-class="!towers.hasScrollbars() && 'not-scrolled' || towers.scrollingMove && 'blurred'">
+                    <table class="table table-bordered" data-ng-style="makeVendorPrefixes({
+                        'transition-duration': getDelay() + 'ms'
+                      })" data-ng-class="!towers.hasScrollbars() && 'not-scrolled' || towers.scrollingMove && 'blurred'">
                         <tr data-ng-repeat="row in towers.field">
                             <td data-ng-repeat="cell in row" data-ng-class="cell.value > 999 && 'small'">
-                                <span data-ng-class="cell.type">{{ !(cell.value > 0) && '0' || cell.value }}</span>
+                                <span data-ng-class="cell.type" data-ng-style="makeVendorPrefixes({
+                                    'transition-duration': getDelay() + 'ms',
+                                    'animation': cell.type && flashing &&
+                                      (getDelay(2) + 'ms flash '+ getDelay() + 'ms') || 'none'
+                                })">
+                                    {{ !(cell.value > 0) && '0' || cell.value }}
+                              </span>
                             </td>
                         </tr>
                     </table>

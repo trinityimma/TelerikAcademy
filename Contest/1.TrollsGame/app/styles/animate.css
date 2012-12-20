@@ -30,11 +30,3 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     0%, 50%, 100% {opacity: 1;}
     25%, 75% {opacity: 0;}
 }
-
-.flash, .put, .take, .fall {
-    -webkit-animation: 1000ms flash 500ms;
-       -moz-animation: 1000ms flash 500ms;
-        -ms-animation: 1000ms flash 500ms;
-         -o-animation: 1000ms flash 500ms;
-            animation: 1000ms flash 500ms;
-}

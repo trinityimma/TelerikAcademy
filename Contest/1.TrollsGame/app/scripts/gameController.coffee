@@ -8,6 +8,13 @@ GAME.controller 'gameController', [
     $scope.result = 0
     $scope.totalAnimations = 0
 
+    $scope.makeVendorPrefixes = do ->
+        prefixes = ['-webkit-', '-moz-', '-o-', '']
+        (rules) ->
+            style = {}
+            style["#{prefix}#{prop}"] = val for prefix in prefixes for prop, val of rules
+            return style
+
     # MOVES
     do ->
         $scope.moving = false
@@ -17,14 +24,13 @@ GAME.controller 'gameController', [
         $scope.currentSubState = -1
         $scope.currentAnimation = 0
 
-        cssTransitionDuration = 1000 # Change this to 0 and increase fps for instant animations
         autoplayedMoves = 0
 
         moves = []
         change = 0
 
         # No animations at max speed
-        getDelay = (t) -> if +$scope.fps.current is $scope.fps.max then 0 else t
+        $scope.getDelay = (t = 1) -> if +$scope.fps.current is $scope.fps.max then 0 else t * 1000 / $scope.fps.current
 
         onBeforeMove = ->
             $scope.moving = true
@@ -36,9 +42,9 @@ GAME.controller 'gameController', [
                     $scope.towers.makeVisible moves[0].point # Change view midanimation
                     $timeout ->
                         $scope.towers.scrollingMove = false
-                        $timeout onAfterScroll, getDelay cssTransitionDuration / 3 + 1000 / $scope.fps.current
-                    , getDelay cssTransitionDuration / 3
-                , getDelay cssTransitionDuration / 3
+                        $timeout onAfterScroll, $scope.getDelay()
+                    , $scope.getDelay()
+                , $scope.getDelay()
             else onAfterScroll()
 
         onBeforeScroll = ->
@@ -56,14 +62,16 @@ GAME.controller 'gameController', [
                         point.type = 'put'
                     else point.type = 'take'
                 else point.type = 'fall' unless i is moves.length - 1 # The last falling is the same as the first one.
+            $scope.flashing = on # Lock CSS animations when fps changes
 
             $log.log "Current state: #{$scope.currentState}. " +
               "#{if change is 1 then 'Executing' else 'Reverting'} move: #{$scope.currentState}"
 
             # Start current move
             $timeout ->
+                $scope.flashing = off
                 onMove if change is 1 then 0 else moves.length - 1
-            , getDelay cssTransitionDuration + 1000 / $scope.fps.current
+            , $scope.getDelay 4 # 1 css transition + 2 css animation + 1 delay
 
         onMove = (i) ->
             move = moves[i]
@@ -93,7 +101,7 @@ GAME.controller 'gameController', [
                 # Call next
                 $timeout ->
                     onMove(i + change)
-                , getDelay 1000 / $scope.fps.current
+                , $scope.getDelay()
             # No more moves
             else
                 onAfterMove()
@@ -130,7 +138,7 @@ GAME.controller 'gameController', [
                                 document.querySelector('.game').dispatchEvent evt
                             catch e
                     else $scope.playPause()
-            , getDelay 1000 / $scope.fps.current
+            , $scope.getDelay()
 
         # TODO: use $q.defer()
         $scope.goForward = ($event) ->
