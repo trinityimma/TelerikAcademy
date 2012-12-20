@@ -57,34 +57,20 @@ GAME.directive 'matrix', [
                         ctrl.$setValidity 'matrixCommand', false
                         return $modelValue
 
+            cellError = (type) ->
+                ctrl.errorRow = i
+                ctrl.errorCol = j
+                ctrl.errorCell = row[j]
+                ctrl.$setValidity type, false
+                return $modelValue
+
             # Check each cell
             for row, i in $modelValue
                 for j in [startIndex...row.length]
                     cell = row[j]
-
-                    # Check for matrix pattern
-                    unless parseInt(cell, 10) is cell
-                        ctrl.errorRow = i
-                        ctrl.errorCol = j
-                        ctrl.errorCell = row[j]
-                        ctrl.$setValidity 'matrixPattern', false
-                        return $modelValue
-
-                    # Check for matrix min
-                    unless cell >= min
-                        ctrl.errorRow = i
-                        ctrl.errorCol = j
-                        ctrl.errorCell = cell
-                        ctrl.$setValidity 'matrixMin', false
-                        return $modelValue
-
-                    # Check for matrix max
-                    unless cell <= max
-                        ctrl.errorRow = i
-                        ctrl.errorCol = j
-                        ctrl.errorCell = cell
-                        ctrl.$setValidity 'matrixMax', false
-                        return $modelValue
+                    return cellError 'matrixPattern' unless parseInt(cell, 10) is cell # Check for matrix pattern
+                    return cellError 'matrixMin'     unless cell >= min                # Check for matrix min
+                    return cellError 'matrixMax'     unless cell <= max                # Check for matrix max
 
             # Everything is valid
             return $modelValue
