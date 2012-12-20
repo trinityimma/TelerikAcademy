@@ -2,9 +2,7 @@ GAME.controller 'gameController', [
    '$scope', '$rootScope', '$timeout', '$log', '$location', 'workerService'
   ( $scope ,  $rootScope ,  $timeout ,  $log ,  $location ,  workerService ) ->
 
-    unless workerService.inputField
-        $location.path '/'
-        return
+    # return $location.path '/' unless workerService.inputField
 
     date = new Date
 

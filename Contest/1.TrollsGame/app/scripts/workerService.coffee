@@ -22,7 +22,7 @@ GAME.service 'workerService', [
                 $log.log "Worker finished in #{new Date - startTime}ms."
                 @[key] = value for own key, value of e.data
                 callback?()
-                $location.path '/game'
+                $location.path '/game.html'
                 $rootScope.$apply()
             else $log.log e.data
         , false
