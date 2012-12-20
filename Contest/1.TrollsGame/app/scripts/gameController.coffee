@@ -1,6 +1,12 @@
 GAME.controller 'gameController', [
-   '$scope', '$rootScope', '$timeout', '$log'
-  ( $scope ,  $rootScope ,  $timeout ,  $log )->
+   '$scope', '$rootScope', '$timeout', '$log', '$location', 'workerService'
+  ( $scope ,  $rootScope ,  $timeout ,  $log ,  $location ,  workerService ) ->
+
+    unless workerService.inputField
+        $location.path '/'
+        return
+
+    date = new Date
 
     # Variables
     $scope.field = [[]] # [[1, 2, 3], [4, 5, 6], [7, 8, 9]] Matrix N*N
@@ -268,16 +274,11 @@ GAME.controller 'gameController', [
             $event?.preventDefault()
             @current = +@current + change if @min <= +@current + change <= @max
 
-    # Listen for ready event and start game
-    $scope.$on 'ready', (e, field, moves, totalChanged, result) ->
-        $log.log "Game started."
-        date = new Date
-        $scope.field = field
-        $scope.queue = moves
-        $scope.totalAnimations = totalChanged + 2 * moves.length # One before and one after each move
-        $scope.result = result
-        $scope.towers.make()
-        $scope.visible = on
-        $scope.$apply()
-        $log.log "Game ready in #{new Date - date}ms."
+    $log.log "Game started."
+    $scope.field = angular.copy workerService.inputField # Save the input if the user wants to update it
+    $scope.queue = workerService.moves
+    $scope.totalAnimations = workerService.totalChanged + 2 * workerService.moves.length # One before and one after each move
+    $scope.result = workerService.result
+    $scope.towers.make()
+    $log.log "Game ready in #{new Date - date}ms."
 ]

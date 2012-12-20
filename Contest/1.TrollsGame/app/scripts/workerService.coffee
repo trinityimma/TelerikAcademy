@@ -1,12 +1,14 @@
 GAME.service 'workerService', [
-   '$log', '$rootScope',
-  ( $log ,  $rootScope ) ->
+   '$log', '$rootScope', '$location'
+  ( $log ,  $rootScope ,  $location ) ->
 
     # Start a Web Worker
     fire: (field, moves, callback) ->
         $log.log 'Firing worker.'
         startTime = new Date
         worker = new Worker 'scripts/workerController.js'
+        @inputField = field
+        @inputMoves = moves
 
         # On error
         worker.addEventListener 'error', (e) ->
@@ -15,11 +17,13 @@ GAME.service 'workerService', [
 
         # Call callback if we have a result; else log the message
         # Using global events for communication with controllers
-        worker.addEventListener 'message', (e) ->
+        worker.addEventListener 'message', (e) =>
             if e.data.result?
                 $log.log "Worker finished in #{new Date - startTime}ms."
+                @[key] = value for own key, value of e.data
                 callback?()
-                $rootScope.$broadcast 'ready', field, e.data.moves, e.data.totalChanged, e.data.result
+                $location.path '/game'
+                $rootScope.$apply()
             else $log.log e.data
         , false
 
