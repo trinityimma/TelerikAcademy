@@ -12,7 +12,7 @@
 
     <!-- build:css styles/all.css -->
     <link rel="stylesheet" href="styles/vendor/bootstrap.css">
-    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="styles/vendor/animate.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 </head>
@@ -44,8 +44,9 @@
         <!-- VIEW -->
         <div data-ng-view>
             <noscript>
-                <p class="text-error pagination-centered">Това приложение изисква JavaScript!</p>
+                <p class="text-error centered">Това приложение изисква JavaScript!</p>
             </noscript>
+            <p class="muted centered">Зареждане...</p>
         </div>
 
         <!-- CONSOLE.LOG -->

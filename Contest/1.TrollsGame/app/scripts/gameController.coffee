@@ -2,7 +2,11 @@ GAME.controller 'gameController', [
    '$scope', '$rootScope', '$timeout', '$log', '$location', 'workerService'
   ( $scope ,  $rootScope ,  $timeout ,  $log ,  $location ,  workerService ) ->
 
-    # return $location.path '/' unless workerService.inputField
+    # Page reload without input
+    unless workerService.inputField
+        $location.path '/'
+        $location.replace()
+        return
 
     date = new Date
 
