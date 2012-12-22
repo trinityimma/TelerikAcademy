@@ -158,7 +158,6 @@
                     <dt data-ng-class="{ muted: state != currentState }">
                         Ход {{ state + 1 }}
                         <i class="icon-thumbs-up" data-ng-show="queue[state].length > 4"></i>
-                        <i class="icon-exclamation-sign" data-ng-show="queue[state][0].move.delta == 0"></i>
                     </dt>
 
                     <dd data-ng-repeat="move in queue[state]">

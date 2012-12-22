@@ -46,13 +46,7 @@ GAME.controller 'gameController', [
 
             onBeforeScroll()
             if $scope.towers.scrollingMove
-                $timeout ->
-                    $scope.towers.makeVisible moves[0].point # Change view midanimation
-                    $timeout ->
-                        $scope.towers.scrollingMove = false
-                        $timeout onAfterScroll, $scope.getDelay()
-                    , $scope.getDelay()
-                , $scope.getDelay()
+                onScroll()
             else onAfterScroll()
 
         onBeforeScroll = ->
@@ -60,6 +54,15 @@ GAME.controller 'gameController', [
                 unless $scope.towers.isVisible move.point
                     $scope.towers.scrollingMove = yes
                     return
+
+        onScroll = ->
+            $timeout ->
+                $scope.towers.makeVisible moves[0].point # Change view midanimation
+                $timeout ->
+                    $scope.towers.scrollingMove = false
+                    $timeout onAfterScroll, $scope.getDelay()
+                , $scope.getDelay()
+            , $scope.getDelay()
 
         onAfterScroll = ->
             # Mark changed towers in this move
@@ -102,8 +105,7 @@ GAME.controller 'gameController', [
                 $log.log "  Changing: #{move.point.x}:#{move.point.y} = #{point.value} + #{change * move.delta}." +
                   " Result: #{$scope.currentResult}."
 
-                point.value += change * move.delta
-                $scope.field[move.point.x][move.point.y] = point.value # save to original
+                $scope.field[move.point.x][move.point.y] = point.value += change * move.delta # save to original
                 $scope.currentAnimation += change
 
                 # Call next
@@ -111,8 +113,7 @@ GAME.controller 'gameController', [
                     onMove(i + change)
                 , $scope.getDelay()
             # No more moves
-            else
-                onAfterMove()
+            else onAfterMove()
 
         onAfterMove = ->
             $scope.currentAnimation += change
