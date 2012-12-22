@@ -1,6 +1,6 @@
 GAME.controller 'gameController', [
-   '$scope', '$rootScope', '$timeout', '$log', '$location', 'workerService'
-  ( $scope ,  $rootScope ,  $timeout ,  $log ,  $location ,  workerService ) ->
+   '$scope', '$rootScope', '$timeout', '$log', '$location', '$q', 'workerService'
+  ( $scope ,  $rootScope ,  $timeout ,  $log ,  $location ,  $q ,  workerService ) ->
 
     # Page reload without input
     unless workerService.inputField
@@ -32,39 +32,55 @@ GAME.controller 'gameController', [
         $scope.currentSubState = -1
         $scope.currentAnimation = 0
 
-        autoplayedMoves = 0
-
         moves = []
         change = 0
 
         # No animations at max speed
+        delay = (callback, t = 1) ->
+            $timeout callback, $scope.getDelay t
+
         $scope.getDelay = (t = 1) -> if +$scope.fps.current is $scope.fps.max then 0 else t * 1000 / $scope.fps.current
 
         onBeforeMove = ->
+            deferred = $q.defer()
+
             $scope.moving = true
             $scope.currentAnimation += change
+            deferred.resolve()
 
-            onBeforeScroll()
-            if $scope.towers.scrollingMove
-                onScroll()
-            else onAfterScroll()
+            return deferred.promise
 
         onBeforeScroll = ->
+            deferred = $q.defer()
+
             for move in moves
                 unless $scope.towers.isVisible move.point
                     $scope.towers.scrollingMove = yes
-                    return
+                    break
+            deferred.resolve()
+
+            return deferred.promise
 
         onScroll = ->
-            $timeout ->
-                $scope.towers.makeVisible moves[0].point # Change view midanimation
-                $timeout ->
+            deferred = $q.defer()
+
+            if $scope.towers.scrollingMove
+                delay ->
+                    $scope.towers.makeVisible moves[0].point
+                , 1
+                delay ->
                     $scope.towers.scrollingMove = false
-                    $timeout onAfterScroll, $scope.getDelay()
-                , $scope.getDelay()
-            , $scope.getDelay()
+                , 2
+                delay ->
+                    deferred.resolve()
+                , 3
+            else deferred.resolve()
+
+            return deferred.promise
 
         onAfterScroll = ->
+            deferred = $q.defer()
+
             # Mark changed towers in this move
             for move, i in moves
                 point = $scope.towers.get move.point
@@ -79,92 +95,87 @@ GAME.controller 'gameController', [
               "#{if change is 1 then 'Executing' else 'Reverting'} move: #{$scope.currentState}"
 
             # Start current move
-            $timeout ->
+            delay ->
                 $scope.flashing = off
-                onMove if change is 1 then 0 else moves.length - 1
-            , $scope.getDelay 4 # 1 css transition + 2 css animation + 1 delay
+                deferred.resolve()
+            , 4 # 1 css transition + 2 css animation + 1 delay
 
-        onMove = (i) ->
-            move = moves[i]
-            $scope.currentSubState = i
+            return deferred.promise
 
-            # For each move
-            if -1 < i < moves.length
-                point = $scope.towers.get move.point
+        onMove = do ->
+            deferred = null # Save one deferred for all moves as closure
 
-                # Get last result
-                if change is 1
-                    $scope.currentResult = move.result # Going forward, take current
-                else unless i - 1 is -1
-                    $scope.currentResult = moves[i - 1].result # Previous substate
-                else unless $scope.currentState - 1 is -1
-                    lastMove = $scope.queue[$scope.currentState - 1]
-                    $scope.currentResult = lastMove[lastMove.length - 1].result # Last substate of last state
-                else $scope.currentResult = 0 # Beginning of game
+            (i) ->
+                # Start moves
+                unless i?
+                    i = if change is 1 then 0 else moves.length - 1
+                    deferred = $q.defer()
 
-                $log.log "  Changing: #{move.point.x}:#{move.point.y} = #{point.value} + #{change * move.delta}." +
-                  " Result: #{$scope.currentResult}."
+                move = moves[i]
+                $scope.currentSubState = i
 
-                $scope.field[move.point.x][move.point.y] = point.value += change * move.delta # save to original
-                $scope.currentAnimation += change
+                # For each move
+                if -1 < i < moves.length
+                    point = $scope.towers.get move.point
 
-                # Call next
-                $timeout ->
-                    onMove(i + change)
-                , $scope.getDelay()
-            # No more moves
-            else onAfterMove()
+                    # Get last result
+                    if change is 1
+                        $scope.currentResult = move.result # Going forward, take current
+                    else unless i - 1 is -1
+                        $scope.currentResult = moves[i - 1].result # Previous substate
+                    else unless $scope.currentState - 1 is -1
+                        lastMove = $scope.queue[$scope.currentState - 1]
+                        $scope.currentResult = lastMove[lastMove.length - 1].result # Last substate of last state
+                    else $scope.currentResult = 0 # Beginning of game
+
+                    $log.log "  Changing: #{move.point.x}:#{move.point.y} = #{point.value} + #{change * move.delta}." +
+                      " Result: #{$scope.currentResult}."
+
+                    $scope.field[move.point.x][move.point.y] = point.value += change * move.delta # save to original
+                    $scope.currentAnimation += change
+
+                    # Call next
+                    delay -> onMove i + change
+                else deferred.resolve() # No more moves
+
+                return deferred.promise
 
         onAfterMove = ->
+            deferred = $q.defer()
             $scope.currentAnimation += change
 
             delete $scope.towers.get(move.point).type for move in moves # Clear marked towers
 
-            $timeout ->
+            delay ->
                 $scope.moving = false
                 $scope.currentSubState = -1
-                $scope.currentState++ if change is 1
 
                 $log.log "  Current state: #{$scope.currentState}. Remaining moves: #{$scope.getRemaining()}."
 
+                deferred.resolve()
+
                 # Start next move
                 if $scope.autoplay
-                    if $scope.getRemaining()
-                        if ++autoplayedMoves < 100
-                            $scope.goForward()
-                        else
-                            # TODO: Garbage collection problems with 1000+ callbacks
-                            # So we reset the queue and start it from outside.
-                            # Ugly hack to simulate space key and continue :(
-                            $scope.playPause()
-                            try
-                                evt = document.createEvent "Events"
-                                evt.initEvent "keydown", true, true
-                                evt.view = window
-                                evt.keyCode = 32
-                                evt.charCode = 0
-                                evt.altKey = evt.ctrlKey = evt.shiftKey = evt.metaKey = false
-                                document.querySelector('.game').dispatchEvent evt
-                            catch e
-                    else $scope.playPause()
-            , $scope.getDelay()
+                    if $scope.getRemaining() then $scope.goForward() else $scope.playPause()
 
-        # TODO: use $q.defer()
+            return deferred.promise
+
+        go = (ch) ->
+            change = ch
+            moves = $scope.queue[$scope.currentState]
+            onBeforeMove().then(onBeforeScroll).then(onScroll).then(onAfterScroll).then(onMove).then(onAfterMove)
+
         $scope.goForward = ($event) ->
             $event?.preventDefault()
-            return unless $scope.canGoForward()
-            moves = $scope.queue[$scope.currentState]
-            change = 1
-            onBeforeMove()
-            # $scope.currentState++ is called at the end of the last $timeout
+            if $scope.canGoForward()
+                go(1).then ->
+                    $scope.currentState++
 
         $scope.goBackwards = ($event) ->
             $event?.preventDefault()
-            return unless $scope.canGoBackwards()
-            --$scope.currentState
-            moves = $scope.queue[$scope.currentState]
-            change = -1
-            onBeforeMove()
+            if $scope.canGoBackwards()
+                $scope.currentState--
+                go(-1)
 
         $scope.getRemaining = -> $scope.queue.length - $scope.currentState
         $scope.getTotal = -> $scope.queue.length
@@ -177,9 +188,7 @@ GAME.controller 'gameController', [
             return unless $scope.autoplay or $scope.canGoForward() # On the last move do nothing
             $scope.autoplay = not $scope.autoplay
             $log.log "Autoplay: #{$scope.autoplay}"
-            if $scope.autoplay
-                autoplayedMoves = 0
-                $scope.goForward()
+            $scope.goForward() if $scope.autoplay
 
     # TOWERS
     $scope.towers =
