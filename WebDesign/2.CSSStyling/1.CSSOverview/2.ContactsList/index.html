@@ -12,9 +12,9 @@
             border-spacing: 0;
         }
 
-        tr:nth-child(odd) { background: #ECECD8; }
+        tr:nth-child(even) { background: #ECECD8; }
 
-        th, td { padding: 5px 8px; }
+        th, td { padding: 4px 6px; }
         th {
             border-bottom: 1px solid #27710A;
             background: -webkit-linear-gradient(#61C407, #4EB106);
@@ -31,7 +31,7 @@
         }
         td + td { border-left: 1px solid #BBB99D; }
 
-        [class^="flag-"] {
+        [class ^= "flag-"] {
             display: inline-block;
             margin-right: 2px;
             width: 21px;
