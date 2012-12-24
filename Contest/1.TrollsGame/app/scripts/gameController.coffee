@@ -54,9 +54,7 @@ GAME.controller 'gameController', [
             deferred = $q.defer()
 
             for move in moves
-                unless $scope.towers.isVisible move.point
-                    $scope.towers.scrollingMove = yes
-                    break
+                $scope.towers.scrollingMove = yes unless $scope.towers.isVisible move.point
             deferred.resolve()
 
             return deferred.promise
@@ -142,8 +140,8 @@ GAME.controller 'gameController', [
 
         onAfterMove = ->
             deferred = $q.defer()
-            $scope.currentAnimation += change
 
+            $scope.currentAnimation += change
             delete $scope.towers.get(move.point).type for move in moves # Clear marked towers
 
             delay ->
@@ -167,15 +165,15 @@ GAME.controller 'gameController', [
 
         $scope.goForward = ($event) ->
             $event?.preventDefault()
-            if $scope.canGoForward()
-                go(1).then ->
-                    $scope.currentState++
+            return unless $scope.canGoForward()
+            go(1).then ->
+                $scope.currentState++
 
         $scope.goBackwards = ($event) ->
             $event?.preventDefault()
-            if $scope.canGoBackwards()
-                $scope.currentState--
-                go(-1)
+            return unless $scope.canGoBackwards()
+            $scope.currentState--
+            go(-1)
 
         $scope.getRemaining = -> $scope.queue.length - $scope.currentState
         $scope.getTotal = -> $scope.queue.length

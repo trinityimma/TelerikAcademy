@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ticket Details</title>
+    <style>
+        body {
+            background: #595959;
+            font: 12px sans-serif;
+        }
+
+        h1 {
+            color: #BBBBAC;
+            font-weight: normal;
+        }
+
+        dl { overflow: hidden; }
+
+        dt {
+            float: left;
+            width: 160px;
+            color: #fff;
+            font-style: italic;
+        }
+
+        dd {
+            margin-left: 160px;
+            color: #E5F2B2;
+        }
+
+        .success:before {
+            display: inline-block;
+            margin-right: 5px;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background: #71B47A;
+            content: ' ';
+        }
+        .muted   { color: #ACACAC; }
+        .warning { color: #E06B1E; }
+        .error   { color: #E50000; }
+    </style>
+</head>
+
+<body>
+    <h1>Ticked ID: 409788</h1>
+
+    <dl>
+        <dt>Name:</dt>
+        <dd class="success">Parker Seidel</dd>
+        <dd class="error"><strong>No Active Support</strong></dd>
+    </dl>
+
+    <dl>
+        <dt>Email:</dt>
+        <dd>seidel@aptmail.com</dd>
+    </dl>
+
+    <dl>
+        <dt>Response Time:</dt>
+        <dd class="muted">
+            <time datetime="1970-01-01">72hours</time>,
+            <time datetime="1970-01-01">60hours</time> left
+        </dd>
+    </dl>
+
+    <dl>
+        <dt>Last Action:</dt>
+        <dd class="muted">Never been locked.</dd>
+        <dd>Link to public post</dd>
+    </dl>
+
+    <dl>
+        <dt>Status:</dt>
+        <dd class="warning"><strong>Not answered</strong></dd>
+    </dl>
+</body>
+</html>

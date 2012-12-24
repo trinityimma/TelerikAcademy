@@ -10,7 +10,7 @@
 6. [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/6.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/6.Loops/README.md)) - 01.12.2012
 7. Sample Test | [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/7.ExamPreparation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/7.ExamPreparation/README.md)) - 15.12.2012
 8. Test - 21.12.2012
-9. Exam - 28.12.2012
+9. Exam - 27.12.2012
 
 ## HTML Basics
 
@@ -22,10 +22,38 @@
 6. Sample Test - 23.11.2012
 7. Test - 01.12.2012
 
+## Contest
+
+1. [Game of Trolls](https://github.com/jasssonpet/TelerikAcademy/tree/master/Contest/1.TrollsGame) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Contest/1.TrollsGame/README.md)) - 16.12.2012
+
 ---
 
 ## C# Part II
-1. Course Overview - 12.01.2013
+
+1. Course Overview | Arrays - 12.01.2013
+2. Matrices and Multidimensional Arrays
+3. Methods
+4. Numeral Systems
+5. Classes and Objects
+6. Exception Handling
+7. Strings and Text
+8. Text Files
+9. Sample Test | Exam Preparation
+10. Test
+11. Exam
+
 
 ## CSS Styling
-1. Course Overview - 14.12.2012
+
+1. Course Overview | [CSS Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/1.CSSOverview/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/1.CSSOverview/README.md)) - 14.12.2012
+2. CSS Rules
+3. CSS Box Model
+4. CSS Positioning
+5. SASS
+6. LESS
+7. Sample Test
+8. Test
+
+## Contest
+
+1. Game of Life - 16.01.2013

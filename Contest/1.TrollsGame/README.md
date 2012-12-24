@@ -1,7 +1,8 @@
 # Игра на тролове
 ## Задача #1 от конкурса на Telerik и PC Magazine Bulgaria, 2012/2013
 
-**Виж приложението: [http://jasssonpet.github.com/TelerikAcademy/Contest/1.TrollsGame/](http://jasssonpet.github.com/TelerikAcademy/Contest/1.TrollsGame/)**
+* **Виж приложението: [http://jasssonpet.github.com/TelerikAcademy/Contest/1.TrollsGame/](http://jasssonpet.github.com/TelerikAcademy/Contest/1.TrollsGame/)**
+* **Официален сайт: [http://konkurs.pcmagbg.net/task-1-season-2012-2013/](http://konkurs.pcmagbg.net/task-1-season-2012-2013/)**
 
 Дивите тролове са недружелюбна, мистична и миришеща раса, обитаваща дълбоките гори на още по-мистичния и измислен континент Азерот. В хобитата им навлизат дейности като състезания по надяждане със дървесна смола, турнири на ловци на глави, дразнене на каменни гиганти, надлъгване, пушене на камъни, дебнене на питомни крави в размножителен период, пускане на досадни коментари в Интернет и още много други неща, до които въображението на читателя може да достигне, но моралът не позволява да бъде написано.
 
