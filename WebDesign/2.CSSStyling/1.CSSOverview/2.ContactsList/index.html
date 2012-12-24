@@ -36,7 +36,7 @@
             margin-right: 2px;
             width: 21px;
             height: 15px;
-            background: url(flags.png);
+            background: url("flags.png");
             vertical-align: text-top;
         }
         .flag-germany { background-position:   0px 0; }
@@ -47,36 +47,44 @@
 
 <body>
     <table>
-        <tr>
-            <th>Contact name</th>
-            <th>City</th>
-            <th>Country</th>
-            <th>Is Promoted</th>
-        </tr>
-        <tr>
-            <td>Maria Anders</td>
-            <td>Berlin</td>
-            <td><i class="flag-germany" title="Flag of Germany"></i> Germany</td>
-            <td><input disabled type="checkbox" /></td>
-        </tr>
-        <tr>
-            <td>Ana Trujillo</td>
-            <td>México, D. F.</td>
-            <td><i class="flag-mexico" title="Flag of Mexico"></i> Mexico</td>
-            <td><input disabled type="checkbox" /></td>
-        </tr>
-        <tr>
-            <td>Antonio Moreno</td>
-            <td>México, D. F.</td>
-            <td><i class="flag-mexico" title="Flag of Mexico"></i> Mexico</td>
-            <td><input disabled checked type="checkbox" /></td>
-        </tr>
-        <tr>
-            <td>Thomas Hardy</td>
-            <td>London</td>
-            <td><i class="flag-uk" title="Flag of UK"></i> UK</td>
-            <td><input disabled type="checkbox" /></td>
-        </tr>
+        <thead>
+            <tr>
+                <th>Contact name</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Is Promoted</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Maria Anders</td>
+                <td>Berlin</td>
+                <td><i class="flag-germany"></i> Germany</td>
+                <td><input disabled type="checkbox" /></td>
+            </tr>
+
+            <tr>
+                <td>Ana Trujillo</td>
+                <td>México, D. F.</td>
+                <td><i class="flag-mexico"></i> Mexico</td>
+                <td><input disabled type="checkbox" /></td>
+            </tr>
+
+            <tr>
+                <td>Antonio Moreno</td>
+                <td>México, D. F.</td>
+                <td><i class="flag-mexico"></i> Mexico</td>
+                <td><input disabled checked type="checkbox" /></td>
+            </tr>
+
+            <tr>
+                <td>Thomas Hardy</td>
+                <td>London</td>
+                <td><i class="flag-uk"></i> UK</td>
+                <td><input disabled type="checkbox" /></td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
