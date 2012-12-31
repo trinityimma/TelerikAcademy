@@ -19,20 +19,18 @@ class Program
         else if (!IsTraversable(row, col)) Console.WriteLine("No " + (length - 1));
         else
         {
-            row += directions[direction, 0];
-            col += directions[direction, 1];
+            int _row = row + directions[direction, 0];
+            int _col = col + directions[direction, 1];
 
-            if (!IsTraversable(row, col))
+            if (!IsTraversable(_row, _col))
             {
                 turns++;
-                row -= directions[direction, 0];
-                col -= directions[direction, 1];
                 direction = ++direction % directions.GetLength(0);
-                row += directions[direction, 0];
-                col += directions[direction, 1];
+                _row = row + directions[direction, 0];
+                _col = col + directions[direction, 1];
             }
 
-            DFS(row, col);
+            DFS(_row , _col);
         }
     }
 
