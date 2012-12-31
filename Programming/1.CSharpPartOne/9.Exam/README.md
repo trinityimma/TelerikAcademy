@@ -1,4 +1,4 @@
-# Exam Preparation - [BGCoder](http://bgcoder.com/Contest/Practice/79)
+# Exam - [BGCoder](http://bgcoder.com/Contest/Practice/79)
 
 1. [Next Date](#1-next-date)
 * [Tribonacci Triangle](#2-tribonacci-triangle)
