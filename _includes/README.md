@@ -10,7 +10,7 @@
 6. [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/6.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/6.Loops/README.md)) - 01.12.2012
 7. Sample Test | [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/7.ExamPreparation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/7.ExamPreparation/README.md)) - 15.12.2012
 8. Test - 21.12.2012
-9. Exam - 27.12.2012
+9. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/9.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/9.Exam/README.md)) - 27.12.2012
 
 ## HTML Basics
 
