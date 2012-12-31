@@ -174,28 +174,28 @@ He wanted to make a program that generates a map of the forest but he couldn’t
     </tr>
     <tr>
         <td>4</td>
-        <td style="font-family: monospace;">
-            *...<br />
-            .*..<br />
-            ..*.<br />
-            ...*<br />
-            ..*.<br />
-            .*..<br />
-            *...
+        <td>
+<pre>*...
+.*..
+..*.
+...*
+..*.
+.*..
+*...</pre>
         </td>
     </tr>
     <tr>
         <td>5</td>
-        <td style="font-family: monospace;">
-            *....<br />
-            .*...<br />
-            ..*..<br />
-            ...*.<br />
-            ....*<br />
-            ...*.<br />
-            ..*..<br />
-            .*...<br />
-            *....
+        <td>
+<pre>*....
+.*...
+..*..
+...*.
+....*
+...*.
+..*..
+.*...
+*....</pre>
         </td>
     </tr>
 </table>
