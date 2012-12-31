@@ -257,30 +257,30 @@ Telerik Academy is considering opening a new office in Great Britain. Therefore 
     </tr>
     <tr>
         <td>6</td>
-        <td style="font-family: monospace;">
-            ../\..<br />
-            ./  \.<br />
-            / /\ \<br />
-            \ \/ /<br />
-            .\  /.<br />
-            ..\/..
+        <td>
+<pre>../\..
+./  \.
+/ /\ \
+\ \/ /
+.\  /.
+..\/..</pre>
         </td>
     </tr>
     <tr>
         <td>12</td>
-        <td style="font-family: monospace;">
-            ...../\.....<br />
-            ..../  \....<br />
-            .../ /\ \...<br />
-            ../ /  \ \..<br />
-            ./ / /\ \ \.<br />
-            / / /  \ \ \<br />
-            \ \ \  / / /<br />
-            .\ \ \/ / /.<br />
-            ..\ \  / /..<br />
-            ...\ \/ /...<br />
-            ....\  /....<br />
-            .....\/.....
+        <td>
+<pre>...../\.....
+..../  \....
+.../ /\ \...
+../ /  \ \..
+./ / /\ \ \.
+/ / /  \ \ \
+\ \ \  / / /
+.\ \ \/ / /.
+..\ \  / /..
+...\ \/ /...
+....\  /....
+.....\/.....</pre>
         </td>
     </tr>
 </table>
@@ -343,7 +343,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>0</td>
         <td>1</td>
         <td><strong>0</strong></strong></td>
-        <th>n<sub>0</sub> = 2</th>
+        <td>n<sub>0</sub> = 2</td>
     </tr>
     <tr>
         <th>1</th>
@@ -355,7 +355,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>1</td>
         <td><strong>0</strong></td>
-        <th>n<sub>1</sub> = 38</th>
+        <td>n<sub>1</sub> = 38</td>
     </tr>
     <tr>
         <th>2</th>
@@ -367,7 +367,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>0</td>
         <td><strong>0</strong></td>
-        <th>n<sub>2</sub> = 20</th>
+        <td>n<sub>2</sub> = 20</td>
     </tr>
     <tr>
         <th>3</th>
@@ -379,7 +379,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td><strong>0</strong></td>
         <td><strong>0</strong></td>
         <td><strong>0</strong></td>
-        <th>n<sub>3</sub> = 48</th>
+        <td>n<sub>3</sub> = 48</td>
     </tr>
     <tr>
         <th>4</th>
@@ -391,7 +391,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>4</sub> = 111</th>
+        <td>n<sub>4</sub> = 111</td>
     </tr>
     <tr>
         <th>5</th>
@@ -403,7 +403,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>5</sub> = 15</th>
+        <td>n<sub>5</sub> = 15</td>
     </tr>
     <tr>
         <th>6</th>
@@ -415,7 +415,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>0</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>6</sub> = 3</th>
+        <td>n<sub>6</sub> = 3</td>
     </tr>
     <tr>
         <th>7</th>
@@ -427,7 +427,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>0</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>7</sub> = 43</th>
+        <td>n<sub>7</sub> = 43</td>
     </tr>
 </table>
 
@@ -454,7 +454,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>0</td>
         <td>1</td>
         <td><strong>0</strong></td>
-        <th>n<sub>0</sub> = 2</th>
+        <td>n<sub>0</sub> = 2</td>
     </tr>
     <tr>
         <th>1</th>
@@ -466,7 +466,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>1</td>
         <td><strong>0</strong></td>
-        <th>n<sub>1</sub> = 38</th>
+        <td>n<sub>1</sub> = 38</td>
     </tr>
     <tr>
         <th>2</th>
@@ -478,7 +478,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>0</td>
         <td><strong>0</strong></td>
-        <th>n<sub>2</sub> = 28</th>
+        <td>n<sub>2</sub> = 28</td>
     </tr>
     <tr>
         <th>3</th>
@@ -490,7 +490,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td><strong>0</strong></td>
         <td><strong>0</strong></td>
         <td><strong>0</strong></td>
-        <th>n<sub>3</sub> = 16</th>
+        <td>n<sub>3</sub> = 16</td>
     </tr>
     <tr>
         <th>4</th>
@@ -502,7 +502,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>4</sub> = 71</th>
+        <td>n<sub>4</sub> = 71</td>
     </tr>
     <tr>
         <th>5</th>
@@ -514,7 +514,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>1</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>5</sub> = 143</th>
+        <td>n<sub>5</sub> = 143</td>
     </tr>
     <tr>
         <th>6</th>
@@ -526,7 +526,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>0</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>6</sub> = 3</th>
+        <td>n<sub>6</sub> = 3</td>
     </tr>
     <tr>
         <th>7</th>
@@ -538,7 +538,7 @@ Your task is to find whether a track can be built on the given grid. If the grid
         <td>0</td>
         <td>1</td>
         <td>1</td>
-        <th>n<sub>7</sub> = 43</th>
+        <td>n<sub>7</sub> = 43</td>
     </tr>
 </table>
 
