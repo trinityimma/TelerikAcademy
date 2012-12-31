@@ -148,7 +148,6 @@ The Academy is situated in the bottom left corner, and Geeko begins his journey 
 
 He wanted to make a program that generates a map of the forest but he couldn’t. Help Geeko on his way to the Academy by writing the program instead of him.
 
-
 ### Input
 
 * The input data is being read from the console.
@@ -273,7 +272,7 @@ Example: 20 in the binary numeral system looks like this: **10100**. The number 
             2147483648<br />
             4000000000<br />
         </td>
-         <td>
+        <td>
             3<br />
             5<br />
             31<br />
