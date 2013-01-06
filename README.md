@@ -31,12 +31,12 @@
 ## C# Part II
 
 1. Course Overview | Arrays - 12.01.2013
-2. Matrices and Multidimensional Arrays
+2. Multidimensional Arrays
 3. Methods
 4. Numeral Systems
-5. Classes and Objects
+5. Using Classes and Objects
 6. Exception Handling
-7. Strings and Text
+7. Strings and Text Processing
 8. Text Files
 9. Sample Test | Exam Preparation
 10. Test

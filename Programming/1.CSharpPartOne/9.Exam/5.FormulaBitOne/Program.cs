@@ -16,7 +16,7 @@ class Program
         length++;
 
         if (row == 7 && col == 7) Console.WriteLine(length + " " + turns);
-        else if (!IsTraversable(row, col)) Console.WriteLine("No " + (length - 1));
+        else if (!IsTraversable(row, col)) Console.WriteLine("No {0}", length - 1);
         else
         {
             int _row = row + directions[direction, 0];
@@ -38,8 +38,6 @@ class Program
     {
         for (int row = 0; row < 8; row++) G[row] = int.Parse(Console.ReadLine());
 
-        if (!IsTraversable(0, 0)) Console.WriteLine("No 0");
-        else if (!IsTraversable(1, 0)) Console.WriteLine("No 1");
-        else DFS(0, 0);
+        DFS(0, 0);
     }
 }
