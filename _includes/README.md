@@ -30,8 +30,8 @@
 
 ## C# Part II
 
-1. Course Overview | Arrays - 12.01.2013
-2. Multidimensional Arrays
+1. Course Overview | [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/1.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/1.Arrays/README.md)) - 08.01.2013
+2. Multidimensional Arrays - 12.01.2013
 3. Methods
 4. Numeral Systems
 5. Using Classes and Objects
