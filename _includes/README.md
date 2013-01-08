@@ -16,11 +16,10 @@
 
 1. Course Overview | Web Front End Tools - 26.10.2012
 2. [HTML Fundamentals](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/README.md)) - 02.11.2012
-3. [HTML Tables](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/3.HTMLTables) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/3.HTMLTables/README.md)) - 09.11.2012
-4. [HTML Forms, Frames](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/4.HTMLFormsFrames) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/4.HTMLFormsFrames/README.md)) - 09.11.2012
-5. [Semantic Web](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/5.SemanticWeb) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/5.SemanticWeb/README.md)) - 16.11.2012
-6. Sample Test - 23.11.2012
-7. Test - 01.12.2012
+3. [HTML Tables](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/3.HTMLTables) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/3.HTMLTables/README.md)) | [HTML Forms, Frames](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/4.HTMLFormsFrames) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/4.HTMLFormsFrames/README.md)) - 09.11.2012
+4. [Semantic Web](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/5.SemanticWeb) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/5.SemanticWeb/README.md)) - 16.11.2012
+5 Sample Test - 23.11.2012
+6. Test - 01.12.2012
 
 ## Contest
 
