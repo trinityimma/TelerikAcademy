@@ -22,7 +22,7 @@ class Program
 
         for (int i = n - 2; i >= 0; i--)
             for (int j = i; j >= 0; j--) matrix[i - j, n - j - 1] = counter++;
-        
+
         PrintMatrix(matrix);
     }
 }

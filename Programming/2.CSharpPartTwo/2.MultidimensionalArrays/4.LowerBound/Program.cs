@@ -41,7 +41,6 @@ class Program
 
             if (arr[m] > x) r = m - 1;
             else l = m;
-
         }
 
         if (arr[l] > x) l--;
