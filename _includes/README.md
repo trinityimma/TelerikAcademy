@@ -32,16 +32,12 @@
 
 1. Course Overview | [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/1.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/1.MultidimensionalArrays/README.md)) - 08.01.2013
 2. [Multidimensional Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays/README.md)) - 12.01.2013
-3. Methods
-4. Numeral Systems
-5. Using Classes and Objects
-6. Exception Handling
-7. Strings and Text Processing
-8. Text Files
-9. Sample Test | Exam Preparation
-10. Test
-11. Exam
-
+3. Methods | Numeral Systems - 15.01.2013
+4. Using Classes and Objects - 19.01.2013
+5. Exception Handling | Text Files - 22.01.2013
+6. Strings and Text Processing - 26.01.2013
+7. Exam Preparation - 29.01.2013
+8. Exam - 04.02.2013
 
 ## CSS Styling
 
