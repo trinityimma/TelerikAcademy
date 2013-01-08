@@ -2,15 +2,15 @@
 
 class Matrix
 {
-    public int rows, cols;
+    public int Rows, Cols;
 
     private int[,] matrix;
 
     public Matrix(int x, int y)
     {
         matrix = new int[x, y];
-        rows = x;
-        cols = y;
+        Rows = x;
+        Cols = y;
     }
 
     public int this[int x, int y]
@@ -22,10 +22,10 @@ class Matrix
     // Addition
     public static Matrix operator +(Matrix m1, Matrix m2)
     {
-        Matrix m = new Matrix(m1.rows, m1.cols);
+        Matrix m = new Matrix(m1.Rows, m1.Cols);
 
-        for (int i = 0; i < m1.rows; i++)
-            for (int j = 0; j < m1.cols; j++)
+        for (int i = 0; i < m1.Rows; i++)
+            for (int j = 0; j < m1.Cols; j++)
                 m[i, j] = m1[i, j] + m2[i, j];
 
         return m;
@@ -34,10 +34,10 @@ class Matrix
     // Subtraction
     public static Matrix operator -(Matrix m1, Matrix m2)
     {
-        Matrix m = new Matrix(m1.rows, m1.cols);
+        Matrix m = new Matrix(m1.Rows, m1.Cols);
 
-        for (int i = 0; i < m1.rows; i++)
-            for (int j = 0; j < m1.cols; j++)
+        for (int i = 0; i < m1.Rows; i++)
+            for (int j = 0; j < m1.Cols; j++)
                 m[i, j] = m1[i, j] - m2[i, j];
 
         return m;
@@ -46,11 +46,11 @@ class Matrix
     // Naive multiplication
     public static Matrix operator *(Matrix m1, Matrix m2)
     {
-        Matrix m = new Matrix(m1.rows, m2.cols);
+        Matrix m = new Matrix(m1.Rows, m2.Cols);
 
-        for (int i = 0; i < m.rows; i++)
-            for (int j = 0; j < m.cols; j++)
-                for (int k = 0; k < m1.cols; k++)
+        for (int i = 0; i < m.Rows; i++)
+            for (int j = 0; j < m.Cols; j++)
+                for (int k = 0; k < m1.Cols; k++)
                     m[i, j] += m1[i, k] * m2[k, j];
 
         return m;

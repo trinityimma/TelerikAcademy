@@ -13,11 +13,14 @@ class Program
                 Console.Write(Convert.ToString(matrix[i, j]).PadRight(cellSize, ' ') + (j != matrix.GetLength(1) - 1 ? " " : "\n"));
     }
 
-    static int makeSum(int[,] matrix, int k, int row, int col)
+    static int MakeSum(int[,] matrix, int k, int row, int col)
     {
         int sum = 0;
+
         for (int i = 0; i < k; i++)
-            for (int j = 0; j < k; j++) sum += matrix[row + i, col + j];
+            for (int j = 0; j < k; j++)
+                sum += matrix[row + i, col + j];
+
         return sum;
     }
 
@@ -32,7 +35,7 @@ class Program
         {
             for (int j = 0; j <= matrix.GetLength(1) - k; j++)
             {
-                int currentSum = makeSum(matrix, k, i, j);
+                int currentSum = MakeSum(matrix, k, i, j);
 
                 if (currentSum >= maxSum)
                 {
@@ -43,9 +46,13 @@ class Program
             }
         }
 
+        // Print result
         int[,] result = new int[k, k];
+
         for (int i = 0; i < k; i++)
-            for (int j = 0; j < k; j++) result[i, j] = matrix[maxRow + i, maxCol + j];
+            for (int j = 0; j < k; j++)
+                result[i, j] = matrix[maxRow + i, maxCol + j];
+
         PrintMatrix(result);
     }
 }
