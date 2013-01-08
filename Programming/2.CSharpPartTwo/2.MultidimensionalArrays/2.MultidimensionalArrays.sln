@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.D.PrintMatrix", "1.D.Prin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.MaxSubmatrix", "2.MaxSubmatrix\2.MaxSubmatrix.csproj", "{3F3DFDD0-0981-4CED-955B-75E01AB59B55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.MaxAdjacentVertices", "7.MaxAdjacentVertices\7.MaxAdjacentVertices.csproj", "{BAC111CF-4C22-4B2B-9C87-2997A212C752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.LowerBound", "4.LowerBound\4.LowerBound.csproj", "{A5DFDC87-F0C6-4091-B212-CFDF67FAE413}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,14 @@ Global
 		{3F3DFDD0-0981-4CED-955B-75E01AB59B55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F3DFDD0-0981-4CED-955B-75E01AB59B55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F3DFDD0-0981-4CED-955B-75E01AB59B55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC111CF-4C22-4B2B-9C87-2997A212C752}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC111CF-4C22-4B2B-9C87-2997A212C752}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC111CF-4C22-4B2B-9C87-2997A212C752}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC111CF-4C22-4B2B-9C87-2997A212C752}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5DFDC87-F0C6-4091-B212-CFDF67FAE413}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5DFDC87-F0C6-4091-B212-CFDF67FAE413}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5DFDC87-F0C6-4091-B212-CFDF67FAE413}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5DFDC87-F0C6-4091-B212-CFDF67FAE413}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
