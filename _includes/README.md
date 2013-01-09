@@ -51,4 +51,4 @@
 
 ## Contest
 
-1. Game of Life - 16.01.2013
+1. Game of Life - 20.01.2013
