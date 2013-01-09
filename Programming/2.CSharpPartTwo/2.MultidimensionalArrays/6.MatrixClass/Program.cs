@@ -3,9 +3,9 @@
 class Matrix
 {
     public int Rows, Cols;
-
     private int[,] matrix;
 
+    // Constructor
     public Matrix(int x, int y)
     {
         matrix = new int[x, y];
@@ -13,6 +13,7 @@ class Matrix
         Cols = y;
     }
 
+    // Getter/Setter
     public int this[int x, int y]
     {
         get { return matrix[x, y]; }
@@ -65,9 +66,9 @@ class Matrix
 
         string s = "";
 
-        for (int i = 0; i < matrix.GetLength(0); i++)
-            for (int j = 0; j < matrix.GetLength(1); j++)
-                s += (Convert.ToString(matrix[i, j]).PadRight(cellSize, ' ') + (j != matrix.GetLength(1) - 1 ? " " : "\n"));
+        for (int i = 0; i < this.Rows; i++)
+            for (int j = 0; j < this.Cols; j++)
+                s += (Convert.ToString(matrix[i, j]).PadRight(cellSize, ' ') + (j != this.Cols - 1 ? " " : "\n"));
 
         return s;
     }
@@ -77,26 +78,41 @@ class Program
 {
     static void Main()
     {
-        int rows = 3, cols = 3;
-        Matrix m1 = new Matrix(rows, cols);
-        Matrix m2 = new Matrix(rows, cols);
+        Matrix result;
+        Matrix m1 = new Matrix(3, 3);
+        Matrix m2 = new Matrix(3, 3);
 
-        for (int i = 0; i < rows; i++)
-            for (int j = 0; j < cols; j++)
-                m1[i, j] = m2[i, j] = i + j;
+        // Fill with random numbers
+        Random randomGenerator = new Random();
+        for (int i = 0; i < m1.Rows; i++)
+        {
+            for (int j = 0; j < m1.Cols; j++)
+            {
+                m1[i, j] = randomGenerator.Next(20);
+                m2[i, j] = randomGenerator.Next(20);
+            }
+        }
 
+        // Print matrices
+        Console.WriteLine("Matrix 1");
         Console.WriteLine(m1);
+
+        Console.WriteLine("Matrix 2");
         Console.WriteLine(m2);
 
-        Matrix m;
+        // Addition
+        Console.WriteLine("Matrix 1 + Matrix 2");
+        result = m1 + m2;
+        Console.WriteLine(result);
 
-        m = m1 + m2;
-        Console.WriteLine(m);
+        // Subtraction
+        Console.WriteLine("Matrix 1 - Matrix 2");
+        result = m1 - m2;
+        Console.WriteLine(result);
 
-        m = m1 - m2;
-        Console.WriteLine(m);
-
-        m = m1 * m2;
-        Console.Write(m);
+        // Multiplication
+        Console.WriteLine("Matrix 1 * Matrix 2");
+        result = m1 * m2;
+        Console.Write(result);
     }
 }
