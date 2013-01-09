@@ -20,7 +20,7 @@ class Program
     static int maxSum = 0;
     static string maxValue;
 
-    static int[,] directions = { { 0, 1 }, { 1, 0 }, { 1, 1 } };
+    static int[,] directions = { { 0, 1 }, { 1, 0 }, { 1, 1 }, { 1, -1 } };
     static void DFS(string[,] matrix, int[,] used, int row, int col)
     {
         // Go in all directions
