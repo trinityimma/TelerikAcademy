@@ -60,15 +60,15 @@ class Matrix
     // Print
     public override string ToString()
     {
-        int max = matrix[0, 0];
-        foreach (int cell in matrix) max = Math.Max(max, cell);
+        int max = this.matrix[0, 0];
+        foreach (int cell in this.matrix) max = Math.Max(max, cell);
         int cellSize = Convert.ToString(max).Length;
 
         string s = "";
 
         for (int i = 0; i < this.Rows; i++)
             for (int j = 0; j < this.Cols; j++)
-                s += (Convert.ToString(matrix[i, j]).PadRight(cellSize, ' ') + (j != this.Cols - 1 ? " " : "\n"));
+                s += (Convert.ToString(this.matrix[i, j]).PadRight(cellSize, ' ') + (j != this.Cols - 1 ? " " : "\n"));
 
         return s;
     }
