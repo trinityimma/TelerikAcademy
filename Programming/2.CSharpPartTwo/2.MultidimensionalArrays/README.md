@@ -1,6 +1,6 @@
 ## Multidimensional Arrays
 
-1. Write a program that fills and prints a matrix of size (N, N) as shown below: (examples for N = 4)
+1. Write a program that fills and prints a matrix of size `N`x`N` as shown below: (examples for N = 4)
 <table>
     <tr>
         <td>1</td>
