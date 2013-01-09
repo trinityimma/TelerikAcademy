@@ -78,7 +78,6 @@ class Program
 {
     static void Main()
     {
-        Matrix result;
         Matrix m1 = new Matrix(3, 3);
         Matrix m2 = new Matrix(3, 3);
 
@@ -93,26 +92,19 @@ class Program
             }
         }
 
-        // Print matrices
         Console.WriteLine("Matrix 1");
         Console.WriteLine(m1);
 
         Console.WriteLine("Matrix 2");
         Console.WriteLine(m2);
 
-        // Addition
         Console.WriteLine("Matrix 1 + Matrix 2");
-        result = m1 + m2;
-        Console.WriteLine(result);
+        Console.WriteLine(m1 + m2);
 
-        // Subtraction
         Console.WriteLine("Matrix 1 - Matrix 2");
-        result = m1 - m2;
-        Console.WriteLine(result);
+        Console.WriteLine(m1 - m2);
 
-        // Multiplication
         Console.WriteLine("Matrix 1 * Matrix 2");
-        result = m1 * m2;
-        Console.Write(result);
+        Console.WriteLine(m1 * m2);
     }
 }
