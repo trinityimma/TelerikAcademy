@@ -41,9 +41,9 @@
 ## CSS Styling
 
 1. Course Overview | [CSS Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/1.CSSOverview/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/1.CSSOverview/README.md)) - 14.12.2012
-2. CSS Rules
-3. CSS Box Model
-4. CSS Positioning
+2. CSS Presentation
+3. CSS Display | CSS Sizing
+4. CSS Layout
 5. SASS
 6. LESS
 7. Sample Test
