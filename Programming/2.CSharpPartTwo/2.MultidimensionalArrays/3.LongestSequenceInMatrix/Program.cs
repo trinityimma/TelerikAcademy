@@ -21,12 +21,12 @@ class Program
     static string maxValue;
 
     static int[,] directions = { { 0, 1 }, { 1, 0 }, { 1, 1 }, { 1, -1 } };
-    static void DFS(string[,] matrix, int[,] used, int row, int col)
+    static void DFS(string[,] matrix, bool[, ,] used, int row, int col)
     {
         // Go in all directions
         for (int direction = 0; direction < directions.GetLength(0); direction++)
         {
-            if (((used[row, col] >> direction) & 1) != 0) continue; // Already visited in this direction
+            if (used[row, col, direction]) continue; // Already visited in this direction
 
             int currentSum = 0;
             int _row = row, _col = col;
@@ -35,7 +35,7 @@ class Program
             {
                 currentSum++;
 
-                used[_row, _col] |= (1 << direction);
+                used[_row, _col, direction] = true;
 
                 _row += directions[direction, 0];
                 _col += directions[direction, 1];
@@ -54,7 +54,7 @@ class Program
         string[,] matrix = { { "ha", "fifi", "ho", "hi" }, { "fo", "ha", "hi", "xx" }, { "xxx", "ho", "ha", "xx" } };
         // string[,] matrix = { { "s", "qq", "s" }, { "pp", "pp", "s" }, { "pp", "qq", "s" } };
 
-        int[,] used = new int[matrix.GetLength(0), matrix.GetLength(1)];
+        bool[, ,] used = new bool[matrix.GetLength(0), matrix.GetLength(1), directions.Length];
 
         for (int i = 0; i < matrix.GetLength(0); i++)
             for (int j = 0; j < matrix.GetLength(1); j++)
