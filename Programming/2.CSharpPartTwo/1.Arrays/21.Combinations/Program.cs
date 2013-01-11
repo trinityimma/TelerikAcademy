@@ -2,30 +2,32 @@
 
 class Program
 {
-    static void Check(int[] arr, int k)
+    static void Check(int[] arr)
     {
-        for (int i = 0; i <= k; i++) Console.Write(arr[i] + 1 + (i == k ? "\n" : " "));
+        for (int i = 0; i < arr.Length; i++) Console.Write(arr[i] + 1 + (i == arr.Length - 1 ? "\n" : " "));
     }
 
-    static void Combination(int[] arr, int k, int i, int next)
+    static void Combination(int[] arr, int n, int i, int next)
     {
-        if (i > k) return;
+        if (i == arr.Length)
+        {
+            Check(arr);
+            return;
+        }
 
-        for (int j = next; j < arr.Length; j++)
+        for (int j = next; j < n; j++)
         {
             arr[i] = j;
 
-            if (i == k) Check(arr, k);
-
-            Combination(arr, k, i + 1, j + 1);
+            Combination(arr, n, i + 1, j + 1);
         }
     }
 
     static void Main()
     {
+        int n = int.Parse(Console.ReadLine());
         int[] arr = new int[int.Parse(Console.ReadLine())];
-        int k = int.Parse(Console.ReadLine());
 
-        Combination(arr, k - 1, 0, 0);
+        Combination(arr, n, 0, 0);
     }
 }

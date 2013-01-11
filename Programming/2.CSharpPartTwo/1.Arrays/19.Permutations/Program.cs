@@ -2,27 +2,27 @@
 
 class Program
 {
-    static void Check(int[] arr, int k)
+    static void Check(int[] arr)
     {
-        for (int i = 0; i <= k; i++) Console.Write(arr[i] + 1 + (i == k ? "\n" : " "));
+        for (int i = 0; i < arr.Length; i++) Console.Write(arr[i] + 1 + (i == arr.Length - 1 ? "\n" : " "));
     }
 
-    static void Variation(int[] arr, bool[] used, int k, int i)
+    static void Variation(int[] arr, bool[] used, int n, int i)
     {
-        if (i > k)
+        if (i == arr.Length)
         {
-            Check(arr, k);
+            Check(arr);
             return;
         }
 
-        for (int j = 0; j < arr.Length; j++)
+        for (int j = 0; j < n; j++)
         {
             if (used[j]) continue;
 
-            used[j] = true;
             arr[i] = j;
+            used[j] = true;
 
-            Variation(arr, used, k, i + 1);
+            Variation(arr, used, n, i + 1);
             used[j] = false;
         }
     }
@@ -32,6 +32,6 @@ class Program
         int[] arr = new int[int.Parse(Console.ReadLine())];
 
         bool[] used = new bool[arr.Length];
-        Variation(arr, used, arr.Length - 1, 0);
+        Variation(arr, used, arr.Length, 0);
     }
 }
