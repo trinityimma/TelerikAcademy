@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <title>Calculator</title>
     <style>
+        /* TODO: CSS Button Transition;  Vertical grid; Italic x; Bigger back arrow;
+
         /* RESET */
         ul, li, button, input {
             margin: 0;
@@ -13,8 +15,7 @@
         /* TAGS */
         body, button, input {
             color: #333;
-            font-size: 12px;
-            font-family: Segoe UI;
+            font: 12px/1.2 Segoe UI, sans-serif;
         }
 
         label, button:not(:disabled) { cursor: pointer; }
@@ -22,7 +23,7 @@
         /* CLASSES */
         .unstyled { list-style: none; }
 
-        .inline { overflow: hidden; }
+        .inline { overflow: hidden; } /* Clear float */
         .inline li {
             float: left;
             list-style: none;
@@ -30,7 +31,7 @@
 
         .keyboard-shortcut { text-decoration: underline; }
 
-        .code { font-family: Consolas; }
+        .code { font-family: Consolas, monospace; }
 
         .input-block { width: 100%; }
         .input-big { font-size: 24px; }
@@ -41,7 +42,8 @@
         }
 
         /* HORIZONTAL CSS GRID */
-        .row { margin-left: -5px; }
+        .row { margin-left: -5px; } /* Remove first span margin */
+        /* Clearfix */
         .row:after {
             display: table;
             clear: both;
@@ -52,15 +54,15 @@
             margin-left: 5px;
         }
         .span1 { width:  35px; }
-        .span2 { width:  75px; }
+        .span2 { width:  75px; } /* Not used: span3: 115px, span4: 155px, span5: 195px, span6: 235px */
         .span7 { width: 275px; }
-        .span8 { width: 315px; }
+        .span8 { width: 315px; } /* span9: 345px */
+        .calculator { width: 395px; } /* span10 */
 
         /* CALCULATOR */
         .calculator {
             margin: 0 auto;
             padding: 0 10px 5px;
-            width: 395px;
             border: 1px solid #999;
             background: -webkit-linear-gradient(#F0F0F0 0, #D9E4F1 100px);
             background:    -moz-linear-gradient(#F0F0F0 0, #D9E4F1 100px);
@@ -77,7 +79,7 @@
         }
         .calculator .box { padding: 5px; }
 
-        /* Inner white border */
+        /* Inner white border - make it stretch inside */
         .calculator .box-inset, .calculator .btn { position: relative; }
         .calculator .box-inset:before,
         .calculator .btn:not(:hover):not(:disabled):not(.btn-muted):before {
@@ -97,7 +99,7 @@
         .calculator .main-menu {
             margin: 0 -10px 10px;
             padding: 1px 5px 2px;
-            border-bottom: 1px solid #b6bccc;
+            border-bottom: 1px solid #B6BCCC;
             background: -webkit-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
             background:    -moz-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
             background:      -o-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
@@ -127,17 +129,12 @@
 
         .calculator .btn {
             height: 27px;
-            line-height: 25px; /* Button box model - without borders */
-        }
-        .calculator .btn.row2 { height: 59px; }
-        .calculator .btn strong { font-size: 22px; }
-
-        .calculator .btn {
             border: 1px solid #8797AA;
             background: -webkit-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
             background:    -moz-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
             background:      -o-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
             background:         linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+            line-height: 25px; /* Button box model - without borders */
         }
         .calculator .btn-loud {
             background: -webkit-linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
@@ -160,6 +157,8 @@
             border-color: #B4C2D1;
             background: #D9E4F1;
         }
+        .calculator .btn.row2 { height: 59px; }
+        .calculator .btn strong { font-size: 22px; }
     </style>
 </head>
 
@@ -177,35 +176,17 @@
 
         <div class="binary-representation box box-inset code">
             <ul class="inline">
-                <li>0000</li>
-                <li>0000</li>
-                <li>0000</li>
-                <li>0000</li>
-                <li>0000</li>
-                <li>0000</li>
-                <li>0000</li>
-                <li>0000</li>
+                <li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li><li>0000</li>
             </ul>
             <ul class="binary-index inline">
-                <li>63</li>
-                <li>47</li>
-                <li>32</li>
+                <li>63  </li> <!-- **************************** --> <li>47  </li> <!-- *************** --> <li>  32</li>
             </ul>
 
             <ul class="inline">
-                <li>0000</li>
-                <li>0000</li>
-                <li>1000</li>
-                <li>0111</li>
-                <li>0001</li>
-                <li>1011</li>
-                <li>1011</li>
-                <li>0111</li>
+                <li>0000</li><li>0000</li><li>1000</li><li>0111</li><li>0001</li><li>1011</li><li>1011</li><li>0111</li>
             </ul>
             <ul class="binary-index inline">
-                <li>31</li>
-                <li>15</li>
-                <li>0</li>
+                <li>31  </li> <!-- **************************** --> <li>15  </li> <!-- *************** --> <li>   0</li>
             </ul>
         </div>
 
@@ -232,68 +213,68 @@
 
             <form class="span8">
                 <div class="row">
-                    <button class="btn btn-muted span1">&nbsp;</button>
-                    <button class="btn span1">Mod</button>
-                    <button disabled class="btn span1">A</button>
-                    <button class="btn btn-muted span1">MC</button>
-                    <button class="btn btn-muted span1">MR</button>
-                    <button class="btn btn-muted span1">MS</button>
-                    <button class="btn btn-muted span1">M+</button>
-                    <button class="btn btn-muted span1">M-</button>
+                    <button class="span1 btn btn-muted">&nbsp;</button>
+                    <button class="span1 btn">Mod</button>
+                    <button class="span1 btn" disabled>A</button>
+                    <button class="span1 btn btn-muted">MC</button>
+                    <button class="span1 btn btn-muted">MR</button>
+                    <button class="span1 btn btn-muted">MS</button>
+                    <button class="span1 btn btn-muted">M+</button>
+                    <button class="span1 btn btn-muted">M-</button>
                 </div>
 
                 <div class="row">
-                    <button class="btn span1">(</button>
-                    <button class="btn span1">)</button>
-                    <button disabled class="btn span1">B</button>
-                    <button class="btn span1">←</button>
-                    <button class="btn span1">CE</button>
-                    <button class="btn span1">C</button>
-                    <button class="btn span1">±</button>
-                    <button disabled class="btn span1">√</button>
+                    <button class="span1 btn">(</button>
+                    <button class="span1 btn">)</button>
+                    <button class="span1 btn" disabled>B</button>
+                    <button class="span1 btn">←</button>
+                    <button class="span1 btn">CE</button>
+                    <button class="span1 btn">C</button>
+                    <button class="span1 btn">±</button>
+                    <button class="span1 btn" disabled>√</button>
                 </div>
 
                 <div class="row">
-                    <button class="btn span1">RoL</button>
-                    <button class="btn span1">RoR</button>
-                    <button disabled class="btn span1">C</button>
-                    <button class="btn btn-loud span1">7</button>
-                    <button class="btn btn-loud span1">8</button>
-                    <button class="btn btn-loud span1">9</button>
-                    <button class="btn span1">/</button>
-                    <button disabled class="btn span1">%</button>
+                    <button class="span1 btn">RoL</button>
+                    <button class="span1 btn">RoR</button>
+                    <button class="span1 btn" disabled>C</button>
+                    <button class="span1 btn btn-loud">7</button>
+                    <button class="span1 btn btn-loud">8</button>
+                    <button class="span1 btn btn-loud">9</button>
+                    <button class="span1 btn">/</button>
+                    <button class="span1 btn" disabled>%</button>
                 </div>
 
                 <div class="row">
-                    <button class="btn span1">Or</button>
-                    <button class="btn span1">Xor</button>
-                    <button disabled class="btn span1">D</button>
-                    <button class="btn btn-loud span1">4</button>
-                    <button class="btn btn-loud span1">5</button>
-                    <button class="btn btn-loud span1">6</button>
-                    <button class="btn span1">*</button>
-                    <button disabled class="btn span1">1/x</button>
+                    <button class="span1 btn">Or</button>
+                    <button class="span1 btn">Xor</button>
+                    <button class="span1 btn" disabled>D</button>
+                    <button class="span1 btn btn-loud">4</button>
+                    <button class="span1 btn btn-loud">5</button>
+                    <button class="span1 btn btn-loud">6</button>
+                    <button class="span1 btn">*</button>
+                    <button class="span1 btn" disabled>1/x</button>
                 </div>
 
                 <div class="row">
                     <div class="span7">
                         <div class="row">
-                            <button class="btn span1">Lsh</button>
-                            <button class="btn span1">Rsh</button>
-                            <button disabled class="btn span1">E</button>
-                            <button class="btn btn-loud span1">1</button>
-                            <button class="btn btn-loud span1">2</button>
-                            <button class="btn btn-loud span1">3</button>
-                            <button class="btn span1">-</button>
+                            <button class="span1 btn">Lsh</button>
+                            <button class="span1 btn">Rsh</button>
+                            <button class="span1 btn" disabled>E</button>
+                            <button class="span1 btn btn-loud">1</button>
+                            <button class="span1 btn btn-loud">2</button>
+                            <button class="span1 btn btn-loud">3</button>
+                            <button class="span1 btn">-</button>
                         </div>
 
                         <div class="row">
-                            <button class="btn span1">Not</button>
-                            <button class="btn span1">And</button>
-                            <button disabled class="btn span1">F</button>
-                            <button class="btn btn-loud span2">0</button>
-                            <button disabled class="btn span1">.</button>
-                            <button class="btn span1">+</button>
+                            <button class="span1 btn">Not</button>
+                            <button class="span1 btn">And</button>
+                            <button class="span1 btn" disabled>F</button>
+                            <button class="span2 btn btn-loud">0</button>
+                            <button class="span1 btn" disabled>.</button>
+                            <button class="span1 btn">+</button>
                         </div>
                     </div>
 
