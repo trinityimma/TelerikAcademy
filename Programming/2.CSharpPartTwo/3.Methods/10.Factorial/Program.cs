@@ -47,7 +47,6 @@ class Program
     }
 
     // Naive multiplication - x * 5 = x + x + x + x + x
-    // Works fast enough for even 1000 factorial
     static byte[] Multiply(byte[] x, int y)
     {
         byte[] result = { 0 };

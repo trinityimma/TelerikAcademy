@@ -17,7 +17,8 @@ class Program
         return IsBigger(arr, i, i - 1) && IsBigger(arr, i, i + 1);
     }
 
-    static int GetFirstBiggerThanNeighbours(int[] arr)
+    // Linear scan
+    static int GetElementBiggerThanNeighbours(int[] arr)
     {
         for (int i = 0; i < arr.Length; i++)
             if (IsBiggerThanNeighbours(arr, i)) return i;
@@ -29,6 +30,6 @@ class Program
     {
         int[] arr = { 1, 2, 2, 3, 2 };
 
-        Console.WriteLine(GetFirstBiggerThanNeighbours(arr));
+        Console.WriteLine(GetElementBiggerThanNeighbours(arr));
     }
 }
