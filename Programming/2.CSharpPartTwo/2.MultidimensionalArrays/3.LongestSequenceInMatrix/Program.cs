@@ -12,9 +12,9 @@ class Program
                 Console.Write(matrix[i, j].PadRight(cellSize, ' ') + (j != matrix.GetLength(1) - 1 ? " " : "\n"));
     }
 
-    static bool IsTraversable(string[,] matrix, int x, int y)
+    static bool IsTraversable(string[,] matrix, int row, int col)
     {
-        return x >= 0 && x < matrix.GetLength(0) && y >= 0 && y < matrix.GetLength(1);
+        return row >= 0 && row < matrix.GetLength(0) && col >= 0 && col < matrix.GetLength(1);
     }
 
     static int maxSum = 0;
@@ -54,7 +54,7 @@ class Program
         string[,] matrix = { { "ha", "fifi", "ho", "hi" }, { "fo", "ha", "hi", "xx" }, { "xxx", "ho", "ha", "xx" } };
         // string[,] matrix = { { "s", "qq", "s" }, { "pp", "pp", "s" }, { "pp", "qq", "s" } };
 
-        bool[, ,] used = new bool[matrix.GetLength(0), matrix.GetLength(1), directions.Length];
+        bool[, ,] used = new bool[matrix.GetLength(0), matrix.GetLength(1), directions.GetLength(0)];
 
         for (int i = 0; i < matrix.GetLength(0); i++)
             for (int j = 0; j < matrix.GetLength(1); j++)
