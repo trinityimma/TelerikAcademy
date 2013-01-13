@@ -1,5 +1,7 @@
 # Node Modules
 node_modules/
+*.rar
+*.zip
 
 # Build and Object Folders
 bin/
