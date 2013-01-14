@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -55,6 +56,24 @@ class Program
         return result;
     }
 
+    // Civilized way
+    static List<int> AddRefactored(byte[] a, byte[] b)
+    {
+        var result = new List<int>(Math.Max(a.Length, b.Length));
+
+        int carry = 0;
+        for (int i = 0; i < Math.Max(a.Length, b.Length); i++)
+        {
+            int currentDigit = (i < a.Length ? a[i] : 0) + (i < b.Length ? b[i] : 0) + carry;
+
+            carry = currentDigit / 10;
+            result.Add(currentDigit % 10);
+        }
+        if (carry == 1) result.Add(1);
+
+        return result;
+    }
+
     // Tests
     static void Main()
     {
@@ -83,6 +102,5 @@ class Program
         Console.WriteLine();
 
         PrintNumber(Add(new byte[] { 2, 1 }, new byte[] { 8, 8, 9, 9, 9, 8, 1 }));
-        Console.WriteLine();
     }
 }
