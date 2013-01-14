@@ -5,7 +5,7 @@ class Program
     static long t0, t1, t2;
 
     static int current = -1;
-    static long getNextTribonacci()
+    static long GetNextTribonacci()
     {
         current++;
 
@@ -34,6 +34,6 @@ class Program
 
         for (int row = 1; row <= n; row++)
             for (int col = 1; col <= row; col++)
-                Console.Write(getNextTribonacci() + (col == row ? "\n" : " "));
+                Console.Write(GetNextTribonacci() + (col == row ? "\n" : " "));
     }
 }
