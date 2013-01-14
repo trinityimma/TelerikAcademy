@@ -27,6 +27,7 @@ class Program
                 turns++;
 
                 direction = ++direction % directions.GetLength(0);
+
                 _row = row + directions[direction, 0];
                 _col = col + directions[direction, 1];
             }
