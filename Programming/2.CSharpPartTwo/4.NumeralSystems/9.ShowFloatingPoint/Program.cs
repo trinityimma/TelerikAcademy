@@ -38,24 +38,24 @@ class Program
     {
         // 1 -> 0; 2 -> 1; 3 -> 1; 4 -> 2; 5 -> 2; 6 -> 2; 7 -> 2; 8 -> 3; 9 -> 3; ... 15 -> 3; 16 -> 4 ...
         // 0.8 -> -1; 0.4 -> -2; 0.2 -> -3; 0.1 -> -4
-        int power;
+        int exponent;
 
         // 1.23, 12.3, but not 0.12 or 0.00123
-        if (integer.Length != 0) power = integer.Length - 1; // 8 = 2 ^ 3 in binary is 1000 - power is +3 - positive
-        else power = -fraction.IndexOf('1') - 1; // 0.125 = 1 / 8 in binary is 0.001 - power is -3 - negative
+        if (integer.Length != 0) exponent = integer.Length - 1; // 8 = 2 ^ 3 in binary is 1000 - power is +3 - positive
+        else exponent = -fraction.IndexOf('1') - 1; // 0.125 = 1 / 8 in binary is 0.001 - power is -3 - negative
 
-        return Base10ToBase2Integer(127 + power).PadLeft(8, '0'); // Convert power to binary, 127 is the middle
+        return Base10ToBase2Integer(127 + exponent).PadLeft(8, '0'); // Convert power to binary, 127 is the middle
     }
 
     // Mantissa is the last 23 bits
     static string GetMantissa(string integer, string fraction)
     {
-        string b;
+        string mantissa;
 
-        if (integer.Length != 0) b = integer.Substring(1) + fraction; // First is always 1 (if normalized)
-        else b = fraction.Substring(fraction.IndexOf('1') + 1); // No integer part - get first non-zero in fraction
+        if (integer.Length != 0) mantissa = integer.Substring(1) + fraction; // First is always 1 (if normalized)
+        else mantissa = fraction.Substring(fraction.IndexOf('1') + 1); // No integer part - get first non-zero in fraction
 
-        return b.PadRight(23, '0');
+        return mantissa.PadRight(23, '0'); // Left aligned
     }
 
     // TODO: 0, denormalized numbers, Infinity, NaN
