@@ -44,7 +44,7 @@ class Program
         if (integer.Length != 0) power = integer.Length - 1; // 1.23, 12.3, but not 0.12 or 0.00123
         else power = -fraction.IndexOf('1') - 1; // Get first non-zero in fraction 0.125 = 1 / 8 in binary is 0.001 - power is -3 - negative
 
-        return Base10ToBase2Integer(127 + power).PadRight(8, '0'); // Convert power to binary, 127 is the middle
+        return Base10ToBase2Integer(127 + power).PadLeft(8, '0'); // Convert power to binary, 127 is the middle
     }
 
     // Mantissa is the last 23 bits
