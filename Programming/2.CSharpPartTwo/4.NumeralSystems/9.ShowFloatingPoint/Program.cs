@@ -40,9 +40,9 @@ class Program
         // 0.8 -> -1; 0.4 -> -2; 0.2 -> -3; 0.1 -> -4
         int power;
 
-        // 8 = 2 ^ 3 in binary is 1000 - power is +3 - positive
-        if (integer.Length != 0) power = integer.Length - 1; // 1.23, 12.3, but not 0.12 or 0.00123
-        else power = -fraction.IndexOf('1') - 1; // Get first non-zero in fraction 0.125 = 1 / 8 in binary is 0.001 - power is -3 - negative
+        // 1.23, 12.3, but not 0.12 or 0.00123
+        if (integer.Length != 0) power = integer.Length - 1; // 8 = 2 ^ 3 in binary is 1000 - power is +3 - positive
+        else power = -fraction.IndexOf('1') - 1; // 0.125 = 1 / 8 in binary is 0.001 - power is -3 - negative
 
         return Base10ToBase2Integer(127 + power).PadLeft(8, '0'); // Convert power to binary, 127 is the middle
     }
