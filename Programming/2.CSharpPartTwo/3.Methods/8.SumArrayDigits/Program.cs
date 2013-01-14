@@ -62,7 +62,7 @@ class Program
         var result = new List<int>(Math.Max(a.Length, b.Length));
 
         int carry = 0;
-        for (int i = 0; i < Math.Max(a.Length, b.Length); i++)
+        for (int i = 0; i < result.Count; i++)
         {
             int currentDigit = (i < a.Length ? a[i] : 0) + (i < b.Length ? b[i] : 0) + carry;
 
