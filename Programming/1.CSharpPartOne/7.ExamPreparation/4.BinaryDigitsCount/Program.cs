@@ -10,8 +10,10 @@ class Program
         for (int i = 0; i < n; i++)
         {
             int count = 0;
+
             for (uint j = uint.Parse(Console.ReadLine()); j != 0; j >>= 1)
                 if ((j & 1) == b) count++;
+
             Console.WriteLine(count);
         }
     }
