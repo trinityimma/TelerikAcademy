@@ -24,6 +24,7 @@ class Program
         {
             d = 1;
             m++;
+
             if (m > 12)
             {
                 m = 1;
