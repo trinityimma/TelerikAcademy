@@ -34,6 +34,7 @@ class Program
     }
 
     // Exponent is the next 8 bits
+    // TODO: denormalized numbers
     static string GetExponent(string integer, string fraction)
     {
         // 1 -> 0; 2 -> 1; 3 -> 1; 4 -> 2; 5 -> 2; 6 -> 2; 7 -> 2; 8 -> 3; 9 -> 3; ... 15 -> 3; 16 -> 4 ...
@@ -58,11 +59,10 @@ class Program
         return b.PadRight(23, '0');
     }
 
+    // TODO: 0, denormalized numbers, Infinity, NaN
     static void Main(string[] args)
     {
         float f = -27.25f; // 32 bits = 1 + 8 + 23 with 24 bits of precision in mantissa
-
-        if (f == 0) return; // TODO: Print 0
 
         int sign = GetSign(f);
         f = Math.Abs(f); // If the number is negative make it positive for easier calculations
