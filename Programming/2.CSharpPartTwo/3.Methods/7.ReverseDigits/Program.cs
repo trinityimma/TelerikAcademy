@@ -4,9 +4,7 @@ class Program
 {
     static int ReverseDigits(int n, int r = 0)
     {
-        if (n == 0) return r;
-
-        return ReverseDigits(n / 10, (r * 10) + (n % 10));
+        return n == 0 ? r : ReverseDigits(n / 10, r * 10 + n % 10);
     }
 
     static void Main()
