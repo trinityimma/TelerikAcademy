@@ -12,17 +12,22 @@ class Program
     static void Check()
     {
         long sum = 0;
+
         for (int i = 0; i <= k; i++) sum += n[ni[i]];
+
         if (sum == s) count++;
     }
 
     static void Combination(int i, int next)
     {
         if (i > k) return;
+
         for (int j = next; j < l; j++)
         {
             ni[i] = j;
+
             if (i == k) Check();
+
             Combination(i + 1, j + 1);
         }
     }

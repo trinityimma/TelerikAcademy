@@ -5,6 +5,7 @@ class Program
     static void Main()
     {
         int score = int.Parse(Console.ReadLine());
+
         if (score > 0 && score < 10)
         {
             score *= 10;

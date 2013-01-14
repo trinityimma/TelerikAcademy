@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -7,6 +7,7 @@ class Program
         for (int i = 0; i < k; i++) if (arr[indices[i]] > arr[indices[i + 1]]) return; // Reversed because of recursion
 
         for (int i = 0; i <= k; i++) Console.Write(arr[indices[i]] + (i == k ? "\n" : " "));
+
         Environment.Exit(0);
     }
 

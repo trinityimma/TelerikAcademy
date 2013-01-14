@@ -45,10 +45,9 @@
 
         /* HORIZONTAL CSS GRID */
         .row { margin-left: -5px; } /* Remove first span margin */
-        /* Clearfix */
         .row:after {
             display: table;
-            clear: both;
+            clear: both; /* Clearfix */
             content: " ";
         }
         [class ^= "span"], [class *= " span"] {

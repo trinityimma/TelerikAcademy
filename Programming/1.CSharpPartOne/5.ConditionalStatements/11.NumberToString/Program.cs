@@ -13,6 +13,7 @@ class Program
         {
             r += ones[n / 100] + " hundred";
             n %= 100;
+
             if (n != 0) r += " and "; // 101-199 201-299 ... 901-999
             else return r; // 100 200 ... 900
         }
@@ -21,6 +22,7 @@ class Program
         {
             r += tens[n / 10 - 2];
             n %= 10;
+
             if (n != 0) r += "-"; // 21-29  31-39 ... 91-99
             else return r; // 20 30 ... 90
         }
@@ -32,6 +34,7 @@ class Program
     static void Main()
     {
         int[] n = { 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987 };
+
         foreach (int i in n) Console.WriteLine(i + ": " + NumberToString(i));
     }
 }

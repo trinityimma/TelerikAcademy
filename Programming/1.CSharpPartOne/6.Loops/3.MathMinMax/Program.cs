@@ -12,6 +12,7 @@ class Program
         while (n-- != 0)
         {
             int number = int.Parse(Console.ReadLine());
+
             min = Math.Min(number, min);
             max = Math.Max(number, max);
         }

@@ -45,8 +45,11 @@ class Program
     static void Main()
     {
         int n = int.Parse(Console.ReadLine());
+
         G = new int[n, n];
+
         DFS(0, 0, 1); // We start depth-first search from cell(0, 0) with level 1
+
         PrintMatrix(G, (int)Math.Log10(n * n) + 1); // Make all cells equal width
     }
 }

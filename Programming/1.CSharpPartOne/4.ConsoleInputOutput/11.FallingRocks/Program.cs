@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 
 // TODO: Learn OOP in C#
@@ -27,6 +27,7 @@ class Program
     {
         Console.ForegroundColor = (ConsoleColor)Enum.Parse(typeof(ConsoleColor), color);
         Console.SetCursorPosition(x, y);
+
         Console.Write(s);
     }
 
@@ -42,12 +43,12 @@ class Program
         result = Math.Max(result, 0);
     }
 
-    static void CheckCollision()
+    static void CalculateCollision()
     {
-        for (int i = 0; i < rocks.GetLength(0); i++)
+        for (int i = 0; i < rocks.GetLength(0) && !collision; i++)
         {
-            collision = collision || rocks[i, 1] == playerPositionY && rocks[i, 0] + rocks[i, 2] > playerPositionX && playerPositionX + player.Length > rocks[i, 0];
-            if (collision) break;
+            collision = rocks[i, 1] == playerPositionY &&
+                rocks[i, 0] + rocks[i, 2] > playerPositionX && playerPositionX + player.Length > rocks[i, 0];
         }
     }
 
@@ -97,6 +98,7 @@ class Program
         for (int i = 0; i < rocks.GetLength(0); i++)
         {
             MoveRockDown(i);
+
             if (!IsRockVisible(i)) MoveRockTop(i);
         }
     }
@@ -134,15 +136,20 @@ class Program
         while (true)
         {
             collision = false;
+
             if (Console.KeyAvailable) MovePlayer(Console.ReadKey());
             MoveRocks();
-            CheckCollision();
+
+            CalculateCollision();
             CalculateResult();
             CalculateFPS();
+
             Console.Clear();
+
             DrawPlayer();
             DrawRocks();
             DrawResult();
+
             Thread.Sleep(1000 / (int)fps);
         }
     }

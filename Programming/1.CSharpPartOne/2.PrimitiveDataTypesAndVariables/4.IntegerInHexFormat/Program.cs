@@ -4,7 +4,6 @@ class Program
 {
     static void Main()
     {
-        int integerInHexFormat = 0xFE;
-        Console.WriteLine(integerInHexFormat);
+        Console.WriteLine(0xFE);
     }
 }

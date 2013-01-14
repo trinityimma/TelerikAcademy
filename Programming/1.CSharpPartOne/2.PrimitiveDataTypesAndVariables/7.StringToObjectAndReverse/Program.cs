@@ -6,6 +6,7 @@ class Program
     {
         string hello = "Hello";
         string world = "World";
+
         object HelloWorldObject = hello + " " + world;
         string HelloWorldString = (string)HelloWorldObject;
     }

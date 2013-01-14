@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Matrix
 {
@@ -64,7 +64,7 @@ class Matrix
         foreach (int cell in this.matrix) max = Math.Max(max, cell);
         int cellSize = Convert.ToString(max).Length;
 
-        string s = "";
+        string s = String.Empty;
 
         for (int i = 0; i < this.Rows; i++)
             for (int j = 0; j < this.Cols; j++)
