@@ -6,7 +6,7 @@ class Program
     {
         if (n == 0) return r;
 
-        return ReverseDigits(n / 10, r * 10 + (n % 10));
+        return ReverseDigits(n / 10, (r * 10) + (n % 10));
     }
 
     static void Main()
