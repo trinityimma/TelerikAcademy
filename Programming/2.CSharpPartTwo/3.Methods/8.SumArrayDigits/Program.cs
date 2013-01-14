@@ -21,6 +21,7 @@ class Program
         int i = 0, carry = 0;
 
         // For each digit in both arrays
+        // 1 + 67899 - once, i is 0
         for (; i < a.Length; i++)
         {
             result[i] = (byte)(a[i] + b[i] + carry);
@@ -29,7 +30,8 @@ class Program
             result[i] %= 10;
         }
 
-        // If there is still a carry
+        // If there is still a carry: 1 + 999 - twice; 1 + 99 - once, but not with 1 + 9
+        // 1 + 678999 - three times, is 1
         for (; i < b.Length && carry != 0; i++)
         {
             result[i] = (byte)(b[i] + carry);
@@ -38,12 +40,17 @@ class Program
             result[i] %= 10;
         }
 
-        // If the second array has digits left
-        for (; i < b.Length; i++) result[i] = b[i];
+        // If the second array has digits left: 1 + 100 - twice; 1 + 10 once; but not with 1 + 9 or 1 + 99
+        // 1 + 678999 - twice, i is 4 
+        for (; i < b.Length; i++)
+        {
+            result[i] = b[i];
+        }
 
-        // If there is still a carry
+        // If there is still a carry: 1 + 9; 1 + 99, but not 1 + 8999
+        // 1 + 678999, i is 6, result has length 7
         if (carry != 0) result[i] = 1;
-        else Array.Resize(ref result, result.Length - 1); // Last digit not needed
+        else Array.Resize(ref result, result.Length - 1); // Last digit not needed, remove it from the array
 
         return result;
     }
@@ -51,7 +58,7 @@ class Program
     // Tests
     static void Main()
     {
-        PrintNumber(Add(new byte[] { 0 }, new byte[] { 0 }));
+        PrintNumber(Add(new byte[] { 0, 0, 1 }, new byte[] { 0 }));
         Console.WriteLine();
 
         PrintNumber(Add(new byte[] { 1 }, new byte[] { 1 }));

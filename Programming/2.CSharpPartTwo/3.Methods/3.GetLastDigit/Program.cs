@@ -2,7 +2,7 @@
 
 class Program
 {
-    static String[] digitNames = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+    static string[] digitNames = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
     static string GetDigitName(int n)
     {
