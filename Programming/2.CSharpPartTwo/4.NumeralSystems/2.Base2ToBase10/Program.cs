@@ -2,6 +2,7 @@
 
 class Program
 {
+    // GetNumber("1010", 3) -> 0
     static int GetNumber(string s, int i)
     {
         return s[i] - '0';

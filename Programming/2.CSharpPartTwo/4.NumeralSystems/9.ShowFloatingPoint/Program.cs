@@ -27,14 +27,11 @@ class Program
     {
         string b = String.Empty;
 
-        for (f *= 2; f != 0; f *= 2)
+        // 0.125 -> 0.25 
+        for (f *= 2; f != 0; f *= 2) // 0.25 -> 0.5 -> 1 -> 0; 3 times
         {
-            if (f >= 1)
-            {
-                b += '1';
-                f--;
-            }
-            else b += '0';
+            b += (int)f;
+            f -= (int)f;
         }
 
         return b;
@@ -53,10 +50,11 @@ class Program
         // 0.8 -> -1; 0.4 -> -2; 0.2 -> -3; 0.1 -> -4
         int power;
 
-        if (integer.Length != 0) power = integer.Length - 1; // 8 is 2 ^ 3 in binary is 1000
-        else power = -fraction.IndexOf('1') - 1; // No integer part - get first non-zero in fraction e.g. 0.0001
+        // 8 = 2 ^ 3 in binary is 1000 - power is +3 - positive
+        if (integer.Length != 0) power = integer.Length - 1; // 1.23, 12.3, but not 0.12 or 0.00123
+        else power = -fraction.IndexOf('1') - 1; // Get first non-zero in fraction 0.125 = 1 / 8 in binary is 0.001 - power is -3 - negative
 
-        return Base10ToBase2Integer(127 + power, 8); // Convert power to binary
+        return Base10ToBase2Integer(127 + power, 8); // Convert power to binary, 127 is the middle
     }
 
     // Mantissa is the last 23 bits
@@ -72,15 +70,15 @@ class Program
 
     static void Main(string[] args)
     {
-        float f = -27.25F; // 32 bits = 1 + 8 + 23 with 24 bits of precision in mantissa
+        float f = -27.25f; // 32 bits = 1 + 8 + 23 with 24 bits of precision in mantissa
 
         if (f == 0) return; // TODO: Print 0
 
         Console.WriteLine(GetSign(f));
 
         f = Math.Abs(f); // If the number is negative make it positive for easier calculations
-        string integer = Base10ToBase2Integer((int)f); // 123.456 -> 123
-        string fraction = Base10ToBase2Fraction(f - (int)f); // 123.456 -> .456
+        string integer = Base10ToBase2Integer((int)f); // 123.456 -> 123 in binary
+        string fraction = Base10ToBase2Fraction(f - (int)f); // 123.456 -> .456 in binary
 
         Console.WriteLine(GetExponent(integer, fraction));
         Console.WriteLine(GetMantissa(integer, fraction));
