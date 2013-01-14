@@ -34,7 +34,6 @@ class Program
     }
 
     // Exponent is the next 8 bits
-    // TODO: denormalized numbers
     static string GetExponent(string integer, string fraction)
     {
         // 1 -> 0; 2 -> 1; 3 -> 1; 4 -> 2; 5 -> 2; 6 -> 2; 7 -> 2; 8 -> 3; 9 -> 3; ... 15 -> 3; 16 -> 4 ...
@@ -53,7 +52,7 @@ class Program
     {
         string b;
 
-        if (integer.Length != 0) b = integer.Substring(1) + fraction; // First can't be 0 so it must be 1 (no leading zeros)
+        if (integer.Length != 0) b = integer.Substring(1) + fraction; // First is always 1 (if normalized)
         else b = fraction.Substring(fraction.IndexOf('1') + 1); // No integer part - get first non-zero in fraction
 
         return b.PadRight(23, '0');
