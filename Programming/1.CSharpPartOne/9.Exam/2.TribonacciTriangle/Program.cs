@@ -21,7 +21,7 @@ class Program
             t1 = t2;
             t2 = t3;
 
-            return t2;
+            return t3;
         }
     }
 
