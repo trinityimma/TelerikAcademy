@@ -6,14 +6,15 @@ class Program
     {
         int i = l, j = m + 1, k = l;
 
+        // For both arrays
         while (i <= m && j <= r)
             if (arr[i] < arr[j]) temp[k++] = arr[i++];
             else temp[k++] = arr[j++];
 
-        while (i <= m) temp[k++] = arr[i++];
-        while (j <= r) temp[k++] = arr[j++];
+        while (i <= m) temp[k++] = arr[i++]; // Copy items from first array
+        while (j <= r) temp[k++] = arr[j++]; // Or from second array
 
-        for (i = l; i <= r; i++) arr[i] = temp[i];
+        for (i = l; i <= r; i++) arr[i] = temp[i]; // Save to the original array
     }
 
     static void MergeSort(int[] arr, int[] temp, int l, int r)
