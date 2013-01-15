@@ -11,7 +11,7 @@ class Program
             if (arr[i] < arr[j]) temp[k++] = arr[i++];
             else temp[k++] = arr[j++];
 
-        while (i <= m) temp[k++] = arr[i++]; // Copy items from first array
+        while (i <= m) temp[k++] = arr[i++]; // Copy items left from first array
         while (j <= r) temp[k++] = arr[j++]; // Or from second array
 
         for (i = l; i <= r; i++) arr[i] = temp[i]; // Save to the original array
@@ -21,12 +21,12 @@ class Program
     {
         if (l >= r) return;
 
-        int m = l + (r - l) / 2;
+        int m = l + (r - l) / 2; // Split in two
 
         MergeSort(arr, temp, l, m);
         MergeSort(arr, temp, m + 1, r);
 
-        Merge(arr, temp, l, m, r);
+        Merge(arr, temp, l, m, r); // And merge the sorted halves
     }
 
     static void Main()
