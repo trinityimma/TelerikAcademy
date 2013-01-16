@@ -23,12 +23,10 @@ class Program
         return stack.Pop();
     }
 
-    // Parse an infix expression to postfix
+    // TODO: Parse an infix expression to postfix
     static double ParseExpression(string input)
     {
         string output = "3 5.3 + 2.7 * 22 ln 2.2 -1.7 pow / -";
-
-        // TODO
 
         return EvaluateExpression(output);
     }
