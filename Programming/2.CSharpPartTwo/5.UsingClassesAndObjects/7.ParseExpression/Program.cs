@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 class Program
@@ -12,13 +12,13 @@ class Program
         double number = 0;
         foreach (string token in tokens)
             if (double.TryParse(token, out number)) stack.Push(number);
-            else if (token == "+") stack.Push(stack.Pop() + stack.Pop());
-            else if (token == "-") stack.Push(-stack.Pop() + stack.Pop());
-            else if (token == "*") stack.Push(stack.Pop() * stack.Pop());
-            else if (token == "/") stack.Push(1 / stack.Pop() * stack.Pop());
+            else if (token == "+")stack.Push(stack.Pop() + stack.Pop());
+            else if (token == "-")stack.Push(-stack.Pop() + stack.Pop());
+            else if (token == "*")stack.Push(stack.Pop() * stack.Pop());
+            else if (token == "/")stack.Push(1 / stack.Pop() * stack.Pop());
             else if (token == "ln") stack.Push(Math.Log(stack.Pop(), Math.E));
             else if (token == "sqrt") stack.Push(Math.Sqrt(stack.Pop()));
-            else if (token == "pow") stack.Push(Math.Pow(y: stack.Pop(), x: stack.Pop()));
+            else if (token == "pow") stack.Push(Math.Pow(y: stack.Pop(), x: stack.Pop())); // x ^ y
 
         return stack.Pop();
     }
@@ -34,6 +34,6 @@ class Program
 
     static void Main()
     {
-        Console.WriteLine(ParseExpression("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)")); // 10.6
+        Console.WriteLine(ParseExpression("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)"));
     }
 }
