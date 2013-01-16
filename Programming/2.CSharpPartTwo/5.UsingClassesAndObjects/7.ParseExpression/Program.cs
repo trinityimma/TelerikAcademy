@@ -9,16 +9,15 @@ class Program
         var tokens = output.Split(' ');
         var stack = new Stack<double>();
 
-        double number = 0;
         foreach (string token in tokens)
-            if (double.TryParse(token, out number)) stack.Push(number);
-            else if (token == "+")    stack.Push(stack.Pop() + stack.Pop());
-            else if (token == "-")    stack.Push(-stack.Pop() + stack.Pop());
-            else if (token == "*")    stack.Push(stack.Pop() * stack.Pop());
-            else if (token == "/")    stack.Push(1 / stack.Pop() * stack.Pop());
-            else if (token == "ln")   stack.Push(Math.Log(stack.Pop(), Math.E));
+            if (token == "+") stack.Push(stack.Pop() + stack.Pop());
+            else if (token == "-") stack.Push(-stack.Pop() + stack.Pop());
+            else if (token == "*") stack.Push(stack.Pop() * stack.Pop());
+            else if (token == "/") stack.Push(1 / stack.Pop() * stack.Pop());
+            else if (token == "ln") stack.Push(Math.Log(stack.Pop(), Math.E));
             else if (token == "sqrt") stack.Push(Math.Sqrt(stack.Pop()));
-            else if (token == "pow")  stack.Push(Math.Pow(y: stack.Pop(), x: stack.Pop())); // x ^ y
+            else if (token == "pow") stack.Push(Math.Pow(y: stack.Pop(), x: stack.Pop())); // x ^ y
+            else stack.Push(double.Parse(token));
 
         return stack.Pop();
     }
