@@ -6,10 +6,9 @@ class Program
     // Evaluate a postfix expression
     static double EvaluateExpression(string output)
     {
-        var tokens = output.Split(' ');
         var stack = new Stack<double>();
 
-        foreach (string token in tokens)
+        foreach (string token in output.Split(' '))
             if (token == "+") stack.Push(stack.Pop() + stack.Pop());
             else if (token == "-") stack.Push(-stack.Pop() + stack.Pop());
             else if (token == "*") stack.Push(stack.Pop() * stack.Pop());
