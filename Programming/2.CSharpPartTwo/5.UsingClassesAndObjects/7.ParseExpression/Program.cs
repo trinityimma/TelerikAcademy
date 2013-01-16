@@ -37,6 +37,5 @@ class Program
     static void Main()
     {
         Console.WriteLine(ParseExpression("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)")); // 10.6
-        // Console.WriteLine(ParseExpression("pow(2, 3.14) * (3 - (3 * sqrt(2) - 3.2) + 1.5*0.3)")); // 21.22
     }
 }
