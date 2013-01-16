@@ -1,32 +1,32 @@
 using System;
-using System.Collections.Generic;
 
 class Program
 {
     // Evaluate a postfix expression
-    static double EvaluateExpression(string output)
+    static double EvaluateExpression(string expression)
     {
-        var stack = new Stack<double>();
+        double[] st = new double[64]; // Stack
+        int p = 0; // Stack pointer
 
-        foreach (string token in output.Split(' '))
-            if (token == "+") stack.Push(stack.Pop() + stack.Pop());
-            else if (token == "-") stack.Push(-stack.Pop() + stack.Pop());
-            else if (token == "*") stack.Push(stack.Pop() * stack.Pop());
-            else if (token == "/") stack.Push(1 / stack.Pop() * stack.Pop());
-            else if (token == "ln") stack.Push(Math.Log(stack.Pop(), Math.E));
-            else if (token == "sqrt") stack.Push(Math.Sqrt(stack.Pop()));
-            else if (token == "pow") stack.Push(Math.Pow(y: stack.Pop(), x: stack.Pop())); // x ^ y
-            else stack.Push(double.Parse(token));
+        foreach (string token in expression.Split(' '))
+            if      (token == "+"   ) st[--p - 1] += st[p];
+            else if (token == "-"   ) st[--p - 1] -= st[p];
+            else if (token == "*"   ) st[--p - 1] *= st[p];
+            else if (token == "/"   ) st[--p - 1] /= st[p];
+            else if (token == "pow" ) st[--p - 1]  = Math.Pow  (st[p - 1], st[p]);
+            else if (token == "sqrt") st[  p - 1]  = Math.Sqrt (st[p - 1]);
+            else if (token == "ln"  ) st[  p - 1]  = Math.Log  (st[p - 1], Math.E);
+            else st[p++] = double.Parse(token);
 
-        return stack.Pop();
+        return st[0];
     }
 
     // TODO: Parse an infix expression to postfix
-    static double ParseExpression(string input)
+    static double ParseExpression(string infix)
     {
-        string output = "3 5.3 + 2.7 * 22 ln 2.2 -1.7 pow / -";
+        string postfix = "3 5.3 + 2.7 * 22 ln 2.2 -1.7 pow / -";
 
-        return EvaluateExpression(output);
+        return EvaluateExpression(postfix);
     }
 
 
