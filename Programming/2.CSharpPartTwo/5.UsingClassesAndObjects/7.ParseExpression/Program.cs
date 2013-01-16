@@ -40,7 +40,7 @@ class Program
         return new List<string> { "3", "5.3", "+", "2.7", "*", "22", "ln", "2.2", "-1.7", "pow", "/", "-" };
     }
 
-    // Evaluate a postfix expression - "1 2 + 3 *" -> 9
+    // Evaluate a postfix expression - "1" "2" "+" "3" "*" -> 9
     static double Evaluate(List<string> postfix)
     {
         var stack = new Stack<double>();
