@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
-    // Evaluates a Reverse polish notation expression
+    // Evaluate a postfix expression
     static double EvaluateExpression(string output)
     {
         var tokens = output.Split(' ');
@@ -23,7 +23,7 @@ class Program
         return stack.Pop();
     }
 
-    // Parse infix to RPN
+    // Parse an infix expression to postfix
     static double ParseExpression(string input)
     {
         string output = "3 5.3 + 2.7 * 22 ln 2.2 -1.7 pow / -";
