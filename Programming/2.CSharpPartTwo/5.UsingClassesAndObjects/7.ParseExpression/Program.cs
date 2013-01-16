@@ -30,7 +30,7 @@ class Program
         return tokens;
     }
 
-    // Parse an infix expression to postfix: "(", "1", "+", "2", ")", "*", "3" -> "1 2 + 3 *"
+    // Parse an infix expression to postfix: "(", "1", "+", "2", ")", "*", "3" -> "1" "2" "+" "3" "*"
     static List<string> Parse(List<string> infix)
     {
         string postfix;
