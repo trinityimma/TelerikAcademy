@@ -32,7 +32,7 @@
 1. Course Overview | [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/1.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/1.Arrays/README.md)) - 08.01.2013
 2. [Multidimensional Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays/README.md)) - 12.01.2013
 3. [Methods](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/3.Methods) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/3.Methods/README.md)) | [Numeral Systems](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/4.NumeralSystems) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/4.NumeralSystems/README.md)) - 15.01.2013
-4. Using Classes and Objects - 19.01.2013
+4. [Using Classes and Objects](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/5.UsingClassesAndObjects) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/5.UsingClassesAndObjects/README.md))- 19.01.2013
 5. Exception Handling | Text Files - 22.01.2013
 6. Strings and Text Processing - 26.01.2013
 7. Exam Preparation - 29.01.2013
