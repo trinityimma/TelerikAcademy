@@ -31,21 +31,21 @@ class Program
     }
 
     // Parse an infix expression to postfix: "(", "1", "+", "2", ")", "*", "3" -> "1 2 + 3 *"
-    static string ParseExpression(List<string> infix)
+    static List<string> ParseExpression(List<string> infix)
     {
         string postfix;
 
-        // TODO: 
+        // TODO: ...
 
-        return "3 5.3 + 2.7 * 22 ln 2.2 -1.7 pow / -";
+        return new List<string> { "3", "5.3", "+", "2.7", "*", "22", "ln", "2.2", "-1.7", "pow", "/", "-" };
     }
 
     // Evaluate a postfix expression - "1 2 + 3 *" -> 9
-    static double EvaluateExpression(string output)
+    static double EvaluateExpression(List<string> postfix)
     {
         var stack = new Stack<double>();
 
-        foreach (string token in output.Split(' '))
+        foreach (string token in postfix)
             if (token == "+") stack.Push(stack.Pop() + stack.Pop());
             else if (token == "-") stack.Push(-stack.Pop() + stack.Pop());
             else if (token == "*") stack.Push(stack.Pop() * stack.Pop());
