@@ -10,11 +10,11 @@ class Program
 
         for (int i = 0; i < s.Length; i++)
         {
-            if (s[i] == ' ') continue; // Skip white space
-
             string token = String.Empty;
 
-            if (IsChar(s[i])) // String
+            if (s[i] == ' ') continue; // Skip white space
+
+            else if (IsChar(s[i])) // String
                 for (; i < s.Length && IsChar(s[i]) || i-- == int.MaxValue; i++)
                     token += s[i];
 
@@ -31,7 +31,7 @@ class Program
     }
 
     // Parse an infix expression to postfix: "(", "1", "+", "2", ")", "*", "3" -> "1 2 + 3 *"
-    static List<string> ParseExpression(List<string> infix)
+    static List<string> Parse(List<string> infix)
     {
         string postfix;
 
@@ -41,7 +41,7 @@ class Program
     }
 
     // Evaluate a postfix expression - "1 2 + 3 *" -> 9
-    static double EvaluateExpression(List<string> postfix)
+    static double Evaluate(List<string> postfix)
     {
         var stack = new Stack<double>();
 
@@ -60,7 +60,7 @@ class Program
 
     static void Main()
     {
-        Console.WriteLine(EvaluateExpression(ParseExpression(Tokenize("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)"))));
+        Console.WriteLine(Evaluate(Parse(Tokenize("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)"))));
     }
 
     // Helper methods
