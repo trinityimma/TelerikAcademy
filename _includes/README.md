@@ -42,12 +42,11 @@
 
 1. Course Overview | [CSS Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/1.CSSOverview/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/1.CSSOverview/README.md)) - 14.12.2012
 2. [CSS Presentation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/2.CSSPresentation/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/2.CSSPresentation/README.md)) - 11.01.2013
-3. CSS Display | CSS Sizing
-4. CSS Layout
-5. SASS
-6. LESS
-7. Sample Test
-8. Test
+3. CSS Layout
+4. SASS
+5. LESS
+6. Sample Test
+7. Test
 
 ## Contest
 
