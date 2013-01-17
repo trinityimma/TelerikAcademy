@@ -2,13 +2,15 @@
 
 class Program
 {
-    static DateTime[] holidays = { new DateTime(2012, 12, 24), new DateTime(2012, 12, 25), new DateTime(2012, 12, 30), new DateTime(2012, 12, 31), new DateTime(2013, 01, 01) };
+    static DateTime[] holidays = { new DateTime(2012, 12, 24), new DateTime(2012, 12, 25), new DateTime(2012, 12, 30),
+                                   new DateTime(2012, 12, 31), new DateTime(2013, 01, 01) };
 
     static int FilterHolidays(DateTime start, DateTime end, int result)
     {
         foreach (DateTime holiday in holidays)
-            if (start <= holiday && holiday <= end && !(holiday.DayOfWeek == DayOfWeek.Saturday || holiday.DayOfWeek == DayOfWeek.Sunday))
-                result--; // Remоve if not already removed and inside of period
+            if (start <= holiday && holiday <= end &&
+                !(holiday.DayOfWeek == DayOfWeek.Saturday || holiday.DayOfWeek == DayOfWeek.Sunday))
+                    result--; // Remоve if not already removed and inside of period
 
         return result;
     }
