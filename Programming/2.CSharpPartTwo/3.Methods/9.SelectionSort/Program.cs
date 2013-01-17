@@ -40,8 +40,6 @@ class Program
         SelectionSort(arr);
         PrintArray(arr);
 
-        Console.WriteLine();
-
         // Descending
         SelectionSort(arr, descending: true);
         PrintArray(arr);
