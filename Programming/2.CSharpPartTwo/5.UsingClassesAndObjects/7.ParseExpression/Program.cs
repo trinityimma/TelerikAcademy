@@ -7,7 +7,7 @@ class Program
         { "pow", 4 }, { "sqrt", 4 }, { "ln", 4 }, { "*", 3 }, { "/", 3 }, { "+", 2 }, { "-", 2 }, { "(", 0 }, { ")", 999 }
     };
 
-    // Read a string char by char and split it in tokens: "(1 + 2) * 3" -> "(", "1", "+", "2", ")", "*", "3"
+    // Tokenize a string:  "(1 + 2) * 3" -> "(", "1", "+", "2", ")", "*", "3"
     static List<Tuple<string, string>> Tokenize(string s)
     {
         var tokens = new List<Tuple<string, string>>(); // Value, type
