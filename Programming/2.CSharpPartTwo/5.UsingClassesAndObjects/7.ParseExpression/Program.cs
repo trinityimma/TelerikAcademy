@@ -4,10 +4,7 @@ using System.Collections.Generic;
 class Program
 {
     static Dictionary<string, int> precendce = new Dictionary<string, int>() {
-        { "pow", 4 }, { "sqrt", 4 }, { "ln", 4 },
-        { "*", 3 }, { "/", 3 },
-        { "+", 2 }, { "-", 2 },
-        { "(", 0 }, { ")", 999 }
+        { "pow", 4 }, { "sqrt", 4 }, { "ln", 4 }, { "*", 3 }, { "/", 3 }, { "+", 2 }, { "-", 2 }, { "(", 0 }, { ")", 999 }
     };
 
     // Read a string char by char and split it in tokens: "(1 + 2) * 3" -> "(", "1", "+", "2", ")", "*", "3"
@@ -19,8 +16,10 @@ class Program
         {
             string value = String.Empty, type = String.Empty;
 
-            if (s[i] == ' ') continue; // Skip white space
+            // White space
+            if (s[i] == ' ') continue;
 
+            // Number: 1, 123, -123
             else if (IsDigit(s[i]) || (s[i] == '-' && IsDigit(s[i + 1])))
             {
                 type = "number";
@@ -29,6 +28,7 @@ class Program
                 i--;
             }
 
+            // Function: ln, pow, sqrt
             else if (IsChar(s[i]))
             {
                 type = "function";
@@ -37,6 +37,7 @@ class Program
                 i--;
             }
 
+            // Function separator: ,
             else if (s[i] == ',')
             {
                 type = "separator";
@@ -44,7 +45,8 @@ class Program
                 value += s[i];
             }
 
-            else value += s[i]; // Operator
+            // Operator: +, -, *, /, (, )
+            else value += s[i];
 
             tokens.Add(new Tuple<string, string>(value, type));
         }
