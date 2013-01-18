@@ -106,7 +106,6 @@ class Program
         return stack.Pop();
     }
 
-    // Helper methods
     static bool IsChar(char c)
     {
         return c >= 'a' && c <= 'z';
