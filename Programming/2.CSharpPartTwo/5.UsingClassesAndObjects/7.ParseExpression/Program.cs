@@ -3,41 +3,87 @@ using System.Collections.Generic;
 
 class Program
 {
+    static Dictionary<string, int> precendce = new Dictionary<string, int>() {
+        { "pow", 4 }, { "sqrt", 4 }, { "ln", 4 },
+        { "*", 3 }, { "/", 3 },
+        { "+", 2 }, { "-", 2 },
+        { "(", 0 }, { ")", 999 }
+    };
+
     // Read a string char by char and split it in tokens: "(1 + 2) * 3" -> "(", "1", "+", "2", ")", "*", "3"
-    static List<string> Tokenize(string s)
+    static List<Tuple<string, string>> Tokenize(string s)
     {
-        List<string> tokens = new List<string>();
+        var tokens = new List<Tuple<string, string>>(); // Value, type
 
         for (int i = 0; i < s.Length; i++)
         {
-            string token = String.Empty;
+            string value = String.Empty, type = String.Empty;
 
             if (s[i] == ' ') continue; // Skip white space
 
-            else if (IsChar(s[i])) // String
-                for (; i < s.Length && IsChar(s[i]) || i-- == int.MaxValue; i++)
-                    token += s[i];
+            else if (IsDigit(s[i]) || (s[i] == '-' && IsDigit(s[i + 1])))
+            {
+                type = "number";
 
-            else if (IsDigit(s[i]) || (s[i] == '-' && IsDigit(s[i + 1]))) // Number
-                for (; i < s.Length && (IsDigit(s[i]) || s[i] == '.' || s[i] == '-') || i-- == int.MaxValue; i++)
-                    token += s[i];
+                for (; i < s.Length && (IsDigit(s[i]) || s[i] == '.' || s[i] == '-'); i++) value += s[i];
+                i--;
+            }
 
-            else token += s[i]; // Operator
+            else if (IsChar(s[i]))
+            {
+                type = "function";
 
-            tokens.Add(token);
+                for (; i < s.Length && IsChar(s[i]); i++) value += s[i];
+                i--;
+            }
+
+            else if (s[i] == ',')
+            {
+                type = "separator";
+
+                value += s[i];
+            }
+
+            else value += s[i]; // Operator
+
+            tokens.Add(new Tuple<string, string>(value, type));
         }
 
         return tokens;
     }
 
     // Parse an infix expression to postfix: "(", "1", "+", "2", ")", "*", "3" -> "1" "2" "+" "3" "*"
-    static List<string> Parse(List<string> infix)
+    static List<string> Parse(List<Tuple<string, string>> infix)
     {
-        string postfix;
+        var postfix = new List<string>();
+        var operators = new Stack<string>();
 
-        // TODO: ...
+        foreach (var token in infix)
+        {
+            string value = token.Item1, type = token.Item2;
 
-        return new List<string> { "3", "5.3", "+", "2.7", "*", "22", "ln", "2.2", "-1.7", "pow", "/", "-" };
+            if (type == "number") postfix.Add(value);
+
+            else if (type == "function") operators.Push(value);
+
+            else if (type == "separator") while ((value = operators.Peek()) != "(") postfix.Add(operators.Pop());
+
+            else if (value == "(") operators.Push(value);
+
+            else if (value == ")") while ((value = operators.Pop()) != "(") postfix.Add(value); // Match left paren
+
+            else
+            {
+                while (operators.Count != 0 && precendce[value] <= precendce[operators.Peek()])
+                    postfix.Add(operators.Pop());
+
+                operators.Push(value);
+            }
+        }
+
+        while (operators.Count != 0) postfix.Add(operators.Pop());
+
+        return postfix;
     }
 
     // Evaluate a postfix expression - "1" "2" "+" "3" "*" -> 9
@@ -45,7 +91,7 @@ class Program
     {
         var stack = new Stack<double>();
 
-        foreach (string token in postfix)
+        foreach (var token in postfix)
             if (token == "+") stack.Push(stack.Pop() + stack.Pop());
             else if (token == "-") stack.Push(-stack.Pop() + stack.Pop());
             else if (token == "*") stack.Push(stack.Pop() * stack.Pop());
@@ -58,11 +104,6 @@ class Program
         return stack.Pop();
     }
 
-    static void Main()
-    {
-        Console.WriteLine(Evaluate(Parse(Tokenize("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)"))));
-    }
-
     // Helper methods
     static bool IsChar(char c)
     {
@@ -72,5 +113,12 @@ class Program
     static bool IsDigit(char c)
     {
         return c >= '0' && c <= '9';
+    }
+
+    static void Main()
+    {
+        Console.WriteLine(Evaluate(Parse(Tokenize("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)"))));
+        Console.WriteLine(Evaluate(Parse(Tokenize("pow(2, 3.14) * (3 - (3 * sqrt(2) - 3.2) + 1.5*0.3)"))));
+        Console.WriteLine(Evaluate(Parse(Tokenize("(1 - -1) * pow(pow(1 + 1, pow(ln(2.71), 1 - 1)), 10)"))));
     }
 }
