@@ -68,7 +68,7 @@ class Program
 
             else if (type == "function") operators.Push(value);
 
-            else if (type == "separator") while ((value = operators.Peek()) != "(") postfix.Add(operators.Pop());
+            else if (type == "separator") while (operators.Peek() != "(") postfix.Add(operators.Pop());
 
             else if (value == "(") operators.Push(value);
 
