@@ -17,11 +17,11 @@ class Program
 
     static void TrimPeriod(ref DateTime start, ref DateTime end)
     {
-        // Trim if it starts with a working day
+        // Trim if it starts with a weekend
         if (start.DayOfWeek == DayOfWeek.Saturday) start = start.AddDays(2);
         if (start.DayOfWeek == DayOfWeek.Sunday) start = start.AddDays(1);
 
-        // Trim if it ends with a working day
+        // Trim if it ends with a weekend
         if (end.DayOfWeek == DayOfWeek.Saturday) end = end.AddDays(-1);
         if (end.DayOfWeek == DayOfWeek.Sunday) end = end.AddDays(-2);
     }
