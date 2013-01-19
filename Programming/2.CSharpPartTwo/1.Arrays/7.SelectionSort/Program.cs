@@ -4,7 +4,6 @@ class Program
 {
     static void Swap(int[] arr, int i, int j)
     {
-        if (i == j) return;
         int t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;

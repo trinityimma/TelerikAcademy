@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 
 class Program
 {
     static void Swap(string[] arr, int i, int j)
     {
-        if (i == j) return;
         string t = arr[i];
         arr[i] = arr[j];
         arr[j] = t;
@@ -35,7 +34,7 @@ class Program
     {
         string[] arr = { "", "1", "22", "666666", "333", "55555", "4444" };
 
-        QuickSort(arr, 0, arr.Length - 1); // TODO: Use indices
+        QuickSort(arr, 0, arr.Length - 1);
 
         foreach (string item in arr) Console.WriteLine(item);
     }
