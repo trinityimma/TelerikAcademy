@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Calculator</title>
     <style>
-        /* TODO: CSS Button Transition; Vertical grid; Italic x; Bigger back arrow; */
+        /* TODO: Vertical grid; CSS Button Transition; Italic x; Bigger back arrow; */
 
         /* RESET */
         ul, li, button, input {
@@ -17,6 +17,8 @@
             color: #333;
             font: 12px/1.2 Segoe UI, sans-serif;
         }
+
+        label { display: block; }
 
         label, button:not(:disabled) { cursor: pointer; }
 
@@ -65,11 +67,13 @@
             margin: 0 auto;
             padding: 0 10px 5px;
             border: 1px solid #999;
-            background: -webkit-linear-gradient(#F0F0F0 0, #D9E4F1 100px);
-            background:    -moz-linear-gradient(#F0F0F0 0, #D9E4F1 100px);
-            background:      -o-linear-gradient(#F0F0F0 0, #D9E4F1 100px);
-            background:         linear-gradient(#F0F0F0 0, #D9E4F1 100px);
+            background: -webkit-linear-gradient(#F0F0F0 0px, #D9E4F1 100px);
+            background:    -moz-linear-gradient(#F0F0F0 0px, #D9E4F1 100px);
+            background:      -o-linear-gradient(#F0F0F0 0px, #D9E4F1 100px);
+            background:         linear-gradient(#F0F0F0 0px, #D9E4F1 100px);
         }
+
+        .calculator .unstyled li + li { margin-top: 5px; }
 
         .calculator .box,
         .calculator .btn {
@@ -82,17 +86,14 @@
 
         .calculator .box-inset, .btn:not(:hover):not(:disabled):not(.btn-muted) { box-shadow: inset 0 0 0 1px #fff; }
 
-        .calculator form.box li + li { margin-top: 5px; }
-        .calculator form.box label { display: block; }
-
         .calculator .main-menu {
             margin: 0 -10px 10px;
             padding: 1px 5px 2px;
             border-bottom: 1px solid #B6BCCC;
-            background: -webkit-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
-            background:    -moz-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
-            background:      -o-linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
-            background:         linear-gradient(#FEFEFF 0, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+            background: -webkit-linear-gradient(#FEFEFF 0%, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+            background:    -moz-linear-gradient(#FEFEFF 0%, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+            background:      -o-linear-gradient(#FEFEFF 0%, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
+            background:         linear-gradient(#FEFEFF 0%, #E5EAF5 34%, #D4DBED 35%, #E1E6F6 100%);
         }
         .calculator .main-menu li + li { margin-left: 10px; }
 
@@ -119,27 +120,27 @@
             position: relative;
             height: 27px;
             border: 1px solid #8797AA;
-            background: -webkit-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
-            background:    -moz-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
-            background:      -o-linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
-            background:         linear-gradient(#F0F6FB 0, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+            background: -webkit-linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+            background:    -moz-linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+            background:      -o-linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
+            background:         linear-gradient(#F0F6FB 0%, #E2EAF3 49%, #D5E0ED 50%, #D7E2EF 100%);
             line-height: 25px; /* Button box model - without borders */
         }
         .calculator .btn-loud {
-            background: -webkit-linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
-            background:    -moz-linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
-            background:      -o-linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
-            background:         linear-gradient(#F7FBFF 0, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+            background: -webkit-linear-gradient(#F7FBFF 0%, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+            background:    -moz-linear-gradient(#F7FBFF 0%, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+            background:      -o-linear-gradient(#F7FBFF 0%, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
+            background:         linear-gradient(#F7FBFF 0%, #EDF3F8 49%, #E7EDF5 50%, #F3FBFF 100%);
             font-size: 15px;
         }
         .calculator .btn-muted { background: #D9E4F1; }
         .calculator .btn:hover,
         .calculator .btn:focus {
             border-color: #F5D50F;
-            background: -webkit-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
-            background:    -moz-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
-            background:      -o-linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
-            background:         linear-gradient(#FEF5EB 0, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+            background: -webkit-linear-gradient(#FEF5EB 0%, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+            background:    -moz-linear-gradient(#FEF5EB 0%, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+            background:      -o-linear-gradient(#FEF5EB 0%, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
+            background:         linear-gradient(#FEF5EB 0%, #FCE3C6 49%, #FBD075 50%, #FCF8CA 100%);
         }
         .calculator .btn:not(:disabled):active { top: 1px; }
         .calculator .btn:disabled {
