@@ -21,6 +21,7 @@
         label { display: block; }
 
         label, button:not(:disabled) { cursor: pointer; }
+        input[type="radio"] { vertical-align: top; }
 
         /* CLASSES */
         .unstyled { list-style: none; }
@@ -73,7 +74,10 @@
             background:         linear-gradient(#F0F0F0 0px, #D9E4F1 100px);
         }
 
-        .calculator .unstyled li + li { margin-top: 5px; }
+        .calculator .unstyled { padding: 3px 0 0; }
+        .calculator .unstyled li + li { margin-top: 6px; }
+
+        .calculator .row3 { height: 79px; }
 
         .calculator .box, .calculator .btn {
             margin-bottom: 5px;
@@ -182,7 +186,7 @@
 
         <div class="row">
             <div class="span2">
-                <form class="box">
+                <form class="box row3">
                     <ul class="unstyled">
                         <li><label><input type="radio" name="numeralSystem" value="hex" /> Hex</label></li>
                         <li><label><input type="radio" name="numeralSystem" value="dec" checked /> Dec</label></li>
@@ -191,7 +195,7 @@
                     </ul>
                 </form>
 
-                <form class="box">
+                <form class="box row3">
                     <ul class="unstyled">
                         <li><label><input type="radio" name="wordSize" value="qword" checked /> Qword</label></li>
                         <li><label><input type="radio" name="wordSize" value="dword" /> Dword</label></li>
