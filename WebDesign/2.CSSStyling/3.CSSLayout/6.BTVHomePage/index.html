@@ -15,8 +15,9 @@
         img { border: none; }
 
         /* TAGS */
+        /* Style the body, in order not to trigger a :hover in the borders of the tabs */
         body {
-            margin: 15px auto 0;
+            margin: 15px auto 0; /* Center */
             width: 598px;
             border: 5px solid #ddd;
             border-radius: 3px;
@@ -31,53 +32,49 @@
 
         /* TABS */
         .tabs {
-            position: relative;
-            overflow: hidden;
-            height: 287px;
+            position: relative; /* Create a stacking context for the .tab-content*/
+            overflow: hidden; /* Clear float */
+            height: 287px; /* Fixed height :( */
             background: #1E3741;
         }
 
-        .tab { float: left; }
+        .tab { float: left; } /* Makes the .tab-titles on one line */
 
         /* TAB TITLE */
         .tab-title a {
-            position: relative;
-            z-index: 1;
             display: block;
             padding: 5px 15px;
             border-right: 1px solid #1E3741;
             background: #4B5F67;
             color: #93ACB6;
         }
-        /* Make the space right from the last tab select the first tab */
+        /* Make the space right from the last tab select the first tab.
+           Uncomment background to see it. */
+        .tab-title a {
+            position: relative;
+            z-index: 1;
+        }
         .tab:first-child .tab-title a:after {
             position: absolute;
             top: 0;
             left: 0;
-            /* background: #f00; */
             z-index: -1;
             width: 598px;
             height: 100%;
+            /* background: #f00; */
             content: " ";
         }
 
         /* TAB ITEMS */
         .tab-content {
-            width: 100%;
             bottom: 0;
             left: 0;
+            width: 100%;
         }
         .tab-item img {
             top: 0;
             right: 0;
         }
-
-        .tab-item a {
-            display: block;
-            padding: 5px 10px;
-            width: 180px;
-        }
-        .tab-item:not(:last-child) a { border-bottom: 1px solid #3A4F58; }
 
         .tab-content, .tab-item img {
             position: absolute;
@@ -90,18 +87,27 @@
                     transition: opacity 333ms ease-out;
         }
 
-        /* TAB HOVER */
+        .tab-item a {
+            display: block;
+            padding: 5px 10px;
+            width: 180px;
+        }
+        .tab-item:not(:last-child) a { border-bottom: 1px solid #3A4F58; }
+
+        /* .tab-title hover */
         .tabs:not(:hover) .tab:first-child .tab-title a, .tab:hover .tab-title a {
             background: transparent;
             color: #fff;
         }
 
+        /* .tab-item hover */
         .tabs:not(:hover) .tab-item:first-child a, .tab-item:hover a,
         .tab-title:hover ~ .tab-content .tab-item:first-child a {
             background: #00968C;
             color: #fff;
         }
 
+        /* Both */
         .tab:not(:hover) .tab-item:first-child img, .tab-item:hover img,
         .tab-title:hover ~ .tab-content .tab-item:first-child img,
         .tabs:not(:hover) .tab:first-child .tab-content, .tab:hover .tab-content {
@@ -225,15 +231,15 @@
             <ul class="tab-content">
                 <li class="tab-item">
                     <a href="#">
-                        Димитър Бербатов бе част от силно апатичния и ялов тим
-                        <img src="images/sport-5.jpg" alt="sport-1" width="398" height="265" />
+                        Браво на ръководството на Байерн, браво на Хосеп Гуардиола.
+                        <img src="images/sport-2.jpg" alt="sport-2" width="398" height="265" />
                     </a>
                 </li>
 
                 <li class="tab-item">
                     <a href="#">
-                        Браво на ръководството на Байерн, браво на Хосеп Гуардиола.
-                        <img src="images/sport-2.jpg" alt="sport-2" width="398" height="265" />
+                        Димитър Бербатов бе част от силно апатичния и ялов тим
+                        <img src="images/sport-5.jpg" alt="sport-1" width="398" height="265" />
                     </a>
                 </li>
 
