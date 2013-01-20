@@ -15,8 +15,8 @@ Write an HTML page like the following:
 ## Exercise 3
 Create an user profile Web page `Profile.html`, friends page named `Friends.html` and info page named `Info.html`. Link them to one another using `<a>` tag.
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/3.UserProfile/Profile.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/3.UserProfile/profile.png)
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/3.UserProfile/Info.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/3.UserProfile/info.png)
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/3.UserProfile/Friends.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/3.UserProfile/friends.png)
