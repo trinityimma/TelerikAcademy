@@ -44,10 +44,10 @@
         .tab-title a {
             display: block;
             padding: 5px 15px;
-            border-right: 1px solid #1E3741;
             background: #4B5F67;
             color: #93ACB6;
         }
+        .tab:not(:last-child) { border-right: 1px solid #1E3741; }
         /* Make the space right from the last tab select the first tab.
            Uncomment background to see it. */
         .tab-title a {
@@ -67,7 +67,7 @@
 
         /* TAB ITEMS */
         .tab-content {
-            bottom: 0;
+            top: 28px;
             left: 0;
             width: 100%;
         }
@@ -75,6 +75,7 @@
             top: 0;
             right: 0;
         }
+        /* Hidden by default */
         .tab-content, .tab-item img {
             position: absolute;
             z-index: -1;
@@ -101,14 +102,14 @@
             color: #fff;
         }
 
-        /* Hover .tab-item a  */
+        /* Hover .tab-item  */
         .tabs:not(:hover) .tab-item:first-child a, .tab-item:hover a,
         .tab-title:hover ~ .tab-content .tab-item:first-child a {
             background: #00968C;
             color: #fff;
         }
 
-        /* Hover .tab-content img and .tab-title hover */
+        /* Hover .tab-title and .tab-item */
         .tabs:not(:hover) .tab-item:first-child img, .tab-item:hover img,
         .tab-title:hover ~ .tab-content .tab-item:first-child img,
         .tabs:not(:hover) .tab:first-child .tab-content, .tab:hover .tab-content {
