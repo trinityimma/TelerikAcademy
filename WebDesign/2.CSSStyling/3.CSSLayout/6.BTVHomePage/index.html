@@ -37,13 +37,9 @@
             background: #1E3741;
         }
 
-        .tab {
-            display: inline;
-            font-size: 0;
-        }
+        .tab { float: left; }
 
         /* TAB TITLE */
-        .tab-title { display: inline-block; }
         .tab-title a {
             position: relative;
             z-index: 1;
@@ -53,10 +49,12 @@
             background: #4B5F67;
             color: #93ACB6;
         }
+        /* Make the space right from the last tab select the first tab */
         .tab:first-child .tab-title a:after {
             position: absolute;
             top: 0;
             left: 0;
+            /* background: #f00; */
             z-index: -1;
             width: 598px;
             height: 100%;
@@ -65,15 +63,13 @@
 
         /* TAB ITEMS */
         .tab-content {
-            position: absolute;
-            top: 28px;
+            width: 100%;
+            bottom: 0;
             left: 0;
-            list-style: none;
-
-            -webkit-transition: all 333ms ease-out;
-               -moz-transition: all 333ms ease-out;
-                 -o-transition: all 333ms ease-out;
-                    transition: all 333ms ease-out;
+        }
+        .tab-item img {
+            top: 0;
+            right: 0;
         }
 
         .tab-item a {
@@ -82,29 +78,16 @@
             width: 180px;
         }
         .tab-item:not(:last-child) a { border-bottom: 1px solid #3A4F58; }
-        .tab-item img {
+
+        .tab-content, .tab-item img {
             position: absolute;
-            top: 0;
-            left: 200px;
+            z-index: -1;
+            opacity: 0;
 
             -webkit-transition: opacity 333ms ease-out;
                -moz-transition: opacity 333ms ease-out;
                  -o-transition: opacity 333ms ease-out;
                     transition: opacity 333ms ease-out;
-        }
-
-        .tab-content, .tab-item img {
-            opacity: 0;
-
-            -webkit-transform: scale(0);
-               -moz-transform: scale(0);
-                 -o-transform: scale(0);
-                    transform: scale(0);
-
-            -webkit-transform-origin: 299px 0;
-               -moz-transform-origin: 299px 0;
-                 -o-transform-origin: 299px 0;
-                    transform-origin: 299px 0;
         }
 
         /* TAB HOVER */
@@ -122,12 +105,8 @@
         .tab:not(:hover) .tab-item:first-child img, .tab-item:hover img,
         .tab-title:hover ~ .tab-content .tab-item:first-child img,
         .tabs:not(:hover) .tab:first-child .tab-content, .tab:hover .tab-content {
+            z-index: 1;
             opacity: 1;
-
-            -webkit-transform: scale(1);
-               -moz-transform: scale(1);
-                 -o-transform: scale(1);
-                    transform: scale(1);
         }
     </style>
 </head>
