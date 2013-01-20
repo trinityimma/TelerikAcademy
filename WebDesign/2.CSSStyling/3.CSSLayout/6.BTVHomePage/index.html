@@ -16,11 +16,12 @@
 
         /* TAGS */
         body {
-            margin: 30px auto 0;
+            margin: 15px auto 0;
             width: 598px;
             border: 5px solid #ddd;
-            background: #1E3741;
-            color: #fff;
+            border-radius: 3px;
+            background: #aaa;
+            box-shadow: 1px 1px 6px #444;
         }
 
         a {
@@ -33,6 +34,7 @@
             position: relative;
             overflow: hidden;
             height: 287px;
+            background: #1E3741;
         }
 
         .tab {
@@ -64,9 +66,9 @@
         /* TAB ITEMS */
         .tab-content {
             position: absolute;
-            list-style: none;
             top: 28px;
             left: 0;
+            list-style: none;
 
             -webkit-transition: all 333ms ease-out;
                -moz-transition: all 333ms ease-out;
@@ -91,7 +93,7 @@
                     transition: opacity 333ms ease-out;
         }
 
-        .tab-item img, .tab-content {
+        .tab-content, .tab-item img {
             opacity: 0;
 
             -webkit-transform: scale(0);
@@ -105,8 +107,9 @@
                     transform-origin: 299px 0;
         }
 
+        /* TAB HOVER */
         .tabs:not(:hover) .tab:first-child .tab-title a, .tab:hover .tab-title a {
-            background: #1E3741;
+            background: transparent;
             color: #fff;
         }
 
