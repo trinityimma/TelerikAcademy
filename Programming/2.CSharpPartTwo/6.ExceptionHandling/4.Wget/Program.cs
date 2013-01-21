@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 
 class Program
@@ -9,8 +9,7 @@ class Program
 
         try
         {
-        
-            webClient.DownloadFile("http://www.devbg.org/img/Logo-BASD.jpg", Environment.CurrentDirectory + @"\Logo-BASD.jpg");
+            webClient.DownloadFile("http://www.devbg.org/img/Logo-BASD.jpg", Environment.CurrentDirectory + @"\logo.jpg");
         }
 
         catch (WebException)
