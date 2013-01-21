@@ -5,14 +5,12 @@ class Program
 {
     static void Main()
     {
-        string address = "http://www.devbg.org/img/Logo-BASD.jpg";
-
         WebClient webClient = new WebClient();
 
         try
         {
         
-            webClient.DownloadFile(address, Environment.CurrentDirectory + @"\Logo-BASD.jpg");
+            webClient.DownloadFile("http://www.devbg.org/img/Logo-BASD.jpg", Environment.CurrentDirectory + @"\Logo-BASD.jpg");
         }
 
         catch (WebException)
