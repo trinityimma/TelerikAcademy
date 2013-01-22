@@ -13,7 +13,17 @@ class Program
             Console.WriteLine(Math.Sqrt(n));
         }
 
-        catch (Exception)
+        catch (ArgumentNullException)
+        {
+            Console.Error.WriteLine("Invalid number");
+        }
+
+        catch (FormatException)
+        {
+            Console.Error.WriteLine("Invalid number");
+        }
+
+        catch (OverflowException)
         {
             Console.Error.WriteLine("Invalid number");
         }
