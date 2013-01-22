@@ -15,7 +15,7 @@ class Program
 
         catch (Exception)
         {
-            Console.WriteLine("Invalid number");
+            Console.Error.WriteLine("Invalid number");
         }
 
         finally
