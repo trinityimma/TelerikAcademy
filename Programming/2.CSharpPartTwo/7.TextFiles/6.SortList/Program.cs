@@ -24,10 +24,10 @@ class Program
 
     static void Main()
     {
-        List<string> lines = ReadLines(); // System.IO.File.ReadAllLines
+        List<string> lines = ReadLines(); // File.ReadAllLines
 
         lines.Sort();
 
-        WriteLines(lines);
+        WriteLines(lines); // File.WriteAllLines
     }
 }

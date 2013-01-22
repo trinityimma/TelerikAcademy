@@ -9,7 +9,7 @@ class Program
     {
         try
         {
-            string[] words = System.IO.File.ReadAllLines("../../words.txt"); // See exercise 6 for implementation
+            string[] words = File.ReadAllLines("../../words.txt"); // See exercise 6 for implementation
 
             using (StreamReader input = new StreamReader("../../input.txt"))
             using (StreamWriter output = new StreamWriter("../../output.txt"))

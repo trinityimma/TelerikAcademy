@@ -26,6 +26,6 @@ class Program
 
     static void Main()
     {
-        WriteLines(ReadEvenLines());
+        WriteLines(ReadEvenLines()); // TODO: Do it without storing the lines in the memory
     }
 }

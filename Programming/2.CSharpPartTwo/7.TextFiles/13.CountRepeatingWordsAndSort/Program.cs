@@ -9,16 +9,19 @@ class Program
     {
         try
         {
-            string[] words = System.IO.File.ReadAllLines("../../words.txt"); // See exercise 6 for implementation
+            string[] words = File.ReadAllLines("../../words.txt"); // See exercise 6 for implementation
             int[] values = new int[words.Length];
 
+            // Count words
             using (StreamReader input = new StreamReader("../../input.txt"))
                 for (string line; (line = input.ReadLine()) != null; )
                     for (int i = 0; i < words.Length; i++)
                         values[i] += Regex.Matches(line, @"(\W|^)" + words[i] + @"(\W|$)").Count;
 
+            // Sort
             Array.Sort(values, words);
 
+            // Write output
             using (StreamWriter output = new StreamWriter("../../output.txt"))
                 for (int i = 0; i < words.Length; i++)
                     output.WriteLine("{0}: {1}", words[i], values[i]);
