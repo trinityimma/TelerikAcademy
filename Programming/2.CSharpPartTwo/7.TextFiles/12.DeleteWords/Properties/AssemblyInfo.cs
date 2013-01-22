@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("12.DeleteWord")]
+[assembly: AssemblyTitle("12.DeleteWords")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("12.DeleteWord")]
+[assembly: AssemblyProduct("12.DeleteWords")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2cffefe1-5aab-4860-a8a7-42b355d7d6c5")]
+[assembly: Guid("e7ad38f3-772b-49c4-bbdd-0b691c984544")]
 
 // Version information for an assembly consists of the following four values:
 //
