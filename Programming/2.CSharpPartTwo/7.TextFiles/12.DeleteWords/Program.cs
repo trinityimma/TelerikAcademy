@@ -16,6 +16,7 @@ class Program
             {
                 for (string line; (line = input.ReadLine()) != null; )
                 {
+                    // Remove each word
                     foreach (string word in words)
                         line = Regex.Replace(line, @"(\W|^)" + word + @"(\W|$)", "$1$2");
 

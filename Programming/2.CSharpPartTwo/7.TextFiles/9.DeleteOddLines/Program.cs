@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.IO;
 using System.Collections.Generic;
 
@@ -12,7 +12,7 @@ class Program
 
         using (StreamReader input = new StreamReader("../../input.txt"))
             for (string line; (line = input.ReadLine()) != null; n++)
-                if(n % 2 == 0) lines.Add(line);
+                if (n % 2 == 0) lines.Add(line);
 
         return lines;
     }
