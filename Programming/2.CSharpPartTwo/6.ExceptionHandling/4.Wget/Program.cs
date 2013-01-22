@@ -9,17 +9,17 @@ class Program
         {
             try
             {
-                webClient.DownloadFile("http://www.devbg.org/img/Logo-BASD.jpg", "/../../logo.jpg");
+                webClient.DownloadFile("http://www.devbg.org/img/Logo-BASD.jpg", "../../logo.jpg");
             }
 
             catch (WebException)
             {
-                Console.WriteLine("The address is invalid.");
+                Console.Error.WriteLine("The address is invalid.");
             }
 
             catch (NotSupportedException)
             {
-                Console.WriteLine("The method has been called simultaneously on multiple threads.");
+                Console.Error.WriteLine("The method has been called simultaneously on multiple threads.");
             }
         }
     }
