@@ -13,47 +13,47 @@ class Program
 
         catch (ArgumentNullException)
         {
-            Console.WriteLine("Path is null.");
+            Console.Error.WriteLine("Path is null.");
         }
 
         catch (ArgumentException)
         {
-            Console.WriteLine("Path is a zero-length string, contains only white space, or contains one or more invalid characters.");
+            Console.Error.WriteLine("Path is a zero-length string, contains only white space, or contains one or more invalid characters.");
         }
 
         catch (PathTooLongException)
         {
-            Console.WriteLine("The specified path, file name, or both exceed the system-defined maximum length.");
+            Console.Error.WriteLine("The specified path, file name, or both exceed the system-defined maximum length.");
         }
 
         catch (DirectoryNotFoundException)
         {
-            Console.WriteLine("The specified path is invalid.");
+            Console.Error.WriteLine("The specified path is invalid.");
         }
 
         catch (FileNotFoundException)
         {
-            Console.WriteLine("The file specified in path was not found.");
+            Console.Error.WriteLine("The file specified in path was not found.");
         }
 
         catch (IOException)
         {
-            Console.WriteLine("An I/O error occurred while opening the file.");
+            Console.Error.WriteLine("An I/O error occurred while opening the file.");
         }
 
         catch (UnauthorizedAccessException)
         {
-            Console.WriteLine("The caller does not have the required permission.");
+            Console.Error.WriteLine("The caller does not have the required permission.");
         }
 
         catch (NotSupportedException)
         {
-            Console.WriteLine("Path is in an invalid format.");
+            Console.Error.WriteLine("Path is in an invalid format.");
         }
 
         catch (SecurityException)
         {
-            Console.WriteLine("The caller does not have the required permission.");
+            Console.Error.WriteLine("The caller does not have the required permission.");
         }
     }
 }
