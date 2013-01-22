@@ -1,19 +1,16 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Security;
 
 class Program
 {
-    static string[] words;
-    static int[] values;
-
     static void Main()
     {
         try
         {
-            words = System.IO.File.ReadAllLines("../../words.txt"); // See exercise 6 for implementation
-            values = new int[words.Length];
+            string[] words = System.IO.File.ReadAllLines("../../words.txt"); // See exercise 6 for implementation
+            int[] values = new int[words.Length];
 
             using (StreamReader input = new StreamReader("../../input.txt"))
                 for (string line; (line = input.ReadLine()) != null; )
@@ -31,18 +28,22 @@ class Program
         {
             Console.WriteLine(e.Message);
         }
+
         catch (DirectoryNotFoundException e)
         {
             Console.WriteLine(e.Message);
         }
+
         catch (IOException e)
         {
             Console.WriteLine(e.Message);
         }
+
         catch (SecurityException e)
         {
             Console.WriteLine(e.Message);
         }
+
         catch (UnauthorizedAccessException e)
         {
             Console.WriteLine(e.Message);

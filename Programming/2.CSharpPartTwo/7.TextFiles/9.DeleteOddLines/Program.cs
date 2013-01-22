@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 class Program
 {
-    static List<string> ReadLines()
+    static List<string> ReadEvenLines()
     {
         List<string> lines = new List<string>();
 
-        int n = 0;
+        int n = 1;
 
         using (StreamReader input = new StreamReader("../../input.txt"))
             for (string line; (line = input.ReadLine()) != null; n++)
@@ -26,6 +26,6 @@ class Program
 
     static void Main()
     {
-        WriteLines(ReadLines());
+        WriteLines(ReadEvenLines());
     }
 }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Security;
@@ -22,25 +22,28 @@ class Program
                     output.WriteLine(line);
                 }
             }
-
         }
 
         catch (FileNotFoundException e)
         {
             Console.WriteLine(e.Message);
         }
+
         catch (DirectoryNotFoundException e)
         {
             Console.WriteLine(e.Message);
         }
+
         catch (IOException e)
         {
             Console.WriteLine(e.Message);
         }
+
         catch (SecurityException e)
         {
             Console.WriteLine(e.Message);
         }
+
         catch (UnauthorizedAccessException e)
         {
             Console.WriteLine(e.Message);

@@ -15,7 +15,8 @@ class Program
         string[] files = { "../../Program.cs", "../../Program.cs" };
 
         using (StreamWriter output = new StreamWriter("../../output.txt"))
-            foreach (string file in files) WriteToFile(output, file);
+            foreach (string file in files)
+                WriteToFile(output, file);
     }
 }
 using System;
@@ -35,6 +36,7 @@ class Program
         string[] files = { "../../Program.cs", "../../Program.cs" };
 
         using (StreamWriter output = new StreamWriter("../../output.txt"))
-            foreach (string file in files) WriteToFile(output, file);
+            foreach (string file in files)
+                WriteToFile(output, file);
     }
 }

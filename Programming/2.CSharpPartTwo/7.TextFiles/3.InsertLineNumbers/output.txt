@@ -5,11 +5,11 @@
 5.{
 6.    static void Main()
 7.    {
-8.        int total = 1;
+8.        int n = 1;
 9.
-10.        using (StreamWriter output = new StreamWriter("../../output.txt"))
-11.            using (StreamReader input = new StreamReader("../../Program.cs"))
-12.                for (string line; (line = input.ReadLine()) != null; total++)
-13.                    output.WriteLine(total + "." + line);
+10.        using (StreamReader input = new StreamReader("../../Program.cs"))
+11.        using (StreamWriter output = new StreamWriter("../../output.txt"))
+12.            for (string line; (line = input.ReadLine()) != null; n++)
+13.                output.WriteLine("{0}.{1}", n, line);
 14.    }
 15.}
