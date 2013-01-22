@@ -11,7 +11,6 @@ class Program
             Console.WriteLine(File.ReadAllText(@"C:\Windows\win.ini"));
         }
 
-
         catch (ArgumentNullException)
         {
             Console.WriteLine("Path is null.");
