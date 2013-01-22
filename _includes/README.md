@@ -36,7 +36,7 @@
 4. [Numeral Systems](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/4.NumeralSystems) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/4.NumeralSystems/README.md)) - 15.01.2013
 5. [Using Classes and Objects](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/5.UsingClassesAndObjects) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/5.UsingClassesAndObjects/README.md))- 19.01.2013
 6. [Exception Handling](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/6.ExceptionHandling) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/6.ExceptionHandling/README.md)) - 22.01.2013
-7. Text Files - 22.01.2013
+7. [Text Files](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/7.TextFiles) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/7.TextFiles/README.md)) - 22.01.2013
 8. Strings and Text Processing - 26.01.2013
 9. Exam Preparation - 29.01.2013
 10. Exam - 04.02.2013
