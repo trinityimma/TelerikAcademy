@@ -10,6 +10,6 @@ class Program
         using (StreamWriter output = new StreamWriter("../../output.txt"))
             for (string line; (line = input.ReadLine()) != null; )
             //  output.WriteLine(line.Replace("start", "finish"));                         // Exercise 7
-                output.WriteLine(Regex.Replace(line, @"(\W|^)start(\W|$)", "$1finish$2")); // Exercise 8
+                output.WriteLine(Regex.Replace(line, @"\bstart\b", "finish")); // Exercise 8
     }
 }

@@ -16,7 +16,7 @@ class Program
             using (StreamReader input = new StreamReader("../../input.txt"))
                 for (string line; (line = input.ReadLine()) != null; )
                     for (int i = 0; i < words.Length; i++)
-                        values[i] += Regex.Matches(line, @"(\W|^)" + words[i] + @"(\W|$)").Count;
+                        values[i] += Regex.Matches(line, @"\b" + words[i] + @"\b").Count;
 
             // Sort
             Array.Sort(values, words);

@@ -9,20 +9,12 @@ class Program
     {
         try
         {
-            string[] words = File.ReadAllLines("../../words.txt"); // See exercise 6 for implementation
+            string regex = @"\b(" + String.Join("|", File.ReadAllLines("../../words.txt")) + @")\b";
 
             using (StreamReader input = new StreamReader("../../input.txt"))
             using (StreamWriter output = new StreamWriter("../../output.txt"))
-            {
                 for (string line; (line = input.ReadLine()) != null; )
-                {
-                    // Remove each word
-                    foreach (string word in words)
-                        line = Regex.Replace(line, @"(\W|^)" + word + @"(\W|$)", "$1$2");
-
-                    output.WriteLine(line);
-                }
-            }
+                    output.WriteLine(Regex.Replace(line, regex, String.Empty));
         }
 
         catch (FileNotFoundException e)
