@@ -6,7 +6,8 @@ class Program
     {
         int best = 0;
 
-        for (int i = 1; i < arr.Length; i++) if (arr[i].CompareTo(arr[best]) < 0) best = i;
+        for (int i = 1; i < arr.Length; i++)
+            if (arr[i].CompareTo(arr[best]) < 0) best = i;
 
         return arr[best];
     }
@@ -15,32 +16,33 @@ class Program
     {
         int best = 0;
 
-        for (int i = 1; i < arr.Length; i++) if (arr[i].CompareTo(arr[best]) > 0) best = i;
+        for (int i = 1; i < arr.Length; i++)
+            if (arr[i].CompareTo(arr[best]) > 0) best = i;
 
         return arr[best];
     }
 
-    static T GetAverage<T>(T[] arr)
+    static double GetAverage<T>(T[] arr)
     {
-        return GetSum(arr) / (dynamic)arr.Length;
+        return Convert.ToDouble(GetSum(arr)) / arr.Length;
     }
 
     static T GetSum<T>(T[] arr)
     {
-        dynamic accumulator = 0;
+        dynamic accum = 0;
 
-        for (int i = 0; i < arr.Length; i++) accumulator += arr[i];
+        for (int i = 0; i < arr.Length; i++) accum += arr[i];
 
-        return accumulator;
+        return accum;
     }
 
     static T GetProduct<T>(T[] arr)
     {
-        dynamic accumulator = 1;
+        dynamic accum = 1;
 
-        for (int i = 0; i < arr.Length; i++) accumulator *= arr[i];
+        for (int i = 0; i < arr.Length; i++) accum *= arr[i];
 
-        return accumulator;
+        return accum;
     }
 
     static void Main()
