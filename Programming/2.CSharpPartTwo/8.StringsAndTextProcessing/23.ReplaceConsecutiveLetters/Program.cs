@@ -7,6 +7,6 @@ class Program
     {
         string str = "aaaaabbbbbcdddeeeedssaa";
 
-        Console.WriteLine(Regex.Replace(str, @"([a-z])\1+", "$1"));
+        Console.WriteLine(Regex.Replace(str, @"(\w)\1+", "$1"));
     }
 }
