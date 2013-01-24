@@ -1,56 +1,66 @@
-# Trimester I
+## Strings and Text Processing
 
-## C# Part I
+1. Describe the strings in C#. What is typical for the `string` data type? Describe the most important methods of the `String` class.
+* Write a program that reads a string, reverses it and prints the result at the console. Example: `"sample"` -> `"elpmas"`.
+* Write a program to check if in a given expression the brackets are put correctly.
+    * Example of correct expression: `((a+b)/5-d)`.
+    * Example of incorrect expression: `)(a+b))`.
+* Write a program that finds how many times a substring is contained in a given text (perform case insensitive search). Example:
+    * The target substring is "in".
+    * The text is as follows: We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
+    * The result is: 9.
+* You are given a text. Write a program that changes the text in all regions surrounded by the tags `<upcase>` and `</upcase>` to uppercase. The tags cannot be nested. Example:
+    * We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
+    * The expected result: We are living in a YELLOW SUBMARINE. We don't have ANYTHING else.
+* Write a program that reads from the console a string of maximum 20 characters. If the length of the string is less than 20, the rest of the characters should be filled with `'*'`. Print the result string into the console.
+* Write a program that encodes and decodes a string using given encryption key (cipher). The key consists of a sequence of characters. The encoding/decoding is done by performing XOR (exclusive or) operation over the first letter of the string with the first of the key, the second – with the second, etc. When the last key character is reached, the next is the first.
+* Write a program that extracts from a given text all sentences containing given word.
+    * Example: The word is "in".
+    * The text is: We are living in a yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
+    * The expected result is: We are living in a yellow submarine. We will move out of it in 5 days.
 
-1. Course Overview | [Introduction to Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming/README.md)) - 27.10.2012
-2. [Primitive Data Types and Variables](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/2.PrimitiveDataTypesAndVariables) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/2.PrimitiveDataTypesAndVariables/README.md)) - 03.11.2012
-3. [Operators, Expressions and Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/3.OperatorsExpressionsAndStatements) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/3.OperatorsExpressionsAndStatements/README.md)) - 10.11.2012
-4. [Console Input/Output](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/4.ConsoleInputOutput) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/4.ConsoleInputOutput/README.md)) - 17.11.2012
-5. [Conditional Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/5.ConditionalStatements) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/5.ConditionalStatements/README.md)) - 24.11.2012
-6. [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/6.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/6.Loops/README.md)) - 01.12.2012
-7. Sample Test | [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/7.ExamPreparation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/7.ExamPreparation/README.md)) - 15.12.2012
-8. Test - 21.12.2012
-9. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/9.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/9.Exam/README.md)) - 27.12.2012
-
-## HTML Basics
-
-1. Course Overview | Web Front End Tools - 26.10.2012
-2. [HTML Fundamentals](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/2.HTMLFundamentals/README.md)) - 02.11.2012
-3. [HTML Tables](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/3.HTMLTables) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/3.HTMLTables/README.md)) - 09.11.2012
-4. [HTML Forms, Frames](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/4.HTMLFormsFrames) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/4.HTMLFormsFrames/README.md)) - 09.11.2012
-5. [Semantic Web](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/1.HTMLBasics/5.SemanticWeb) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/1.HTMLBasics/5.SemanticWeb/README.md)) - 16.11.2012
-6. Sample Test - 23.11.2012
-7. Test - 01.12.2012
-
-## Contest
-
-1. [Game of Trolls](https://github.com/jasssonpet/TelerikAcademy/tree/master/Contest/1.TrollsGame) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Contest/1.TrollsGame/README.md)) - 16.12.2012
-
----
-
-## C# Part II
-
-1. Course Overview | [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/1.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/1.Arrays/README.md)) - 08.01.2013
-2. [Multidimensional Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays/README.md)) - 12.01.2013
-3. [Methods](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/3.Methods) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/3.Methods/README.md)) - 15.01.2013
-4. [Numeral Systems](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/4.NumeralSystems) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/4.NumeralSystems/README.md)) - 15.01.2013
-5. [Using Classes and Objects](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/5.UsingClassesAndObjects) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/5.UsingClassesAndObjects/README.md)) - 19.01.2013
-6. [Exception Handling](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/6.ExceptionHandling) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/6.ExceptionHandling/README.md)) - 22.01.2013
-7. [Text Files](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/7.TextFiles) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/7.TextFiles/README.md)) - 22.01.2013
-8. [Strings and Text Processing](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/8.StringsAndTextProcessing) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/8.StringsAndTextProcessing/README.md)) - 26.01.2013
-9. Exam Preparation - 29.01.2013
-10. Exam - 04.02.2013
-
-## CSS Styling
-
-1. Course Overview | [CSS Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/1.CSSOverview/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/1.CSSOverview/README.md)) - 14.12.2012
-2. [CSS Presentation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/2.CSSPresentation/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/2.CSSPresentation/README.md)) - 11.01.2013
-4. [CSS Layout](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/3.CSSLayout/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/3.CSSLayout/README.md)) - 18.01.2013
-5. SASS
-6. LESS
-7. Sample Test
-8. Test
-
-## Contest
-
-1. Game of Life - 20.01.2013
+    Consider that the sentences are separated by "." and the words – by non-letter symbols.
+* We are given a string containing a list of forbidden words and a text containing some of these words. Write a program that replaces the forbidden words with asterisks.
+    * Example: Microsoft announced its next generation PHP compiler today. It is based on .NET Framework 4.
+    * and is implemented as a dynamic language in CLR.
+    * Words: "PHP, CLR, Microsoft"
+    * The expected result: ********* announced its next generation *** compiler today. It is based on .NET Framework 4.0 and is implemented as a dynamic language in ***.
+* Write a program that converts a string to a sequence of C# Unicode character literals. Use format strings. Sample input: Hi! Expected output: `\u0048\u0069\u0021`
+* Write a program that reads a number and prints it as a decimal number, hexadecimal number, percentage and in scientific notation. Format the output aligned right in 15 symbols.
+* Write a program that parses an URL address given in the format: `[protocol]://[server]/[resource]` and extracts from it the `[protocol]`, `[server]` and `[resource]` elements. Example:
+    * http://www.devbg.org/forum/index.php
+    * `[protocol]` = "http"
+    * `[server]` = "www.devbg.org"
+    * `[resource]` = "/forum/index.php"
+* Write a program that reverses the words in given sentence. Example:
+    * "C# is not C++, not PHP and not Delphi!"
+    * "Delphi not and PHP, not C++ not is C#!"
+* A dictionary is stored as a sequence of text lines containing words and their explanations. Write a program that enters a word and translates it by using the dictionary. Sample dictionary:
+    * .NET – platform for applications from Microsoft
+    * CLR – managed execution environment for .NET
+    * namespace – hierarchical organization of classes
+* Write a program that replaces in a HTML document given as string all the tags `<a href="...">...</a>` with corresponding tags `[URL=...]...[/URL]`.
+    Sample HTML fragment: `<p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>`
+    Sample ouput: `<p>Please visit [URL=http://academy.telerik. com]our site[/URL] to choose a training course. Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.</p>`
+* Write a program that reads two dates in the format: `day.month.year` and calculates the number of days between them. Example:
+    * Enter the first date: 27.02.2006
+    * Enter the second date: 3.03.2006
+    * Distance: 4 days
+* Write a program that reads a date and time given in the format: `day.month.year hour:minute:second` and prints the date and time after 6 hours and 30 minutes (in the same format) along with the day of week in Bulgarian.
+* Write a program for extracting all email addresses from given text. All substrings that match the format `<identifier>@<host>...<domain>` should be recognized as emails.
+* Write a program that extracts from a given text all dates that match the format `DD.MM.YYYY`. Display them in the standard date format for Canada.
+* Write a program that extracts from a given text all palindromes, e.g. `"ABBA"`, `"lamal"`, `"exe"`.
+* Write a program that reads a string from the console and prints all different letters in the string along with information how many times each letter is found.
+* Write a program that reads a string from the console and lists all different words in the string along with information how many times each word is found.
+* Write a program that reads a string from the console and replaces all series of consecutive identical letters with a single one. Example: `"aaaaabbbbbcdddeeeedssaa"` -> `"abcdedsa"`.
+* Write a program that reads a list of words, separated by spaces and prints the list in an alphabetical order.
+* Write a program that extracts from given HTML file its title (if available), and its body text without the HTML tags. Example:
+```html
+<html>
+  <head><title>News</title></head>
+  <body><p><a href="http://academy.telerik.com">Telerik
+    Academy</a>aims to provide free real-world practical
+    training for young people who want to turn into
+    skillful .NET software engineers.</p></body>
+</html>
+```
