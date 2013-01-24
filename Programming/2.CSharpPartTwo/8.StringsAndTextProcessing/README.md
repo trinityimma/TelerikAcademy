@@ -23,7 +23,9 @@
     * Example: Microsoft announced its next generation PHP compiler today. It is based on .NET Framework 4 and is implemented as a dynamic language in CLR.
     * Words: "PHP, CLR, Microsoft"
     * The expected result: ********* announced its next generation *** compiler today. It is based on .NET Framework 4.0 and is implemented as a dynamic language in ***.
-* Write a program that converts a string to a sequence of C# Unicode character literals. Use format strings. Sample input: Hi! Expected output: `\u0048\u0069\u0021`
+* Write a program that converts a string to a sequence of C# Unicode character literals. Use format strings.
+   * Sample input: Hi!
+   * Expected output: `\u0048\u0069\u0021`
 * Write a program that reads a number and prints it as a decimal number, hexadecimal number, percentage and in scientific notation. Format the output aligned right in 15 symbols.
 * Write a program that parses an URL address given in the format: `[protocol]://[server]/[resource]` and extracts from it the `[protocol]`, `[server]` and `[resource]` elements. Example:
     * http://www.devbg.org/forum/index.php
