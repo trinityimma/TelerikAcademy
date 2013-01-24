@@ -6,9 +6,9 @@ class Program
 {
     static void Main()
     {
-        string str = "C# is not C++, not PHP and not Delphi!";
+        string str = "C#   is not C++, not PHP and not Delphi!  Test 1, 2,3.";
 
-        string regex = @"\s|,\s*|\.\s*|!\s*";
+        string regex = @"\s+|,\s*|\.\s*|!\s*";
         List<string> words = new List<string>();      // Stack
         List<string> separators = new List<string>(); // Queue
 
