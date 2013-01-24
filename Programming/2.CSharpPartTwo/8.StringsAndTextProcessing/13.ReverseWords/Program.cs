@@ -12,10 +12,10 @@ class Program
 
         Stack<string> words = new Stack<string>();
 
-        foreach (string word in Regex.Split(str, regex))
+        foreach (var word in Regex.Split(str, regex))
             if (!String.IsNullOrEmpty(word)) words.Push(word);
 
-        foreach (Match separator in Regex.Matches(str, regex))
+        foreach (var separator in Regex.Matches(str, regex))
             Console.Write(words.Pop() + separator);
 
         Console.WriteLine();
