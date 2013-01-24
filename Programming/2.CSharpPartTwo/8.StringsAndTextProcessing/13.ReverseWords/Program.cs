@@ -19,7 +19,7 @@ class Program
             separators.Add(separator.Value);
 
         for (int i = 0; i < separators.Count; i++)
-            Console.Write(words[words.Count - 2 - i] + separators[i]);
+            Console.Write(words[words.Count - 2 - i] + separators[i]); // Without the last empty word
 
         Console.WriteLine();
     }
