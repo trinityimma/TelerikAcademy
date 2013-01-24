@@ -5,6 +5,7 @@ class Program
 {
     static void Main()
     {
+        // TODO: Skip whitespace
         using (StreamReader input = new StreamReader("../../input.txt"))
             for (int i; (i = input.Read()) != -1;) // Read char by char
                 if (i == '>' && input.Peek() != '<' && input.Peek() != '\r' && input.Peek() != '\n')
