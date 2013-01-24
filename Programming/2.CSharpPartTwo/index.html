@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <title>C# Част II</title>
     <style>
+        /* TODO: Fix Firefox column-span */
+
         h1, dl, dt, dd {
             margin: 0;
             padding: 0;
@@ -32,7 +34,7 @@
         }
 
         dl {
-            padding: 20px 0 20px 20px;
+            padding: 20px;
             -webkit-column-count: 4;
                -moz-column-count: 4;
                     column-count: 4;
@@ -43,7 +45,7 @@
         dl:not(:last-child), h1 { border-bottom: 1px dotted #333; }
 
         dt {
-            margin-left: -20px;
+            margin: 0 -20px;
             padding-bottom: 20px;
             font-weight: bold;
             font-size: 22px;
@@ -53,7 +55,7 @@
         }
 
         dd {
-            display: list-item;
+            display: list-item; /* Shows the little dot */
             margin-left: 16px;
         }
     </style>
