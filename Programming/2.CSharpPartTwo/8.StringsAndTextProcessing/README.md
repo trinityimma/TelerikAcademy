@@ -20,8 +20,7 @@
     * The text is: We are living in a yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
     * The expected result is: We are living in a yellow submarine. We will move out of it in 5 days.
 * We are given a string containing a list of forbidden words and a text containing some of these words. Write a program that replaces the forbidden words with asterisks.
-    * Example: Microsoft announced its next generation PHP compiler today. It is based on .NET Framework 4.
-    * and is implemented as a dynamic language in CLR.
+    * Example: Microsoft announced its next generation PHP compiler today. It is based on .NET Framework 4 and is implemented as a dynamic language in CLR.
     * Words: "PHP, CLR, Microsoft"
     * The expected result: ********* announced its next generation *** compiler today. It is based on .NET Framework 4.0 and is implemented as a dynamic language in ***.
 * Write a program that converts a string to a sequence of C# Unicode character literals. Use format strings. Sample input: Hi! Expected output: `\u0048\u0069\u0021`
