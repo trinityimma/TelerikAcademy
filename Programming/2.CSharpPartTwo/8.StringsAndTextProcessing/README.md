@@ -27,8 +27,8 @@
    * Sample input: Hi!
    * Expected output: `\u0048\u0069\u0021`
 * Write a program that reads a number and prints it as a decimal number, hexadecimal number, percentage and in scientific notation. Format the output aligned right in 15 symbols.
-* Write a program that parses an URL address given in the format: `[protocol]://[server]/[resource]` and extracts from it the `[protocol]`, `[server]` and `[resource]` elements. Example:
-    * http://www.devbg.org/forum/index.php
+* Write a program that parses an URL address given in the format: `[protocol]://[server]/[resource]. Example:
+    * `URL` = "http://www.devbg.org/forum/index.php"
     * `[protocol]` = "http"
     * `[server]` = "www.devbg.org"
     * `[resource]` = "/forum/index.php"
