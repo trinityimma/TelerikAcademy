@@ -6,7 +6,7 @@ class Program
 {
     static void Main()
     {
-        string str = "C# is not C++, not PHP and not Delphi!"; 
+        string str = "C# is not C++, not PHP and not Delphi!";
 
         string regex = @"\s|,\s*|\.\s*|!\s*";
         List<string> words = new List<string>();      // Stack

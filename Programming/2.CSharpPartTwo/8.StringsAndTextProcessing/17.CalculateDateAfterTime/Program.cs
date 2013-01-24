@@ -9,7 +9,6 @@ class Program
 
         DateTime date = DateTime.Parse(str).AddHours(6).AddMinutes(30);
 
-        Console.WriteLine(date);
-        Console.WriteLine(date.ToString("dddd", new CultureInfo("bg-BG")));
+        Console.WriteLine("{0} {1}", date.ToString("dddd", new CultureInfo("bg-BG")), date);
     }
 }

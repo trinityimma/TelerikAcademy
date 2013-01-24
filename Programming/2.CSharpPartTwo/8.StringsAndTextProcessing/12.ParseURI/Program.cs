@@ -7,7 +7,7 @@ class Program
     {
         string uri = "http://www.devbg.org/forum/index.php";
 
-        var fragments = Regex.Match(uri, "(.*)://([^/]*)(/.*)").Groups;
+        var fragments = Regex.Match(uri, "(.*)://(.*?)(/.*)").Groups;
 
         Console.WriteLine(fragments[1]);
         Console.WriteLine(fragments[2]);
