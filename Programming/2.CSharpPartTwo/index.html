@@ -32,7 +32,7 @@
         }
 
         dl {
-            padding: 20px 0;
+            padding: 20px 0 20px 20px;
             -webkit-column-count: 4;
                -moz-column-count: 4;
                     column-count: 4;
@@ -41,13 +41,20 @@
                     column-gap: 20px;
         }
         dl:not(:last-child), h1 { border-bottom: 1px dotted #333; }
+
         dt {
+            margin-left: -20px;
             padding-bottom: 20px;
             font-weight: bold;
             font-size: 22px;
             -webkit-column-span: all;
                -moz-column-span: all;
                     column-span: all;
+        }
+
+        dd {
+            display: list-item;
+            margin-left: 16px;
         }
     </style>
 </head>
