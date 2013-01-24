@@ -40,8 +40,8 @@
     * CLR – managed execution environment for .NET
     * namespace – hierarchical organization of classes
 * Write a program that replaces in a HTML document given as string all the tags `<a href="...">...</a>` with corresponding tags `[URL=...]...[/URL]`.
-    * Sample HTML fragment: <p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>
-    * Sample ouput: <p>Please visit [URL=http://academy.telerik. com]our site[/URL] to choose a training course. Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.</p>
+    * Sample HTML fragment: ```<p>Please visit <a href="http://academy.telerik. com">our site</a> to choose a training course. Also visit <a href="www.devbg.org">our forum</a> to discuss the courses.</p>```
+    * Sample ouput: ```<p>Please visit [URL=http://academy.telerik. com]our site[/URL] to choose a training course. Also visit [URL=www.devbg.org]our forum[/URL] to discuss the courses.</p>```
 * Write a program that reads two dates in the format: `day.month.year` and calculates the number of days between them. Example:
     * Enter the first date: 27.02.2006
     * Enter the second date: 3.03.2006
@@ -55,6 +55,7 @@
 * Write a program that reads a string from the console and replaces all series of consecutive identical letters with a single one. Example: `"aaaaabbbbbcdddeeeedssaa"` -> `"abcdedsa"`.
 * Write a program that reads a list of words, separated by spaces and prints the list in an alphabetical order.
 * Write a program that extracts from given HTML file its title (if available), and its body text without the HTML tags. Example:
+
 ```html
 <html>
   <head><title>News</title></head>
