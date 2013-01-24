@@ -13,13 +13,13 @@ class Program
         List<string> separators = new List<string>(); // Queue
 
         foreach (string word in Regex.Split(str, regex))
-            if (word.Length != 0) words.Add(word);
+            words.Add(word);
 
         foreach (Match separator in Regex.Matches(str, regex))
             separators.Add(separator.Value);
 
-        for (int i = 0; i < words.Count; i++)
-            Console.Write(words[words.Count - 1 - i] + separators[i]);
+        for (int i = 0; i < separators.Count; i++)
+            Console.Write(words[words.Count - 2 - i] + separators[i]);
 
         Console.WriteLine();
     }
