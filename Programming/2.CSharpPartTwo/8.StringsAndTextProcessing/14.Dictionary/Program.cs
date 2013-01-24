@@ -8,18 +8,18 @@ class Program
         string[] dictionary = {
             ".NET - platform for applications from Microsoft",
             "CLR - managed execution environment for .NET",
-            "namespace - hierarchical organization of classes"
+            "namespace - hierarchical - organization of classes"
         };
         string word = "namespace";
 
         // TODO: Interpolation search
         foreach (string item in dictionary)
         {
-            var fragments = Regex.Split(item, " - ");
+            var fragments = Regex.Match(item, "(.*?) - (.*)").Groups;
 
-            if (fragments[0] == word)
+            if (fragments[1].Value == word)
             {
-                Console.WriteLine(fragments[1]);
+                Console.WriteLine(fragments[2]);
                 return;
             }
         }
