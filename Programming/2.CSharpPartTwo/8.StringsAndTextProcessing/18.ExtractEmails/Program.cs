@@ -7,7 +7,7 @@ class Program
     {
         string str = "Static void Main() jasssonpet@gmail.com. using System,jason@abv.bg return";
 
-        foreach (var item in Regex.Matches(str, @"\b\w+@\w+\.\w+\b"))
+        foreach (var item in Regex.Matches(str, @"\w+@\w+\.\w+"))
             Console.WriteLine(item);
     }
 }
