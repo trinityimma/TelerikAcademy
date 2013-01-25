@@ -20,20 +20,20 @@ class Program
             if (s[i] == ' ') continue;
 
             // Number: 1, 123, -123
-            else if (IsDigit(s[i]) || (s[i] == '-' && IsDigit(s[i + 1])))
+            else if (Char.IsDigit(s[i]) || (s[i] == '-' && Char.IsDigit(s[i + 1])))
             {
                 type = "number";
 
-                for (; i < s.Length && (IsDigit(s[i]) || s[i] == '.' || s[i] == '-'); i++) value += s[i];
+                for (; i < s.Length && (Char.IsDigit(s[i]) || s[i] == '.' || s[i] == '-'); i++) value += s[i];
                 i--;
             }
 
             // Function: ln, pow, sqrt
-            else if (IsChar(s[i]))
+            else if (Char.IsLetter(s[i]))
             {
                 type = "function";
 
-                for (; i < s.Length && IsChar(s[i]); i++) value += s[i];
+                for (; i < s.Length && Char.IsLetter(s[i]); i++) value += s[i];
                 i--;
             }
 
@@ -104,16 +104,6 @@ class Program
             else stack.Push(double.Parse(token));
 
         return stack.Pop();
-    }
-
-    static bool IsChar(char c)
-    {
-        return c >= 'a' && c <= 'z';
-    }
-
-    static bool IsDigit(char c)
-    {
-        return c >= '0' && c <= '9';
     }
 
     static void Main()
