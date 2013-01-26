@@ -1,0 +1,53 @@
+@import compass/css3
+
+$items: 6
+
+$galleryGridGutter: 10px
+
+$galleryThumbnailWidth: 135px
+$galleryThumbnailHeight: 84px
+
+$galleryOriginalWidth: $items * $galleryThumbnailWidth + ($items - 1) * $galleryGridGutter
+$galleryOriginalHeight: $galleryOriginalWidth / 1.6
+
+// RESET
+body, ul, li
+    margin: 0
+    padding: 0
+
+// CLASSES
+@mixin inline
+    overflow: hidden
+    list-style: none
+
+    li
+        float: left
+
+// GALLERY
+.gallery
+    @include inline
+    width: $galleryOriginalWidth
+    height: $galleryThumbnailHeight + $galleryGridGutter + $galleryOriginalHeight
+    position: relative
+    margin: $galleryGridGutter auto 0
+
+.gallery-item
+    a
+        display: block
+        padding-bottom: $galleryGridGutter
+
+    &:not(:first-child) a
+        padding-left: $galleryGridGutter
+
+.gallery-original
+    @include transition(all 300ms ease-in)
+    position: absolute
+    top: $galleryThumbnailHeight + $galleryGridGutter
+    left: 0
+    z-index: -1
+    opacity: 0
+
+.gallery:not(:hover) .gallery-item:first-child .gallery-original,
+.gallery-item:hover .gallery-original
+    z-index: 1
+    opacity: 1
