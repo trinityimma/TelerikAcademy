@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
@@ -10,10 +10,11 @@ class Program
 
         string regex = @"\s+|,\s*|\.\s*|!\s*";
 
-        Stack<string> words = new Stack<string>();
+        var words = new Stack<string>();
 
         foreach (var word in Regex.Split(str, regex))
-            if (!String.IsNullOrEmpty(word)) words.Push(word);
+            words.Push(word);
+        words.Pop(); // Remove last empty word
 
         foreach (var separator in Regex.Matches(str, regex))
             Console.Write(words.Pop() + separator);
