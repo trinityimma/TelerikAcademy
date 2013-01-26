@@ -40,14 +40,22 @@ img
     &:not(:first-child)
         margin-left: $gridGutter
 
+.gallery-thumbnail
+    opacity: .5
+
 .gallery-original
-    @include transition(all 300ms ease-in)
+    @include transition(all 300ms ease-in-out)
     position: absolute
     top: $thumbnailHeight + $gridGutter
     left: 0
     z-index: -1
     opacity: 0
 
-.gallery-item:target .gallery-original
-    z-index: 1
-    opacity: 1
+.gallery-item:target
+    .gallery-thumbnail
+        opacity: 1
+        cursor: auto
+
+    .gallery-original
+        z-index: 1
+        opacity: 1
