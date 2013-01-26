@@ -33,7 +33,7 @@
             overflow: hidden;
             margin-left: -10px;
         }
-        .span1, .span6 {
+        [class ^= "span"], [class *= " span"]  {
             float: left;
             margin-left: 10px;
         }
@@ -46,27 +46,30 @@
         }
 
         /* CLASSES */
-        .inline li { display: inline-block; }
+        .pull-left {
+            float: left;
+            margin-right: 10px;
+        }
 
+        /* ICONS */
+        [class ^= "icon"], [class *= " icon"] {
+            display: inline-block;
+            width: 19px;
+            height: 20px;
+            vertical-align: text-bottom;
+        }
+        .icon-home { background: url(images/icon-home.png); }
+
+        /* LISTS */
         .unstyled { list-style: none; }
+
+        .inline li { display: inline-block; }
 
         .styled dt { font-weight: bold; }
         .styled dd a { color: #000; }
         .styled a { text-decoration: none; }
         .styled a:hover { text-decoration: underline; }
 
-        .pull-left {
-            float: left;
-            margin-right: 10px;
-        }
-
-        .icon-home {
-            display: inline-block;
-            width: 19px;
-            height: 20px;
-            background: url(images/icon-home.png);
-            vertical-align: text-bottom;
-        }
 
         /* PAGINATION */
         .pagination a {
@@ -92,6 +95,15 @@
             content: "►";
         }
 
+        /* BOX */
+        .box {
+            margin-bottom: 2px;
+            padding: 2px;
+            border: 1px solid #8A8A8A;
+            background: #fff;
+        }
+        .box h2 { margin: -2px -2px 0 -2px; }
+
         /* SITE */
         .nav, .aside { padding-top: 10px; }
 
@@ -113,13 +125,6 @@
             margin-bottom: 3px;
             text-transform: uppercase;
         }
-        .aside .box {
-            margin-bottom: 2px;
-            padding: 2px;
-            border: 1px solid #8A8A8A;
-            background: #fff;
-        }
-        .aside h2 + .box { margin-top: -4px; } /* 3px + 1px border */
         .aside-search input[type="search"] { width: 90px; }
     </style>
 </head>
@@ -239,10 +244,10 @@
         </article>
 
         <aside class="span1 aside">
-            <h2>Site Search</h2>
-
             <section class="box">
                 <form class="aside-search">
+                    <h2>Site Search</h2>
+
                     <input type="search" />
                     <input type="submit" value="..." />
                 </form>
@@ -255,33 +260,37 @@
 
             <section>
                 <ul class="unstyled box">
-                    <li><a href="#"><img src="images/25-styles.png" alt="25+ styles"> Dynamic button image generation</a></li>
+                    <li>
+                        <a href="#">
+                            <img src="images/25-styles.png" alt="25+ styles"> Dynamic button image generation
+                        </a>
+                    </li>
                 </ul>
 
                 <h2>Web Hosting</h2>
 
                 <ul class="unstyled">
-                    <li>
-                        <ul class="unstyled box">
+                    <li class="box">
+                        <ul class="unstyled">
                             <li><a href="#">$15 Domin Name Registration</a></li>
                             <li><a href="#">Save $20 / year!</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <ul class="unstyled box">
+                    <li class="box">
+                        <ul class="unstyled">
                             <li><a href="#">UK Domain Names</a></li>
                             <li><a href="#">UK Web Hosting</a></li>
                             <li><a href="#">Alojamiento Web</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <ul class="unstyled box">
+                    <li class="box">
+                        <ul class="unstyled">
                             <li><a href="#">Buy UK Domain Names</a></li>
                             <li><a href="#">Register Domain Names</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <ul class="unstyled box">
+                    <li class="box">
+                        <ul class="unstyled">
                             <li><a href="#">Cheap Domain Names</a></li>
                             <li><a href="#">Cheap Web Hosting</a></li>
                         </ul>
