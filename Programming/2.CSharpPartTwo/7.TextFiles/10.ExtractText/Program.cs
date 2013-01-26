@@ -5,13 +5,19 @@ class Program
 {
     static void Main()
     {
-        // TODO: Skip whitespace
         using (StreamReader input = new StreamReader("../../input.txt"))
-            for (int i; (i = input.Read()) != -1;) // Read char by char
-                if (i == '>' && input.Peek() != '<' && input.Peek() != '\r' && input.Peek() != '\n')
-                    while ((i = input.Read()) != '<') // Inside text node
-                        Console.Write((char)i);
+        {
+            for (int i; (i = input.Read()) != -1; ) // Read char by char
+            {
+                if (i == '>' && input.Peek() != '<') // Inside text node
+                {
+                    string text = String.Empty;
 
-        Console.WriteLine();
+                    while ((i = input.Read()) != '<' && i != -1) text += (char)i;
+
+                    if (!String.IsNullOrWhiteSpace(text)) Console.WriteLine(text);
+                }
+            }
+        }
     }
 }
