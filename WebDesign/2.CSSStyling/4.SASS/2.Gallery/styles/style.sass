@@ -35,12 +35,10 @@ img
     margin: $galleryGridGutter auto 0
 
 .gallery-item
-    a
-        display: block
-        padding-bottom: $galleryGridGutter
+    margin-bottom: $galleryGridGutter
 
-    &:not(:first-child) a
-        padding-left: $galleryGridGutter
+    &:not(:first-child)
+        margin-left: $galleryGridGutter
 
 .gallery-original
     @include transition(all 300ms ease-in)
@@ -50,7 +48,6 @@ img
     z-index: -1
     opacity: 0
 
-.gallery:not(:hover) .gallery-item:first-child .gallery-original,
-.gallery-item:hover .gallery-original
+.gallery-item:target .gallery-original
     z-index: 1
     opacity: 1

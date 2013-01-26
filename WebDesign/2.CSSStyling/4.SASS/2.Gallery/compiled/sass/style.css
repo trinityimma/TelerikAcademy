@@ -23,17 +23,16 @@ img {
   float: left;
 }
 
-/* line 38, ../../styles/style.sass */
-.gallery-item a {
-  display: block;
-  padding-bottom: 10px;
+/* line 37, ../../styles/style.sass */
+.gallery-item {
+  margin-bottom: 10px;
 }
-/* line 42, ../../styles/style.sass */
-.gallery-item:not(:first-child) a {
-  padding-left: 10px;
+/* line 40, ../../styles/style.sass */
+.gallery-item:not(:first-child) {
+  margin-left: 10px;
 }
 
-/* line 45, ../../styles/style.sass */
+/* line 43, ../../styles/style.sass */
 .gallery-original {
   -webkit-transition: all 300ms ease-in;
   -moz-transition: all 300ms ease-in;
@@ -46,9 +45,8 @@ img {
   opacity: 0;
 }
 
-/* line 53, ../../styles/style.sass */
-.gallery:not(:hover) .gallery-item:first-child .gallery-original,
-.gallery-item:hover .gallery-original {
+/* line 51, ../../styles/style.sass */
+.gallery-item:target .gallery-original {
   z-index: 1;
   opacity: 1;
 }
