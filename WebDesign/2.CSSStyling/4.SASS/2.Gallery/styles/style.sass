@@ -1,14 +1,14 @@
 @import compass/css3
 
-$items: 6
+$count: 6
 
-$galleryGridGutter: 10px
+$gridGutter: 10px
 
-$galleryThumbnailWidth: 135px
-$galleryThumbnailHeight: 84px
+$thumbnailWidth: 135px
+$thumbnailHeight: 84px
 
-$galleryOriginalWidth: $items * $galleryThumbnailWidth + ($items - 1) * $galleryGridGutter
-$galleryOriginalHeight: $galleryOriginalWidth / 1.6
+$originalWidth: $count * $thumbnailWidth + ($count - 1) * $gridGutter
+$originalHeight: $originalWidth / 1.6
 
 // RESET
 body, ul, li
@@ -29,21 +29,21 @@ img
 // GALLERY
 .gallery
     +inline
-    width: $galleryOriginalWidth
-    height: $galleryThumbnailHeight + $galleryGridGutter + $galleryOriginalHeight
+    width: $originalWidth
+    height: $thumbnailHeight + $gridGutter + $originalHeight
     position: relative
-    margin: $galleryGridGutter auto 0
+    margin: $gridGutter auto 0
 
 .gallery-item
-    margin-bottom: $galleryGridGutter
+    margin-bottom: $gridGutter
 
     &:not(:first-child)
-        margin-left: $galleryGridGutter
+        margin-left: $gridGutter
 
 .gallery-original
     @include transition(all 300ms ease-in)
     position: absolute
-    top: $galleryThumbnailHeight + $galleryGridGutter
+    top: $thumbnailHeight + $gridGutter
     left: 0
     z-index: -1
     opacity: 0
