@@ -205,7 +205,7 @@ GAME.controller 'gameController', [
         # Get relative to view
         get: (p) -> @field[p.x - @_row][p.y - @_col]
 
-        # When scrolling into view get random x with 2 cell padding for the falling towers
+        # When scrolling into view get random x with 2 cells padding for the falling towers
         # ******
         # *  x *
         # *    *
