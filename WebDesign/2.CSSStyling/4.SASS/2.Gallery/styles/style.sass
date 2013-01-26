@@ -19,7 +19,7 @@ img
     border: 0
 
 // CLASSES
-@mixin inline
+=inline
     overflow: hidden
     list-style: none
 
@@ -28,7 +28,7 @@ img
 
 // GALLERY
 .gallery
-    @include inline
+    +inline
     width: $galleryOriginalWidth
     height: $galleryThumbnailHeight + $galleryGridGutter + $galleryOriginalHeight
     position: relative
