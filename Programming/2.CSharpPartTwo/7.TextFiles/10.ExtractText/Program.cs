@@ -15,7 +15,7 @@ class Program
 
                     while ((i = input.Read()) != -1 && i != '<') text += (char)i;
 
-                    if (!String.IsNullOrWhiteSpace(text)) Console.WriteLine(text);
+                    if (!String.IsNullOrWhiteSpace(text)) Console.WriteLine(text.Trim());
                 }
             }
         }
