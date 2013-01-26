@@ -13,7 +13,7 @@ class Program
                 {
                     string text = String.Empty;
 
-                    while ((i = input.Read()) != '<' && i != -1) text += (char)i;
+                    while ((i = input.Read()) != -1 && i != '<') text += (char)i;
 
                     if (!String.IsNullOrWhiteSpace(text)) Console.WriteLine(text);
                 }
