@@ -9,7 +9,7 @@ class Program
         {
             for (int i; (i = input.Read()) != -1; ) // Read char by char
             {
-                if (i == '>' && input.Peek() != '<') // Inside text node
+                if (i == '>') // Inside text node
                 {
                     string text = String.Empty;
 
