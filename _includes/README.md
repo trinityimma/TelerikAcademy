@@ -46,11 +46,7 @@
 1. Course Overview | [CSS Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/1.CSSOverview/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/1.CSSOverview/README.md)) - 14.12.2012
 2. [CSS Presentation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/2.CSSPresentation/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/2.CSSPresentation/README.md)) - 11.01.2013
 4. [CSS Layout](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/3.CSSLayout/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/3.CSSLayout/README.md)) - 18.01.2013
-5. SASS
-6. LESS
-7. Sample Test
-8. Test
-
-## Contest
-
-1. Game of Life - 20.01.2013
+5. SASS - 25.01.2013
+6. LESS - 01.02.2013
+7. Sample Test - 08.02.2013
+8. Test - 15.02.2013
