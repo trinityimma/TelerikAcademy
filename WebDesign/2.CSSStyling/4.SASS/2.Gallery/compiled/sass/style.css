@@ -21,9 +21,9 @@ img {
 
 /* line 30, ../../styles/style.sass */
 .gallery {
+  position: relative;
   width: 854px;
   height: 627.75px;
-  position: relative;
   margin: 10px auto 0;
 }
 
@@ -35,18 +35,28 @@ img {
 .gallery-item:not(:first-child) {
   margin-left: 10px;
 }
+/* line 44, ../../styles/style.sass */
+.gallery-item:target .gallery-thumbnail {
+  opacity: 1;
+  cursor: auto;
+}
+/* line 48, ../../styles/style.sass */
+.gallery-item:target .gallery-photo {
+  z-index: 1;
+  opacity: 1;
+}
 
-/* line 43, ../../styles/style.sass */
+/* line 52, ../../styles/style.sass */
 .gallery-thumbnail {
   opacity: 0.5;
 }
-/* line 46, ../../styles/style.sass */
+/* line 55, ../../styles/style.sass */
 .gallery-thumbnail:hover {
   opacity: 0.7;
 }
 
-/* line 49, ../../styles/style.sass */
-.gallery-original {
+/* line 58, ../../styles/style.sass */
+.gallery-photo {
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
@@ -56,15 +66,4 @@ img {
   left: 0;
   z-index: -1;
   opacity: 0;
-}
-
-/* line 58, ../../styles/style.sass */
-.gallery-item:target .gallery-thumbnail {
-  opacity: 1;
-  cursor: auto;
-}
-/* line 62, ../../styles/style.sass */
-.gallery-item:target .gallery-original {
-  z-index: 1;
-  opacity: 1;
 }
