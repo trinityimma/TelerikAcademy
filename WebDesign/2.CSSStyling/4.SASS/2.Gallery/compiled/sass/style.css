@@ -9,18 +9,22 @@ img {
   border: 0;
 }
 
-/* line 30, ../../styles/style.sass */
-.gallery {
+/* line 22, ../../styles/style.sass */
+.inline, .gallery {
   overflow: hidden;
   list-style: none;
-  width: 860px;
-  height: 631.5px;
-  position: relative;
-  margin: 10px auto 0;
 }
 /* line 26, ../../styles/style.sass */
-.gallery li {
+.inline li, .gallery li {
   float: left;
+}
+
+/* line 30, ../../styles/style.sass */
+.gallery {
+  width: 854px;
+  height: 627.75px;
+  position: relative;
+  margin: 10px auto 0;
 }
 
 /* line 37, ../../styles/style.sass */

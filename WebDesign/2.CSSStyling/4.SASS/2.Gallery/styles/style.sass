@@ -19,7 +19,7 @@ img
     border: 0
 
 // CLASSES
-=inline
+.inline
     overflow: hidden
     list-style: none
 
@@ -28,7 +28,7 @@ img
 
 // GALLERY
 .gallery
-    +inline
+    @extend .inline
     width: $originalWidth
     height: $thumbnailHeight + $gridGutter + $originalHeight
     position: relative
