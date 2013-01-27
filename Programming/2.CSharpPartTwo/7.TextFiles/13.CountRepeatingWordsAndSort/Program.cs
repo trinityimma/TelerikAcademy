@@ -23,7 +23,7 @@ class Program
 
             // Write output
             using (StreamWriter output = new StreamWriter("../../output.txt"))
-                for (int i = 0; i < words.Length; i++)
+                for (int i = words.Length - 1; i >= 0; i--) // Descending order
                     output.WriteLine("{0}: {1}", words[i], values[i]);
         }
 
