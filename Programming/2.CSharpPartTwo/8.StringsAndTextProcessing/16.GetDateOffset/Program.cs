@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 class Program
 {
@@ -7,6 +8,9 @@ class Program
         string start = "27.02.2006";
         string end = "3.03.2006";
 
-        Console.WriteLine((DateTime.Parse(end) - DateTime.Parse(start)).TotalDays);
+        DateTime startDate = DateTime.ParseExact(start, "d.MM.yyyy", CultureInfo.InvariantCulture);
+        DateTime endDate = DateTime.ParseExact(end, "d.MM.yyyy", CultureInfo.InvariantCulture);
+
+        Console.WriteLine((endDate - startDate).TotalDays);
     }
 }

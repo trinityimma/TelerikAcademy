@@ -10,7 +10,7 @@ class Program
 
         DateTime date;
         foreach (Match item in Regex.Matches(str, @"\b[0-9]{2}.[0-9]{2}.[0-9]{4}\b"))
-            if (DateTime.TryParse(item.Value, out date))
+            if (DateTime.TryParseExact(item.Value, "dd.MM.yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out date))
                 Console.WriteLine(date.ToString(CultureInfo.GetCultureInfo("en-CA").DateTimeFormat.ShortDatePattern));
     }
 }
