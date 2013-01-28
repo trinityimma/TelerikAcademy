@@ -1,68 +1,68 @@
-/* line 14, ../../styles/style.sass */
+/* line 15, ../../styles/style.sass */
 body, ul, li {
   margin: 0;
   padding: 0;
 }
 
-/* line 18, ../../styles/style.sass */
+/* line 19, ../../styles/style.sass */
 img {
   border: 0;
 }
 
-/* line 22, ../../styles/style.sass */
+/* line 23, ../../styles/style.sass */
 .inline, .gallery {
   overflow: hidden;
   list-style: none;
 }
-/* line 26, ../../styles/style.sass */
+/* line 27, ../../styles/style.sass */
 .inline li, .gallery li {
   float: left;
 }
 
-/* line 30, ../../styles/style.sass */
+/* line 31, ../../styles/style.sass */
 .gallery {
   position: relative;
   width: 854px;
-  height: 627.75px;
+  height: 627.5px;
   margin: 10px auto 0;
 }
 
-/* line 37, ../../styles/style.sass */
+/* line 38, ../../styles/style.sass */
 .gallery-item {
   margin-bottom: 10px;
 }
-/* line 40, ../../styles/style.sass */
+/* line 41, ../../styles/style.sass */
 .gallery-item:not(:first-child) {
   margin-left: 10px;
 }
-/* line 44, ../../styles/style.sass */
+/* line 45, ../../styles/style.sass */
 .gallery-item:target .gallery-thumbnail {
   opacity: 1;
   cursor: auto;
 }
-/* line 48, ../../styles/style.sass */
+/* line 49, ../../styles/style.sass */
 .gallery-item:target .gallery-photo {
   z-index: 1;
   opacity: 1;
 }
 
-/* line 52, ../../styles/style.sass */
+/* line 53, ../../styles/style.sass */
 .gallery-thumbnail {
   opacity: 0.5;
 }
-/* line 55, ../../styles/style.sass */
+/* line 56, ../../styles/style.sass */
 .gallery-thumbnail:hover {
   opacity: 0.7;
 }
 
-/* line 58, ../../styles/style.sass */
+/* line 59, ../../styles/style.sass */
 .gallery-photo {
   -webkit-transition: all 300ms ease-in-out;
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
   position: absolute;
-  top: 94px;
+  top: 93.75px;
   left: 0;
   opacity: 0;
 }
