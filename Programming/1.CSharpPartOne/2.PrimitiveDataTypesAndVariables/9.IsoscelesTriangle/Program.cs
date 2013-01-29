@@ -7,7 +7,7 @@ class Program
     {
         Console.OutputEncoding = Encoding.UTF8;
         Console.WriteLine("   ©   ");
-        Console.WriteLine("  © © ");
+        Console.WriteLine("  © ©  ");
         Console.WriteLine(" ©   © ");
         Console.WriteLine("© © © ©");
     }
