@@ -6,7 +6,7 @@ class Program
     {
         int n = int.Parse(Console.ReadLine());
 
-        String[] ones = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+        string[] ones = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
         Console.WriteLine(ones[n]);
     }

@@ -16,7 +16,7 @@ class Program
     static string player = "(O)";
     static string playerColor = "White";
     static char[] rockCharacters = { '^', '@', '*', '&', '+', '%', '$', '#', '!', '.', ';' };
-    static String[] rockColors = { "Green", "Yellow", "Red" };
+    static string[] rockColors = { "Green", "Yellow", "Red" };
     static int rockMaxWidth = 3;
     static int rockBottomPaddingAtStart = rockMaxWidth + player.Length;
     static string resultColor = "Gray";
