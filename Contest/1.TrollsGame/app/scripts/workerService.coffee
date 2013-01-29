@@ -16,7 +16,6 @@ GAME.service 'workerService', [
         , false
 
         # Call callback if we have a result; else log the message
-        # Using global events for communication with controllers
         worker.addEventListener 'message', (e) =>
             if e.data.result?
                 $log.log "Worker finished in #{new Date - startTime}ms."
