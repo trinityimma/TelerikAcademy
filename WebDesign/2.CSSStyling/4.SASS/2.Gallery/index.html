@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <title>Gallery</title>
     <link rel="stylesheet" href="compiled/sass/style.css">
-    <script>if (!location.hash) location.replace(location + "#gallery-item-1");</script>
 </head>
 
 <body>
@@ -69,5 +68,7 @@
             </a>
         </li>
     </ul>
+
+    <script>location.hash || location.replace(location + "#gallery-item-1")</script>
 </body>
 </html>
