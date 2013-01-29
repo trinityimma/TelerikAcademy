@@ -96,7 +96,7 @@ GAME.controller 'gameController', [
             delay ->
                 $scope.flashing = off
                 deferred.resolve()
-            , 4 # 1 css transition + 2 css animation + 1 delay
+            , 4 # 1 CSS transition + 2 CSS animation + 1 delay
 
             return deferred.promise
 
@@ -129,7 +129,7 @@ GAME.controller 'gameController', [
                     $log.log "  Changing: #{move.point.x}:#{move.point.y} = #{point.value} + #{change * move.delta}." +
                       " Result: #{$scope.currentResult}."
 
-                    $scope.field[move.point.x][move.point.y] = point.value += change * move.delta # save to original
+                    $scope.field[move.point.x][move.point.y] = point.value += change * move.delta # Save to original
                     $scope.currentAnimation += change
 
                     # Call next
@@ -243,7 +243,7 @@ GAME.controller 'gameController', [
         timer = null
         interval = 100
         lastInverval = 200
-        scrollingInterval = 300 - lastInverval # 300 is the CSS transition duration
+        scrollingInterval = 300 - lastInverval # 300ms is the CSS transition duration
 
         # Creating the function only once
         end = ->
