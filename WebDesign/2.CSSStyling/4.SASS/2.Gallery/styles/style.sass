@@ -1,14 +1,14 @@
 @import compass/css3
 
 $count: 6
+$width: 860px
+$aspectRatio: 16 / 10
 $gridGutter: 10px
 
-$aspectRatio: 16 / 10
-
-$thumbnailWidth: 134px
+$thumbnailWidth: ($width - ($count - 1) * $gridGutter) / $count
 $thumbnailHeight: $thumbnailWidth / $aspectRatio
 
-$photoWidth: $count * $thumbnailWidth + ($count - 1) * $gridGutter
+$photoWidth: $width
 $photoHeight: $photoWidth / $aspectRatio
 
 // RESET
