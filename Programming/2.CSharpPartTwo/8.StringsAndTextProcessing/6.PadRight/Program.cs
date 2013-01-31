@@ -4,6 +4,9 @@ class Program
 {
     static void Main()
     {
-        Console.WriteLine(Console.ReadLine().PadRight(20, '*'));
+        string str = Console.ReadLine();
+        int maxLength = 20;
+
+        if (str.Length <= maxLength) Console.WriteLine(str.PadRight(maxLength, '*'));
     }
 }
