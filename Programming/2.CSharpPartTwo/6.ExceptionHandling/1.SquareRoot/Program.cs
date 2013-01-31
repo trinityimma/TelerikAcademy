@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -6,9 +6,7 @@ class Program
     {
         try
         {
-            int n = int.Parse(Console.ReadLine());
-
-            if (n < 0) throw new FormatException();
+            uint n = uint.Parse(Console.ReadLine());
 
             Console.WriteLine(Math.Sqrt(n));
         }
