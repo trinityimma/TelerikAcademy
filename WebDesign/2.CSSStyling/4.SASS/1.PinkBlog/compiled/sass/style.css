@@ -148,36 +148,36 @@ input[type="submit"] {
   margin-bottom: 10px;
 }
 
-/* line 103, ../../styles/style.sass */
+/* line 102, ../../styles/style.sass */
 .box-white, .menu ul {
   background: white;
 }
-/* line 106, ../../styles/style.sass */
+/* line 105, ../../styles/style.sass */
 .box-white, .menu ul, .box-white a, .menu ul a {
   color: black;
 }
 
-/* line 110, ../../styles/style.sass */
+/* line 109, ../../styles/style.sass */
 .form-horizontal {
   padding-bottom: 10px;
 }
-/* line 114, ../../styles/style.sass */
+/* line 113, ../../styles/style.sass */
 .form-horizontal dt {
   float: left;
   text-align: right;
   width: 62px;
 }
-/* line 119, ../../styles/style.sass */
+/* line 118, ../../styles/style.sass */
 .form-horizontal dd {
   margin: 0 0 10px 72px;
 }
-/* line 122, ../../styles/style.sass */
+/* line 121, ../../styles/style.sass */
 .form-horizontal input {
   border: 1px solid #603382;
   border-radius: 10px;
   background: #b35ef3;
 }
-/* line 127, ../../styles/style.sass */
+/* line 126, ../../styles/style.sass */
 .form-horizontal input[type="submit"] {
   border-top-color: white;
   border-left-color: white;
@@ -186,30 +186,30 @@ input[type="submit"] {
   color: white;
 }
 
-/* line 138, ../../styles/style.sass */
+/* line 137, ../../styles/style.sass */
 .menu a {
   color: white;
 }
-/* line 145, ../../styles/style.sass */
+/* line 144, ../../styles/style.sass */
 .menu ul {
   position: absolute;
   display: none;
 }
-/* line 151, ../../styles/style.sass */
+/* line 150, ../../styles/style.sass */
 .menu li:hover ul {
   display: block;
 }
-/* line 154, ../../styles/style.sass */
+/* line 153, ../../styles/style.sass */
 .menu ul li:not(:last-child) {
   margin-bottom: 10px;
 }
 
-/* line 158, ../../styles/style.sass */
+/* line 157, ../../styles/style.sass */
 .global-footer {
   text-align: center;
 }
 
-/* line 161, ../../styles/style.sass */
+/* line 160, ../../styles/style.sass */
 .article-footer {
   text-align: right;
 }
