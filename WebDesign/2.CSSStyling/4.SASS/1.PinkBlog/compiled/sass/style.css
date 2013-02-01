@@ -6,7 +6,12 @@ body, ul, li, dl, dt, dd, h1, h2, p {
   line-height: 22px;
 }
 
-/* line 22, ../../styles/style.sass */
+/* line 21, ../../styles/style.sass */
+img {
+  border: none;
+}
+
+/* line 25, ../../styles/style.sass */
 body {
   color: white;
   background: #9215f2 fixed;
@@ -17,139 +22,139 @@ body {
   background-image: linear-gradient(#d593ff 0%, #8f19ef 165px, #9215f2 100%);
 }
 
-/* line 27, ../../styles/style.sass */
+/* line 30, ../../styles/style.sass */
 a {
   color: #d0a3f7;
   text-decoration: none;
 }
-/* line 31, ../../styles/style.sass */
+/* line 34, ../../styles/style.sass */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 34, ../../styles/style.sass */
+/* line 37, ../../styles/style.sass */
 input, .btn {
   border: 1px solid #603382;
   border-radius: 10px;
   background: #b35ef3;
 }
 
-/* line 39, ../../styles/style.sass */
+/* line 42, ../../styles/style.sass */
 label,
 [type="submit"] {
   cursor: pointer;
 }
 
-/* line 44, ../../styles/style.sass */
+/* line 47, ../../styles/style.sass */
 .code {
   font-family: Consolas, monospace;
 }
 
-/* line 48, ../../styles/style.sass */
+/* line 51, ../../styles/style.sass */
 .clearfix::after, .inline::after, .menu-horizontal::after, .row::after {
   display: table;
   content: " ";
   clear: both;
 }
 
-/* line 54, ../../styles/style.sass */
+/* line 57, ../../styles/style.sass */
 .unstyled, .styled, .inline, .menu-horizontal, .menu ul, .menu-horizontal ul {
   list-style: none;
 }
 
-/* line 60, ../../styles/style.sass */
+/* line 63, ../../styles/style.sass */
 .styled li {
   background: url("../../images/li-dot.png") 0 4px no-repeat;
   padding-left: 30px;
 }
 
-/* line 68, ../../styles/style.sass */
+/* line 71, ../../styles/style.sass */
 .inline > li, .menu-horizontal > li {
   float: left;
 }
-/* line 71, ../../styles/style.sass */
+/* line 74, ../../styles/style.sass */
 .inline > li:not(:last-child), .menu-horizontal > li:not(:last-child) {
   margin-right: 11px;
 }
 
-/* line 75, ../../styles/style.sass */
+/* line 78, ../../styles/style.sass */
 .dl-inline dt, .form-horizontal dt {
   float: left;
   text-align: right;
   width: 77px;
 }
-/* line 80, ../../styles/style.sass */
+/* line 83, ../../styles/style.sass */
 .dl-inline dd, .form-horizontal dd {
   margin-left: 87px;
 }
 
-/* line 84, ../../styles/style.sass */
+/* line 87, ../../styles/style.sass */
 .row {
   margin-left: -10px;
 }
 
-/* line 88, ../../styles/style.sass */
+/* line 91, ../../styles/style.sass */
 .span, .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9 {
   float: left;
   margin-left: 10px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span1 {
   width: 87px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span2 {
   width: 184px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span3 {
   width: 281px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span4 {
   width: 378px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span5 {
   width: 475px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span6 {
   width: 572px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span7 {
   width: 669px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span8 {
   width: 766px;
 }
 
-/* line 97, ../../styles/style.sass */
+/* line 100, ../../styles/style.sass */
 .span9 {
   width: 863px;
 }
 
-/* line 101, ../../styles/style.sass */
+/* line 104, ../../styles/style.sass */
 .container {
   width: 960px;
 }
 
-/* line 104, ../../styles/style.sass */
+/* line 107, ../../styles/style.sass */
 .container {
   margin: 20px auto;
 }
 
-/* line 108, ../../styles/style.sass */
+/* line 111, ../../styles/style.sass */
 .box, .menu, .menu-horizontal, .menu ul, .menu-horizontal ul {
   margin-bottom: 10px;
   padding: 11px;
@@ -157,7 +162,7 @@ label,
   border-radius: 10px;
 }
 
-/* line 114, ../../styles/style.sass */
+/* line 117, ../../styles/style.sass */
 .box h1, .menu h1, .menu-horizontal h1, .menu-horizontal ul h1,
 .box h2,
 .menu h2,
@@ -169,16 +174,16 @@ label,
   margin-bottom: 7.33333px;
 }
 
-/* line 119, ../../styles/style.sass */
+/* line 122, ../../styles/style.sass */
 .box footer, .menu footer, .menu-horizontal footer, .menu-horizontal ul footer {
   text-align: right;
 }
 
-/* line 122, ../../styles/style.sass */
+/* line 125, ../../styles/style.sass */
 .box-white, .menu ul, .menu-horizontal ul {
   background: white;
 }
-/* line 125, ../../styles/style.sass */
+/* line 128, ../../styles/style.sass */
 .box-white, .menu ul, .menu-horizontal ul,
 .box-white a,
 .menu ul a,
@@ -186,14 +191,14 @@ label,
   color: black;
 }
 
-/* line 131, ../../styles/style.sass */
+/* line 134, ../../styles/style.sass */
 .form, .form-horizontal,
 .form dl,
 .form-horizontal dl {
   margin-bottom: 11px;
 }
 
-/* line 139, ../../styles/style.sass */
+/* line 142, ../../styles/style.sass */
 .btn {
   border-top-color: white;
   border-left-color: white;
@@ -202,30 +207,30 @@ label,
   color: white;
 }
 
-/* line 149, ../../styles/style.sass */
+/* line 152, ../../styles/style.sass */
 .menu a, .menu-horizontal a {
   color: white;
 }
-/* line 156, ../../styles/style.sass */
+/* line 159, ../../styles/style.sass */
 .menu ul, .menu-horizontal ul {
   position: absolute;
   display: none;
 }
-/* line 162, ../../styles/style.sass */
+/* line 165, ../../styles/style.sass */
 .menu li:hover ul, .menu-horizontal li:hover ul {
   display: block;
 }
-/* line 165, ../../styles/style.sass */
+/* line 168, ../../styles/style.sass */
 .menu ul li:not(:last-child), .menu-horizontal ul li:not(:last-child) {
   margin-bottom: 11px;
 }
 
-/* line 174, ../../styles/style.sass */
+/* line 177, ../../styles/style.sass */
 .global-header img {
   margin-top: 10px;
 }
 
-/* line 177, ../../styles/style.sass */
+/* line 180, ../../styles/style.sass */
 .global-footer {
   text-align: center;
 }
