@@ -3,7 +3,7 @@ body, ul, li, dl, dt, dd, h1, h2, p {
   margin: 0;
   padding: 0;
   font-size: 100%;
-  line-height: 20px;
+  line-height: 22px;
 }
 
 /* line 22, ../../styles/style.sass */
@@ -69,18 +69,18 @@ label,
 }
 /* line 71, ../../styles/style.sass */
 .inline > li:not(:last-child), .menu-horizontal > li:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 11px;
 }
 
 /* line 75, ../../styles/style.sass */
 .dl-inline dt, .form-horizontal dt {
   float: left;
   text-align: right;
-  width: 62px;
+  width: 77px;
 }
 /* line 80, ../../styles/style.sass */
 .dl-inline dd, .form-horizontal dd {
-  margin-left: 72px;
+  margin-left: 87px;
 }
 
 /* line 84, ../../styles/style.sass */
@@ -96,63 +96,63 @@ label,
 
 /* line 97, ../../styles/style.sass */
 .span1 {
-  width: 72px;
+  width: 87px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span2 {
-  width: 154px;
+  width: 184px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span3 {
-  width: 236px;
+  width: 281px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span4 {
-  width: 318px;
+  width: 378px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span5 {
-  width: 400px;
+  width: 475px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span6 {
-  width: 482px;
+  width: 572px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span7 {
-  width: 564px;
+  width: 669px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span8 {
-  width: 646px;
+  width: 766px;
 }
 
 /* line 97, ../../styles/style.sass */
 .span9 {
-  width: 728px;
+  width: 863px;
 }
 
 /* line 101, ../../styles/style.sass */
 .container {
-  width: 810px;
+  width: 960px;
 }
 
 /* line 104, ../../styles/style.sass */
 .container {
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 /* line 108, ../../styles/style.sass */
 .box, .menu, .menu-horizontal, .menu ul, .menu-horizontal ul {
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 11px;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -166,7 +166,7 @@ label,
 .box p:not(:last-child),
 .menu p:not(:last-child),
 .menu-horizontal p:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 7.33333px;
 }
 
 /* line 119, ../../styles/style.sass */
@@ -190,7 +190,7 @@ label,
 .form, .form-horizontal,
 .form dl,
 .form-horizontal dl {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 /* line 139, ../../styles/style.sass */
@@ -217,10 +217,15 @@ label,
 }
 /* line 165, ../../styles/style.sass */
 .menu ul li:not(:last-child), .menu-horizontal ul li:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
-/* line 173, ../../styles/style.sass */
+/* line 174, ../../styles/style.sass */
+.global-header img {
+  margin-top: 10px;
+}
+
+/* line 177, ../../styles/style.sass */
 .global-footer {
   text-align: center;
 }
