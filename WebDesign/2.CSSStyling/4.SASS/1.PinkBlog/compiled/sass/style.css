@@ -183,7 +183,7 @@ label, [type="submit"] {
 }
 
 /* line 128, ../../styles/style.sass */
-.form, .form-horizontal, .form dd, .form-horizontal dd {
+.form, .form-horizontal, .form dl, .form-horizontal dl {
   margin-bottom: 10px;
 }
 
