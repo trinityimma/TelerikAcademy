@@ -57,6 +57,14 @@ label, input[type = "submit"]
 .unstyled
     list-style: none
 
+
+.styled
+    @extend .unstyled
+
+    li
+        background: url(../images/li-dot.png) 0 4px no-repeat
+        padding-left: 20px + $gridGutter
+
 .inline
     @extend .clearfix
     @extend .unstyled
@@ -67,7 +75,7 @@ label, input[type = "submit"]
         &:not(:last-child)
             margin-right: $gridGutter
 
-.dl-horizontal
+.dl-inline
     @extend .clearfix
 
     dt
@@ -78,12 +86,6 @@ label, input[type = "submit"]
     dd
         margin-left: $gridColumnWidth
 
-.styled
-    @extend .unstyled
-
-    li
-        background: url(../images/li-dot.png) 0 4px no-repeat
-        padding-left: 20px + $gridGutter
 
 // GRID
 .row
@@ -138,7 +140,7 @@ label, input[type = "submit"]
         margin-bottom: $gridGutter
 
 .form-horizontal
-    @extend .dl-horizontal
+    @extend .dl-inline
     @extend .form
 
 // MENUS
