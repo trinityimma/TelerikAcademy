@@ -149,35 +149,40 @@ input[type="submit"] {
 }
 
 /* line 102, ../../styles/style.sass */
+.box footer, .menu footer {
+  text-align: right;
+}
+
+/* line 105, ../../styles/style.sass */
 .box-white, .menu ul {
   background: white;
 }
-/* line 105, ../../styles/style.sass */
+/* line 108, ../../styles/style.sass */
 .box-white, .menu ul, .box-white a, .menu ul a {
   color: black;
 }
 
-/* line 109, ../../styles/style.sass */
+/* line 112, ../../styles/style.sass */
 .form-horizontal {
   padding-bottom: 10px;
 }
-/* line 113, ../../styles/style.sass */
+/* line 116, ../../styles/style.sass */
 .form-horizontal dt {
   float: left;
   text-align: right;
   width: 62px;
 }
-/* line 118, ../../styles/style.sass */
+/* line 121, ../../styles/style.sass */
 .form-horizontal dd {
   margin: 0 0 10px 72px;
 }
-/* line 121, ../../styles/style.sass */
+/* line 124, ../../styles/style.sass */
 .form-horizontal input {
   border: 1px solid #603382;
   border-radius: 10px;
   background: #b35ef3;
 }
-/* line 126, ../../styles/style.sass */
+/* line 129, ../../styles/style.sass */
 .form-horizontal input[type="submit"] {
   border-top-color: white;
   border-left-color: white;
@@ -186,30 +191,25 @@ input[type="submit"] {
   color: white;
 }
 
-/* line 137, ../../styles/style.sass */
+/* line 140, ../../styles/style.sass */
 .menu a {
   color: white;
 }
-/* line 144, ../../styles/style.sass */
+/* line 147, ../../styles/style.sass */
 .menu ul {
   position: absolute;
   display: none;
 }
-/* line 150, ../../styles/style.sass */
+/* line 153, ../../styles/style.sass */
 .menu li:hover ul {
   display: block;
 }
-/* line 153, ../../styles/style.sass */
+/* line 156, ../../styles/style.sass */
 .menu ul li:not(:last-child) {
   margin-bottom: 10px;
 }
 
-/* line 157, ../../styles/style.sass */
+/* line 160, ../../styles/style.sass */
 .global-footer {
   text-align: center;
-}
-
-/* line 160, ../../styles/style.sass */
-.article-footer {
-  text-align: right;
 }
