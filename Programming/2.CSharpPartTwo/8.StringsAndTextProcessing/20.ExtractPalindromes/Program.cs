@@ -18,5 +18,8 @@ class Program
 
         foreach (Match item in Regex.Matches(str, @"\w+"))
             if (IsPalindrome(item.Value)) Console.WriteLine(item);
+
+        foreach (Match item in Regex.Matches(str, @"\b(?<N>.)+.?(?<-N>\k<N>)+(?(N)(?!))\b")) // http://i.qkme.me/355ovv.jpg
+            Console.WriteLine(item);
     }
 }

@@ -1,11 +1,12 @@
-/* line 11, ../../styles/style.sass */
+/* line 13, ../../styles/style.sass */
 body, ul, li, dl, dt, dd, h1, h2, p {
   margin: 0;
   padding: 0;
   font-size: 100%;
+  line-height: 22px;
 }
 
-/* line 17, ../../styles/style.sass */
+/* line 20, ../../styles/style.sass */
 body {
   font: 16px;
   color: white;
@@ -17,59 +18,59 @@ body {
   background-image: linear-gradient(#d593ff 0%, #8f19ef 165px, #9215f2 100%);
 }
 
-/* line 23, ../../styles/style.sass */
+/* line 26, ../../styles/style.sass */
 a {
   color: #d0a3f7;
   text-decoration: none;
 }
-/* line 27, ../../styles/style.sass */
+/* line 30, ../../styles/style.sass */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 30, ../../styles/style.sass */
+/* line 33, ../../styles/style.sass */
 input, .btn {
   border: 1px solid #603382;
   border-radius: 10px;
   background: #b35ef3;
 }
 
-/* line 35, ../../styles/style.sass */
+/* line 38, ../../styles/style.sass */
 label,
 [type="submit"] {
   cursor: pointer;
 }
 
-/* line 40, ../../styles/style.sass */
+/* line 43, ../../styles/style.sass */
 .code {
   font-family: Consolas, monospace;
 }
 
-/* line 45, ../../styles/style.sass */
-.clearfix:after, .inline:after, .menu-horizontal:after, .dl-inline:after, .form-horizontal:after, .row:after {
+/* line 47, ../../styles/style.sass */
+.clearfix::after, .inline::after, .menu-horizontal::after, .row::after {
   display: table;
   content: " ";
   clear: both;
 }
 
-/* line 51, ../../styles/style.sass */
+/* line 53, ../../styles/style.sass */
 .unstyled, .styled, .inline, .menu-horizontal, .menu ul, .menu-horizontal ul {
   list-style: none;
 }
 
-/* line 57, ../../styles/style.sass */
+/* line 59, ../../styles/style.sass */
 .styled li {
   background: url(../images/li-dot.png) 0 4px no-repeat;
   padding-left: 30px;
 }
 
-/* line 65, ../../styles/style.sass */
+/* line 67, ../../styles/style.sass */
 .inline > li, .menu-horizontal > li {
   float: left;
 }
-/* line 68, ../../styles/style.sass */
+/* line 70, ../../styles/style.sass */
 .inline > li:not(:last-child), .menu-horizontal > li:not(:last-child) {
-  margin-right: 10px;
+  margin-right: 11px;
 }
 
 /* line 74, ../../styles/style.sass */
@@ -152,7 +153,7 @@ label,
 /* line 107, ../../styles/style.sass */
 .box, .menu, .menu-horizontal, .menu ul, .menu-horizontal ul {
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 11px;
   border: 1px solid black;
   border-radius: 10px;
 }
@@ -166,7 +167,7 @@ label,
 .box p:not(:last-child),
 .menu p:not(:last-child),
 .menu-horizontal p:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 /* line 118, ../../styles/style.sass */
@@ -190,7 +191,7 @@ label,
 .form, .form-horizontal,
 .form dl,
 .form-horizontal dl {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 /* line 138, ../../styles/style.sass */
@@ -217,7 +218,7 @@ label,
 }
 /* line 164, ../../styles/style.sass */
 .menu ul li:not(:last-child), .menu-horizontal ul li:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 /* line 172, ../../styles/style.sass */
