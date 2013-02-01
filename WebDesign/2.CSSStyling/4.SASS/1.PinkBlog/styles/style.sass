@@ -32,14 +32,7 @@ input
     border-radius: 10px
     background: #B35EF3
 
-input[type = "submit"]
-    border-top-color: #fff
-    border-left-color: #fff
-    padding: 5px 10px
-    font-weight: bold
-    color: #fff
-
-label, input[type = "submit"]
+label, [type = "submit"]
     cursor: pointer
 
 // TYPOGRAPHY
@@ -134,14 +127,20 @@ label, input[type = "submit"]
 
 // FORMS
 .form
-    padding-bottom: $gridGutter
-
-    dd
+    &, dd
         margin-bottom: $gridGutter
 
 .form-horizontal
     @extend .dl-inline
     @extend .form
+
+.btn
+    @extend input
+    border-top-color: #fff
+    border-left-color: #fff
+    padding: 5px 10px
+    font-weight: bold
+    color: #fff
 
 // MENUS
 .menu
