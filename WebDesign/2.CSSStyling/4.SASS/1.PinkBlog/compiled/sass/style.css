@@ -1,0 +1,214 @@
+/* line 11, ../../styles/style.sass */
+body, ul, li, dl, dt, dd, h1, h2, p {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+/* line 17, ../../styles/style.sass */
+body {
+  font: 16px;
+  color: white;
+  background: #9215f2;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d593ff), color-stop(165px, #8f19ef), color-stop(100%, #9215f2));
+  background-image: -webkit-linear-gradient(#d593ff 0%, #8f19ef 165px, #9215f2 100%);
+  background-image: -moz-linear-gradient(#d593ff 0%, #8f19ef 165px, #9215f2 100%);
+  background-image: -o-linear-gradient(#d593ff 0%, #8f19ef 165px, #9215f2 100%);
+  background-image: linear-gradient(#d593ff 0%, #8f19ef 165px, #9215f2 100%);
+}
+
+/* line 23, ../../styles/style.sass */
+a {
+  color: #d0a3f7;
+  text-decoration: none;
+}
+/* line 27, ../../styles/style.sass */
+a:hover {
+  text-decoration: underline;
+}
+
+/* line 30, ../../styles/style.sass */
+input[type="submit"] {
+  cursor: pointer;
+}
+
+/* line 34, ../../styles/style.sass */
+.code {
+  font-family: Consolas, monospace;
+}
+
+/* line 39, ../../styles/style.sass */
+.clearfix:after, .inline:after, .menu:after, .row:after, .form-horizontal:after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+/* line 45, ../../styles/style.sass */
+.unstyled, .inline, .menu, .styled, .menu ul {
+  list-style: none;
+}
+
+/* line 52, ../../styles/style.sass */
+.inline > li, .menu > li {
+  float: left;
+}
+/* line 55, ../../styles/style.sass */
+.inline > li:not(:last-child), .menu > li:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* line 61, ../../styles/style.sass */
+.styled li {
+  background: url(../images/li-dot.png) 0 4px no-repeat;
+  padding-left: 30px;
+}
+
+/* line 66, ../../styles/style.sass */
+.row {
+  margin-left: -10px;
+}
+
+/* line 70, ../../styles/style.sass */
+.span, .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9 {
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span1 {
+  width: 72px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span2 {
+  width: 154px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span3 {
+  width: 236px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span4 {
+  width: 318px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span5 {
+  width: 400px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span6 {
+  width: 482px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span7 {
+  width: 564px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span8 {
+  width: 646px;
+}
+
+/* line 79, ../../styles/style.sass */
+.span9 {
+  width: 728px;
+}
+
+/* line 83, ../../styles/style.sass */
+.container {
+  width: 810px;
+}
+
+/* line 86, ../../styles/style.sass */
+.container {
+  margin: 10px auto;
+}
+
+/* line 90, ../../styles/style.sass */
+.box, .menu, .menu ul {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* line 96, ../../styles/style.sass */
+.box h1, .menu h1,
+.box h2,
+.menu h2,
+.box p:not(:last-child),
+.menu p:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* line 102, ../../styles/style.sass */
+.box-white, .menu ul {
+  background: white;
+}
+/* line 105, ../../styles/style.sass */
+.box-white, .menu ul, .box-white a, .menu ul a {
+  color: black;
+}
+
+/* line 109, ../../styles/style.sass */
+.form-horizontal {
+  padding-bottom: 10px;
+}
+/* line 113, ../../styles/style.sass */
+.form-horizontal dt {
+  float: left;
+  text-align: right;
+  width: 62px;
+}
+/* line 118, ../../styles/style.sass */
+.form-horizontal dd {
+  margin: 0 0 10px 72px;
+}
+/* line 121, ../../styles/style.sass */
+.form-horizontal input {
+  border: 1px solid #603382;
+  border-radius: 10px;
+  background: #b35ef3;
+}
+/* line 126, ../../styles/style.sass */
+.form-horizontal input[type="submit"] {
+  border-top-color: white;
+  border-left-color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: white;
+}
+
+/* line 137, ../../styles/style.sass */
+.menu a {
+  color: white;
+}
+/* line 144, ../../styles/style.sass */
+.menu ul {
+  position: absolute;
+  display: none;
+}
+/* line 150, ../../styles/style.sass */
+.menu li:hover ul {
+  display: block;
+}
+/* line 153, ../../styles/style.sass */
+.menu ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* line 157, ../../styles/style.sass */
+.global-footer {
+  text-align: center;
+}
+
+/* line 160, ../../styles/style.sass */
+.article-footer {
+  text-align: right;
+}
