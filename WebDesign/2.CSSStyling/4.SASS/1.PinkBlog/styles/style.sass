@@ -28,7 +28,17 @@ a
     &:hover
         text-decoration: underline
 
+input
+    border: 1px solid #603382
+    border-radius: 10px
+    background: #B35EF3
+
 input[type = "submit"]
+    border-top-color: #fff
+    border-left-color: #fff
+    padding: 5px 10px
+    font-weight: bold
+    color: #fff
     cursor: pointer
 
 // TYPOGRAPHY
@@ -55,6 +65,17 @@ input[type = "submit"]
 
         &:not(:last-child)
             margin-right: $gridGutter
+
+.dl-horizontal
+    @extend .clearfix
+
+    dt
+        float: left
+        text-align: right
+        width: $gridColumnWidth - $gridGutter
+
+    dd
+        margin-left: $gridColumnWidth
 
 .styled
     @extend .unstyled
@@ -109,34 +130,18 @@ input[type = "submit"]
         color: #000
 
 // FORMS
-.form-horizontal
-    @extend .clearfix
+.form
     padding-bottom: $gridGutter
 
-    dt
-        float: left
-        text-align: right
-        width: $gridColumnWidth - $gridGutter
-
     dd
-        margin: 0 0 $gridGutter $gridColumnWidth
+        margin-bottom: $gridGutter
 
-    input
-        border: 1px solid #603382
-        border-radius: 10px
-        background: #B35EF3
-
-    input[type = "submit"]
-        border-top-color: #fff
-        border-left-color: #fff
-        padding: 5px 10px
-        font-weight: bold
-        color: #fff
+.form-horizontal
+    @extend .form
+    @extend .dl-horizontal
 
 // MENUS
 .menu
-    @extend .inline
-
     a
         color: #fff
 
@@ -155,6 +160,10 @@ input[type = "submit"]
 
     ul li:not(:last-child)
         margin-bottom: $gridGutter
+
+.menu-horizontal
+    @extend .menu
+    @extend .inline
 
 // SITE
 .global-footer
