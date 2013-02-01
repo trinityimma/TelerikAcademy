@@ -72,17 +72,17 @@ input[type = "submit"]
     float: left
     margin-left: $gridGutter
 
-=getSpan($i)
+=getSpanWidth($i)
     width: $i * $gridColumnWidth + ($i -  1) * $gridGutter
 
 @for $i from 1 through $gridColumns
     @if $i < $gridColumns
         .span#{$i}
             @extend .span
-            +getSpan($i)
+            +getSpanWidth($i)
     @else
         .container
-            +getSpan($i)
+            +getSpanWidth($i)
 
 .container
     margin: $gridGutter auto
