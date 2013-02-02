@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.MessagesInABottle", "2.MessagesInABottle\2.MessagesInABottle.csproj", "{C74C9BE6-8E8B-424A-94E0-C0FAD78CA5A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.3DSlices", "4.3DSlices\4.3DSlices.csproj", "{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{C74C9BE6-8E8B-424A-94E0-C0FAD78CA5A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C74C9BE6-8E8B-424A-94E0-C0FAD78CA5A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C74C9BE6-8E8B-424A-94E0-C0FAD78CA5A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
