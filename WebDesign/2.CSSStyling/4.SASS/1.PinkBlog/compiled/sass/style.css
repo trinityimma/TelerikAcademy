@@ -1,4 +1,4 @@
-/* line 15, ../../styles/style.sass */
+/* line 13, ../../styles/style.sass */
 body, ul, li, dl, dt, dd, h1, h2, p {
   margin: 0;
   padding: 0;
@@ -6,12 +6,12 @@ body, ul, li, dl, dt, dd, h1, h2, p {
   line-height: 22px;
 }
 
-/* line 21, ../../styles/style.sass */
+/* line 19, ../../styles/style.sass */
 img {
   border: none;
 }
 
-/* line 25, ../../styles/style.sass */
+/* line 23, ../../styles/style.sass */
 body {
   color: white;
   background: #9215f2 fixed;
@@ -22,139 +22,139 @@ body {
   background-image: linear-gradient(#d593ff 0%, #8f19ef 165px, #9215f2 100%);
 }
 
-/* line 30, ../../styles/style.sass */
+/* line 28, ../../styles/style.sass */
 a {
   color: #d0a3f7;
   text-decoration: none;
 }
-/* line 34, ../../styles/style.sass */
+/* line 32, ../../styles/style.sass */
 a:hover {
   text-decoration: underline;
 }
 
-/* line 37, ../../styles/style.sass */
+/* line 35, ../../styles/style.sass */
 input, .btn {
   border: 1px solid #603382;
   border-radius: 10px;
   background: #b35ef3;
 }
 
-/* line 42, ../../styles/style.sass */
+/* line 40, ../../styles/style.sass */
 label,
 [type="submit"] {
   cursor: pointer;
 }
 
-/* line 47, ../../styles/style.sass */
+/* line 45, ../../styles/style.sass */
 .code {
   font-family: Consolas, monospace;
 }
 
-/* line 51, ../../styles/style.sass */
+/* line 49, ../../styles/style.sass */
 .clearfix::after, .inline::after, .menu-horizontal::after, .row::after {
   display: table;
   content: " ";
   clear: both;
 }
 
-/* line 57, ../../styles/style.sass */
+/* line 55, ../../styles/style.sass */
 .unstyled, .styled, .inline, .menu-horizontal, .menu ul, .menu-horizontal ul {
   list-style: none;
 }
 
-/* line 63, ../../styles/style.sass */
+/* line 61, ../../styles/style.sass */
 .styled li {
-  background: url("../../images/li-dot.png") 0 4px no-repeat;
+  background: url(../../images/li-dot.png) 0 4px no-repeat;
   padding-left: 30px;
 }
 
-/* line 71, ../../styles/style.sass */
+/* line 69, ../../styles/style.sass */
 .inline > li, .menu-horizontal > li {
   float: left;
 }
-/* line 74, ../../styles/style.sass */
+/* line 72, ../../styles/style.sass */
 .inline > li:not(:last-child), .menu-horizontal > li:not(:last-child) {
   margin-right: 11px;
 }
 
-/* line 78, ../../styles/style.sass */
+/* line 76, ../../styles/style.sass */
 .dl-inline dt, .form-horizontal dt {
   float: left;
   text-align: right;
   width: 77px;
 }
-/* line 83, ../../styles/style.sass */
+/* line 81, ../../styles/style.sass */
 .dl-inline dd, .form-horizontal dd {
   margin-left: 87px;
 }
 
-/* line 87, ../../styles/style.sass */
+/* line 85, ../../styles/style.sass */
 .row {
   margin-left: -10px;
 }
 
-/* line 91, ../../styles/style.sass */
+/* line 89, ../../styles/style.sass */
 .span, .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9 {
   float: left;
   margin-left: 10px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span1 {
   width: 87px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span2 {
   width: 184px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span3 {
   width: 281px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span4 {
   width: 378px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span5 {
   width: 475px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span6 {
   width: 572px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span7 {
   width: 669px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span8 {
   width: 766px;
 }
 
-/* line 100, ../../styles/style.sass */
+/* line 98, ../../styles/style.sass */
 .span9 {
   width: 863px;
 }
 
-/* line 104, ../../styles/style.sass */
+/* line 102, ../../styles/style.sass */
 .container {
   width: 960px;
 }
 
-/* line 107, ../../styles/style.sass */
+/* line 105, ../../styles/style.sass */
 .container {
   margin: 20px auto;
 }
 
-/* line 111, ../../styles/style.sass */
+/* line 109, ../../styles/style.sass */
 .box, .menu, .menu-horizontal, .menu ul, .menu-horizontal ul {
   margin-bottom: 10px;
   padding: 11px;
@@ -162,7 +162,7 @@ label,
   border-radius: 10px;
 }
 
-/* line 117, ../../styles/style.sass */
+/* line 115, ../../styles/style.sass */
 .box h1, .menu h1, .menu-horizontal h1, .menu-horizontal ul h1,
 .box h2,
 .menu h2,
@@ -174,16 +174,16 @@ label,
   margin-bottom: 7.33333px;
 }
 
-/* line 122, ../../styles/style.sass */
+/* line 120, ../../styles/style.sass */
 .box footer, .menu footer, .menu-horizontal footer, .menu-horizontal ul footer {
   text-align: right;
 }
 
-/* line 125, ../../styles/style.sass */
+/* line 123, ../../styles/style.sass */
 .box-white, .menu ul, .menu-horizontal ul {
   background: white;
 }
-/* line 128, ../../styles/style.sass */
+/* line 126, ../../styles/style.sass */
 .box-white, .menu ul, .menu-horizontal ul,
 .box-white a,
 .menu ul a,
@@ -191,14 +191,14 @@ label,
   color: black;
 }
 
-/* line 134, ../../styles/style.sass */
+/* line 132, ../../styles/style.sass */
 .form, .form-horizontal,
 .form dl,
 .form-horizontal dl {
   margin-bottom: 11px;
 }
 
-/* line 142, ../../styles/style.sass */
+/* line 140, ../../styles/style.sass */
 .btn {
   border-top-color: white;
   border-left-color: white;
@@ -207,30 +207,30 @@ label,
   color: white;
 }
 
-/* line 152, ../../styles/style.sass */
+/* line 150, ../../styles/style.sass */
 .menu a, .menu-horizontal a {
   color: white;
 }
-/* line 159, ../../styles/style.sass */
+/* line 157, ../../styles/style.sass */
 .menu ul, .menu-horizontal ul {
   position: absolute;
   display: none;
 }
-/* line 165, ../../styles/style.sass */
+/* line 163, ../../styles/style.sass */
 .menu li:hover ul, .menu-horizontal li:hover ul {
   display: block;
 }
-/* line 168, ../../styles/style.sass */
+/* line 166, ../../styles/style.sass */
 .menu ul li:not(:last-child), .menu-horizontal ul li:not(:last-child) {
   margin-bottom: 11px;
 }
 
-/* line 177, ../../styles/style.sass */
+/* line 175, ../../styles/style.sass */
 .global-header img {
   margin-top: 10px;
 }
 
-/* line 180, ../../styles/style.sass */
+/* line 178, ../../styles/style.sass */
 .global-footer {
   text-align: center;
 }
