@@ -30,8 +30,8 @@ class Program
     {
         Console.WriteLine(decodedMessages.Count);
 
-        foreach (var message in decodedMessages)
-            Console.WriteLine(message);
+        foreach (string msg in decodedMessages)
+            Console.WriteLine(msg);
     }
 
     static void Main()
