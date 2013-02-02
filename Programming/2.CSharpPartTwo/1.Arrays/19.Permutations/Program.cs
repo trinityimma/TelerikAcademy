@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -20,7 +20,7 @@ class Program
             if (used[j]) continue;
 
             arr[i] = j;
-            
+
             used[j] = true;
             Permutation(arr, used, i + 1);
             used[j] = false;
