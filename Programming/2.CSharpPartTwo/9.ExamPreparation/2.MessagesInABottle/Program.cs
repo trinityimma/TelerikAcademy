@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 class Program
 {
     static string message;
-    static Dictionary<string, string> ciphers = new Dictionary<string, string>();
     static List<string> decodedMessages = new List<string>();
+    static Dictionary<string, string> ciphers = new Dictionary<string, string>();
 
     static void Input()
     {
