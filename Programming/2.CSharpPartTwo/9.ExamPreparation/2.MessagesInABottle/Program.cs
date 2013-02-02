@@ -37,7 +37,7 @@ class Program
     static void Main()
     {
 #if DEBUG
-        Console.SetIn(new System.IO.StreamReader("../../input.txt"));
+        Console.SetIn(new System.IO.StreamReader("../../input.txt")); // Runs locally only
 #endif
 
         Input();
