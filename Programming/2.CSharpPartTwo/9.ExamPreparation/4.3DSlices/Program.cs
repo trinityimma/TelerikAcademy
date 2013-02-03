@@ -28,9 +28,7 @@ class Program
                 string[] line1 = line[d].Split();
 
                 for (int w = 0; w < width; w++)
-                {
                     totalSum += cube[w, h, d] = int.Parse(line1[w]);
-                }
             }
         }
     }
