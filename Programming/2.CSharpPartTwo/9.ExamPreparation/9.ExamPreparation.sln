@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.MessagesInABottle", "2.Me
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.3DSlices", "4.3DSlices\4.3DSlices.csproj", "{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.GenomeDecoder", "1.GenomeDecoder\1.GenomeDecoder.csproj", "{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1884E84-9FC1-499A-B5FF-A0C26EF3E53E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
