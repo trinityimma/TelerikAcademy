@@ -39,12 +39,8 @@ class Program
         for (int d = 0; d < depth; d++)
         {
             for (int h = 0; h < height; h++)
-            {
                 for (int w = 0; w < width; w++)
-                {
                     Console.Write(cube[w, h, d] + (w == width - 1 ? "\n" : " "));
-                }
-            }
 
             if (d < depth - 1) Console.WriteLine();
         }
