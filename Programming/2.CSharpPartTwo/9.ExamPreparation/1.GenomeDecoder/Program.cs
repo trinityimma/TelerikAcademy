@@ -5,18 +5,18 @@ using System.Text.RegularExpressions;
 
 class GenomeDecoder
 {
-    static int lineSize, groupSize;
+    static int cols, cells;
     static string compressedGenome;
 
-    static int lineNumberLength, numberOfLines;
+    static int lineNumberLength, rows;
     static StringBuilder genome = new StringBuilder();
     static StringBuilder output = new StringBuilder();
 
     static void Input()
     {
         string[] dimensions = Console.ReadLine().Split();
-        lineSize = int.Parse(dimensions[0]);
-        groupSize = int.Parse(dimensions[1]);
+        cols = int.Parse(dimensions[0]);
+        cells = int.Parse(dimensions[1]);
         compressedGenome = Console.ReadLine();
     }
 
@@ -30,19 +30,19 @@ class GenomeDecoder
             genome.Append(new String(key, value));
         }
 
-        numberOfLines = (int)Math.Ceiling((double)genome.Length / lineSize);
-        lineNumberLength = (int)Math.Log10(numberOfLines) + 1;
+        rows = (int)Math.Ceiling((double)genome.Length / cols);
+        lineNumberLength = (int)Math.Log10(rows) + 1;
     }
 
     static void Format()
     {
-        for (int lineNumber = 1, c = 0; lineNumber <= numberOfLines; lineNumber++)
+        for (int row = 1, c = 0; row <= rows; row++)
         {
-            output.Append(lineNumber.ToString().PadLeft(lineNumberLength));
+            output.Append(row.ToString().PadLeft(lineNumberLength));
 
-            for (int i = 0; i < lineSize && c < genome.Length; i++)
+            for (int col = 0; col < cols && c < genome.Length; col++)
             {
-                if (i % groupSize == 0) output.Append(" ");
+                if (col % cells == 0) output.Append(" ");
 
                 output.Append(genome[c++]);
             }
