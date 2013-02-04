@@ -5,7 +5,10 @@ using System.Text.RegularExpressions;
 
 class GenomeDecoder
 {
-    static int lineSize, groupSize, lineNumberLength, numberOfLines;
+    static int lineSize, groupSize;
+    static string compressedGenome;
+
+    static int lineNumberLength, numberOfLines;
     static StringBuilder genome = new StringBuilder();
     static StringBuilder output = new StringBuilder();
 
@@ -14,11 +17,12 @@ class GenomeDecoder
         string[] dimensions = Console.ReadLine().Split();
         lineSize = int.Parse(dimensions[0]);
         groupSize = int.Parse(dimensions[1]);
+        compressedGenome = Console.ReadLine();
     }
 
     static void Extract()
     {
-        foreach (Match gene in Regex.Matches(Console.ReadLine(), @"(\d*)(\D)"))
+        foreach (Match gene in Regex.Matches(compressedGenome, @"(\d*)(\D)"))
         {
             char key = gene.Groups[2].Value[0];
             int value = String.IsNullOrEmpty(gene.Groups[1].Value) ? 1 : int.Parse(gene.Groups[1].Value);
