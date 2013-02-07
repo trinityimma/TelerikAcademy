@@ -39,7 +39,7 @@
 7. [Text Files](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/7.TextFiles) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/7.TextFiles/README.md)) - 22.01.2013
 8. [Strings and Text Processing](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/8.StringsAndTextProcessing) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/8.StringsAndTextProcessing/README.md)) - 26.01.2013
 9. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/9.ExamPreparation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/9.ExamPreparation/README.md)) - 29.01.2013
-10. Exam - 04.02.2013
+10. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/10.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/10.Exam/README.md)) - 05.02.2013
 
 ## CSS Styling
 
@@ -49,4 +49,4 @@
 5. [SASS](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/4.SASS) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/4.SASS/README.md)) - 25.01.2013
 6. [LESS](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/5.LESS) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/5.LESS/README.md)) - 01.02.2013
 7. Exam Preparation - 08.02.2013
-8. Exam - 12.02.2013
+8. Exam - 13.02.2013
