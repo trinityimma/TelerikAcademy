@@ -3,6 +3,8 @@ config.rb
 # *.rar
 # *.zip
 
+10.Exam/
+
 # Build and Object Folders
 bin/
 obj/

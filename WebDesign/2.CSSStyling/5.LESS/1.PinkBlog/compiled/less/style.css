@@ -1,1 +1,264 @@
-TODO
+body,
+ul,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+p,
+input {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  font-size: 100%;
+  line-height: 22px;
+}
+img {
+  border: none;
+}
+body {
+  color: white;
+  background: #9215f2 fixed;
+  background: -webkit-linear-gradient(#d593ff 0, #8f19ef 165px, #9215f2 100%);
+  background: -moz-linear-gradient(#d593ff 0, #8f19ef 165px, #9215f2 100%);
+  background: -o-linear-gradient(#d593ff 0, #8f19ef 165px, #9215f2 100%);
+  background: linear-gradient(#d593ff 0, #8f19ef 165px, #9215f2 100%);
+}
+a {
+  color: #d0a3f7;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+input,
+.input {
+  border: 1px solid #603382;
+  border-radius: 10px;
+  background: #b35ef3;
+}
+label,
+[type="submit"] {
+  cursor: pointer;
+}
+.code {
+  font-family: Consolas, monospace;
+}
+.clearfix::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+.unstyled {
+  list-style: none;
+}
+.styled {
+  list-style: none;
+}
+.styled li {
+  background: url(../../images/li-dot.png) 0 4px no-repeat;
+  padding-left: 30px;
+}
+.inline {
+  list-style: none;
+}
+.inline::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+.inline > li {
+  float: left;
+}
+.inline > li:not(:last-child) {
+  margin-right: 11px;
+}
+.dl-inline dt {
+  float: left;
+  text-align: right;
+  width: 77px;
+}
+.dl-inline dd {
+  margin-left: 87px;
+}
+.row {
+  margin-left: -10px;
+}
+.row::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+.span {
+  float: left;
+  margin-left: 10px;
+}
+.span9 {
+  float: left;
+  margin-left: 10px;
+  width: 863px;
+}
+.span8 {
+  float: left;
+  margin-left: 10px;
+  width: 766px;
+}
+.span7 {
+  float: left;
+  margin-left: 10px;
+  width: 669px;
+}
+.span6 {
+  float: left;
+  margin-left: 10px;
+  width: 572px;
+}
+.span5 {
+  float: left;
+  margin-left: 10px;
+  width: 475px;
+}
+.span4 {
+  float: left;
+  margin-left: 10px;
+  width: 378px;
+}
+.span3 {
+  float: left;
+  margin-left: 10px;
+  width: 281px;
+}
+.span2 {
+  float: left;
+  margin-left: 10px;
+  width: 184px;
+}
+.span1 {
+  float: left;
+  margin-left: 10px;
+  width: 87px;
+}
+.container {
+  width: 960px;
+  margin: 20px auto 10px;
+}
+.box {
+  margin-bottom: 10px;
+  padding: 11px;
+  border: 1px solid #222222;
+  border-radius: 10px;
+}
+.box h1,
+.box h2,
+.box p:not(:last-child) {
+  margin-bottom: 7.333333333px;
+}
+.box footer {
+  text-align: right;
+}
+.box-white {
+  background: white;
+}
+.box-white,
+.box-white a {
+  color: black;
+}
+.form,
+.form dl {
+  margin-bottom: 11px;
+}
+.form-horizontal dt {
+  float: left;
+  text-align: right;
+  width: 77px;
+}
+.form-horizontal dd {
+  margin-left: 87px;
+}
+.form-horizontal,
+.form-horizontal dl {
+  margin-bottom: 11px;
+}
+.btn {
+  border: 1px solid #603382;
+  border-radius: 10px;
+  background: #b35ef3;
+  border-top-color: white;
+  border-left-color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  color: white;
+}
+.menu a {
+  color: white;
+}
+.menu,
+.menu ul {
+  margin-bottom: 10px;
+  padding: 11px;
+  border: 1px solid #222222;
+  border-radius: 10px;
+}
+.menu ul {
+  background: white;
+  list-style: none;
+  position: absolute;
+  display: none;
+}
+.menu ul,
+.menu ul a {
+  color: black;
+}
+.menu li:hover ul {
+  display: block;
+}
+.menu ul li:not(:last-child) {
+  margin-bottom: 11px;
+}
+.menu-horizontal {
+  list-style: none;
+}
+.menu-horizontal::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+.menu-horizontal > li {
+  float: left;
+}
+.menu-horizontal > li:not(:last-child) {
+  margin-right: 11px;
+}
+.menu-horizontal a {
+  color: white;
+}
+.menu-horizontal,
+.menu-horizontal ul {
+  margin-bottom: 10px;
+  padding: 11px;
+  border: 1px solid #222222;
+  border-radius: 10px;
+}
+.menu-horizontal ul {
+  background: white;
+  list-style: none;
+  position: absolute;
+  display: none;
+}
+.menu-horizontal ul,
+.menu-horizontal ul a {
+  color: black;
+}
+.menu-horizontal li:hover ul {
+  display: block;
+}
+.menu-horizontal ul li:not(:last-child) {
+  margin-bottom: 11px;
+}
+.global-header img {
+  margin-top: 10px;
+}
+.global-footer {
+  text-align: center;
+}

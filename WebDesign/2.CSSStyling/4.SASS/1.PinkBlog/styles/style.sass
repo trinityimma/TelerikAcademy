@@ -94,17 +94,14 @@ label,
 =getSpanWidth($i)
     width: $i * $gridColumnWidth + ($i -  1) * $gridGutter
 
-@for $i from 1 through $gridColumns
-    @if $i < $gridColumns
-        .span#{$i}
-            @extend .span
-            +getSpanWidth($i)
-    @else
-        .container
-            +getSpanWidth($i)
+@for $i from 1 through $gridColumns - 1
+    .span#{$i}
+        @extend .span
+        +getSpanWidth($i)
 
 .container
-    margin: 2 * $gridGutter auto
+    +getSpanWidth($gridColumns)
+    margin: 2 * $gridGutter auto $gridGutter
 
 // BOXES
 .box

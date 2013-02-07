@@ -20,8 +20,7 @@ class Program
 
         for (int h = 0; h < height; h++)
         {
-            string str = Console.ReadLine();
-            string[] line = Regex.Split(str, @" \| ");
+            string[] line = Regex.Split(Console.ReadLine(), @" \| ");
 
             for (int d = 0; d < depth; d++)
             {

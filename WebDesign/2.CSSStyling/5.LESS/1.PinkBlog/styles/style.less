@@ -1,1 +1,230 @@
-TODO
+// VARIABLES
+@gridGutter: 10px;
+@gridColumnWidth: 87px;
+@gridColumns: 10;
+
+@lineHeight: 22px;
+
+@background: #9215f2;
+
+.linearGradient(@color1, @stop1, @color2, @stop2, @color3, @stop3){
+    background: -webkit-linear-gradient(@color1 @stop1, @color2 @stop2, @color3 @stop3);
+    background:    -moz-linear-gradient(@color1 @stop1, @color2 @stop2, @color3 @stop3);
+    background:      -o-linear-gradient(@color1 @stop1, @color2 @stop2, @color3 @stop3);
+    background:         linear-gradient(@color1 @stop1, @color2 @stop2, @color3 @stop3);
+}
+
+// RESET
+body, ul, li, dl, dt, dd, h1, h2, p, input {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+    font-size: 100%;
+    line-height: @lineHeight;
+}
+
+img {
+    border: none;
+}
+
+// TAGS
+body {
+    color: white;
+    background: @background fixed;
+    .linearGradient(#d593ff, 0, #8f19ef, 165px, @background, 100%);
+}
+
+a {
+    color: #d0a3f7;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+input,
+.input {
+    border: 1px solid #603382;
+    border-radius: 10px;
+    background: #b35ef3;
+}
+
+label,
+[type = "submit"] {
+    cursor: pointer;
+}
+
+// TYPOGRAPHY
+.code {
+    font-family: Consolas, monospace;
+}
+
+// LAYOUT
+.clearfix{
+    &::after {
+        display: table;
+        content: " ";
+        clear: both;
+    }
+}
+
+// LISTS
+.unstyled {
+    list-style: none;
+}
+
+.styled {
+    .unstyled;
+
+    li {
+        background: url(../../images/li-dot.png) 0 4px no-repeat;
+        padding-left: 20px + @gridGutter;
+    }
+}
+
+.inline {
+    .clearfix;
+    .unstyled;
+
+    & > li {
+        float: left;
+
+        &:not(:last-child) {
+            margin-right: @lineHeight / 2;
+        }
+    }
+}
+
+.dl-inline {
+    dt {
+        float: left;
+        text-align: right;
+        width: @gridColumnWidth - @gridGutter;
+    }
+
+    dd {
+        margin-left: @gridColumnWidth;
+    }
+}
+
+// GRID
+.row {
+    .clearfix;
+    margin-left: -@gridGutter;
+}
+
+.span {
+    float: left;
+    margin-left: @gridGutter;
+}
+
+.getSpanWidth (@i) {
+    width: @i * @gridColumnWidth + (@i - 1) * @gridGutter;
+}
+
+.spanX (@i) when (@i > 0) {
+    (~".span@{i}") {
+        .span;
+        .getSpanWidth(@i);
+    }
+    .spanX(@i - 1);
+}
+.spanX(@gridColumns - 1);
+
+.container {
+    .getSpanWidth(@gridColumns);
+    margin: 2 * @gridGutter auto @gridGutter;
+}
+
+// BOXES
+.box {
+    margin-bottom: @gridGutter;
+    padding: @lineHeight / 2;
+    border: 1px solid #222222;
+    border-radius: 10px;
+}
+
+.box h1,
+.box h2,
+.box p:not(:last-child) {
+    margin-bottom: @lineHeight / 3;
+}
+
+.box footer {
+    text-align: right;
+}
+
+.box-white {
+    background: white;
+
+    &,
+    a {
+        color: black;
+    }
+}
+
+// FORMS
+.form {
+    &,
+    dl {
+        margin-bottom: @lineHeight / 2;
+    }
+}
+
+.form-horizontal {
+    .dl-inline;
+    .form;
+}
+
+.btn {
+    .input;
+    border-top-color: white;
+    border-left-color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    color: white;
+}
+
+// MENUS
+.menu {
+    a {
+        color: white;
+    }
+
+    &,
+    & ul {
+        .box;
+    }
+
+    ul {
+        .box-white;
+        .unstyled;
+        position: absolute;
+        display: none;
+    }
+
+    li:hover ul {
+        display: block;
+    }
+
+    ul li:not(:last-child) {
+        margin-bottom: @lineHeight / 2;
+    }
+}
+
+.menu-horizontal {
+    .inline;
+    .menu;
+}
+
+// SITE
+.global-header {
+    img {
+        margin-top: @gridGutter;
+    }
+}
+
+.global-footer {
+    text-align: center;
+}
