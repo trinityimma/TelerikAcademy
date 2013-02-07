@@ -38,7 +38,7 @@
 6. [Exception Handling](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/6.ExceptionHandling) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/6.ExceptionHandling/README.md)) - 22.01.2013
 7. [Text Files](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/7.TextFiles) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/7.TextFiles/README.md)) - 22.01.2013
 8. [Strings and Text Processing](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/8.StringsAndTextProcessing) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/8.StringsAndTextProcessing/README.md)) - 26.01.2013
-9. Exam Preparation - 29.01.2013
+9. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/10.ExamPreparation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/10.ExamPreparation/README.md)) - 29.01.2013
 10. Exam - 04.02.2013
 
 ## CSS Styling
