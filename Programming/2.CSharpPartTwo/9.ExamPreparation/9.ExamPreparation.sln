@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.3DSlices", "4.3DSlices\4.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.GenomeDecoder", "1.GenomeDecoder\1.GenomeDecoder.csproj", "{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Tubes", "3.Tubes\3.Tubes.csproj", "{3A16AAF8-3549-4DBC-8223-05ED1823C6C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.AcademyTasks", "5.AcademyTasks\5.AcademyTasks.csproj", "{95BDE791-835B-4FB2-A7BB-74CA891FC4D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AFA1AA3-00EE-4D39-ABE1-9058E977AA6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A16AAF8-3549-4DBC-8223-05ED1823C6C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A16AAF8-3549-4DBC-8223-05ED1823C6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A16AAF8-3549-4DBC-8223-05ED1823C6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A16AAF8-3549-4DBC-8223-05ED1823C6C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95BDE791-835B-4FB2-A7BB-74CA891FC4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95BDE791-835B-4FB2-A7BB-74CA891FC4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95BDE791-835B-4FB2-A7BB-74CA891FC4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95BDE791-835B-4FB2-A7BB-74CA891FC4D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
