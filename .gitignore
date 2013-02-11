@@ -3,8 +3,6 @@ config.rb
 # *.rar
 # *.zip
 
-10.Exam/
-
 # Build and Object Folders
 bin/
 obj/
@@ -62,6 +60,9 @@ ipch/
 
 # ReSharper is a .NET coding add-in
 _ReSharper*
+
+# JustCode
+.JustCode/
 
 # NCrunch
 *.ncrunch*
