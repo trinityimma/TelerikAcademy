@@ -56,6 +56,33 @@ class Program
         dirD = int.Parse(dir[2]);
     }
 
+    static void BurnEdges()
+    {
+        for (int w = 0; w < width; w++)
+        {
+            cube[w, 0, 0] = true;
+            cube[w, height - 1, 0] = true;
+            cube[w, 0, depth - 1] = true;
+            cube[w, height - 1, depth - 1] = true;
+        }
+
+        for (int h = 0; h < height; h++)
+        {
+            cube[0, h, 0] = true;
+            cube[width - 1, h, 0] = true;
+            cube[0, h, depth - 1] = true;
+            cube[width - 1, h, depth - 1] = true;
+        }
+
+        for (int d = 0; d < depth; d++)
+        {
+            cube[0, 0, d] = true;
+            cube[width - 1, 0, d] = true;
+            cube[0, height - 1, d] = true;
+            cube[width - 1, height - 1, d] = true;
+        }
+    }
+
     static void Start()
     {
         while (true)
@@ -92,33 +119,6 @@ class Program
                 if (!(0 <= nextH && nextH < height)) dirH = -dirH;
                 if (!(0 <= nextD && nextD < depth))  dirD = -dirD;
             }
-        }
-    }
-
-    static void BurnEdges()
-    {
-        for (int w = 0; w < width; w++)
-        {
-            cube[w, 0         , 0        ] = true;
-            cube[w, height - 1, 0        ] = true;
-            cube[w, 0         , depth - 1] = true;
-            cube[w, height - 1, depth - 1] = true;
-        }
-
-        for (int h = 0; h < height; h++)
-        {
-            cube[0        , h, 0         ] = true;
-            cube[width - 1, h, 0         ] = true;
-            cube[0        , h, depth - 1 ] = true;
-            cube[width - 1, h, depth - 1 ] = true;
-        }
-
-        for (int d = 0; d < depth; d++)
-        {
-            cube[0        , 0         , d] = true;
-            cube[width - 1, 0         , d] = true;
-            cube[0        , height - 1, d] = true;
-            cube[width - 1, height - 1, d] = true;
         }
     }
 
