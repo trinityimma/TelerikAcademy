@@ -28,11 +28,11 @@ class Program
         return Regex.Replace(line.TrimStart(), " +", " ");
     }
 
-    static string MakeLine(int stack, string text)
+    static string MakeLine(string text, int level)
     {
         StringBuilder line = new StringBuilder();
 
-        for (int i = 0; i < stack; i++)
+        for (int i = 0; i < level; i++)
             line.Append(indentationString);
 
         line.Append(text);
@@ -52,10 +52,10 @@ class Program
             {
                 // Start new line for each bracket
                 if (line[i] == '{')
-                    formattedCode.Add(MakeLine(stack++, "{"));
+                    formattedCode.Add(MakeLine("{", stack++));
 
                 else if (line[i] == '}')
-                    formattedCode.Add(MakeLine(--stack, "}"));
+                    formattedCode.Add(MakeLine("}", --stack));
 
                 // Else add contents to a new line
                 else
@@ -72,7 +72,7 @@ class Program
                     // Skip empty lines
                     // See input3.txt - It has trailing spaces after the last bracket
                     if (!String.IsNullOrWhiteSpace(code))
-                        formattedCode.Add(MakeLine(stack, Trim(code)));
+                        formattedCode.Add(MakeLine(Trim(code), stack));
                 }
             }
         }
