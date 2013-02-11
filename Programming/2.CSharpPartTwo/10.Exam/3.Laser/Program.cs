@@ -60,25 +60,25 @@ class Program
     {
         for (int w = 0; w < width; w++)
         {
-            cube[w, 0, 0] = true;
-            cube[w, height - 1, 0] = true;
-            cube[w, 0, depth - 1] = true;
+            cube[w, 0         , 0        ] = true;
+            cube[w, height - 1, 0        ] = true;
+            cube[w, 0         , depth - 1] = true;
             cube[w, height - 1, depth - 1] = true;
         }
 
         for (int h = 0; h < height; h++)
         {
-            cube[0, h, 0] = true;
-            cube[width - 1, h, 0] = true;
-            cube[0, h, depth - 1] = true;
-            cube[width - 1, h, depth - 1] = true;
+            cube[0        , h, 0         ] = true;
+            cube[width - 1, h, 0         ] = true;
+            cube[0        , h, depth - 1 ] = true;
+            cube[width - 1, h, depth - 1 ] = true;
         }
 
         for (int d = 0; d < depth; d++)
         {
-            cube[0, 0, d] = true;
-            cube[width - 1, 0, d] = true;
-            cube[0, height - 1, d] = true;
+            cube[0        , 0         , d] = true;
+            cube[width - 1, 0         , d] = true;
+            cube[0        , height - 1, d] = true;
             cube[width - 1, height - 1, d] = true;
         }
     }
@@ -130,7 +130,7 @@ class Program
     static void Main()
     {
 #if DEBUG
-        Console.SetIn(new System.IO.StreamReader("../../input.txt"));
+        Console.SetIn(new System.IO.StreamReader("../../input1.txt"));
 #endif
         Input();
 
