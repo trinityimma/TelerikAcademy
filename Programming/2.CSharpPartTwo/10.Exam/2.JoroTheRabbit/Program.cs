@@ -60,7 +60,7 @@ class Program
     static void Main()
     {
 #if DEBUG
-        Console.SetIn(new System.IO.StreamReader("../../input4.txt"));
+        Console.SetIn(new System.IO.StreamReader("../../input2.txt"));
 #endif
         Input();
 

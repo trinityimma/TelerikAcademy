@@ -15,8 +15,8 @@ class Program
         // Make reversed durankulak digits
         Stack<string> durankulakDigits = new Stack<string>();
 
-        foreach (Match digit in Regex.Matches(durankulakNumber, "[a-z]?[A-Z]"))
-            durankulakDigits.Push(digit.Value);
+        foreach (Match durankulakDigit in Regex.Matches(durankulakNumber, "[a-z]?[A-Z]"))
+            durankulakDigits.Push(durankulakDigit.Value);
 
         // Make decimal number
         long decimalNumber = 0;

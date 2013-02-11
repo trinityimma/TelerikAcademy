@@ -130,7 +130,7 @@ class Program
     static void Main()
     {
 #if DEBUG
-        Console.SetIn(new System.IO.StreamReader("../../input1.txt"));
+        Console.SetIn(new System.IO.StreamReader("../../input.txt"));
 #endif
         Input();
 
