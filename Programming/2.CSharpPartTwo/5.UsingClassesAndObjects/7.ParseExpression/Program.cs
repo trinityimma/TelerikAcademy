@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 class Program
 {
-    static Dictionary<string, int> precendce = new Dictionary<string, int>() {
+    static Dictionary<string, int> precedence = new Dictionary<string, int>() {
         { "pow", 4 }, { "sqrt", 4 }, { "ln", 4 }, { "*", 3 }, { "/", 3 }, { "+", 2 }, { "-", 2 }, { "(", 0 }, { ")", 999 }
     };
 
@@ -76,7 +76,7 @@ class Program
 
             else
             {
-                while (operators.Count != 0 && precendce[value] <= precendce[operators.Peek()])
+                while (operators.Count != 0 && precedence[value] <= precedence[operators.Peek()])
                     postfix.Add(operators.Pop());
 
                 operators.Push(value);
