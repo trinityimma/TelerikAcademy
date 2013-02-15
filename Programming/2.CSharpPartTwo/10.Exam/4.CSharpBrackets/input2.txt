@@ -5,6 +5,6 @@ using System;    namespace Stars
 
 // Test
 
-static    string[] separators
+static    string[] separators  
 = new string[] { "   " };}
 }}

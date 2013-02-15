@@ -65,7 +65,7 @@ label,
 
 /* line 62, ../../styles/style.sass */
 .styled li {
-  background: url(../../images/li-dot.png) 0 4px no-repeat;
+  background: url('/images/li-dot.png?1360206009') 0 4px no-repeat;
   padding-left: 30px;
 }
 
