@@ -1,0 +1,52 @@
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+
+body { font-family: Arial, "DejaVu Sans", "Liberation Sans", Freesans, sans-serif; }
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover { text-decoration: underline; }
+
+/* SLIDES */
+#wrapper {
+    margin: 10px 15px;
+    padding: 10px;
+    width: 680px;
+    background: #ccc;
+}
+
+#wrapper > div { position: relative; }
+
+#wrapper, .holder img { border-radius: 5px; }
+
+.holder img {
+    width: 550px;
+    height: 415px;
+}
+
+/* PLAYLIST */
+.playlist {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.playlist ul { list-style: none; }
+
+.playlist li {
+    margin: 0 0 10px 0;
+    padding: 0 5px 5px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.playlist span { display: block; }
+
+.playlist img { border-radius: 10px; }

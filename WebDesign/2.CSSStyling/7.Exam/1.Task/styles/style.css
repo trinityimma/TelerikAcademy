@@ -1,0 +1,38 @@
+body, h1, p { margin: 0; }
+
+body { font-family: Constantina, Georgia, "Nimbus Roman No9 L", serif; }
+
+h1 { font-size: 28px; }
+
+#wrapper {
+    position: relative;
+    margin: 25px auto;
+    padding: 15px 35px 30px;
+    width: 830px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: -webkit-linear-gradient(#DD26FC, #F8DAFE);
+    background:    -moz-linear-gradient(#DD26FC, #F8DAFE);
+    background:      -o-linear-gradient(#DD26FC, #F8DAFE);
+    background:         linear-gradient(#DD26FC, #F8DAFE);
+}
+
+.postedby {
+    display: inline-block;
+    margin: 5px 0 15px 15px;
+    padding: 5px 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.info {
+    text-align: justify;
+    font-size: 15px;
+}
+
+.left-arrow, .right-arrow {
+    position: absolute;
+    top: 75px;
+}
+.left-arrow { left: 0; }
+.right-arrow { right: 0; }
