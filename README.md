@@ -49,4 +49,4 @@
 5. [SASS](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/4.SASS) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/4.SASS/README.md)) - 25.01.2013
 6. [LESS](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/5.LESS) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/5.LESS/README.md)) - 01.02.2013
 7. Exam Preparation - 08.02.2013
-8. Exam - 13.02.2013
+8. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/7.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/7.Exam/README.md)) - 13.02.2013
