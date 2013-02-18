@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -42,7 +42,7 @@ class Program
         int[,] matrix = { { 1, 3, 2, 2, 2, 4 }, { 3, 3, 3, 2, 4, 4 }, { 4, 3, 1, 2, 3, 3 }, { 4, 3, 1, 3, 3, 1 }, { 4, 3, 3, 3, 1, 1 } };
 
         int maxSum = 0;
-        
+
         // For each cell
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
