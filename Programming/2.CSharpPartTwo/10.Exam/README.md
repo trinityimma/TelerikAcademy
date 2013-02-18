@@ -126,7 +126,7 @@ Note: the starting position is burned during the shot, so it cannot be the answe
 
 * `W`, `H`, `D`, `startW`, `startH`, `startD`, `dirW`, `dirH` and `dirD` will all be integers.
 * 4 < `W`, `H`, `D` < 100
-* 1 < `startW`, `startH`, startD < `W`, `H`, `D`.
+* 1 < `startW`, `startH`, `startD` < `W`, `H`, `D`.
 * Each of the numbers `dirW`, `dirH`, `dirD` can only have the values -1, 1 or 0.
 * Allowed working time for your program: 0.1 seconds.
 * Allowed memory: 16 MB.
