@@ -65,6 +65,6 @@
 8. Exam Preparation
 9. Exam
 
-## Javascript Part I
+## JavaScript Part I
 
 1. Course Overview - 23.02.2013
