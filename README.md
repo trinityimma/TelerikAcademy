@@ -50,3 +50,17 @@
 6. [LESS](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/5.LESS) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/5.LESS/README.md)) - 01.02.2013
 7. Exam Preparation - 08.02.2013
 8. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/2.CSSStyling/7.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/2.CSSStyling/7.Exam/README.md)) - 13.02.2013
+
+---
+
+## Object-Oriented Programming
+
+1. Course Overview | Defining Classes - Part I - 19.02.2013
+2. Defining Classes - Part II
+3. Extension Methods and LINQ
+4. Fundamental Principles - Part I
+5. Fundamental Principles - Part II
+6. Common Type System
+7. Workshop - Game Development
+8. Exam Preparation
+9. Exam
