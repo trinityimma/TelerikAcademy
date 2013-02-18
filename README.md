@@ -64,3 +64,7 @@
 7. Workshop - Game Development
 8. Exam Preparation
 9. Exam
+
+## Javascript Part I
+
+1. Course Overview - 23.02.2013
