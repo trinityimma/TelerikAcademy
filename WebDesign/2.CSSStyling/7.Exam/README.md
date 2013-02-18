@@ -1,6 +1,6 @@
 # Exam
 
-You are not allowed to change the HTML file or the name of the CSS file.
+You are not allowed to change the HTML file.
 
 ## Exercise 1
 * Resolution-width: 960px
