@@ -3,7 +3,7 @@
 1. [Durankulak Numbers](#1-durankulak-numbers)
 * [Joro the Rabbit](#2-joro-the-rabbit)
 * [Laser](#3-laser)
-* [C# Brackets](#4-c#-brackets)
+* [C# Brackets](#4-c-brackets)
 * [Two Is Better Than One](#5-two-is-better-than-one)
 
 ## 1. Durankulak Numbers
@@ -101,7 +101,7 @@ Let's say we go inside one of the cubes in the cuboid (which is not on the side,
 
 When the laser passes through a cube, it burns it and it cannot pass through it again. Furthermore, if the laser reaches the wall of the cuboid (that is, a cube which is on the wall), it burns the cube there and reflects back into the cuboid, continuing to burn cubes it passes through. The reflection happens according to the laws of light reflection. Basically, the component of the direction vector, which would cause the laser to leave the cuboid, becomes the opposite number. So if a laser is moving in direction "right" (1, 0, 0), once it reaches the right wall of the cube it will reflect back, moving in direction "left" (-1, 0, 0), but, in this case, that will cause it to visit an already burnt cube, so the laser will stop there.
 
-![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/Programming/2.CSharpPartTwo/10.Exam/3.Laser/example.png)
+![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/Programming/2.CSharpPartTwo/10.Exam/3.Laser/index.png)
 
 Furthermore, all cubes on the edges (red green and blue cubes on the picture) of our cuboid are burned to begin with. So a laser will always stop before reaching the edge, because it cannot go into the edge cubes.
 
