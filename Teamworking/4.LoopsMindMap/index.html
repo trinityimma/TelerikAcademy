@@ -95,7 +95,7 @@
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js'></script>
     <script type='text/javascript' src='http://brandonaaron.net/javascripts/plugins/mousewheel.js'></script>
     <script>
-        $('body').mousewheel(function(e, delta) {
+        $('html, body').mousewheel(function(e, delta) {
             this.scrollLeft -= (delta * 100)
 
             e.preventDefault()
