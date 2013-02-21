@@ -85,7 +85,7 @@
               , code = map.innerHTML
 
             code = code.replace(/((\+=+\+)|(ǁ.*ǁ))/g, '<span class="title">$1</span>')
-            code = code.replace(/(([_\+\|\-ǁ|\+v]|=(?!\")|&lt;|&gt;)+)/g, '<span>$1</span>')
+            code = code.replace(/(([_\+\|ǁ|\+v]|=(?!\")|&lt;|&gt;|(\-(?!\w)))+)/g, '<span>$1</span>')
 
             map.innerHTML = code
         }())
