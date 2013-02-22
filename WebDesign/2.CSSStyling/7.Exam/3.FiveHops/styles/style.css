@@ -22,7 +22,6 @@ p {
 #wrapper > div {
     float: left;
     padding: 10px 5px 0;
-    width: 960px;
     width: 130px;
     border: 2px solid #D6D6D6;
     background: 5px 10px no-repeat;
