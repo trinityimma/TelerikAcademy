@@ -15,10 +15,12 @@ class Display
 
 class Battery
 {
-    public readonly string Model;
+    public readonly Type Model;
     public readonly int? HoursIdle, HoursTalk;
 
-    public Battery(string model, int? hoursIdle = null, int? hoursTalk = null)
+    public enum Type { LiIon, NiMH, NiCd }; // static by default
+
+    public Battery(Type model, int? hoursIdle = null, int? hoursTalk = null)
     {
         this.Model = model;
         this.HoursIdle = hoursIdle;
@@ -56,7 +58,7 @@ class Program
         phone = new GSM("iPhone 4", "Apple", display: new Display(480, 320));
         Console.WriteLine(phone.Display.Height);
 
-        phone = new GSM("iPhone 5", "Apple", battery: new Battery("Lithium ion"), price: 1000);
+        phone = new GSM("iPhone 5", "Apple", battery: new Battery(Battery.Type.LiIon), price: 1000);
         Console.WriteLine(phone.Battery.Model);
         Console.WriteLine(phone.Price);
     }
