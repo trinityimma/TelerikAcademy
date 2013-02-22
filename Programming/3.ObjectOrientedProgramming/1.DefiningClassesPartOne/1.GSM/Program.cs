@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 class Display
 {
@@ -10,6 +11,19 @@ class Display
         this.Width = width;
         this.Height = height;
         this.NumberOfColors = numberOfColors;
+    }
+
+    public override string ToString()
+    {
+        List<string> info = new List<string>();
+
+        info.Add("Width: " + this.Width);
+        info.Add("Height: " + this.Height);
+
+        if (this.NumberOfColors.HasValue)
+            info.Add("Number of Colors: " + this.NumberOfColors);
+
+        return String.Join(", ", info);
     }
 }
 
@@ -25,6 +39,21 @@ class Battery
         this.Model = model;
         this.HoursIdle = hoursIdle;
         this.HoursTalk = hoursTalk;
+    }
+
+    public override string ToString()
+    {
+        List<string> info = new List<string>();
+
+        info.Add("Model: " + this.Model);
+
+        if (this.HoursIdle.HasValue)
+            info.Add("Hours Idle: " + this.HoursIdle);
+
+        if (this.HoursTalk.HasValue)
+            info.Add("Hours Talk: " + this.HoursTalk);
+
+        return String.Join(", ", info);
     }
 }
 
@@ -47,19 +76,39 @@ class GSM
         this.Display = display;
         this.Battery = battery;
     }
+
+    public override string ToString()
+    {
+        List<string> info = new List<string>();
+
+        info.Add("Model - " + this.Model);
+        info.Add("Manufacturer - " + this.Manufacturer);
+
+        if (this.Owner != null)
+            info.Add("Owner - " + this.Owner);
+
+        if (this.Price != null)
+            info.Add("Price - " + this.Price);
+
+        if (this.Display != null)
+            info.Add("Display - " + this.Display);
+
+        if (this.Battery != null)
+            info.Add("Battery - " + this.Battery);
+
+        return String.Join(Environment.NewLine, info);
+    }
 }
 
 class Program
 {
     static void Main()
     {
-        GSM phone;
-        
-        phone = new GSM("iPhone 4", "Apple", display: new Display(480, 320));
-        Console.WriteLine(phone.Display.Height);
+        Display display = new Display(480, 320);
+        Battery battery = new Battery(Battery.Type.LiIon, hoursTalk: 10);
 
-        phone = new GSM("iPhone 5", "Apple", battery: new Battery(Battery.Type.LiIon), price: 1000);
-        Console.WriteLine(phone.Battery.Model);
-        Console.WriteLine(phone.Price);
+        GSM phone = new GSM("iPhone 5", "Apple", display: display, battery: battery);
+
+        Console.WriteLine(phone);
     }
 }
