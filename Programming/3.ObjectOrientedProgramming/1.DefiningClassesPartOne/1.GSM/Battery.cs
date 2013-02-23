@@ -15,7 +15,11 @@ class Battery
     uint? hoursTalk = null;
 
     // Properties
-    public Type Model { get; set; }
+    public Type Model
+    {
+        get { return this.model; }
+        set { this.model = value; }
+    }
 
     public uint? HoursIdle
     {
