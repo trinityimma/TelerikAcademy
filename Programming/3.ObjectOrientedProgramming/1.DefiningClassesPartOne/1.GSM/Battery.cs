@@ -6,20 +6,15 @@ class Battery
     public enum Type { LiIon, NiMH, NiCd }; // static by default
 
     // Private Constants
-    const uint MaxIdleHours = 1000;
-    const uint MaxTalkHours = 500;
+    private const uint MaxIdleHours = 1000;
+    private const uint MaxTalkHours = 500;
 
     // Private Fields
-    Type model = 0;
-    uint? hoursIdle = null;
-    uint? hoursTalk = null;
+    private uint? hoursIdle = null;
+    private uint? hoursTalk = null;
 
     // Properties
-    public Type Model
-    {
-        get { return this.model; }
-        set { this.model = value; }
-    }
+    public Type Model { get; set; }
 
     public uint? HoursIdle
     {

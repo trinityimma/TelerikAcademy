@@ -4,14 +4,14 @@ using System.Collections.Generic;
 class Display
 {
     // Private Constants
-    const uint MaxWidth = 1 << 16;
-    const uint MaxHeight = MaxWidth * 2;
-    const uint MaxNumberOfColors = 1 << 32;
+    private const uint MaxWidth = 1 << 16;
+    private const uint MaxHeight = MaxWidth * 2;
+    private const long MaxNumberOfColors = 1L << 32;
 
     // Private Fields
-    uint width = 0;
-    uint height = 0;
-    uint? numberOfColors = null;
+    private uint width = 0;
+    private uint height = 0;
+    private long? numberOfColors = null;
 
     // Properties
     public uint Width
@@ -40,7 +40,7 @@ class Display
         }
     }
 
-    public uint? NumberOfColors
+    public long? NumberOfColors
     {
         get { return this.numberOfColors; }
 
@@ -54,7 +54,7 @@ class Display
     }
 
     // Constructors
-    public Display(uint width, uint height, uint? numberOfColors = null)
+    public Display(uint width, uint height, long? numberOfColors = null)
     {
         this.Width = width;
         this.Height = height;
