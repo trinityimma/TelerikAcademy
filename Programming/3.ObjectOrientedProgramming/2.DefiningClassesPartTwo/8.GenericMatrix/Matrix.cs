@@ -4,8 +4,8 @@ using System.Text;
 class Matrix<T>
 {
     // Private Fields
-    private int rows, cols;
-    private T[,] matrix;
+    private readonly int rows, cols;
+    private readonly T[,] matrix;
 
     // Public Properties
     public int Rows
@@ -33,6 +33,7 @@ class Matrix<T>
         set { matrix[x, y] = value; }
     }
 
+    // Plus / Minus Operator
     private static Matrix<T> PlusMinus(Matrix<T> m1, Matrix<T> m2, bool plus)
     {
         if (!(m1.Rows == m2.Rows && m1.Cols == m2.Cols))
@@ -47,13 +48,11 @@ class Matrix<T>
         return result;
     }
 
-    // Addition
     public static Matrix<T> operator +(Matrix<T> m1, Matrix<T> m2)
     {
         return PlusMinus(m1, m2, true);
     }
 
-    // Subtraction
     public static Matrix<T> operator -(Matrix<T> m1, Matrix<T> m2)
     {
         return PlusMinus(m1, m2, false);
@@ -75,7 +74,7 @@ class Matrix<T>
         return result;
     }
 
-    // Print
+    // To string
     public override string ToString()
     {
         StringBuilder s = new StringBuilder();
@@ -87,6 +86,7 @@ class Matrix<T>
         return s.ToString();
     }
 
+    // True / False
     private static bool BoolOperator(Matrix<T> m, bool value)
     {
         for (int i = 0; i < m.Rows; i++)
