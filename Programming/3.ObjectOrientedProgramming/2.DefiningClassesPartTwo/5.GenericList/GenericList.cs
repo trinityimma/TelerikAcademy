@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Linq;
 
-class GenericList<T> where T : IComparable<T>
+class GenericList<T>
 {
     // Private Constants
     private const uint DefaultCapacity = 1;
@@ -25,6 +26,7 @@ class GenericList<T> where T : IComparable<T>
     public GenericList(uint capacity = DefaultCapacity)
     {
         this.capacity = capacity;
+        this.count = 0;
 
         elements = new T[this.capacity];
     }
@@ -48,78 +50,73 @@ class GenericList<T> where T : IComparable<T>
             Array.Resize<T>(ref elements, (int)this.capacity);
     }
 
-    public void Add(T element)
+    public void Add(T el)
     {
         this.count++;
 
         Reserve(this.count);
 
-        this.elements[this.count - 1] = element;
+        this.elements[this.count - 1] = el;
     }
 
-    public void Remove(uint index)
+    public void Remove(uint i)
     {
-        if (index >= this.count)
+        if (i >= this.count)
             throw new IndexOutOfRangeException();
 
         this.count--;
 
-        Array.Copy(elements, index + 1, elements, index, count - index);
+        Array.Copy(elements, i + 1, elements, i, count - i);
 
         Reserve(this.count);
     }
 
-    public void Insert(uint index, T element)
+    public void Insert(uint i, T el)
     {
-        if (index > this.count)
+        if (i > this.count) // We can insert in the last position
             throw new IndexOutOfRangeException();
 
         this.count++;
 
         Reserve(this.count);
 
-        Array.Copy(elements, index, elements, index + 1, count - index);
+        Array.Copy(elements, i, elements, i + 1, count - i);
 
-        this.elements[index] = element;
+        this.elements[i] = el;
     }
 
     public void Clear()
     {
-        this.capacity = 0;
+        this.capacity = DefaultCapacity;
         this.count = 0;
 
         elements = new T[this.capacity];
     }
 
-    public int IndexOf(T element)
+    public int IndexOf(T el)
     {
-        for (int i = 0; i < count; i++)
-            if (this.elements[i].Equals(element))
-                return i;
+        return Array.IndexOf<T>(elements, el);
+    }
 
-        return -1;
+    //private T MinMax(bool value)
+    //{
+    //    T best = this.elements[0];
+
+    //    for (int i = 1; i < this.Count; i++)
+    //        if (value ? (best < (dynamic)this.elements[i]) : (best > (dynamic)this.elements[i]))
+    //            best = this.elements[i];
+
+    //    return best;
+    //}
+
+    public T Max()
+    {
+        return elements.Max<T>();
     }
 
     public T Min()
     {
-        T min = this.elements[0];
-
-        for (int i = 1; i < this.Count; i++)
-            if (this.elements[i].CompareTo(min) < 0)
-                min = this.elements[i];
-
-        return min;
-    }
-
-    public T Max()
-    {
-        T max = this.elements[0];
-
-        for (int i = 1; i < this.Count; i++)
-            if (this.elements[i].CompareTo(max) > 0)
-                max = this.elements[i];
-
-        return max;
+        return elements.Min<T>();
     }
 
     public T this[uint index]

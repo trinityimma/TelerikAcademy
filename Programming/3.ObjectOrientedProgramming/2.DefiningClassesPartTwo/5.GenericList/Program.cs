@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -55,6 +55,7 @@ class Program
             list.Remove(3);
 
             Console.WriteLine(list);
+
             Console.WriteLine();
         }
 
@@ -64,12 +65,15 @@ class Program
             list.Insert(list.Count, 10);
 
             Console.WriteLine(list);
+
             Console.WriteLine();
         }
 
         {
             Console.WriteLine("# Index of");
+
             Console.WriteLine(list.IndexOf(4));
+
             Console.WriteLine();
         }
 
