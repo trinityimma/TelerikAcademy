@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.3DPoint", "1.3DPoint\1.3D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.GenericList", "5.GenericList\5.GenericList.csproj", "{5CF9BF81-64DA-4558-86A9-A34E865A01BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.GenericMatrix", "8.GenericMatrix\8.GenericMatrix.csproj", "{B5DC357F-5131-4CC4-BD54-A675C73DB4B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{5CF9BF81-64DA-4558-86A9-A34E865A01BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CF9BF81-64DA-4558-86A9-A34E865A01BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CF9BF81-64DA-4558-86A9-A34E865A01BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5DC357F-5131-4CC4-BD54-A675C73DB4B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5DC357F-5131-4CC4-BD54-A675C73DB4B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5DC357F-5131-4CC4-BD54-A675C73DB4B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5DC357F-5131-4CC4-BD54-A675C73DB4B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
