@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 class GenericList<T>
@@ -66,7 +66,9 @@ class GenericList<T>
 
         this.count--;
 
-        Array.Copy(elements, i + 1, elements, i, count - i);
+        Array.Copy(this.elements, i + 1, this.elements, i, count - i);
+
+        this.elements[this.count] = default(T); // Clear last
 
         Reserve(this.count);
     }
@@ -98,25 +100,25 @@ class GenericList<T>
         return Array.IndexOf<T>(elements, el);
     }
 
-    //private T MinMax(bool value)
-    //{
-    //    T best = this.elements[0];
+    private T MinMax(bool value)
+    {
+        T best = this.elements[0];
 
-    //    for (int i = 1; i < this.Count; i++)
-    //        if (value ? (best < (dynamic)this.elements[i]) : (best > (dynamic)this.elements[i]))
-    //            best = this.elements[i];
+        for (int i = 1; i < this.Count; i++)
+            if (value ? (best < (dynamic)this.elements[i]) : (best > (dynamic)this.elements[i]))
+                best = this.elements[i];
 
-    //    return best;
-    //}
+        return best;
+    }
 
     public T Max()
     {
-        return elements.Max<T>();
+        return MinMax(true);
     }
 
     public T Min()
     {
-        return elements.Min<T>();
+        return MinMax(false);
     }
 
     public T this[uint index]
