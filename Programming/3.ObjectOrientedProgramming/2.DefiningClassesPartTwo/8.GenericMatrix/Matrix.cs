@@ -61,7 +61,7 @@ class Matrix<T>
     // Naive multiplication
     public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)
     {
-        if (!(m1.Rows == m2.Rows && m1.Cols == m2.Cols))
+        if (!(m1.Cols == m2.Rows))
             throw new ArgumentException("Matrix size is not the same!");
 
         Matrix<T> result = new Matrix<T>(m1.rows, m2.cols);
