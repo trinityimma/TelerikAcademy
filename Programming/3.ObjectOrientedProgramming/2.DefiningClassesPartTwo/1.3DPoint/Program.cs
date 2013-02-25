@@ -4,29 +4,45 @@ class Program
 {
     static void Main()
     {
-        Point3D point = new Point3D(1, 1, 1);
+        {
+            Console.WriteLine("# Testing distance");
 
-        Console.WriteLine("Distance: {0}", Distance.Calculate(point, Point3D.Zero));
+            Console.WriteLine("Distance: {0}", Distance.Calculate(new Point3D(1, 1, 1), Point3D.Zero));
+            Console.WriteLine();
+        }
 
-        Path path = new Path();
+        {
+            Console.WriteLine("# Testing path");
 
-        path.Add(point);
-        path.Add(point);
-        path.Add(Point3D.Zero);
+            Point3D point = new Point3D(1, 1, 1);
 
-        Console.WriteLine(path);
-        Console.WriteLine();
+            Path path = new Path();
 
-        path.Remove(point);
+            path.Add(point);
+            path.Add(new Point3D(1, 2, 1));
+            path.Add(new Point3D(1, 3, 1));
+            path.Add(Point3D.Zero);
 
-        Console.WriteLine(path);
-        Console.WriteLine();
+            Console.WriteLine(path);
+            Console.WriteLine();
 
-        Console.WriteLine("# Testing Pathstorage");
-        
-        PathStorage.Write(path);
-        path = PathStorage.Load();
+            {
+                Console.WriteLine("# Testing remove");
 
-        Console.WriteLine(path);
+                path.Remove(point);
+
+                Console.WriteLine(path);
+                Console.WriteLine();
+            }
+
+            {
+                Console.WriteLine("# Testing path storage");
+
+                PathStorage.Write(path);
+                path = PathStorage.Load();
+
+                Console.WriteLine(path);
+            }
+        }
     }
 }

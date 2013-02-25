@@ -1,13 +1,27 @@
 ﻿using System;
 
-class GenericList<T> where T : IEquatable<T>, IComparable<T>
+class GenericList<T> where T : IComparable<T>
 {
-    const uint DefaultCapacity = 1;
+    // Private Constants
+    private const uint DefaultCapacity = 1;
 
+    // Private Fields
     private T[] elements = null;
     private uint count = 0;
-    public uint capacity = 0;
+    private uint capacity = 0;
 
+    // Public Properties
+    public uint Count
+    {
+        get { return this.count; }
+    }
+
+    public uint Capacity
+    {
+        get { return this.capacity; }
+    }
+
+    // Constructors
     public GenericList(uint capacity = DefaultCapacity)
     {
         this.capacity = capacity;
@@ -15,34 +29,32 @@ class GenericList<T> where T : IEquatable<T>, IComparable<T>
         elements = new T[this.capacity];
     }
 
-    private void EnsureCapacity(uint capacity)
+    // Methods
+    private void Reserve(uint capacity)
     {
-        if (capacity < this.capacity / 2)
+        uint oldCapacity = this.capacity;
+
+        // 1 / 2 = 0
+        if (capacity == 0 || capacity == 1)
+            this.capacity = 1;
+
+        else if (capacity <= this.capacity / 2)
             this.capacity /= 2;
 
-        if (capacity > this.capacity)
+        else if (capacity > this.capacity)
             this.capacity *= 2;
 
-        T[] newElements = new T[this.capacity];
-
-        for (int i = 0; i < this.count; i++)
-            newElements[i] = elements[i];
-
-        this.elements = newElements;
-    }
-
-    public uint Count
-    {
-        get { return this.count; }
+        if (oldCapacity != this.capacity)
+            Array.Resize<T>(ref elements, (int)this.capacity);
     }
 
     public void Add(T element)
     {
-        EnsureCapacity(this.count + 1);
-
-        this.elements[this.count] = element;
-
         this.count++;
+
+        Reserve(this.count);
+
+        this.elements[this.count - 1] = element;
     }
 
     public void Remove(uint index)
@@ -52,30 +64,28 @@ class GenericList<T> where T : IEquatable<T>, IComparable<T>
 
         this.count--;
 
-        for (uint i = index + 1; i < this.count; i++)
-            this.elements[i - 1] = this.elements[i];
+        Array.Copy(elements, index + 1, elements, index, count - index);
 
-        EnsureCapacity(this.count);
+        Reserve(this.count);
     }
 
     public void Insert(uint index, T element)
     {
-        if (index >= this.count)
+        if (index > this.count)
             throw new IndexOutOfRangeException();
 
         this.count++;
 
-        EnsureCapacity(this.count);
+        Reserve(this.count);
 
-        for (uint i = this.count; i > index; i--)
-            this.elements[i] = this.elements[i - 1];
+        Array.Copy(elements, index, elements, index + 1, count - index);
 
         this.elements[index] = element;
     }
 
     public void Clear()
     {
-        this.capacity = DefaultCapacity;
+        this.capacity = 0;
         this.count = 0;
 
         elements = new T[this.capacity];
@@ -94,7 +104,7 @@ class GenericList<T> where T : IEquatable<T>, IComparable<T>
     {
         T min = this.elements[0];
 
-        for (int i = 0; i < this.Count; i++)
+        for (int i = 1; i < this.Count; i++)
             if (this.elements[i].CompareTo(min) < 0)
                 min = this.elements[i];
 
@@ -105,7 +115,7 @@ class GenericList<T> where T : IEquatable<T>, IComparable<T>
     {
         T max = this.elements[0];
 
-        for (int i = 0; i < this.Count; i++)
+        for (int i = 1; i < this.Count; i++)
             if (this.elements[i].CompareTo(max) > 0)
                 max = this.elements[i];
 
@@ -125,6 +135,9 @@ class GenericList<T> where T : IEquatable<T>, IComparable<T>
 
     public override string ToString()
     {
+        if (this.count == 0)
+            return "Empty list.";
+
         string[] info = new string[this.count];
 
         for (int i = 0; i < this.count; i++)

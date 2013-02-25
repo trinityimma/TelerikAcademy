@@ -4,9 +4,10 @@ using System.Text.RegularExpressions;
 
 static class PathStorage
 {
-    private const string defaultFile = "../../input.txt";
+    private const string DefaultFile = "../../input.txt";
 
-    public static Path Load(string file = defaultFile)
+    // TODO: Optimize bytes
+    public static Path Load(string file = DefaultFile)
     {
         Path path = new Path();
 
@@ -25,7 +26,7 @@ static class PathStorage
         return path;
     }
 
-    public static void Write(Path path, string file = defaultFile)
+    public static void Write(Path path, string file = DefaultFile)
     {
         File.WriteAllText(file, path.ToString());
     }

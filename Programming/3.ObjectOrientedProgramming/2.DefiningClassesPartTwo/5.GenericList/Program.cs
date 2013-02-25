@@ -4,49 +4,81 @@ class Program
 {
     static void Main()
     {
-        GenericList<int> intList = new GenericList<int>();
+        GenericList<int> list = new GenericList<int>();
 
-        for (int i = 0; i < 20; i++)
         {
-            intList.Add(i);
+            Console.WriteLine("# Auto grow/shrink");
 
-            Console.WriteLine(intList);
+            for (int i = 0; i < 20; i++)
+            {
+                list.Add(i);
+
+                Console.WriteLine("Count: {0}, Capacity: {1}", list.Count, list.Capacity);
+            }
+
+            for (int i = 0; i < 15; i++)
+            {
+                list.Remove(list.Count - 1);
+
+                Console.WriteLine("Count: {0}, Capacity: {1}", list.Count, list.Capacity);
+            }
+
             Console.WriteLine();
         }
 
-        //while (intList.Count != 0)
-        //{
-        //    intList.Remove(intList.Count - 1);
+        {
+            Console.WriteLine("# List is");
 
-        //    Console.WriteLine(intList);
-        //    Console.WriteLine();
-        //}
+            Console.WriteLine(list);
 
-        Console.WriteLine(intList.Min());
-        Console.WriteLine(intList.Max());
+            Console.WriteLine();
+        }
 
-        //Console.WriteLine("# Remove element");
-        //intList.Remove(1);
+        {
+            Console.WriteLine("Min: {0}", list.Min());
+            Console.WriteLine("Max: {0}", list.Max());
 
-        //Console.WriteLine(intList);
-        //Console.WriteLine();
+            Console.WriteLine();
+        }
 
+        {
+            Console.WriteLine("# Indexer");
 
-        //Console.WriteLine("# Add element");
-        
-        //intList.Insert(0, 4);
-        
-        //Console.WriteLine(intList);
-        //Console.WriteLine();
+            Console.WriteLine(list[2]);
 
-        //Console.WriteLine("# Clear");
-        //intList.Clear();
-        //intList.Add(1);
+            Console.WriteLine();
+        }
 
-        //Console.WriteLine(intList);
-        //Console.WriteLine();
+        {
+            Console.WriteLine("# Remove element");
 
-        //Console.WriteLine("# Index of");
-        //Console.WriteLine(intList.IndexOf(1));
+            list.Remove(3);
+
+            Console.WriteLine(list);
+            Console.WriteLine();
+        }
+
+        {
+            Console.WriteLine("# Add element");
+
+            list.Insert(list.Count, 10);
+
+            Console.WriteLine(list);
+            Console.WriteLine();
+        }
+
+        {
+            Console.WriteLine("# Index of");
+            Console.WriteLine(list.IndexOf(4));
+            Console.WriteLine();
+        }
+
+        {
+            Console.WriteLine("# Clear");
+
+            list.Clear();
+
+            Console.WriteLine(list);
+        }
     }
 }

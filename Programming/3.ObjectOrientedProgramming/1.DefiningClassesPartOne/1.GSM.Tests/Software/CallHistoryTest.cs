@@ -21,7 +21,7 @@ namespace GSM.Tests.Software
             List<string> info = new List<string>();
 
             info.Add(String.Format("Minutes: {0}", this.callHistory.GetStartedMinutes()));
-            info.Add(String.Format("Price {0}: {1}", price, this.callHistory.CalculatePrice(price)));
+            info.Add(String.Format("Price {0}: {1:c}", price, this.callHistory.CalculatePrice(price)));
 
             Print("Calculating price", String.Join(Environment.NewLine, info));
         }
