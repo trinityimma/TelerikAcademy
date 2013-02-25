@@ -3,6 +3,7 @@ using System.Text;
 
 class Matrix<T>
 {
+    // Private Fields
     private int rows, cols;
     private T[,] matrix;
 
