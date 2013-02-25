@@ -55,9 +55,9 @@
 
 ## Object-Oriented Programming
 
-1. Course Overview | Defining Classes - Part I - 19.02.2013
-2. Defining Classes - Part II
-3. Extension Methods and LINQ
+1. Course Overview | [Defining Classes - Part I](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/1.DefiningClassesPartOne/) - 19.02.2013
+2. [Defining Classes - Part II](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/2.DefiningClassesPartTwo/) - 23.02.2013
+3. [Extension Methods and LINQ](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/3.ExtensionMethodsDelegatesLambdaLINQ/) - 25.02.2013
 4. Fundamental Principles - Part I
 5. Fundamental Principles - Part II
 6. Common Type System
