@@ -19,11 +19,12 @@ class Matrix<T>
     }
 
     // Constructor
-    public Matrix(int x, int y)
+    public Matrix(int rows, int cols)
     {
-        this.matrix = new T[x, y];
-        this.rows = x;
-        this.cols = y;
+        this.rows = rows;
+        this.cols = cols;
+
+        this.matrix = new T[rows, cols];
     }
 
     // Indexer
