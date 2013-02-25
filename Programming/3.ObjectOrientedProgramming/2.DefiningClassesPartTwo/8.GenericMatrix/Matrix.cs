@@ -32,33 +32,38 @@ class Matrix<T>
         set { matrix[x, y] = value; }
     }
 
-    // Addition
-    public static Matrix<T> operator +(Matrix<T> m1, Matrix<T> m2)
+    private static Matrix<T> PlusMinus(Matrix<T> m1, Matrix<T> m2, bool plus)
     {
+        if (!(m1.Rows == m2.Rows && m1.Cols == m2.Cols))
+            throw new ArgumentException("Matrix size is not the same!");
+
         Matrix<T> result = new Matrix<T>(m1.rows, m1.cols);
 
         for (int i = 0; i < m1.rows; i++)
             for (int j = 0; j < m1.cols; j++)
-                result[i, j] = (dynamic)m1[i, j] + m2[i, j];
+                result[i, j] = m1[i, j] + (plus ? m2[i, j] : -(dynamic)m2[i, j]);
 
         return result;
+    }
+
+    // Addition
+    public static Matrix<T> operator +(Matrix<T> m1, Matrix<T> m2)
+    {
+        return PlusMinus(m1, m2, true);
     }
 
     // Subtraction
     public static Matrix<T> operator -(Matrix<T> m1, Matrix<T> m2)
     {
-        Matrix<T> result = new Matrix<T>(m1.rows, m1.cols);
-
-        for (int i = 0; i < m1.rows; i++)
-            for (int j = 0; j < m1.cols; j++)
-                result[i, j] = (dynamic)m1[i, j] - m2[i, j];
-
-        return result;
+        return PlusMinus(m1, m2, false);
     }
 
     // Naive multiplication
     public static Matrix<T> operator *(Matrix<T> m1, Matrix<T> m2)
     {
+        if (!(m1.Rows == m2.Rows && m1.Cols == m2.Cols))
+            throw new ArgumentException("Matrix size is not the same!");
+
         Matrix<T> result = new Matrix<T>(m1.rows, m2.cols);
 
         for (int i = 0; i < result.rows; i++)
@@ -81,23 +86,23 @@ class Matrix<T>
         return s.ToString();
     }
 
-    public static bool operator true(Matrix<T> m)
+    private static bool BoolOperator(Matrix<T> m, bool value)
     {
         for (int i = 0; i < m.Rows; i++)
             for (int j = 0; j < m.Cols; j++)
                 if ((dynamic)m[i, j] != 0)
-                    return true;
+                    return value;
 
-        return false;
+        return !value;
+    }
+
+    public static bool operator true(Matrix<T> m)
+    {
+        return BoolOperator(m, true);
     }
 
     public static bool operator false(Matrix<T> m)
     {
-        for (int i = 0; i < m.Rows; i++)
-            for (int j = 0; j < m.Cols; j++)
-                if ((dynamic)m[i, j] == 0)
-                    return true;
-
-        return false;
+        return BoolOperator(m, false);
     }
 }
