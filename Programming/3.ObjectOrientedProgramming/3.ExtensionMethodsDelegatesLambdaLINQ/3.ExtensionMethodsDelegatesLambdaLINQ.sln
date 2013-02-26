@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.Timer", "7.Timer\7.Timer.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.StringBuilderExtensions", "1.StringBuilderExtensions\1.StringBuilderExtensions.csproj", "{35EEBE32-D683-4A9C-B5E4-7247B53DDE65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.IEnumerableExtensions", "2.IEnumerableExtensions\2.IEnumerableExtensions.csproj", "{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,10 @@ Global
 		{35EEBE32-D683-4A9C-B5E4-7247B53DDE65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35EEBE32-D683-4A9C-B5E4-7247B53DDE65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35EEBE32-D683-4A9C-B5E4-7247B53DDE65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
