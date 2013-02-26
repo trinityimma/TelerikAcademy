@@ -8,11 +8,11 @@ class Program
     {
         IEnumerable<int> elements = Enumerable.Range(1, 9);
 
-        Console.WriteLine(elements.Count<int>());
-        Console.WriteLine(elements.Min<int>());
-        Console.WriteLine(elements.Max<int>());
-        Console.WriteLine(elements.Sum<int>());
-        Console.WriteLine(elements.Product<int>());
-        Console.WriteLine(elements.Average<int>());
+        Console.WriteLine("Max: {0}", elements.Max<int>());
+        Console.WriteLine("Min: {0}", elements.Min<int>());
+        Console.WriteLine("Sum: {0}", elements.Sum<int>());
+        Console.WriteLine("Product: {0}", elements.Product<int>());
+        Console.WriteLine("Count: {0}", elements.Count<int>());
+        Console.WriteLine("Average: {0}", elements.Average<int>());
     }
 }
