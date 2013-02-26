@@ -1,6 +1,6 @@
 # Trimester I
 
-## C# Part I
+## C# - Part I
 
 1. Course Overview | [Introduction to Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming/README.md)) - 27.10.2012
 2. [Primitive Data Types and Variables](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/2.PrimitiveDataTypesAndVariables) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/2.PrimitiveDataTypesAndVariables/README.md)) - 03.11.2012
@@ -28,7 +28,7 @@
 
 ---
 
-## C# Part II
+## C# - Part II
 
 1. Course Overview | [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/1.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/1.Arrays/README.md)) - 08.01.2013
 2. [Multidimensional Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/2.CSharpPartTwo/2.MultidimensionalArrays/README.md)) - 12.01.2013
@@ -65,7 +65,7 @@
 8. Exam Preparation
 9. Exam
 
-## JavaScript Part I
+## JavaScript - Part I
 
 1. Course Overview | Introduction to JavaScript Development - 23.02.2013
 2. Data types and Variables - 25.02.2013
