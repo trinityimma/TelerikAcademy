@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 static class IEnumerableExtensions
 {
-    // Min / Max
+    // http://en.wikipedia.org/wiki/Fold_(higher-order_function)
     private static T Reduce<T>(this IEnumerable<T> items, Func<T, dynamic, T> func, dynamic start = null)
     {
         IEnumerator<T> i = items.GetEnumerator();
