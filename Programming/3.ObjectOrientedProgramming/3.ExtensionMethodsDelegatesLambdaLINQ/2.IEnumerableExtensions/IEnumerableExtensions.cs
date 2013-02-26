@@ -42,7 +42,6 @@ static class IEnumerableExtensions
         return Convert.ToInt32(ForEach(items, (_, b) => b + 1, start: 1));
     }
 
-    // Average
     public static double Average<T>(this IEnumerable<T> items)
     {
         return Convert.ToDouble(items.Sum<T>()) / Convert.ToDouble(items.Count<T>()); // TODO: Optimize
