@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-static class FuncExtensions
+static class Timer
 {
     public static void SetInterval(this Action f, int t)
     {
