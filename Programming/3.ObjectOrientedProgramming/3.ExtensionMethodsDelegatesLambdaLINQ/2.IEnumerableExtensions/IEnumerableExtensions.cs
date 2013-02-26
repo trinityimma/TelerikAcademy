@@ -12,19 +12,19 @@ static class IEnumerableExtensions
         T best = i.Current;
 
         while (i.MoveNext())
-            if (pred(best, i.Current)) best = i.Current;
+            if (pred(i.Current, best)) best = i.Current;
 
         return best;
     }
 
     public static T Max<T>(this IEnumerable<T> items)
     {
-        return MinMax(items, (a, b) => a < b);
+        return MinMax(items, (a, b) => a > b);
     }
 
     public static T Min<T>(this IEnumerable<T> items)
     {
-        return MinMax(items, (a, b) => a > b);
+        return MinMax(items, (a, b) => a < b);
     }
 
     // Sum / Product / Count
