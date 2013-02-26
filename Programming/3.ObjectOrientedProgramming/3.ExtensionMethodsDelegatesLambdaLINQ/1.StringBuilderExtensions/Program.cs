@@ -1,34 +1,18 @@
 ﻿using System;
 using System.Text;
 
-public static class StringBuilderSubString
+static class StringBuilderExtensions
 {
-    public static StringBuilder SubString(this StringBuilder input, int index, int length)
+    public static StringBuilder Substring(this StringBuilder str, int startIndex, int length)
     {
-        StringBuilder subString = new StringBuilder();
-
-        if (index + length >= input.Length + 1)
-        {
-            throw new ArgumentOutOfRangeException("Out of range");
-        }
-
-        int endIndex = index + length;
-
-        for (int i = index; i < endIndex; i++)
-        {
-            subString.Append(input[i]);
-        }
-
-        return subString;
+        return new StringBuilder(str.ToString(startIndex, length));
     }
 }
 
-public class Program
+class Program
 {
     static void Main()
     {
-        StringBuilder testing = new StringBuilder();
-        testing.AppendLine("SOME words");
-        Console.WriteLine(testing.SubString(5, 5).ToString());
+        Console.WriteLine(new StringBuilder("0123456").Substring(4, 3));
     }
 }
