@@ -1,12 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
+static class IEnumerableExtensions
+{
+    // http://en.wikipedia.org/wiki/Fold_(higher-order_function)
+    private static T Reduce<T>(this IEnumerable<T> items, Func<T, dynamic, T> func, dynamic start = null)
+    {
+        IEnumerator<T> i = items.GetEnumerator();
+
+        i.MoveNext();
+        T previous = start ?? i.Current;
+
+        while (i.MoveNext())
+            previous = func(i.Current, previous);
+
+        return previous;
+    }
+
+    public static T Max<T>(this IEnumerable<T> items)
+    {
+        return items.Reduce((a, b) => a > b ? a : b);
+    }
+
+    public static T Min<T>(this IEnumerable<T> items)
+    {
+        return items.Reduce((a, b) => a < b ? a : b);
+    }
+
+    public static T Sum<T>(this IEnumerable<T> items)
+    {
+        return items.Reduce((a, b) => a + b);
+    }
+
+    public static T Product<T>(this IEnumerable<T> items)
+    {
+        return items.Reduce((a, b) => a * b);
+    }
+
+    public static int Count<T>(this IEnumerable<T> items)
+    {
+        return Convert.ToInt32(items.Reduce((_, b) => b + 1, start: 1));
+    }
+
+    public static double Average<T>(this IEnumerable<T> items)
+    {
+        return Convert.ToDouble(items.Sum<T>()) / Convert.ToDouble(items.Count<T>()); // TODO: Optimize
+    }
+}
 
 class Program
 {
     static void Main()
     {
-        IEnumerable<int> elements = Enumerable.Range(1, 9);
+        IEnumerable<int> elements = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         Console.WriteLine("Max: {0}", elements.Max<int>());
         Console.WriteLine("Min: {0}", elements.Min<int>());
