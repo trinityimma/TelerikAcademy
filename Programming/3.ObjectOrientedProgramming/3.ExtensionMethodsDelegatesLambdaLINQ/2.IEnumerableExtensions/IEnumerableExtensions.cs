@@ -29,11 +29,10 @@ static class IEnumerableExtensions
     }
 
     // Sum / Product / Count
-    private static T Aggregate<T>(this IEnumerable<T> elements, Func<dynamic, dynamic, dynamic> function, dynamic start)
+    private static T Aggregate<T>(this IEnumerable<T> elements, Func<dynamic, dynamic, dynamic> function, dynamic accumulator)
     {
-        T accumulator = start;
-
-        foreach (T item in elements) accumulator = function(item, accumulator);
+        foreach (T item in elements)
+            accumulator = function(item, accumulator);
 
         return accumulator;
     }
