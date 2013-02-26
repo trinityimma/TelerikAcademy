@@ -19,27 +19,27 @@ static class IEnumerableExtensions
 
     public static T Max<T>(this IEnumerable<T> items)
     {
-        return Reduce(items, (a, b) => a > b ? a : b);
+        return items.Reduce((a, b) => a > b ? a : b);
     }
 
     public static T Min<T>(this IEnumerable<T> items)
     {
-        return Reduce(items, (a, b) => a < b ? a : b);
+        return items.Reduce((a, b) => a < b ? a : b);
     }
 
     public static T Sum<T>(this IEnumerable<T> items)
     {
-        return Reduce(items, (a, b) => a + b);
+        return items.Reduce((a, b) => a + b);
     }
 
     public static T Product<T>(this IEnumerable<T> items)
     {
-        return Reduce(items, (a, b) => a * b);
+        return items.Reduce((a, b) => a * b);
     }
 
     public static int Count<T>(this IEnumerable<T> items)
     {
-        return Convert.ToInt32(Reduce(items, (_, b) => b + 1, start: 1));
+        return Convert.ToInt32(items.Reduce((_, b) => b + 1, start: 1));
     }
 
     public static double Average<T>(this IEnumerable<T> items)
