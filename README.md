@@ -67,4 +67,5 @@
 
 ## JavaScript Part I
 
-1. Course Overview - 23.02.2013
+1. Course Overview | Introduction to JavaScript Development - 23.02.2013
+2. Data types and Variables - 25.02.2013
