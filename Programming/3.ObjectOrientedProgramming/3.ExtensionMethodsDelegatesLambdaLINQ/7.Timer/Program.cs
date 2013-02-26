@@ -18,9 +18,6 @@ class Program
 {
     static void Main()
     {
-        ((Action)
-            (() => Console.WriteLine(DateTime.Now)) +
-            (() => Console.WriteLine(DateTime.Now.TimeOfDay))
-        ).SetInterval(1);
+        ((Action)(() => Console.WriteLine(DateTime.Now))).SetInterval(1);
     }
 }
