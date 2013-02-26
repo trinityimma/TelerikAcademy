@@ -50,7 +50,7 @@ static class IEnumerableExtensions
 
     public static T Count<T>(this IEnumerable<T> elements)
     {
-        return Aggregate(elements, (a, b) => b + 1, 0);
+        return Aggregate(elements, (_, b) => b + 1, 0);
     }
 
     // Average
