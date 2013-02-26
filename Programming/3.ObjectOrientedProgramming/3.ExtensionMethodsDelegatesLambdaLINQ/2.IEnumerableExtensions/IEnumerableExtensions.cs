@@ -6,16 +6,15 @@ static class IEnumerableExtensions
     // Min / Max
     private static T MinMax<T>(this IEnumerable<T> items, Func<T, dynamic, bool> pred)
     {
-        using (IEnumerator<T> i = items.GetEnumerator())
-        {
-            i.MoveNext();
-            T best = i.Current;
+        IEnumerator<T> i = items.GetEnumerator();
 
-            while (i.MoveNext())
-                if (pred(best, i.Current)) best = i.Current;
+        i.MoveNext();
+        T best = i.Current;
 
-            return best;
-        }
+        while (i.MoveNext())
+            if (pred(best, i.Current)) best = i.Current;
+
+        return best;
     }
 
     public static T Max<T>(this IEnumerable<T> items)
@@ -29,27 +28,32 @@ static class IEnumerableExtensions
     }
 
     // Sum / Product / Count
-    private static T Aggregate<T>(this IEnumerable<T> items, Func<T, dynamic, dynamic> func, dynamic acc)
+    private static T Accumulate<T>(this IEnumerable<T> items, Func<T, dynamic, dynamic> func, dynamic start = null)
     {
-        foreach (T item in items)
-            acc = func(item, acc);
+        IEnumerator<T> i = items.GetEnumerator();
+
+        i.MoveNext();
+        T acc = start ?? i.Current;
+
+        while (i.MoveNext())
+            acc = func(i.Current, acc);
 
         return acc;
     }
 
     public static T Sum<T>(this IEnumerable<T> items)
     {
-        return Aggregate(items, (a, b) => a + b, 0);
+        return Accumulate(items, (a, b) => a + b);
     }
 
     public static T Product<T>(this IEnumerable<T> items)
     {
-        return Aggregate(items, (a, b) => a * b, 1);
+        return Accumulate(items, (a, b) => a * b);
     }
 
     public static T Count<T>(this IEnumerable<T> items)
     {
-        return Aggregate(items, (_, b) => b + 1, 0);
+        return Accumulate(items, (_, b) => b + 1, 1);
     }
 
     // Average
