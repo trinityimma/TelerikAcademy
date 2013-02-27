@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.StringBuilderExtensions",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.IEnumerableExtensions", "2.IEnumerableExtensions\2.IEnumerableExtensions.csproj", "{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Students", "3.Students\3.Students.csproj", "{6847B935-21E0-4BEC-8F09-1EFA393B264D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A680401F-FB4C-4B1A-B89A-E0DFD35F0AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6847B935-21E0-4BEC-8F09-1EFA393B264D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6847B935-21E0-4BEC-8F09-1EFA393B264D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6847B935-21E0-4BEC-8F09-1EFA393B264D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6847B935-21E0-4BEC-8F09-1EFA393B264D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
