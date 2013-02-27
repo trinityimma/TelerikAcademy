@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.IEnumerableExtensions", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Students", "3.Students\3.Students.csproj", "{6847B935-21E0-4BEC-8F09-1EFA393B264D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.SelectNumbers", "6.SelectNumbers\6.SelectNumbers.csproj", "{8145E01A-7F4F-4E64-9E40-E382F94B9E6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{6847B935-21E0-4BEC-8F09-1EFA393B264D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6847B935-21E0-4BEC-8F09-1EFA393B264D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6847B935-21E0-4BEC-8F09-1EFA393B264D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8145E01A-7F4F-4E64-9E40-E382F94B9E6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8145E01A-7F4F-4E64-9E40-E382F94B9E6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8145E01A-7F4F-4E64-9E40-E382F94B9E6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8145E01A-7F4F-4E64-9E40-E382F94B9E6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
