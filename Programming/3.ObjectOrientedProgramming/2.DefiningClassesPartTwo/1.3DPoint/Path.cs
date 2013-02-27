@@ -22,11 +22,6 @@ class Path
 
     public override string ToString()
     {
-        List<string> info = new List<string>();
-
-        foreach (Point3D point in this.points)
-            info.Add(point.ToString());
-
-        return String.Join(Environment.NewLine, info);
+        return String.Join(Environment.NewLine, points);
     }
 }

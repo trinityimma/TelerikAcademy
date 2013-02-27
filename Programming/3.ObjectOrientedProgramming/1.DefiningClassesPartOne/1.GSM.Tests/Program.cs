@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using GSM.Hardware;
 using GSM.Software;
 using GSM.Tests.Hardware;
@@ -34,7 +34,7 @@ namespace GSM.Tests
 
             foreach (Gsm gsm in gsms)
                 GsmTest.Print(gsm);
-            
+
             CallHistoryTest callHistoryTest = new CallHistoryTest(gsms[1].CallHistory);
 
             callHistoryTest.GetPrice(price);
