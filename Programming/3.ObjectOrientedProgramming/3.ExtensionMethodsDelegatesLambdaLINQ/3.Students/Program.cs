@@ -40,8 +40,7 @@ class Program
         ).Print();
 
         // Exercise 5B
-        (
-            from student in students
+        (from student in students
             orderby student.FirstName descending,
                     student.LastName descending
             select student
