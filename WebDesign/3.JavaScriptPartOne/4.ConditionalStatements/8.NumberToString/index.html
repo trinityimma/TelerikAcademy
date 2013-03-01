@@ -15,22 +15,22 @@
             var r = ""
 
             if (n > 99) {
-                r += ones[parseInt(n / 100)] + " hundred"
+                r += ones[~~(n / 100)] + " hundred"
                 n %= 100
 
                 if (n) r += " and " // 101-199 201-299 ... 901-999
-                else return r // 100 200 ... 900
+                else return r       // 100 200 ... 900
             }
 
             if (n > 19) {
-                r += tens[parseInt(n / 10 - 2)]
+                r += tens[~~(n / 10 - 2)]
                 n %= 10
 
-                if (n) r += "-" // 21-29  31-39 ... 91-99
-                else return r // 20 30 ... 90
+                if (n) r += "-"     // 21-29  31-39 ... 91-99
+                else return r       // 20 30 ... 90
             }
 
-            r += ones[n] // 1 2 ... 19
+            r += ones[n]            // 1 2 ... 19
             return r
         }
     }())
