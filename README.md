@@ -69,3 +69,5 @@
 
 1. Course Overview | Introduction to JavaScript Development - 23.02.2013
 2. Data types and Variables - 02.03.2013
+3. [Operators and Expressions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/3.OperatorsАndExpressions) - 02.03.2013
+4. [Conditional Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/4.ConditionalStatements) - 02.03.2013
