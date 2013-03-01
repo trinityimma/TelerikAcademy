@@ -2,14 +2,14 @@
 
 struct Point3D
 {
-    public double X, Y, Z;
+    public readonly double X, Y, Z;
 
-    static readonly Point3D zero = new Point3D();
+    public static readonly Point3D Zero = new Point3D();
 
-    public static Point3D Zero
-    {
-        get { return zero; }
-    }
+    //public static Point3D Zero
+    //{
+    //    get { return zero; }
+    //}
 
     public Point3D(int x, int y, int z)
     {

@@ -1,0 +1,13 @@
+<script>
+!(function() {
+    'use strict';
+
+    var n = 1732
+
+      , thirdDigit = ~~(n / 100 % 10) // http://stackoverflow.com/a/10890535/477981
+
+      , isSeven = thirdDigit === 7
+
+    console.log("The third digit of %d is 7: %s", n, isSeven)
+}())
+</script>

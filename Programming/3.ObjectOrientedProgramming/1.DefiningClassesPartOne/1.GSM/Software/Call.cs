@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace GSM.Software
@@ -8,7 +8,7 @@ namespace GSM.Software
         // Private Fields
         private static long idCounter = 0; // TODO: typedef
         private string dialedPhone = null;
-        private TimeSpan duration;
+        private TimeSpan duration = TimeSpan.Zero;
 
         // Public Properties
         public readonly long Id = 0;
@@ -30,7 +30,7 @@ namespace GSM.Software
         public TimeSpan Duration
         {
             get { return this.duration; }
-   
+
             set
             {
                 if (value.Equals(TimeSpan.Zero))
@@ -39,7 +39,7 @@ namespace GSM.Software
                 this.duration = value;
             }
         }
-        
+
         // Constructors
         public Call(string dialedPhone, TimeSpan duration)
         {
