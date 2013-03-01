@@ -5,8 +5,8 @@
     var numberToString = (function() {
         var ones =
                 [ "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"
-                , "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen"
-                , "sixteen", "seventeen", "eighteen", "nineteen"
+                , "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen"
+                , "seventeen", "eighteen", "nineteen"
             ]
 
           , tens = ["twenty", "thirty", "fourty", "fifty", "sixty", "seventy", "eighty", "ninety"]
@@ -15,14 +15,14 @@
             var r = ""
 
             if (n > 99) {
-                r += ones[~~(n / 100)] + " hundred"
+                r += ones[parseInt(n / 100)] + " hundred"
 
                 if (n %= 100) r += " and " // 101-199 201-299 ... 901-999
                 else return r              // 100 200 ... 900
             }
 
             if (n > 19) {
-                r += tens[~~(n / 10 - 2)]
+                r += tens[parseInt(n / 10 - 2)]
 
                 if (n %= 10) r += "-"      // 21-29  31-39 ... 91-99
                 else return r              // 20 30 ... 90
