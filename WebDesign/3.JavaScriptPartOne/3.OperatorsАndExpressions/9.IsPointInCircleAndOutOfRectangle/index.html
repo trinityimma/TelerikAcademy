@@ -1,0 +1,23 @@
+<script>
+;(function() {
+    'use strict';
+
+    var px = 0
+      , py = 2
+
+      , kx = 1
+      , ky = 1
+      , kr = 3
+
+      , rx = -1
+      , ry = 1
+      , rw = 6
+      , rh = 2
+
+      , isInCircle = Math.pow(px - kx, 2) + Math.pow(py - ky, 2) < Math.pow(kr, 2)
+
+      , isOutOfRectangle = px < rx || px > rx + rw || py > ry || py < ry - rh
+
+    console.log("In circle and out of rectangle: %s", (isInCircle && isOutOfRectangle))
+}())
+</script>
