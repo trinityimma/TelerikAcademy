@@ -18,17 +18,17 @@
                 r += ones[~~(n / 100)] + " hundred"
 
                 if (n %= 100) r += " and " // 101-199 201-299 ... 901-999
-                else return r       // 100 200 ... 900
+                else return r              // 100 200 ... 900
             }
 
             if (n > 19) {
                 r += tens[~~(n / 10 - 2)]
 
-                if (n %= 10) r += "-"     // 21-29  31-39 ... 91-99
-                else return r       // 20 30 ... 90
+                if (n %= 10) r += "-"      // 21-29  31-39 ... 91-99
+                else return r              // 20 30 ... 90
             }
 
-            return r += ones[n]      // 1 2 ... 19
+            return r += ones[n]            // 1 2 ... 19
         }
     }())
 
