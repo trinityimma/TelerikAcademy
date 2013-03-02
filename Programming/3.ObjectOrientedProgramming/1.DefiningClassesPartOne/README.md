@@ -7,10 +7,9 @@
 5. Use properties to encapsulate the data fields inside the `GSM`, `Battery` and `Display` classes. Ensure all fields hold correct data at any given time.
 6. Add a static field and a property `IPhone4S` in the `GSM` class to hold the information about iPhone 4S.
 7. Write a class `GSMTest` to test the `GSM` class:
-  * Create an array of few instances of the `GSM` class.
-	* Display the information about the GSMs in the array.
-	* Display the information about the static property `IPhone4S`.
-
+    * Create an array of few instances of the `GSM` class.
+    * Display the information about the GSMs in the array.
+    * Display the information about the static property `IPhone4S`.
 8. Create a class `Call` to hold a call performed through a GSM. It should contain date, time, dialed phone number and duration (in seconds).
 9. Add a property `CallHistory` in the `GSM` class to hold a list of the performed calls. Try to use the system class `List<Call>`.
 10. Add methods in the `GSM` class for adding and deleting calls from the calls history. Add a method to clear the call history.
