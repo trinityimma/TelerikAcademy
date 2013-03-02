@@ -1,10 +1,53 @@
 using System;
 using System.Collections.Generic;
 
+static class ListExtensions
+{
+    public static void Print(this List<string> list)
+    {
+        Console.WriteLine(String.Join(" ", list));
+    }
+
+    public static void Print(this List<Tuple<string, string>> list)
+    {
+        foreach (var item in list)
+            Console.Write(item.Item1 + " ");
+
+        Console.WriteLine();
+    }
+}
+
 class Program
 {
-    static Dictionary<string, int> precedence = new Dictionary<string, int>() {
-        { "pow", 4 }, { "sqrt", 4 }, { "ln", 4 }, { "*", 3 }, { "/", 3 }, { "+", 2 }, { "-", 2 }, { "(", 0 }, { ")", 999 }
+    static Dictionary<string, Tuple<int, bool>> precedence = new Dictionary<string, Tuple<int, bool>>() {
+        { "~",
+            new Tuple<int, bool>(5 , true)},
+        { "pow",
+            new Tuple<int, bool>(4 , true)},
+        { "^",
+            new Tuple<int, bool>(4 , true)},
+        { "sqrt",
+            new Tuple<int, bool>(4 , false)},
+        { "ln",
+            new Tuple<int, bool>(4 , false)},
+        { "sin",
+            new Tuple<int, bool>(4, false)},
+        { "cos",
+            new Tuple<int, bool>(4, false)},
+        { "tan",
+            new Tuple<int, bool>(4, false)},
+        { "*",
+            new Tuple<int, bool>(3 , false)},
+        { "/",
+            new Tuple<int, bool>(3 , false)},
+        { "+",
+            new Tuple<int, bool>(2 , false)},
+        { "-",
+            new Tuple<int, bool>(2 , false)},
+        { "(",
+            new Tuple<int, bool>(0 , false)},
+        { ")",
+            new Tuple<int, bool>(999 , false)}
     };
 
     // Tokenize a string: "(1 + 2) * 3" -> "(", "1", "+", "2", ")", "*", "3"
@@ -12,15 +55,17 @@ class Program
     {
         var tokens = new List<Tuple<string, string>>(); // Value, type
 
+        Tuple<string, string> previous = null;
+
         for (int i = 0; i < s.Length; i++)
         {
-            string value = String.Empty, type = String.Empty;
+            string value = String.Empty, type = null;
 
             // White space
             if (s[i] == ' ') continue;
 
             // Number: 1, 123, -123
-            else if (Char.IsDigit(s[i]) || (s[i] == '-' && Char.IsDigit(s[i + 1])))
+            else if (Char.IsDigit(s[i]))
             {
                 type = "number";
 
@@ -28,7 +73,7 @@ class Program
                 i--;
             }
 
-            // Function: ln, pow, sqrt
+            // Function: pow, sqrt, ln, sin, cos, tan
             else if (Char.IsLetter(s[i]))
             {
                 type = "function";
@@ -45,11 +90,22 @@ class Program
                 value += s[i];
             }
 
-            // Operator: +, -, *, /, (, )
-            else value += s[i];
+            // Operator: +, -, *, ^, /, (, )
+            else
+            {
+                type = "operator";
 
-            tokens.Add(new Tuple<string, string>(value, type));
+                value += s[i];
+
+                if (value == "-" && (previous == null || previous.Item1 == "(" || (previous.Item2 == "operator" && previous.Item1 != ")")))
+                    value = "~";
+            }
+
+            previous = new Tuple<string, string>(value, type);
+            tokens.Add(previous);
         }
+
+        tokens.Print();
 
         return tokens;
     }
@@ -64,26 +120,42 @@ class Program
         {
             string value = token.Item1, type = token.Item2;
 
-            if (type == "number") postfix.Add(value);
+            if (type == "number")
+                postfix.Add(value);
 
             else if (type == "function") operators.Push(value);
 
-            else if (type == "separator") while (operators.Peek() != "(") postfix.Add(operators.Pop());
+            else if (type == "separator")
+                while (operators.Peek() != "(") postfix.Add(operators.Pop());
 
-            else if (value == "(") operators.Push(value);
+            else if (value == "(")
+                operators.Push(value);
 
-            else if (value == ")") while ((value = operators.Pop()) != "(") postfix.Add(value); // Match left paren
+            else if (value == ")")
+                while ((value = operators.Pop()) != "(")
+                    postfix.Add(value); // Match left paren
 
-            else
+            else if (type == "operator")
             {
-                while (operators.Count != 0 && precedence[value] <= precedence[operators.Peek()])
-                    postfix.Add(operators.Pop());
+                while (operators.Count != 0)
+                {
+                    if (precedence[value].Item2 && (precedence[value].Item1 < precedence[operators.Peek()].Item1))
+                        postfix.Add(operators.Pop());
+
+                    else if (precedence[value].Item1 <= precedence[operators.Peek()].Item1)
+                        postfix.Add(operators.Pop());
+
+                    else break;
+                }
 
                 operators.Push(value);
             }
         }
 
-        while (operators.Count != 0) postfix.Add(operators.Pop());
+        while (operators.Count != 0)
+            postfix.Add(operators.Pop());
+
+        postfix.Print();
 
         return postfix;
     }
@@ -96,20 +168,32 @@ class Program
         foreach (var token in postfix)
             if (token == "+") stack.Push(stack.Pop() + stack.Pop());
             else if (token == "-") stack.Push(-stack.Pop() + stack.Pop());
+            else if (token == "~") stack.Push(-stack.Pop());
             else if (token == "*") stack.Push(stack.Pop() * stack.Pop());
             else if (token == "/") stack.Push(1 / stack.Pop() * stack.Pop());
             else if (token == "ln") stack.Push(Math.Log(stack.Pop(), Math.E));
+            else if (token == "sin") stack.Push(Math.Sin(stack.Pop()));
+            else if (token == "cos") stack.Push(Math.Cos(stack.Pop()));
+            else if (token == "tan") stack.Push(Math.Tan(stack.Pop()));
             else if (token == "sqrt") stack.Push(Math.Sqrt(stack.Pop()));
-            else if (token == "pow") stack.Push(Math.Pow(y: stack.Pop(), x: stack.Pop())); // x ^ y
+            else if (token == "^" || token == "pow") stack.Push(Math.Pow(y: stack.Pop(), x: stack.Pop())); // x ^ y
             else stack.Push(double.Parse(token));
 
         return stack.Pop();
     }
 
+    static void Calculate(string expression)
+    {
+        Console.WriteLine(Evaluate(Parse(Tokenize(expression))));
+
+        Console.WriteLine();
+    }
+
     static void Main()
     {
-        Console.WriteLine(Evaluate(Parse(Tokenize("(3 + 5.3) * 2.7 - ln(22) / pow(2.2, -1.7)"))));
-        Console.WriteLine(Evaluate(Parse(Tokenize("pow(2, 3.14) * (3 - (3 * sqrt(2) - 3.2) + 1.5*0.3)"))));
-        Console.WriteLine(Evaluate(Parse(Tokenize("(1 - -1) * pow(pow(1 + 1, pow(ln(2.71), 1 - 1)), 10)"))));
+        Calculate("(3 + 5.3) * 2.7 - ln(22) / 2.2 ^ -1.7");
+        Calculate("pow(2, 3.14) * (3 - (3 * sqrt(2) - 3.2) + 1.5 * 0.3)");
+        Calculate("(1 - -1) * pow(pow(1 + 1, pow(ln(2.71), 1 - 1)), 10)");
+        Calculate("-(-1 + -2)");
     }
 }
