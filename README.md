@@ -58,8 +58,8 @@
 1. Course Overview | [Defining Classes - Part I](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/1.DefiningClassesPartOne/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/1.DefiningClassesPartOne/README.md)) - 19.02.2013
 2. [Defining Classes - Part II](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/2.DefiningClassesPartTwo/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/2.DefiningClassesPartTwo//README.md)) - 23.02.2013
 3. [Extension Methods, Delegates, Lambda, LINQ](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/3.ExtensionMethodsDelegatesLambdaLINQ/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/3.ExtensionMethodsDelegatesLambdaLINQ/README.md)) - 25.02.2013
-4. Fundamental Principles - Part I - 02.03.2013
-5. Fundamental Principles - Part II
+4. [Fundamental Principles - Part I](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/README.md)) - 02.03.2013
+5. Fundamental Principles - Part II - 04.03.2013
 6. Common Type System
 7. Workshop - Game Development
 8. Exam Preparation
