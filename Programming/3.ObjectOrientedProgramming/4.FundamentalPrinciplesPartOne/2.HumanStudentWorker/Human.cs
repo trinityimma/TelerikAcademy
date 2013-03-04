@@ -18,15 +18,23 @@ abstract class Human
     {
         StringBuilder info = new StringBuilder();
 
-        info.AppendLine(base.ToString()); // Called from inherited classes; same as Human.ToString()
+        info.AppendLine(this.GetName());
 
-        info.AppendLine(suffix).Replace(Environment.NewLine, Environment.NewLine + SuffixIndentation);
+        info.AppendLine(suffix).Replace(
+            Environment.NewLine, Environment.NewLine + SuffixIndentation
+        );
 
         return info.ToString().TrimEnd();
     }
 
-    public override string ToString()
+    // TODO: Join with ToString and fix inheritance
+    private string GetName()
     {
         return String.Format("Name: {0} {1}", this.FirstName, this.LastName);
+    }
+
+    public override string ToString()
+    {
+        return this.GetName();
     }
 }
