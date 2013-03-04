@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 static class IEnumerableExtensions
 {
-    // http://en.wikipedia.org/wiki/Fold_(higher-order_function)
     private static T Reduce<T>(this IEnumerable<T> items, Func<dynamic, T, T> func, dynamic first = null)
     {
         IEnumerator<T> i = items.GetEnumerator();
