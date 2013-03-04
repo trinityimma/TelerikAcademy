@@ -14,16 +14,19 @@ abstract class Human
         this.LastName = lastName;
     }
 
-    public string ToString(string suffix = "")
+    protected string ToString(string suffix)
     {
         StringBuilder info = new StringBuilder();
 
-        info.AppendFormat("Name: {0} {1}", this.FirstName, this.LastName).AppendLine();
+        info.AppendLine(base.ToString()); // Called from inherited classes; same as Human.ToString()
 
-        if(!String.IsNullOrEmpty(suffix)) info.Append(suffix);
-
-        info.Replace(Environment.NewLine, Environment.NewLine + SuffixIndentation);
+        info.AppendLine(suffix).Replace(Environment.NewLine, Environment.NewLine + SuffixIndentation);
 
         return info.ToString().TrimEnd();
+    }
+
+    public override string ToString()
+    {
+        return String.Format("Name: {0} {1}", this.FirstName, this.LastName);
     }
 }

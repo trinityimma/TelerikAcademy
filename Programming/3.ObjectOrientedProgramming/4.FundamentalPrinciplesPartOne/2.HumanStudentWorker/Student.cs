@@ -1,6 +1,4 @@
-﻿using System;
-
-class Student : Human
+﻿class Student : Human
 {
     public string Grade { get; private set; }
 
@@ -12,6 +10,6 @@ class Student : Human
 
     public override string ToString()
     {
-        return base.ToString(String.Format("Grade: {0}", this.Grade));
+        return base.ToString("Grade: " + this.Grade);
     }
 }
