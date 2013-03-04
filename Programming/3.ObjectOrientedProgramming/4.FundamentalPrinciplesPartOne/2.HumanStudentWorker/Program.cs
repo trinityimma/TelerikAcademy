@@ -56,7 +56,9 @@ class Program
             humans.AddRange(workers);
 
             humans.OrderBy(
-                human => human.ToString()
+                human => human.FirstName
+            ).ThenBy(
+                human => human.LastName
             ).Print();
         }
     }

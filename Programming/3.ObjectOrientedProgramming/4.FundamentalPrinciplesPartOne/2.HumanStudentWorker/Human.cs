@@ -24,7 +24,7 @@ abstract class Human
             Environment.NewLine, Environment.NewLine + SuffixIndentation
         );
 
-        return info.ToString().TrimEnd();
+        return info.TrimEnd().ToString();
     }
 
     // TODO: Join with ToString and fix inheritance
