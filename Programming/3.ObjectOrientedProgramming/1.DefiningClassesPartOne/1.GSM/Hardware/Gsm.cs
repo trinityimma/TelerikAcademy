@@ -12,8 +12,8 @@ namespace GSM.Hardware
         private const decimal MaxPrice = 1e6M;
 
         // Private Fields
-        private string model;
-        private string manufacturer;
+        private string model = null;
+        private string manufacturer = null;
         private Display display = null;
         private decimal? price = 0;
 
