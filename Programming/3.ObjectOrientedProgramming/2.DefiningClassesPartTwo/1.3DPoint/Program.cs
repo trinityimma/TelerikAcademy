@@ -4,45 +4,27 @@ class Program
 {
     static void Main()
     {
-        {
-            Console.WriteLine("# Testing distance");
+        Console.WriteLine("# Testing distance");
 
-            Console.WriteLine("Distance: {0}", Distance.Calculate(new Point3D(1, 1, 1), Point3D.Zero));
-            Console.WriteLine();
-        }
+        Console.WriteLine("Distance: {0}", Distance.Calculate(new Point3D(1, 1, 1), Point3D.Zero));
 
-        {
-            Console.WriteLine("# Testing path");
+        Console.WriteLine("# Testing path");
 
-            Point3D point = new Point3D(1, 1, 1);
+        Path path = new Path(
+            Point3D.Zero,
+            new Point3D(1, 1, 1),
+            new Point3D(1, 2, 1),
+            new Point3D(1, 3, 1)
+        );
+        Console.WriteLine(path);
 
-            Path path = new Path();
+        Console.WriteLine("# Testing add/remove");
 
-            path.Add(point);
-            path.Add(new Point3D(1, 2, 1));
-            path.Add(new Point3D(1, 3, 1));
-            path.Add(Point3D.Zero);
+        Console.WriteLine(path.Add(new Point3D(1, 2, 4)).Remove(new Point3D(1, 1, 1)));
 
-            Console.WriteLine(path);
-            Console.WriteLine();
+        Console.WriteLine("# Testing path storage");
 
-            {
-                Console.WriteLine("# Testing remove");
-
-                path.Remove(point);
-
-                Console.WriteLine(path);
-                Console.WriteLine();
-            }
-
-            {
-                Console.WriteLine("# Testing path storage");
-
-                PathStorage.Write(path);
-                path = PathStorage.Load();
-
-                Console.WriteLine(path);
-            }
-        }
+        PathStorage.Write(path, "../../input.txt");
+        Console.WriteLine(PathStorage.Load("../../input.txt"));
     }
 }
