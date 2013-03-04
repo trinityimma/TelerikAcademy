@@ -7,7 +7,7 @@ class Path
 {
     private static readonly string separator = Environment.NewLine;
 
-    private List<Point3D> points  = new List<Point3D>();
+    private List<Point3D> points = new List<Point3D>();
 
     public Path(params Point3D[] points)
     {
@@ -17,7 +17,7 @@ class Path
     public Path Add(params Point3D[] points)
     {
         foreach (Point3D point in points)
-	        this.points.Add(point);
+            this.points.Add(point);
 
         return this;
     }

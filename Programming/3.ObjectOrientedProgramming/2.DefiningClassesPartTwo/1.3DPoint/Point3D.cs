@@ -12,7 +12,8 @@ struct Point3D
 
     private static readonly Point3D zero = new Point3D();
 
-    public static Point3D Zero {
+    public static Point3D Zero
+    {
         get { return zero; }
     }
 
