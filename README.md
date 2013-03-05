@@ -71,3 +71,5 @@
 2. Data types and Variables - 02.03.2013
 3. [Operators and Expressions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/3.OperatorsАndExpressions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/3.OperatorsАndExpressions/README.md)) - 02.03.2013
 4. [Conditional Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/4.ConditionalStatements) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/4.ConditionalStatements/README.md)) - 02.03.2013
+5. [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/5.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/5.Loops/README.md)) -  09.03.2013
+6. [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/6.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/6.Arrays/README.md)) - 09.03.2013
