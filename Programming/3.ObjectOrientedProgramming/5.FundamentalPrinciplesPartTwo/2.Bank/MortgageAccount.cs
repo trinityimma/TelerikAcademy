@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class MortgageAccount : Account
 {
@@ -7,24 +7,19 @@ class MortgageAccount : Account
     {
     }
 
-    // TODO: Constants
     public override decimal CalculateInterest(decimal months)
     {
-        if (this.Customer is CompanyCustomer)
-        {
-            decimal p = ((months % 12) / 2) + (months - 12);
-            return base.CalculateInterest(p);
-        }
-
         if (this.Customer is IndividualCustomer)
             return base.CalculateInterest(months - 6);
 
-        else
-            return base.CalculateInterest(months);
+        if (this.Customer is CompanyCustomer)
+            return base.CalculateInterest(Math.Min(months, 12) / 2 + Math.Max(months - 12, 0));
+
+        return base.CalculateInterest(months);
     }
 
     public override string ToString()
     {
-        return base.ToString("MortgageAccount");
+        return base.ToString("Mortgage Account");
     }
 }

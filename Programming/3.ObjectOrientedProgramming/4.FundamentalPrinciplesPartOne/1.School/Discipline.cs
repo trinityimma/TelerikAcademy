@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Discipline : ICommentable, IComparable<Discipline>
 {

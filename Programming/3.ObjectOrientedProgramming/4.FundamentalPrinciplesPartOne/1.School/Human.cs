@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Human : IComparable<Human>
 {
@@ -15,7 +15,7 @@ class Human : IComparable<Human>
 
     public int CompareTo(Human other)
     {
-        return this.ToString().CompareTo(other.ToString());
+        return this.FirstName.CompareTo(other.FirstName);
     }
 
     public override string ToString()

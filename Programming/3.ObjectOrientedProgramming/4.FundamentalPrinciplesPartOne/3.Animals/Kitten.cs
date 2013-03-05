@@ -1,9 +1,14 @@
-﻿using System;
+using System;
 
 class Kitten : Cat
 {
     public Kitten(string name, int age)
-        : base(name, age, Animal.Sexes.Female)
+        : base(name, age, Sex.Female)
     {
+    }
+
+    public override string ProduceSound()
+    {
+        return "Kitten produced sound.";
     }
 }

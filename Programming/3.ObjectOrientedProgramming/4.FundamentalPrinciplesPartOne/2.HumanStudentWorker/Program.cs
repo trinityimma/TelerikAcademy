@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -36,8 +36,6 @@ class Program
             new Worker("Филип", "Иванов", 107, 35)
         };
 
-        // Toggle between tasks
-        if (true)
         {
             students.OrderBy(
                student => student.Grade
@@ -48,18 +46,17 @@ class Program
             ).Print();
         }
 
-        else
         {
-            List<Human> humans = new List<Human>();
+            //List<Human> humans = new List<Human>();
 
-            humans.AddRange(students);
-            humans.AddRange(workers);
+            //humans.AddRange(students);
+            //humans.AddRange(workers);
 
-            humans.OrderBy(
-                human => human.FirstName
-            ).ThenBy(
-                human => human.LastName
-            ).Print();
+            //humans.OrderBy(
+            //    human => human.FirstName
+            //).ThenBy(
+            //    human => human.LastName
+            //).Print();
         }
     }
 }

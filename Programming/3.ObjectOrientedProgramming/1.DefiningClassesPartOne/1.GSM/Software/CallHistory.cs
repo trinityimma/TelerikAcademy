@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -7,18 +7,12 @@ namespace GSM.Software
     public class CallHistory
     {
         // Private Fields
-        private readonly List<Call> callHistory = null;
+        private readonly List<Call> callHistory = new List<Call>();
 
         // Public Properties
         public int Count
         {
             get{ return this.callHistory.Count; }
-        }
-
-        // Construcors
-        public CallHistory()
-        {
-            this.callHistory = new List<Call>();
         }
 
         // Methods

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Rectangle : Shape
 {
@@ -9,6 +9,11 @@ class Rectangle : Shape
 
     public override double CalculateSurface()
     {
-        return this.Width * this.Height;
+        return base.CalculateSurface(1);
+    }
+
+    public override string ToString()
+    {
+        return base.ToString("Rectangle");
     }
 }

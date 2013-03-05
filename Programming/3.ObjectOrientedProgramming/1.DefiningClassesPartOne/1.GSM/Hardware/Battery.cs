@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace GSM.Hardware
 {
     public class Battery
     {
-        public enum Type { LiIon, NiMH, NiCd }; // static by default
+        public enum Type { LiIon, NiMH, NiCd };
 
         // Private Constants
         private const uint MaxIdleHours = 1000;

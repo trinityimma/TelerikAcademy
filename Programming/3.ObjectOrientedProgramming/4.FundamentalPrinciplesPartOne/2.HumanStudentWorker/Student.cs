@@ -1,4 +1,4 @@
-﻿class Student : Human
+class Student : Human
 {
     public string Grade { get; private set; }
 

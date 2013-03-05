@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using GSM.Hardware;
 
 namespace GSM.Tests.Hardware
 {
-    public class GsmTest : Test
+    class GsmTest : Test
     {
         public static void Print(Gsm gsm)
         {

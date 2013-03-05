@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 
 abstract class Human
@@ -18,23 +18,12 @@ abstract class Human
     {
         StringBuilder info = new StringBuilder();
 
-        info.AppendLine(this.GetName());
+        info.AppendFormat("Name: {0} {1}", this.FirstName, this.LastName).AppendLine();
 
         info.AppendLine(suffix).Replace(
             Environment.NewLine, Environment.NewLine + SuffixIndentation
         );
 
         return info.TrimEnd().ToString();
-    }
-
-    // TODO: Join with ToString and fix inheritance
-    private string GetName()
-    {
-        return String.Format("Name: {0} {1}", this.FirstName, this.LastName);
-    }
-
-    public override string ToString()
-    {
-        return this.GetName();
     }
 }

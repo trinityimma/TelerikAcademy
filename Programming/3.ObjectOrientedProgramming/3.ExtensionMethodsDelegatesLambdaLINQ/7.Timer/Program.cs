@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Threading;
 
-static class Timer
+class Program
 {
-    public static void SetInterval(this Action f, int t)
+    static void SetInterval(Action f, int t)
     {
         while (true)
         {
@@ -12,12 +12,11 @@ static class Timer
             f();
         }
     }
-}
 
-class Program
-{
     static void Main()
     {
-        ((Action)(() => Console.WriteLine(DateTime.Now))).SetInterval(1);
+        SetInterval(new Action(() =>
+            Console.WriteLine(DateTime.Now)
+        ), 1);
     }
 }

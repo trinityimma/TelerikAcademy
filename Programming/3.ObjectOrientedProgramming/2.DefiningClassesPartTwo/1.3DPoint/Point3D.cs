@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -6,9 +6,9 @@ struct Point3D
 {
     private static readonly string separator = "-";
 
-    public double X { get; set; }
-    public double Y { get; set; }
-    public double Z { get; set; }
+    public double X { get; private set; }
+    public double Y { get; private set; }
+    public double Z { get; private set; }
 
     private static readonly Point3D zero = new Point3D();
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -7,7 +7,7 @@ class Path
 {
     private static readonly string separator = Environment.NewLine;
 
-    private List<Point3D> points = new List<Point3D>();
+    private readonly List<Point3D> points = new List<Point3D>();
 
     public Path(params Point3D[] points)
     {

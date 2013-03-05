@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 
 namespace GSM.Tests
 {
-    public class Test
+    class Test
     {
         public static void Print(string heading, string body = null)
         {

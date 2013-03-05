@@ -1,9 +1,14 @@
-﻿using System;
+using System;
 
 class Circle : Ellipse
 {
-    public Circle(double radius)
-        : base(radius, radius)
+    public Circle(double width)
+        : base(width, width)
     {
+    }
+
+    public override string ToString()
+    {
+        return base.ToString("Circle");
     }
 }

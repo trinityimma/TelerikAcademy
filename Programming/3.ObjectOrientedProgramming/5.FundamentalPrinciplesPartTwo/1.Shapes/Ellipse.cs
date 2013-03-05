@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Ellipse : Shape
 {
@@ -9,6 +9,11 @@ class Ellipse : Shape
 
     public override double CalculateSurface()
     {
-        return Math.PI * this.Width * this.Height;
+        return base.CalculateSurface(Math.PI);
+    }
+
+    public override string ToString()
+    {
+        return base.ToString("Ellipse");
     }
 }

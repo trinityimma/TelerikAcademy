@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using GSM.Software;
 
@@ -7,9 +7,12 @@ namespace GSM.Hardware
     public class Gsm
     {
         // Private Constants
+        private static readonly Gsm iPhone4S = new Gsm("iPhone 4s", "Apple", null, 1000M,
+            new Display(960, 640, 1 << 24), new Battery(Battery.Type.LiIon, 60, 30));
+
         private const uint MaxDisplayWidth = 4096;
         private const uint MaxDisplayHeight = 2160;
-        private const decimal MaxPrice = 1e6M;
+        private const decimal MaxPrice = 1E6M;
 
         // Private Fields
         private string model = null;
@@ -17,15 +20,16 @@ namespace GSM.Hardware
         private Display display = null;
         private decimal? price = 0;
 
-        // TODO: Constant
-        public static readonly Gsm IPhone4S = new Gsm("iPhone 4s", "Apple", null, 1000M,
-            new Display(960, 640, 1 << 24), new Battery(Battery.Type.LiIon, 60, 30));
-
         // Properties
+        public static Gsm IPhone4S
+        {
+            get { return iPhone4S; }
+        }
+
         public string Model
         {
             get { return this.model; }
-            set
+            private set
             {
                 if (value == null)
                     throw new ArgumentNullException("Model can't be null!");
@@ -37,7 +41,7 @@ namespace GSM.Hardware
         public string Manufacturer
         {
             get { return this.manufacturer; }
-            set
+            private set
             {
                 if (value == null)
                     throw new ArgumentNullException("Manufacturer can't be null!");
@@ -52,11 +56,11 @@ namespace GSM.Hardware
         {
             get { return this.price; }
 
-            set
+            private set
             {
                 // Null or in range
                 if (!(!value.HasValue || (0 <= value && value <= MaxPrice)))
-                    throw new ArgumentOutOfRangeException("Price too big!");
+                    throw new ArgumentOutOfRangeException("Price not in range!");
 
                 this.price = value;
             }
@@ -66,7 +70,7 @@ namespace GSM.Hardware
         {
             get { return this.display; }
 
-            set
+            private set
             {
                 if (value != null)
                 {
@@ -81,9 +85,9 @@ namespace GSM.Hardware
             }
         }
 
-        public Battery Battery { get; set; }
+        public Battery Battery { get; private set; }
 
-        public CallHistory CallHistory { get; set; }
+        public CallHistory CallHistory { get; private set; }
 
         // Constructors
         public Gsm(string model, string manufacturer, string owner = null,

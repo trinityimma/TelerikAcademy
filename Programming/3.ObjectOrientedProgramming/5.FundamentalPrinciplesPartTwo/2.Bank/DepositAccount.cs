@@ -1,9 +1,7 @@
-﻿using System;
+using System;
 
 class DepositAccount : Account
 {
-    private const decimal MinBalanceForInterest = 1000M;
-
     public DepositAccount(Customer customer, decimal balance, decimal interest)
         : base(customer, balance, interest)
     {
@@ -18,7 +16,7 @@ class DepositAccount : Account
 
     public override decimal CalculateInterest(decimal months)
     {
-        if (this.Balance < MinBalanceForInterest)
+        if (0 < this.Balance && this.Balance < 1000)
             return 0;
 
         return base.CalculateInterest(months);
@@ -26,6 +24,6 @@ class DepositAccount : Account
 
     public override string ToString()
     {
-        return base.ToString("DepositAccount");
+        return base.ToString("Deposit Account");
     }
 }

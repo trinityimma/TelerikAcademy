@@ -1,5 +1,6 @@
 using System;
 
+// https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/2.DefiningClassesPartTwo/8.GenericMatrix/Matrix.cs
 class Matrix
 {
     public int Rows, Cols;
@@ -25,8 +26,8 @@ class Matrix
     {
         Matrix m = new Matrix(m1.Rows, m1.Cols);
 
-        for (int i = 0; i < m1.Rows; i++)
-            for (int j = 0; j < m1.Cols; j++)
+        for (int i = 0; i < m.Rows; i++)
+            for (int j = 0; j < m.Cols; j++)
                 m[i, j] = m1[i, j] + m2[i, j];
 
         return m;
@@ -37,8 +38,8 @@ class Matrix
     {
         Matrix m = new Matrix(m1.Rows, m1.Cols);
 
-        for (int i = 0; i < m1.Rows; i++)
-            for (int j = 0; j < m1.Cols; j++)
+        for (int i = 0; i < m.Rows; i++)
+            for (int j = 0; j < m.Cols; j++)
                 m[i, j] = m1[i, j] - m2[i, j];
 
         return m;

@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using GSM.Software;
 
 namespace GSM.Tests.Software
 {
-    public class CallHistoryTest : Test
+    class CallHistoryTest : Test
     {
         // Private Fields
         private readonly CallHistory callHistory = null;

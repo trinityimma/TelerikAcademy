@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 class Bank
 {
-    private List<Account> accounts = new List<Account>();
+    private readonly List<Account> accounts = new List<Account>();
 
     public string Name { get; private set; }
 

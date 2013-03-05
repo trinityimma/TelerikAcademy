@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 abstract class Account
@@ -16,9 +16,6 @@ abstract class Account
 
     public Account Withdraw(decimal amount)
     {
-        if (this.Balance < amount)
-            throw new ArgumentOutOfRangeException("Can not withdraw that ammount!");
-
         this.Balance -= amount;
 
         return this;

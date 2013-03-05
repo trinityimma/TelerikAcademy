@@ -1,14 +1,18 @@
-﻿using System;
+using System;
+using System.Threading;
 
 class Program
 {
-    static event EventHandler<ConsoleKey> XPressed;
-    static event EventHandler<ConsoleKey> YPressed;
+    static event EventHandler<ConsoleKey> HandleX;
+    static event EventHandler<ConsoleKey> HandleSpace;
 
-    static void OnKeyDown(ConsoleKey key)
+    static void Trigger(ConsoleKey key)
     {
-        if (key == ConsoleKey.X) XPressed(null, ConsoleKey.X);
-        if (key == ConsoleKey.Y) YPressed(null, ConsoleKey.Y);
+        if (key == ConsoleKey.X)
+            HandleX(null, ConsoleKey.X);
+
+        if (key == ConsoleKey.Spacebar)
+            HandleSpace(null, ConsoleKey.Spacebar);
     }
 
     static void HandleKeyPress(object sender, ConsoleKey key)
@@ -18,18 +22,36 @@ class Program
         Console.WriteLine("You pressed {0}.", key.ToString());
     }
 
+    static void SetInterval(Action f, int t)
+    {
+        while (!(Console.KeyAvailable && Console.ReadKey().Key == ConsoleKey.Spacebar))
+        {
+            Thread.Sleep(t * 1000);
+
+            f();
+        }
+    }
+
     static void Main()
     {
-        Console.WriteLine("Press X or Y.");
+        Console.WriteLine("Press X to test or Space bar to start the timer.");
 
-        // Attach event handlers
-        XPressed = HandleKeyPress;
+        HandleX = HandleKeyPress;
 
-        YPressed = HandleKeyPress;
-        YPressed += (a, b) =>
-            Console.WriteLine("Trigger one more handler.");
+        HandleSpace = HandleKeyPress;
 
-        // Watch
-        while (true) OnKeyDown(Console.ReadKey().Key);
+        HandleSpace += (a, b) =>
+        {
+            Console.WriteLine("Starting Timer.");
+            Console.WriteLine("Press Space bar to stop.");
+
+            SetInterval(new Action(() =>
+                Console.WriteLine(DateTime.Now)
+            ), 1);
+        };
+
+        while (true)
+            if (Console.KeyAvailable)
+                Trigger(Console.ReadKey().Key);
     }
 }

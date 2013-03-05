@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-abstract class Shape
+abstract class Shape : IShape
 {
     public double Width { get; private set; }
     public double Height { get; private set; }
@@ -11,11 +11,16 @@ abstract class Shape
         this.Height = height;
     }
 
+    protected double CalculateSurface(double c)
+    {
+        return this.Width * this.Height * c;
+    }
+
     public abstract double CalculateSurface();
 
-    public override string ToString()
+    protected string ToString(string type)
     {
-        return String.Format("Type: {0}; Width: {1}; Height: {2}; Surface: {3}",
-            this.GetType(), this.Width, this.Height, this.CalculateSurface());
+        return String.Format("Rectangle: {0}; Width: {1}; Height: {2}; Surface: {3}",
+            type, this.Width, this.Height, this.CalculateSurface());
     }
 }

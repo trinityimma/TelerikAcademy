@@ -9,14 +9,14 @@ class Program
         {
             Console.WriteLine("# Auto grow/shrink");
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 10000; i++)
             {
                 list.Add(i);
 
                 Console.WriteLine("Count: {0}, Capacity: {1}", list.Count, list.Capacity);
             }
 
-            for (int i = 0; i < 15; i++)
+            while (list.Count > 16)
             {
                 list.Remove(list.Count - 1);
 
@@ -35,8 +35,8 @@ class Program
         }
 
         {
-            Console.WriteLine("Min: {0}", list.Min());
-            Console.WriteLine("Max: {0}", list.Max());
+            Console.WriteLine("# Min: {0}", list.Min());
+            Console.WriteLine("# Max: {0}", list.Max());
 
             Console.WriteLine();
         }
@@ -62,7 +62,9 @@ class Program
         {
             Console.WriteLine("# Add element");
 
-            list.Insert(list.Count, 10);
+            list.Insert(0, 10);
+            list.Insert(3, 5);
+            list.Insert(list.Count, 11);
 
             Console.WriteLine(list);
 

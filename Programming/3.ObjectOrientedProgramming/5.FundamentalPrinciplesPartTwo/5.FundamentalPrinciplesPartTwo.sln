@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Shapes", "1.Shapes\1.Shap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.Bank", "2.Bank\2.Bank.csproj", "{DB093CBA-2B5E-4FD3-BB73-8E3B8DE8BD22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Contract", "3.Contract\3.Contract.csproj", "{101E70E4-4C02-4165-9348-BC3E705487C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{DB093CBA-2B5E-4FD3-BB73-8E3B8DE8BD22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB093CBA-2B5E-4FD3-BB73-8E3B8DE8BD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB093CBA-2B5E-4FD3-BB73-8E3B8DE8BD22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{101E70E4-4C02-4165-9348-BC3E705487C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101E70E4-4C02-4165-9348-BC3E705487C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101E70E4-4C02-4165-9348-BC3E705487C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101E70E4-4C02-4165-9348-BC3E705487C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

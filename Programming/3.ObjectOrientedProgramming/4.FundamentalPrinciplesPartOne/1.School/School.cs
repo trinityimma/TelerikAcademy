@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,10 +14,6 @@ class School : IEnumerable
         this.Name = name;
     }
 
-    public void Add(Class _class)
-    {
-        this.AddClass(_class);
-    }
 
     public School AddClass(params Class[] classes)
     {
@@ -32,6 +28,12 @@ class School : IEnumerable
         this.classes.Remove(_class);
 
         return this;
+    }
+
+    // The next two methods are for creating a School with: new School(name) { ... }
+    public void Add(Class _class)
+    {
+        this.AddClass(_class);
     }
 
     public IEnumerator GetEnumerator()

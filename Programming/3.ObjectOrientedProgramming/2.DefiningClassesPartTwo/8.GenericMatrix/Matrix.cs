@@ -1,30 +1,23 @@
-﻿using System;
+using System;
 using System.Text;
 
 class Matrix<T>
 {
     // Private Fields
-    private readonly int rows, cols;
-    private readonly T[,] matrix;
+    private readonly T[,] matrix = null;
 
     // Public Properties
-    public int Rows
-    {
-        get { return this.rows; }
-    }
+    public int Rows { get; private set; }
 
-    public int Cols
-    {
-        get { return this.cols; }
-    }
+    public int Cols { get; private set; }
 
     // Constructor
     public Matrix(int rows, int cols)
     {
-        this.rows = rows;
-        this.cols = cols;
+        this.Rows = rows;
+        this.Cols = cols;
 
-        this.matrix = new T[rows, cols];
+        this.matrix = new T[this.Rows, this.Cols];
     }
 
     // Indexer
@@ -40,10 +33,10 @@ class Matrix<T>
         if (!(m1.Rows == m2.Rows && m1.Cols == m2.Cols))
             throw new ArgumentException("Matrix size is not the same!");
 
-        Matrix<T> result = new Matrix<T>(m1.rows, m1.cols);
+        Matrix<T> result = new Matrix<T>(m1.Rows, m1.Cols);
 
-        for (int i = 0; i < m1.rows; i++)
-            for (int j = 0; j < m1.cols; j++)
+        for (int i = 0; i < result.Rows; i++)
+            for (int j = 0; j < result.Cols; j++)
                 result[i, j] = m1[i, j] + (plus ? m2[i, j] : -(dynamic)m2[i, j]);
 
         return result;
@@ -65,26 +58,14 @@ class Matrix<T>
         if (!(m1.Cols == m2.Rows))
             throw new ArgumentException("Matrix size is not the same!");
 
-        Matrix<T> result = new Matrix<T>(m1.rows, m2.cols);
+        Matrix<T> result = new Matrix<T>(m1.Rows, m2.Cols);
 
-        for (int i = 0; i < result.rows; i++)
-            for (int j = 0; j < result.cols; j++)
-                for (int k = 0; k < m1.cols; k++)
+        for (int i = 0; i < result.Rows; i++)
+            for (int j = 0; j < result.Cols; j++)
+                for (int k = 0; k < m1.Cols; k++)
                     result[i, j] += (dynamic)m1[i, k] * m2[k, j];
 
         return result;
-    }
-
-    // To string
-    public override string ToString()
-    {
-        StringBuilder s = new StringBuilder();
-
-        for (int i = 0; i < this.Rows; i++)
-            for (int j = 0; j < this.Cols; j++)
-                s.Append(this.matrix[i, j] + (j != this.Cols - 1 ? " " : Environment.NewLine));
-
-        return s.ToString();
     }
 
     // True / False
@@ -106,5 +87,17 @@ class Matrix<T>
     public static bool operator false(Matrix<T> m)
     {
         return BoolOperator(m, false);
+    }
+
+    // To string
+    public override string ToString()
+    {
+        StringBuilder s = new StringBuilder();
+
+        for (int i = 0; i < this.Rows; i++)
+            for (int j = 0; j < this.Cols; j++)
+                s.Append(this.matrix[i, j] + (j != this.Cols - 1 ? " " : Environment.NewLine));
+
+        return s.ToString();
     }
 }

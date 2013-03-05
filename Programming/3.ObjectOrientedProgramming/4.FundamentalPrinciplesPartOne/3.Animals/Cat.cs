@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 
 abstract class Cat : Animal
 {
-    public Cat(string name, int age, Sexes sex)
-        : base (name, age, sex)
+    public Cat(string name, int age, Sex sex)
+        : base(name, age, sex)
     {
     }
 }

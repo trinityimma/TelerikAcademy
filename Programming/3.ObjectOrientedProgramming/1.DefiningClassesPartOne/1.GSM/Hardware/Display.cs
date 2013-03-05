@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace GSM.Hardware
@@ -8,7 +8,7 @@ namespace GSM.Hardware
         // Private Constants
         private const uint MaxWidth = 1 << 16;
         private const uint MaxHeight = MaxWidth * 2;
-        private const long MaxNumberOfColors = 1L << 32;
+        private const long MaxNumberOfColors = 1L << 32; // Long
 
         // Private Fields
         private uint width = 0;

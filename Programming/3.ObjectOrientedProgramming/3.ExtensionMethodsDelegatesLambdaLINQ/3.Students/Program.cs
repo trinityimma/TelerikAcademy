@@ -1,19 +1,16 @@
-﻿using System;
+using System;
 using System.Linq;
-using System.Collections.Generic;
+using System.Collections;
 
-static class IEnumerableExtensions
+class Program
 {
-    public static void Print(this IEnumerable<object> list)
+    static void Print(IEnumerable list)
     {
         foreach (var item in list) Console.WriteLine(item);
 
         Console.WriteLine();
     }
-}
 
-class Program
-{
     static void Main()
     {
         var students = new[] {
@@ -23,27 +20,30 @@ class Program
         };
 
         // Exercise 3
-        students.Where(student =>
+        Print(students.Where(student =>
             student.FirstName.CompareTo(student.LastName) < 0
-        ).Print();
+        ));
 
         // Exercise 4
-        students.Where(student =>
+        Print(students.Where(student =>
             18 < student.Age && student.Age < 24
-        ).Print();
+        ));
 
         // Exercise 5A
-        students.OrderByDescending(student =>
+        Print(students.OrderByDescending(student =>
             student.FirstName
         ).ThenByDescending(student =>
             student.LastName
-        ).Print();
+        ));
 
         // Exercise 5B
-        (from student in students
+        Print(
+            from student in students
+
             orderby student.FirstName descending,
                     student.LastName descending
+
             select student
-        ).Print();
+        );
     }
 }

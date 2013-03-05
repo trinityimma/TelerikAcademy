@@ -11,19 +11,19 @@ namespace GSM.Software
         private TimeSpan duration = TimeSpan.Zero;
 
         // Public Properties
-        public readonly long Id = 0;
-        public readonly DateTime Time = DateTime.MinValue;
+        public long Id { get; private set; }
+        public DateTime Time { get; private set; }
 
         public string DialedPhone
         {
             get { return this.dialedPhone; }
 
-            set
+            private set
             {
                 if (value == null)
                     throw new ArgumentNullException("Dialed phone can't be null!");
 
-                dialedPhone = value;
+                this.dialedPhone = value;
             }
         }
 
@@ -31,7 +31,7 @@ namespace GSM.Software
         {
             get { return this.duration; }
 
-            set
+            private set
             {
                 if (value.Equals(TimeSpan.Zero))
                     throw new ArgumentNullException("Duration can't be zero!");
@@ -43,26 +43,14 @@ namespace GSM.Software
         // Constructors
         public Call(string dialedPhone, TimeSpan duration)
         {
-            this.Id = Call.idCounter++;
-            this.Time = DateTime.Now;
-
             this.DialedPhone = dialedPhone;
             this.Duration = duration;
+
+            this.Id = Call.idCounter++;
+            this.Time = DateTime.Now;
         }
 
         // Methods
-        public override string ToString()
-        {
-            List<string> info = new List<string>();
-
-            info.Add("ID: " + this.Id);
-            info.Add("Time: " + this.Time);
-            info.Add("Dialed Phone: " + this.DialedPhone);
-            info.Add("Duration: " + this.Duration);
-
-            return String.Join(", ", info);
-        }
-
         public bool Equals(long otherId)
         {
             return this.Id == otherId;
@@ -76,6 +64,18 @@ namespace GSM.Software
         public int CompareTo(Call other)
         {
             return (int)(this.Duration - other.Duration).TotalSeconds;
+        }
+
+        public override string ToString()
+        {
+            List<string> info = new List<string>();
+
+            info.Add("ID: " + this.Id);
+            info.Add("Time: " + this.Time);
+            info.Add("Dialed Phone: " + this.DialedPhone);
+            info.Add("Duration: " + this.Duration);
+
+            return String.Join(", ", info);
         }
     }
 }

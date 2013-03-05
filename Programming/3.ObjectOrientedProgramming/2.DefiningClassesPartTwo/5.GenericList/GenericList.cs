@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 
 class GenericList<T>
 {
@@ -8,96 +7,87 @@ class GenericList<T>
 
     // Private Fields
     private T[] elements = null;
-    private uint count = 0;
-    private uint capacity = 0;
 
     // Public Properties
-    public uint Count
-    {
-        get { return this.count; }
-    }
-
-    public uint Capacity
-    {
-        get { return this.capacity; }
-    }
+    public uint Count { get; private set; }
+    public uint Capacity { get; private set; }
 
     // Constructors
     public GenericList(uint capacity = DefaultCapacity)
     {
-        this.capacity = capacity;
-        this.count = 0;
+        this.Capacity = capacity;
+        this.Count = 0;
 
-        elements = new T[this.capacity];
+        elements = new T[this.Capacity];
     }
 
     // Methods
+    public void Clear()
+    {
+        this.Capacity = DefaultCapacity;
+        this.Count = 0;
+
+        elements = new T[this.Capacity];
+    }
+
     private void Reserve(uint capacity)
     {
-        uint oldCapacity = this.capacity;
+        uint oldCapacity = this.Capacity;
 
         // 1 / 2 = 0
         if (capacity == 0 || capacity == 1)
-            this.capacity = 1;
+            this.Capacity = 1;
 
-        else if (capacity <= this.capacity / 2)
-            this.capacity /= 2;
+        else if (capacity <= this.Capacity / 2)
+            this.Capacity /= 2;
 
-        else if (capacity > this.capacity)
-            this.capacity *= 2;
+        else if (capacity > this.Capacity)
+            this.Capacity *= 2;
 
-        if (oldCapacity != this.capacity)
-            Array.Resize<T>(ref elements, (int)this.capacity);
+        if (oldCapacity != this.Capacity)
+            Array.Resize(ref elements, (int)this.Capacity);
     }
 
     public void Add(T el)
     {
-        this.count++;
+        this.Count++;
 
-        Reserve(this.count);
+        Reserve(this.Count);
 
-        this.elements[this.count - 1] = el;
+        this.elements[this.Count - 1] = el;
     }
 
     public void Remove(uint i)
     {
-        if (i >= this.count)
+        if (i >= this.Count)
             throw new IndexOutOfRangeException();
 
-        this.count--;
+        this.Count--;
 
-        Array.Copy(this.elements, i + 1, this.elements, i, count - i);
+        Array.Copy(this.elements, i + 1, this.elements, i, Count - i);
 
-        this.elements[this.count] = default(T); // Clear last
+        this.elements[this.Count] = default(T); // Clear last
 
-        Reserve(this.count);
+        Reserve(this.Count);
     }
 
     public void Insert(uint i, T el)
     {
-        if (i > this.count) // We can insert in the last position
+        if (i > this.Count) // We can insert in the last position
             throw new IndexOutOfRangeException();
 
-        this.count++;
+        this.Count++;
 
-        Reserve(this.count);
+        Reserve(this.Count);
 
-        Array.Copy(elements, i, elements, i + 1, count - i);
+        Array.Copy(elements, i, elements, i + 1, Count - i - 1);
 
         this.elements[i] = el;
     }
 
-    public void Clear()
-    {
-        this.capacity = DefaultCapacity;
-        this.count = 0;
-
-        elements = new T[this.capacity];
-    }
-
     public int IndexOf(T el)
     {
-        return Array.IndexOf<T>(elements, el);
+        return Array.IndexOf(elements, el);
     }
 
     private T MinMax(bool value)
@@ -125,7 +115,7 @@ class GenericList<T>
     {
         get
         {
-            if (index >= this.count)
+            if (index >= this.Count)
                 throw new IndexOutOfRangeException();
 
             return elements[index];
@@ -134,12 +124,12 @@ class GenericList<T>
 
     public override string ToString()
     {
-        if (this.count == 0)
+        if (this.Count == 0)
             return "Empty list.";
 
-        string[] info = new string[this.count];
+        string[] info = new string[this.Count];
 
-        for (int i = 0; i < this.count; i++)
+        for (int i = 0; i < this.Count; i++)
             info[i] = String.Format("{0}: {1}", i, this.elements[i].ToString());
 
         return String.Join(Environment.NewLine, info);

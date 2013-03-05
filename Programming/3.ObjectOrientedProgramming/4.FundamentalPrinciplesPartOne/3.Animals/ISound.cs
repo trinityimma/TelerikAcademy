@@ -1,4 +1,4 @@
-﻿interface ISound
+interface ISound
 {
-    void ProduceSound();
+    string ProduceSound();
 }

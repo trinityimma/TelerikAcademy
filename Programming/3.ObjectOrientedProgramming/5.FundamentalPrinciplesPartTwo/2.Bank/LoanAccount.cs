@@ -1,10 +1,7 @@
-﻿using System;
+using System;
 
 class LoanAccount : Account
 {
-    private const int SkipIndividualCustomerMonths = 3;
-    private const int SkipCompanyCustomerMonths = 2;
-
     public LoanAccount(Customer customer, decimal balance, decimal interest)
         : base(customer, balance, interest)
     {
@@ -13,17 +10,16 @@ class LoanAccount : Account
     public override decimal CalculateInterest(decimal months)
     {
         if (this.Customer is IndividualCustomer)
-            return base.CalculateInterest(months - SkipIndividualCustomerMonths);
+            return base.CalculateInterest(months - 3);
 
         if (this.Customer is CompanyCustomer)
-            return base.CalculateInterest(months - SkipCompanyCustomerMonths);
+            return base.CalculateInterest(months - 2);
 
-        else
-            return base.CalculateInterest(months);
+        return base.CalculateInterest(months);
     }
 
     public override string ToString()
     {
-        return base.ToString("LoanAccount");
+        return base.ToString("Loan Account");
     }
 }
