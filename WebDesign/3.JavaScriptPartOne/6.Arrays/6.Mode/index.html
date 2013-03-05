@@ -1,0 +1,31 @@
+<script>
+;(function() {
+    'use strict';
+
+    var array = [4, 1, 1, 4, 2, 3, 4, 4, 1, 2, 4, 9, 3]
+
+      , maxLength = 1
+      , maxIndex = 0
+
+      , currentLength = 0
+
+    // Exercise 5
+    array.sort(function(a, b) {
+        return a - b
+    })
+
+    // Exercise 3
+    array.reduce(function(a, b, i) {
+        currentLength = a === b ? currentLength + 1 : 1
+
+        if (currentLength > maxLength) {
+            maxLength = currentLength
+            maxIndex = i - currentLength + 1
+        }
+
+        return b
+    })
+
+    console.log("%d (%d times)", array[maxIndex], maxLength)
+}())
+</script>

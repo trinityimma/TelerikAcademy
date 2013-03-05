@@ -19,9 +19,9 @@ class Program
     {
         int best = i;
 
-        for (int j = i + 1; j < arr.Length; j++)
-            if (descending ? arr[j] < arr[best] : arr[best] < arr[j])
-                best = j;
+        for (i++; i < arr.Length; i++)
+            if (descending ? arr[i] < arr[best] : arr[best] < arr[i])
+                best = i;
 
         return best;
     }

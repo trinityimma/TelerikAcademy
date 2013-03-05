@@ -1,0 +1,15 @@
+<script>
+;(function() {
+    'use strict';
+
+    var chars1 = 'abc'.split('')
+      , chars2 = 'acb'.split('')
+
+    chars1.forEach(function(el, i){
+        var compared = el.charCodeAt(0) - chars2[i].charCodeAt(0)
+          , result = compared > 0 ? 'bigger' : compared < 0 ? 'smaller' : 'equal'
+
+        console.log(i, result)
+    })
+}())
+</script>

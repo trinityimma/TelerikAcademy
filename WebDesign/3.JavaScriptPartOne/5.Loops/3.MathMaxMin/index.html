@@ -2,34 +2,40 @@
 ;(function() {
     'use strict';
 
+    // Fast
     var numbers = [9, 2, 3, 8, 5, 6, 4, 7, 1]
 
       , i
 
-      , min = numbers[parseInt(numbers.length / 2)]
-      , max = min
-
+      , half = parseInt(numbers.length / 2)
       , last = numbers.length - 1
 
+      , min = numbers[half]
+      , max = min
+
     // O(3n / 2)
-    for (i = 0; i < numbers.length / 2; i++) {
+    for (i = 0; i < half; i++) {
         if (numbers[i] > numbers[last - i]) {
             if (numbers[i] > max)
-                max = numbers[i];
+                max = numbers[i]
 
             if (numbers[last - i] < min)
-                min = numbers[last - i];
+                min = numbers[last - i]
         }
 
         else {
             if (numbers[i] < min)
-                min = numbers[i];
+                min = numbers[i]
 
             if (numbers[last - i] > max)
-                max = numbers[last - i];
+                max = numbers[last - i]
         }
     }
 
     console.log(numbers, min, max)
+
+    // Easy
+    console.log(Math.min.apply(Math, numbers))
+    console.log(Math.max.apply(Math, numbers))
 }())
 </script>
