@@ -59,7 +59,7 @@
 2. [Defining Classes - Part II](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/2.DefiningClassesPartTwo/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/2.DefiningClassesPartTwo//README.md)) - 23.02.2013
 3. [Extension Methods, Delegates, Lambda, LINQ](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/3.ExtensionMethodsDelegatesLambdaLINQ/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/3.ExtensionMethodsDelegatesLambdaLINQ/README.md)) - 25.02.2013
 4. [Fundamental Principles - Part I](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/README.md)) - 02.03.2013
-5. [Fundamental Principles - Part II](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/README.md)) -  - 04.03.2013
+5. [Fundamental Principles - Part II](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/README.md)) - 04.03.2013
 6. Common Type System
 7. Workshop - Game Development
 8. Exam Preparation
@@ -71,5 +71,5 @@
 2. Data types and Variables - 02.03.2013
 3. [Operators and Expressions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/3.OperatorsАndExpressions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/3.OperatorsАndExpressions/README.md)) - 02.03.2013
 4. [Conditional Statements](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/4.ConditionalStatements) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/4.ConditionalStatements/README.md)) - 02.03.2013
-5. [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/5.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/5.Loops/README.md)) -  09.03.2013
+5. [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/5.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/5.Loops/README.md)) - 09.03.2013
 6. [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/6.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/6.Arrays/README.md)) - 09.03.2013
