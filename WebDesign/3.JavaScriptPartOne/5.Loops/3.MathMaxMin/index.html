@@ -1,0 +1,35 @@
+<script>
+;(function() {
+    'use strict';
+
+    var numbers = [9, 2, 3, 8, 5, 6, 4, 7, 1]
+
+      , i
+
+      , min = numbers[parseInt(numbers.length / 2)]
+      , max = min
+
+      , last = numbers.length - 1
+
+    // O(3n / 2)
+    for (i = 0; i < numbers.length / 2; i++) {
+        if (numbers[i] > numbers[last - i]) {
+            if (numbers[i] > max)
+                max = numbers[i];
+
+            if (numbers[last - i] < min)
+                min = numbers[last - i];
+        }
+
+        else {
+            if (numbers[i] < min)
+                min = numbers[i];
+
+            if (numbers[last - i] > max)
+                max = numbers[last - i];
+        }
+    }
+
+    console.log(numbers, min, max)
+}())
+</script>
