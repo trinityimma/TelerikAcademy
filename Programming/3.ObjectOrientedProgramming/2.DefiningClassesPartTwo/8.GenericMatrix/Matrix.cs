@@ -71,10 +71,9 @@ class Matrix<T>
     // True / False
     private static bool BoolOperator(Matrix<T> m, bool value)
     {
-        for (int i = 0; i < m.Rows; i++)
-            for (int j = 0; j < m.Cols; j++)
-                if ((dynamic)m[i, j] != 0)
-                    return value;
+        foreach(T item in m.matrix)
+            if ((dynamic)item != 0)
+                return value;
 
         return !value;
     }
