@@ -50,19 +50,19 @@ partial class BinarySearchTree<T> : ICloneable, IEnumerable<T>
 
     public void Remove(T key)
     {
-        Node current = this.root;
+        //Node current = this.root;
 
-        while (current != null)
-        {
-            int compared = current.Key.CompareTo(key);
+        //while (current != null)
+        //{
+        //    int compared = current.Key.CompareTo(key);
 
-            if (compared == 0) break;
+        //    if (compared == 0) break;
 
-            else if (compared < 0) current = root.Left;
-            else if (compared > 0) current = root.Right;
-        }
+        //    else if (compared < 0) current = root.Left;
+        //    else if (compared > 0) current = root.Right;
+        //}
 
-        current = null;
+        //current = null;
     }
 
     public bool Find(T key)
@@ -96,10 +96,10 @@ partial class BinarySearchTree<T> : ICloneable, IEnumerable<T>
     {
         if (root != null)
         {
-            yield return root.Key;
-
             foreach (T item in Traverse(root.Left))
                 yield return item;
+
+            yield return root.Key;
 
             foreach (T item in Traverse(root.Right))
                 yield return item;
