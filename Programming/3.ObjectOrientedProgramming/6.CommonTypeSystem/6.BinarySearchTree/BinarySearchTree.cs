@@ -2,35 +2,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-/* Define the data structure binary search tree with operations for "adding new element",
- * "searching element" and "deleting elements". It is not necessary to keep the tree balanced.
- * Implement the standard methods from System.Object – ToString(), Equals(…), GetHashCode() and the operators for comparison
- * == and !=. Add and implement the ICloneable interface for deep copy of the tree. Remark:
- * Use two types – structure BinarySearchTree (for the tree) and class TreeNode (for the tree elements).
- * Implement IEnumerable<T> to traverse the tree
-*/
-
-partial class BinarySearchTree<T> : ICloneable, IEnumerable<T> where T : IComparable
+partial class BinarySearchTree<T> : ICloneable, IEnumerable<T>
+    where T : IComparable<T>, IEquatable<T>
 {
-    private readonly Node root = new Node(default(T)); // TODO: Change default root value
+    private Node root = null;
 
     public void Add(T key)
     {
-        Node node = this.root;
-
-        while (node != null)
+        if (root == null)
         {
-            int compared = node.Key.CompareTo(key);
-
-            if (compared == 0) throw new ArgumentException();
-
-            else if (compared < 0) node = root.Left;
-            else if (compared > 0) node = root.Right;
+            root = new Node(key);
+            return;
         }
 
-        node = new Node(key);
+        Node current = this.root;
+
+        while (true)
+        {
+            int compared = current.Key.CompareTo(key);
+
+            if (compared == 0) break;
+
+            else if (compared < 0)
+            {
+                if (current.Right == null)
+                {
+                    current.Right = new Node(key);
+                    break;
+                }
+
+                current = current.Right;
+            }
+
+            else if (compared > 0)
+            {
+                if (current.Left == null)
+                {
+                    current.Left = new Node(key);
+                    break;
+                }
+
+                current = current.Left;
+            }
+        }
     }
 
     public void Remove(T key)
