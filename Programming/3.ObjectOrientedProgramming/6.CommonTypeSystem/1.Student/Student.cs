@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 
 class Student : Person, ICloneable, IComparable<Student>
 {
-    public string SocialSecurityNumber { get; private set; }
 
     public string Address { get; private set; }
     public string Email { get; private set; }
@@ -20,9 +19,8 @@ class Student : Person, ICloneable, IComparable<Student>
         string address = "", string email = "", string phone = "",
         string courseSpecialty = "", string university = "", string faculty = ""
     )
-        : base(firstName, middleName, lastName)
+        : base(firstName, middleName, lastName, socialSecurityNumber, age: null)
     {
-        this.SocialSecurityNumber = socialSecurityNumber;
 
         this.Address = address;
         this.Email = email;
@@ -78,9 +76,6 @@ class Student : Person, ICloneable, IComparable<Student>
 
         info.AppendLine(base.ToString());
 
-        if (!String.IsNullOrEmpty(this.SocialSecurityNumber))
-            info.AppendLine("SocialSecurityNumber: " + this.SocialSecurityNumber);
-
         if (!String.IsNullOrEmpty(this.Address))
             info.AppendLine("Address: " + this.Address);
 
@@ -91,7 +86,7 @@ class Student : Person, ICloneable, IComparable<Student>
             info.AppendLine("Phone: " + this.Phone);
 
         if (!String.IsNullOrEmpty(this.CourseSpecialty))
-            info.AppendLine("CourseSpecialty: " + this.CourseSpecialty);
+            info.AppendLine("Course Specialty: " + this.CourseSpecialty);
 
         if (!String.IsNullOrEmpty(this.University))
             info.AppendLine("University: " + this.University);
