@@ -1,14 +1,18 @@
-﻿using System;
+using System;
 
 class Program
 {
     static void Main()
     {
-        BitArray64 used = new BitArray64();
+        BitArray64 used = new BitArray64(10);
 
         used[0] = true;
-        used[9] = true;
-
-        Console.WriteLine();
+        Console.WriteLine(used);
+        
+        used[0] = false;
+        Console.WriteLine(used);
+        
+        used[used.Count - 1] = true;
+        Console.WriteLine(used);
     }
 }
