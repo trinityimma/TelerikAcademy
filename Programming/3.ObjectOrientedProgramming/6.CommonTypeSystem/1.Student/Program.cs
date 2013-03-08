@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 class Program
 {
@@ -14,9 +14,5 @@ class Program
         Array.Sort(students);
 
         Console.WriteLine(String.Join<Student>(Environment.NewLine + Environment.NewLine, students));
-
-
-        Console.WriteLine();
-        Console.WriteLine(new Person("Svetlin", "Ivanov", "Nakov", 30));
     }
 }
