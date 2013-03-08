@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 
 class Person
@@ -7,13 +7,15 @@ class Person
     public string MiddleName { get; private set; }
     public string LastName { get; private set; }
 
+    public string SocialSecurityNumber { get; private set; }
     public int? Age { get; private set; }
 
-    public Person(string firstName, string middleName, string lastName, int? age = null)
+    public Person(string firstName, string middleName, string lastName, string socialSecurityNumber, int? age)
     {
         this.FirstName = firstName;
         this.MiddleName = middleName;
         this.LastName = lastName;
+        this.SocialSecurityNumber = socialSecurityNumber;
         this.Age = age;
     }
 
@@ -23,6 +25,8 @@ class Person
 
         info.AppendFormat("Name: {0} {1} {2}",
             this.FirstName, this.MiddleName, this.LastName).AppendLine();
+
+        info.AppendLine("Social Security Number: " + this.SocialSecurityNumber);
 
         info.AppendLine("Age: " + (this.Age ?? -1));
 
