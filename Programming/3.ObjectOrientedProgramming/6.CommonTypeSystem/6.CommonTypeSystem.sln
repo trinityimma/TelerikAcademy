@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Student", "1.Student\1.Student.csproj", "{14F7E276-AC44-4AF1-A2EA-0669FBAA1DCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.BitArray", "5.BitArray\5.BitArray.csproj", "{31C2F76F-2279-4D7F-8F18-65B2943F02EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14F7E276-AC44-4AF1-A2EA-0669FBAA1DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F7E276-AC44-4AF1-A2EA-0669FBAA1DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F7E276-AC44-4AF1-A2EA-0669FBAA1DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F7E276-AC44-4AF1-A2EA-0669FBAA1DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C2F76F-2279-4D7F-8F18-65B2943F02EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C2F76F-2279-4D7F-8F18-65B2943F02EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C2F76F-2279-4D7F-8F18-65B2943F02EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C2F76F-2279-4D7F-8F18-65B2943F02EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
