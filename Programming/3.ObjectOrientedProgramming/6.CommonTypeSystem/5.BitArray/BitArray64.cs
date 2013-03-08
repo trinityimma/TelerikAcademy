@@ -1,36 +1,44 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
 // TODO: Make it resizable
 class BitArray64 : IEnumerable<bool>
 {
-    private const int DefaultCapacity = 10;
+    private const int MaxCapacity = 64;
 
     private ulong array = 0;
 
     public int Count { get; private set; }
-    
-    public BitArray64(int capacity = DefaultCapacity)
+
+    public BitArray64(int capacity)
     {
+        if (capacity > MaxCapacity)
+            throw new ArgumentOutOfRangeException();
+
         this.Count = capacity;
     }
 
-    public bool this[int index]
+    private void CheckIndex(int i)
+    {
+        if (!(0 <= i && i < Count))
+            throw new IndexOutOfRangeException();
+    }
+
+    public bool this[int i]
     {
         get
         {
-            if (!(0 <= index && index < this.Count))
-                throw new IndexOutOfRangeException();
+            CheckIndex(i);
 
-            return ((array >> index) & 1) == 1;
+            return ((array >> i) & 1) == 1;
         }
+
         set
         {
-            if (!(0 <= index && index < this.Count))
-                throw new IndexOutOfRangeException();
+            CheckIndex(i);
 
-            this.array = (value == false) ? (this.array & ~(1UL << index)) : (this.array | 1UL << index);
+            this.array = (value == false) ? (this.array & ~(1UL << i)) : (this.array | 1UL << i);
         }
     }
 
@@ -46,8 +54,8 @@ class BitArray64 : IEnumerable<bool>
 
     public IEnumerator<bool> GetEnumerator()
     {
-        for (int i = 0; i < this.Count; i++)
-            yield return ((array >> i) & 1) == 1;
+        for (int i = 0; i < Count; i++)
+            yield return this[i];
     }
 
     IEnumerator IEnumerable.GetEnumerator()
@@ -67,6 +75,6 @@ class BitArray64 : IEnumerable<bool>
 
     public override string ToString()
     {
-        return String.Join<bool>(Environment.NewLine, this);
+        return String.Join<bool>(" ", this);
     }
 }
