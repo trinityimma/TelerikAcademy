@@ -50,33 +50,33 @@ partial class BinarySearchTree<T> : ICloneable, IEnumerable<T>
 
     public void Remove(T key)
     {
-        Node node = this.root;
+        Node current = this.root;
 
-        while (node != null)
+        while (current != null)
         {
-            int compared = node.Key.CompareTo(key);
+            int compared = current.Key.CompareTo(key);
 
             if (compared == 0) break;
 
-            else if (compared < 0) node = root.Left;
-            else if (compared > 0) node = root.Right;
+            else if (compared < 0) current = root.Left;
+            else if (compared > 0) current = root.Right;
         }
 
-        node = null;
+        current = null;
     }
 
-    public bool IndexOf(T key)
+    public bool Find(T key)
     {
-        Node node = this.root;
+        Node current = this.root;
 
-        while (node != null)
+        while (current != null)
         {
-            int compared = node.Key.CompareTo(key);
+            int compared = current.Key.CompareTo(key);
 
             if (compared == 0) return true;
 
-            else if (compared < 0) node = root.Left;
-            else if (compared > 0) node = root.Right;
+            else if (compared < 0) current = root.Left;
+            else if (compared > 0) current = root.Right;
         }
 
         return false;
@@ -120,7 +120,7 @@ partial class BinarySearchTree<T> : ICloneable, IEnumerable<T>
     {
         BinarySearchTree<T> tree = new BinarySearchTree<T>();
 
-        foreach (T item in tree)
+        foreach (T item in this)
             tree.Add(item);
 
         return tree;
@@ -133,7 +133,7 @@ partial class BinarySearchTree<T> : ICloneable, IEnumerable<T>
         unchecked
         {
             foreach (T item in this)
-                hash += 23 * item.GetHashCode();
+                hash = hash * 23 + item.GetHashCode();
         }
 
         return hash;

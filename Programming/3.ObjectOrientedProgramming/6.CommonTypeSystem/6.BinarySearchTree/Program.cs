@@ -15,5 +15,8 @@ class Program
         //    tree2.Add(i);
 
         Console.WriteLine(tree1);
+        Console.WriteLine(tree1.Find(11));
+
+        Console.WriteLine(tree1.Clone());
     }
 }
