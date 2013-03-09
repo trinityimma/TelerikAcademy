@@ -4,27 +4,27 @@ using System.Collections.Generic;
 
 class BitArray : IEnumerable<bool>
 {
-    private const int Capacity = 64;
+    private const int CellCapacity = 64;
 
     private ulong[] array = null;
 
-    public int Count { get; private set; }
+    public int Length { get; private set; }
 
-    public BitArray(int count)
+    public BitArray(int length)
     {
-        if (count < 0)
+        if (length < 0)
             throw new ArgumentOutOfRangeException();
 
-        this.Count = count;
+        this.Length = length;
 
-        int length = (int)Math.Ceiling((double)this.Count / Capacity);
+        int size = (int)Math.Ceiling((double)this.Length / CellCapacity);
 
-        this.array = new ulong[length];
+        this.array = new ulong[size];
     }
 
     private void CheckIndex(int i)
     {
-        if (!(0 <= i && i < Count))
+        if (!(0 <= i && i < Length))
             throw new IndexOutOfRangeException();
     }
 
@@ -34,16 +34,16 @@ class BitArray : IEnumerable<bool>
         {
             CheckIndex(i);
 
-            return ((array[i / Capacity] >> (i % Capacity)) & 1) == 1;
+            return ((array[i / CellCapacity] >> (i % CellCapacity)) & 1) == 1;
         }
 
         set
         {
             CheckIndex(i);
 
-            this.array[i / Capacity] = value ?
-                (this.array[i / Capacity] | 1UL << (i % Capacity)) :
-                (this.array[i / Capacity] & ~(1UL << (i % Capacity)));
+            this.array[i / CellCapacity] = value ?
+                (this.array[i / CellCapacity] | 1UL << (i % CellCapacity)) :
+                (this.array[i / CellCapacity] & ~(1UL << (i % CellCapacity)));
         }
     }
 
@@ -59,7 +59,7 @@ class BitArray : IEnumerable<bool>
 
     public IEnumerator<bool> GetEnumerator()
     {
-        for (int i = 0; i < Count; i++)
+        for (int i = 0; i < Length; i++)
             yield return this[i];
     }
 
@@ -75,7 +75,15 @@ class BitArray : IEnumerable<bool>
 
     public override int GetHashCode()
     {
-        return this.array.GetHashCode();
+        int hash = 17;
+
+        unchecked
+        {
+            foreach (bool item in this)
+                hash = hash * 23 + item.GetHashCode();
+        }
+
+        return hash;
     }
 
     public override string ToString()
