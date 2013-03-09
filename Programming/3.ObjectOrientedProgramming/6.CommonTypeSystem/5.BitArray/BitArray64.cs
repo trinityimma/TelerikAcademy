@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -70,7 +71,7 @@ class BitArray : IEnumerable<bool>
 
     public override bool Equals(object obj)
     {
-        return this.array.Equals((obj as BitArray).array);
+        return Enumerable.SequenceEqual(this.array, (obj as BitArray).array);
     }
 
     public override int GetHashCode()
