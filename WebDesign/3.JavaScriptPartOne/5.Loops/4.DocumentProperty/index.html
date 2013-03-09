@@ -1,0 +1,15 @@
+<script>
+;(function() {
+    'use strict';
+
+    [document, window, navigator].forEach(function(object) {
+        var properties = []
+
+        for (properties[properties.length] in object) ;
+
+        properties.sort()
+
+        console.log(properties.shift(), properties.pop())
+    })
+}())
+</script>
