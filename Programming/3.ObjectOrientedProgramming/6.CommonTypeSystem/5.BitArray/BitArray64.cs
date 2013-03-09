@@ -2,21 +2,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-// TODO: Make it resizable
-class BitArray64 : IEnumerable<bool>
+class BitArray : IEnumerable<bool>
 {
-    private const int MaxCapacity = 64;
+    private const int Capacity = 64;
 
-    private ulong array = 0;
+    private ulong[] array = null;
 
     public int Count { get; private set; }
 
-    public BitArray64(int capacity)
+    public BitArray(int count)
     {
-        if (capacity > MaxCapacity)
+        if (count < 0)
             throw new ArgumentOutOfRangeException();
 
-        this.Count = capacity;
+        this.Count = count;
+
+        int length = (int)Math.Ceiling((double)this.Count / Capacity);
+
+        this.array = new ulong[length];
     }
 
     private void CheckIndex(int i)
@@ -31,25 +34,27 @@ class BitArray64 : IEnumerable<bool>
         {
             CheckIndex(i);
 
-            return ((array >> i) & 1) == 1;
+            return ((array[i / Capacity] >> (i % Capacity)) & 1) == 1;
         }
 
         set
         {
             CheckIndex(i);
 
-            this.array = (value == false) ? (this.array & ~(1UL << i)) : (this.array | 1UL << i);
+            this.array[i / Capacity] = value ?
+                (this.array[i / Capacity] | 1UL << (i % Capacity)) :
+                (this.array[i / Capacity] & ~(1UL << (i % Capacity)));
         }
     }
 
-    public static bool operator ==(BitArray64 array1, BitArray64 array2)
+    public static bool operator ==(BitArray array1, BitArray array2)
     {
-        return BitArray64.Equals(array1, array2);
+        return BitArray.Equals(array1, array2);
     }
 
-    public static bool operator !=(BitArray64 array1, BitArray64 array2)
+    public static bool operator !=(BitArray array1, BitArray array2)
     {
-        return !BitArray64.Equals(array1, array2);
+        return !BitArray.Equals(array1, array2);
     }
 
     public IEnumerator<bool> GetEnumerator()
@@ -65,7 +70,7 @@ class BitArray64 : IEnumerable<bool>
 
     public override bool Equals(object obj)
     {
-        return this.array.Equals((obj as BitArray64).array);
+        return this.array.Equals((obj as BitArray).array);
     }
 
     public override int GetHashCode()
