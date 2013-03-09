@@ -15,6 +15,7 @@ class Person
         this.FirstName = firstName;
         this.MiddleName = middleName;
         this.LastName = lastName;
+
         this.SocialSecurityNumber = socialSecurityNumber;
         this.Age = age;
     }
