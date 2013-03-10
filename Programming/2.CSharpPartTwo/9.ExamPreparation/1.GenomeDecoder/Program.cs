@@ -30,7 +30,7 @@ class GenomeDecoder
             genome.Append(new String(key, value));
         }
 
-        rows = (int)Math.Ceiling((double)genome.Length / cols);
+        rows = (genome.Length - 1) / cols + 1;
         lineNumberLength = (int)Math.Log10(rows) + 1;
     }
 
