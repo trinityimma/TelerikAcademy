@@ -48,16 +48,6 @@ class BitArray : IEnumerable<bool>
         }
     }
 
-    public static bool operator ==(BitArray array1, BitArray array2)
-    {
-        return BitArray.Equals(array1, array2);
-    }
-
-    public static bool operator !=(BitArray array1, BitArray array2)
-    {
-        return !BitArray.Equals(array1, array2);
-    }
-
     public IEnumerator<bool> GetEnumerator()
     {
         for (int i = 0; i < this.Length; i++)
@@ -69,8 +59,20 @@ class BitArray : IEnumerable<bool>
         return GetEnumerator();
     }
 
+    public static bool operator ==(BitArray array1, BitArray array2)
+    {
+        return BitArray.Equals(array1, array2);
+    }
+
+    public static bool operator !=(BitArray array1, BitArray array2)
+    {
+        return !BitArray.Equals(array1, array2);
+    }
+
     public override bool Equals(object obj)
     {
+        if (obj == null) return false;
+
         return Enumerable.SequenceEqual(this.array, (obj as BitArray).array);
     }
 
