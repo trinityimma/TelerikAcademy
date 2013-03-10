@@ -87,6 +87,6 @@ class BitArray : IEnumerable<bool>
 
     public override string ToString()
     {
-        return String.Join<bool>(" ", this);
+        return String.Join(" ", this);
     }
 }
