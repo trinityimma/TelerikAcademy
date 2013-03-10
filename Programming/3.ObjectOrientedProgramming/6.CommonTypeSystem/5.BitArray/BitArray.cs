@@ -9,23 +9,23 @@ class BitArray : IEnumerable<bool>
 
     private readonly ulong[] array = null;
 
-    public int Length { get; private set; }
+    public int Count { get; private set; }
+    public int Capacity { get; private set; }
 
     public BitArray(int length)
     {
         if (length < 0)
             throw new ArgumentOutOfRangeException();
 
-        this.Length = length;
+        this.array = new ulong[(length - 1) / CellCapacity + 1];
 
-        int size = (int)Math.Ceiling((double)this.Length / CellCapacity);
-
-        this.array = new ulong[size];
+        this.Count = length;
+        this.Capacity = this.array.Length * CellCapacity;
     }
 
     private void CheckIndex(int i)
     {
-        if (!(0 <= i && i < Length))
+        if (!(0 <= i && i < Count))
             throw new IndexOutOfRangeException();
     }
 
@@ -50,7 +50,7 @@ class BitArray : IEnumerable<bool>
 
     public IEnumerator<bool> GetEnumerator()
     {
-        for (int i = 0; i < this.Length; i++)
+        for (int i = 0; i < this.Count; i++)
             yield return this[i];
     }
 

@@ -4,19 +4,25 @@ class Program
 {
     static void Main()
     {
-        BitArray used = new BitArray(65);
+        BitArray visited = new BitArray(70);
 
-        used[1] = true;
-        Console.WriteLine(used);
+        Console.WriteLine("Count: " + visited.Count);
+        Console.WriteLine("Capacity: " + visited.Capacity);
+
+        {
+            visited[1] = true;
+            Console.WriteLine(visited[1]);
+
+            visited[1] = false;
+            Console.WriteLine(visited[1]);
+        }
 
         Console.WriteLine();
 
-        used[1] = false;
-        Console.WriteLine(used);
-
-        Console.WriteLine();
-        
-        used[used.Length - 1] = true;
-        Console.WriteLine(used);
+        {
+            visited[0] = true;
+            visited[visited.Count - 1] = true;
+            Console.WriteLine(visited);
+        }
     }
 }
