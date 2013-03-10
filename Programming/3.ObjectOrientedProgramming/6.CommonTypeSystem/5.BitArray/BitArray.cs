@@ -7,7 +7,7 @@ class BitArray : IEnumerable<bool>
 {
     private const int CellCapacity = 64;
 
-    private ulong[] array = null;
+    private readonly ulong[] array = null;
 
     public int Length { get; private set; }
 
@@ -60,7 +60,7 @@ class BitArray : IEnumerable<bool>
 
     public IEnumerator<bool> GetEnumerator()
     {
-        for (int i = 0; i < Length; i++)
+        for (int i = 0; i < this.Length; i++)
             yield return this[i];
     }
 
