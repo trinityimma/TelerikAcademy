@@ -4,64 +4,60 @@ partial class BinarySearchTree<T>
 {
     private Node root = null;
 
+    public int Count { get; private set; }
+
     public void Add(T key)
     {
         if (root == null)
         {
             root = new Node(key);
-            return;
         }
 
-        Node current = this.root;
-
-        while (true)
+        else
         {
-            int compared = current.Key.CompareTo(key);
+            Node current = this.root;
 
-            if (compared == 0) break;
-
-            else if (compared < 0)
+            while (true)
             {
-                if (current.Right == null)
+                int compared = current.Key.CompareTo(key);
+
+                if (compared == 0) return; // Don't increase count
+
+                else if (compared < 0)
                 {
-                    current.Right = new Node(key);
-                    break;
+                    if (current.Right == null)
+                    {
+                        current.Right = new Node(key);
+                        break;
+                    }
+
+                    current = current.Right;
                 }
 
-                current = current.Right;
-            }
-
-            else if (compared > 0)
-            {
-                if (current.Left == null)
+                else if (compared > 0)
                 {
-                    current.Left = new Node(key);
-                    break;
-                }
+                    if (current.Left == null)
+                    {
+                        current.Left = new Node(key);
+                        break;
+                    }
 
-                current = current.Left;
+                    current = current.Left;
+                }
             }
         }
+
+        this.Count++;
     }
 
     public void Remove(T key)
     {
-        //Node current = this.root;
+        // TODO
 
-        //while (current != null)
-        //{
-        //    int compared = current.Key.CompareTo(key);
-
-        //    if (compared == 0) break;
-
-        //    else if (compared < 0) current = root.Left;
-        //    else if (compared > 0) current = root.Right;
-        //}
-
-        //current = null;
+        this.Count--;
     }
 
-    public bool Find(T key)
+    public bool Contains(T key)
     {
         Node current = this.root;
 

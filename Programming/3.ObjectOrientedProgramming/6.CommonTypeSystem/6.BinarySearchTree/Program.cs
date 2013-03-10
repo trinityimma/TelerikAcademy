@@ -13,11 +13,11 @@ class Program
 
         //BinarySearchTree<int> tree2 = new BinarySearchTree<int>();
 
-        //for (int i = 0; i < 10; i++)
+        //for (int i = 0; i < tree1.Count; i++)
         //    tree2.Add(i);
 
         Console.WriteLine(tree1);
-        //Console.WriteLine(tree1.Find(11));
+        //Console.WriteLine(tree1.Contains(11));
 
         Console.WriteLine((tree1.Clone() as BinarySearchTree<int>) == tree1);
     }
