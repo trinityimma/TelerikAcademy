@@ -23,24 +23,20 @@ class BitArray : IEnumerable<bool>
         this.Capacity = this.array.Length * CellCapacity;
     }
 
-    private void CheckIndex(int i)
-    {
-        if (!(0 <= i && i < Count))
-            throw new IndexOutOfRangeException();
-    }
-
     public bool this[int i]
     {
         get
         {
-            CheckIndex(i);
+            if (!(0 <= i && i < Count))
+                throw new IndexOutOfRangeException();
 
             return ((array[i / CellCapacity] >> (i % CellCapacity)) & 1) == 1;
         }
 
         set
         {
-            CheckIndex(i);
+            if (!(0 <= i && i < Count))
+                throw new IndexOutOfRangeException();
 
             this.array[i / CellCapacity] = value ?
                 (this.array[i / CellCapacity] | 1UL << (i % CellCapacity)) :
