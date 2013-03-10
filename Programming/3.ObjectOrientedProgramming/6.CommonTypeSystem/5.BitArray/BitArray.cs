@@ -27,15 +27,15 @@ class BitArray : IEnumerable<bool>
     {
         get
         {
-            if (!(0 <= i && i < Count))
+            if (!(0 <= i && i < this.Count))
                 throw new IndexOutOfRangeException();
 
-            return ((array[i / CellCapacity] >> (i % CellCapacity)) & 1) == 1;
+            return ((this.array[i / CellCapacity] >> (i % CellCapacity)) & 1) == 1;
         }
 
         set
         {
-            if (!(0 <= i && i < Count))
+            if (!(0 <= i && i < this.Count))
                 throw new IndexOutOfRangeException();
 
             this.array[i / CellCapacity] = value ?
