@@ -39,7 +39,7 @@ class BitArray : IEnumerable<bool>
                 throw new IndexOutOfRangeException();
 
             this.array[i / CellCapacity] = value ?
-                (this.array[i / CellCapacity] | 1UL << (i % CellCapacity)) :
+                (this.array[i / CellCapacity] |   1UL << (i % CellCapacity)) :
                 (this.array[i / CellCapacity] & ~(1UL << (i % CellCapacity)));
         }
     }
