@@ -6,5 +6,5 @@
 4. Write a LINQ query that finds the first name and last name of all students with age between 18 and 24.
 5. Using the extension methods `OrderBy()` and `ThenBy()` with lambda expressions sort the students by first name and last name in descending order. Rewrite the same with LINQ.
 6. Write a program that prints from given array of integers all numbers that are divisible by 7 and 3. Use the built-in extension methods and lambda expressions. Rewrite the same with LINQ.
-7. Using delegates write a class `Timer` that has can execute certain method at each t seconds.
+7. Using delegates write a class `Timer` that has can execute certain method at each `t` seconds.
 8. \* Read in MSDN about the keyword `event` in C# and [how to publish events](http://msdn.microsoft.com/en-us/library/w369ty8x.aspx). Re-implement the above using .NET events and following the best practices.
