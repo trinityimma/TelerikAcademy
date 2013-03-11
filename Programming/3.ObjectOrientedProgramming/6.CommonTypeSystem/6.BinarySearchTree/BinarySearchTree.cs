@@ -6,6 +6,31 @@ partial class BinarySearchTree<T>
 
     public int Count { get; private set; }
 
+    // private unsafe void Add(ref Node current, T key)
+    // {
+    //     if (current == null)
+    //     {
+    //         current = new Node(key);
+       
+    //         this.Count++;
+    //     }
+       
+    //     else
+    //     {
+    //         int compared = current.Key.CompareTo(key);
+       
+    //         if (compared == 0) return;
+       
+    //         else if (compared > 0) Add(ref current.Left, key);
+    //         else if (compared < 0) Add(ref current.Right, key);
+    //     }
+    // }
+       
+    // public void Add(T key)
+    // {
+    //     Add(ref this.root, key);
+    // }
+
     public void Add(T key)
     {
         if (root == null)

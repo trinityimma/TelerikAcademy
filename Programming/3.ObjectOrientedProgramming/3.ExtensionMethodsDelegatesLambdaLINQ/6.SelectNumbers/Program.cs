@@ -1,10 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 class Program
 {
-    static void Print(IEnumerable<int> list)
+    static void Print(IEnumerable list)
     {
         foreach (var item in list) Console.WriteLine(item);
 
