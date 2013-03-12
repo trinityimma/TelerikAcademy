@@ -43,8 +43,16 @@ static class Program
         return current;
     }
 
-    static Func<T, T> Recurse<T>(params Func<T, T>[] arr)
+    static Func<T, T> Composition<T>(params Func<T, T>[] arr)
     {
+        //if (arr.Length == 0)
+        //    return result;
+
+        //return Composition(
+        //    x => arr[0](result(x)),
+        //    arr.Skip(1).ToArray()
+        //);
+
         //Func<T, T> result = arr[0];
 
         //for (int i = 1; i < arr.Length; i++)
@@ -56,14 +64,10 @@ static class Program
 
         //return result;
 
-        return arr.Reduce((a, b) => x => b(a(x))); // Copy references
+        return arr.Reduce((a, b) => x => b(a(x)));
     }
 
-    static void YCombinator()
-    {
-        throw new NotImplementedException();
-    }
-
+    // TODO: YCombinator, Currying
     static void Main()
     {
         List<int> numbers = new List<int>() { 1, 2, 3, 4, 5 };
@@ -139,13 +143,13 @@ static class Program
 
         {
             //Console.WriteLine("Recurse: f0(x) = x + 1; f0(1)");
-            //Print(Recurse<int>(x => x + 1)(1));
+            //Print(Composition<int>(x => x + 1)(1));
 
             //Console.WriteLine("Recurse: f0(x) = x + 1; f1(x) = x * 2; f1(f0(1))");
-            //Print(Recurse<int>(x => x + 1, x => x * 2)(1));
+            //Print(Composition<int>(x => x + 1, x => x * 2)(1));
 
             //Console.WriteLine("Recurse: f0(x) = x + 1; f1(x) = x * 2; f2(x) = x * x; f2(f1(f0(1)))");
-            //Print(Recurse<int>(x => x + 1, x => x * 2, x => x * x)(1));
+            //Print(Composition<int>(x => x + 1, x => x * 2, x => x * x)(1));
         }
     }
 
