@@ -154,7 +154,8 @@ static class Program
 
             //// Count
             //Console.WriteLine("Count");
-            //Print(numbers.Reduce((a, _) => a + 1, 0));
+            //Print(numbers.Reduce((a, b) => a + 1) - numbers[0] + 1);
+            //Print(numbers.Reduce((a, b) => a + 1, 0));
         }
 
         {
