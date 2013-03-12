@@ -87,10 +87,10 @@ static class Program
 
     static Func<T, T> Repeat<T>(Func<T, T> f, int n)
     {
-        return new Func<T, T>[n].Map(x => f).Reduce((a, b) => Compose(a, b));
+        return new Func<T, T>[n].Reduce((a, _) => Compose(a, f), x => x);       // Like the count method
+
+        //return new Func<T, T>[n].Map(x => f).Reduce((a, b) => Compose(a, b)); // Without using first
     }
-
-
 
     // TODO: YCombinator, Currying
     static void Main()
@@ -164,8 +164,8 @@ static class Program
             //Print(numbers.Map(x => Convert.ToString(x)).Reduce((a, b) => a + ", " + b));
 
             //Console.WriteLine("Count");
-            //Print(numbers.Reduce((a, b) => a + 1) - numbers[0] + 1);
-            //Print(numbers.Reduce((a, b) => a + 1, 0));
+            //Print(numbers.Reduce((a, _) => a + 1) - numbers[0] + 1);
+            //Print(numbers.Reduce((a, _) => a + 1, 0));
 
             //Console.WriteLine("Negative sum");
             //Print(numbers.Reduce((a, b) => a - b, 0));
