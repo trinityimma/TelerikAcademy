@@ -9,9 +9,9 @@ static class Program
         foreach (T x in arr) f(x);
     }
 
-    static List<T> Map<T>(this IList<T> arr, Func<T, T> f)
+    static List<R> Map<T, R>(this IList<T> arr, Func<T, R> f)
     {
-        List<T> result = new List<T>();
+        List<R> result = new List<R>();
 
         foreach (T x in arr)
             result.Add(f(x));
@@ -55,7 +55,7 @@ static class Program
         return arr.Reduce((a, b) => x => b(a(x))); // Copy references
     }
 
-    static Func<T, T> YCombinator<T>()
+    static void YCombinator()
     {
         throw new NotImplementedException();
     }
@@ -87,8 +87,8 @@ static class Program
             //Console.WriteLine("Map: x * x");
             //Print(numbers.Map(x => x * x));
 
-            //Console.WriteLine("Map: 2 ^ x");
-            //Print(numbers.Map(x => (int)Math.Pow(2, x)));
+            Console.WriteLine("Map: 2 ^ x");
+            Print(numbers.Map(x => Math.Pow(2, x)));
         }
 
         {
