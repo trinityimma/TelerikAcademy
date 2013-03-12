@@ -4,34 +4,34 @@ using System.Collections.Generic;
 
 static class Program
 {
-    static void Foreach(this List<int> arr, Action<int> f)
+    static void Foreach<T>(this IList<T> arr, Action<T> f)
     {
-        foreach (int x in arr) f(x);
+        foreach (T x in arr) f(x);
     }
 
-    static List<int> Map(this List<int> arr, Func<int, int> f)
+    static List<T> Map<T>(this IList<T> arr, Func<T, T> f)
     {
-        List<int> result = new List<int>();
+        List<T> result = new List<T>();
 
-        foreach (int x in arr)
+        foreach (T x in arr)
             result.Add(f(x));
 
         return result;
     }
 
-    static List<int> Where(this List<int> arr, Predicate<int> f)
+    static List<T> Where<T>(this IList<T> arr, Predicate<T> f)
     {
-        List<int> result = new List<int>();
+        List<T> result = new List<T>();
 
-        foreach (int x in arr)
+        foreach (T x in arr)
             if (f(x)) result.Add(x);
 
         return result;
     }
 
-    static int Reduce(this List<int> arr, Func<int, int, int> f)
+    static Т Reduce<Т>(this IList<Т> arr, Func<Т, Т, Т> f)
     {
-        int current = arr[0];
+        Т current = arr[0];
 
         for (int i = 1; i < arr.Count; i++)
             current = f(current, arr[i]);
@@ -39,25 +39,14 @@ static class Program
         return current;
     }
 
-    static Func<int, int> Recurse(Func<int, int> result, params Func<int, int>[] functions)
+    static Func<T, T> Recurse<T>(params Func<T, T>[] functions)
     {
-        if (functions.Length == 0)
-            return result;
-
-        return Recurse(
-            x => functions[0](result(x)),
-            functions.Skip(1).ToArray()
-        );
+        return functions.Reduce((a, b) => x => b(a(x)));
     }
 
-    static void Print(List<int> arr)
+    static Func<T, T> YCombinator<T>()
     {
-        arr.Foreach(x => Console.WriteLine(x));
-    }
-
-    static void Print(int n)
-    {
-        Console.WriteLine(n);
+        throw new NotImplementedException();
     }
 
     static void Main()
@@ -130,13 +119,23 @@ static class Program
 
         {
             //Console.WriteLine("Recurse: f0(x) = x + 1; f0(1)");
-            //Console.WriteLine(Recurse(x => x + 1)(1));
+            //Console.WriteLine(Recurse<int>(x => x + 1)(1));
 
             //Console.WriteLine("Recurse: f0(x) = x + 1; f1(x) = x * 2; f1(f0(1))");
-            //Console.WriteLine(Recurse(x => x + 1, x => x * 2)(1));
+            //Console.WriteLine(Recurse<int>(x => x + 1, x => x * 2)(1));
 
             //Console.WriteLine("Recurse: f0(x) = x + 1; f1(x) = x * 2; f2(x) = x * x; f2(f1(f0(1)))");
-            //Console.WriteLine(Recurse(x => x + 1, x => x * 2, x => x * x)(1));
+            //Console.WriteLine(Recurse<int>(x => x + 1, x => x * 2, x => x * x)(1));
         }
+    }
+
+    static void Print<T>(IList<T> arr)
+    {
+        arr.Foreach(x => Console.WriteLine(x));
+    }
+
+    static void Print(int n)
+    {
+        Console.WriteLine(n);
     }
 }
