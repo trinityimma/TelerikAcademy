@@ -23,6 +23,16 @@ static class Program
         return result;
     }
 
+    static List<R> Map<T, R>(this IList<T> arr, Func<T, int, R> f)
+    {
+        List<R> result = new List<R>();
+
+        for (int i = 0; i < arr.Count; i++) 
+            result.Add(f(arr[i], i));
+
+        return result;
+    }
+
     static List<T> Where<T>(this IList<T> arr, Predicate<T> f)
     {
         List<T> result = new List<T>();
@@ -121,6 +131,9 @@ static class Program
 
             //Console.WriteLine("Map: 2 ^ x");
             //Print(numbers.Map(x => Math.Pow(2, x)));
+
+            //Console.WriteLine("Map: i: Binary(arr[i]) ");
+            //Print(numbers.Map((x, i) => i + ": " + Convert.ToString(x, 2).PadLeft(3)));
         }
 
         {
