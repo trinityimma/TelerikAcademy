@@ -8,6 +8,11 @@ static class Program
         foreach (T x in arr) f(x);
     }
 
+    static void Foreach<T>(this IList<T> arr, Action<T, int> f)
+    {
+        for (int i = 0; i < arr.Count; i++) f(arr[i], i);
+    }
+
     static List<R> Map<T, R>(this IList<T> arr, Func<T, R> f)
     {
         List<R> result = new List<R>();
@@ -72,6 +77,11 @@ static class Program
 
             //Console.WriteLine("Foreach: x * x");
             //numbers.Foreach(x => Console.WriteLine(x * x));
+        }
+
+        {
+            //Console.WriteLine("Foreach: x, i");
+            //numbers.Foreach((x, i) => Console.WriteLine("arr[{0}] = {1}", i, x));
         }
 
         {
