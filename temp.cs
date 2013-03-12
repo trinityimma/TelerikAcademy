@@ -151,14 +151,15 @@ static class Program
         }
 
         {
-            //Console.WriteLine("Recurse: f0(x) = x + 1; f0(1)");
+            //Console.WriteLine("Compose: f0(x) = x + 1; f0(1)");
             //Print(Compose<int>(x => x + 1)(1));
 
-            //Console.WriteLine("Recurse: f0(x) = x + 1; f1(x) = x * 2; f1(f0(1))");
+            //Console.WriteLine("Compose: f0(x) = x + 1; f1(x) = x * 2; f1(f0(1))");
             //Print(Compose<int>(x => x + 1, x => x * 2)(1));
 
-            //Console.WriteLine("Recurse: f0(x) = x + 1; f1(x) = x * 2; f2(x) = x * x; f2(f1(f0(1)))");
+            //Console.WriteLine("Compose: f0(x) = x + 1; f1(x) = x * 2; f2(x) = x * x; f2(f1(f0(1)))");
             //Print(Compose<int>(x => x + 1, x => x * 2, x => x * x)(1));
+            //Print(Compose(Compose(Compose<int>(x => x + 1), x => x * 2), x => x * x)(1));
         }
     }
 
