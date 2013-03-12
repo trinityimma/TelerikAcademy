@@ -39,9 +39,20 @@ static class Program
         return current;
     }
 
-    static Func<T, T> Recurse<T>(params Func<T, T>[] functions)
+    static Func<T, T> Recurse<T>(params Func<T, T>[] arr)
     {
-        return functions.Reduce((a, b) => x => b(a(x)));
+        //Func<T, T> result = arr[0];
+
+        //for (int i = 1; i < arr.Length; i++)
+        //{
+        //    Func<T, T> temp = result;
+        //    Func<T, T> f = arr[i];
+        //    result = x => f(temp(x));
+        //}
+
+        //return result;
+
+        return arr.Reduce((a, b) => x => b(a(x))); // Copy references
     }
 
     static Func<T, T> YCombinator<T>()
