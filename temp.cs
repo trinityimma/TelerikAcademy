@@ -23,16 +23,6 @@ static class Program
         return result;
     }
 
-    static List<R> Map<T, R>(this IList<T> arr, Func<T, int, R> f)
-    {
-        List<R> result = new List<R>();
-
-        for (int i = 0; i < arr.Count; i++) 
-            result.Add(f(arr[i], i));
-
-        return result;
-    }
-
     static List<T> Where<T>(this IList<T> arr, Predicate<T> f)
     {
         List<T> result = new List<T>();
@@ -52,7 +42,6 @@ static class Program
 
         return current;
     }
-
 
     static T Reduce<T>(this IList<T> arr, Func<T, T, T> f, T first)
     {
@@ -101,6 +90,8 @@ static class Program
         return new Func<T, T>[n].Map(x => f).Reduce((a, b) => Compose(a, b));
     }
 
+
+
     // TODO: YCombinator, Currying
     static void Main()
     {
@@ -137,11 +128,11 @@ static class Program
             //Console.WriteLine("Map: 2 ^ x");
             //Print(numbers.Map(x => Math.Pow(2, x)));
 
+            //Console.WriteLine("Map: Binary(x) ");
+            //Print(numbers.Map(x => Convert.ToString(x, 2)));
+
             //Console.WriteLine("Map: \"1 2 3 4 5\".Parse()");
             //Print("1 2 3 4 5".Split().Map(int.Parse));
-
-            //Console.WriteLine("Map: i: Binary(arr[i]) ");
-            //Print(numbers.Map((x, i) => String.Format("arr[{0}] = {1}", i, Convert.ToString(x, 2))));
         }
 
         {
@@ -169,25 +160,15 @@ static class Program
             //Console.WriteLine("Reduce: a > b");
             //Print(numbers.Reduce((a, b) => a > b ? a : b));
 
-            //// Join
             //Console.WriteLine("Join");
             //Print(numbers.Map(x => Convert.ToString(x)).Reduce((a, b) => a + ", " + b));
 
-            //// Count
             //Console.WriteLine("Count");
             //Print(numbers.Reduce((a, b) => a + 1) - numbers[0] + 1);
             //Print(numbers.Reduce((a, b) => a + 1, 0));
-        }
 
-        {
-            //Console.WriteLine("Map: x * 5");
-            //Print(numbers.Map(x => x * 5));
-
-            //Console.WriteLine("Map: x * 5; Where: x > 12");
-            //Print(numbers.Map(x => 5 * x).Where(x => x > 12));
-
-            //Console.WriteLine("Map: x * 5; Where: x > 12; Reduce: a + b");
-            //Print(numbers.Map(x => 5 * x).Where(x => x > 12).Reduce((a, b) => a + b));
+            //Console.WriteLine("Negative sum");
+            //Print(numbers.Reduce((a, b) => a - b, 0));
         }
 
         {
@@ -205,6 +186,17 @@ static class Program
         {
             //Console.WriteLine("Repeat: f(x) = x * x; f(f(f(2)))");
             //Print(Repeat<int>(x => x * x, 3)(2));
+        }
+
+        {
+            //Console.WriteLine("Map: x * 5");
+            //Print(numbers.Map(x => x * 5));
+
+            //Console.WriteLine("Map: x * 5; Where: x > 12");
+            //Print(numbers.Map(x => 5 * x).Where(x => x > 12));
+
+            //Console.WriteLine("Map: x * 5; Where: x > 12; Reduce: a + b");
+            //Print(numbers.Map(x => 5 * x).Where(x => x > 12).Reduce((a, b) => a + b));
         }
     }
 
