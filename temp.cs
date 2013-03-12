@@ -64,28 +64,35 @@ static class Program
         return current;
     }
 
+    static Func<T, T> Compose1<T>(Func<T, T> result, params Func<T, T>[] arr)
+    {
+        if (arr.Length == 0)
+            return result;
+
+        return Compose1(
+            new Func<T, T>(x => arr[0](result(x))),
+
+            System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Skip(arr, 1))
+        );
+    }
+
+    static Func<T, T> Compose2<T>(params Func<T, T>[] arr)
+    {
+        Func<T, T> result = arr[0];
+
+        for (int i = 1; i < arr.Length; i++)
+        {
+            Func<T, T> temp = result;
+            Func<T, T> f = arr[i];
+
+            result = x => f(temp(x)); // Save closure
+        }
+
+        return result;
+    }
+
     static Func<T, T> Compose<T>(params Func<T, T>[] arr)
     {
-        //if (arr.Length == 0)
-        //    return result;
-
-        //return Compose(
-        //    x => arr[0](result(x)),
-        //    arr.Skip(1).ToArray()
-        //);
-
-        //Func<T, T> result = arr[0];
-
-        //for (int i = 1; i < arr.Length; i++)
-        //{
-        //    Func<T, T> temp = result;
-        //    Func<T, T> f = arr[i];
-
-        //    result = x => f(temp(x));
-        //}
-
-        //return result;
-
         return arr.Reduce((a, b) => x => b(a(x)));
     }
 
