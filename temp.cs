@@ -87,8 +87,8 @@ static class Program
             //Console.WriteLine("Map: x * x");
             //Print(numbers.Map(x => x * x));
 
-            Console.WriteLine("Map: 2 ^ x");
-            Print(numbers.Map(x => Math.Pow(2, x)));
+            //Console.WriteLine("Map: 2 ^ x");
+            //Print(numbers.Map(x => Math.Pow(2, x)));
         }
 
         {
