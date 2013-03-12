@@ -130,8 +130,11 @@ static class Program
             //Console.WriteLine("Map: 2 ^ x");
             //Print(numbers.Map(x => Math.Pow(2, x)));
 
+            //Console.WriteLine("Map: \"1 2 3 4 5\".Parse()");
+            //Print("1 2 3 4 5".Split().Map(int.Parse));
+
             //Console.WriteLine("Map: i: Binary(arr[i]) ");
-            //Print(numbers.Map((x, i) => i + ": " + Convert.ToString(x, 2).PadLeft(3)));
+            //Print(numbers.Map((x, i) => String.Format("arr[{0}] = {1}", i, Convert.ToString(x, 2))));
         }
 
         {
