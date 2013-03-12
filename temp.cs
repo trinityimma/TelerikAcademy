@@ -43,6 +43,15 @@ static class Program
         return current;
     }
 
+    static string Join<T>(this IList<T> arr, string separator)
+    {
+        return arr.Map(x =>
+            Convert.ToString(x)
+        ).Reduce((a, b) =>
+            a + separator + b
+        );
+    }
+
     static Func<T, T> Compose<T>(params Func<T, T>[] arr)
     {
         //if (arr.Length == 0)
