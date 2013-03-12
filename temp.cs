@@ -48,7 +48,7 @@ static class Program
         //if (arr.Length == 0)
         //    return result;
 
-        //return Composition(
+        //return Compose(
         //    x => arr[0](result(x)),
         //    arr.Skip(1).ToArray()
         //);
