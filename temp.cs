@@ -23,7 +23,7 @@ static class Program
         return result;
     }
 
-    static List<T> Where<T>(this IList<T> arr, Predicate<T> f)
+    static List<T> Filter<T>(this IList<T> arr, Predicate<T> f)
     {
         List<T> result = new List<T>();
 
@@ -136,11 +136,11 @@ static class Program
         }
 
         {
-            //Console.WriteLine("Where: x % 2 == 0");
-            //Print(numbers.Where(x => x % 2 == 0));
+            //Console.WriteLine("Filter: x % 2 == 0");
+            //Print(numbers.Filter(x => x % 2 == 0));
 
-            //Console.WriteLine("Where: x > 2");
-            //Print(numbers.Where(x => x > 2));
+            //Console.WriteLine("Filter: x > 2");
+            //Print(numbers.Filter(x => x > 2));
         }
 
         {
@@ -192,11 +192,11 @@ static class Program
             //Console.WriteLine("Map: x * 5");
             //Print(numbers.Map(x => x * 5));
 
-            //Console.WriteLine("Map: x * 5; Where: x > 12");
-            //Print(numbers.Map(x => 5 * x).Where(x => x > 12));
+            //Console.WriteLine("Map: x * 5; Filter: x > 12");
+            //Print(numbers.Map(x => 5 * x).Filter(x => x > 12));
 
-            //Console.WriteLine("Map: x * 5; Where: x > 12; Reduce: a + b");
-            //Print(numbers.Map(x => 5 * x).Where(x => x > 12).Reduce((a, b) => a + b));
+            //Console.WriteLine("Map: x * 5; Filter: x > 12; Reduce: a + b");
+            //Print(numbers.Map(x => 5 * x).Filter(x => x > 12).Reduce((a, b) => a + b));
         }
     }
 
