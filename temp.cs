@@ -56,8 +56,6 @@ static class Program
 
     static T Reduce<T>(this IList<T> arr, Func<T, T, T> f, T first)
     {
-        //return arr.Shift(first).Reduce(f);
-
         T current = first;
 
         for (int i = 0; i < arr.Count; i++)
@@ -196,7 +194,7 @@ static class Program
 
         {
             //Console.WriteLine("Repeat: f(x) = x * x; f(f(f(2)))");
-            //Print(Repeat<int>(x => x * x, 4)(2));
+            //Print(Repeat<int>(x => x * x, 3)(2));
         }
     }
 
