@@ -14,7 +14,6 @@ class School : IEnumerable
         this.Name = name;
     }
 
-
     public School AddClass(params Class[] classes)
     {
         foreach (Class _class in classes)

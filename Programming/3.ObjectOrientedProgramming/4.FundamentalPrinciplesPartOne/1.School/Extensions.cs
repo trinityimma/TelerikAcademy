@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 static class Extensions
 {
-    public static string ToString<T>(this SortedSet<T> input)
+    public static string ToString<T>(this IEnumerable<T> input)
     {
         return String.Join(Environment.NewLine, input);
     }
