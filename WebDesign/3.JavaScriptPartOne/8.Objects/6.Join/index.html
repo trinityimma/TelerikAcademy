@@ -1,0 +1,31 @@
+<script>
+;(function() {
+    'use strict';
+
+    function join(persons, prop) {
+        var result = {}
+
+        persons.forEach(function(person) {
+            var value = person[prop]
+
+            result[value] = result[value] || []
+
+            result[value].push(person)
+        })
+
+        return result
+    }
+
+    var persons =
+      [ { firstName: "Gosho", lastName: "Petrov", age: 40 }
+      , { firstName: "Gosho", lastName: "Ivan", age: 30 }
+      , { firstName: "Bay", lastName: "Ivan", age: 40 }
+      , { firstName: "Bay", lastName: "Ivan", age: 30 }
+    ]
+
+      , prop
+
+    for (prop in persons[0])
+        console.log(join(persons, prop))
+}())
+</script>

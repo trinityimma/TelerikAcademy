@@ -1,0 +1,15 @@
+<script>
+;(function() {
+    'use strict';
+
+    function countRepeatingSubstring(text, word, caseSensitive) {
+        var regExp = new RegExp('\\b' + word + '\\b', 'g' + (caseSensitive ? '' : 'i'))
+
+          , match = text.match(regExp)
+
+        return match ? match.length : -1
+    }
+
+    console.log(countRepeatingSubstring('We are living IN an yellow submarine. We don\'t have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.', 'in'))
+}())
+</script>

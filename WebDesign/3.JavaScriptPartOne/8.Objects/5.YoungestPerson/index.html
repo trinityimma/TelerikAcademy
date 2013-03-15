@@ -1,0 +1,16 @@
+<script>
+;(function() {
+    'use strict';
+
+    var persons =
+      [ { firstName: "Gosho", lastName: "Petrov", age: 32 }
+      , { firstName: "Bay", lastName: "Ivan", age: 81 }
+    ]
+
+      , youngest = persons.sort(function(a, b) {
+            return a.age - b.age
+        })[0]
+
+    console.log(youngest.firstName, youngest.lastName)
+}())
+</script>

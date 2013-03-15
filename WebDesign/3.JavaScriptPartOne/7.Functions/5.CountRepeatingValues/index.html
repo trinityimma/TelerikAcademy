@@ -1,0 +1,21 @@
+<script>
+;(function() {
+    'use strict';
+
+    function countOccurences(array, element) {
+        return array.filter(function(el) {
+            return el === element
+        }).length
+    }
+
+    // Test function
+    (function() {
+        var array = [1, 2, 2, 3, 4, 4, 4, 4, 5]
+
+          , i
+
+        for (i = 0; i < 7; i++)
+            console.log("%s: %s times", i, countOccurences(array, i))
+    }())
+}())
+</script>

@@ -31,9 +31,7 @@ class Path
 
     public static Path Parse(string path)
     {
-        Point3D[] points = Regex.Split(path, separator).Select(
-            point => Point3D.Parse(point)
-        ).ToArray();
+        Point3D[] points = Regex.Split(path, separator).Select(Point3D.Parse).ToArray();
 
         return new Path().Add(points);
     }

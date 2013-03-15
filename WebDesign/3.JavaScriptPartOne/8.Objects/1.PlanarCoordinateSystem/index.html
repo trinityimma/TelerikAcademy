@@ -1,0 +1,60 @@
+<script>
+;(function() {
+    'use strict';
+
+    function Point(x, y) {
+        if (!(this instanceof Point))
+            return new Point(x, y)
+
+        this.x = x
+        this.y = y
+    }
+
+    Point.calculateDistance = function(a, b) {
+        return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2))
+    }
+
+    function Line(start, end) {
+        if (!(this instanceof Line))
+            return new Line(start, end)
+
+        this.start = start
+        this.end = end
+    }
+
+    Line.prototype.getLength = function() {
+        return Point.calculateDistance(this.start, this.end)
+    }
+
+    function Triangle(a, b, c) {
+        if (!(this instanceof Triangle))
+            return new Triangle(a, b, c)
+
+        if (!(a.getLength() < b.getLength() + c.getLength() &&
+              b.getLength() < c.getLength() + a.getLength() &&
+              c.getLength() < a.getLength() + b.getLength())
+        )
+            throw new Error('These lines don\'t form a triangle!')
+
+        this.a = a
+        this.b = b
+        this.c = c
+    }
+
+    console.log(Triangle(
+        Line(Point(0, 0), Point(2, 2))
+      , Line(Point(0, 0), Point(2, 2))
+      , Line(Point(0, 0), Point(2, 2))
+    ))
+
+    try {
+        Triangle
+          ( Line(Point(0, 0), Point(20, 20))
+          , Line(Point(0, 0), Point(2, 2))
+          , Line(Point(0, 0), Point(2, 2))
+        )
+    } catch (e) {
+        console.log(e.message)
+    }
+}())
+</script>

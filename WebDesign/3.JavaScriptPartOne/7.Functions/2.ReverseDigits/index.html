@@ -1,0 +1,17 @@
+<script>
+;(function() {
+    'use strict';
+
+    var reverseDigits = (function() {
+        function reverse(n, r) {
+            return n === 0 ? r : reverse(parseInt(n / 10), r * 10 + n % 10)
+        }
+
+        return function(n) {
+            return reverse(n, 0)
+        }
+    }())
+
+    console.log(reverseDigits(123456))
+}())
+</script>

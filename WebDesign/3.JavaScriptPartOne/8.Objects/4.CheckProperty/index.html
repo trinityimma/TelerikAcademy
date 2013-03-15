@@ -1,0 +1,11 @@
+<script>
+;(function() {
+    'use strict';
+
+    function hasProperty(prop, obj) {
+        return obj.hasOwnProperty(prop)
+    }
+
+    console.log(hasProperty('length', { length: undefined }))
+}())
+</script>

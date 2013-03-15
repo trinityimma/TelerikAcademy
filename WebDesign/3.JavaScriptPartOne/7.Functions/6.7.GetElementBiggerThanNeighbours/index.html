@@ -1,0 +1,32 @@
+<script>
+;(function() {
+    'use strict';
+
+    function isInside(array, i) {
+        return i in array
+    }
+
+    function isBigger(array, i, j) {
+        return isInside(array, j) ? array[i] > array[j] : true
+    }
+
+    function isBiggerThanNeighbours(array, i) {
+        return isBigger(array, i, i - 1) && isBigger(array, i, i + 1)
+    }
+
+    // Linear scan
+    function getElementBiggerThanNeighbours(array) {
+        var i
+
+        for (i = 0; i < array.length; i++)
+            if (isBiggerThanNeighbours(array, i))
+                return i
+
+        return -1
+    }
+
+    var array = [1, 2, 2, 3, 2]
+
+    console.log(getElementBiggerThanNeighbours(array))
+}())
+</script>
