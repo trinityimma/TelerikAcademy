@@ -27,9 +27,7 @@ struct Point3D
 
     public static Point3D Parse(string point)
     {
-        double[] coordinates = Regex.Split(point, separator).Select(
-            coordinate => double.Parse(coordinate)
-        ).ToArray();
+        double[] coordinates = Regex.Split(point, separator).Select(double.Parse).ToArray();
 
         return new Point3D(coordinates[0], coordinates[1], coordinates[2]);
     }
