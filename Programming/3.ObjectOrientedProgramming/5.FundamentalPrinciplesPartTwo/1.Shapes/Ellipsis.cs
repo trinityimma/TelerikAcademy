@@ -1,8 +1,8 @@
 using System;
 
-class Ellipse : Shape
+class Ellipsis : Shape
 {
-    public Ellipse(double width, double height)
+    public Ellipsis(double width, double height)
         : base(width, height)
     {
     }

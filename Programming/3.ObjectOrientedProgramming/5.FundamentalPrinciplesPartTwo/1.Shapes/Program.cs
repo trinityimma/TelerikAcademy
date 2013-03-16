@@ -8,7 +8,7 @@ class Program
         {
             new Triangle(3, 4),
             new Rectangle(3, 4),
-            new Ellipse(3, 4),
+            new Ellipsis(3, 4),
             new Circle(3)
         };
 

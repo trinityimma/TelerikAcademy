@@ -1,6 +1,6 @@
 using System;
 
-class Circle : Ellipse
+class Circle : Ellipsis
 {
     public Circle(double width)
         : base(width, width)
