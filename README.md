@@ -61,9 +61,9 @@
 4. [Fundamental Principles - Part I](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/README.md)) - 02.03.2013
 5. [Fundamental Principles - Part II](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/README.md)) - 04.03.2013
 6. [Common Type System](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/6.CommonTypeSystem/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/6.CommonTypeSystem/README.md)) - 09.03.2013
-7. Workshop - Game Development
-8. Exam Preparation
-9. Exam
+7. Workshop - Game Development - 11.03.2013
+8. Exam Preparation - 18.03.2013
+9. Exam - 25.03.2013
 
 ## JavaScript - Part I
 
@@ -75,4 +75,6 @@
 6. [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/6.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/6.Arrays/README.md)) - 09.03.2013
 7. [Functions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/7.Functions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/7.Functions/README.md)) - 16.03.2013
 8. [Using Objects](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/8.Objects) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/8.Objects/README.md)) - 16.03.2013
-9. Strings
+9. Strings - 23.03.2013
+10. Exam Preparation - 23.03.2013
+11. Exam
