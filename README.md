@@ -61,7 +61,7 @@
 4. [Fundamental Principles - Part I](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/4.FundamentalPrinciplesPartOne/README.md)) - 02.03.2013
 5. [Fundamental Principles - Part II](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/5.FundamentalPrinciplesPartTwo/README.md)) - 04.03.2013
 6. [Common Type System](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/6.CommonTypeSystem/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/6.CommonTypeSystem/README.md)) - 09.03.2013
-7. Workshop - Game Development - 11.03.2013
+7. [Teamwork](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/7.Teamwork/) - 11.03.2013
 8. Exam Preparation - 18.03.2013
 9. Exam - 25.03.2013
 
