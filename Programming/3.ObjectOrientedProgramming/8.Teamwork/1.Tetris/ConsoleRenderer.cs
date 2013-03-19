@@ -114,9 +114,9 @@ class ConsoleRenderer : IRenderer
 
                 else RenderAt(scene, new Coordinates(row, col)); // Diry section ends, flush buffer
             }
-        }
 
-        RenderAt(scene, new Coordinates(this.Rows - 1, this.Cols - 1)); // Scene ends, flush buffer
+            RenderAt(scene, new Coordinates(row, this.Cols)); // Row ends, flush buffer
+        }
     }
 
     public void Clear()

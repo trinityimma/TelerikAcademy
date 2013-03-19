@@ -1,7 +1,10 @@
 .sass-cache
 config.rb
-# *.rar
-# *.zip
+
+*.rar
+*.zip
+
+$tf/
 
 # Build and Object Folders
 bin/
