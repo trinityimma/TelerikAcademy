@@ -18,7 +18,7 @@
   <Class Name="Engine" Collapsed="true">
     <Position X="9.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>kAqEQBAAAACQACAAAgAAEAKBEggAACAMQAIEACAAgAI=</HashCode>
+      <HashCode>kAqEQBAAAACQACAAAgAAEAKBEggAACBMQAIEACAAgAI=</HashCode>
       <FileName>Engine.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -55,19 +55,12 @@
   <Class Name="Tetris" Collapsed="true">
     <Position X="9.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAAAQBAAAEAABEAAAAAAAIAAAAAAAAAAABAABAQAgEA=</HashCode>
+      <HashCode>gAgAQBAAAAAABEAAAAAAAIAAAAAAQAAAABAABAQAgGA=</HashCode>
       <FileName>Tetris.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Tetromino" Collapsed="true">
     <Position X="5" Y="3.25" Width="1.5" />
-    <NestedTypes>
-      <Class Name="Tetromino.Factory" Collapsed="true">
-        <TypeIdentifier>
-          <NewMemberFileName>TetrominoFactory.cs</NewMemberFileName>
-        </TypeIdentifier>
-      </Class>
-    </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAABAAAAAAAAAEAAAAACAAQAAAAgAQAA=</HashCode>
       <FileName>Tetromino.cs</FileName>

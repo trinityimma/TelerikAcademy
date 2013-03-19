@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 partial class Engine
 {
-    private const int DefaultDelay = 125;
+    private const int DefaultDelay = 125; // 30
     private const int TurboDelay = DefaultDelay / 5;
 
     private int animationDelay = DefaultDelay;

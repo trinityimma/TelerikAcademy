@@ -12,7 +12,7 @@ abstract class GameObject : IDrawable
 
     public bool IsDestroyed { get; protected set; }
 
-    public GameObject(char[,] image, Color color, Coordinates position)
+    protected GameObject(char[,] image, Color color, Coordinates position)
     {
         this.Image = image;
         this.Position = position;

@@ -86,8 +86,13 @@ class ConsoleRenderer : IRenderer
 
     private bool IsDirty(Coordinates position)
     {
-        return this.context[position.Row, position.Col] != this.previousContext[position.Row, position.Col] ||
-               this.contextColor[position.Row, position.Col] != this.previousContextColor[position.Row, position.Col];
+        if (this.context[position.Row, position.Col] != this.previousContext[position.Row, position.Col])
+            return true;
+
+        if (this.contextColor[position.Row, position.Col] != this.previousContextColor[position.Row, position.Col])
+            return true;
+
+        return false;
     }
 
     // Console.WriteLine is never used

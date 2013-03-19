@@ -1,18 +1,17 @@
 ﻿using System;
 using System.Linq;
+using System.Media;
 using System.Threading;
 
 static class Tetris
 {
     // 20x10 is the standart field size
 
-    private const int FieldCols = 13; // Prefer odd numbers of cols for perfect centering
+    private const int FieldCols = 11; // Prefer odd numbers of cols for perfect centering
     private const int AsideCols = 15;
 
     private const int Rows = 20;
     private const int Cols = 1 + FieldCols + 1 + AsideCols; // "#...Field...# Aside "
-
-    private static readonly Coordinates fieldTopMiddle = new Coordinates(0, Tetris.FieldCols / 2);
 
     private static readonly KeyboardUserInterface userInterface = null;
     private static readonly ConsoleRenderer renderer = null;
@@ -29,6 +28,22 @@ static class Tetris
         engine.InitializeField(1, Tetris.FieldCols);
     }
 
+    private static void ShowIntro()
+    {
+        PrintMessage(
+            "Best viewed in bold Lucida Console with size 28." + Environment.NewLine,
+            "Play music? Y/N"
+        );
+
+        if (Console.ReadKey(true).Key == ConsoleKey.Y)
+        {
+            try { new SoundPlayer("../../Music.wav").PlayLooping(); }
+            catch { }
+        }
+
+        Console.Clear();
+    }
+
     private static void InitializeField()
     {
         // Bottom border
@@ -36,7 +51,7 @@ static class Tetris
             engine.Add(new Block(new Coordinates(Tetris.Rows - 1, i)));
 
         // Starts from negative number to avoid moving
-        // the tetromino outside the borders when created
+        // the tetromino outside the borders when created.
         //
         //       xx
         //        xx            xx
@@ -57,7 +72,7 @@ static class Tetris
     {
         int numberOfLines = 4;
 
-        int row = (Tetris.Rows  - numberOfLines) / 2;
+        int row = (Tetris.Rows - numberOfLines) / 2;
         int col = 1 + Tetris.FieldCols + 1 + 1;
 
         engine.Add(
@@ -70,10 +85,10 @@ static class Tetris
 
     private static void AttachEvents()
     {
-        userInterface.OnLeft   += engine.MoveLeft;
-        userInterface.OnRight  += engine.MoveRight;
+        userInterface.OnLeft += engine.MoveLeft;
+        userInterface.OnRight += engine.MoveRight;
         userInterface.OnRotate += engine.Rotate;
-        userInterface.OnDrop   += engine.Drop;
+        userInterface.OnDrop += engine.Drop;
 
         engine.OnMoveEnd += (sender, e) =>
             Console.Beep(100, 125); // Not async
@@ -94,39 +109,56 @@ static class Tetris
 
         engine.OnGameOver += (sender, e) =>
         {
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.SetCursorPosition(0, Tetris.Rows - 1);
+            Console.ForegroundColor = ConsoleColor.White;
 
-            Console.WriteLine();
-            Console.WriteLine("Thank you for playing!");
+            string message = "Thank you for playing...";
+
+            Console.SetCursorPosition((Cols - message.Length) / 2, Rows / 2);
+
+            Console.WriteLine(message);
+
+            Console.ReadKey(true);
         };
+    }
+
+    private static void AddControlled()
+    {
+        Action addControlled = () =>
+            engine.AddControlled(Tetromino.Get(new Coordinates(0, Tetris.FieldCols / 2)));
+
+        addControlled();
+
+        engine.OnMoveEnd += (sender, e) =>
+            addControlled();
+    }
+
+    public static void PrintMessage(params string[] messages)
+    {
+        Console.ForegroundColor = ConsoleColor.Gray;
+        Console.Clear();
+
+        foreach (string message in messages)
+            Console.WriteLine(message);
     }
 
     public static void Main()
     {
         Console.Title = "Tetris";
 
+        ShowIntro();
+
         InitializeField();
         InitializeAside();
 
         AttachEvents();
 
-        try
-        {
-            engine.AddControlled(Tetromino.Get(fieldTopMiddle));
+        AddControlled();
 
-            engine.OnMoveEnd += (sender, e) =>
-                engine.AddControlled(Tetromino.Get(fieldTopMiddle));
-
-            engine.Run();
-        }
+        try { engine.Run(); }
 
         catch (OTetrominoRotatedException ex)
         {
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.Clear();
-
-            Console.WriteLine(ex.Message);
+            PrintMessage(ex.Message);
         }
     }
 }
