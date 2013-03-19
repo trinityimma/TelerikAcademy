@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Block" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleRenderer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAICAAAAAAAAAkACAAIEAIIAAAAAAAAAABABAABAACI=</HashCode>
+      <FileName>ConsoleRenderer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Engine" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAqEQBAAAACQACAAAgAAEAKBEggAACAMQAIEACAAgAI=</HashCode>
+      <FileName>Engine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAEAwCAAAAIAAAAAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>GameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="KeyboardUserInterface" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAgAAAAAAEAAAAAAAAAAAAgAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>KeyboardUserInterface.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MovingObject" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAACAAAAAAEAAAAAAIQAAAAAAABAA=</HashCode>
+      <FileName>MovingObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OTetrominoRotatedException" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OTetrominoRotatedException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetris" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAQBAAAEAABEAAAAAAAIAAAAAAAAAAABAABAQAgEA=</HashCode>
+      <FileName>Tetris.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tetromino" Collapsed="true">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="Tetromino.Factory" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TetrominoFactory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAEAAAAACAAQAAAAgAQAA=</HashCode>
+      <FileName>Tetromino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utilities" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utilities.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextLine" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextLine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Coordinates" Collapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAACAAAEQAEBAAAAAQEIBgAACASAAgAAgAI=</HashCode>
+      <FileName>Coordinates.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="IDrawable" Collapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAgCAAAAIAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>IDrawable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IRenderer" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAEAAAAAAAIIAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>IRenderer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="IUserInterface" Collapsed="true">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAgAAAAAAEAAAAAAAAAAAAgAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>IUserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Color" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAGAARBAAAAAgAEQBAAABAABAAAAAAAAAAIADAAAAA=</HashCode>
+      <FileName>Color.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TetrominoType" Collapsed="true">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACyFAAE=</HashCode>
+      <FileName>TetrominoType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
