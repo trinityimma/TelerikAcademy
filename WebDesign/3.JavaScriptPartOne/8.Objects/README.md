@@ -35,5 +35,5 @@
    ```js
    var persons = { ... };
    var groupedByFname = group(persons,"firstname");
-   var groupedByAge= group(persons,"age");
+   var groupedByAge = group(persons,"age");
    ```
