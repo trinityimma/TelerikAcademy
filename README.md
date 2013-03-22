@@ -1,5 +1,3 @@
-# Trimester I
-
 ## C# - Part I
 
 1. Course Overview | [Introduction to Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming/README.md)) - 27.10.2012
@@ -78,3 +76,13 @@
 9. Strings - 23.03.2013
 10. Exam Preparation - 23.03.2013
 11. Exam
+
+---
+
+## High-Quality Programming Code
+
+1. Course Overview
+
+##  JavaScript - Part II
+
+1. Course Overview
