@@ -1,15 +1,13 @@
 ## Strings
 
 1. Write a JavaScript function reverses string and returns it
-
-    Example: "sample" -> "elpmas".
+    * Example: "sample" -> "elpmas".
 2. Write a JavaScript function to check if in a given expression the brackets are put correctly.
-
-    Example of correct expression: `((a+b)/5-d)`.
-    Example of incorrect expression: `)(a+b))`.
+    * Example of correct expression: `((a+b)/5-d)`.
+    * Example of incorrect expression: `)(a+b))`.
 3. Write a JavaScript function that finds how many times a substring is contained in a given text (perform case insensitive search).
 
-    Example: The target substring is "**in**". The text is as follows: `We are liv**in**g **in** an yellow submar**in**e. We don't have anyth**in**g else. **In**side the submar**in**e is very tight. So we are dr**in**k**in**g all the day. We will move out of it **in** 5 days.`
+    **Example**: The target substring is "**in**". The text is as follows: We are liv**in**g **in** an yellow submar**in**e. We don't have anyth**in**g else. **In**side the submar**in**e is very tight. So we are dr**in**k**in**g all the day. We will move out of it **in** 5 days.
 
     The result is: 9.
 4. You are given a text. Write a function that changes the text in all regions:
@@ -17,11 +15,11 @@
     * `<lowcase>text</lowcase>` to lowercase
     * `<mixcase>text</mixcase>` to mix casing (random)
     
-    `We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.`
+    **Example**: `We are <mixcase>living</mixcase> in a <upcase>yellow submarine</upcase>. We <mixcase>don't</mixcase> have <lowcase>anything</lowcase> else.`
     
     The expected result: `We are LiVinG in a YELLOW SUBMARINE. We dOn'T have anything else.`
 
-    Regions can be nested
+    Regions can be nested.
 5. Write a function that replaces non breaking white-spaces in a text with `&nbsp;`
 6. Write a function that extracts the content of a html page given as text. The function should return anything that is in a tag, without the tags:
 
