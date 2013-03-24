@@ -164,9 +164,9 @@ public class DocumentSystem
 
     private static void EncryptDocument(string name)
     {
-        Document[] docs = allDocuments.Where(doc => doc.Name == name).ToArray();
+        var docs = allDocuments.Where(doc => doc.Name == name);
 
-        if (docs.Length == 0)
+        if (!docs.GetEnumerator().MoveNext())
         {
             Console.WriteLine("Document not found: " + name);
             return;
@@ -177,17 +177,19 @@ public class DocumentSystem
             if (doc is IEncryptable)
             {
                 (doc as IEncryptable).Encrypt();
+
                 Console.WriteLine("Document encrypted: " + name);
             }
+
             else Console.WriteLine("Document does not support encryption: " + name);
         }
     }
 
     private static void DecryptDocument(string name)
     {
-        Document[] docs = allDocuments.Where(doc => doc.Name == name).ToArray();
+        var docs = allDocuments.Where(doc => doc.Name == name);
 
-        if (docs.Length == 0)
+        if (!docs.GetEnumerator().MoveNext())
         {
             Console.WriteLine("Document not found: " + name);
             return;
@@ -198,8 +200,10 @@ public class DocumentSystem
             if (doc is IEncryptable)
             {
                 (doc as IEncryptable).Decrypt();
+
                 Console.WriteLine("Document decrypted: " + name);
             }
+
             else Console.WriteLine("Document does not support decryption: " + name);
         }
     }
@@ -221,9 +225,9 @@ public class DocumentSystem
 
     private static void ChangeContent(string name, string content)
     {
-        Document[] docs = allDocuments.Where(doc => doc.Name == name).ToArray();
+        var docs = allDocuments.Where(doc => doc.Name == name);
 
-        if (docs.Length == 0)
+        if (!docs.GetEnumerator().MoveNext())
         {
             Console.WriteLine("Document not found: " + name);
             return;
@@ -234,8 +238,10 @@ public class DocumentSystem
             if (doc is IEditable)
             {
                 (doc as IEditable).ChangeContent(content);
+
                 Console.WriteLine("Document content changed: " + name);
             }
+
             else Console.WriteLine("Document is not editable: " + name);
         }
     }
