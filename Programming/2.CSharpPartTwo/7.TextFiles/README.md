@@ -59,7 +59,16 @@
 * Write a program that extracts from given XML file all the text without the tags. Example:
     
     ```xml
-    <?xml version="1.0"?><student><name>Pesho</name><age>21</age><interests count="3"><interest>Games</interest><interest>C#</interest><interest>Java</interest></interests></student>
+    <?xml version="1.0"?>
+    <student>
+        <name>Pesho</name>
+        <age>21</age>
+        <interests count="3">
+            <interest>Games</interest>
+            <interest>C#</interest>
+            <interest>Java</interest>
+        </interests>
+    </student>
     ```
 * Write a program that deletes from a text file all words that start with the prefix "test". Words contain only the symbols `0...9, a...z, A...Z, _`.
 * Write a program that removes from a text file all words listed in given another text file. Handle all possible exceptions in your methods.
