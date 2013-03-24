@@ -85,10 +85,10 @@ static class Tetris
 
     private static void AttachEvents()
     {
-        userInterface.OnLeft += engine.MoveLeft;
-        userInterface.OnRight += engine.MoveRight;
+        userInterface.OnLeft   += engine.MoveLeft;
+        userInterface.OnRight  += engine.MoveRight;
         userInterface.OnRotate += engine.Rotate;
-        userInterface.OnDrop += engine.Drop;
+        userInterface.OnDrop   += engine.Drop;
 
         engine.OnMoveEnd += (sender, e) =>
             Console.Beep(100, 125); // Not async
@@ -145,7 +145,7 @@ static class Tetris
     {
         Console.Title = "Tetris";
 
-        ShowIntro();
+        //ShowIntro();
 
         InitializeField();
         InitializeAside();

@@ -49,6 +49,7 @@ partial class Engine
         return false;
     }
 
+    // TODO: Remove blocks
     private bool IsRowFull(int row)
     {
         for (int col = this.fieldStartCol; col <= this.fieldEndCol; col++)
