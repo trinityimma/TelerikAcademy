@@ -2,7 +2,7 @@
 
 abstract class EncryptableBinaryDocument : BinaryDocument, IEncryptable
 {
-    public bool IsEncrypted { get; set; }
+    public bool IsEncrypted { get; private set; }
 
     public void Encrypt()
     {
