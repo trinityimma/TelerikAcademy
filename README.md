@@ -79,7 +79,7 @@
 
 ---
 
-## High-Quality Programming Code
+## High-Quality Code
 
 1. Course Overview
 
