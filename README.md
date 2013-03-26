@@ -61,7 +61,7 @@
 6. [Common Type System](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/6.CommonTypeSystem/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/6.CommonTypeSystem/README.md)) - 09.03.2013
 7. [Teamwork](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/7.Teamwork/) - 11.03.2013
 8. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/8.ExamPreparation/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/8.ExamPreparation/README.md)) - 18.03.2013
-9. Exam - 25.03.2013
+9. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/3.ObjectOrientedProgramming/9.Exam/) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/3.ObjectOrientedProgramming/9.Exam/README.md)) - 25.03.2013
 
 ## JavaScript - Part I
 
