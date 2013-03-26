@@ -16,10 +16,12 @@ abstract class Node
 
     public override string ToString()
     {
-        Node.Renderer.Clear();
-
         this.Render();
 
-        return Node.Renderer.ToString();
+        string info = Node.Renderer.ToString();
+
+        Node.Renderer.Clear();
+
+        return info;
     }
 }
