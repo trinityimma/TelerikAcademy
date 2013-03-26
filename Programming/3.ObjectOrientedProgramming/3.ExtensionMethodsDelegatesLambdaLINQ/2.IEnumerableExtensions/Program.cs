@@ -43,7 +43,7 @@ static class Program
 
     static double Average<T>(this IEnumerable<T> items)
     {
-        return Convert.ToDouble(items.Sum()) / Convert.ToDouble(items.Count()); // TODO: Optimize
+        return Convert.ToDouble(items.Sum()) / items.Count(); // TODO: Optimize
     }
 
     static void Main()
