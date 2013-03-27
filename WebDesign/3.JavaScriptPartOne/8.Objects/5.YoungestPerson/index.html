@@ -7,9 +7,9 @@
       , { firstName: "Bay", lastName: "Ivan", age: 81 }
     ]
 
-      , youngest = persons.sort(function(a, b) {
-            return a.age - b.age
-        })[0]
+      , youngest = persons.reduce(function(a, b) {
+            return a.age - b.age < 0 ? a : b
+        })
 
     console.log(youngest.firstName, youngest.lastName)
 }())
