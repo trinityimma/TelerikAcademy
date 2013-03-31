@@ -1,0 +1,11 @@
+<script>
+;(function() {
+    'use strict';
+
+    function extractText(html) {
+        return html.replace(/<(.*?)>/g, '')
+    }
+
+    console.log(extractText('<html><head><title>Sample site</title></head><body><div>text<div>more text</div>and more...</div>in body</body></html>'))
+}())
+</script>

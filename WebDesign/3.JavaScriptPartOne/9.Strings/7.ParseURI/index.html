@@ -1,0 +1,13 @@
+<script>
+;(function() {
+    'use strict';
+
+    function parse(uri) {
+        var match = /(.*):\/\/(.*?)(\/.*)/.exec(uri)
+
+        return { protocol: match[1], server: match[2], resource: match[3] }
+    }
+
+    console.log(parse('http://www.devbg.org/forum/index.php'))
+}())
+</script>
