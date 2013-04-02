@@ -38,7 +38,7 @@ var Solve = (function() {
     }
 
     function executeCommand(name, cmd, list) {
-        console.debug('NAME:', name, 'CMD:', cmd, 'LIST', list)
+        console.debug('NAME:', name, 'CMD:', cmd, 'LIST:', list)
 
         if (!(cmd in commands))
             return console.error('INVALID CMD:', cmd)
