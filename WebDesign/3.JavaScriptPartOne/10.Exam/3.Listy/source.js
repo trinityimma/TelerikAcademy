@@ -26,7 +26,7 @@ var Solve = (function() {
                 return parseInt(commands.sum(arr) / arr.length, 10)
             }
 
-            , make: function(arr) {
+            , assign: function(arr) {
                 return arr
             }
         }
@@ -59,7 +59,7 @@ var Solve = (function() {
             return console.error('INVALID ELEMENT:', e.message)
         }
 
-        vars[name] = cmd !== 'make' && [commands[cmd](result)] || result
+        vars[name] = cmd !== 'assign' && [commands[cmd](result)] || result
 
         console.debug('RESULT:', vars[name])
     }
@@ -78,7 +78,7 @@ var Solve = (function() {
 
             console.debug('P1:', match[1], 'P2:', match[2], 'P3:', match[3])
 
-            executeCommand(match[1], match[2] || 'make', match[3].split(/\s*,\s*/))
+            executeCommand(match[1], match[2] || 'assign', match[3].split(/\s*,\s*/))
         }
 
         catch (e) {
