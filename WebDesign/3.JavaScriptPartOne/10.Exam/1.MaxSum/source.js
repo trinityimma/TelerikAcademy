@@ -4,8 +4,8 @@ var Solve = (function() {
     return function(args) {
         args.shift() // N
 
-        var currentSum = 0
-          , maxSum = Number.NEGATIVE_INFINITY
+        var currentSum = Number.NEGATIVE_INFINITY
+          , maxSum = currentSum
 
         args.forEach(function(el) {
             currentSum = +el + Math.max(currentSum, 0)
