@@ -176,7 +176,7 @@ Write method `Solve` that accepts the commands as an array and prints the result
 
 ### Input
 
-* The method Solve accepts an array of strings.
+* The method `Solve` accepts an array of strings.
 
 ### Output
 
