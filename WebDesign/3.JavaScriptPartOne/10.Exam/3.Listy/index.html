@@ -1,0 +1,38 @@
+<script src="source.js"></script>
+
+<script>
+;(function() {
+    'use strict';
+
+    var test = 2
+
+    if (test === 0)
+        console.log(Solve([
+            'def func sum[5, 3, 7, 2, 6, 3]',
+            'def func2 [5, 3, 7, 2, 6, 3]',
+            'def func3 min[func2]',
+            'def func4 max[5, 3, 7, 2, 6, 3]',
+            'def func5 avg[5, 3, 7, 2, 6, 3]',
+            'def func6 sum[func2, func3, func4 ]',
+            'sum[func6, func4]',
+        ])) // 42
+
+    else if (test === 1)
+        console.log(Solve([
+            'def func sum[1, 2, 3, -6]',
+            'def newList [func, 10, 1]',
+            'def newFunc sum[func, 100, newList]',
+            '[newFunc]',
+        ])) // 111
+
+    else if(test === 2)
+        console.log(Solve([
+            '  def  $_Пешо@  [ 0 ] ',
+            '  def  func  [ 1, 2 , 3, 4, 5 ] ',
+            ' def func[gosho]',
+            '  def func combo[func]',
+            ' def avg combo1 combo2',
+            '  avg[$_Пешо@, func]',
+        ])) // 2
+}())
+</script>
