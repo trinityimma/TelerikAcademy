@@ -47,7 +47,7 @@ var Solve = (function() {
 
         try {
             list.forEach(function(el) {
-                if (!isNaN(el)) result.push(+el)
+                if (!isNaN(+el)) result.push(+el)
 
                 else if (el in vars) addRange(result, vars[el])
 
