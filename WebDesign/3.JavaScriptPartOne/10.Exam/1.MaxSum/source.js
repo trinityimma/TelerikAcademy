@@ -2,7 +2,7 @@ var Solve = (function() {
     'use strict';
 
     return function(args) {
-        args.shift()
+        args.shift() // N
 
         var arr = args.map(function(n) {
             return +n
