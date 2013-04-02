@@ -168,7 +168,6 @@ You are given an array of strings (commands). Execute all the commands and **ret
 * "`- 5`" is not valid number but "`-5`" is.
 * Variable's names are case sensitive.
 * Variables cannot be overwritten.
-* Each string will be a valid Listy command.
 * Variable can contains definition of a number or list of numbers
 * If there is no operation on the last line, command will looks like "[var1]". Otherwise if there is a final command it'll be in format: "`sum[var1, var2]`" (or other operation)
 
