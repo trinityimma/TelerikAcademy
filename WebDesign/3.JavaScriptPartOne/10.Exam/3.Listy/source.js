@@ -33,10 +33,6 @@ var Solve = (function() {
         })
     }
 
-    function isNumber(str) {
-        return +str === +str
-    }
-
     function executeCommand(name, cmd, list) {
         console.debug('NAME:', name, 'CMD:', cmd, 'LIST', list)
 
@@ -47,7 +43,7 @@ var Solve = (function() {
 
         try {
             list.forEach(function(el) {
-                if (isNumber(el)) result.push(+el)
+                if (!isNaN(el)) result.push(+el)
 
                 else if (el in vars) addRange(result, vars[el])
 
