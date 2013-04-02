@@ -6,7 +6,7 @@
 
 ## 1. Max Sum
 
-You are given an integer array `arr`, consisting of `N` integers. Find the maximum possible sum of consecutive numbers in `arr`. For example: if the array `arr` consists of the numbers 1, 6, -9, 4, 4, -2, 10, -1, the maximum possible sum of consecutive numbers is 16 (the consecutive numbers are 4, 4, -2 and 10)
+You are given an integer array `arr`, consisting of `N` integers. Find the maximum possible sum of consecutive numbers in `arr`. For example: if the array `arr` consists of the numbers 1, 6, -9, 4, 4, -2, 10, -1, the maximum possible sum of consecutive numbers is 16 (the consecutive numbers are 4, 4, -2 and 10).
 
 Your task is to write a JavaScript method named "`Solve`" that solves the problem.
 
