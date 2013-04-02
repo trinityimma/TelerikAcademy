@@ -88,7 +88,7 @@ The method `Solve` accepts a zero-based array of strings. The arguments are as f
 
 * `args[0]` contains `M` and `N` separated by a single space (" ")
 * `args[1]` contains `R` and `C` - the start position (the star position is zero-based)
-* `args[2]` to `args[N + 2]` contain exactly M characters(only the letters `'l', 'r', 'u' or 'd'`)
+* `args[2]` to `args[N + 2]` contain exactly M characters(only the letters `l`, `r`, `u` or `d`)
 
 ### Output
 
