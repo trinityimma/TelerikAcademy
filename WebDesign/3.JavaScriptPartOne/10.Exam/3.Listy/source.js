@@ -13,15 +13,19 @@ var Solve = (function() {
                     return a + b
                 })
             }
+
             , min: function(arr) {
                 return Math.min.apply(Math, arr)
             }
+
             , max: function(arr) {
                 return Math.max.apply(Math, arr)
             }
+
             , avg: function(arr) {
                 return parseInt(commands.sum(arr) / arr.length, 10)
             }
+
             , make: function(arr) {
                 return arr
             }
