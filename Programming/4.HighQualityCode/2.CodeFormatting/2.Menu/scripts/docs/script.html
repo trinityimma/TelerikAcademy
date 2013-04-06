@@ -54,7 +54,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> J = (<span class="keyword">function</span>() {
+            <div class="content"><div class='highlight'><pre><span class="keyword">this</span>.J = (<span class="keyword">function</span>() {
     <span class="string">'use strict'</span>;</pre></div></div>
             
         </li>
@@ -267,6 +267,8 @@ el.on()</code></pre>
 
             </div>
             
+            <div class="content"><div class='highlight'><pre>    J.prototype = (<span class="keyword">function</span>() {</pre></div></div>
+            
         </li>
         
         
@@ -281,11 +283,9 @@ el.on()</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="function"><span class="keyword">function</span> <span class="title">_showHide</span><span class="params">(el, show)</span> {</span>
-        el.style.display = show ? <span class="string">'block'</span> : <span class="string">'none'</span>
-    }
-
-    J.prototype =</pre></div></div>
+            <div class="content"><div class='highlight'><pre>        <span class="function"><span class="keyword">function</span> <span class="title">_showHide</span><span class="params">(self, show)</span> {</span>
+            <span class="keyword">return</span> self.css(<span class="string">'display'</span>, show ? <span class="string">'block'</span> : <span class="string">'none'</span>)
+        }</pre></div></div>
             
         </li>
         
@@ -296,14 +296,14 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-17">&#182;</a>
               </div>
-              <p>Executes the given callback function for every element.</p>
+              <p>Gets the value of the CSS property for the first element.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        { each: <span class="keyword">function</span>(callback) {
-            <span class="keyword">this</span>.elements.forEach(callback)
+            <div class="content"><div class='highlight'><pre>        <span class="function"><span class="keyword">function</span> <span class="title">_getCSS</span><span class="params">(self, prop)</span> {</span>
+            <span class="keyword">var</span> el = self.elements[<span class="number">0</span>]
 
-            <span class="keyword">return</span> <span class="keyword">this</span>
+            <span class="keyword">return</span> getComputedStyle(el).getPropertyValue(prop)
         }</pre></div></div>
             
         </li>
@@ -315,15 +315,17 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-18">&#182;</a>
               </div>
-              <p>Saves the current CSS <code>display</code> property of each element and sets it to <code>none</code>.</p>
+              <p>Sets the CSS property for every element to the given value.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        , hide: <span class="keyword">function</span>() {
-            <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
-                _showHide(el, <span class="literal">false</span>)
+            <div class="content"><div class='highlight'><pre>        <span class="function"><span class="keyword">function</span> <span class="title">_setCSS</span><span class="params">(self, prop, value)</span> {</span>
+            self.each(<span class="keyword">function</span>(el) {
+                el.style[prop] = value
             })
-        }</pre></div></div>
+        }
+
+        <span class="keyword">var</span> prototype =</pre></div></div>
             
         </li>
         
@@ -334,15 +336,15 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-19">&#182;</a>
               </div>
-              <p>Restores the previous <code>display</code> property.</p>
+              <p>Executes the given callback function for every element.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        , show: <span class="keyword">function</span>() {
-           <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
-                _showHide(el, <span class="literal">true</span>)
-            })
-        }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>            { each: <span class="keyword">function</span>(callback) {
+                <span class="keyword">this</span>.elements.forEach(callback)
+
+                <span class="keyword">return</span> <span class="keyword">this</span>
+            }</pre></div></div>
             
         </li>
         
@@ -353,15 +355,13 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
-              <p>Attaches an event listener to every element.</p>
+              <p>Saves the current CSS <code>display</code> property of each element and sets it to <code>none</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        , on: <span class="keyword">function</span>(event, callback) {
-            <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
-                el.addEventListener(event, callback, <span class="literal">false</span>)
-            })
-        }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>            , hide: <span class="keyword">function</span>() {
+                <span class="keyword">return</span> _showHide(<span class="keyword">this</span>, <span class="literal">false</span>)
+            }</pre></div></div>
             
         </li>
         
@@ -372,13 +372,13 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
-              <p><strong>TODO</strong>: Add <code>mouseenter</code> event</p>
+              <p>Restores the previous <code>display</code> property.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        , mouseenter: <span class="keyword">function</span>(callback) {
-            <span class="keyword">return</span> <span class="keyword">this</span>.on(<span class="string">'mouseover'</span>, callback)
-        }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>            , show: <span class="keyword">function</span>() {
+               <span class="keyword">return</span> _showHide(<span class="keyword">this</span>, <span class="literal">true</span>)
+            }</pre></div></div>
             
         </li>
         
@@ -389,14 +389,15 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-22">&#182;</a>
               </div>
-              <p><strong>TODO</strong>: Add <code>mouseleave</code> event</p>
+              <p>Attaches an event listener to every element.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        , mouseleave: <span class="keyword">function</span>(callback) {
-            <span class="keyword">return</span> <span class="keyword">this</span>.on(<span class="string">'mouseout'</span>, callback)
-        }
-    }</pre></div></div>
+            <div class="content"><div class='highlight'><pre>            , on: <span class="keyword">function</span>(event, callback) {
+                <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
+                    el.addEventListener(event, callback, <span class="literal">false</span>)
+                })
+            }</pre></div></div>
             
         </li>
         
@@ -406,6 +407,63 @@ el.on()</code></pre>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p><strong>TODO</strong>: Add <code>mouseenter</code> event</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            , mouseenter: <span class="keyword">function</span>(callback) {
+                <span class="keyword">return</span> <span class="keyword">this</span>.on(<span class="string">'mouseover'</span>, callback)
+            }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p><strong>TODO</strong>: Add <code>mouseleave</code> event</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            , mouseleave: <span class="keyword">function</span>(callback) {
+                <span class="keyword">return</span> <span class="keyword">this</span>.on(<span class="string">'mouseout'</span>, callback)
+            }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>Get or set the CSS property.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            , css: <span class="keyword">function</span>(property, value) {
+                <span class="keyword">return</span> value ?
+                    _setCSS(<span class="keyword">this</span>, property, value) :
+                    _getCSS(<span class="keyword">this</span>, property)
+            }
+        }
+
+        <span class="keyword">return</span> prototype
+    }())</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
               </div>
               <p>Exposes the constructor to the global scope.</p>
 
@@ -417,11 +475,11 @@ el.on()</code></pre>
         </li>
         
         
-        <li id="section-24">
+        <li id="section-27">
             <div class="annotation">
               
               <div class="pilwrap for-h2">
-                <a class="pilcrow" href="#section-24">&#182;</a>
+                <a class="pilcrow" href="#section-27">&#182;</a>
               </div>
               <h2>J plugin</h2>
 <p>Each plugin should extend the <code>prototype</code> to make the new methods available to all <code>J</code> instances.</p>
@@ -431,11 +489,11 @@ el.on()</code></pre>
         </li>
         
         
-        <li id="section-25">
+        <li id="section-28">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-25">&#182;</a>
+                <a class="pilcrow" href="#section-28">&#182;</a>
               </div>
               <p><strong>Usage</strong>:</p>
 <pre><code> &lt;div data-menu&gt;
@@ -450,24 +508,24 @@ el.on()</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>;(<span class="keyword">function</span>() {
+            <div class="content"><div class='highlight'><pre>;(<span class="keyword">function</span>($) {
     <span class="string">'use strict'</span>;
 
     <span class="keyword">var</span> _delay = <span class="number">500</span>
 
-    J.prototype.menu = <span class="keyword">function</span>() {
+    $.prototype.menu = <span class="keyword">function</span>() {
         <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
-            <span class="keyword">var</span> self = J(el)
-              , content = J(<span class="string">'[data-content]'</span>, self)</pre></div></div>
+            <span class="keyword">var</span> self = $(el)
+              , content = $(<span class="string">'[data-content]'</span>, self)</pre></div></div>
             
         </li>
         
         
-        <li id="section-26">
+        <li id="section-29">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-26">&#182;</a>
+                <a class="pilcrow" href="#section-29">&#182;</a>
               </div>
               <p>Shows the menu after a specific delay.</p>
 
@@ -478,11 +536,11 @@ el.on()</code></pre>
         </li>
         
         
-        <li id="section-27">
+        <li id="section-30">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-27">&#182;</a>
+                <a class="pilcrow" href="#section-30">&#182;</a>
               </div>
               <p>Function helper for the <code>show</code> and <code>hide</code> methods.</p>
 
@@ -493,11 +551,11 @@ el.on()</code></pre>
         </li>
         
         
-        <li id="section-28">
+        <li id="section-31">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-28">&#182;</a>
+                <a class="pilcrow" href="#section-31">&#182;</a>
               </div>
               <p>Remove the previous timer, when the user triggers the event too rapidly.</p>
 
@@ -513,11 +571,11 @@ el.on()</code></pre>
         </li>
         
         
-        <li id="section-29">
+        <li id="section-32">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-29">&#182;</a>
+                <a class="pilcrow" href="#section-32">&#182;</a>
               </div>
               <p>Hides the content at start.
 Use CSS to do it before the plugin is loaded to avoid jumping.</p>
@@ -529,11 +587,11 @@ Use CSS to do it before the plugin is loaded to avoid jumping.</p>
         </li>
         
         
-        <li id="section-30">
+        <li id="section-33">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-30">&#182;</a>
+                <a class="pilcrow" href="#section-33">&#182;</a>
               </div>
               <p><strong>TODO</strong>: Touch events</p>
 
@@ -550,18 +608,18 @@ Use CSS to do it before the plugin is loaded to avoid jumping.</p>
         </li>
         
         
-        <li id="section-31">
+        <li id="section-34">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-31">&#182;</a>
+                <a class="pilcrow" href="#section-34">&#182;</a>
               </div>
               <p>Initialize all menus.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    J(<span class="string">'[data-menu]'</span>).menu()
-}())</pre></div></div>
+            <div class="content"><div class='highlight'><pre>    $(<span class="string">'[data-menu]'</span>).menu()
+}(J))</pre></div></div>
             
         </li>
         

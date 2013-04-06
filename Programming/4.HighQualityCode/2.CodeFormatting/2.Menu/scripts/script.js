@@ -5,7 +5,7 @@
 /*jshint newcap: false */
 
 // Everything inside is visible only in the module.
-var J = (function() {
+this.J = (function() {
     'use strict';
 
     // ### Helper functions
@@ -83,53 +83,73 @@ var J = (function() {
     // Is the same as
     //
     //     J('p').hide().each().on()
-
-    // Function helper for the `show` and `hide` methods.
-    //
-    // **TODO**: Restore the original display (`inline, table ...`).
-    function _showHide(el, show) {
-        el.style.display = show ? 'block' : 'none'
-    }
-
-    J.prototype =
-        // Executes the given callback function for every element.
-        { each: function(callback) {
-            this.elements.forEach(callback)
-
-            return this
+    J.prototype = (function() {
+        // Function helper for the `show` and `hide` methods.
+        //
+        // **TODO**: Restore the original display (`inline, table ...`).
+        function _showHide(self, show) {
+            return self.css('display', show ? 'block' : 'none')
         }
 
-        // Saves the current CSS `display` property of each element and sets it to `none`.
-        , hide: function() {
-            return this.each(function(el) {
-                _showHide(el, false)
+        // Gets the value of the CSS property for the first element.
+        function _getCSS(self, prop) {
+            var el = self.elements[0]
+
+            return getComputedStyle(el).getPropertyValue(prop)
+        }
+
+        // Sets the CSS property for every element to the given value.
+        function _setCSS(self, prop, value) {
+            self.each(function(el) {
+                el.style[prop] = value
             })
         }
 
-        // Restores the previous `display` property.
-        , show: function() {
-           return this.each(function(el) {
-                _showHide(el, true)
-            })
+        var prototype =
+            // Executes the given callback function for every element.
+            { each: function(callback) {
+                this.elements.forEach(callback)
+
+                return this
+            }
+
+            // Saves the current CSS `display` property of each element and sets it to `none`.
+            , hide: function() {
+                return _showHide(this, false)
+            }
+
+            // Restores the previous `display` property.
+            , show: function() {
+               return _showHide(this, true)
+            }
+
+            // Attaches an event listener to every element.
+            , on: function(event, callback) {
+                return this.each(function(el) {
+                    el.addEventListener(event, callback, false)
+                })
+            }
+
+            // **TODO**: Add `mouseenter` event
+            , mouseenter: function(callback) {
+                return this.on('mouseover', callback)
+            }
+
+            // **TODO**: Add `mouseleave` event
+            , mouseleave: function(callback) {
+                return this.on('mouseout', callback)
+            }
+
+            // Get or set the CSS property.
+            , css: function(property, value) {
+                return value ?
+                    _setCSS(this, property, value) :
+                    _getCSS(this, property)
+            }
         }
 
-        // Attaches an event listener to every element.
-        , on: function(event, callback) {
-            return this.each(function(el) {
-                el.addEventListener(event, callback, false)
-            })
-        }
-
-        // **TODO**: Add `mouseenter` event
-        , mouseenter: function(callback) {
-            return this.on('mouseover', callback)
-        }
-
-        // **TODO**: Add `mouseleave` event
-        , mouseleave: function(callback) {
-            return this.on('mouseout', callback)
-        }
-    }
+        return prototype
+    }())
 
     // Exposes the constructor to the global scope.
     return J
@@ -149,15 +169,15 @@ var J = (function() {
 //              <li><a href="#">Menu Item 3</a></li>
 //          </ul>
 //      </div>
-;(function() {
+;(function($) {
     'use strict';
 
     var _delay = 500
 
-    J.prototype.menu = function() {
+    $.prototype.menu = function() {
         this.each(function(el) {
-            var self = J(el)
-              , content = J('[data-content]', self)
+            var self = $(el)
+              , content = $('[data-content]', self)
 
                 // Shows the menu after a specific delay.
               , timer
@@ -186,6 +206,6 @@ var J = (function() {
     }
 
     // Initialize all menus.
-    J('[data-menu]').menu()
-}())
+    $('[data-menu]').menu()
+}(J))
 
