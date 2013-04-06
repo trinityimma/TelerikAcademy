@@ -10,7 +10,7 @@ this.J = (function() {
 
     // ### Helper functions
 
-    // Checks if the object is a DOM Element.
+    // Checks if the object is a DOM Node.
     function _isNode(obj) {
         return obj instanceof Node
     }
@@ -49,7 +49,7 @@ this.J = (function() {
 
     // ### Constructor
 
-    // The constructor accepts a string `J('p, div')` or a DOM Node (`J(document.getElementById('id'))`.
+    // The constructor accepts a string `J('p, div')` or a DOM Node `J(document.getElementById('id'))`.
     var J = function(selector, context) {
         // This check allows us to make new instances without the `new` keyword.
         //
