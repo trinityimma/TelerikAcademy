@@ -5,7 +5,7 @@ namespace GSM.Hardware
 {
     public class Battery
     {
-        public enum Type { LiIon, NiMH, NiCd };
+        public enum Type { LiIon, NiMH, NiCd }
 
         // Private Constants
         private const uint MaxIdleHours = 1000;

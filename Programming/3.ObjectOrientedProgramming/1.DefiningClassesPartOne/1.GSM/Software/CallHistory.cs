@@ -12,7 +12,7 @@ namespace GSM.Software
         // Public Properties
         public int Count
         {
-            get{ return this.callHistory.Count; }
+            get { return this.callHistory.Count; }
         }
 
         // Methods
@@ -55,7 +55,7 @@ namespace GSM.Software
 
         public decimal CalculatePrice(decimal pricePerMinute)
         {
-            return GetStartedMinutes() * pricePerMinute;
+            return this.GetStartedMinutes() * pricePerMinute;
         }
 
         public override string ToString()

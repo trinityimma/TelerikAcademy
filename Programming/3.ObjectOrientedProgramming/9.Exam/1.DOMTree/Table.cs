@@ -12,7 +12,7 @@ class Table : ElementNode
     public Table AppendChild(params Node[] childNodes)
     {
         base.AppendChild(childNodes.Where(child =>
-            child is TableRow
+            (child is ElementNode) && (child as ElementNode).TagName == "tr"
         ).ToArray());
 
         return this;
