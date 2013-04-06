@@ -515,9 +515,7 @@ el.on()</code></pre>
 
         <span class="keyword">return</span> <span class="keyword">function</span>() {
             <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
-                <span class="keyword">var</span> self = $(el)
-
-                  , content = $(<span class="string">'[data-content]'</span>, self)</pre></div></div>
+                <span class="keyword">var</span> self = $(el)</pre></div></div>
             
         </li>
         
@@ -528,11 +526,11 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-29">&#182;</a>
               </div>
-              <p>Shows the menu after a specific delay.</p>
+              <p><strong>TODO</strong>: Nested menus</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>                  , timer</pre></div></div>
+            <div class="content"><div class='highlight'><pre>                  , content = $(<span class="string">'[data-content]'</span>, self)</pre></div></div>
             
         </li>
         
@@ -543,11 +541,11 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-30">&#182;</a>
               </div>
-              <p>Function helper for the <code>show</code> and <code>hide</code> methods.</p>
+              <p>Shows the menu after a specific delay.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>                <span class="function"><span class="keyword">function</span> <span class="title">_showHide</span><span class="params">(show)</span> {</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre>                  , timer</pre></div></div>
             
         </li>
         
@@ -557,6 +555,21 @@ el.on()</code></pre>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-31">&#182;</a>
+              </div>
+              <p>Function helper for the <code>show</code> and <code>hide</code> methods.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>                <span class="function"><span class="keyword">function</span> <span class="title">_showHide</span><span class="params">(show)</span> {</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-32">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-32">&#182;</a>
               </div>
               <p>Remove the previous timer, when the user triggers the event too rapidly.</p>
 
@@ -572,11 +585,11 @@ el.on()</code></pre>
         </li>
         
         
-        <li id="section-32">
+        <li id="section-33">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-32">&#182;</a>
+                <a class="pilcrow" href="#section-33">&#182;</a>
               </div>
               <p>Hides the content at start.
 Use CSS to do it before the plugin is loaded to avoid jumping.</p>
@@ -588,11 +601,11 @@ Use CSS to do it before the plugin is loaded to avoid jumping.</p>
         </li>
         
         
-        <li id="section-33">
+        <li id="section-34">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-33">&#182;</a>
+                <a class="pilcrow" href="#section-34">&#182;</a>
               </div>
               <p><strong>TODO</strong>: Touch events</p>
 
@@ -610,11 +623,11 @@ Use CSS to do it before the plugin is loaded to avoid jumping.</p>
         </li>
         
         
-        <li id="section-34">
+        <li id="section-35">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-34">&#182;</a>
+                <a class="pilcrow" href="#section-35">&#182;</a>
               </div>
               <p>Initialize all menus.</p>
 

@@ -179,6 +179,7 @@ var J = (function() {
             this.each(function(el) {
                 var self = $(el)
 
+                    // **TODO**: Nested menus
                   , content = $('[data-content]', self)
 
                     // Shows the menu after a specific delay.
