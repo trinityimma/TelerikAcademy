@@ -86,7 +86,7 @@ var J = (function() {
 
     // Function helper for the `show` and `hide` methods.
     //
-    // **TODO**: Restore the original dipsplay (`inline, table ...`).
+    // **TODO**: Restore the original display (`inline, table ...`).
     function _showHide(el, show) {
         el.style.display = show ? 'block' : 'none'
     }
@@ -173,7 +173,7 @@ var J = (function() {
             }
 
             // Hides the content at start.
-            // Use css to do it before the plugin is loaded to avoid jumping.
+            // Use CSS to do it before the plugin is loaded to avoid jumping.
             content.hide()
 
             // **TODO**: Touch events
