@@ -54,7 +54,7 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">this</span>.J = (<span class="keyword">function</span>() {
+            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> J = (<span class="keyword">function</span>() {
     <span class="string">'use strict'</span>;</pre></div></div>
             
         </li>
@@ -494,10 +494,11 @@ el.on()</code></pre>
                 <a class="pilcrow" href="#section-28">&#182;</a>
               </div>
               <p><strong>Usage</strong>:</p>
-<pre><code> &lt;div data-menu&gt;
+<p>Use <code>data-*</code> for scripting and <code>class</code> for styling.</p>
+<pre><code> &lt;div class=&quot;menu&quot; data-menu&gt;
      &lt;a href=&quot;#&quot;&gt;Menu&lt;/a&gt;
 
-     &lt;ul data-content&gt;
+     &lt;ul class=&quot;menu-content&quot; data-content&gt;
          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu Item 1&lt;/a&gt;&lt;/li&gt;
          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu Item 2&lt;/a&gt;&lt;/li&gt;
          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Menu Item 3&lt;/a&gt;&lt;/li&gt;
@@ -509,13 +510,14 @@ el.on()</code></pre>
             <div class="content"><div class='highlight'><pre>;(<span class="keyword">function</span>($) {
     <span class="string">'use strict'</span>;
 
-    <span class="keyword">var</span> _delay = <span class="number">500</span>
+    $.prototype.menu = (<span class="keyword">function</span>() {
+        <span class="keyword">var</span> _delay = <span class="number">500</span>
 
-    $.prototype.menu = <span class="keyword">function</span>() {
-        <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
-            <span class="keyword">var</span> self = $(el)
+        <span class="keyword">return</span> <span class="keyword">function</span>() {
+            <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
+                <span class="keyword">var</span> self = $(el)
 
-              , content = $(<span class="string">'[data-content]'</span>, self)</pre></div></div>
+                  , content = $(<span class="string">'[data-content]'</span>, self)</pre></div></div>
             
         </li>
         
@@ -530,7 +532,7 @@ el.on()</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>              , timer</pre></div></div>
+            <div class="content"><div class='highlight'><pre>                  , timer</pre></div></div>
             
         </li>
         
@@ -545,7 +547,7 @@ el.on()</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>            <span class="function"><span class="keyword">function</span> <span class="title">_showHide</span><span class="params">(show)</span> {</span></pre></div></div>
+            <div class="content"><div class='highlight'><pre>                <span class="function"><span class="keyword">function</span> <span class="title">_showHide</span><span class="params">(show)</span> {</span></pre></div></div>
             
         </li>
         
@@ -560,12 +562,12 @@ el.on()</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>                clearTimeout(timer)
+            <div class="content"><div class='highlight'><pre>                    clearTimeout(timer)
 
-                timer = setTimeout(<span class="keyword">function</span>() {
-                    content[show ? <span class="string">'show'</span> : <span class="string">'hide'</span>]()
-                }, _delay)
-            }</pre></div></div>
+                    timer = setTimeout(<span class="keyword">function</span>() {
+                        content[show ? <span class="string">'show'</span> : <span class="string">'hide'</span>]()
+                    }, _delay)
+                }</pre></div></div>
             
         </li>
         
@@ -581,7 +583,7 @@ Use CSS to do it before the plugin is loaded to avoid jumping.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>            content.hide()</pre></div></div>
+            <div class="content"><div class='highlight'><pre>                content.hide()</pre></div></div>
             
         </li>
         
@@ -596,13 +598,14 @@ Use CSS to do it before the plugin is loaded to avoid jumping.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>            self.mouseenter(<span class="keyword">function</span>() {
-                _showHide(<span class="literal">true</span>)
-            }).mouseleave(<span class="keyword">function</span>() {
-                _showHide(<span class="literal">false</span>)
+            <div class="content"><div class='highlight'><pre>                self.mouseenter(<span class="keyword">function</span>() {
+                    _showHide(<span class="literal">true</span>)
+                }).mouseleave(<span class="keyword">function</span>() {
+                    _showHide(<span class="literal">false</span>)
+                })
             })
-        })
-    }</pre></div></div>
+        }
+    }())</pre></div></div>
             
         </li>
         
