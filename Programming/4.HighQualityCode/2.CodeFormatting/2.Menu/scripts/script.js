@@ -61,11 +61,9 @@ this.J = (function() {
         context = context && context.elements || [document.documentElement]
 
         // Saves the matched elements as an array in the `elements` property.
-        if (_isNode(selector))
-            this.elements = [selector]
-
-        if (_isString(selector))
-            this.elements = _find(selector, context)
+        this.elements =
+            _isNode(selector)   && [selector] ||
+            _isString(selector) && _find(selector, context)
     }
 
     // ### Prototype
@@ -177,6 +175,7 @@ this.J = (function() {
     $.prototype.menu = function() {
         this.each(function(el) {
             var self = $(el)
+
               , content = $('[data-content]', self)
 
                 // Shows the menu after a specific delay.

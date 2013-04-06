@@ -226,11 +226,9 @@ _addRange(source, [3, 4]) // Now source is [1, 2, 3, 4]</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>        <span class="keyword">if</span> (_isNode(selector))
-            <span class="keyword">this</span>.elements = [selector]
-
-        <span class="keyword">if</span> (_isString(selector))
-            <span class="keyword">this</span>.elements = _find(selector, context)
+            <div class="content"><div class='highlight'><pre>        <span class="keyword">this</span>.elements =
+            _isNode(selector)   &amp;&amp; [selector] ||
+            _isString(selector) &amp;&amp; _find(selector, context)
     }</pre></div></div>
             
         </li>
@@ -516,6 +514,7 @@ el.on()</code></pre>
     $.prototype.menu = <span class="keyword">function</span>() {
         <span class="keyword">this</span>.each(<span class="keyword">function</span>(el) {
             <span class="keyword">var</span> self = $(el)
+
               , content = $(<span class="string">'[data-content]'</span>, self)</pre></div></div>
             
         </li>
