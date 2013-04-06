@@ -318,7 +318,7 @@ el.on()</code></pre>
             </div>
             
             <div class="content"><div class='highlight'><pre>        <span class="function"><span class="keyword">function</span> <span class="title">_setCSS</span><span class="params">(self, prop, value)</span> {</span>
-            self.each(<span class="keyword">function</span>(el) {
+            <span class="keyword">return</span> self.each(<span class="keyword">function</span>(el) {
                 el.style[prop] = value
             })
         }

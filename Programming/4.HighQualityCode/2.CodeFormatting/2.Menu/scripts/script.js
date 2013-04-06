@@ -98,7 +98,7 @@ var J = (function() {
 
         // Sets the CSS property for every element to the given value.
         function _setCSS(self, prop, value) {
-            self.each(function(el) {
+            return self.each(function(el) {
                 el.style[prop] = value
             })
         }
