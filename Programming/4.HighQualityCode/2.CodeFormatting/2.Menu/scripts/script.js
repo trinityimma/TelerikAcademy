@@ -128,12 +128,12 @@ var J = (function() {
                 })
             }
 
-            // **TODO**: Add `mouseenter` event
+            // **TODO**: Add `mouseenter` event to non-IE browsers.
             , mouseenter: function(callback) {
                 return this.on('mouseover', callback)
             }
 
-            // **TODO**: Add `mouseleave` event
+            // **TODO**: Add `mouseleave` event to non-IE browsers.
             , mouseleave: function(callback) {
                 return this.on('mouseout', callback)
             }
@@ -179,7 +179,7 @@ var J = (function() {
             this.each(function(el) {
                 var self = $(el)
 
-                    // **TODO**: Nested menus
+                    // **TODO**: Nested menus.
                   , content = $('[data-content]', self)
 
                     // Shows the menu after a specific delay.
@@ -199,7 +199,7 @@ var J = (function() {
                 // Use CSS to do it before the plugin is loaded to avoid jumping.
                 content.hide()
 
-                // **TODO**: Touch events
+                // **TODO**: Touch events.
                 self.mouseenter(function() {
                     _showHide(true)
                 }).mouseleave(function() {
