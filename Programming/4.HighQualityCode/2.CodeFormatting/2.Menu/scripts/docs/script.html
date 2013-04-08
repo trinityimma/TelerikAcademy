@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>J Library With an Example Plugin</title>
+  <title>J Library With Sample Plugin</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -21,7 +21,7 @@
               <div class="pilwrap for-h1">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <h1>J Library With an Example Plugin</h1>
+              <h1>J Library With Sample Plugin</h1>
 
             </div>
             
@@ -445,9 +445,9 @@ el.on()</code></pre>
             </div>
             
             <div class="content"><div class='highlight'><pre>            , css: <span class="keyword">function</span>(property, value) {
-                <span class="keyword">return</span> value ?
-                    _setCSS(<span class="keyword">this</span>, property, value) :
-                    _getCSS(<span class="keyword">this</span>, property)
+                <span class="keyword">return</span> value == <span class="literal">null</span> ?
+                    _getCSS(<span class="keyword">this</span>, property) :
+                    _setCSS(<span class="keyword">this</span>, property, value)
             }
         }
 

@@ -1,4 +1,4 @@
-// # J Library With an Example Plugin
+// # J Library With Sample Plugin
 
 // ## J library
 
@@ -140,9 +140,9 @@ var J = (function() {
 
             // Get or set the CSS property.
             , css: function(property, value) {
-                return value ?
-                    _setCSS(this, property, value) :
-                    _getCSS(this, property)
+                return value == null ?
+                    _getCSS(this, property) :
+                    _setCSS(this, property, value)
             }
         }
 
