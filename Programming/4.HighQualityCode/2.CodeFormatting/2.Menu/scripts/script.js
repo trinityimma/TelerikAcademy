@@ -25,11 +25,11 @@ var J = (function() {
     //     var source = [1, 2]
     //
     //     _addRange(source, [3, 4]) // Now source is [1, 2, 3, 4]
-    function _addRange(source, els) {
+    function _addRange(source, elements) {
         var i
 
-        for (i = 0; i < els.length; i++)
-            source.push(els[i])
+        for (i = 0; i < elements.length; i++)
+            source.push(elements[i])
 
         return source
     }
@@ -111,14 +111,14 @@ var J = (function() {
                 return this
             }
 
-            // Saves the current CSS `display` property of each element and sets it to `none`.
-            , hide: function() {
-                return _showHide(this, false)
-            }
-
             // Restores the previous `display` property.
             , show: function() {
                return _showHide(this, true)
+            }
+
+            // Saves the current CSS `display` property of each element and sets it to `none`.
+            , hide: function() {
+                return _showHide(this, false)
             }
 
             // Attaches an event listener to every element.

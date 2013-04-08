@@ -120,11 +120,11 @@ _addRange(source, [3, 4]) // Now source is [1, 2, 3, 4]</code></pre>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="function"><span class="keyword">function</span> <span class="title">_addRange</span><span class="params">(source, els)</span> {</span>
+            <div class="content"><div class='highlight'><pre>    <span class="function"><span class="keyword">function</span> <span class="title">_addRange</span><span class="params">(source, elements)</span> {</span>
         <span class="keyword">var</span> i
 
-        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; els.length; i++)
-            source.push(els[i])
+        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; elements.length; i++)
+            source.push(elements[i])
 
         <span class="keyword">return</span> source
     }</pre></div></div>
@@ -353,12 +353,12 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-20">&#182;</a>
               </div>
-              <p>Saves the current CSS <code>display</code> property of each element and sets it to <code>none</code>.</p>
+              <p>Restores the previous <code>display</code> property.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>            , hide: <span class="keyword">function</span>() {
-                <span class="keyword">return</span> _showHide(<span class="keyword">this</span>, <span class="literal">false</span>)
+            <div class="content"><div class='highlight'><pre>            , show: <span class="keyword">function</span>() {
+               <span class="keyword">return</span> _showHide(<span class="keyword">this</span>, <span class="literal">true</span>)
             }</pre></div></div>
             
         </li>
@@ -370,12 +370,12 @@ el.on()</code></pre>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-21">&#182;</a>
               </div>
-              <p>Restores the previous <code>display</code> property.</p>
+              <p>Saves the current CSS <code>display</code> property of each element and sets it to <code>none</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>            , show: <span class="keyword">function</span>() {
-               <span class="keyword">return</span> _showHide(<span class="keyword">this</span>, <span class="literal">true</span>)
+            <div class="content"><div class='highlight'><pre>            , hide: <span class="keyword">function</span>() {
+                <span class="keyword">return</span> _showHide(<span class="keyword">this</span>, <span class="literal">false</span>)
             }</pre></div></div>
             
         </li>
