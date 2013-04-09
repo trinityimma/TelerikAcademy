@@ -12,7 +12,7 @@
         people.forEach(function(human) {
             result += "<li>"
 
-            result += template.replace(/-{(.*?)}-/g, function (match, p1) {
+            result += template.replace(/-{(.*?)}-/g, function(match, p1) {
                 return human[p1]
             })
 
