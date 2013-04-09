@@ -83,8 +83,7 @@
 
 ## High-Quality Code
 
-1. Course Overview - 09.04.2013
-2. What is High-Quality Programming Code? - 09.04.2013
+1. Course Overview | What is High-Quality Programming Code? - 09.04.2013
 3. Code Formatting - 09.04.2013
 4. Naming Identifiers
 5. Code Documentation and Comments
