@@ -6,9 +6,9 @@
     <style>
         div {
             position: absolute;
-            text-align: center;
-            border-style: solid;
             padding: 1em;
+            border-style: solid;
+            text-align: center;
         }
     </style>
 </head>
@@ -71,13 +71,13 @@
 
           , body = J('body')
 
-        J.each(J.range(1, 10), function(i) {
-            var strong = J('<strong />').text('div' + i)
+          , divs = J.range(1, 10).map(function(i) {
+                var strong = J('<strong />').text('div' + i)
 
-              , div = makeDiv().append(strong)
+                  , div = makeDiv().append(strong)
 
-            body.append(div)
-        })
+                return div.appendTo(body)
+            })
     }())
     </script>
 </body>
