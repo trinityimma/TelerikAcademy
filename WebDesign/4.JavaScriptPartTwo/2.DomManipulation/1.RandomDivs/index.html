@@ -72,7 +72,7 @@
           , body = J('body')
 
         J.each(J.range(1, 10), function(i) {
-            var strong = J('<strong />').text('div')
+            var strong = J('<strong />').text('div' + i)
 
               , div = makeDiv().append(strong)
 
