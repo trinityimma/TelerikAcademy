@@ -61,8 +61,8 @@
             return function() {
                 var div = J('<div />')
 
-                J.each(_properties, function(key, value) {
-                    div.css(key, value())
+                J.each(_properties, function(prop, value) {
+                    div.css(prop, value())
                 })
 
                 return div
