@@ -6,22 +6,22 @@
     <style>
         @-webkit-keyframes rotate {
             from { -webkit-transform: rotate(0); }
-            to   { -webkit-transform: rotate(360deg); }
+              to { -webkit-transform: rotate(360deg); }
         }
 
         @-moz-keyframes rotate {
             from { -moz-transform: rotate(0); }
-            to   { -moz-transform: rotate(360deg); }
+              to { -moz-transform: rotate(360deg); }
         }
 
         @-o-keyframes rotate {
             from { -o-transform: rotate(0); }
-            to   { -o-transform: rotate(360deg); }
+              to { -o-transform: rotate(360deg); }
         }
 
         @keyframes rotate {
             from { transform: rotate(0); }
-            to   { transform: rotate(360deg); }
+              to { transform: rotate(360deg); }
         }
 
         div {
@@ -81,13 +81,13 @@
                     return J.random(50) + '%'
                 }
 
-                , transformOrigin: function() {
+                , transformOriginX: function() {
                     return J.random(50, 200) + '%'
                 }
 
-                , animationDuration: function() {
-                    return J.random(300, 5000) + 'ms'
-                }
+                // , animationDuration: function() {
+                //     return J.random(300, 5000) + 'ms'
+                // }
             }
 
             return function() {
@@ -103,17 +103,18 @@
 
           , body = J('body')
 
-          , divs = J.range(1, 10).map(function(i) {
-                var strong = J('<strong />').text('div' + i)
+        J.each(J.range(1, 10), function(i) {
+            var strong = J('<strong />').text('div' + i)
 
-                  , div = makeDiv().append(strong)
+              , div = makeDiv().append(strong)
 
-                return div.appendTo(body)
-            })
+            return div.appendTo(body)
+        })
 
-            // J('div').each(function(el) {
-            //     J(el).css('animationDuration', J.random(300, 5000) + 'ms')
-            // })
+        // Chrome bug
+        J('div').each(function(el) {
+            J(el).css('animationDuration', J.random(300, 5000) + 'ms')
+        })
     }())
     </script>
 </body>
