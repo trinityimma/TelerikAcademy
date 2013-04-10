@@ -4,11 +4,35 @@
     <meta charset="utf-8" />
     <title>Random Divs</title>
     <style>
+        @-webkit-keyframes rotate {
+            from { -webkit-transform: rotate(0); }
+            to   { -webkit-transform: rotate(360deg); }
+        }
+
+        @-moz-keyframes rotate {
+            from { -moz-transform: rotate(0); }
+            to   { -moz-transform: rotate(360deg); }
+        }
+
+        @-o-keyframes rotate {
+            from { -o-transform: rotate(0); }
+            to   { -o-transform: rotate(360deg); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0); }
+            to   { transform: rotate(360deg); }
+        }
+
         div {
             position: absolute;
             padding: 1em;
             border-style: solid;
             text-align: center;
+            -webkit-animation: rotate linear infinite;
+               -moz-animation: rotate linear infinite;
+                 -o-animation: rotate linear infinite;
+                    animation: rotate linear infinite;
         }
     </style>
 </head>
@@ -56,6 +80,14 @@
                 , borderRadius: function() {
                     return J.random(50) + '%'
                 }
+
+                , transformOrigin: function() {
+                    return J.random(50, 200) + '%'
+                }
+
+                , animationDuration: function() {
+                    return J.random(300, 5000) + 'ms'
+                }
             }
 
             return function() {
@@ -78,6 +110,10 @@
 
                 return div.appendTo(body)
             })
+
+            // J('div').each(function(el) {
+            //     J(el).css('animationDuration', J.random(300, 5000) + 'ms')
+            // })
     }())
     </script>
 </body>
