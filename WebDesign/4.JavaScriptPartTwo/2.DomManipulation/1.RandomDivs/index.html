@@ -103,12 +103,12 @@
 
           , body = J('body')
 
-        J.each(J.range(1, 500), function(i) {
-            var strong = J('<strong />').text('#div' + i)
+        J.each(J.range(1, 500), function(n) {
+            var strong = J('<strong />').text('#div' + n)
 
               , div = makeDiv().append(strong)
 
-            return div.appendTo(body)
+            body.append(div)
         })
 
         // Chrome bug
