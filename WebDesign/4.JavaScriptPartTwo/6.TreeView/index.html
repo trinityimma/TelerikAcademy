@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TreeView</title>
+    <style>
+        [data-collapsible] > ul { display: none; }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li data-collapsible>
+            <a href="#">Item 1</a>
+
+            <ul>
+                <li data-collapsible>
+                    <a href="#">SubItem 1</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+
+                <li data-collapsible>
+                    <a href="#">SubItem 2</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+
+                <li data-collapsible>
+                    <a href="#">SubItem 3</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li data-collapsible>
+            <a href="#">Item 2</a>
+
+            <ul>
+                <li data-collapsible>
+                    <a href="#">SubItem 1</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+
+                <li data-collapsible>
+                    <a href="#">SubItem 2</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+
+                <li data-collapsible>
+                    <a href="#">SubItem 3</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li data-collapsible>
+            <a href="#">Item 3</a>
+
+            <ul>
+                <li data-collapsible>
+                    <a href="#">SubItem 1</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+
+                <li data-collapsible>
+                    <a href="#">SubItem 2</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+
+                <li data-collapsible>
+                    <a href="#">SubItem 3</a>
+
+                    <ul>
+                        <li>SubSubItem 1</li>
+                        <li>SubSubItem 2</li>
+                        <li>SubSubItem 3</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script src="file:///E:/GitHub/demos/j-library/src/core.js"></script>
+    <script>window.J || document.write('<script src="http://git.io/KMgc1w"><\/script>')</script>
+
+    <script>
+    ;(function() {
+        'use strict';
+
+        J.prototype.collapsible = function() {
+            var a = this.children().filter(function() {
+                return this.tagName.toLowerCase() === 'a'
+            })
+
+            a.click(function(e) {
+                e.preventDefault()
+
+                J(this).next().toggle()
+            })
+        }
+
+        J('[data-collapsible]').collapsible()
+    }())
+    </script>
+</body>
+</html>

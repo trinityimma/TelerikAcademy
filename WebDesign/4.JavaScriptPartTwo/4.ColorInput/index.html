@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Color Input</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <form>
+        <p><label><input type="color" class="color" /> Color</label></p>
+        <p><label><input type="color" class="background" /> Background</label></p>
+
+        <textarea>Text</textarea>
+    </form>
+
+    <script src="file:///E:/GitHub/demos/j-library/src/core.js"></script>
+    <script>window.J || document.write('<script src="http://git.io/KMgc1w"><\/script>')</script>
+
+    <script>
+    ;(function() {
+        'use strict';
+
+        var textarea = J('textarea')
+
+        J('.color').change(function() {
+            textarea.css('color', this.value)
+        })
+
+        J('.background').change(function() {
+            textarea.css('background-color', this.value)
+        })
+    }())
+    </script>
+</body>
+</html>

@@ -38,7 +38,7 @@
 </head>
 
 <body>
-    <script src="http://git.io/ZSaTMg"></script>
+    <script src="http://git.io/KMgc1w"></script>
     <script>
     ;(function() {
         'use strict';
@@ -85,16 +85,16 @@
                     return J.random(50, 200) + '%'
                 }
 
-                // , animationDuration: function() {
-                //     return J.random(300, 5000) + 'ms'
-                // }
+                , animationDuration: function() {
+                    return J.random(300, 5000) + 'ms'
+                }
             }
 
             return function() {
                 var div = J('<div />')
 
-                J.each(_properties, function(prop, value) {
-                    div.css(prop, value())
+                J.each(_properties, function(prop) {
+                    div.css(prop, this())
                 })
 
                 return div
@@ -103,17 +103,12 @@
 
           , body = J('body')
 
-        J.each(J.range(1, 500), function(n) {
-            var strong = J('<strong />').text('#div' + n)
+        J.each(J.range(1, 500), function() {
+            var strong = J('<strong />').text('#div' + this)
 
               , div = makeDiv().append(strong)
 
             body.append(div)
-        })
-
-        // Chrome bug
-        J('div').each(function(el) {
-            J(el).css('animationDuration', J.random(300, 3000) + 'ms')
         })
     }())
     </script>
