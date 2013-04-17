@@ -84,11 +84,26 @@
 ## High-Quality Code
 
 1. Course Overview | What is High-Quality Programming Code? - 09.04.2013
-3. Code Formatting - 09.04.2013
-4. Naming Identifiers
-5. Code Documentation and Comments
+2. Code Formatting - 09.04.2013
+3. Naming Identifiers - 12.04.2013
+4. Code Documentation and Comments - 12.04.2013
+5. Using Variables, Data, Expressions and Constants - 16.04.2013
+6. Using Control Structures, Conditional Statements and Loops - 16.04.2013
+7. High-Quality Methods - 19.04.2013
+8. High-Quality Classes - 19.04.2013
+9. Defensive Programming and Exceptions
+10. Code Tuning and Optimization
+11. Unit Testing and Test-Driven Development
+12. Refactoring
+13. Debugging
+14. Development Tools
+15 .Design Patterns
+16. Software Quality Assurance
+17. Teamwork
 
 ##  JavaScript - Part II
 
-1. Course Overview
-2. DOM Manipulation
+1. Course Overview | DOM Manipulation - 11.04.2013
+2. Advanced Functions
+3. JavaScript OOP
+4. JavaScript APIs

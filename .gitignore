@@ -6,6 +6,8 @@ config.rb
 
 $tf/
 
+# 4.HighQualityCode/
+
 # Build and Object Folders
 bin/
 obj/

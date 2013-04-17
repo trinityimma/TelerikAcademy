@@ -13,16 +13,16 @@ class Program
         }
 
         {
-            //ElementNode article = new ElementNode("article")
-            //{
-            //    new ElementNode("h1") { new TextNode("Hello, world!") },
-            //    new ElementNode("p") { new TextNode("Lorem ipsum...") }
-            //};
+            ElementNode article = new ElementNode("article")
+            {
+                new ElementNode("h1") { new TextNode("Hello, world!") },
+                new ElementNode("p") { new TextNode("Lorem ipsum...") }
+            };
 
-            ////Console.Write(article);
+            Console.Write(article);
 
-            ////Console.WriteLine(article.FirstChild);
-            ////Console.WriteLine(article.LastChild);
+            //Console.WriteLine(article.FirstChild);
+            //Console.WriteLine(article.LastChild);
         }
 
         {
@@ -48,7 +48,6 @@ class Program
             //}.AppendChild(
             //    new ElementNode("Invalid")
             //);
-
 
             ////Console.Write(table);
 

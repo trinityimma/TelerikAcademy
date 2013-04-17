@@ -11,12 +11,12 @@ class ElementNode : Node, IEnumerable
 
     public Node FirstChild
     {
-        get { return childNodes.FirstOrDefault(); }
+        get { return this.childNodes.FirstOrDefault(); }
     }
 
     public Node LastChild
     {
-        get { return childNodes.LastOrDefault(); }
+        get { return this.childNodes.LastOrDefault(); }
     }
 
     public ElementNode(string tagName)
