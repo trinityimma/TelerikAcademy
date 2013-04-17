@@ -84,26 +84,27 @@
 ## High-Quality Code
 
 1. Course Overview | What is High-Quality Programming Code? - 09.04.2013
-2. Code Formatting - 09.04.2013
-3. Naming Identifiers - 12.04.2013
-4. Code Documentation and Comments - 12.04.2013
-5. Using Variables, Data, Expressions and Constants - 16.04.2013
-6. Using Control Structures, Conditional Statements and Loops - 16.04.2013
-7. High-Quality Methods - 19.04.2013
-8. High-Quality Classes - 19.04.2013
+2. [Code Formatting](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/2.CodeFormatting) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/2.CodeFormatting/README.md)) - 09.04.2013
+3. [Naming Identifiers](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/3.NamingIdentifiers) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/3.NamingIdentifiers/README.md)) - 12.04.2013
+4. [Code Documentation and Comments](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/4.CodeDocumentationАndComments) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/4.CodeDocumentationАndComments/README.md)) - 12.04.2013
+5. [Using Variables, Data, Expressions and Constants](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/5.UsingVariablesDataExpressions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/5.UsingVariablesDataExpressions/README.md)) - 16.04.2013
+6. [Using Control Structures, Conditional Statements and Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/6.UsingControlStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/6.UsingControlStructures/README.md)) - 16.04.2013
+7. [High-Quality Methods](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/7.HighQualityMethods) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/7.HighQualityMethods/README.md)) - 19.04.2013
+8. [High-Quality Classes](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/8.HighQualityClasses) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/8.HighQualityClasses/README.md)) - 19.04.2013
 9. Defensive Programming and Exceptions
 10. Code Tuning and Optimization
 11. Unit Testing and Test-Driven Development
 12. Refactoring
 13. Debugging
 14. Development Tools
-15 .Design Patterns
+15. Design Patterns
 16. Software Quality Assurance
 17. Teamwork
 
 ##  JavaScript - Part II
 
-1. Course Overview | DOM Manipulation - 11.04.2013
+1. Course Overview - 11.04.2013
+2. [DOM Manipulation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation/README.md)) - 11.04.2013
 2. Advanced Functions
 3. JavaScript OOP
 4. JavaScript APIs
