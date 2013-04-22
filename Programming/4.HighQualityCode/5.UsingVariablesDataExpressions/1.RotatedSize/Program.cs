@@ -1,27 +1,27 @@
-﻿using System;
+using System;
 
 class Program
 {
-    public class Shape
+    public struct Coordinates
     {
-        public double Width { get; private set; }
-        public double Height { get; private set; }
+        public double X { get; private set; }
+        public double Y { get; private set; }
 
-        public Shape(double width, double height)
+        public Coordinates(double x, double y)
         {
-            this.Width = width;
-            this.Height = height;
+            this.X = X;
+            this.Y = y;
         }
     }
 
-    public static Shape Rotate(Shape shape, double angleInRadians)
+    public static Coordinates Rotate(Coordinates coordinates, double angle)
     {
-        double cos = Math.Abs(Math.Cos(angleInRadians));
-        double sin = Math.Abs(Math.Sin(angleInRadians));
+        double sin = Math.Abs(Math.Sin(angle));
+        double cos = Math.Abs(Math.Cos(angle));
 
-        return new Shape(
-            cos * shape.Width + sin * shape.Height,
-            sin * shape.Width + cos * shape.Height
+        return new Coordinates(
+            cos * coordinates.X - sin * coordinates.Y,
+            sin * coordinates.X + cos * coordinates.Y
         );
     }
 }

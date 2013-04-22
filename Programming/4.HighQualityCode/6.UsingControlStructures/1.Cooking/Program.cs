@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 public class Chef
 {
@@ -24,12 +24,11 @@ public class Chef
 
     private Bowl GetBowl()
     {
-        // ... 
+        // ...
     }
 
     public void Cook()
     {
-        
         Carrot carrot = GetCarrot();
         Peel(carrot);
         Cut(carrot);

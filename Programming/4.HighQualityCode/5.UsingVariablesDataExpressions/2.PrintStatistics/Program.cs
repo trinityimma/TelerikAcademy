@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 class Program
 {
     private double Max(double[] arr, int count)
     {
-        double max = double.NegativeInfinity;
+        double max = arr[0];
 
         for (int i = 0; i < count; i++)
         {
@@ -19,7 +19,7 @@ class Program
 
     private double Min(double[] arr, int count)
     {
-        double min = double.NegativeInfinity;
+        double min = arr[0];
 
         for (int i = 0; i < count; i++)
         {
