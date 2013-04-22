@@ -1,0 +1,112 @@
+<form name=input class="input well form-horizontal" data-ng-submit="callWorker()">
+<fieldset>
+<legend>Въведи кули и ходове</legend>
+<dl class=control-group data-ng-class="{ error: !(input.n.$valid || input.n.$pristine) }">
+<dt><label for=label-n class=control-label>N:</label></dt>
+<dd class=controls>
+<input disabled required="" type=number class=input-mini data-ng-model=n name=n id=label-n placeholder="1/1000" min=1 max=1000 data-ng-disabled="state == 'calculating'" data-ng-pattern="/^\d+$/">
+<ul class=inline>
+<li class=help-inline data-ng-show="n == 1000 && input.$valid">
+<a href="http://youtu.be/mUE9R6h1CRg">Successful troll is successful!</a>
+</li>
+<li class=help-inline data-ng-show="input.n.$error.required">Въведете число.</li>
+<li class=help-inline data-ng-show="input.n.$error.pattern">Цяло число.</li>
+<li class=help-inline data-ng-show="input.n.$error.min">Минимум 1.</li>
+<li class=help-inline data-ng-show="input.n.$error.max">Максимум 1000.</li>
+</ul>
+</dd>
+</dl>
+<dl class=control-group data-ng-class="{ error: !input.field.$valid }">
+<dt>
+<label for=label-field class=control-label>
+<i data-ng-class="input.field.parsing && 'icon-refresh' || 'icon-ok'" data-ng-show="!input.field.$pristine && input.field.$valid && input.n.$valid"></i>
+Вход:
+</label>
+</dt>
+<dd class=controls>
+<textarea disabled class=input-block-level data-ng-model=field name=field id=label-field rows=10 data-ng-disabled="state == 'calculating' || !input.n.$valid" data-matrix="" data-matrix-rows="{{ n }}" data-matrix-cols="{{ n }}" data-matrix-min=0 data-matrix-max=1000></textarea>
+<ul class=inline>
+<li class=help-block data-ng-show="input.field.$valid">
+<span class=muted>Това са кулите.</span>
+</li>
+<li class=help-block data-ng-show="input.field.$error.required">
+Въведете поле.
+</li>
+<li class=help-block data-ng-show="input.field.$error.matrix">
+Невалиден формат на полето.
+</li>
+<li class=help-block data-ng-show="input.field.$error.matrixRows">
+Броят редове беше {{ input.field.errorLength }}, a не {{ n }}.
+</li>
+<li class=help-block data-ng-show="input.field.$error.matrixCols">
+Броят колони на ред {{ input.field.errorRow + 1 }}
+беше {{ input.field.errorLength }}, а не {{ n }}.
+</li>
+<li class=help-block data-ng-show="input.field.$error.matrixPattern">
+Клетката на ред {{ input.field.errorRow + 1 }},
+колона {{ input.field.errorCol + 1 }} не е цяло число,
+a e "{{ input.field.errorCell }}".
+</li>
+<li class=help-block data-ng-show="input.field.$error.matrixMin">
+Клетката на ред {{ input.field.errorRow + 1 }},
+колона {{ input.field.errorCol + 1 }} e "{{ input.field.errorCell }}" &lt; 0.
+</li>
+<li class=help-block data-ng-show="input.field.$error.matrixMax">
+Клетката на ред {{ input.field.errorRow + 1 }},
+колона {{ input.field.errorCol + 1 }} e "{{ input.field.errorCell }}" &gt; 1000.
+</li>
+</ul>
+</dd>
+</dl>
+<dl class=control-group data-ng-class="{ error: !input.moves.$valid }">
+<dt>
+<label for=label-moves class=control-label>
+<i data-ng-class="input.moves.parsing && 'icon-refresh' || 'icon-ok'" data-ng-show="!input.moves.$pristine && input.moves.$valid && input.n.$valid"></i>
+Изход:
+</label>
+</dt>
+<dd class=controls>
+<textarea disabled class=input-block-level data-ng-model=moves name=moves id=label-moves rows=7 data-ng-disabled="state == 'calculating' || !input.n.$valid" data-matrix="" data-matrix-rows=1000 data-matrix-cols=3 data-matrix-min=0 data-matrix-max="{{ n - 1 }}" data-matrix-command=""></textarea>
+<ul class=inline>
+<li class=help-block data-ng-show="input.moves.$valid">
+<span class=muted>Това са ходовете.</span>
+</li>
+<li class=help-block data-ng-show="input.moves.$error.required">
+Въведете ходове.
+</li>
+<li class=help-block data-ng-show="input.moves.$error.matrix">
+Невалиден формат на ходовете.
+</li>
+<li class=help-block data-ng-show="input.moves.$error.matrixRows">
+Броят ходове беше {{ input.moves.errorLength }} &gt; 1000.
+</li>
+<li class=help-block data-ng-show="input.moves.$error.matrixCols">
+Броят колони на ред {{ input.moves.errorRow + 1 }}
+беше {{ input.moves.errorLength }}, а не 3.
+</li>
+<li class=help-block data-ng-show="input.moves.$error.matrixCommand">
+Ход номер {{ input.moves.errorRow + 1 }} не е "put" или "take".
+</li>
+<li class=help-block data-ng-show="input.moves.$error.matrixPattern">
+Кула номер {{ input.moves.errorCol }} на ход
+{{ input.moves.errorRow + 1 }} не е цяло число, а е "{{ input.moves.errorCell }}".
+</li>
+<li class=help-block data-ng-show="input.moves.$error.matrixMin">
+Кула номер {{ input.moves.errorCol }} на ход
+{{ input.moves.errorRow + 1 }} e "{{ input.moves.errorCell }}" &lt; 0.
+</li>
+<li class=help-block data-ng-show="input.moves.$error.matrixMax">
+Кула номер {{ input.moves.errorCol }} на ход
+{{ input.moves.errorRow + 1 }} e "{{ input.moves.errorCell }}" &gt; {{ n - 1 }}.
+</li>
+</ul>
+</dd>
+</dl>
+<div class=form-actions>
+<button type=submit class="btn btn-primary" data-ng-disabled="!input.$valid" data-ng-hide="state == 'calculating'">Въведи</button>
+<p class="btn disabled" data-ng-show="state == 'calculating'">
+<i class=icon-time></i> Изчисляваме играта...
+</p>
+</div>
+</fieldset>
+</form>
