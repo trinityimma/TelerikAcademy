@@ -105,6 +105,6 @@
 
 1. Course Overview - 11.04.2013
 2. [DOM Manipulation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation/README.md)) - 11.04.2013
-2. Advanced Functions
-3. JavaScript OOP
-4. JavaScript APIs
+2. Advanced Functions - 18.04.2013
+3. JavaScript OOP - 18.04.2013
+4. JavaScript APIs - 25.04.2013
