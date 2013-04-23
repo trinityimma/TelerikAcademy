@@ -1,24 +1,32 @@
-﻿using System;
+using System;
 
 namespace Methods
 {
     static class Methods
     {
-        static double CalcTriangleArea(double a, double b, double c)
+        static double CalculateTriangleArea(double a, double b, double c)
         {
-            if (!(a > 0 && b > 0 && c > 0))
+            if (!(
+                a > 0 &&
+                b > 0 &&
+                c > 0
+            ))
                 throw new ArgumentOutOfRangeException("Sides must be positive!");
 
-            if (!(a < b + c && b < c + a && c < a + b))
+            if (!(
+                a < b + c &&
+                b < c + a &&
+                c < a + b
+            ))
                 throw new ArgumentException("These sides don't form a triangle!");
 
-            double semiperimeter = (a + b + c) / 2;
-            double area = Math.Sqrt(semiperimeter * (semiperimeter - a) * (semiperimeter - b) * (semiperimeter - c));
+            double p = (a + b + c) / 2;
 
-            return area;
+            return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
 
-        private static readonly string[] digitNames = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+        private static readonly string[] digitNames =
+            { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
         static string DigitToString(int digit)
         {
@@ -34,7 +42,7 @@ namespace Methods
                 throw new ArgumentNullException("Elements must not be null!");
 
             if (!(elements.Length > 0))
-                throw new ArgumentException("Call with at least one element!");
+                throw new ArgumentException("Call with at least one argument!");
 
             int max = elements[0];
 
@@ -73,30 +81,27 @@ namespace Methods
             }
         }
 
-        static bool AreHorizontal(Point point1, Point point2)
-        {
-            return point1.Y == point2.Y;
-        }
-
         static bool AreVertical(Point point1, Point point2)
         {
             return point1.X == point2.X;
         }
 
-        static double CalcDistance(Point point1, Point point2)
+        static bool AreHorizontal(Point point1, Point point2)
         {
-            double distanceX = point2.X - point1.X;
-            double distanceY = point2.Y - point1.Y;
+            return point1.Y == point2.Y;
+        }
 
-            double x = Math.Pow(distanceX, 2);
-            double y = Math.Pow(distanceY, 2);
+        static double CalculateDistance(Point point1, Point point2)
+        {
+            double x = Math.Pow(point2.X - point1.X, 2);
+            double y = Math.Pow(point2.Y - point1.Y, 2);
 
             return Math.Sqrt(x + y);
         }
 
         static void Main()
         {
-            Console.WriteLine(CalcTriangleArea(3, 4, 5));
+            Console.WriteLine(CalculateTriangleArea(3, 4, 5));
 
             Console.WriteLine(DigitToString(5));
 
@@ -110,21 +115,23 @@ namespace Methods
                 Point p1 = new Point(3, -1);
                 Point p2 = new Point(3, 2.5);
 
-                Console.WriteLine("Distance: " + CalcDistance(p1, p2));
+                Console.WriteLine("Distance: " + CalculateDistance(p1, p2));
                 Console.WriteLine("Horizontal? " + AreHorizontal(p1, p2));
                 Console.WriteLine("Vertical? " + AreVertical(p1, p2));
             }
 
-            Student peter = new Student() { FirstName = "Peter", LastName = "Ivanov", };
-            peter.OtherInfo = "From Sofia";
-            peter.BirthDate = new DateTime(1992, 03, 17);
+            {
+                Student peter = new Student() { FirstName = "Peter", LastName = "Ivanov", };
+                peter.BirthDate = new DateTime(1992, 03, 17);
+                peter.OtherInfo = "From Sofia";
 
-            Student stella = new Student() { FirstName = "Stella", LastName = "Markova" };
-            stella.OtherInfo = "From Vidin, gamer, high results";
-            stella.BirthDate = new DateTime(1993, 11, 03);
+                Student stella = new Student() { FirstName = "Stella", LastName = "Markova" };
+                stella.BirthDate = new DateTime(1993, 11, 03);
+                stella.OtherInfo = "From Vidin, gamer, high results";
 
-            Console.WriteLine("{0} older than {1} -> {2}",
-                peter.FirstName, stella.FirstName, peter.IsOlderThan(stella));
+                Console.WriteLine("{0} older than {1} -> {2}",
+                    peter.FirstName, stella.FirstName, peter.IsOlderThan(stella));
+            }
         }
     }
 }
