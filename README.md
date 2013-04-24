@@ -91,8 +91,8 @@
 6. [Using Control Structures, Conditional Statements and Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/6.UsingControlStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/6.UsingControlStructures/README.md)) - 16.04.2013
 7. [High-Quality Methods](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/7.HighQualityMethods) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/7.HighQualityMethods/README.md)) - 19.04.2013
 8. [High-Quality Classes](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/8.HighQualityClasses) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/8.HighQualityClasses/README.md)) - 19.04.2013
-9. Defensive Programming and Exceptions
-10. Code Tuning and Optimization
+9. Defensive Programming and Exceptions - 23.04.2013
+10. Code Tuning and Optimization - 23.04.2013
 11. Unit Testing and Test-Driven Development
 12. Refactoring
 13. Debugging
