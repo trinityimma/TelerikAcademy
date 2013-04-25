@@ -60,20 +60,20 @@
     int i=0;
     for (i = 0; i < 100;) 
     {
-       if (i % 10 == 0)
-       {
+        if (i % 10 == 0)
+        {
         Console.WriteLine(array[i]);
         if ( array[i] == expectedValue ) 
         {
            i = 666;
         }
         i++;
-       }
-       else
-       {
+        }
+        else
+        {
             Console.WriteLine(array[i]);
         i++;
-       }
+        }
     }
     // More code here
     if (i == 666)
