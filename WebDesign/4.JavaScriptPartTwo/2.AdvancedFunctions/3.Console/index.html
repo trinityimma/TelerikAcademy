@@ -3,8 +3,6 @@
     'use strict';
 
     var console = (function() {
-        var oldConsole = window.console
-
         function _format(str /*, opt_args */) {
             var selfArguments = arguments
 
@@ -14,7 +12,7 @@
         }
 
         function _write(methodName, args) {
-            return oldConsole[methodName](_format.apply(null, args))
+            return window.console[methodName](_format.apply(null, args))
         }
 
         var api =
