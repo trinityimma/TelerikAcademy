@@ -2,43 +2,43 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Simple Carousel</title>
+    <title>Carousel</title>
     <style>
         .carousel {
-          position: relative;
-          overflow: hidden;
+            position: relative;
+            overflow: hidden;
         }
 
         .carousel-panels {
-          position: relative;
-          width: 10000%;
+            position: relative;
+            width: 10000%;
         }
 
         .carousel-panel {
-          float: left;
-          width: 1%;
+            float: left;
+            width: 1%;
         }
 
         .carousel-arrow-left,
         .carousel-arrow-right {
-          position: absolute;
-          z-index: 1;
+            position: absolute;
+            z-index: 1;
         }
 
         .carousel-arrow-left { left: 0; }
         .carousel-arrow-right { right: 0; }
 
         .carousel-animated .carousel-panels {
-          -webkit-transition: left .6s cubic-bezier(.86, 0, .07, 1);
-             -moz-transition: left .6s cubic-bezier(.86, 0, .07, 1);
-               -o-transition: left .6s cubic-bezier(.86, 0, .07, 1);
-                  transition: left .6s cubic-bezier(.86, 0, .07, 1);
+            -webkit-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+               -moz-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+                 -o-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+                    transition: left .6s cubic-bezier(.86, 0, .07, 1);
         }
 
         .carousel-my {
-          width: 400px;
-          margin: 0 auto;
-          text-align: center;
+            width: 400px;
+            margin: 0 auto;
+            text-align: center;
         }
 
         .carousel-my a { text-decoration: none; }
@@ -78,23 +78,23 @@
         $('.carousel').each(function() {
             var self = $(this)
 
-              , $panels = $('.carousel-panels', self)
+              , _panels = $('.carousel-panels', self)
 
-              , totalPanels = $('.carousel-panel', self).length
-              , currentPanel = 0
+              , _totalPanels = $('.carousel-panel', self).length
+              , _currentPanel = 0
 
-            function change(direction) {
-                currentPanel = (currentPanel - direction - totalPanels) % totalPanels
+            function _change(direction) {
+                _currentPanel = (_currentPanel - direction - _totalPanels) % _totalPanels
 
-                $panels.css('left', (currentPanel * 100 + '%'))
+                _panels.css('left', (_currentPanel * 100 + '%'))
             }
 
             $('.carousel-arrow-left', self).click(function(e) {
-                change(-1), e.preventDefault()
+                _change(-1), e.preventDefault()
             })
 
             $('.carousel-arrow-right', self).click(function(e) {
-                change(1), e.preventDefault()
+                _change(1), e.preventDefault()
             })
         })
     }(J))
