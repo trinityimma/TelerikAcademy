@@ -227,7 +227,6 @@
     	}
     }
     ```
-
 * Format correctly the following source code:
 
     ```js
