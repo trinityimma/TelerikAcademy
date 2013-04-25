@@ -7,7 +7,7 @@
     * Random `position` on the screen
     * A `strong` element with text "div" inside the `div`
     * Random `border-radius`
-    * Random `border color`
+    * Random `border-color`
     * Random `border-width` between `1px` and `20px`
 * Write a script that creates 5 `div` elements and moves them in circular path with interval of 100 milliseconds
 * Write a script that shims `querySelector` and `querySelectorAll` in older browsers
