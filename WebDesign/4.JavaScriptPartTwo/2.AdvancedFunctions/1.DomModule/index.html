@@ -1,0 +1,47 @@
+<script src="scripts/j-library.js"></script>
+<script>
+;(function() {
+    'use strict';
+
+    J('html').click(function() {
+        var p = J('<p />').addClass('test').text('paragraph')
+
+        J(this).append(p)
+
+        setTimeout(function() {
+            J('p.test').remove()
+        }, 1000);
+    })
+
+    J.prototype.buffer = (function() {
+        var BUFFER_PROP = '_buffer'
+          , BUFFER_SIZE = 3
+
+        return function(element) {
+            if (!this.data(BUFFER_PROP))
+                this.data(BUFFER_PROP, [])
+
+            var buffer = this.data(BUFFER_PROP)
+
+            buffer.push(element)
+
+            if (buffer.length === BUFFER_SIZE) {
+                var self = this
+
+                buffer.forEach(function(el) {
+                    self.append(el)
+                })
+            }
+
+            return this
+        }
+    }())
+
+    J('body').buffer(J('<p />').text('buffer'))
+    J('body').buffer(J('<p />').text('buffer'))
+
+    setTimeout(function() {
+        J('body').buffer(J('<p />').text('buffer'))
+    }, 1000);
+}())
+</script>
