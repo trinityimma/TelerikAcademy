@@ -66,6 +66,7 @@
     ```js
     var controls = ...;
     var treeView = controls.treeView("div.tree-view");
+    
     var jsnode = treeView.addNode();
     jsnode.content("JavaScript");
     
