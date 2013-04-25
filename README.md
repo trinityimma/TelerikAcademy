@@ -103,7 +103,7 @@
 
 ##  JavaScript - Part II
 
-1. [DOM Manipulation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/1.DomManipulation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation/README.md)) - 11.04.2013
+1. [DOM Manipulation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/1.DomManipulation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/1.DomManipulation/README.md)) - 11.04.2013
 2. [Advanced Functions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/2.AdvancedFunctions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/2.AdvancedFunctions/README.md)) - 18.04.2013
 3. [JavaScript OOP](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/3.JavaScriptOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/3.JavaScriptOOP/README.md)) - 18.04.2013
 4. [JavaScript APIs](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptOop) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptOop/README.md)) - 25.04.2013
