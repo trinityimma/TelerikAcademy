@@ -107,3 +107,6 @@
 2. Advanced Functions - 18.04.2013
 3. JavaScript OOP - 18.04.2013
 4. JavaScript APIs - 25.04.2013
+5. Events
+6. Exceptions
+7. JavaScript Performance
