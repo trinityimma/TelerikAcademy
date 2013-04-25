@@ -25,7 +25,7 @@
            "http", "http", "CMS"
         ];
 
-       var tagCloud = generateTagCloud(tags,17,42);
+       var tagCloud = generateTagCloud(tags, 17, 42);
     ```
     
 * \* Create a TreeView component
