@@ -103,10 +103,10 @@
 
 ##  JavaScript - Part II
 
-1. [DOM Manipulation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation/README.md)) - 11.04.2013
-2. Advanced Functions - 18.04.2013
-3. JavaScript OOP - 18.04.2013
-4. JavaScript APIs - 25.04.2013
-5. Events
-6. Exceptions
-7. JavaScript Performance
+1. [DOM Manipulation](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/1.DomManipulation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/2.DomManipulation/README.md)) - 11.04.2013
+2. [Advanced Functions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/2.AdvancedFunctions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/2.AdvancedFunctions/README.md)) - 18.04.2013
+3. [JavaScript OOP](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/3.JavaScriptOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/3.JavaScriptOOP/README.md)) - 18.04.2013
+4. [JavaScript APIs](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptOop) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptOop/README.md)) - 25.04.2013
+5. [Events](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/5.Events) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/5.Events/README.md)) -
+6. [Exceptions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/6.Exceptions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/6.Exceptions/README.md)) -
+7. [JavaScript Performance](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/7.JavasScriptPerformance) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/7.JavasScriptPerformance/README.md)) -
