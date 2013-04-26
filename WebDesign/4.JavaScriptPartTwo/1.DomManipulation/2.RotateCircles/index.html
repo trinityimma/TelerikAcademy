@@ -36,10 +36,10 @@
             var angle = 0
 
             return function(circles, radius) {
-                var i
-                  , currentAngle
-
+                var currentAngle
                   , stepAngle = 2 * Math.PI / circles.length
+
+                  , i
 
                 for (i = 0; i < circles.length; i++) {
                     currentAngle = stepAngle * i
@@ -54,14 +54,8 @@
         }())
 
         ;(function animLoop() {
-            var innerRadius = 100
-              , outerRadius = 150
-
-              , innerCircles = document.querySelectorAll('.js-circle-inner')
-              , outerCircles = document.querySelectorAll('.js-circle-outer')
-
-            move(innerCircles, innerRadius)
-            move(outerCircles, outerRadius)
+            move(document.querySelectorAll('.js-circle-inner'), 100)
+            move(document.querySelectorAll('.js-circle-outer'), 150)
 
             requestAnimationFrame(animLoop)
         }())

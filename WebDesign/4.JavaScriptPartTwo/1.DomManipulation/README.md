@@ -27,10 +27,14 @@
 
        var tagCloud = generateTagCloud(tags, 17, 42);
     ```
-    
+
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/1.DOMManipulation/5.TagCloud/index.png)
+
 * \* Create a TreeView component
     * Initially only the top items must be visible
     * On item click
         * If its children are hidden (collapsed), they must be made visible (expanded)
         * If its children are visible (expanded), they must be made hidden (collapsed)
     * Research about events
+
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/1.DOMManipulation/6.TreeView/index.png)
