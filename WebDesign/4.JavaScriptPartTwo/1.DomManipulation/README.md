@@ -29,7 +29,6 @@
     ```
 
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/1.DomManipulation/5.TagCloud/index.png)
-
 * \* Create a TreeView component
     * Initially only the top items must be visible
     * On item click
