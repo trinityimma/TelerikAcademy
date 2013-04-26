@@ -1,6 +1,6 @@
 ## High-Quality Classes
 
-Use the provided source code "8.High-Quality-Classes-Homework.zip".
+Use the provided source code ["8.High-Quality-Classes-Homework.zip"](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/8.HighQualityClasses/8.High-Quality-Classes-Homework.zip?raw=true).
 
 1. Take the VS solution **"Abstraction"** and refactor its code to provide good abstraction. Move the properties and methods from the class `Figure` to their correct place. Move the common methods to the base class's interface. Remove all duplicated code (properties / methods / other code).
 * Establish good encapsulation in the classes from the VS solution **"Abstraction"**. Ensure that incorrect values cannot be assigned in the internal state of the classes.
