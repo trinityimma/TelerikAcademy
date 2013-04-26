@@ -85,3 +85,21 @@
     var webnode = treeView.addNode();
     webnode.content("Web");
     ```
+
+   The code should generate:
+
+   ```html
+   <div class="tree-view">
+     <ul>
+       <li><a href="#">JavaScript</a>
+         <ul>
+           <li><a href="#">JavaScript - part 1</a></li>
+           <li><a href="#">JavaScript - part 2</a></li>
+           <li><a href="#">JS Libraries</a></li>
+           <li><a href="#">JS Frameworks and UI</a></li>
+         </ul>
+       </li>
+       <li><a href="#">Web</a></li>
+     </ul>
+   </div>
+   ```
