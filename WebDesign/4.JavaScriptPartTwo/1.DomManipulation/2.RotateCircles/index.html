@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Rotate Circles</title>
+    <style>
+        .circle {
+            position: absolute;
+            margin: 50%;
+            border: 25px solid gray;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle js-circle-inner"></div>
+    <div class="circle js-circle-inner"></div>
+    <div class="circle js-circle-inner"></div>
+    <div class="circle js-circle-inner"></div>
+    <div class="circle js-circle-inner"></div>
+
+    <div class="circle js-circle-outer"></div>
+    <div class="circle js-circle-outer"></div>
+    <div class="circle js-circle-outer"></div>
+    <div class="circle js-circle-outer"></div>
+    <div class="circle js-circle-outer"></div>
+
+    <script>
+    window.requestAnimationFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}()
+
+    ;(function() {
+        'use strict';
+
+        var move = (function() {
+            var angle = 0
+
+            return function(circles, radius) {
+                var i
+                  , currentAngle
+
+                  , stepAngle = 2 * Math.PI / circles.length
+
+                for (i = 0; i < circles.length; i++) {
+                    currentAngle = stepAngle * i
+
+                    circles[i].style.left = Math.cos(angle + currentAngle) * radius + 'px'
+                    circles[i].style.top  = Math.sin(angle + currentAngle) * radius + 'px'
+                }
+
+                angle += 0.05
+                angle %= 2 * Math.PI
+            }
+        }())
+
+        ;(function animLoop() {
+            var innerRadius = 100
+              , outerRadius = 150
+
+              , innerCircles = document.querySelectorAll('.js-circle-inner')
+              , outerCircles = document.querySelectorAll('.js-circle-outer')
+
+            move(innerCircles, innerRadius)
+            move(outerCircles, outerRadius)
+
+            requestAnimationFrame(animLoop)
+        }())
+
+        ;(function() {
+            var allCircles = document.querySelectorAll('.circle')
+
+            window.addEventListener('mousemove', function(e) {
+                var i
+
+                for (i = 0; i < allCircles.length; i++) {
+                    allCircles[i].style.marginLeft = e.clientX + 'px'
+                    allCircles[i].style.marginTop  = e.clientY + 'px'
+                }
+            })
+        }())
+    }())
+    </script>
+</body>
+</html>

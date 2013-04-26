@@ -2,38 +2,35 @@
 ;(function() {
     'use strict';
 
-    var console = (function() {
-        function _format(str /*, opt_args */) {
+    var specialConsole = (function () {
+        function _format(str /*, params */) {
             var selfArguments = arguments
 
-            return str.replace(/\{(\d+)\}/g, function(match, p1) {
+            return str.replace(/\{(\d+)\}/g, function (match, p1) {
                 return selfArguments[+p1 + 1]
             })
         }
 
-        function _write(methodName, args) {
-            return window.console[methodName](_format.apply(null, args))
-        }
-
-        var api =
-            { writeLine: function(line /*, opt_args */) {
-                return _write('log', arguments)
+        var specialConsole =
+            { writeLine: function () {
+                console.log(_format.apply(null, arguments))
             }
 
-            , writeError: function(line /*, opt_args */) {
-                return _write('error', arguments)
+            , writeError: function () {
+                console.error(_format.apply(null, arguments))
             }
 
-            , writeWarning: function(line /*, opt_args */) {
-                return _write('warn', arguments)
+            , writeWarning: function () {
+                console.warn(_format.apply(null, arguments))
             }
         }
 
-        return api
+        return specialConsole
     }())
 
-    console.writeLine('test {0} {1}', 123, 'Pesho')
-    console.writeError('test {0}', 123)
-    console.writeWarning('test {0}', 123)
+    specialConsole.writeLine("Message: hello")
+    specialConsole.writeLine("Message: {0}, {1}!", "Hello", "Pesho")
+    specialConsole.writeError("Error: {0}", "Something happened")
+    specialConsole.writeWarning("Warning: {0}", "A warning")
 }())
 </script>
