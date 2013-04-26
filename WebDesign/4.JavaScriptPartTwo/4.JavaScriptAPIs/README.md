@@ -18,13 +18,15 @@
 * Draw the following graphics using canvas:
 
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index1.png)
+    
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index2.png)
+    
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index3.png)
 
 * Draw a circle that flies inside a box
     * When it reaches an edge, it should bounce that edge
 
-    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/5.Line/index3.png)
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/5.Line/index.png)
 
 * \* Create the famous game "Snake"
 	* The snake is a sequence of rectangles/ellipses
