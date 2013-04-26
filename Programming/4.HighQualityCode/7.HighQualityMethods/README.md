@@ -74,7 +74,7 @@
             }
 
 
-            static double CalcDistance(double x1, double y1, double x2, double y2, 
+            static double CalcDistance(double x1, double y1, double x2, double y2,
                 out bool isHorizontal, out bool isVertical)
             {
                 isHorizontal = (y1 == y2);
@@ -87,11 +87,11 @@
             static void Main()
             {
                 Console.WriteLine(CalcTriangleArea(3, 4, 5));
-                
+
                 Console.WriteLine(NumberToDigit(5));
-                
+
                 Console.WriteLine(FindMax(5, -1, 3, 2, 14, 2, 3));
-                
+
                 PrintAsNumber(1.3, "f");
                 PrintAsNumber(0.75, "%");
                 PrintAsNumber(2.30, "r");
@@ -113,7 +113,7 @@
         }
     }
     ```
-    
+
     ```c#
     using System;
 

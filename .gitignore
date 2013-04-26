@@ -1,14 +1,16 @@
+# WebStorm
 .idea
 
+# SASS
 .sass-cache
 config.rb
 
-*.rar
-*.zip
+# Archived Homework
+*/*/*.rar
+*/*/*.zip
 
+# TFS
 $tf/
-
-# 4.HighQualityCode/
 
 # Build and Object Folders
 bin/

@@ -4,15 +4,28 @@
   * Drag trash items
 	* Open the bucket when a trash item is being dragged over it and close when the trash is dragged out of the bucket, or is dropped in the bucket
 	* To throw a trash item into the bucket, i.e. make it disappear from the browser window
+
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/1.TrashBin/index1.png)
+
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/1.TrashBin/index2.png)
+
 * Using the exercise with the bucket implement functionality for high-score
 	* When the user cleans all the trash, he is asked for a nickname and his score is saved in the local storage
 		* The score of the user is the time that took him to clean the trash
-	* Implement a high-score board, that is visible on page load and shows the top 5 scores 
+	* Implement a high-score board, that is visible on page load and shows the top 5 scores
 		* The 5 users that cleaned the trash fastest
 * Create shiv/shim/polyfill to enable `localStorage` and `sessionStorage` in browsers that do not support them
 * Draw the following graphics using canvas:
+
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index1.png)
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index2.png)
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index3.png)
+
 * Draw a circle that flies inside a box
-	* When it reaches an edge, it should bounce that edge
+    * When it reaches an edge, it should bounce that edge
+
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/5.Line/index3.png)
+
 * \* Create the famous game "Snake"
 	* The snake is a sequence of rectangles/ellipses
 	* The snake can move left, right, up or down

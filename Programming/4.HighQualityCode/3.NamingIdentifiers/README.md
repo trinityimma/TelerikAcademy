@@ -10,10 +10,10 @@
         {
             string promenlivaKatoString=promenliva.ToString();
             Console.WriteLine(promenlivaKatoString);    }
-        }    
+        }
         public static void Метод_За_Вход() {
             class_123.InClass_class_123 инстанция = new class_123.InClass_class_123();
-            инстанция.Метод_нА_class_InClass_class_123(true); 
+            инстанция.Метод_нА_class_InClass_class_123(true);
         }
     }
     ```
@@ -30,7 +30,7 @@
             public string име_на_Чуека { get; set; }
             public int Възраст { get; set; }
         }
-        
+
         public void Make_Чуек(int магическия_НомерНаЕДИНЧОВЕК)
         {
             чуек new_Чуек = new чуек();
@@ -55,7 +55,7 @@
         var moqProzorec = window;
         var brauzyra = moqProzorec.navigator.appCodeName;
         var ism = brauzyra === "Mozilla";
-        
+
         if (ism) {
             alert("Yes");
         } else {
@@ -363,57 +363,57 @@
                 if (rr - 1 >= 0)
                 {
                     if (r[rr - 1, rrr] == '*')
-                    { 
-                        brojkata++; 
+                    {
+                        brojkata++;
                     }
                 }
                 if (rr + 1 < reds)
                 {
                     if (r[rr + 1, rrr] == '*')
-                    { 
-                        brojkata++; 
+                    {
+                        brojkata++;
                     }
                 }
                 if (rrr - 1 >= 0)
                 {
                     if (r[rr, rrr - 1] == '*')
-                    { 
+                    {
                         brojkata++;
                     }
                 }
                 if (rrr + 1 < kols)
                 {
                     if (r[rr, rrr + 1] == '*')
-                    { 
+                    {
                         brojkata++;
                     }
                 }
                 if ((rr - 1 >= 0) && (rrr - 1 >= 0))
                 {
                     if (r[rr - 1, rrr - 1] == '*')
-                    { 
-                        brojkata++; 
+                    {
+                        brojkata++;
                     }
                 }
                 if ((rr - 1 >= 0) && (rrr + 1 < kols))
                 {
                     if (r[rr - 1, rrr + 1] == '*')
-                    { 
-                        brojkata++; 
+                    {
+                        brojkata++;
                     }
                 }
                 if ((rr + 1 < reds) && (rrr - 1 >= 0))
                 {
                     if (r[rr + 1, rrr - 1] == '*')
-                    { 
-                        brojkata++; 
+                    {
+                        brojkata++;
                     }
                 }
                 if ((rr + 1 < reds) && (rrr + 1 < kols))
                 {
                     if (r[rr + 1, rrr + 1] == '*')
-                    { 
-                        brojkata++; 
+                    {
+                        brojkata++;
                     }
                 }
                 return char.Parse(brojkata.ToString());
