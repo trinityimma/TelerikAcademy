@@ -8,7 +8,6 @@
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/1.TrashBin/index1.png)
 
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/1.TrashBin/index2.png)
-
 * Using the exercise with the bucket implement functionality for high-score
 	* When the user cleans all the trash, he is asked for a nickname and his score is saved in the local storage
 		* The score of the user is the time that took him to clean the trash
@@ -18,16 +17,14 @@
 * Draw the following graphics using canvas:
 
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index1.png)
-    
-    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index2.png)
-    
-    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index3.png)
 
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index2.png)
+
+    ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/4.Drawings/index3.png)
 * Draw a circle that flies inside a box
     * When it reaches an edge, it should bounce that edge
 
     ![Screenshot](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/5.Line/index.png)
-
 * \* Create the famous game "Snake"
 	* The snake is a sequence of rectangles/ellipses
 	* The snake can move left, right, up or down
