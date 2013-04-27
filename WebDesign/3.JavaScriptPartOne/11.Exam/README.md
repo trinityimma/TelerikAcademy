@@ -80,7 +80,7 @@ By given start position, find the **path outside of the field**, or **print if y
 
 `N = 3, M = 4, R = 1, C = 3`
 
-![Example](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/3.JavaScriptPartOne/10.Exam/2.LabyrinthEscape/example.png)
+![Example](https://raw.github.com/jasssonpet/TelerikAcademy/master/WebDesign/3.JavaScriptPartOne/11.Exam/2.LabyrinthEscape/example.png)
 
 ### Input
 
