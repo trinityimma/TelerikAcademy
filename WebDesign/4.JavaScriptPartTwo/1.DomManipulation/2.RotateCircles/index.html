@@ -27,48 +27,51 @@
     <div class="circle js-circle-outer"></div>
 
     <script>
-    window.requestAnimationFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}()
+    window.requestAnimationFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||
+        window.mozRequestAnimationFrame||function(a){window.setTimeout(a,1E3/60)}}()
 
     ;(function() {
         'use strict';
 
         var move = (function() {
-            var angle = 0
+            var _currentAngle = 0
 
             return function(circles, radius) {
-                var currentAngle
-                  , stepAngle = 2 * Math.PI / circles.length
+                var step = 2 * Math.PI / circles.length
 
                   , i
 
                 for (i = 0; i < circles.length; i++) {
-                    currentAngle = stepAngle * i
-
-                    circles[i].style.left = Math.cos(angle + currentAngle) * radius + 'px'
-                    circles[i].style.top  = Math.sin(angle + currentAngle) * radius + 'px'
+                    circles[i].style.left = Math.cos(_currentAngle + (i * step)) * radius + 'px'
+                    circles[i].style.top  = Math.sin(_currentAngle + (i * step)) * radius + 'px'
                 }
 
-                angle += 0.05
-                angle %= 2 * Math.PI
+                _currentAngle += 0.05
+                _currentAngle %= (2 * Math.PI)
             }
         }())
 
-        ;(function animLoop() {
-            move(document.querySelectorAll('.js-circle-inner'), 100)
-            move(document.querySelectorAll('.js-circle-outer'), 150)
+        ;(function() {
+            var _innerCircles = document.querySelectorAll('.js-circle-inner')
+              , _outerCircles = document.querySelectorAll('.js-circle-outer')
 
-            requestAnimationFrame(animLoop)
+            ;(function animLoop() {
+                move(_innerCircles, 100)
+                move(_outerCircles, 150)
+
+                window.requestAnimationFrame(animLoop)
+            }())
         }())
 
         ;(function() {
-            var allCircles = document.querySelectorAll('.circle')
+            var _allCircles = document.querySelectorAll('.circle')
 
             window.addEventListener('mousemove', function(e) {
                 var i
 
-                for (i = 0; i < allCircles.length; i++) {
-                    allCircles[i].style.marginLeft = e.clientX + 'px'
-                    allCircles[i].style.marginTop  = e.clientY + 'px'
+                for (i = 0; i < _allCircles.length; i++) {
+                    _allCircles[i].style.marginLeft = e.clientX + 'px'
+                    _allCircles[i].style.marginTop  = e.clientY + 'px'
                 }
             })
         }())

@@ -17,24 +17,24 @@
 
 <body>
     <div ng-controller="TodoCtrl">
-        <span>{{getRemaining()}} of {{todos.length}} remaining</span>
+        <span>{{ getRemaining() }} of {{ todos.length }} remaining</span>
 
-        [<a href="" ng-click="archive()">clear done</a>]
+        [<a href="#" ng-click="archive()">clear done</a>]
 
         <ul>
             <li ng-repeat="todo in todos">
                 <label>
-                    <input type="checkbox" ng-model="todo.done">
+                    <input type="checkbox" ng-model="todo.done" />
 
-                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                    <span class="done-{{ todo.done }}">{{ todo.text }}</span>
                 </label>
             </li>
         </ul>
 
         <form ng-submit="add()">
-            <input type="text" ng-model="todoText" placeholder="Add new todo here">
+            <input type="text" ng-model="todoText" placeholder="Add new todo here" />
 
-            <input type="submit" value="Add">
+            <input type="submit" value="Add" />
         </form>
     </div>
 
@@ -44,27 +44,27 @@
             $scope.todos =
                 [ { text: 'Learn Angular', done: true }
                 , { text: 'Build an Angular app', done: false }
-            ];
+            ]
 
             function _filter() {
                 return $scope.todos.filter(function(todo) {
-                    return !todo.done;
-                });
+                    return !todo.done
+                })
             }
 
             $scope.add = function() {
-                $scope.todos.push({ text: $scope.todoText, done: false });
+                $scope.todos.push({ text: $scope.todoText, done: false })
 
-                $scope.todoText = '';
-            };
+                $scope.todoText = ''
+            }
 
             $scope.getRemaining = function() {
-                return _filter().length;
-            };
+                return _filter().length
+            }
 
             $scope.archive = function() {
-                $scope.todos = _filter();
-            };
+                $scope.todos = _filter()
+            }
         }
     </script>
 </body>
