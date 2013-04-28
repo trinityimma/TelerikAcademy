@@ -21,7 +21,8 @@ public class SimpleMathExam : Exam
         this.ProblemsSolved = problemsSolved;
     }
 
-    private readonly SortedDictionary<int, KeyValuePair<int, string>> marks = new SortedDictionary<int, KeyValuePair<int, string>>
+    private readonly SortedDictionary<int, KeyValuePair<int, string>> marks =
+        new SortedDictionary<int, KeyValuePair<int, string>>
     {
         { 0, new KeyValuePair<int, string>(2, "Bad result: nothing done.") },
         { 1, new KeyValuePair<int, string>(4, "Average result: something done.") },

@@ -71,6 +71,6 @@ class ExceptionsHomework
         Student peter = new Student("Peter", "Petrov", peterExams);
 
         decimal peterAverageResult = peter.CalcAverageExamResultInPercents();
-        Console.WriteLine("Average results = {0:p0}", peterAverageResult);
+        Console.WriteLine("Average results = {0:P0}", peterAverageResult);
     }
 }
