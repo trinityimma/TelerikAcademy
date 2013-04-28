@@ -30,7 +30,7 @@ static class Program
         {
             DisplayExecutionTime("QuickSort sorted", () =>
                QuickSort(arr)
-                );
+            );
 
             DisplayExecutionTime("SelectionSort sorted", () =>
                 SelectionSort(arr)
@@ -79,11 +79,6 @@ static class Program
     }
 
     static readonly Random random = new Random(0);
-
-    static void Print<T>(T[] arr)
-    {
-        Console.WriteLine(String.Join(" ", arr));
-    }
 
     static void Swap<T>(ref T x, ref T y)
     {
