@@ -91,18 +91,18 @@
         var shape = (function() {
             var _properties =
                 { backgroundColor: function() {
-                    return J.randomColor();
+                    return J.randomColor()
                 }
 
                 , borderColor: function() {
-                    return J.randomColor();
+                    return J.randomColor()
                 }
 
                 , fontFamily: (function() {
                     var _fonts = ['Arial', 'Tahoma', 'Verdana']
 
                     return function() {
-                        return _fonts[J.random(_fonts.length - 1)];
+                        return _fonts[J.random(_fonts.length - 1)]
                     }
                 }())
             }
@@ -113,12 +113,12 @@
                 var div = J('<div />').addClass('box')
 
                 J.each(_properties, function(prop) {
-                    div.css(prop, this());
+                    div.css(prop, this())
                 })
 
                 div.text(_id++)
 
-                return div;
+                return div
             }
 
             return { circle: function() {
