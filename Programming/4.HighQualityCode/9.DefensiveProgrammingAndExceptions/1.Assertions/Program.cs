@@ -81,6 +81,7 @@ static class Program
             else return midIndex;
         }
 
+        Debug.Assert(!arr.Contains(value), String.Format("Array contains {0}!", value));
         return -1;
     }
 

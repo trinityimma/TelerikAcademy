@@ -10,7 +10,7 @@ namespace Abstraction
             get { return this.radius; }
             private set
             {
-                PositiveExceptionHelper(value, "radius");
+                this.PositiveExceptionHelper(value, "radius");
 
                 this.radius = value;
             }

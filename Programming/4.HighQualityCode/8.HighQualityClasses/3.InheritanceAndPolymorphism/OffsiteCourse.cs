@@ -15,7 +15,7 @@ namespace InheritanceAndPolymorphism
 
         public override string ToString()
         {
-            return base.ToStringHelper(new KeyValuePair<string, string>("Town", this.Town));
+            return this.ToStringHelper(new KeyValuePair<string, string>("Town", this.Town));
         }
     }
 }

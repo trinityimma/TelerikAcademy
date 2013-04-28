@@ -11,7 +11,7 @@ public class Student
         private set
         {
             if (String.IsNullOrEmpty(value))
-                throw new ArgumentException("Invalid first name!", value);
+                throw new ArgumentException("Invalid first name!");
 
             this.firstName = value;
         }
@@ -24,7 +24,7 @@ public class Student
         private set
         {
             if (String.IsNullOrEmpty(value))
-                throw new ArgumentException("Invalid last name!", value);
+                throw new ArgumentException("Invalid last name!");
 
             this.lastName = value;
         }
@@ -56,7 +56,7 @@ public class Student
 
     public decimal CalcAverageExamResultInPercents()
     {
-        return CheckExams().Average(res =>
+        return this.CheckExams().Average(res =>
             res.CalcInPercents()
         );
     }

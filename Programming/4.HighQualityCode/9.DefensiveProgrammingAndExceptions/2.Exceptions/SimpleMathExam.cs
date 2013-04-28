@@ -30,7 +30,7 @@ public class SimpleMathExam : Exam
 
     public override ExamResult Check()
     {
-        var mark = marks[this.problemsSolved];
+        var mark = this.marks[this.problemsSolved];
 
         return new ExamResult(mark.Key, 2, 6, mark.Value);
     }

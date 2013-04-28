@@ -10,7 +10,7 @@ namespace Abstraction
             get { return this.width; }
             private set
             {
-                PositiveExceptionHelper(value, "width");
+                this.PositiveExceptionHelper(value, "width");
 
                 this.width = value;
             }
@@ -22,7 +22,7 @@ namespace Abstraction
             get { return this.height; }
             private set
             {
-                PositiveExceptionHelper(value, "height");
+                this.PositiveExceptionHelper(value, "height");
 
                 this.height = value;
             }

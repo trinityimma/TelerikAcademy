@@ -11,7 +11,7 @@ public class CSharpExam : Exam
         get { return this.score; }
         private set
         {
-            if (!(MinGrade <= Score && Score <= MaxGrade))
+            if (!(MinGrade <= this.Score && this.Score <= MaxGrade))
                 throw new ArgumentOutOfRangeException("Score");
 
             this.score = value;

@@ -11,7 +11,6 @@ public class ExamResult
             if (!(this.minGrade <= value && value <= this.maxGrade))
                 throw new ArgumentOutOfRangeException("Grade");
 
-
             this.grade = value;
         }
     }
