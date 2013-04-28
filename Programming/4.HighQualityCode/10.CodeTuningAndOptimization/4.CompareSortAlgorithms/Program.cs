@@ -2,13 +2,14 @@
 using System.Linq;
 using System.Diagnostics;
 
+// Code quality - Over 9E3
 static class Program
 {
     static readonly Stopwatch stopwatch = new Stopwatch();
 
     static void DisplayExecutionTime(string title, Action action)
     {
-        Console.Write("{0, -25}", title);
+        Console.Write("{0, -30}", title);
         stopwatch.Restart();
 
         action();
@@ -25,56 +26,210 @@ static class Program
 
     static void Main()
     {
-        int[] arr = Enumerable.Range(0, (int)3E4).ToArray();
-
         {
-            DisplayExecutionTime("QuickSort sorted", () =>
-               QuickSort(arr)
-            );
+            int[] arr = Enumerable.Range(0, (int)3E4).ToArray();
 
-            DisplayExecutionTime("SelectionSort sorted", () =>
-                SelectionSort(arr)
-            );
+            {
+                DisplayExecutionTime("Int Sorted QuickSort", () =>
+                    QuickSort(arr)
+                );
 
-            DisplayExecutionTime("InsertionSort sorted", () =>
-                InsertionSort(arr)
-            );
+                DisplayExecutionTime("Int Sorted SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("Int Sorted InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("Int Sorted ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
+
+            Console.WriteLine();
+
+            {
+                arr = arr.Reverse().ToArray();
+
+                DisplayExecutionTime("Int Reversed QuickSort", () =>
+                    QuickSort(arr)
+                );
+
+                DisplayExecutionTime("Int Reversed SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("Int Reversed InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("Int Reversed ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
+
+            Console.WriteLine();
+
+            {
+                arr.Shuffle();
+
+                DisplayExecutionTime("Int Shuffled QuickSort", () =>
+                    QuickSort(arr)
+                );
+
+                DisplayExecutionTime("Int Shuffled SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("Int Shuffled InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("Int Shuffled ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
         }
 
         Console.WriteLine();
-
-        {
-            arr = arr.Reverse().ToArray();
-
-            DisplayExecutionTime("QuickSort reversed", () =>
-                QuickSort(arr)
-            );
-
-            DisplayExecutionTime("SelectionSort reversed", () =>
-                SelectionSort(arr)
-            );
-
-            DisplayExecutionTime("InsertionSort reversed", () =>
-                InsertionSort(arr)
-            );
-        }
-
         Console.WriteLine();
 
         {
-            arr.Shuffle();
+            double[] arr = Enumerable.Range(0, (int)3E4).Select(n => (double)n).ToArray();
 
-            DisplayExecutionTime("QuickSort shuffled", () =>
-                QuickSort(arr)
-            );
+            {
+                DisplayExecutionTime("Double Sorted QuickSort", () =>
+                    QuickSort(arr)
+                );
 
-            DisplayExecutionTime("SelectionSort shuffled", () =>
-                SelectionSort(arr)
-            );
+                DisplayExecutionTime("Double Sorted SelectionSort", () =>
+                    SelectionSort(arr)
+                );
 
-            DisplayExecutionTime("InsertionSort shuffled", () =>
-                InsertionSort(arr)
-            );
+                DisplayExecutionTime("Double Sorted InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("Double Sorted ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
+
+            Console.WriteLine();
+
+            {
+                arr = arr.Reverse().ToArray();
+
+                DisplayExecutionTime("Double Reversed QuickSort", () =>
+                    QuickSort(arr)
+                );
+
+                DisplayExecutionTime("Double Reversed SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("Double Reversed InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("Double Reversed ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
+
+            Console.WriteLine();
+
+            {
+                arr.Shuffle();
+
+                DisplayExecutionTime("Double Shuffled QuickSort", () =>
+                    QuickSort(arr)
+                );
+
+                DisplayExecutionTime("Double Shuffled SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("Double Shuffled InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("Double Shuffled ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
+        }
+
+        Console.WriteLine();
+        Console.WriteLine();
+
+        {
+            string[] arr = Enumerable.Range(0, (int)1E4).Select(n => new String((char)random.Next(255), 10)).ToArray();
+
+            Array.Sort(arr);
+
+            {
+                DisplayExecutionTime("String Sorted QuickSort", () =>
+                    QuickSort(arr)
+                );
+
+                DisplayExecutionTime("String Sorted SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("String Sorted InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("String Sorted ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
+
+            Console.WriteLine();
+
+            {
+                arr = arr.Reverse().ToArray();
+
+                DisplayExecutionTime("String Reversed QuickSort", () =>
+                    QuickSort(arr)
+                );
+
+                DisplayExecutionTime("String Reversed SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("String Reversed InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("String Reversed ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
+
+            Console.WriteLine();
+
+            {
+                arr.Shuffle();
+
+                DisplayExecutionTime("String Shuffled QuickSort", () =>
+                    QuickSort(arr)
+                );
+
+                DisplayExecutionTime("String Shuffled SelectionSort", () =>
+                    SelectionSort(arr)
+                );
+
+                DisplayExecutionTime("String Shuffled InsertionSort", () =>
+                    InsertionSort(arr)
+                );
+
+                DisplayExecutionTime("String Shuffled ArraySort", () =>
+                    Array.Sort(arr)
+                );
+            }
         }
     }
 
@@ -114,7 +269,7 @@ static class Program
         QuickSort(arr, middle + 1, right);
     }
 
-    static void QuickSort(int[] arr)
+    static void QuickSort<T>(T[] arr) where T : IComparable<T>
     {
         QuickSort(arr, 0, arr.Length - 1);
     }
