@@ -2,15 +2,13 @@
 using System.Linq;
 using System.Diagnostics;
 
-class Program
+static class Program
 {
-    const int IterationCount = (int)1.6E7;
-
     static readonly Stopwatch stopwatch = new Stopwatch();
 
     static void DisplayExecutionTime(string title, Action action)
     {
-        Console.Write("{0, -20}", title);
+        Console.Write("{0, -25}", title);
         stopwatch.Restart();
 
         action();
@@ -19,18 +17,65 @@ class Program
         Console.WriteLine(stopwatch.Elapsed);
     }
 
+    static void Shuffle<T>(this T[] arr)
+    {
+        for (int i = arr.Length - 1; i > 0; i--)
+            Swap(ref arr[i], ref arr[random.Next(i + 1)]);
+    }
+
     static void Main()
     {
-        int[] arr = { -1, 2, -3, 4, 4, -5, 6, -7 };
+        int[] arr = Enumerable.Range(0, (int)3E4).ToArray();
 
-        QuickSort(arr);
-        Print(arr);
+        {
+            DisplayExecutionTime("QuickSort sorted", () =>
+               QuickSort(arr)
+                );
 
-        SelectionSort(arr);
-        Print(arr);
+            DisplayExecutionTime("SelectionSort sorted", () =>
+                SelectionSort(arr)
+            );
 
-        InsertionSort(arr);
-        Print(arr);
+            DisplayExecutionTime("InsertionSort sorted", () =>
+                InsertionSort(arr)
+            );
+        }
+
+        Console.WriteLine();
+
+        {
+            arr = arr.Reverse().ToArray();
+
+            DisplayExecutionTime("QuickSort reversed", () =>
+                QuickSort(arr)
+            );
+
+            DisplayExecutionTime("SelectionSort reversed", () =>
+                SelectionSort(arr)
+            );
+
+            DisplayExecutionTime("InsertionSort reversed", () =>
+                InsertionSort(arr)
+            );
+        }
+
+        Console.WriteLine();
+
+        {
+            arr.Shuffle();
+
+            DisplayExecutionTime("QuickSort shuffled", () =>
+                QuickSort(arr)
+            );
+
+            DisplayExecutionTime("SelectionSort shuffled", () =>
+                SelectionSort(arr)
+            );
+
+            DisplayExecutionTime("InsertionSort shuffled", () =>
+                InsertionSort(arr)
+            );
+        }
     }
 
     static readonly Random random = new Random(0);
@@ -68,10 +113,10 @@ class Program
     {
         if (left >= right) return;
 
-        int q = Partition(arr, left, right);
+        int middle = Partition(arr, left, right);
 
-        QuickSort(arr, left, q - 1);
-        QuickSort(arr, q + 1, right);
+        QuickSort(arr, left, middle - 1);
+        QuickSort(arr, middle + 1, right);
     }
 
     static void QuickSort(int[] arr)
@@ -100,7 +145,7 @@ class Program
 
         while (left < right)
         {
-            int middle = (left + right) / 2;
+            int middle = left + (right - left) / 2;
 
             if (arr[i].CompareTo(arr[middle]) >= 0)
                 left = middle + 1;
