@@ -1,5 +1,20 @@
 /*jshint es5: true */
 
+function makeMatrix(rows, cols) {
+    var matrix = new Array(rows)
+
+    var row, col
+
+    for (row = 0; row < rows; row++) {
+        matrix[row] = new Array(cols)
+
+        for (col = 0; col < cols; col++)
+            matrix[row][col] = 0
+    }
+
+    return matrix
+}
+
 function Point(row, col) {
     if (!(this instanceof Point))
         return new Point(row, col)
@@ -43,45 +58,30 @@ var engine = (function() {
     }
 }())
 
-function makeMatrix(rows, cols) {
-    var matrix = new Array(rows)
-
-    var row, col
-
-    for (row = 0; row < rows; row++) {
-        matrix[row] = new Array(cols)
-
-        for (col = 0; col < cols; col++)
-            matrix[row][col] = 0
-    }
-
-    return matrix
-}
-
 var renderer = (function() {
     var ZOOM = 15
 
-    var _scene
-
     var _context
+
+    var _scene
 
     var _rows
     var _cols
 
     function _draw(row, col) {
-        _scene.fillStyle = 'black'
-        _scene.fillRect(col * ZOOM, row * ZOOM, ZOOM, ZOOM)
+        _context.fillStyle = 'black'
+        _context.fillRect(col * ZOOM, row * ZOOM, ZOOM, ZOOM)
 
-        _scene.strokeStyle = 'white'
-        _scene.strokeRect(col * ZOOM, row * ZOOM, ZOOM, ZOOM)
+        _context.strokeStyle = 'white'
+        _context.strokeRect(col * ZOOM, row * ZOOM, ZOOM, ZOOM)
     }
 
     function _render() {
         var row, col
 
-        for (row = 0; row < _context.length; row++) {
-            for (col = 0; col < _context[row].length; col++) {
-                if (_context[row][col])
+        for (row = 0; row < _scene.length; row++) {
+            for (col = 0; col < _scene[row].length; col++) {
+                if (_scene[row][col])
                     _draw(row, col)
             }
         }
@@ -90,9 +90,9 @@ var renderer = (function() {
     function _clear() {
         var row, col
 
-        for (row = 0; row < _context.length; row++)
-            for (col = 0; col < _context[row].length; col++)
-                _context[row][col] = 0
+        for (row = 0; row < _scene.length; row++)
+            for (col = 0; col < _scene[row].length; col++)
+                _scene[row][col] = 0
     }
 
     return {
@@ -101,12 +101,12 @@ var renderer = (function() {
             canvas.width  = cols * ZOOM
             canvas.height = rows * ZOOM
 
-            _scene = canvas.getContext('2d')
+            _context = canvas.getContext('2d')
 
             _rows = rows
             _cols = cols
 
-            _context = makeMatrix(_rows, _cols)
+            _scene = makeMatrix(_rows, _cols)
         },
 
         add: function(obj) {
@@ -124,7 +124,7 @@ var renderer = (function() {
 
             for (row = first.row; row < last.row; row++) {
                 for (col = first.col; col < last.col; col++) {
-                    _context[row][col] = true
+                    _scene[row][col] = true
                 }
             }
         },
@@ -135,25 +135,6 @@ var renderer = (function() {
         }
     }
 }())
-
-function GameObject(image, position) {
-    this.image = image
-    this.position = position
-}
-
-GameObject.prototype =
-    { get rows() {
-        return this.image.length
-    }
-
-    , get cols() {
-        return this.image[0].length
-    }
-}
-
-function Block(position) {
-    return new GameObject([[1]], position)
-}
 
 var userInterface = (function() {
     var _input
@@ -179,6 +160,25 @@ var userInterface = (function() {
         }
     }
 }())
+
+function GameObject(image, position) {
+    this.image = image
+    this.position = position
+}
+
+GameObject.prototype =
+    { get rows() {
+        return this.image.length
+    }
+
+    , get cols() {
+        return this.image[0].length
+    }
+}
+
+function Block(position) {
+    return new GameObject([[1]], position)
+}
 
 ;(function() {
     var ROWS = 30
