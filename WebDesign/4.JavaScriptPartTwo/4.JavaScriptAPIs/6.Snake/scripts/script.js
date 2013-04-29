@@ -53,7 +53,7 @@ var Point = (function() {
 
 
 var engine = (function() {
-    var ANIMATION_DELAY = 1000 / 60
+    var ANIMATION_DELAY = 1000 / 30
 
     var _controlledObject
     var _staticObjects = []
@@ -128,7 +128,7 @@ var engine = (function() {
                 _controlledObject.direction = Point[input.toUpperCase()]
 
             if (_checkForCollision(_controlledObject))
-                _controlledObject.direction.invert()
+                return // _controlledObject.direction.invert()
 
             _controlledObject.update()
 
@@ -138,7 +138,8 @@ var engine = (function() {
 }())
 
 var renderer = (function() {
-    var ZOOM = 15
+    var ZOOM = 20
+    var PADDING = 3
 
     var _context
 
@@ -148,11 +149,8 @@ var renderer = (function() {
     var _cols
 
     function _draw(row, col) {
-        _context.fillStyle = 'black'
-        _context.fillRect(col * ZOOM, row * ZOOM, ZOOM, ZOOM)
-
-        _context.strokeStyle = 'white'
-        _context.strokeRect(col * ZOOM, row * ZOOM, ZOOM, ZOOM)
+        _context.fillStyle = 'lightGray'
+        _context.fillRect(col * ZOOM, row * ZOOM, ZOOM - PADDING, ZOOM - PADDING)
     }
 
     function _render() {
@@ -179,8 +177,8 @@ var renderer = (function() {
     return {
         init: function(canvas, rows, cols) {
             // Reversed
-            canvas.width  = cols * ZOOM
-            canvas.height = rows * ZOOM
+            canvas.width  = cols * ZOOM - PADDING
+            canvas.height = rows * ZOOM - PADDING
 
             _context = canvas.getContext('2d')
 
@@ -287,8 +285,8 @@ var MovingObject = (function() {
 }())
 
 ;(function() {
-    var ROWS = 30
-    var COLS = 40
+    var ROWS = 22
+    var COLS = 30
 
     var CANVAS = document.getElementById('canvas')
 
