@@ -9,11 +9,13 @@ define(function(require) {
     }
 
     function UserInterface(element) {
+        var self = this
+
         this.input = null
 
         // TODO: Add listener to element
         window.addEventListener('keydown', function(e) {
-            this.input = KEY_MAP[e.which]
+            self.input = KEY_MAP[e.which]
         })
     }
 

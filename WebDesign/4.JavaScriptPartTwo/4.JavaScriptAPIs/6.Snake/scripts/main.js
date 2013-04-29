@@ -51,12 +51,10 @@ define(function(require) {
 
             // _engine.add(new MovingObject([[ true ]], Point(5, 5), Point(1, 1)))
             // _engine.add(new MovingObject([[ true ]], Point(13, 13), Point(-1, -1)))
-
-            _engine.add(new MovingObject([[ true ]], Point(5, 5), Point(-1, -1)))
         }
 
         function _makeBall() {
-            // _engine.addControlled(new MovingObject([[ true ]], Point(2, 6), Point(1, 1)))
+            _engine.addControlled(new MovingObject([[ true ]], Point(5, 5), Point(-1, -1)))
         }
 
         return function() {

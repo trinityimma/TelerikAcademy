@@ -3,7 +3,7 @@ define(function(require) {
 
     var Point = require('Point')
 
-    var ANIMATION_DELAY = 1000 / 5
+    var ANIMATION_DELAY = 1000 / 15
 
     function Engine(renderer, userInterface) {
         this.controlledObject = null
@@ -54,16 +54,18 @@ define(function(require) {
         return function(obj) {
             var direction = obj.direction || Point.ZERO
 
-            var _result = new Point()
-
-            _result.row = _checkInDirection.call(this, obj, new Point(direction.row, 0)) && -direction.row || 0
-            _result.col = _checkInDirection.call(this, obj, new Point(0, direction.col)) && -direction.col || 0
+            var force = new Point
+                ( _checkInDirection.call(this, obj, new Point(direction.row, 0)) && direction.row || 0
+                , _checkInDirection.call(this, obj, new Point(0, direction.col)) && direction.col || 0
+            )
 
             // Diagonal
-            if (_result.equals(Point.ZERO) && _checkInDirection.call(this, obj, direction))
-                _result = direction.invert()
+            if (force.equals(Point.ZERO) && _checkInDirection.call(this, obj, direction))
+                force = direction
 
-            return _result.equals(Point.ZERO) ? null : _result;
+            force = Point.invert(force)
+
+            return force.equals(Point.ZERO) ? null : force;
         }
     }())
 
@@ -78,7 +80,7 @@ define(function(require) {
         , addControlled: function(obj) {
             this.controlledObject = obj
 
-            return engine.add(obj)
+            return this.add(obj)
         }
 
         , run: (function() {
@@ -101,8 +103,9 @@ define(function(require) {
 
                 input = this.userInterface.processInput()
 
-                if (input && this.controlledObject)
+                if (input && this.controlledObject) {
                     this.controlledObject.direction = Point[input.toUpperCase()] // TODO: Decouple
+                }
 
                 this.movingObjects.forEach(function(obj) {
                     var collision = _checkForCollision.call(self, obj)
