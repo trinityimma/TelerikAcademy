@@ -166,8 +166,6 @@ var userInterface = (function() {
     }
 
     window.addEventListener('keydown', function(e) {
-        e.preventDefault()
-
         _input = _keyMap[e.which]
     })
 
