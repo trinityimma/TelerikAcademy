@@ -18,9 +18,9 @@ define(function() {
         },
 
         inherit: function(Child, Parent) {
-            Child.prototype = Object.create(Parent.prototype);
-            Child.prototype.parent = Parent.prototype;
-            Child.prototype.constructor = Child;
+            Child.prototype = Object.create(Parent.prototype)
+            Child.prototype.parent = Parent.prototype
+            Child.prototype.constructor = Child
         }
     }
 })
