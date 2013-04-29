@@ -1,21 +1,19 @@
-var engine = (function() {
+define(function(require) {
+    'use strict';
+
+    var Point = require('Point')
+
     var ANIMATION_DELAY = 1000 / 5
 
-    var _controlledObject
+    function Engine(renderer, userInterface) {
+        this.controlledObject = null
 
-    var _allObjects = []
-    var _staticObjects = []
-    var _movingObjects = []
+        this.allObjects = []
+        this.staticObjects = []
+        this.movingObjects = []
 
-    var _renderer
-    var _userInterface
-
-    function _renderAll() {
-        _allObjects.forEach(function(obj) {
-            _renderer.add(obj)
-        })
-
-        _renderer.renderAll()
+        this.renderer = renderer
+        this.userInterface = userInterface
     }
 
     var _checkForCollision = (function() {
@@ -24,10 +22,8 @@ var engine = (function() {
             var first, last
             var row, col
 
-            var curDirection
-
-            for (i = 0; i < _allObjects.length; i++) {
-                cur = _allObjects[i]
+            for (i = 0; i < this.allObjects.length; i++) {
+                cur = this.allObjects[i]
 
                 first = new Point(
                     Math.max(obj.position.row + objDirection.row,
@@ -60,60 +56,66 @@ var engine = (function() {
 
             var _result = new Point()
 
-            _result.row = _checkInDirection(obj, new Point(direction.row, 0)) && -direction.row || 0
-            _result.col = _checkInDirection(obj, new Point(0, direction.col)) && -direction.col || 0
+            _result.row = _checkInDirection.call(this, obj, new Point(direction.row, 0)) && -direction.row || 0
+            _result.col = _checkInDirection.call(this, obj, new Point(0, direction.col)) && -direction.col || 0
 
             // Diagonal
-            if (_result.equals(Point.ZERO) && _checkInDirection(obj, direction))
+            if (_result.equals(Point.ZERO) && _checkInDirection.call(this, obj, direction))
                 _result = direction.invert()
 
-            // return (_result.row || _result.col) && _result;
             return _result.equals(Point.ZERO) ? null : _result;
         }
     }())
 
-    return {
-        init: function(renderer, userInterface) {
-            _renderer = renderer
-            _userInterface = userInterface
-        },
+    Engine.prototype =
+        { add: function(obj) {
+            if (obj.direction) this.movingObjects.push(obj)
+            else this.staticObjects.push(obj)
 
-        add: function(obj) {
-            if (obj.direction)
-                _movingObjects.push(obj)
-
-            else _staticObjects.push(obj)
-
-            _allObjects.push(obj)
-        },
-
-        addControlled: function(obj) {
-            _controlledObject = obj
-
-            engine.add(obj)
-        },
-
-        run: function() {
-            _renderAll()
-
-            var input = _userInterface.processInput()
-
-            if (input && _controlledObject)
-                _controlledObject.direction = Point[input.toUpperCase()]
-
-            _movingObjects.forEach(function(obj) {
-                var collision = _checkForCollision(obj)
-
-                if (collision) {
-                    obj.respondToCollision(collision)
-
-                    // console.log('collision')
-                }
-
-                obj.update()
-            })
-
-            setTimeout(engine.run, ANIMATION_DELAY)
+            this.allObjects.push(obj)
         }
+
+        , addControlled: function(obj) {
+            this.controlledObject = obj
+
+            return engine.add(obj)
+        }
+
+        , run: (function() {
+            function _renderAll() {
+                var self = this
+
+                this.allObjects.forEach(function(obj) {
+                    self.renderer.add(obj)
+                })
+
+                this.renderer.renderAll()
+            }
+
+            return function() {
+                var self = this
+
+                var input
+
+                _renderAll.call(this)
+
+                input = this.userInterface.processInput()
+
+                if (input && this.controlledObject)
+                    this.controlledObject.direction = Point[input.toUpperCase()] // TODO: Decouple
+
+                this.movingObjects.forEach(function(obj) {
+                    var collision = _checkForCollision.call(self, obj)
+
+                    collision && obj.respondToCollision(collision)
+
+                    obj.update()
+                })
+
+                setTimeout(this.run.bind(this), ANIMATION_DELAY)
+            }
+        }())
     }
-}())
+
+    return Engine
+})

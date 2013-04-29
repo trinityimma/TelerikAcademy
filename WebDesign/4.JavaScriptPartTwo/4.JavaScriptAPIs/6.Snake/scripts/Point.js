@@ -1,4 +1,6 @@
-var Point = (function() {
+define(function() {
+    'use strict';
+
     function Point(row, col) {
         if (!(this instanceof Point))
             return new Point(row, col)
@@ -35,4 +37,4 @@ var Point = (function() {
     }
 
     return Point
-}())
+})

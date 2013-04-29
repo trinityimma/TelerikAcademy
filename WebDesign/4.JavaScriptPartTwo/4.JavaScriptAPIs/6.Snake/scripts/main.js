@@ -1,16 +1,28 @@
-/*jshint es5: true */
+define(function(require) {
+    'use strict';
 
-;(function() {
+    var Point = require('Point')
+
+    var Engine = require('Engine')
+    var Renderer = require('Renderer')
+    var UserInterface = require('UserInterface')
+
+    var GameObject = require('GameObject')
+    var MovingObject = require('MovingObject')
+    var Block = require('Block')
+
     var ROWS = 22
     var COLS = 30
 
     var CANVAS = document.getElementById('canvas')
 
-    function init() {
-        renderer.init(CANVAS, ROWS, COLS)
-        userInterface.init(CANVAS)
+    var _engine
 
-        engine.init(renderer, userInterface)
+    function init() {
+        var renderer = new Renderer(CANVAS, ROWS, COLS)
+        var userInterface = new UserInterface(CANVAS)
+
+        _engine = new Engine(renderer, userInterface)
     }
 
     var make = (function() {
@@ -18,31 +30,33 @@
             var row, col
 
             for (row = 0; row < ROWS; row++){
-                engine.add(new Block(Point(row, 0)))
-                engine.add(new Block(Point(row, COLS - 1)))
+                _engine.add(new Block(Point(row, 0)))
+                _engine.add(new Block(Point(row, COLS - 1)))
             }
 
             for (col = 1; col < COLS - 1; col++){
-                engine.add(new Block(Point(0, col)))
-                engine.add(new Block(Point(ROWS - 1, col)))
+                _engine.add(new Block(Point(0, col)))
+                _engine.add(new Block(Point(ROWS - 1, col)))
             }
 
-            engine.add(new Block(Point(ROWS / 2, COLS / 2)))
+            _engine.add(new Block(Point(COLS / 2, COLS / 2)))
         }
 
         function _makeEnviroment() {
-            engine.add(new MovingObject([[ true ]], Point(2, 2), Point.RIGHT))
-            engine.add(new MovingObject([[ true ]], Point(2, COLS - 3), Point.LEFT))
+            _engine.add(new MovingObject([[ true ]], Point(2, 2), Point.RIGHT))
+            _engine.add(new MovingObject([[ true ]], Point(2, COLS - 3), Point.LEFT))
 
-            engine.add(new MovingObject([[ true ]], Point(2, 5), Point.DOWN))
-            engine.add(new MovingObject([[ true ]], Point(ROWS - 3, 5), Point.UP))
+            // _engine.add(new MovingObject([[ true ]], Point(2, 5), Point.DOWN))
+            // _engine.add(new MovingObject([[ true ]], Point(ROWS - 3, 5), Point.UP))
 
-            engine.add(new MovingObject([[ true ]], Point(5, 5), Point(1, 1)))
-            engine.add(new MovingObject([[ true ]], Point(13, 13), Point(-1, -1)))
+            // _engine.add(new MovingObject([[ true ]], Point(5, 5), Point(1, 1)))
+            // _engine.add(new MovingObject([[ true ]], Point(13, 13), Point(-1, -1)))
+
+            _engine.add(new MovingObject([[ true ]], Point(5, 5), Point(-1, -1)))
         }
 
         function _makeBall() {
-            // engine.addControlled(new MovingObject([[ true ]], Point(2, 6), Point(1, 1)))
+            // _engine.addControlled(new MovingObject([[ true ]], Point(2, 6), Point(1, 1)))
         }
 
         return function() {
@@ -50,5 +64,5 @@
         }
     }())
 
-    init(), make(), engine.run()
-}())
+    init(), make(), _engine.run()
+})

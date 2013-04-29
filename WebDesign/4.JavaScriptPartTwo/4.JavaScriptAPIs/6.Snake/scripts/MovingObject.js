@@ -1,11 +1,17 @@
-var MovingObject = (function() {
+define(function(require) {
+    'use strict';
+
+    var utils = require('utils')
+    var Point = require('Point')
+    var GameObject = require('GameObject')
+
     function MovingObject(image, position, direction) {
         GameObject.call(this, image, position)
 
         this.direction = direction
     }
 
-    inherit(MovingObject, GameObject)
+    utils.inherit(MovingObject, GameObject)
 
     MovingObject.prototype.update = function() {
         this.position = Point.add(this.position, this.direction)
@@ -20,4 +26,4 @@ var MovingObject = (function() {
     }
 
     return MovingObject
-}())
+})

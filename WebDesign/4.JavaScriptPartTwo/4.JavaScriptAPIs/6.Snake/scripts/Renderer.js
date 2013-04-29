@@ -1,64 +1,35 @@
-var renderer = (function() {
+define(function(require) {
+    'use strict';
+
+    var utils = require('utils')
+    var Point = require('Point')
+
     var ZOOM = 20
     var PADDING = 3
 
-    var _context
+    function Renderer(canvas, rows, cols) {
+        // Reversed
+        canvas.width  = cols * ZOOM - PADDING
+        canvas.height = rows * ZOOM - PADDING
 
-    var _scene
+        this.context = canvas.getContext('2d')
 
-    var _rows
-    var _cols
+        this.rows = rows
+        this.cols = cols
 
-    function _draw(row, col) {
-        _context.fillStyle = 'lightGray'
-        _context.fillRect(col * ZOOM, row * ZOOM, ZOOM - PADDING, ZOOM - PADDING)
+        this.scene = utils.makeBoolMatrix(this.rows, this.cols)
     }
 
-    function _render() {
-        var row, col
-
-        _context.clearRect(0, 0, _cols * ZOOM, _rows * ZOOM)
-
-        for (row = 0; row < _scene.length; row++) {
-            for (col = 0; col < _scene[row].length; col++) {
-                if (_scene[row][col])
-                    _draw(row, col)
-            }
-        }
-    }
-
-    function _clear() {
-        var row, col
-
-        for (row = 0; row < _scene.length; row++)
-            for (col = 0; col < _scene[row].length; col++)
-                _scene[row][col] = false
-    }
-
-    return {
-        init: function(canvas, rows, cols) {
-            // Reversed
-            canvas.width  = cols * ZOOM - PADDING
-            canvas.height = rows * ZOOM - PADDING
-
-            _context = canvas.getContext('2d')
-
-            _rows = rows
-            _cols = cols
-
-            _scene = makeMatrix(_rows, _cols)
-            _clear()
-        },
-
-        add: function(obj) {
+    Renderer.prototype =
+        { add: function(obj) {
             var first = Point(
                 Math.max(obj.position.row, 0),
                 Math.max(obj.position.col, 0)
             )
 
             var last = Point(
-                Math.min(obj.position.row + obj.rows, _rows),
-                Math.min(obj.position.col + obj.cols, _cols)
+                Math.min(obj.position.row + obj.rows, this.rows),
+                Math.min(obj.position.col + obj.cols, this.cols)
             )
 
             var row, col
@@ -66,14 +37,46 @@ var renderer = (function() {
             for (row = first.row; row < last.row; row++) {
                 for (col = first.col; col < last.col; col++) {
                     if (obj.image[row - first.row][col - first.col])
-                        _scene[row][col] = true
+                        this.scene[row][col] = true
                 }
             }
-        },
-
-        renderAll: function() {
-            _render()
-            _clear()
         }
+
+        , renderAll: (function() {
+            var _render = (function() {
+                function _draw(row, col) {
+                    this.context.fillStyle = 'lightGray'
+                    this.context.fillRect(col * ZOOM, row * ZOOM, ZOOM - PADDING, ZOOM - PADDING)
+                }
+
+                return function() {
+                    var row, col
+
+                    this.context.clearRect(0, 0, this.cols * ZOOM, this.rows * ZOOM)
+
+                    for (row = 0; row < this.scene.length; row++) {
+                        for (col = 0; col < this.scene[row].length; col++) {
+                            if (this.scene[row][col])
+                                _draw.call(this, row, col)
+                        }
+                    }
+                }
+            }())
+
+            function _clear() {
+                var row, col
+
+                for (row = 0; row < this.scene.length; row++)
+                    for (col = 0; col < this.scene[row].length; col++)
+                        this.scene[row][col] = false
+            }
+
+            return function() {
+                _render.call(this)
+                _clear.call(this)
+            }
+        }())
     }
-}())
+
+    return Renderer
+})

@@ -1,20 +1,26 @@
-function makeMatrix(rows, cols) {
-    var matrix = new Array(rows)
+define(function() {
+    'use strict';
 
-    var row, col
+    return {
+        makeBoolMatrix: function(rows, cols) {
+            var matrix = new Array(rows)
 
-    for (row = 0; row < rows; row++) {
-        matrix[row] = new Array(cols)
+            var row, col
 
-        for (col = 0; col < cols; col++)
-            matrix[row][col] = false
+            for (row = 0; row < rows; row++) {
+                matrix[row] = new Array(cols)
+
+                for (col = 0; col < cols; col++)
+                    matrix[row][col] = false
+            }
+
+            return matrix
+        },
+
+        inherit: function(Child, Parent) {
+            Child.prototype = Object.create(Parent.prototype);
+            Child.prototype.parent = Parent.prototype;
+            Child.prototype.constructor = Child;
+        }
     }
-
-    return matrix
-}
-
-function inherit(Child, Parent) {
-    Child.prototype = Object.create(Parent.prototype);
-    Child.prototype.parent = Parent.prototype;
-    Child.prototype.constructor = Child;
-}
+})
