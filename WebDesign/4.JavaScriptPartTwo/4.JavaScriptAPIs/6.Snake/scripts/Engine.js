@@ -43,8 +43,14 @@ define(function(require) {
 
                 for (row = first.row; row < last.row; row++)
                     for (col = first.col; col < last.col; col++)
-                        if (obj.image[row - (obj.position.row + objDirection.row)][col - (obj.position.col + objDirection.col)] &&
-                            cur.image[row - cur.position.row][col - cur.position.col])
+                        if (obj.image
+                                [row - (obj.position.row + objDirection.row)]
+                                [col - (obj.position.col + objDirection.col)] &&
+
+                            cur.image
+                                [row - cur.position.row]
+                                [col - cur.position.col]
+                        )
                                 return true
             }
 
