@@ -9,34 +9,100 @@ function makeMatrix(rows, cols) {
         matrix[row] = new Array(cols)
 
         for (col = 0; col < cols; col++)
-            matrix[row][col] = 0
+            matrix[row][col] = false
     }
 
     return matrix
 }
 
-function Point(row, col) {
-    if (!(this instanceof Point))
-        return new Point(row, col)
-
-    this.row = row
-    this.col = col
+function inherit(Child, Parent) {
+    Child.prototype = Object.create(Parent.prototype);
+    Child.prototype.parent = Parent.prototype;
+    Child.prototype.constructor = Child;
 }
 
-var engine = (function() {
-    var ANIMATION_DELAY = 60
+var Point = (function() {
+    function Point(row, col) {
+        if (!(this instanceof Point))
+            return new Point(row, col)
 
-    var _allObjects = []
+        this.row = row
+        this.col = col
+    }
+
+    Point.ZERO  = new Point( 0,  0)
+    Point.LEFT  = new Point( 0, -1)
+    Point.UP    = new Point(-1,  0)
+    Point.RIGHT = new Point( 0,  1)
+    Point.DOWN  = new Point( 1,  0)
+
+    Point.add = function(p1, p2) {
+        return new Point
+            ( p1.row += p2.row
+            , p1.col += p2.col
+        )
+    }
+
+    Point.prototype.invert = function() {
+        this.row = -this.row
+        this.col = -this.col
+    }
+
+    return Point
+}())
+
+
+var engine = (function() {
+    var ANIMATION_DELAY = 1000 / 60
+
+    var _controlledObject
+    var _staticObjects = []
 
     var _renderer
     var _userInterface
 
     function _renderAll() {
-        _allObjects.forEach(function(obj) {
+        _renderer.add(_controlledObject)
+
+        _staticObjects.forEach(function(obj) {
             _renderer.add(obj)
         })
 
         _renderer.renderAll()
+    }
+
+    function _checkForCollision(obj) {
+        var i, cur
+        var first, last
+        var row, col
+
+        for (i = 0; i < _staticObjects.length; i++) {
+            cur = _staticObjects[i]
+
+            first = new Point(
+                Math.max(obj.position.row + obj.direction.row,
+                         cur.position.row),
+
+                Math.max(obj.position.col + obj.direction.col,
+                         cur.position.col)
+            )
+
+            last = new Point(
+                Math.min(obj.position.row + obj.rows + obj.direction.row,
+                         cur.position.row + cur.rows),
+
+                Math.min(obj.position.col + obj.cols + obj.direction.col,
+                         cur.position.col + cur.cols)
+            )
+
+            for (row = first.row; row < last.row; row++)
+                for (col = first.col; col < last.col; col++)
+                    if (obj.image[row - obj.position.row - obj.direction.row][col - obj.position.col - obj.direction.col] &&
+                        cur.image[row - cur.position.row][col - cur.position.col])
+                            return true;
+        }
+
+        return false;
     }
 
     return {
@@ -46,12 +112,25 @@ var engine = (function() {
         },
 
         add: function(obj) {
-            _allObjects.push(obj)
+            _staticObjects.push(obj)
+        },
+
+        addControlled: function(obj) {
+            _controlledObject = obj
         },
 
         run: function() {
             _renderAll()
-            _userInterface.processInput()
+
+            var input = _userInterface.processInput()
+
+            if (input)
+                _controlledObject.direction = Point[input.toUpperCase()]
+
+            if (_checkForCollision(_controlledObject))
+                _controlledObject.direction.invert()
+
+            _controlledObject.update()
 
             setTimeout(engine.run, ANIMATION_DELAY)
         }
@@ -79,6 +158,8 @@ var renderer = (function() {
     function _render() {
         var row, col
 
+        _context.clearRect(0, 0, _cols * ZOOM, _rows * ZOOM)
+
         for (row = 0; row < _scene.length; row++) {
             for (col = 0; col < _scene[row].length; col++) {
                 if (_scene[row][col])
@@ -92,7 +173,7 @@ var renderer = (function() {
 
         for (row = 0; row < _scene.length; row++)
             for (col = 0; col < _scene[row].length; col++)
-                _scene[row][col] = 0
+                _scene[row][col] = false
     }
 
     return {
@@ -107,6 +188,7 @@ var renderer = (function() {
             _cols = cols
 
             _scene = makeMatrix(_rows, _cols)
+            _clear()
         },
 
         add: function(obj) {
@@ -124,7 +206,8 @@ var renderer = (function() {
 
             for (row = first.row; row < last.row; row++) {
                 for (col = first.col; col < last.col; col++) {
-                    _scene[row][col] = true
+                    if (obj.image[row - first.row][col - first.col])
+                        _scene[row][col] = true
                 }
             }
         },
@@ -146,14 +229,15 @@ var userInterface = (function() {
         , 40: 'down'
     }
 
-    window.addEventListener('keydown', function(e) {
-        _input = _keyMap[e.which]
-    })
-
     return {
-        processInput: function() {
-            if (_input) console.log(_input)
+        init: function(element) {
+            // TODO: Add listener to element
+            window.addEventListener('keydown', function(e) {
+                _input = _keyMap[e.which]
+            })
+        },
 
+        processInput: function() {
             var result = _input
             _input = void 0
             return result
@@ -176,34 +260,72 @@ GameObject.prototype =
     }
 }
 
-function Block(position) {
-    return new GameObject([[1]], position)
-}
+var Block = (function() {
+    function Block(position) {
+        GameObject.call(this, [[ true ]], position)
+    }
+
+    inherit(Block, GameObject)
+
+    return Block
+}())
+
+var MovingObject = (function() {
+    function MovingObject(image, position, direction) {
+        GameObject.call(this, image, position)
+
+        this.direction = direction
+    }
+
+    inherit(MovingObject, GameObject)
+
+    MovingObject.prototype.update = function() {
+        this.position = Point.add(this.position, this.direction)
+    }
+
+    return MovingObject
+}())
 
 ;(function() {
     var ROWS = 30
     var COLS = 40
 
-    function _makeBorders() {
-        var row, col
+    var CANVAS = document.getElementById('canvas')
 
-        for (row = 0; row < ROWS; row++){
-            engine.add(new Block(Point(row, 0)))
-            engine.add(new Block(Point(row, COLS - 1)))
-        }
+    function init() {
+        renderer.init(CANVAS, ROWS, COLS)
+        userInterface.init(CANVAS)
 
-        for (col = 1; col < COLS - 1; col++){
-            engine.add(new Block(Point(0, col)))
-            engine.add(new Block(Point(ROWS - 1, col)))
-        }
+        engine.init(renderer, userInterface)
     }
 
-    renderer.init(document.getElementById('canvas'), ROWS, COLS)
-    engine.init(renderer, userInterface)
+    var make = (function() {
+        function _makeBorders() {
+            var row, col
 
-    _makeBorders()
-    engine.add(new GameObject([[1, 1, 1, 1, 1, 1]], Point(2, 2)))
+            for (row = 0; row < ROWS; row++){
+                engine.add(new Block(Point(row, 0)))
+                engine.add(new Block(Point(row, COLS - 1)))
+            }
 
-    engine.run()
+            for (col = 1; col < COLS - 1; col++){
+                engine.add(new Block(Point(0, col)))
+                engine.add(new Block(Point(ROWS - 1, col)))
+            }
+        }
+
+        function _makeSnake() {
+            engine.addControlled
+                ( new MovingObject([[1, 1, 1, 1, 1, 1]]
+                , Point(2, 2)
+                , Point.RIGHT)
+            )
+        }
+
+        return function() {
+            _makeBorders(), _makeSnake()
+        }
+    }())
+
+    init(), make(), engine.run()
 }())
-
