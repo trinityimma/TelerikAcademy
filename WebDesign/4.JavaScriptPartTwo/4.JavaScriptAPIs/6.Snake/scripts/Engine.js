@@ -117,7 +117,9 @@ define(function(require) {
                     var collision = _checkForCollision.call(self, obj)
 
                     collision && obj.respondToCollision(collision)
+                })
 
+                this.movingObjects.forEach(function(obj) {
                     obj.update()
                 })
 

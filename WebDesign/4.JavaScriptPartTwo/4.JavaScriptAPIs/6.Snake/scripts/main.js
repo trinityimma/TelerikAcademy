@@ -14,13 +14,13 @@ define(function(require) {
     var ROWS = 22
     var COLS = 30
 
-    var CANVAS = document.getElementById('canvas')
+    var _canvas = document.getElementById('canvas')
 
     var _engine
 
     function init() {
-        var renderer = new Renderer(CANVAS, ROWS, COLS)
-        var userInterface = new UserInterface(CANVAS)
+        var renderer = new Renderer(_canvas, ROWS, COLS)
+        var userInterface = new UserInterface(_canvas)
 
         _engine = new Engine(renderer, userInterface)
     }
@@ -39,7 +39,7 @@ define(function(require) {
                 _engine.add(new Block(Point(ROWS - 1, col)))
             }
 
-            _engine.add(new Block(Point(COLS / 2, COLS / 2)))
+            _engine.add(new Block(Point(COLS / 2 - 1, COLS / 2 - 1)))
         }
 
         function _makeEnviroment() {
