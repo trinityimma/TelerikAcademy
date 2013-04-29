@@ -3,7 +3,7 @@ define(function(require) {
 
     var Point = require('Point')
 
-    var ANIMATION_DELAY = 1000 / 15
+    var ANIMATION_DELAY = 1000 / 5
 
     function Engine(renderer, userInterface) {
         this.controlledObject = null
