@@ -44,18 +44,18 @@ define(function(require) {
         }
 
         function _makeEnviroment() {
-            // _engine.add(new MovingObject([[ true ]], Point(2, 2), Point.RIGHT))
-            // _engine.add(new MovingObject([[ true ]], Point(2, COLS - 3), Point.LEFT))
+            _engine.add(new MovingObject([[ true ]], Point(2, 2), Point.RIGHT))
+            _engine.add(new MovingObject([[ true ]], Point(2, COLS - 3), Point.LEFT))
 
             // _engine.add(new MovingObject([[ true ]], Point(2, 5), Point.DOWN))
             // _engine.add(new MovingObject([[ true ]], Point(ROWS - 3, 5), Point.UP))
 
-            // _engine.add(new MovingObject([[ true ]], Point(5, 5), Point(1, 1)))
+            _engine.add(new MovingObject([[ true ]], Point(5, 5), Point(1, 1)))
             // _engine.add(new MovingObject([[ true ]], Point(13, 13), Point(-1, -1)))
         }
 
         function _makeSnake() {
-            _engine.addControlled(new Snake(Point(5, 5)))
+            _engine.addControlled(new Snake(Point(6, 6)))
         }
 
         return function() {
