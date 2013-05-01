@@ -69,6 +69,7 @@ define(function(require) {
         this.position = _getFirst.call(this)
     }
 
+    // TODO: food, wall, snake
     Snake.prototype.respondToCollision = function() {
         console.log('Game over!')
 
