@@ -13,7 +13,9 @@ define(function(require) {
 
         this.input = []
 
-        // TODO: Add listener to element
+        element.focus()
+
+        // TODO: Add to element
         window.addEventListener('keydown', function(e) {
             self.input.push(KEY_MAP[e.which])
         })

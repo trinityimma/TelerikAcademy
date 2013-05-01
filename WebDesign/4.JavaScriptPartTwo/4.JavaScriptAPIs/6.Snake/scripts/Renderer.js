@@ -37,15 +37,15 @@ define(function(require) {
             for (row = first.row; row < last.row; row++) {
                 for (col = first.col; col < last.col; col++) {
                     if (obj.image[row - first.row][col - first.col])
-                        this.scene[row][col] = true
+                        this.scene[row][col] = obj.color
                 }
             }
         }
 
         , renderAll: (function() {
             var _render = (function() {
-                function _draw(row, col) {
-                    this.context.fillStyle = 'lightGray'
+                function _draw(row, col, color) {
+                    this.context.fillStyle = color
                     this.context.fillRect(col * ZOOM, row * ZOOM, ZOOM - PADDING, ZOOM - PADDING)
                 }
 
@@ -54,12 +54,10 @@ define(function(require) {
 
                     this.context.clearRect(0, 0, this.cols * ZOOM, this.rows * ZOOM)
 
-                    for (row = 0; row < this.scene.length; row++) {
-                        for (col = 0; col < this.scene[row].length; col++) {
+                    for (row = 0; row < this.scene.length; row++)
+                        for (col = 0; col < this.scene[row].length; col++)
                             if (this.scene[row][col])
-                                _draw.call(this, row, col)
-                        }
-                    }
+                                _draw.call(this, row, col, this.scene[row][col])
                 }
             }())
 
@@ -68,7 +66,7 @@ define(function(require) {
 
                 for (row = 0; row < this.scene.length; row++)
                     for (col = 0; col < this.scene[row].length; col++)
-                        this.scene[row][col] = false
+                        this.scene[row][col] = null
             }
 
             return function() {

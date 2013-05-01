@@ -35,6 +35,13 @@ define(function() {
             return this.row === other.row &&
                    this.col === other.col
         }
+
+        , clone: function() {
+            return new Point
+                ( this.row
+                , this.col
+            )
+        }
     }
 
     Point.ZERO  = Object.freeze(new Point( 0,  0))

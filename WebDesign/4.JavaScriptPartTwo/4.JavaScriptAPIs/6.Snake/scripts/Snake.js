@@ -3,8 +3,10 @@ define(function(require) {
 
     var utils = require('utils')
     var Point = require('Point')
-    var MovingObject = require('MovingObject')
+    var Food = require('Food')
+    var GameObject = require('GameObject')
 
+    // TODO: Extract geometry - bounding box
     var _getFirst, _getLast
     ;(function() {
         function _getFirstLast(minMax) {
@@ -50,33 +52,42 @@ define(function(require) {
             , Point.add(position, Point(0, 3))
         ]
 
-        MovingObject.call(this, _getImage.call(this), _getFirst.call(this), Point.RIGHT)
+        GameObject.call(this, _getImage.call(this), _getFirst.call(this), 'yellow')
+
+        this.headDirection = Point.RIGHT
     }
 
-    utils.inherit(Snake, MovingObject)
+    utils.inherit(Snake, GameObject)
 
     Snake.prototype.update = function() {
         var currentHead = this.parts[this.parts.length - 1]
-        var nextHead = Point.add(currentHead, this.direction)
+        var nextHead = Point.add(currentHead, this.headDirection)
 
         if (utils.contains(this.parts, nextHead))
             return this.respondToCollision()
 
-        this.parts.shift()
+        if (this.isFed) this.isFed = false
+        else this.parts.shift()
+
         this.parts.push(nextHead)
 
         this.image = _getImage.call(this)
         this.position = _getFirst.call(this)
     }
 
-    // TODO: food, wall, snake
-    Snake.prototype.respondToCollision = function() {
-        console.log('Game over!')
+    // TODO: So many things are wrong here
+    Snake.prototype.respondToCollision = function(data) {
+        if (data && data.object instanceof Food) {
+            this.isFed = true
 
-        this.respondToCollision =
-        this.update = function() {
+            data.object.color = utils.randomColor()
 
+            do {
+                data.object.position = Point(utils.randomInt(1, 20), utils.randomInt(1, 28))
+            } while (utils.contains(this.parts, data.object.position))
         }
+
+        else window.location.reload()
     }
 
     Snake.prototype.handleInput = (function() {
@@ -90,8 +101,8 @@ define(function(require) {
 
         // TODO: Decouple UserInterface and Point
         return function(input) {
-            if (!this.direction.equals(Point[_unallowed[input]]))
-                this.direction = Point[input]
+            if (!this.headDirection.equals(Point[_unallowed[input]]))
+                this.headDirection = Point[input]
         }
     }())
 

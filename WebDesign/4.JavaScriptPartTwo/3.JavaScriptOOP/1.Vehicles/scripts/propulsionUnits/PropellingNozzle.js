@@ -20,7 +20,7 @@ define(function (require) {
     PropellingNozzle.prototype.produceAcceleration = function () {
         var multiplier = this.afterBurnerSwitch.isUp ? 2 : 1;
 
-        return this.power * multiplier;
+        return multiplier * this.power;
     };
 
     return PropellingNozzle;

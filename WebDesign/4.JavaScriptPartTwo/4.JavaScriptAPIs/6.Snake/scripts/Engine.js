@@ -9,8 +9,6 @@ define(function(require) {
         this.controlledObject = null
 
         this.allObjects = []
-        this.staticObjects = []
-        this.movingObjects = []
 
         this.renderer = renderer
         this.userInterface = userInterface
@@ -55,35 +53,36 @@ define(function(require) {
                                 [row - cur.position.row]
                                 [col - cur.position.col]
                         )
-                            return true
+                            return cur
             }
 
-            return false
+            return null
         }
 
         return function(obj) {
             var direction = obj.direction || Point.ZERO
 
+            var rowCollision = _checkInDirection.call(this, obj, new Point(direction.row, 0))
+            var colCollision = _checkInDirection.call(this, obj, new Point(0, direction.col))
+
             var force = new Point
-                ( _checkInDirection.call(this, obj, new Point(direction.row, 0)) && direction.row || 0
-                , _checkInDirection.call(this, obj, new Point(0, direction.col)) && direction.col || 0
+                ( rowCollision && direction.row || 0
+                , colCollision && direction.col || 0
             )
 
+            if (rowCollision || colCollision)
+                return { object: colCollision, force: Point.invert(force) }
+
             // Diagonal
-            if (force.equals(Point.ZERO) && _checkInDirection.call(this, obj, direction))
-                force = direction
+            if (_checkInDirection.call(this, obj, direction))
+                return { object: colCollision , force: Point.invert(direction) }
 
-            force = Point.invert(force)
-
-            return force.equals(Point.ZERO) ? null : force;
+            return null
         }
     }())
 
     Engine.prototype =
         { add: function(obj) {
-            if (obj.direction) this.movingObjects.push(obj)
-            else this.staticObjects.push(obj)
-
             this.allObjects.push(obj)
         }
 
@@ -113,13 +112,13 @@ define(function(require) {
                     input && this.controlledObject.handleInput(input)
                 }
 
-                this.movingObjects.forEach(function(obj) {
+                this.allObjects.forEach(function(obj) {
                     var collision = _checkForCollision.call(self, obj)
 
                     collision && obj.respondToCollision(collision)
                 })
 
-                this.movingObjects.forEach(function(obj) {
+                this.allObjects.forEach(function(obj) {
                     obj.update()
                 })
 

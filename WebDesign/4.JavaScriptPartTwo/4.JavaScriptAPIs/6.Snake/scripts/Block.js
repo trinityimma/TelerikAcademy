@@ -5,7 +5,7 @@ define(function(require) {
     var GameObject = require('GameObject')
 
     function Block(position) {
-        GameObject.call(this, [[ true ]], position)
+        GameObject.call(this, [[ true ]], position, '#333')
     }
 
     utils.inherit(Block, GameObject)
