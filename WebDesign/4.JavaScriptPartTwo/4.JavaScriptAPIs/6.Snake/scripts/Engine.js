@@ -16,6 +16,7 @@ define(function(require) {
         this.userInterface = userInterface
     }
 
+    // TODO: If A collides with B - B collides with A
     var _checkForCollision = (function() {
         function _checkInDirection(obj, objDirection) {
             var i, cur
