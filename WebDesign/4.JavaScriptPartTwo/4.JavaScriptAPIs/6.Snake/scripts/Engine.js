@@ -65,17 +65,21 @@ define(function(require) {
             var rowCollision = _checkInDirection.call(this, obj, new Point(direction.row, 0))
             var colCollision = _checkInDirection.call(this, obj, new Point(0, direction.col))
 
+            var collision = rowCollision || colCollision
+
             var force = new Point
                 ( rowCollision && direction.row || 0
                 , colCollision && direction.col || 0
             )
 
-            if (rowCollision || colCollision)
-                return { object: colCollision, force: Point.invert(force) }
+            if (collision)
+                return { object: collision, force: Point.invert(force) }
 
             // Diagonal
-            if (_checkInDirection.call(this, obj, direction))
-                return { object: colCollision , force: Point.invert(direction) }
+            collision = _checkInDirection.call(this, obj, direction)
+
+            if (collision)
+                return { object: collision , force: Point.invert(direction) }
 
             return null
         }
