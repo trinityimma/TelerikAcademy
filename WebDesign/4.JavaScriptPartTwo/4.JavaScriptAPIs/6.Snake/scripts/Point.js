@@ -9,16 +9,17 @@ define(function() {
         this.col = col || 0
     }
 
-    Point.ZERO  = Object.freeze(new Point( 0,  0))
-    Point.LEFT  = Object.freeze(new Point( 0, -1))
-    Point.UP    = Object.freeze(new Point(-1,  0))
-    Point.RIGHT = Object.freeze(new Point( 0,  1))
-    Point.DOWN  = Object.freeze(new Point( 1,  0))
-
     Point.add = function(point1, point2) {
         return new Point
-            ( point1.row += point2.row
-            , point1.col += point2.col
+            ( point1.row + point2.row
+            , point1.col + point2.col
+        )
+    }
+
+    Point.subtract = function(point1, point2) {
+        return new Point
+            ( point1.row - point2.row
+            , point1.col - point2.col
         )
     }
 
@@ -35,6 +36,12 @@ define(function() {
                    this.col === other.col
         }
     }
+
+    Point.ZERO  = Object.freeze(new Point( 0,  0))
+    Point.LEFT  = Object.freeze(new Point( 0, -1))
+    Point.UP    = Object.freeze(new Point(-1,  0))
+    Point.RIGHT = Object.freeze(new Point( 0,  1))
+    Point.DOWN  = Object.freeze(new Point( 1,  0))
 
     return Point
 })

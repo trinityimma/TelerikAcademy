@@ -3,7 +3,7 @@ define(function(require) {
 
     var Point = require('Point')
 
-    var ANIMATION_DELAY = 1000 / 5
+    var MOVE_DELAY = 1000 / 10
 
     function Engine(renderer, userInterface) {
         this.controlledObject = null
@@ -24,6 +24,9 @@ define(function(require) {
 
             for (i = 0; i < this.allObjects.length; i++) {
                 cur = this.allObjects[i]
+
+                if (cur === obj)
+                    continue
 
                 first = new Point(
                     Math.max(obj.position.row + objDirection.row,
@@ -51,7 +54,7 @@ define(function(require) {
                                 [row - cur.position.row]
                                 [col - cur.position.col]
                         )
-                                return true
+                            return true
             }
 
             return false
@@ -100,17 +103,13 @@ define(function(require) {
                 this.renderer.renderAll()
             }
 
-            return function() {
+            function _run() {
                 var self = this
 
-                var input
+                if (this.userInterface) {
+                    let input = this.userInterface.processInput()
 
-                _renderAll.call(this)
-
-                input = this.userInterface.processInput()
-
-                if (input && this.controlledObject) {
-                    this.controlledObject.direction = Point[input.toUpperCase()] // TODO: Decouple
+                    input && this.controlledObject.handleInput(input)
                 }
 
                 this.movingObjects.forEach(function(obj) {
@@ -123,7 +122,15 @@ define(function(require) {
                     obj.update()
                 })
 
-                setTimeout(this.run.bind(this), ANIMATION_DELAY)
+                _renderAll.call(this)
+
+                setTimeout(_run.bind(this), MOVE_DELAY)
+            }
+
+            return function() {
+                _renderAll.call(this)
+
+                setTimeout(_run.bind(this), MOVE_DELAY)
             }
         }())
     }

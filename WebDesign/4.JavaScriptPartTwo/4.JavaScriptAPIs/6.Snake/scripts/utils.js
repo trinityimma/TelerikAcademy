@@ -1,8 +1,8 @@
 define(function() {
     'use strict';
 
-    return {
-        makeBoolMatrix: function(rows, cols) {
+    var utils =
+        { makeBoolMatrix: function(rows, cols) {
             var matrix = new Array(rows)
 
             var row, col
@@ -15,12 +15,24 @@ define(function() {
             }
 
             return matrix
-        },
+        }
 
-        inherit: function(Child, Parent) {
+        , inherit: function(Child, Parent) {
             Child.prototype = Object.create(Parent.prototype)
             Child.prototype.parent = Parent.prototype
             Child.prototype.constructor = Child
         }
+
+        , contains: function(array, value) {
+            var i
+
+            for (i = 0; i < array.length; i++)
+                if (array[i].equals(value))
+                    return true
+
+            return false
+        }
     }
+
+    return utils
 })

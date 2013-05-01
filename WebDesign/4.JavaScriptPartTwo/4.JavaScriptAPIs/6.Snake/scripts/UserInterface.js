@@ -2,10 +2,10 @@ define(function(require) {
     'use strict';
 
     var KEY_MAP =
-        { 37: 'left'
-        , 38: 'up'
-        , 39: 'right'
-        , 40: 'down'
+        { 37: 'LEFT'
+        , 38: 'UP'
+        , 39: 'RIGHT'
+        , 40: 'DOWN'
     }
 
     function UserInterface(element) {

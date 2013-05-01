@@ -7,9 +7,10 @@ define(function(require) {
     var Renderer = require('Renderer')
     var UserInterface = require('UserInterface')
 
-    var GameObject = require('GameObject')
     var MovingObject = require('MovingObject')
+
     var Block = require('Block')
+    var Snake = require('Snake')
 
     var ROWS = 22
     var COLS = 30
@@ -43,8 +44,8 @@ define(function(require) {
         }
 
         function _makeEnviroment() {
-            _engine.add(new MovingObject([[ true ]], Point(2, 2), Point.RIGHT))
-            _engine.add(new MovingObject([[ true ]], Point(2, COLS - 3), Point.LEFT))
+            // _engine.add(new MovingObject([[ true ]], Point(2, 2), Point.RIGHT))
+            // _engine.add(new MovingObject([[ true ]], Point(2, COLS - 3), Point.LEFT))
 
             // _engine.add(new MovingObject([[ true ]], Point(2, 5), Point.DOWN))
             // _engine.add(new MovingObject([[ true ]], Point(ROWS - 3, 5), Point.UP))
@@ -53,12 +54,12 @@ define(function(require) {
             // _engine.add(new MovingObject([[ true ]], Point(13, 13), Point(-1, -1)))
         }
 
-        function _makeBall() {
-            _engine.addControlled(new MovingObject([[ true ]], Point(5, 5), Point(-1, -1)))
+        function _makeSnake() {
+            _engine.addControlled(new Snake(Point(5, 5)))
         }
 
         return function() {
-            _makeBorders(), _makeEnviroment(), _makeBall()
+            _makeBorders(), _makeEnviroment(), _makeSnake()
         }
     }())
 
