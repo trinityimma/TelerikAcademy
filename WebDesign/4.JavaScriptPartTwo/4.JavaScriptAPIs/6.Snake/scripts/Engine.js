@@ -104,10 +104,13 @@ define(function(require) {
             }
 
             function _run() {
+                var currentDate = +new Date
+
                 var self = this
+                var input
 
                 if (this.userInterface) {
-                    let input = this.userInterface.processInput()
+                    input = this.userInterface.processInput()
 
                     input && this.controlledObject.handleInput(input)
                 }
@@ -124,7 +127,7 @@ define(function(require) {
 
                 _renderAll.call(this)
 
-                setTimeout(_run.bind(this), MOVE_DELAY)
+                setTimeout(_run.bind(this), Math.max(0, MOVE_DELAY - (+new Date - currentDate)))
             }
 
             return function() {

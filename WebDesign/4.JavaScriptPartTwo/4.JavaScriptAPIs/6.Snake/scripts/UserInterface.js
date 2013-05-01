@@ -17,6 +17,8 @@ define(function(require) {
 
         // TODO: Add to element
         window.addEventListener('keydown', function(e) {
+            e.preventDefault()
+
             self.input.push(KEY_MAP[e.which])
         })
     }
