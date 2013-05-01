@@ -2,33 +2,46 @@ define(function(require) {
     'use strict';
 
     var utils = require('utils')
-    var MovingObject = require('MovingObject')
     var Point = require('Point')
+    var MovingObject = require('MovingObject')
 
-    function _getPosition() {
-        return this.parts.reduce(function(result, part) {
-            result.row = Math.min(result.row, part.row)
-            result.col = Math.min(result.col, part.col)
+    var _getFirst, _getLast
+    ;(function() {
+        function _getFirstLast(minMax) {
+            return this.parts.reduce(function(result, part) {
+                result.row = minMax(result.row, part.row)
+                result.col = minMax(result.col, part.col)
 
-            return result
-        }, new Point(Infinity, Infinity))
-    }
+                return result
+            }, new Point(minMax(), minMax())) // +/- Infinity
+        }
+
+        _getFirst = function() {
+            return _getFirstLast.call(this, Math.min)
+        }
+
+        _getLast = function() {
+            return _getFirstLast.call(this, Math.max)
+        }
+    }())
 
     function _getImage() {
-        var image = [[]]
+        var first = _getFirst.call(this)
+        var last = _getLast.call(this)
 
-        var first = _getPosition.call(this)
+        var image = utils.makeBoolMatrix
+            ( last.row - first.row + 1
+            , last.col - first.col + 1
+        )
 
-        // TODO: Optimize bounding box
         this.parts.forEach(function(part) {
-            image[part.row - first.row] = image[part.row - first.row] || []
-
             image[part.row - first.row][part.col - first.col] = true
         })
 
         return image
     }
 
+    // TODO: Extract ArrayOfPointsObject
     function Snake(position) {
         this.parts =
             [ Point.add(position, Point(0, 0))
@@ -37,7 +50,7 @@ define(function(require) {
             , Point.add(position, Point(0, 3))
         ]
 
-        MovingObject.call(this, _getImage.call(this), _getPosition.call(this), Point.RIGHT)
+        MovingObject.call(this, _getImage.call(this), _getFirst.call(this), Point.RIGHT)
     }
 
     utils.inherit(Snake, MovingObject)
@@ -53,7 +66,7 @@ define(function(require) {
         this.parts.push(nextHead)
 
         this.image = _getImage.call(this)
-        this.position = _getPosition.call(this)
+        this.position = _getFirst.call(this)
     }
 
     Snake.prototype.respondToCollision = function() {

@@ -32,6 +32,14 @@ define(function() {
 
             return false
         }
+
+        , boolMatrixToString: function(matrix) {
+            return matrix.map(function(row) {
+                return row.map(function(cell) {
+                    return cell ? 'X' : ' '
+                }).join('')
+            }).join('\n')
+        }
     }
 
     return utils

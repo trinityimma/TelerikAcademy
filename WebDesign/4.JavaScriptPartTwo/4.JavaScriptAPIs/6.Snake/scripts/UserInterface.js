@@ -11,19 +11,18 @@ define(function(require) {
     function UserInterface(element) {
         var self = this
 
-        this.input = null
+        this.input = []
 
         // TODO: Add listener to element
         window.addEventListener('keydown', function(e) {
-            self.input = KEY_MAP[e.which]
+            self.input.push(KEY_MAP[e.which])
         })
     }
 
+    // TODO: Use events and not strings
     UserInterface.prototype =
         { processInput: function() {
-            var result = this.input
-            this.input = null
-            return result
+            return this.input.shift()
         }
     }
 
