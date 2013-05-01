@@ -2,7 +2,7 @@ define(function() {
     'use strict';
 
     function GameObject(image, position) {
-        if (image) this.image = image
+        this.image = image
         this.position = position
     }
 
