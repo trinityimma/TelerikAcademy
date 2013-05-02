@@ -5,7 +5,7 @@ define(function(require) {
     var GameObject = require('GameObject')
 
     function Food(position) {
-        GameObject.call(this, [[ true ]], position, utils.randomColor())
+        GameObject.call(this, [[ true ]], position, utils.randomColor()) // TODO: Can't have black food
     }
 
     utils.inherit(Food, GameObject)

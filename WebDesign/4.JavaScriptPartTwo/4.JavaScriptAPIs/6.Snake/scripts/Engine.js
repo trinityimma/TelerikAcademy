@@ -27,20 +27,28 @@ define(function(require) {
                 if (cur === obj)
                     continue
 
-                first = new Point(
-                    Math.max(obj.position.row + objDirection.row,
-                             cur.position.row),
+                first = new Point
+                    ( Math.max
+                        ( obj.position.row + objDirection.row
+                        , cur.position.row
+                    )
 
-                    Math.max(obj.position.col + objDirection.col,
-                             cur.position.col)
+                    , Math.max
+                        ( obj.position.col + objDirection.col
+                        , cur.position.col
+                    )
                 )
 
-                last = new Point(
-                    Math.min(obj.position.row + obj.rows + objDirection.row,
-                             cur.position.row + cur.rows),
+                last = new Point
+                    ( Math.min
+                        ( obj.position.row + obj.rows + objDirection.row
+                        , cur.position.row + cur.rows
+                    )
 
-                    Math.min(obj.position.col + obj.cols + objDirection.col,
-                             cur.position.col + cur.cols)
+                    , Math.min
+                        ( obj.position.col + obj.cols + objDirection.col
+                        , cur.position.col + cur.cols
+                    )
                 )
 
                 for (row = first.row; row < last.row; row++)
