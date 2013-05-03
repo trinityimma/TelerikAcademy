@@ -6,6 +6,7 @@ define(function(require) {
 
     var ZOOM = 20
     var PADDING = 3
+    var BACKGROUND_COLOR = 'black'
 
     function Renderer(canvas, rows, cols) {
         // Reversed
@@ -17,7 +18,8 @@ define(function(require) {
         this.rows = rows
         this.cols = cols
 
-        this.scene = utils.makeBoolMatrix(this.rows, this.cols)
+        this.scene = utils.makeMatrix(this.rows, this.cols, BACKGROUND_COLOR)
+        this.previousScene = utils.makeMatrix(this.rows, this.cols, BACKGROUND_COLOR)
     }
 
     Renderer.prototype =
@@ -45,19 +47,21 @@ define(function(require) {
         , renderAll: (function() {
             var _render = (function() {
                 function _draw(row, col, color) {
+                    if (this.scene[row][col] === this.previousScene[row][col])
+                        return
+
                     this.context.fillStyle = color
                     this.context.fillRect(col * ZOOM, row * ZOOM, ZOOM - PADDING, ZOOM - PADDING)
+
+                    this.previousScene[row][col] = color
                 }
 
                 return function() {
                     var row, col
 
-                    this.context.clearRect(0, 0, this.cols * ZOOM, this.rows * ZOOM)
-
                     for (row = 0; row < this.scene.length; row++)
                         for (col = 0; col < this.scene[row].length; col++)
-                            if (this.scene[row][col])
-                                _draw.call(this, row, col, this.scene[row][col])
+                            _draw.call(this, row, col, this.scene[row][col])
                 }
             }())
 
@@ -66,11 +70,12 @@ define(function(require) {
 
                 for (row = 0; row < this.scene.length; row++)
                     for (col = 0; col < this.scene[row].length; col++)
-                        this.scene[row][col] = null
+                        this.scene[row][col] = BACKGROUND_COLOR
             }
 
             return function() {
                 _render.call(this)
+
                 _clear.call(this)
             }
         }())

@@ -1,10 +1,14 @@
 define(function() {
     'use strict';
 
+    function noop() {
+
+    }
+
     function GameObject(image, position, color) {
         this.image = image
         this.position = position
-        this.color = color || 'lightGray'
+        this.color = color
     }
 
     GameObject.prototype =
@@ -16,13 +20,9 @@ define(function() {
             return this.image[0].length
         }
 
-        , update: function() {
+        , update: noop
 
-        }
-
-        , respondToCollision: function() {
-
-        }
+        , respondToCollision: noop
     }
 
     return GameObject

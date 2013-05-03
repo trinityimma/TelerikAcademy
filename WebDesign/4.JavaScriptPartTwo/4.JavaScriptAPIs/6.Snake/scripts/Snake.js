@@ -31,7 +31,7 @@ define(function(require) {
         var first = _getFirst.call(this)
         var last = _getLast.call(this)
 
-        var image = utils.makeBoolMatrix
+        var image = utils.makeMatrix
             ( last.row - first.row + 1
             , last.col - first.col + 1
         )
@@ -87,7 +87,10 @@ define(function(require) {
             } while (utils.contains(this.parts, data.object.position))
         }
 
-        else window.location.reload()
+        else {
+            window.location.reload()
+            throw new Error('Game over!');
+        }
     }
 
     Snake.prototype.handleInput = (function() {

@@ -9,6 +9,7 @@ define(function(require) {
         this.controlledObject = null
 
         this.allObjects = []
+        this.movingObjects = []
 
         this.renderer = renderer
         this.userInterface = userInterface
@@ -96,12 +97,16 @@ define(function(require) {
     Engine.prototype =
         { add: function(obj) {
             this.allObjects.push(obj)
+
+            if (obj.direction)
+                this.movingObjects.push(obj)
         }
 
         , addControlled: function(obj) {
             this.controlledObject = obj
 
-            return this.add(obj)
+            this.allObjects.push(obj)
+            this.movingObjects.push(obj)
         }
 
         , run: (function() {
@@ -127,7 +132,7 @@ define(function(require) {
                     input && this.controlledObject.handleInput(input)
                 }
 
-                this.allObjects.forEach(function(obj) {
+                this.movingObjects.forEach(function(obj) {
                     var collision = _checkForCollision.call(self, obj)
 
                     collision && obj.respondToCollision(collision)

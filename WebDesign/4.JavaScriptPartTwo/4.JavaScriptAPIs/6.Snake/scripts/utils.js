@@ -2,7 +2,7 @@ define(function() {
     'use strict';
 
     var utils =
-        { makeBoolMatrix: function(rows, cols) {
+        { makeMatrix: function(rows, cols, value) {
             var matrix = new Array(rows)
 
             var row, col
@@ -11,7 +11,7 @@ define(function() {
                 matrix[row] = new Array(cols)
 
                 for (col = 0; col < cols; col++)
-                    matrix[row][col] = false
+                    matrix[row][col] = value
             }
 
             return matrix
