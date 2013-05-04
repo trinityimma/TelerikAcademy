@@ -18,7 +18,7 @@ define(function(require) {
         this.cols = cols
 
         this.scene = utils.makeMatrix(this.rows, this.cols, BACKGROUND_COLOR)
-        this.previousScene = utils.makeMatrix(this.rows, this.cols, BACKGROUND_COLOR)
+        this.previousScene = utils.makeMatrix(this.rows, this.cols, null)
     }
 
     Renderer.prototype =
@@ -35,12 +35,10 @@ define(function(require) {
 
             var row, col
 
-            for (row = first.row; row < last.row; row++) {
-                for (col = first.col; col < last.col; col++) {
+            for (row = first.row; row < last.row; row++)
+                for (col = first.col; col < last.col; col++)
                     if (obj.image[row - first.row][col - first.col])
                         this.scene[row][col] = obj.color
-                }
-            }
         }
 
         , renderAll: (function() {
