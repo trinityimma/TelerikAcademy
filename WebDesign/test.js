@@ -1,4 +1,3 @@
-<script>
 ;(function() {
     'use strict';
 
@@ -18,6 +17,5 @@
 
       , isOutOfRectangle = px < rx || px > rx + rw || py > ry || py < ry - rh
 
-    console.log('In circle and out of rectangle: %s', (isInCircle && isOutOfRectangle))
+    console.log("In circle and out of rectangle: %s", (isInCircle && isOutOfRectangle))
 }())
-</script>
