@@ -1,27 +1,24 @@
-/*jslint vars: true */
-/*global define */
-
-define(function (require) {
+define(function(require) {
     'use strict';
 
-    var extend = require('extend');
-    var Vehicle = require('./Vehicle');
+    var extend = require('extend')
+    var Vehicle = require('./Vehicle')
 
     function WaterVehicle() {
-        var propellers = Array.prototype.slice.call(arguments);
+        var propellers = Array.prototype.slice.call(arguments)
 
-        Vehicle.call(this, propellers);
+        Vehicle.call(this, propellers)
     }
 
-    extend(WaterVehicle, Vehicle);
+    extend(WaterVehicle, Vehicle)
 
-    WaterVehicle.prototype.togglePropellersSpinDirection = function () {
-        this.propulsionUnits.forEach(function (propeller) {
-            propeller.toggleDirection();
-        });
+    WaterVehicle.prototype.togglePropellersSpinDirection = function() {
+        this.propulsionUnits.forEach(function(propeller) {
+            propeller.toggleDirection()
+        })
 
-        return this;
-    };
+        return this
+    }
 
-    return WaterVehicle;
-});
+    return WaterVehicle
+})

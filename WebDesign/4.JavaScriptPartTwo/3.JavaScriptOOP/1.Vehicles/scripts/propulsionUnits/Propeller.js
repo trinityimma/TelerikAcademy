@@ -1,40 +1,37 @@
-/*jslint vars: true */
-/*global define */
-
-define(function (require) {
+define(function(require) {
     'use strict';
 
-    var extend = require('extend');
-    var PropulsionUnit = require('./PropulsionUnit');
+    var extend = require('extend')
+    var PropulsionUnit = require('./PropulsionUnit')
 
     var spinDirection = {
         CLOCKWISE: 0,
         COUNTERCLOCKWISE: 1
-    };
-
-    function Propeller(numberOfFins) {
-        PropulsionUnit.call(this);
-
-        this.numberOfFins = numberOfFins;
-
-        this.spinDirection = spinDirection.CLOCKWISE;
     }
 
-    extend(Propeller, PropulsionUnit);
+    function Propeller(numberOfFins) {
+        PropulsionUnit.call(this)
 
-    Propeller.prototype.produceAcceleration = function () {
-        var multiplier = (this.spinDirection === spinDirection.CLOCKWISE) ? 1 : -1;
+        this.numberOfFins = numberOfFins
 
-        return multiplier * this.numberOfFins;
-    };
+        this.spinDirection = spinDirection.CLOCKWISE
+    }
 
-    Propeller.prototype.toggleDirection = function () {
-        var isClockwise = (this.spinDirection === spinDirection.CLOCKWISE);
+    extend(Propeller, PropulsionUnit)
 
-        this.spinDirection = spinDirection[isClockwise ? 'COUNTERCLOCKWISE' : 'CLOCKWISE'];
+    Propeller.prototype.produceAcceleration = function() {
+        var multiplier = (this.spinDirection === spinDirection.CLOCKWISE) ? 1 : -1
 
-        return this;
-    };
+        return multiplier * this.numberOfFins
+    }
 
-    return Propeller;
-});
+    Propeller.prototype.toggleDirection = function() {
+        var isClockwise = (this.spinDirection === spinDirection.CLOCKWISE)
+
+        this.spinDirection = spinDirection[isClockwise ? 'COUNTERCLOCKWISE' : 'CLOCKWISE']
+
+        return this
+    }
+
+    return Propeller
+})

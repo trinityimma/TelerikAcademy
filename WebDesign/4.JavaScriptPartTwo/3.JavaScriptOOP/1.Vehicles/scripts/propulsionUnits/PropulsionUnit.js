@@ -1,12 +1,9 @@
-/*jslint vars: true */
-/*global define */
-
-define(function () {
+define(function() {
     'use strict';
 
     function PropulsionUnit() {
-        return this;
+        return this
     }
 
-    return PropulsionUnit;
-});
+    return PropulsionUnit
+})

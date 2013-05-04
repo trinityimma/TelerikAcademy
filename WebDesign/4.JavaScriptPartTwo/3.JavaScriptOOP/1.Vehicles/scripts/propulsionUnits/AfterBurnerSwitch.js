@@ -1,18 +1,15 @@
-/*jslint vars: true */
-/*global define */
-
-define(function () {
+define(function() {
     'use strict';
 
     function AfterBurnerSwitch() {
-        this.isUp = false;
+        this.isUp = false
     }
 
-    AfterBurnerSwitch.prototype.toggle = function () {
-        this.isUp = !this.isUp;
+    AfterBurnerSwitch.prototype.toggle = function() {
+        this.isUp = !this.isUp
 
-        return this;
-    };
+        return this
+    }
 
-    return AfterBurnerSwitch;
-});
+    return AfterBurnerSwitch
+})
