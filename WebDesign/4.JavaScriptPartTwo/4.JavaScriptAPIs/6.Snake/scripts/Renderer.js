@@ -9,9 +9,8 @@ define(function(require) {
     var BACKGROUND_COLOR = 'black'
 
     function Renderer(canvas, rows, cols) {
-        // Reversed
-        canvas.width  = cols * ZOOM - PADDING
         canvas.height = rows * ZOOM - PADDING
+        canvas.width  = cols * ZOOM - PADDING
 
         this.context = canvas.getContext('2d')
 
@@ -24,14 +23,14 @@ define(function(require) {
 
     Renderer.prototype =
         { add: function(obj) {
-            var first = Point(
-                Math.max(obj.position.row, 0),
-                Math.max(obj.position.col, 0)
+            var first = Point
+                ( Math.max(obj.position.row, 0)
+                , Math.max(obj.position.col, 0)
             )
 
-            var last = Point(
-                Math.min(obj.position.row + obj.rows, this.rows),
-                Math.min(obj.position.col + obj.cols, this.cols)
+            var last = Point
+                ( Math.min(obj.position.row + obj.rows, this.rows)
+                , Math.min(obj.position.col + obj.cols, this.cols)
             )
 
             var row, col
