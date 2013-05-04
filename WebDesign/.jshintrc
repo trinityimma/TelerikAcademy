@@ -12,6 +12,7 @@
 , "maxcomplexity": 10
 , "maxdepth"     : 4
 , "maxstatements": 20
+, "newcap"       : false
 , "quotmark"     : "single"
 , "regexdash"    : true
 , "sub"          : true
