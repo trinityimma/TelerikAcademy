@@ -5,7 +5,7 @@ define(function(require) {
     var Vehicle = require('./Vehicle')
 
     function WaterVehicle() {
-        var propellers = Array.prototype.slice.call(arguments)
+        var propellers = [].slice.call(arguments)
 
         Vehicle.call(this, propellers)
     }
