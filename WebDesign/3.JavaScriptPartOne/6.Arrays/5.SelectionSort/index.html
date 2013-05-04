@@ -12,13 +12,13 @@
         }
 
         function min(i) {
-            var min = i
+            var minIndex = i
 
             for (i++; i < array.length; i++)
-                if (array[i] < array[min])
-                    min = i
+                if (array[i] < array[minIndex])
+                    minIndex = i
 
-            return min
+            return minIndex
         }
 
         return function(arr) {
