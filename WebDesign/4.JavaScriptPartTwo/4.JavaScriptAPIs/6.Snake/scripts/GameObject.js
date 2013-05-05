@@ -1,7 +1,7 @@
 define(function() {
     'use strict';
 
-    function noop() {
+    function _noop() {
 
     }
 
@@ -20,9 +20,9 @@ define(function() {
             return this.image[0].length
         }
 
-        , update: noop
+        , update: _noop
 
-        , respondToCollision: noop
+        , respondToCollision: _noop
     }
 
     return GameObject

@@ -9,7 +9,7 @@
           , m
 
         while (l <= r) {
-            m = parseInt(l + (r - l) / 2, 10)
+            m = l + ((r - l) >>> 1)
 
             if (array[m] < x)
                 l = m + 1

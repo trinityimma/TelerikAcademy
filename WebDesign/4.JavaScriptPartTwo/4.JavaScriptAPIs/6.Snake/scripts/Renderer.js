@@ -72,7 +72,6 @@ define(function(require) {
 
             return function() {
                 _render.call(this)
-
                 _clear.call(this)
             }
         }())

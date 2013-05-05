@@ -142,6 +142,10 @@ define(function(require) {
                     obj.update()
                 })
 
+                this.allObjects = this.allObjects.filter(function(obj) {
+                    return !obj.isDestroyed
+                })
+
                 _renderAll.call(this)
 
                 setTimeout(_run.bind(this), Math.max(0, MOVE_DELAY - (+new Date - currentDate)))
