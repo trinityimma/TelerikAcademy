@@ -10,7 +10,7 @@ namespace Poker.Tests
         {
             Card card = cardStr;
 
-            Assert.AreEqual(cardStr, cardStr.ToString());
+            Assert.AreEqual(cardStr, card.ToString());
         }
 
         [TestMethod]
