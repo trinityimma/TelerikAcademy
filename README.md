@@ -93,13 +93,14 @@
 8. [High-Quality Classes](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/8.HighQualityClasses) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/8.HighQualityClasses/README.md)) - 19.04.2013
 9. [Defensive Programming and Exceptions](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/9.DefensiveProgrammingAndExceptions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/9.DefensiveProgrammingAndExceptions/README.md)) - 23.04.2013
 10. [Code Tuning and Optimization](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/10.CodeTuningAndOptimization) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/10.CodeTuningAndOptimization/README.md)) - 23.04.2013
-11. [Unit Testing and Test-Driven Development](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/11.UnitTesting) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/11.UnitTesting/README.md)) - 26.04.2013
-12. Refactoring - 30.04.2013
-13. [Debugging](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/13.Debugging) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/13.Debugging/README.md)) - 30.04.2013
-14. [Development Tools](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/14.DevelopmentTools) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/14.DevelopmentTools/README.md)) - 30.04.2013
-15. [Design Patterns](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/15.DesignPatterns) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/15.DesignPatterns/README.md)) - 07.05.2013
-16. Software Quality Assurance - 10.05.2013
-17. [Teamwork](https://github.com/TeamPotassium/BattleField) - 17.05.2013
+11. [Unit Testing]Test-Driven Development](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/11.UnitTesting) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/11.UnitTesting/README.md)) - 26.04.2013
+12. [Test-Driven Development](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/12.TestDrivenDevelopment) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/12.TestDrivenDevelopment/README.md)) - 26.04.2013
+13. Refactoring - 30.04.2013
+14. [Debugging](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/13.Debugging) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/13.Debugging/README.md)) - 30.04.2013
+15. [Development Tools](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/14.DevelopmentTools) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/14.DevelopmentTools/README.md)) - 30.04.2013
+16. [Design Patterns](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/15.DesignPatterns) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/15.DesignPatterns/README.md)) - 07.05.2013
+17. Software Quality Assurance - 10.05.2013
+18. [Teamwork](https://github.com/TeamPotassium/BattleField) - 17.05.2013
 
 ##  JavaScript - Part II
 
