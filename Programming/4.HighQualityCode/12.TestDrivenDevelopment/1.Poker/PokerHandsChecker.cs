@@ -55,6 +55,7 @@ namespace Poker
             return hand.Cards.GroupBy(card => card.Suit).Count() == 1;
         }
 
+        // TODO: Refactor
         public bool IsStraight(IHand hand)
         {
             ValidExceptionHelper(hand);
@@ -62,9 +63,16 @@ namespace Poker
             var uniqueFaces = hand.Cards.Select(card => card.Face).Distinct();
 
             bool straight = ((uniqueFaces.Max() - uniqueFaces.Min()) == 4);
-            bool wheel = (uniqueFaces.Take(4).Max() == CardFace.Five);
 
-            return straight || wheel;
+            if (!straight)
+            {
+                bool isHighestFive = (uniqueFaces.Take(4).Max() == CardFace.Five);
+                bool isLowestAce = (uniqueFaces.Max() == CardFace.Ace);
+
+                straight = isHighestFive && isLowestAce;
+            }
+
+            return straight;
         }
 
         public bool IsThreeOfAKind(IHand hand)

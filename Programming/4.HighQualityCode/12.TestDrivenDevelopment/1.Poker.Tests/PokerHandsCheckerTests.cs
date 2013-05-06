@@ -112,13 +112,24 @@ namespace Poker.Tests
         }
 
         [TestMethod]
-        public void TestStraightWheel()
+        public void TestStraightWheelValid()
         {
             Hand hand = "5♠ 4♦ 3♦ 2♠ A♥";
 
             bool actual = new PokerHandsChecker().IsStraight(hand);
 
             Assert.AreEqual(true, actual);
+        }
+
+        // Regression test
+        [TestMethod]
+        public void TestStraightWheelInvalid()
+        {
+            Hand hand = "5♠ 4♦ 3♦ 2♠ Q♥";
+
+            bool actual = new PokerHandsChecker().IsStraight(hand);
+
+            Assert.AreEqual(false, actual);
         }
 
         [TestMethod]
