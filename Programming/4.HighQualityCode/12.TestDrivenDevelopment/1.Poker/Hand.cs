@@ -19,7 +19,7 @@ namespace Poker
 
         public static Hand Parse(string s)
         {
-            Card[] cards = Regex.Split(s, Separator).Select(cardStr => Card.Parse(cardStr)).ToArray();
+            Card[] cards = Regex.Split(s, Separator).Select(Card.Parse).ToArray();
 
             return new Hand(cards);
         }
