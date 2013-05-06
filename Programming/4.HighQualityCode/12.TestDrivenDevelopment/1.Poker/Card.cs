@@ -39,13 +39,18 @@ namespace Poker
             this.Suit = suit;
         }
 
+        // TODO: Extension
+        private static TKey GetKey<TKey, TValue>(Dictionary<TKey, TValue> dictionary, TValue value)
+        {
+            return dictionary.First(key => key.Value.Equals(value)).Key;
+        }
         public static Card Parse(string s)
         {
             string faceStr = s.Substring(0, s.Length - 1);
-            CardFace face = faceStrings.First(key => key.Value == faceStr).Key;
+            CardFace face = GetKey(faceStrings, faceStr);
 
             string suitStr = s.Substring(s.Length - 1);
-            CardSuit suit = suitStrings.First(key => key.Value == suitStr).Key;
+            CardSuit suit = GetKey(suitStrings, suitStr);
 
             return new Card(face, suit);
         }
