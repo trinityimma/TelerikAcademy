@@ -1,5 +1,7 @@
 # Telerik Academy
 
+<a href="http://academy.telerik.com/?utm_source=site&utm_medium=banner&utm_content=468x60&utm_campaign=community" title="Уроци по програмиране"><img src="http://academy.telerik.com/images/default-album/telerik-academy-banner.jpg?sfvrsn=2" alt="Академия на Телерик"/></a>
+
 ## C# - Part I
 
 1. [Introduction to Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming/README.md)) - 27.10.2012
