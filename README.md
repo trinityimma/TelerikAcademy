@@ -112,6 +112,5 @@
 4. [JavaScript APIs](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/README.md)) - 25.04.2013
 5. [Events](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/5.Events) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/5.Events/README.md)) - 25.04.2013
 6. Exceptions - 29.04.2013
-7. [JavaScript Performance](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/7.JavasScriptPerformance) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/7.JavasScriptPerformance/README.md)) -  09.05.2013
-8. Exam Preparation - 09.05.2013
-9. Exam - 15.05.2013
+7. Exam Preparation - 09.05.2013
+8. Exam - 15.05.2013
