@@ -1,5 +1,8 @@
 # Exam Preparation
 
+1. [Document System](#1-document-system)
+* [Geometry API](#2-geometry-api)
+
 ## 1. Document System
 
 A document system holds a list of documents. **Documents** can be **binary** or **text** and have **name** (mandatory) and can have **content**. Documents are of two types: **text** and **binary**. **Text documents** can have **charset** (e.g. utf-8 or windows-1251). **Binary documents** can have **size** (in bytes). Binary documents can be of type PDF, Word, Excel, Audio or Video. **PDF documents** can hold the **number of pages** they consist of. **Word documents** can hold the **number of characters** they consist of. **Excel documents** can hold the **number of rows** and the **number of columns** in the table they hold. **Word and Excel documents** are both office documents. **Office document** can have **version** (e.g. "2007" or "Office97"). A special kind of binary documents are the multimedia documents. All **multimedia documents** can have **length** (in seconds). Audio documents and video documents are both multimedia documents. **Audio documents** can have sample rate (in Hz). **Video documents** can have frame rate (in fps). PDF, Word and Excel documents are **encryptable** (can be encrypted and decrypted). Word and text documents are **editable** (their content could be changed). All document characteristics except their name are non-mandatory.
@@ -127,3 +130,31 @@ The commands are guaranteed to be valid. Only the described above commands will 
     ExcelDocument[encrypted]
     AudioDocument[length=368800;name=ring.mp3;samplerate=44100;size=9834733]
     VideoDocument[framerate=24;length=87312;name=demo.mpg;size=87245212]
+
+## 2. Geometry API
+
+You are given an API containing some basic 3D geometry operations – working with vectors, representing figures and their measures and so on. You are also given a `FigureController`, which executes operations coming from the standard input, over figures.
+
+### Important Classes and Interfaces
+
+The API contains these Interfaces:
+
+* `ILengthMeasurable` - provides a method `GetLength()` for getting the length of a figure. Should be implemended by figure classes for which length is measurable (e.g. line segments).
+* `IAreaMeasurable` - provides a method `GetArea()` for getting the area of a figure, similar to `ILengthMeasurable`.
+* `IVolumeMeasurable` - provides a method `GetVolume()` for getting the volume of a figure, similar to `IAreaMeasurable`.
+* `IFlat` - provides a method `GetNormal()`, returning a normal vector. Should be implemented by flat (plane) figures (e.g. triangle, rectangle, etc.). A normal vector is a vector perpendicular to the surface of the figure.
+* `ITransformable` - provides method for doing linear transformations (rotate, scale, translate) on figures. All figures should implement `ITransformable`.
+
+For working with vectors, the API has these classes:
+
+* `Vector` - provides an abstract class for n-dimensional vectors, with a property for `Magnitude` (length) and a field for the components of the vector. Also has `Normalization` (making the vector with `Magnitude = 1`) and an indexer for access to the separate components.
+* `Vector3D` - 3-dimensional vector (3 components) with sum and subtraction operators defined, as well as multiplication by number. The class also provides some static members for vector operations – cross product, dot product and angle between two vectors, as well as parsing a vector from a string and a `ToString()` returning the format in which a vector should be printed on the console.
+For working with figures, the API has these classes:
+* `Figure` - abstract class that provides the base functionality for all figures and implements `ITransformable`. It uses a list of `Vector3D` elements, defining the positions of vertices of the figure (or important locations in the figure). The `Figure` class should be inherited by any figure, which needs to be controlled by the `FigureController`.
+* `FigureController` - class for reading commands from the standard input and executing them on figures. The objects of the `FigureController` class keep a `currentFigure` field, on which they execute the incomming commands.
+
+The code you will get will have the API and an instance of the `FigureController` class in the `Main()` method. It can handle reading input and writing output in the expected format (will be explained later), but is not complete and you will have to complete it.
+
+Study the classes to get a better understanding of the API.
+
+### Commands
