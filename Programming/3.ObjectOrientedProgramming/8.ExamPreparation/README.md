@@ -158,3 +158,40 @@ The code you will get will have the API and an instance of the `FigureController
 Study the classes to get a better understanding of the API.
 
 ### Commands
+Commands are strings, which are executed by the `FigureController`. Commands consist of several "words" which describe the command. The "words" are these types:
+
+* **Command name** - a string identifying the command
+    * Examples: 
+        * `center`
+        * `rotate`
+        * `triangle`
+* **Command vector argument** - a string representing a 3D vector, which can be parsed by `Vector3D.Parse()`
+    * Example: `(10,-5,0.3)`
+* **Command scalar (number) argument** - a string representing a number
+    * Example: `-5.3`
+
+All "words" in a command are separated by whitespaces and no word can contain whitespaces in it.
+
+There are 3 types of commands:
+* **Figure creation command** - creates a new figure and sets it as the current figure for the `FigureController`.
+    * Format: `[figureName] [figureVector1] [figureVector2] [figureVector...]`
+    * Examples:
+        * `triangle (0,0,0) (1,1,1) (2,0,0)`
+        * `segment (1,13,2.3) (-4,10,0)`
+* Figure instance command – does operations on the current figure in the `FigureController`
+    * Format: `[operationName] [arguments...]`
+    * Examples:
+        * `rotate (0,0,0) 45` – rotates the current figure by 45 degrees about (0,0,0) 
+        * `center` – prints the vector, describing the center of the current figure
+* End command – signals the end of the operations on the current figure
+    * Format: `end`
+
+Here's a list of all commands which are currently implemented in the API:
+* `translate (vectorX,vectorY,vectorZ)` – translates the current figure with the given vector
+* `rotate (centerX,centerY,centerZ)` degrees – rotates the current figure about the center by the given number of degrees. Rotation is only in the XY plane.
+* `scale (centerX,centerY,centerZ)` factor – scales all vertices of the current figure away from the center by the given factor
+* `center` – prints on the console the center of the figure as a vector in the format `(x,y,z)`
+* `measure` – prints the "primary measure" of the current figure on the console as a number (e.g. 43). The primary measure for a line segment is its length, for a plane figure – its area, and for a 3D figure (e.g. cube) – its volume.
+* `vertex (x,y,z)` – creates a "single vertex" figure and sets it as the current figure at coordinates the given `x,y,z`
+* `segment (ax,ay,az) (bx,by,bz)` – creates a "line segment" figure and sets it as the current figure, with a first vertex at the given `ax,ay,az `and a second vertex at the `bx,by,bz`
+* `triangle (ax,ay,az) (bx,by,bz) (cx,cy,cz)` – creates a triangle and sets it as the current figure, with vertices at the given coordinates
