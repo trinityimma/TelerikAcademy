@@ -101,7 +101,7 @@
 14. Debugging - 30.04.2013
 15. [Development Tools](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/15.DevelopmentTools) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/15.DevelopmentTools/README.md)) - 30.04.2013
 16. [Design Patterns](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/16.DesignPatterns) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/16.DesignPatterns/README.md)) - 07.05.2013
-17. Software Quality Assurance - 10.05.2013
+17. Software Engineering Fundamentals - 10.05.2013
 18. [Teamwork](https://github.com/TeamPotassium/BattleField) - 17.05.2013
 
 ##  JavaScript - Part II
