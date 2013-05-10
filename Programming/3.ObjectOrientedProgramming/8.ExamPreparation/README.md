@@ -133,7 +133,7 @@ The commands are guaranteed to be valid. Only the described above commands will 
 
 ## 2. Geometry API
 
-You are given an API containing some basic 3D geometry operations – working with vectors, representing figures and their measures and so on. You are also given a `FigureController`, which executes operations coming from the standard input, over figures.
+You are given an [API containing some basic 3D geometry operations](https://github.com/jasssonpet/TelerikAcademy/raw/master/Programming/3.ObjectOrientedProgramming/8.ExamPreparation/2.GeometryAPISkeleton.zip) – working with vectors, representing figures and their measures and so on. You are also given a `FigureController`, which executes operations coming from the standard input, over figures.
 
 ### Important Classes and Interfaces
 
