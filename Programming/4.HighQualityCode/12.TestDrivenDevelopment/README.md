@@ -1,7 +1,8 @@
 ## Test-Driven Development
 
-1. Finish the `Poker` project given in the Visual Studio Solution [TestDrivenDevelopmentHomework.zip]() using TDD.
-* Write a class `Card` implementing the `ICard` interface. Implement the properties. Write a constructor. Implement the `ToString()` method. Test all cases.
+Finish the `Poker` project given in the Visual Studio Solution [TestDrivenDevelopmentHomework.zip]() using TDD.
+
+1. Write a class `Card` implementing the `ICard` interface. Implement the properties. Write a constructor. Implement the `ToString()` method. Test all cases.
 * Write a class `Hand` implementing the `IHand` interface. Implement the properties. Write a constructor. Implement the `ToString()` method. Test all cases.
 * Write a class `PokerHandsChecker` (+ tests) and start implementing the `IPokerHandsChecker` interface. Implement the `IsValidHand(IHand)`. A hand is valid when it consists of exactly 5 different cards.
 * Implement `IPokerHandsChecker.IsFlush(IHand)` method. Follow the official poker rules from Wikipedia: [List of Poker Hands](http://en.wikipedia.org/wiki/List_of_poker_hands).
