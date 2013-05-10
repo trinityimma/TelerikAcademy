@@ -43,24 +43,26 @@ All encryptable documents should implement the `IEncryptable` interface. You do 
 
 Your second task is to write a program that executes a sequence of up to 1000 commands. Each command is given in the following format: 
 
-  Command[key1=value1;key2=value2;…]
+    Command[key1=value1;key2=value2;…]
 
-Commands consist of command name and attributes given in square brackets `[]`. Each attribute is given in the form `key=value`. Keys consist of small English letters. Values consist single line English text and cannot contain the following characters: `[`, `]`, `=`, `;` and `\n`. The sequence of commands ends with an empty line.
+Commands consist of command name and attributes given in square brackets `[]`. Each attribute is given in the form `key=value`. **Keys** consist of small English letters. **Values** consist single line English text and cannot contain the following characters: `[`, `]`, `=`, `;` and `\n`. The sequence of commands ends with an empty line.
+
 The valid commands that your program should be able to execute are the following:
-* `AddTextDocument[name=…;charset=…;content=…]` – adds a text document to the document system. The name is obligatory, but all other attributes are optional. The order of the attributes can be arbitrary. All attributes will be valid for the type of the document we create. As a result the command prints on the console “Document added: <name>” is case of success or “Document has no name” in case of missing document name. Multiple documents having the same name are allowed to be added.
-* `AddPDFDocument[name=…;pages=…;size=…;content=…]` – works like AddTextDocument.
-* `AddWordDocument[chars=…;name=…;version=…;size=…;content=…]` – works like AddTextDocument.
-* `AddExcelDocument[rows=…;cols=…;version=…;size=…;name=…;content=…]` – works like AddTextDocument.
-* `AddAudioDocument[name=…;content=…;samplerate=…;length=…;size=…]` – works like AddTextDocument.
-* `AddVideoDocument[name=…;content=…;framerate=…;length=…;size=…]` – works like AddTextDocument.
-* `EncryptDocument[name]` – changes the state of all documents matching the specified name to “encrypted”. Documents that are already encrypted remain in “encrypted” state. For each document matching the specified name, the command prints as a result “Document encrypted: <name>” on the console or prints “Document does not support encryption: <name>” if the document is not encryptable. In case of no document is matching the specified name, the message “Document not found: <name>”.
-* DecryptDocument[name]` – works similarly like EncryptDocument, but changes the state of all matched documents to “not encrypted” and prints as result one of the following messages: “Document decrypted: <name>”, “Document does not support decryption: <name>” or “Document not found: <name>”.
-* `EncryptAllDocuments` – changes the state of all documents that support encryption to “encrypted”. As result, if at least one document supports encryption, prints on the console “All documents encrypted”, otherwise prints “No encryptable documents found”.
-* `ListDocuments[]` – prints on the console all the documents in the document system in their order of their addition. Each document should be printed alone on a single line in the following form:
-XXXDocument[key1=value1;key2=value2;…]
-The XXXDocument is the type of the document, e.g. PDFDocument, VideoDocument, etc. The keys should be ordered alphabetically. Keys with no value should be skipped. In there are no documents, the command prints “No documents found”. Encrypted documents are shown differently, as follows:
-XXXDocument[encrypted]
-* ChangeContent[name;new_content] – changes the content of all editable documents matching the specified name with the specified new content. For each document matching the specified name, the command prints as a result “Document content changed: <name>” on the console or prints “Document is not editable: <name>” if the document is not editable. In case of no document is matching the specified name, the message “Document not found: <name>”.
 
-The commands are guaranteed to be valid. Only the described above commands will be given as input. The command format will be as described above. The command parameters will also be in the described format. All attributes will be valid for their corresponding command. The commands will be no more than 1000. Each command will be less than 500 characters long. To simplify your work you are given a command parser that provides a skeleton for your solution (see the file DocumentSystem-Skeleton.rar).
+* `AddTextDocument[name=…;charset=…;content=…]` – adds a text document to the document system. The name is obligatory, but all other attributes are optional. The order of the attributes can be arbitrary. All attributes will be valid for the type of the document we create. As a result the command prints on the console `Document added: <name>` is case of success or `Document has no name` in case of missing document name. Multiple documents having the same name are allowed to be added.
+* `AddPDFDocument[name=…;pages=…;size=…;content=…]` – works like `AddTextDocument`.
+* `AddWordDocument[chars=…;name=…;version=…;size=…;content=…]` – works like `AddTextDocument`.
+* `AddExcelDocument[rows=…;cols=…;version=…;size=…;name=…;content=…]` – works like `AddTextDocument`.
+* `AddAudioDocument[name=…;content=…;samplerate=…;length=…;size=…]` – works like `AddTextDocument`.
+* `AddVideoDocument[name=…;content=…;framerate=…;length=…;size=…]` – works like `AddTextDocument`.
+* `EncryptDocument[name]` – changes the state of all documents matching the specified name to “encrypted”. Documents that are already encrypted remain in “encrypted” state. For each document matching the specified name, the command prints as a result `Document encrypted: <name>` on the console or prints `Document does not support encryption: <name>` if the document is not encryptable. In case of no document is matching the specified name, the message `Document not found: <name>`.
+* DecryptDocument[name]` – works similarly like `EncryptDocument`, but changes the state of all matched documents to “not encrypted” and prints as result one of the following messages: `Document decrypted: <name>`, `Document does not support decryption: <name>` or `Document not found: <name>`.
+* `EncryptAllDocuments` – changes the state of all documents that support encryption to “encrypted”. As result, if at least one document supports encryption, prints on the console `All documents encrypted`, otherwise prints `No encryptable documents found`.
+* `ListDocuments[]` – prints on the console all the documents in the document system in their order of their addition. Each document should be printed alone on a single line in the following form:
+`XXXDocument[key1=value1;key2=value2;...]`
+The `XXXDocument` is the type of the document, e.g. `PDFDocument`, `VideoDocument`, etc. The keys should be ordered alphabetically. Keys with no value should be skipped. In there are no documents, the command prints “No documents found”. Encrypted documents are shown differently, as follows:
+`XXXDocument[encrypted]`
+* `ChangeContent[name;new_content]` – changes the content of all editable documents matching the specified name with the specified new content. For each document matching the specified name, the command prints as a result `Document content changed: <name>` on the console or prints `Document is not editable: <name>` if the document is not editable. In case of no document is matching the specified name, the message `Document not found: <name>`.
+
+The commands are guaranteed to be valid. Only the described above commands will be given as input. The command format will be as described above. The command parameters will also be in the described format. All attributes will be valid for their corresponding command. The commands will be no more than **1000**. Each command will be less than **500** characters long. To simplify your work you are given a command parser that provides a skeleton for your solution (see the file (DocumentSystem-Skeleton.rar)[https://github.com/jasssonpet/TelerikAcademy/raw/master/Programming/3.ObjectOrientedProgramming/8.ExamPreparation/1.DocumentSystemSkeleton.rar]).
 
