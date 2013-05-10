@@ -235,29 +235,36 @@ Note: all numbers and coordinates can be floating-point numbers. Using a 64-bit 
 
 Not all commands require output – for example translate, rotate, scale and creation of figures do not print anything on the console. Other commands require output in the form of either a number or a vertex. Commands that require printing a number must just print a number on a new line. Commands that print a vertex must print the vertex through its `ToString()` method on a new line.
 
-### Input Example
-
-    3
-    triangle (0,-1,0) (0,1,0) (1,0,0)
-    area
-    translate (1,1,1)
-    scale (1,1,1) 2
-    area
-    end
-    triangle (0,0,0) (1,-1,0) (2,0,0)
-    volume
-    measure
-    end
-    circle (0,0.5,0) 4.5
-    area
-    normal
-    end
-
-### Output Example
-
-    1.00
-    4.00
-    undefined
-    1.00
-    63.62
-    (0.00,0.00,1.00)
+<table>
+    <tr>
+        <th>Input Example</th>
+        <th>Output Example</th>
+    </tr>
+    <tr>
+        <td>
+<pre>3
+triangle (0,-1,0) (0,1,0) (1,0,0)
+area
+translate (1,1,1)
+scale (1,1,1) 2
+area
+end
+triangle (0,0,0) (1,-1,0) (2,0,0)
+volume
+measure
+end
+circle (0,0.5,0) 4.5
+area
+normal
+end</pre>
+        </td>
+        <td>
+<pre>1.00
+4.00
+undefined
+1.00
+63.62
+(0.00,0.00,1.00)</pre>
+        </td>
+    </tr>
+</table>
