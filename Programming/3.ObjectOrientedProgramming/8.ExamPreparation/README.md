@@ -65,3 +65,65 @@ The `XXXDocument` is the type of the document, e.g. `PDFDocument`, `VideoDocumen
 * `ChangeContent[name;new_content]` – changes the content of all editable documents matching the specified name with the specified new content. For each document matching the specified name, the command prints as a result `Document content changed: <name>` on the console or prints `Document is not editable: <name>` if the document is not editable. In case of no document is matching the specified name, the message `Document not found: <name>`.
 
 The commands are guaranteed to be valid. Only the described above commands will be given as input. The command format will be as described above. The command parameters will also be in the described format. All attributes will be valid for their corresponding command. The commands will be no more than **1000**. Each command will be less than **500** characters long. To simplify your work you are given a command parser that provides a [skeleton for your solution](https://github.com/jasssonpet/TelerikAcademy/raw/master/Programming/3.ObjectOrientedProgramming/8.ExamPreparation/1.DocumentSystemSkeleton.rar).
+
+### Input Example
+
+    AddTextDocument[name=example.txt;charset=utf-8;content=Telerik Academy Exam]
+    AddTextDocument[name=readme.txt]
+    AddTextDocument[]
+    EncryptAllDocuments[]
+    AddPDFDocument[content=6A7E889CF3A8D2;name=academy.pdf;pages=2;size=38217]
+    AddWordDocument[name=exam.docx;chars=12218;version=2012;size=36881]
+    AddWordDocument[name=exam.docx]
+    AddExcelDocument[name=academy.xls;rows=12;cols=3;size=9430;version=97]
+    AddAudioDocument[size=9834733;name=ring.mp3;samplerate=44100;length=368800]
+    AddVideoDocument[name=demo.mpg;framerate=24;length=87312;size=87245212]
+    EncryptDocument[academy.pdf]
+    EncryptDocument[ring.mp3]
+    EncryptDocument[exam.docx]
+    EncryptDocument[invalid.doc]
+    ChangeContent[example.txt;new content]
+    ChangeContent[demo.mpg;new content]
+    ChangeContent[invalid.doc;new content]
+    EncryptAllDocuments[]
+    DecryptDocument[academy.pdf]
+    DecryptDocument[exam.docx]
+    DecryptDocument[ring.mp3]
+    DecryptDocument[invalid.doc]
+    ListDocuments[]
+    (empty line)
+
+### Output Example
+
+    Document added: example.txt
+    Document added: readme.txt
+    Document has no name
+    No encryptable documents found
+    Document added: academy.pdf
+    Document added: exam.docx
+    Document added: exam.docx
+    Document added: academy.xls
+    Document added: ring.mp3
+    Document added: demo.mpg
+    Document encrypted: academy.pdf
+    Document does not support encryption: ring.mp3
+    Document encrypted: exam.docx
+    Document encrypted: exam.docx
+    Document not found: invalid.doc
+    Document content changed: example.txt
+    Document is not editable: demo.mpg
+    Document not found: invalid.doc
+    All documents encrypted
+    Document decrypted: academy.pdf
+    Document decrypted: exam.docx
+    Document decrypted: exam.docx
+    Document does not support decryption: ring.mp3
+    Document not found: invalid.doc
+    TextDocument[charset=utf-8;content=new content;name=example.txt]
+    TextDocument[name=readme.txt]
+    PDFDocument[content=6A7E889CF3A8D2;name=academy.pdf;pages=2;size=38217]
+    WordDocument[chars=12218;name=exam.docx;size=36881;version=2012]
+    WordDocument[name=exam.docx]
+    ExcelDocument[encrypted]
+    AudioDocument[length=368800;name=ring.mp3;samplerate=44100;size=9834733]
+    VideoDocument[framerate=24;length=87312;name=demo.mpg;size=87245212]
