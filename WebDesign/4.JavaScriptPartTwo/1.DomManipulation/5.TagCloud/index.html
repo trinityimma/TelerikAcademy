@@ -60,7 +60,7 @@
             return this.each(function() {
                 var self = J(this)
 
-                  , tags = self.text().split(/\s*,\s*/)
+                  , tags = self.text().trim().split(/\s*,\s*/)
                   , dictionary = _makeDictionary(tags)
                   , spans = _makeHtml(dictionary, _calcFontStep(dictionary))
 
