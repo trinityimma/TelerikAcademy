@@ -49,7 +49,7 @@
         tr.addClass('nestedRow');
         tr.click(function(e) {
           e.stopPropagation();
-          return J(this.nextElementSibling).toggle();
+          return J(this).next().toggle();
         });
       }
       return parent.append(tr);
