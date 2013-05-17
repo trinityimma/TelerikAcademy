@@ -1,5 +1,7 @@
 # Telerik Academy
 
+<a href="http://academy.telerik.com/?utm_source=site&utm_medium=banner&utm_content=468x60&utm_campaign=community" title="Уроци по програмиране"><img src="http://academy.telerik.com/images/default-album/telerik-academy-banner.jpg?sfvrsn=2" alt="Академия на Телерик"/></a>
+
 ## C# - Part I
 
 1. [Introduction to Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming/README.md)) - 27.10.2012
@@ -74,7 +76,7 @@
 5. [Loops](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/5.Loops) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/5.Loops/README.md)) - 09.03.2013
 6. [Arrays](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/6.Arrays) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/6.Arrays/README.md)) - 09.03.2013
 7. [Functions](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/7.Functions) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/7.Functions/README.md)) - 16.03.2013
-8. [Using Objects](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/8.Objects) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/8.Objects/README.md)) - 16.03.2013
+8. [Objects](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/8.Objects) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/8.Objects/README.md)) - 16.03.2013
 9. [Strings](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/9.Strings) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/9.Strings/README.md)) - 23.03.2013
 10. Exam Preparation - 30.03.2013
 11. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/3.JavaScriptPartOne/11.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/3.JavaScriptPartOne/11.Exam/README.md)) - 01.04.2013
@@ -95,11 +97,11 @@
 10. [Code Tuning and Optimization](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/10.CodeTuningAndOptimization) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/10.CodeTuningAndOptimization/README.md)) - 23.04.2013
 11. [Unit Testing](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/11.UnitTesting) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/11.UnitTesting/README.md)) - 26.04.2013
 12. [Test-Driven Development](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/12.TestDrivenDevelopment) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/12.TestDrivenDevelopment/README.md)) - 26.04.2013
-13. Refactoring - 30.04.2013
-14. [Debugging](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/13.Debugging) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/13.Debugging/README.md)) - 30.04.2013
-15. [Development Tools](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/14.DevelopmentTools) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/14.DevelopmentTools/README.md)) - 30.04.2013
-16. [Design Patterns](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/15.DesignPatterns) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/15.DesignPatterns/README.md)) - 07.05.2013
-17. Software Quality Assurance - 10.05.2013
+13. [Refactoring](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/12.TestDrivenDevelopment) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/12.TestDrivenDevelopment/README.md)) - 30.04.2013
+14. Debugging - 30.04.2013
+15. [Development Tools](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/15.DevelopmentTools) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/15.DevelopmentTools/README.md)) - 30.04.2013
+16. [Design Patterns](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/16.DesignPatterns) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/16.DesignPatterns/README.md)) - 07.05.2013
+17. Software Engineering Fundamentals - 10.05.2013
 18. [Teamwork](https://github.com/TeamPotassium/BattleField) - 17.05.2013
 
 ##  JavaScript - Part II
@@ -110,6 +112,5 @@
 4. [JavaScript APIs](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/4.JavaScriptAPIs/README.md)) - 25.04.2013
 5. [Events](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/5.Events) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/5.Events/README.md)) - 25.04.2013
 6. Exceptions - 29.04.2013
-7. [JavaScript Performance](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/7.JavasScriptPerformance) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/7.JavasScriptPerformance/README.md)) -  09.05.2013
-8. Exam Preparation - 09.05.2013
-9. Exam - 15.05.2013
+7. Exam Preparation - 09.05.2013
+8. Exam - 15.05.2013

@@ -45,7 +45,7 @@ namespace Poker
         {
             ValidExceptionHelper(hand);
 
-            return IsOnePair(hand) && IsThreeOfAKind(hand);
+            return IsOnePair(hand) && IsThreeOfAKind(hand); // TODO: Remove repeating
         }
 
         public bool IsFlush(IHand hand)
