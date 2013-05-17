@@ -29,7 +29,7 @@ class GridViewRow
             tr.click (e) ->
                 e.stopPropagation()
 
-                J(this.nextElementSibling).toggle()
+                J(this).next().toggle()
 
         parent.append tr
 
