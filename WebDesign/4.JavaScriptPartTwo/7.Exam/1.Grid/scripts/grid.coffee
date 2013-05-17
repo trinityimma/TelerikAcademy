@@ -94,8 +94,6 @@ class GridViewRow
 
             tr.append J('<th />').append(a)
 
-        J('th', tr).each (i)->
-
         parent.append tr
 
     _renderData = (parent) ->
