@@ -113,4 +113,4 @@
 5. [Events](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/5.Events) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/5.Events/README.md)) - 25.04.2013
 6. Exceptions - 29.04.2013
 7. Exam Preparation - 09.05.2013
-8. Exam - 15.05.2013
+8. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/8.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/8.Exam/README.md)) - 15.05.2013
