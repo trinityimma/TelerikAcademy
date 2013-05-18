@@ -22,7 +22,7 @@ class GridViewRow
         tr = J('<tr />')
 
         tr.append J('<td />').text(col) for col in @data
-        tr.addClass 'nestedRow' if @nestedGrid?
+        tr.addClass 'nested-row' if @nestedGrid?
         tr.data 'nestedGrid', @nestedGrid
 
         parent.append tr

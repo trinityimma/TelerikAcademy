@@ -46,7 +46,7 @@
         tr.append(J('<td />').text(col));
       }
       if (this.nestedGrid != null) {
-        tr.addClass('nestedRow');
+        tr.addClass('nested-row');
       }
       tr.data('nestedGrid', this.nestedGrid);
       return parent.append(tr);
@@ -179,65 +179,5 @@
     return GridView;
 
   })();
-
-  this.controls.buildSchoolsGridView = function(selector, schools) {
-    var course, courseGrid, courseRow, school, schoolsGrid, student, studentGrid, studentRow, _i, _j, _k, _len, _len1, _len2, _ref1, _ref2;
-    schoolsGrid = controls.GridView(selector);
-    schoolsGrid.addHeader('Name', 'Location', 'Total Students', 'Specialty');
-    for (_i = 0, _len = schools.length; _i < _len; _i++) {
-      school = schools[_i];
-      courseRow = schoolsGrid.addRow(school.name, school.location, school.numberOfCourses, school.specialty);
-      courseGrid = courseRow.getNestedGrid();
-      courseGrid.addHeader('Title', 'Start date', 'Number of Students');
-      _ref1 = school.courses;
-      for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
-        course = _ref1[_j];
-        studentRow = courseGrid.addRow(course.title, course.startDate, course.numberOfStudents);
-        studentGrid = studentRow.getNestedGrid();
-        studentGrid.addHeader('First Name', 'Last Name', 'Grade', 'Mark');
-        _ref2 = course.students;
-        for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
-          student = _ref2[_k];
-          studentGrid.addRow(student.firstName, student.lastName, student.grade, student.getMark(course));
-        }
-      }
-    }
-    return schoolsGrid;
-  };
-
-  this.controls.getSchoolsGridViewData = function(grid) {
-    var schoolsData;
-    schoolsData = grid.data.map(function(schoolRow) {
-      var schoolData;
-      schoolData = {
-        name: schoolRow.data[0],
-        location: schoolRow.data[1],
-        specialty: schoolRow.data[3]
-      };
-      schoolData.courses = schoolRow.nestedGrid.data.map(function(courseRow) {
-        var courseData;
-        courseData = {
-          title: courseRow.data[0],
-          startDate: courseRow.data[1]
-        };
-        courseData.students = courseRow.nestedGrid.data.map(function(studentRow) {
-          var studentData;
-          studentData = {
-            firstName: studentRow.data[0],
-            lastName: studentRow.data[1],
-            grade: studentRow.data[2],
-            marks: {}
-          };
-          studentData.marks[courseData.title] = studentRow.data[3];
-          return studentData;
-        });
-        return courseData;
-      });
-      return schoolData;
-    });
-    return schoolsData.map(function(schoolData) {
-      return schoolNS.School.deserialize(schoolData);
-    });
-  };
 
 }).call(this);
