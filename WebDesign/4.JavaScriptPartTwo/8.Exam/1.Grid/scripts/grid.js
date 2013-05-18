@@ -46,7 +46,7 @@
         tr.append(J('<td />').text(col));
       }
       if (this.nestedGrid != null) {
-        tr.addClass('nested-row');
+        tr.addClass('nested');
       }
       tr.data('nestedGrid', this.nestedGrid);
       return parent.append(tr);
