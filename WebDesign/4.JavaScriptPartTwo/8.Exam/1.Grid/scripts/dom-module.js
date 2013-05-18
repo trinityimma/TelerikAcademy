@@ -524,6 +524,42 @@ J.random = function(min, maxInclusive) {
     }
 }())
 
+// ### Data
+;(function() {
+    function _getDataProperty(key) {
+        return this._data && this._data[key]
+    }
+
+    function _setDataProperty(key, value) {
+        this._data = this._data || {}
+
+        this._data[key] = value
+    }
+
+    function _getData(key) {
+        var firstElement = this[0]
+
+        return _getDataProperty.call(firstElement, key)
+    }
+
+    function _setData(key, value) {
+        return this.each(function() {
+            _setDataProperty.call(this, key, value)
+        })
+    }
+
+    J.prototype.data = function(key, value) {
+        return arguments.length === 1 ?
+            _getData.call(this, key) :
+            _setData.call(this, key, value)
+    }
+
+    // TODO: Delete
+    J.prototype.removeData = function(key) {
+        return J.prototype.data.call(this, key, undefined)
+    }
+}())
+
 // ### Text
 ;(function() {
     function _getText() {

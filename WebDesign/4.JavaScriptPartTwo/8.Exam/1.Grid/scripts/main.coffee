@@ -31,12 +31,12 @@ schoolsGrid.render()
 do ->
     students = (new schoolNS.Student("Student - #{i}", "Ivanov", J.random(1, 100)) for i in [1..40])
 
-    courses = (new schoolNS.Course(i, new Date) for i in ['JS 2', 'SEO', 'S&D', 'C#'])
+    courses = (new schoolNS.Course(i, new Date(J.random(1e12, 2e12))) for i in ['JS I', 'JS II', 'SEO', 'S&D'])
 
-    courses[0].addStudents students[0..9]
-    courses[1].addStudents students[10..19]
-    courses[2].addStudents students[20..29]
-    courses[3].addStudents students[30..39]
+    courses[0].addStudents students[0...10]
+    courses[1].addStudents students[10...20]
+    courses[2].addStudents students[20...30]
+    courses[3].addStudents students[30...40]
 
     for course in courses
         for student in course.students
@@ -48,36 +48,38 @@ do ->
         new schoolNS.School 'Telerik Academy', 'Sofia', 'IT'
     ]
 
-    schools[0].addCourse courses[0..1]
-    schools[1].addCourse [courses[2]]
-    schools[2].addCourse [courses[3]]
+    schools[0].addCourse courses[0..2]
+    schools[1].addCourse [courses[3]]
+    # schools[2].addCourse [courses[3]]
+
+    delay = 1
 
     setTimeout ->
         console.log "Task 4: Save to localStorage from data"
 
         schoolNS.schoolRepository.save 'schools-repository', schools
-    , 1000
+    , delay++ * 500
 
     schoolsData = null
 
     setTimeout ->
-        console.log "Task 4: Load from localStorage and build new grid"
+        console.log "Task 4: Load from localStorage"
 
         schoolsData = schoolNS.schoolRepository.load('schools-repository')
 
         console.log schoolsData
-    , 2000
+    , delay++ * 500
 
     setTimeout ->
-        console.log "Task 6: Build schools grid from data"
+        console.log "Task 6: Build schools grid from the loaded data"
 
         schoolsGrid = controls.buildSchoolsGridView('#schools-grid', schoolsData)
 
         schoolsGrid.render()
-    , 3000
+    , delay++ * 500
 
     setTimeout ->
         console.log "Task 5: Get the data from the new grid"
 
         console.log controls.getSchoolsGridViewData(schoolsGrid)
-    , 4000
+    , delay++ * 500

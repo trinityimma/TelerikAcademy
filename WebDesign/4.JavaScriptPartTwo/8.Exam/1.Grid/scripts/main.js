@@ -33,7 +33,7 @@
   schoolsGrid.render();
 
   (function() {
-    var course, courses, i, schools, schoolsData, student, students, _i, _j, _len, _len1, _ref;
+    var course, courses, delay, i, schools, schoolsData, student, students, _i, _j, _len, _len1, _ref;
     students = (function() {
       var _i, _results;
       _results = [];
@@ -44,11 +44,11 @@
     })();
     courses = (function() {
       var _i, _len, _ref, _results;
-      _ref = ['JS 2', 'SEO', 'S&D', 'C#'];
+      _ref = ['JS I', 'JS II', 'SEO', 'S&D'];
       _results = [];
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
         i = _ref[_i];
-        _results.push(new schoolNS.Course(i, new Date));
+        _results.push(new schoolNS.Course(i, new Date(J.random(1e12, 2e12))));
       }
       return _results;
     })();
@@ -65,28 +65,28 @@
       }
     }
     schools = [new schoolNS.School('PMG', 'Burgas', 'Mathematics'), new schoolNS.School('TUES', 'Sofia', 'IT'), new schoolNS.School('Telerik Academy', 'Sofia', 'IT')];
-    schools[0].addCourse(courses.slice(0, 2));
-    schools[1].addCourse([courses[2]]);
-    schools[2].addCourse([courses[3]]);
+    schools[0].addCourse(courses.slice(0, 3));
+    schools[1].addCourse([courses[3]]);
+    delay = 1;
     setTimeout(function() {
       console.log("Task 4: Save to localStorage from data");
       return schoolNS.schoolRepository.save('schools-repository', schools);
-    }, 1000);
+    }, delay++ * 500);
     schoolsData = null;
     setTimeout(function() {
-      console.log("Task 4: Load from localStorage and build new grid");
+      console.log("Task 4: Load from localStorage");
       schoolsData = schoolNS.schoolRepository.load('schools-repository');
       return console.log(schoolsData);
-    }, 2000);
+    }, delay++ * 500);
     setTimeout(function() {
-      console.log("Task 6: Build schools grid from data");
+      console.log("Task 6: Build schools grid from the loaded data");
       schoolsGrid = controls.buildSchoolsGridView('#schools-grid', schoolsData);
       return schoolsGrid.render();
-    }, 3000);
+    }, delay++ * 500);
     return setTimeout(function() {
       console.log("Task 5: Get the data from the new grid");
       return console.log(controls.getSchoolsGridViewData(schoolsGrid));
-    }, 4000);
+    }, delay++ * 500);
   })();
 
 }).call(this);

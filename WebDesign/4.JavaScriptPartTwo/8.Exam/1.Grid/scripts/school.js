@@ -2,11 +2,7 @@
 (function() {
   'use strict';
 
-  var Course, School, Student, schoolRepository, _ref;
-
-  if ((_ref = this.studentNS) == null) {
-    this.studentNS = {};
-  }
+  var Course, School, Student, schoolRepository;
 
   Student = (function() {
 
@@ -117,6 +113,72 @@
     Course: Course,
     School: School,
     schoolRepository: schoolRepository
+  };
+
+  this.controls.buildSchoolsGridView = function(selector, schools) {
+    var course, courseGrid, courseRow, school, schoolsGrid, student, studentGrid, studentRow, _i, _j, _k, _len, _len1, _len2, _ref, _ref1;
+    schoolsGrid = controls.GridView(selector);
+    schoolsGrid.addHeader('Name', 'Location', 'Number of Courses', 'Specialty');
+    for (_i = 0, _len = schools.length; _i < _len; _i++) {
+      school = schools[_i];
+      courseRow = schoolsGrid.addRow(school.name, school.location, school.numberOfCourses, school.specialty);
+      if (!school.courses.length) {
+        continue;
+      }
+      courseGrid = courseRow.getNestedGrid();
+      courseGrid.addHeader('Title', 'Start date', 'Number of Students');
+      _ref = school.courses;
+      for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
+        course = _ref[_j];
+        studentRow = courseGrid.addRow(course.title, course.startDate, course.numberOfStudents);
+        if (!course.students.length) {
+          continue;
+        }
+        studentGrid = studentRow.getNestedGrid();
+        studentGrid.addHeader('First Name', 'Last Name', 'Grade', 'Mark');
+        _ref1 = course.students;
+        for (_k = 0, _len2 = _ref1.length; _k < _len2; _k++) {
+          student = _ref1[_k];
+          studentGrid.addRow(student.firstName, student.lastName, student.grade, student.getMark(course));
+        }
+      }
+    }
+    return schoolsGrid;
+  };
+
+  this.controls.getSchoolsGridViewData = function(grid) {
+    var schoolsData;
+    schoolsData = grid.data.map(function(schoolRow) {
+      var schoolData, _ref, _ref1;
+      schoolData = {
+        name: schoolRow.data[0],
+        location: schoolRow.data[1],
+        specialty: schoolRow.data[3]
+      };
+      schoolData.courses = ((_ref = (_ref1 = schoolRow.nestedGrid) != null ? _ref1.data : void 0) != null ? _ref : []).map(function(courseRow) {
+        var courseData, _ref, _ref1;
+        courseData = {
+          title: courseRow.data[0],
+          startDate: courseRow.data[1]
+        };
+        courseData.students = ((_ref = (_ref1 = courseRow.nestedGrid) != null ? _ref1.data : void 0) != null ? _ref : []).map(function(studentRow) {
+          var studentData;
+          studentData = {
+            firstName: studentRow.data[0],
+            lastName: studentRow.data[1],
+            grade: studentRow.data[2],
+            marks: {}
+          };
+          studentData.marks[courseData.title] = studentRow.data[3];
+          return studentData;
+        });
+        return courseData;
+      });
+      return schoolData;
+    });
+    return schoolsData.map(function(schoolData) {
+      return schoolNS.School.deserialize(schoolData);
+    });
   };
 
 }).call(this);
