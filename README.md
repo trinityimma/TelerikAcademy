@@ -103,6 +103,8 @@
 16. [Design Patterns](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/16.DesignPatterns) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/16.DesignPatterns/README.md)) - 07.05.2013
 17. Software Engineering Fundamentals - 10.05.2013
 18. [Teamwork](https://github.com/TeamPotassium/BattleField) - 17.05.2013
+19. Exam Preparation - 14.05.2013
+20. Exam - 20.05.2013
 
 ##  JavaScript - Part II
 
@@ -113,4 +115,4 @@
 5. [Events](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/5.Events) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/5.Events/README.md)) - 25.04.2013
 6. Exceptions - 29.04.2013
 7. Exam Preparation - 09.05.2013
-8. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/8.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/8.Exam/README.md)) - 15.05.2013
+8. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/8.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/8.Exam/README.md)) - 16.05.2013
