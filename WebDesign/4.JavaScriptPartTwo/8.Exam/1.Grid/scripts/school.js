@@ -96,16 +96,25 @@
   })();
 
   schoolRepository = (function() {
-    return {
-      save: function(id, schoolsData) {
-        return window.localStorage[id] = JSON.stringify(schoolsData);
-      },
-      load: function(id) {
-        return JSON.parse(window.localStorage[id]).map(function(schoolData) {
-          return School.deserialize(schoolData);
-        });
-      }
+
+    function schoolRepository() {}
+
+    schoolRepository.save = function(id, schoolsData) {
+      return window.localStorage[id] = JSON.stringify(schoolsData);
     };
+
+    schoolRepository.load = function(id) {
+      return schoolRepository.deserialize(JSON.parse(window.localStorage[id]));
+    };
+
+    schoolRepository.deserialize = function(schooslData) {
+      return schooslData.map(function(schoolData) {
+        return School.deserialize(schoolData);
+      });
+    };
+
+    return schoolRepository;
+
   })();
 
   this.schoolNS = {
@@ -176,9 +185,7 @@
       });
       return schoolData;
     });
-    return schoolsData.map(function(schoolData) {
-      return schoolNS.School.deserialize(schoolData);
-    });
+    return schoolRepository.deserialize(schoolsData);
   };
 
 }).call(this);

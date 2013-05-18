@@ -54,12 +54,15 @@ class School
         school.addCourse schoolData.courses.map (course) ->
             Course.deserialize(course)
 
-schoolRepository = do ->
-    save: (id, schoolsData) ->
+class schoolRepository
+    @save = (id, schoolsData) ->
         window.localStorage[id] = JSON.stringify schoolsData
 
-    load: (id) ->
-        JSON.parse(window.localStorage[id]).map (schoolData) ->
+    @load = (id) ->
+        schoolRepository.deserialize JSON.parse(window.localStorage[id])
+
+    @deserialize = (schooslData) ->
+        schooslData.map (schoolData) ->
             School.deserialize schoolData
 
 @schoolNS = { Student, Course, School, schoolRepository }
@@ -114,5 +117,4 @@ schoolRepository = do ->
             return courseData
         return schoolData
 
-    schoolsData.map (schoolData) ->
-        schoolNS.School.deserialize schoolData
+    schoolRepository.deserialize schoolsData
