@@ -2,9 +2,6 @@
 
 @controls ?= {}
 
-_compareTo = (a, b) ->
-    unless isNaN a - b then a - b else a.toString().localeCompare b.toString()
-
 class GridViewRow
     constructor: ->
         @data = []
@@ -107,9 +104,13 @@ class GridViewRow
 
         parent.append(table)
 
-    sortBy: (col) ->
-        @sortAscending *= -1 if @previousSortCol == col
-        @previousSortCol = col
+    sortBy: do ->
+        _compareTo = (a, b) ->
+            unless isNaN a - b then a - b else a.toString().localeCompare b.toString()
 
-        @data.sort (row1, row2) =>
-            @sortAscending * _compareTo(row1.data[col], row2.data[col])
+        (col) ->
+            @sortAscending *= -1 if @previousSortCol == col
+            @previousSortCol = col
+
+            @data.sort (row1, row2) =>
+                @sortAscending * _compareTo(row1.data[col], row2.data[col])

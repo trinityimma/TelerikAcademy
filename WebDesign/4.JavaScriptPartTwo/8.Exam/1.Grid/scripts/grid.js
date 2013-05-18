@@ -2,19 +2,11 @@
 (function() {
   'use strict';
 
-  var GridView, GridViewRow, _compareTo, _ref;
+  var GridView, GridViewRow, _ref;
 
   if ((_ref = this.controls) == null) {
     this.controls = {};
   }
-
-  _compareTo = function(a, b) {
-    if (!isNaN(a - b)) {
-      return a - b;
-    } else {
-      return a.toString().localeCompare(b.toString());
-    }
-  };
 
   GridViewRow = (function() {
     var _renderData, _renderNested;
@@ -165,16 +157,26 @@
       return parent.append(table);
     };
 
-    GridView.prototype.sortBy = function(col) {
-      var _this = this;
-      if (this.previousSortCol === col) {
-        this.sortAscending *= -1;
-      }
-      this.previousSortCol = col;
-      return this.data.sort(function(row1, row2) {
-        return _this.sortAscending * _compareTo(row1.data[col], row2.data[col]);
-      });
-    };
+    GridView.prototype.sortBy = (function() {
+      var _compareTo;
+      _compareTo = function(a, b) {
+        if (!isNaN(a - b)) {
+          return a - b;
+        } else {
+          return a.toString().localeCompare(b.toString());
+        }
+      };
+      return function(col) {
+        var _this = this;
+        if (this.previousSortCol === col) {
+          this.sortAscending *= -1;
+        }
+        this.previousSortCol = col;
+        return this.data.sort(function(row1, row2) {
+          return _this.sortAscending * _compareTo(row1.data[col], row2.data[col]);
+        });
+      };
+    })();
 
     return GridView;
 
