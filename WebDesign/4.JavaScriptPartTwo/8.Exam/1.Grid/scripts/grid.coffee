@@ -135,26 +135,23 @@ class GridViewRow
 
 @controls.getSchoolsGridViewData = (grid) ->
     schoolsData = grid.data.map (schoolRow) ->
-        schoolData = {}
-
-        schoolData.name = schoolRow.data[0]
-        schoolData.location = schoolRow.data[1]
-        schoolData.specialty = schoolRow.data[3]
+        schoolData =
+            name: schoolRow.data[0]
+            location: schoolRow.data[1]
+            specialty: schoolRow.data[3]
 
         schoolData.courses = schoolRow.nestedGrid.data.map (courseRow) ->
-            courseData = {}
+            courseData =
+                title: courseRow.data[0]
+                startDate: courseRow.data[1]
 
-            courseData.title = courseRow.data[0]
-            courseData.startDate = courseRow.data[1]
+            courseData.students = courseRow.nestedGrid.data.map (studentRow) ->
+                studentData =
+                    firstName: studentRow.data[0]
+                    lastName: studentRow.data[1]
+                    grade: studentRow.data[2]
+                    marks: {}
 
-            courseData.student = courseRow.nestedGrid.data.map (studentRow) ->
-                studentData = {}
-
-                studentData.firstName = studentRow.data[0]
-                studentData.lastName = studentRow.data[1]
-                studentData.grade = studentRow.data[2]
-
-                studentData.marks = {}
                 studentData.marks[courseData.title] = studentRow.data[3]
 
                 return studentData
@@ -162,3 +159,6 @@ class GridViewRow
             return courseData
 
         return schoolData
+
+    schoolsData.map (schoolData) ->
+        schoolNS.School.deserialize schoolData

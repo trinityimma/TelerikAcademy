@@ -191,30 +191,36 @@
 
   this.controls.getSchoolsGridViewData = function(grid) {
     var schoolsData;
-    return schoolsData = grid.data.map(function(schoolRow) {
+    schoolsData = grid.data.map(function(schoolRow) {
       var schoolData;
-      schoolData = {};
-      schoolData.name = schoolRow.data[0];
-      schoolData.location = schoolRow.data[1];
-      schoolData.specialty = schoolRow.data[3];
+      schoolData = {
+        name: schoolRow.data[0],
+        location: schoolRow.data[1],
+        specialty: schoolRow.data[3]
+      };
       schoolData.courses = schoolRow.nestedGrid.data.map(function(courseRow) {
         var courseData;
-        courseData = {};
-        courseData.title = courseRow.data[0];
-        courseData.startDate = courseRow.data[1];
-        courseData.student = courseRow.nestedGrid.data.map(function(studentRow) {
+        courseData = {
+          title: courseRow.data[0],
+          startDate: courseRow.data[1]
+        };
+        courseData.students = courseRow.nestedGrid.data.map(function(studentRow) {
           var studentData;
-          studentData = {};
-          studentData.firstName = studentRow.data[0];
-          studentData.lastName = studentRow.data[1];
-          studentData.grade = studentRow.data[2];
-          studentData.marks = {};
+          studentData = {
+            firstName: studentRow.data[0],
+            lastName: studentRow.data[1],
+            grade: studentRow.data[2],
+            marks: {}
+          };
           studentData.marks[courseData.title] = studentRow.data[3];
           return studentData;
         });
         return courseData;
       });
       return schoolData;
+    });
+    return schoolsData.map(function(schoolData) {
+      return schoolNS.School.deserialize(schoolData);
     });
   };
 

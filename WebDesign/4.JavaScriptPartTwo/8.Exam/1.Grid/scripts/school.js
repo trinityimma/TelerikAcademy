@@ -46,23 +46,21 @@
     }
 
     Course.prototype.addStudents = function(students) {
-      var student, _i, _len, _results;
+      var student, _i, _len;
       this.numberOfStudents += students.length;
-      _results = [];
       for (_i = 0, _len = students.length; _i < _len; _i++) {
         student = students[_i];
-        _results.push(this.students.push(student));
+        this.students.push(student);
       }
-      return _results;
+      return this;
     };
 
     Course.deserialize = function(courseData) {
       var course;
       course = new Course(courseData.title, new Date(courseData.startDate));
-      course.addStudents(courseData.students.map(function(student) {
+      return course.addStudents(courseData.students.map(function(student) {
         return Student.deserialize(student);
       }));
-      return course;
     };
 
     return Course;
@@ -80,23 +78,21 @@
     }
 
     School.prototype.addCourse = function(courses) {
-      var course, _i, _len, _results;
+      var course, _i, _len;
       this.numberOfCourses += courses.length;
-      _results = [];
       for (_i = 0, _len = courses.length; _i < _len; _i++) {
         course = courses[_i];
-        _results.push(this.courses.push(course));
+        this.courses.push(course);
       }
-      return _results;
+      return this;
     };
 
     School.deserialize = function(schoolData) {
       var school;
       school = new School(schoolData.name, schoolData.location, schoolData.specialty);
-      school.addCourse(schoolData.courses.map(function(course) {
+      return school.addCourse(schoolData.courses.map(function(course) {
         return Course.deserialize(course);
       }));
-      return school;
     };
 
     return School;
@@ -109,14 +105,9 @@
         return window.localStorage[id] = JSON.stringify(schoolsData);
       },
       load: function(id) {
-        var schoolData, _i, _len, _ref1, _results;
-        _ref1 = JSON.parse(window.localStorage[id]);
-        _results = [];
-        for (_i = 0, _len = _ref1.length; _i < _len; _i++) {
-          schoolData = _ref1[_i];
-          _results.push(School.deserialize(schoolData));
-        }
-        return _results;
+        return JSON.parse(window.localStorage[id]).map(function(schoolData) {
+          return School.deserialize(schoolData);
+        });
       }
     };
   })();
