@@ -17,7 +17,7 @@ namespace FreeContentCatalog
 
         public int Count
         {
-            get { return this.title.Count; }
+            get { return this.title.Select(pair => pair.Value.Count).Sum(); }
         }
 
         public void Add(IContent content)

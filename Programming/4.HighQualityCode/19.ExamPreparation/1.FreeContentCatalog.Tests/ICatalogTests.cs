@@ -48,7 +48,7 @@ Book: Intro C#; S.Nakov; 12763892; http://introprograming.info/en/
         }
 
         [TestMethod]
-        public void TestEmpty()
+        public void AddEmpty()
         {
             Catalog catalog = new Catalog();
 
@@ -59,7 +59,7 @@ Book: Intro C#; S.Nakov; 12763892; http://introprograming.info/en/
         }
 
         [TestMethod]
-        public void TestAdd()
+        public void AddSingle()
         {
             Catalog catalog = new Catalog();
 
@@ -74,7 +74,7 @@ Book: Intro C#; S.Nakov; 12763892; http://introprograming.info/en/
         }
 
         [TestMethod]
-        public void TestDuplicateAdd()
+        public void AddDuplicateValue()
         {
             Catalog catalog = new Catalog();
 
@@ -90,5 +90,74 @@ Book: Intro C#; S.Nakov; 12763892; http://introprograming.info/en/
 
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void AddDuplicateReference()
+        {
+            Catalog catalog = new Catalog();
+
+            Content content = new Content(ContentType.Application, "C#", "Nakov", 7, "http://nakov.com/");
+            catalog.Add(content);
+            catalog.Add(content);
+
+            int expected = 2;
+            int actual = catalog.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void AddSingleAndDuplicate()
+        {
+            Catalog catalog = new Catalog();
+
+            catalog.Add(new Content(
+                ContentType.Application, "Java", "Pesho", 5, "http://pesho.com/"
+            ));
+
+            catalog.Add(new Content(
+                ContentType.Application, "C#", "Nakov", 7, "http://nakov.com/"
+            ));
+            catalog.Add(new Content(
+                ContentType.Application, "C#", "Nakov", 7, "http://nakov.com/"
+            ));
+
+            Content content = new Content(ContentType.Application, "Python", "Gosho", 12, "http://gosho.com/");
+            catalog.Add(content);
+            catalog.Add(content);
+
+            int expected = 5;
+            int actual = catalog.Count;
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetEmpty()
+        {
+            Catalog catalog = new Catalog();
+
+            int expected = 0;
+            int actual = catalog.GetListContent("Java", 1).Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void GetSingle()
+        {
+            Catalog catalog = new Catalog();
+
+            catalog.Add(new Content(
+                ContentType.Application, "Java", "Pesho", 5, "http://pesho.com/"
+            ));
+
+            int expected = 1;
+            int actual = catalog.GetListContent("Java", 1).Count();
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        // TODO: ...
     }
 }

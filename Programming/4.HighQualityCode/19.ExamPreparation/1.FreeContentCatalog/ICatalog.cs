@@ -5,13 +5,10 @@ namespace FreeContentCatalog
 {
     public interface ICatalog
     {
-        /// <summary>
-        /// Adds a content to the current catalog.
-        /// </summary>
-        /// <param name="content">The content to be added.</param>
+        // TODO: Documentation
         void Add(IContent content);
 
-        IEnumerable<IContent> GetListContent(string title, int numberOfContentElementsToList);
+        IEnumerable<IContent> GetListContent(string title, int count);
 
         int UpdateContent(string oldUrl, string newUrl);
     }

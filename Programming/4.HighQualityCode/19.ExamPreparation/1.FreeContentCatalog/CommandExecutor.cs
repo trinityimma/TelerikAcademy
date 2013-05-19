@@ -77,7 +77,7 @@ namespace FreeContentCatalog
                 CommandType.Find, (catalog, command, output) =>
                 {
                     IEnumerable<IContent> foundContent = catalog.GetListContent(
-                        title: command.Parameters[0], numberOfContentElementsToList: int.Parse(command.Parameters[1])
+                        title: command.Parameters[0], count: int.Parse(command.Parameters[1])
                     );
 
                     if (foundContent.Count() == 0)

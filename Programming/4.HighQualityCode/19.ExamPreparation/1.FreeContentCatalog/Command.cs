@@ -33,7 +33,7 @@ namespace FreeContentCatalog
 
         public Command(string input)
         {
-            this.OriginalForm = input.Trim();
+            this.OriginalForm = input;
 
             this.Parse();
         }

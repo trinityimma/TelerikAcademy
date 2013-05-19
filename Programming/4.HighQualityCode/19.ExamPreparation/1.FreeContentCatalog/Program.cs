@@ -14,30 +14,12 @@ namespace FreeContentCatalog
             ICommandExecutor commandExecutor = new CommandExecutor();
             StringBuilder output = new StringBuilder();
 
-            foreach (ICommand command in ReadAllCommands())
+            for (string command = null; (command = Console.ReadLine().Trim()) != "End"; )
             {
-                commandExecutor.ExecuteCommand(catalog, command, output);
+                commandExecutor.ExecuteCommand(catalog, new Command(command), output);
             }
 
             Console.Write(output);
-        }
-
-        private static string ReadCommand()
-        {
-            string command = Console.ReadLine().Trim();
-            return command;
-        }
-
-        private static IList<ICommand> ReadAllCommands()
-        {
-            IList<ICommand> commands = new List<ICommand>();
-
-            for (string command = null; (command = ReadCommand()) != "End"; )
-            {
-                commands.Add(new Command(command));
-            }
-
-            return commands;
         }
     }
 }
