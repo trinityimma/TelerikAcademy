@@ -42,6 +42,9 @@ namespace FreeContentCatalog
                 content.Url = newUrl;
             }
 
+            this.url.Remove(oldUrl);
+            this.url.AddMany(newUrl, matchedElements);
+
             return matchedElements.Count;
         }
     }
