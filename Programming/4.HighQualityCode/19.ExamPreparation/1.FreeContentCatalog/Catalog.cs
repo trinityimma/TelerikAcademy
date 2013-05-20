@@ -35,7 +35,7 @@ namespace FreeContentCatalog
 
         public int UpdateContent(string oldUrl, string newUrl)
         {
-            var matchedElements = this.url[oldUrl];
+            var matchedElements = this.url[oldUrl].ToList();
 
             foreach (Content content in matchedElements)
             {
