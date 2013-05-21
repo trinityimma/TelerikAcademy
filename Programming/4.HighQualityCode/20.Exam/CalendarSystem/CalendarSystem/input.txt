@@ -1,0 +1,5 @@
+﻿AddEvent 2012-03-26T09:00:00 | C# exam
+AddEvent 2012-03-26T09:00:00 | C# exam
+AddEvent 2012-03-26T08:00:00 | C# exam
+DeleteEvents C# exam
+End

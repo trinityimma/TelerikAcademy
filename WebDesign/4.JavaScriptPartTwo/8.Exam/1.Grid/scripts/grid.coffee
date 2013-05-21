@@ -109,7 +109,7 @@ class GridViewRow
             unless isNaN a - b then a - b else a.toString().localeCompare b.toString()
 
         (col) ->
-            @sortAscending *= -1 if @previousSortCol == col
+            if @previousSortCol == col then @sortAscending *= -1 else @sortAscending = 1
             @previousSortCol = col
 
             @data.sort (row1, row2) =>

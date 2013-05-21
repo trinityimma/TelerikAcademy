@@ -170,6 +170,8 @@
         var _this = this;
         if (this.previousSortCol === col) {
           this.sortAscending *= -1;
+        } else {
+          this.sortAscending = 1;
         }
         this.previousSortCol = col;
         return this.data.sort(function(row1, row2) {
