@@ -103,8 +103,8 @@
 16. [Design Patterns](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/16.DesignPatterns) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/16.DesignPatterns/README.md)) - 07.05.2013
 17. Software Engineering Fundamentals - 10.05.2013
 18. [Teamwork](https://github.com/TeamPotassium/BattleField) - 17.05.2013
-19. Exam Preparation - 14.05.2013
-20. Exam - 20.05.2013
+19. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/19.ExamPreparation) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/19.ExamPreparation/README.md)) -  - 14.05.2013
+20. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/4.HighQualityCode/20.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/4.HighQualityCode/20.Exam/README.md)) - 20.05.2013
 
 ##  JavaScript - Part II
 

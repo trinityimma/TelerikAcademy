@@ -131,13 +131,13 @@
         e.stopPropagation();
         td = J(e.target);
         row = td.parent();
-        switch (false) {
-          case td[0].tagName.toLowerCase() !== 'th':
+        switch (td[0].tagName.toLowerCase()) {
+          case 'th':
             table = row.parent();
             grid = table.data('grid');
             grid.sortBy(td.data('col'));
             return grid.render(table.parent());
-          case td[0].tagName.toLowerCase() !== 'td':
+          case 'td':
             if (row.data('nestedGrid') != null) {
               return row.next().toggle();
             }

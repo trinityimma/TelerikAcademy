@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarSystem", "CalendarSystem\CalendarSystem.csproj", "{4982570D-1F46-4905-8E4C-622FF8BC7CF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.CalendarSystem", "1.CalendarSystem\1.CalendarSystem.csproj", "{4982570D-1F46-4905-8E4C-622FF8BC7CF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalendarSystem.Tests", "CalendarSystem.Tests\CalendarSystem.Tests.csproj", "{854D91A6-7A29-462E-90CC-819C1ADD67CF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.CalendarSystem.Tests", "1.CalendarSystem.Tests\1.CalendarSystem.Tests.csproj", "{854D91A6-7A29-462E-90CC-819C1ADD67CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

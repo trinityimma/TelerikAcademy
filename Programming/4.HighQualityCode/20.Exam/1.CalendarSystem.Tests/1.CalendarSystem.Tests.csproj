@@ -59,7 +59,7 @@
     <Compile Include="EventsManagerFastTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CalendarSystem\CalendarSystem.csproj">
+    <ProjectReference Include="..\1.CalendarSystem\1.CalendarSystem.csproj">
       <Project>{4982570d-1f46-4905-8e4c-622ff8bc7cf2}</Project>
       <Name>CalendarSystem</Name>
     </ProjectReference>

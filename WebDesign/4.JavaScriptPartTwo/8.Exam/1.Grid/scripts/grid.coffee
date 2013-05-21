@@ -48,7 +48,7 @@ class GridViewRow
         @header = []
         @data = []
 
-        @sortAscending = 1 # TODO: Save the current col
+        @sortAscending = 1 # TODO
 
     addHeader: ->
         @header.push col for col in arguments
@@ -80,20 +80,19 @@ class GridViewRow
             td = J(e.target)
             row = td.parent()
 
-            switch
-                when td[0].tagName.toLowerCase() == 'th'
+            switch td[0].tagName.toLowerCase()
+                when 'th'
                     table = row.parent()
                     grid = table.data('grid')
 
                     grid.sortBy td.data('col')
                     grid.render table.parent()
 
-                when td[0].tagName.toLowerCase() == 'td'
+                when 'td'
                     row.next().toggle() if row.data('nestedGrid')?
 
     render: (parent) ->
-        unless parent?
-            parent = @element
+        parent = @element unless parent?
 
         parent.children().remove()
 
