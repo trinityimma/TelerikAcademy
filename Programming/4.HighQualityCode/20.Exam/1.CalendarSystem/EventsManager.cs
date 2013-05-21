@@ -29,8 +29,8 @@ namespace CalendarSystem
 
             var sorted = selected.OrderBy(@event => @event);
 
-            var filtered = sorted.Take(count);
-            return filtered;
+            var limited = sorted.Take(count);
+            return limited;
         }
     }
 }

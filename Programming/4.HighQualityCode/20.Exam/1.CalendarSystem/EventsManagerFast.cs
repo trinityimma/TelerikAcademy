@@ -47,10 +47,8 @@ namespace CalendarSystem
         {
             var selected = this.eventsByDate.RangeFrom(date, true).Values;
 
-            var sorted = selected.OrderBy(@event => @event);
-
-            var filtered = sorted.Take(count);
-            return filtered;
+            var limited = selected.Take(count);
+            return limited;
         }
     }
 }
