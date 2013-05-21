@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
 namespace InheritanceAndPolymorphism
 {
-    class Course
+    abstract class Course
     {
         private string name = null;
         public string Name
