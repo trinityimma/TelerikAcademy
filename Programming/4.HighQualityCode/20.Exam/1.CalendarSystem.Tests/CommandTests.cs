@@ -66,7 +66,7 @@ namespace CalendarSystem.Tests
         }
 
         [TestMethod]
-        public void ParseWithManyArgument()
+        public void ParseWithManyArguments()
         {
             string commandStr = "AddEvent " + string.Join(Event.Separator, Enumerable.Range(0, 1000000));
             Command expected = new Command(

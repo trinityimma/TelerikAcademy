@@ -31,14 +31,14 @@ namespace CalendarSystem
                 return comparedByDate;
             }
 
-            int comparedByTitle = string.Compare(this.Title, other.Title);
+            int comparedByTitle = string.Compare(this.Title, other.Title, StringComparison.InvariantCulture);
             if (comparedByTitle != 0)
             {
                 return comparedByTitle;
             }
 
             // No need for null checking, it is sorted at the top automatically
-            int comparedByLocation = string.Compare(this.Location, other.Location);
+            int comparedByLocation = string.Compare(this.Location, other.Location, StringComparison.InvariantCulture);
             return comparedByLocation;
         }
 

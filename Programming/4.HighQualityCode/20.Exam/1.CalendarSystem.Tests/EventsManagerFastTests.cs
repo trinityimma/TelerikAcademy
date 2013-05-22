@@ -306,6 +306,21 @@ namespace CalendarSystem.Tests
         }
 
         [TestMethod]
+        public void DeleteLowerCase()
+        {
+            EventsManagerFast eventsManager = new EventsManagerFast();
+
+            eventsManager.AddEvent(new Event(DateTime.MinValue, "party Gosho", null));
+            eventsManager.AddEvent(new Event(DateTime.MinValue, "party Gosho", null));
+            eventsManager.AddEvent(new Event(DateTime.MinValue, "party Gosho", null));
+
+            int expected = 3;
+            int actual = eventsManager.DeleteEventsByTitle("PARTY GOSHO");
+
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
         public void DeleteMultiple()
         {
             EventsManagerFast eventsManager = new EventsManagerFast();
