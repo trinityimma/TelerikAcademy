@@ -1,33 +1,38 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
-class Program
+static class Program
 {
+    static Dictionary<T, int> GroupByOccurence<T>(IEnumerable<T> elements)
+    {
+        return elements.GroupBy(el => el).ToDictionary(pair => pair.Key, n => n.Count());
+    }
+
+    static LinkedList<T> Filter<T>(this LinkedList<T> linkedList, Predicate<T> predicate)
+    {
+        for (var node = linkedList.First; node != null; )
+        {
+            var next = node.Next;
+
+            if (!predicate(node.Value))
+                linkedList.Remove(node);
+
+            node = next;
+        }
+
+        return linkedList;
+    }
+
     static void Main()
     {
         LinkedList<int> numbers = new LinkedList<int>(new int[] { 4, 2, 2, 5, 2, 3, 2, 3, 1, 5, 2 });
 
-        Dictionary<int, int> groupByOccurence = new Dictionary<int, int>();
+        Dictionary<int, int> groupedByOccurence = GroupByOccurence(numbers);
 
-        foreach (int number in numbers)
-        {
-            if (!groupByOccurence.ContainsKey(number))
-                groupByOccurence[number] = 0;
+        Console.WriteLine(string.Join(" ", groupedByOccurence));
 
-            groupByOccurence[number]++;
-        }
-
-        Console.WriteLine(string.Join(" ", groupByOccurence));
-
-        for (var node = numbers.First; node != null; )
-        {
-            var next = node.Next;
-
-            if (groupByOccurence[node.Value] % 2 == 1)
-                numbers.Remove(node);
-
-            node = next;
-        }
+        numbers.Filter(n => groupedByOccurence[n] % 2 == 0);
 
         Console.WriteLine(string.Join(" ", numbers));
     }

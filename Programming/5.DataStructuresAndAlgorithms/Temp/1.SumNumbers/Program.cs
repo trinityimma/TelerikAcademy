@@ -6,11 +6,14 @@ class Program
 {
     static void Main()
     {
-        List<int> numbers = new List<int>();
+        List<double> numbers = new List<double>();
 
-        for (string line = null; !string.IsNullOrEmpty(line = Console.ReadLine()); )
-            numbers.Add(int.Parse(line));
+        for (string line = null; (line = Console.ReadLine()) != string.Empty; )
+            numbers.Add(double.Parse(line));
 
-        Console.WriteLine("{0} {1}", numbers.Sum(), numbers.Average());
+        double sum = numbers.Sum();
+        double average = sum / numbers.Count;
+
+        Console.WriteLine("{0} {1}", sum, average);
     }
 }
