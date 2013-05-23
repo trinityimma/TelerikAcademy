@@ -11,14 +11,12 @@ static class Program
 
     static LinkedList<T> Filter<T>(this LinkedList<T> linkedList, Predicate<T> predicate)
     {
-        for (var node = linkedList.First; node != null; )
+        for (LinkedListNode<T> node = linkedList.First, next; node != null; node = next)
         {
-            var next = node.Next;
+            next = node.Next;
 
             if (!predicate(node.Value))
                 linkedList.Remove(node);
-
-            node = next;
         }
 
         return linkedList;
