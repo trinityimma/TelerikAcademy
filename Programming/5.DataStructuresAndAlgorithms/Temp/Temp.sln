@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.RemoveNegativeNumbers", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.RemoveNumbersWithOddOccurrences", "6.RemoveNumbersWithOddOccurrences\6.RemoveNumbersWithOddOccurrences.csproj", "{C00B4DDD-2FB2-492E-A29F-61D0ED35DAA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.FIndMajorityElement", "7.FIndMajorityElement\7.FIndMajorityElement.csproj", "{B18816BF-D74E-43F9-8585-C65B925DC326}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{C00B4DDD-2FB2-492E-A29F-61D0ED35DAA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C00B4DDD-2FB2-492E-A29F-61D0ED35DAA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C00B4DDD-2FB2-492E-A29F-61D0ED35DAA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B18816BF-D74E-43F9-8585-C65B925DC326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B18816BF-D74E-43F9-8585-C65B925DC326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B18816BF-D74E-43F9-8585-C65B925DC326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B18816BF-D74E-43F9-8585-C65B925DC326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

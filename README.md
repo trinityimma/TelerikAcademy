@@ -1,6 +1,16 @@
 # Telerik Academy
 
-<a href="http://academy.telerik.com/?utm_source=site&utm_medium=banner&utm_content=468x60&utm_campaign=community" title="Уроци по програмиране"><img src="http://academy.telerik.com/images/default-album/telerik-academy-banner.jpg?sfvrsn=2" alt="Академия на Телерик"/></a>
+<a href="http://academy.telerik.com/?utm_source=site&amp;utm_medium=banner&amp;utm_content=468x60&amp;utm_campaign=community" title="Уроци по програмиране">
+    <img src="http://academy.telerik.com/images/default-album/telerik-academy-banner.jpg?sfvrsn=2" alt="Академия на Телерик" />
+</a>
+
+|     | Programming                                                         | Web Design                                      |
+| --- | ------------------------------------------------------------------- | ----------------------------------------------- |
+| 1.  | [C# - Part I](#c---part-i)                                          | [HTML Basics](#html-basics)                     |
+| 2.  | [C# - Part II](#c---part-ii)                                        | [CSS Styling](#css-styling)                     |
+| 3.  | [Object-Oriented Programming](#object-oriented-programming)         | [JavaScript - Part I](#javascript---part-i)     |
+| 4.  | [High-Quality Code](#high-quality-code)                             | [JavaScript - Part II](#javascript---part-ii)   |
+| 5.  | [Data Structures and Algorithms](#data-structures-and-algorithms)   | [JavaScript Libraries](#javascript-libraries)   |
 
 ## C# - Part I
 
@@ -116,3 +126,13 @@
 6. Exceptions - 29.04.2013
 7. Exam Preparation - 09.05.2013
 8. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/4.JavaScriptPartTwo/8.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/4.JavaScriptPartTwo/8.Exam/README.md)) - 16.05.2013
+
+---
+
+## Data Structures and Algorithms
+
+1. TBA
+
+## JavaScript Libraries
+
+1. TBA
