@@ -1,6 +1,6 @@
 ## Test-Driven Development
 
-Finish the `Poker` project given in the Visual Studio Solution [12.TestDrivenDevelopmentHomework.zip](https://github.com/jasssonpet/TelerikAcademy/raw/master/Programming/4.HighQualityCode/10.CodeTuningAndOptimization/12.TestDrivenDevelopmentHomework.zip) using TDD.
+Finish the `Poker` project given in the Visual Studio Solution "[homework.zip](https://github.com/jasssonpet/TelerikAcademy/raw/master/Programming/4.HighQualityCode/12.TestDrivenDevelopment/homework.zip)" using TDD.
 
 1. Write a class `Card` implementing the `ICard` interface. Implement the properties. Write a constructor. Implement the `ToString()` method. Test all cases.
 * Write a class `Hand` implementing the `IHand` interface. Implement the properties. Write a constructor. Implement the `ToString()` method. Test all cases.

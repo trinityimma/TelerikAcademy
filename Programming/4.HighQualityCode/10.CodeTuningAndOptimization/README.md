@@ -1,6 +1,6 @@
 ## Code Tuning and Optimization
 
-1. You are given a C# application **"[10.CodeTuningAndOptimizationHomework.zip](https://github.com/jasssonpet/TelerikAcademy/raw/master/Programming/4.HighQualityCode/10.CodeTuningAndOptimization/10.CodeTuningAndOptimizationHomework.zip)"** which displays an animated 3D model of the Solar system.
+1. You are given a C# application "[homework.zip](https://github.com/jasssonpet/TelerikAcademy/raw/master/Programming/4.HighQualityCode/10.CodeTuningAndOptimization/homework.zip)" which displays an animated 3D model of the Solar system.
   * Use a profiler to find the places in its source code which cause significant performance degradation (**bottlenecks**).
         * Provide a **screenshot** of the profiler's result and indicate the place in the source code where the bottleneck resides (name of the file, line of code).
     * Make a **quick fix** in the source code in order to significantly improve the performance. **Test the code** after the fix for correctness + performance.
