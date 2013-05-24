@@ -32,8 +32,11 @@ class Program
 
         int n = int.Parse(Console.ReadLine());
 
-        input = Enumerable.Range(0, n).Select(_ => Console.ReadLine()).
-            Select(line => line.Select(c => c == 'Y').ToArray()).ToArray();
+        input = Enumerable.Range(0, n)
+            .Select(_ => Console.ReadLine())
+            .Select(line =>
+                line.Select(c => c == 'Y').ToArray()
+            ).ToArray();
 
         dp = new long?[n];
 
