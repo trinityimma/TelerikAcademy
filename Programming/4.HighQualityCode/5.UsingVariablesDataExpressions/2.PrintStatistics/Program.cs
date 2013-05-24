@@ -1,5 +1,6 @@
 using System;
 
+// TODO: Generic
 class Program
 {
     private double Max(double[] arr, int count)

@@ -12,8 +12,11 @@ class Program
 
         int n = int.Parse(Console.ReadLine());
 
-        bool[][] input = Enumerable.Range(0, n).Select(_ => Console.ReadLine()).
-            Select(line => line.Select(c => c == 'Y').ToArray()).ToArray();
+        bool[][] input = Enumerable.Range(0, n)
+            .Select(_ => Console.ReadLine())
+            .Select(line =>
+                line.Select(c => c == 'Y').ToArray()
+            ).ToArray();
 
         int result = 0;
 

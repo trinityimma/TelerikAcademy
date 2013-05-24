@@ -9,7 +9,7 @@ class Program
 
         public Coordinates(double x, double y)
         {
-            this.X = X;
+            this.X = x;
             this.Y = y;
         }
     }
