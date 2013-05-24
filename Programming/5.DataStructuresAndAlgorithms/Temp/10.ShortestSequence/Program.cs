@@ -15,7 +15,8 @@ static class Program
         int n = 5;
         int m = 16;
 
-        Func<int, int>[] operations = {
+        Func<int, int>[] operations =
+        {
             x => x + 1,
             x => x + 2,
             x => x * 2
