@@ -46,7 +46,10 @@ static class Program
             }
         }
 
-        Queue<int> first = results.OrderBy(list => list.Count).ElementAt(0);
-        Console.WriteLine(string.Join(" ", first));
+        int minCount = results.Min(queue => queue.Count);
+        var minResults = results.Where(queue => queue.Count == minCount);
+
+        foreach (var result in minResults)
+            Console.WriteLine(string.Join(" ", result));
     }
 }
