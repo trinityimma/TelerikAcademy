@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.RiskPecheliRiskGubi", "5.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.Kon", "6.Kon\6.Kon.csproj", "{A1387D91-3C03-4EE7-9CA0-11312F52FF56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.MaksimalenPyt", "7.MaksimalenPyt\7.MaksimalenPyt.csproj", "{89A8B000-2586-45E4-93B9-8CF1C4C85071}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{A1387D91-3C03-4EE7-9CA0-11312F52FF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1387D91-3C03-4EE7-9CA0-11312F52FF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1387D91-3C03-4EE7-9CA0-11312F52FF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89A8B000-2586-45E4-93B9-8CF1C4C85071}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89A8B000-2586-45E4-93B9-8CF1C4C85071}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89A8B000-2586-45E4-93B9-8CF1C4C85071}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89A8B000-2586-45E4-93B9-8CF1C4C85071}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
