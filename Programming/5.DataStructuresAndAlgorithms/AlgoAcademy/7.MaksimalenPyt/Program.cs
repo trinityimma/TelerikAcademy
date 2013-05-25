@@ -10,8 +10,6 @@ class Program
     //static MultiDictionary<int, int> neighbors = new MultiDictionary<int, int>(allowDuplicateValues: false);
     static HashSet<int> visited = new HashSet<int>();
 
-    static long result = long.MinValue;
-
     static IEnumerable<int> FindLeaves()
     {
         return neighbors
@@ -19,15 +17,14 @@ class Program
             .Select(kvp => kvp.Key);
     }
 
-    static void Dfs(int start, long sum = 0)
+    static long Dfs(int start)
     {
         visited.Add(start);
 
-        sum += start;
-        if (sum > result) result = sum;
-
-        foreach (int neighbor in neighbors[start].Where(edge => !visited.Contains(edge)))
-            Dfs(neighbor, sum);
+        var next = neighbors[start].Where(edge => !visited.Contains(edge));
+        long max = (next.Count() != 0) ? next.Max(edge => Dfs(edge)) : 0;
+        
+        return start + max;
     }
 
     static void Main()
@@ -35,10 +32,9 @@ class Program
 #if DEBUG
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
 #endif
-
         foreach (int i in Enumerable.Range(0, int.Parse(Console.ReadLine()) - 1))
         {
-            var match = Regex.Match(Console.ReadLine(), @"(\d+) <- (\d+)");
+            var match = Regex.Match(Console.ReadLine(), @"^\((\d+) <- (\d+)\)$");
 
             int edge1 = int.Parse(match.Groups[1].Value);
             int edge2 = int.Parse(match.Groups[2].Value);
@@ -47,9 +43,10 @@ class Program
             neighbors.Add(edge2, edge1);
         }
 
-        foreach (int leaf in FindLeaves())
+        long result = long.MinValue;
+        foreach (int edge in FindLeaves())
         {
-            Dfs(leaf);
+            result = Math.Max(Dfs(edge), result);
             visited.Clear();
         }
 
