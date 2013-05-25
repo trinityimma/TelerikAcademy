@@ -7,6 +7,20 @@ static class Program
     const int MaxDigit = 10;
     const int Digits = 5;
 
+    static int GetNextConfiguration(int currentConfiguration, int i, int step)
+    {
+        int powerOf10 = (int)Math.Pow(10, i);
+
+        int digit = (currentConfiguration / powerOf10) % 10;
+        int nextDigit = (digit + step + MaxDigit) % MaxDigit;
+
+        int nextConfiguration = currentConfiguration;
+        nextConfiguration -= digit * powerOf10;
+        nextConfiguration += nextDigit * powerOf10;
+
+        return nextConfiguration;
+    }
+
     static void Main()
     {
 #if DEBUG
@@ -65,19 +79,5 @@ static class Program
         }
 
         Console.WriteLine(-1);
-    }
-
-    private static int GetNextConfiguration(int currentConfiguration, int i, int step)
-    {
-        int powerOf10 = (int)Math.Pow(10, i);
-
-        int digit = (currentConfiguration / powerOf10) % 10;
-        int nextDigit = (digit + step + MaxDigit) % MaxDigit;
-
-        int nextConfiguration = currentConfiguration;
-        if (digit != 0) nextConfiguration -= digit * powerOf10;
-        nextConfiguration += nextDigit * powerOf10;
-
-        return nextConfiguration;
     }
 }
