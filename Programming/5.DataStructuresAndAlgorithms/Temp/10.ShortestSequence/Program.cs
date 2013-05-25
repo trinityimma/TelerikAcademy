@@ -1,56 +1,75 @@
 ﻿using System;
 using System.Linq;
+using System.Diagnostics;
 using System.Collections.Generic;
 
 static class Program
 {
-    static Queue<T> Clone<T>(this Queue<T> queue)
+    static IList<T> Clone<T>(this IList<T> list)
         where T : struct
     {
-        return new Queue<T>(queue.Select(x => x));
+        return list.Select(item => item).ToList();
     }
 
     static void Main()
     {
-        int n = 5;
-        int m = 16;
-
         Func<int, int>[] operations =
         {
             x => x + 1,
             x => x + 2,
-            x => x * 2
+            x => x * 2,
         };
 
-        Queue<Queue<int>> results = new Queue<Queue<int>>();
+        int start = 5;
+        int end = 5000;
 
-        Queue<Queue<int>> sequences = new Queue<Queue<int>>();
-        sequences.Enqueue(new Queue<int>(new int[] { n }));
+        Debug.Assert(end > start);
 
-        // TODO: Optimize
+        Queue<IList<int>> sequences = new Queue<IList<int>>();
+        sequences.Enqueue(new List<int>() { start });
+
+        IList<IList<int>>[] dp = new List<IList<int>>[end - start + 1];
+
         while (sequences.Count != 0)
         {
-            Queue<int> currentSequence = sequences.Dequeue();
+            IList<int> currentSequence = sequences.Dequeue();
 
             foreach (Func<int, int> op in operations)
             {
                 int currentNumber = op(currentSequence.Last());
 
-                Queue<int> nextSequence = currentSequence.Clone();
-                nextSequence.Enqueue(currentNumber);
+                if (currentNumber > end)
+                    continue;
 
-                if (currentNumber < m)
-                    sequences.Enqueue(nextSequence);
+                IList<IList<int>> dp1 = dp[currentNumber - start];
 
-                else if (currentNumber == m)
-                    results.Enqueue(nextSequence);
+                if (dp1 != null && dp1[0].Count < currentSequence.Count + 1)
+                    continue;
+
+                IList<int> nextSequence = currentSequence.Clone();
+                nextSequence.Add(currentNumber);
+
+                sequences.Enqueue(nextSequence);
+
+                if (dp1 == null)
+                    dp1 = dp[currentNumber - start] = new List<IList<int>>();
+
+                else if (dp1[0].Count > currentSequence.Count + 1)
+                    dp1.Clear();
+
+                dp1.Add(nextSequence);
             }
         }
 
-        int minCount = results.Min(queue => queue.Count);
-        var minResults = results.Where(queue => queue.Count == minCount);
+        foreach (var sequence in dp.Last())
+        {
+            var result = sequence.Select((n, i) =>
+                n.ToString().PadLeft(
+                    dp.Last().Max(list => list[i]).ToString().Length
+                )
+            );
 
-        foreach (var result in minResults)
             Console.WriteLine(string.Join(" ", result));
+        }
     }
 }
