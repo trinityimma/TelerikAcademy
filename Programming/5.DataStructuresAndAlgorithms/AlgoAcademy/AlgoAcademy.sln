@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.NajPopulqrenPriqtel", "3.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.Zaplati", "4.Zaplati\4.Zaplati.csproj", "{C3FF07CD-3133-4818-910B-96A6CB756D51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.RiskPecheliRiskGubi", "5.RiskPecheliRiskGubi\5.RiskPecheliRiskGubi.csproj", "{2F922BD1-5FEC-4F3D-ADEA-66072C1F8BEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{C3FF07CD-3133-4818-910B-96A6CB756D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3FF07CD-3133-4818-910B-96A6CB756D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3FF07CD-3133-4818-910B-96A6CB756D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F922BD1-5FEC-4F3D-ADEA-66072C1F8BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F922BD1-5FEC-4F3D-ADEA-66072C1F8BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F922BD1-5FEC-4F3D-ADEA-66072C1F8BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F922BD1-5FEC-4F3D-ADEA-66072C1F8BEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
