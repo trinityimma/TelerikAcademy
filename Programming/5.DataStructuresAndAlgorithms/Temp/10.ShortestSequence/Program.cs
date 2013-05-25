@@ -13,6 +13,9 @@ static class Program
 
     static void Main()
     {
+        int start = 5;
+        int end = 5000;
+
         Func<int, int>[] operations =
         {
             x => x + 1,
@@ -20,66 +23,52 @@ static class Program
             x => x * 2,
         };
 
-        int start = 5;
-        int end = 16;
-
         Debug.Assert(end > start);
 
-        Queue<IList<int>> sequences = new Queue<IList<int>>();
-        sequences.Enqueue(new List<int>() { start });
+        var results = new List<IList<int>>();
 
-        IList<IList<int>>[] dp = new List<IList<int>>[end - start + 1];
+        var visited = new HashSet<int>();
+
+        var sequences = new Queue<IList<int>>();
+        sequences.Enqueue(new List<int>() { start });
 
         while (sequences.Count != 0)
         {
-            IList<int> currentSequence = sequences.Dequeue();
+            var nextSequences = new Queue<IList<int>>();
+            var currentVisited = new HashSet<int>();
 
-            foreach (Func<int, int> op in operations)
+            while (sequences.Count != 0)
             {
-                int currentNumber = op(currentSequence.Last());
+                var currentSequence = sequences.Dequeue();
 
-                if (currentNumber > end)
-                    continue;
+                foreach (var operation in operations)
+                {
+                    int currentNumber = operation(currentSequence.Last());
 
-                IList<IList<int>> dp1 = dp[currentNumber - start];
+                    if (currentNumber > end || visited.Contains(currentNumber))
+                        continue;
 
-                if (dp1 != null && dp1[0].Count < currentSequence.Count + 1)
-                    continue;
+                    currentVisited.Add(currentNumber);
 
-                IList<int> nextSequence = currentSequence.Clone();
-                nextSequence.Add(currentNumber);
+                    var nextSequence = currentSequence.Clone();
+                    nextSequence.Add(currentNumber);
+                    nextSequences.Enqueue(nextSequence);
 
-                sequences.Enqueue(nextSequence);
-
-                if (dp1 == null)
-                    dp1 = dp[currentNumber - start] = new List<IList<int>>();
-
-                else if (dp1[0].Count > currentSequence.Count + 1)
-                    dp1.Clear();
-
-                dp1.Add(nextSequence);
-            }
-        }
-
-        foreach (var row in dp)
-        {
-            if (row == null)
-                continue;
-
-            Console.WriteLine("--{0}--", row[0].Last());
-
-            foreach (var sequence in row)
-            {
-                var result = sequence.Select((n, i) =>
-                    n.ToString().PadLeft(
-                        row.Max(list => list[i]).ToString().Length
-                    )
-                );
-
-                Console.WriteLine(string.Join(" ", result));
+                    if (currentNumber == end)
+                        results.Add(nextSequence);
+                }
             }
 
-            Console.WriteLine();
+            foreach (var number in currentVisited)
+                visited.Add(number);
+
+            if (currentVisited.Contains(end))
+                nextSequences.Clear();
+
+            sequences = nextSequences;
         }
+
+        foreach (var sequence in results)
+            Console.WriteLine(string.Join(" ", sequence));
     }
 }
