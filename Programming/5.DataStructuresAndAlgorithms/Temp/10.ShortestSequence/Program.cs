@@ -21,7 +21,7 @@ static class Program
         };
 
         int start = 5;
-        int end = 5000;
+        int end = 16;
 
         Debug.Assert(end > start);
 
@@ -61,15 +61,25 @@ static class Program
             }
         }
 
-        foreach (var sequence in dp.Last())
+        foreach (var row in dp)
         {
-            var result = sequence.Select((n, i) =>
-                n.ToString().PadLeft(
-                    dp.Last().Max(list => list[i]).ToString().Length
-                )
-            );
+            if (row == null)
+                continue;
 
-            Console.WriteLine(string.Join(" ", result));
+            Console.WriteLine("--{0}--", row[0].Last());
+
+            foreach (var sequence in row)
+            {
+                var result = sequence.Select((n, i) =>
+                    n.ToString().PadLeft(
+                        row.Max(list => list[i]).ToString().Length
+                    )
+                );
+
+                Console.WriteLine(string.Join(" ", result));
+            }
+
+            Console.WriteLine();
         }
     }
 }
