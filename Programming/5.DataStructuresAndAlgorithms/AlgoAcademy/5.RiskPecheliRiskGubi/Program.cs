@@ -40,6 +40,7 @@ static class Program
         IEnumerable<int> steps = new int[] { 1, -1 };
 
         var queue = new Queue<int>();
+        visited[start] = true;
         queue.Enqueue(start);
 
         int level = 0;

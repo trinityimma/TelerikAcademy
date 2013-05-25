@@ -6,10 +6,10 @@ class Program
 {
     static void Main()
     {
-        List<double> numbers = new List<double>();
+        LinkedList<double> numbers = new LinkedList<double>();
 
         for (string line = null; (line = Console.ReadLine()) != string.Empty; )
-            numbers.Add(double.Parse(line));
+            numbers.AddLast(double.Parse(line));
 
         double sum = numbers.Sum();
         double average = sum / numbers.Count;

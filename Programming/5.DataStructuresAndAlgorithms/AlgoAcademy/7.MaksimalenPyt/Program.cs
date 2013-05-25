@@ -2,12 +2,14 @@
 using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Wintellect.PowerCollections;
 
 class Program
 {
-    static OrderedMultiDictionary<int, int> neighbors = new OrderedMultiDictionary<int, int>(allowDuplicateValues: false);
+    //static OrderedMultiDictionary<int, int> neighbors = new OrderedMultiDictionary<int, int>(allowDuplicateValues: false);
     //static MultiDictionary<int, int> neighbors = new MultiDictionary<int, int>(allowDuplicateValues: false);
+
+    static Dictionary<int, List<int>> neighbors = new Dictionary<int, List<int>>();
+
     static HashSet<int> visited = new HashSet<int>();
 
     static IEnumerable<int> FindLeaves()
@@ -21,10 +23,17 @@ class Program
     {
         visited.Add(start);
 
-        var next = neighbors[start].Where(edge => !visited.Contains(edge));
-        long max = (next.Count() != 0) ? next.Max(edge => Dfs(edge)) : 0;
-        
-        return start + max;
+        long sum = 0;
+
+        foreach (int neighbor in neighbors[start])
+        {
+            if (visited.Contains(neighbor))
+                continue;
+
+            sum = Math.Max(sum, Dfs(neighbor));
+        }
+
+        return start + sum;
     }
 
     static void Main()
@@ -32,6 +41,8 @@ class Program
 #if DEBUG
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
 #endif
+        var date = DateTime.Now;
+
         foreach (int i in Enumerable.Range(0, int.Parse(Console.ReadLine()) - 1))
         {
             var match = Regex.Match(Console.ReadLine(), @"^\((\d+) <- (\d+)\)$");
@@ -39,8 +50,15 @@ class Program
             int edge1 = int.Parse(match.Groups[1].Value);
             int edge2 = int.Parse(match.Groups[2].Value);
 
-            neighbors.Add(edge1, edge2);
-            neighbors.Add(edge2, edge1);
+            if (!neighbors.ContainsKey(edge1))
+                neighbors[edge1] = new List<int>();
+
+            neighbors[edge1].Add(edge2);
+
+            if (!neighbors.ContainsKey(edge2))
+                neighbors[edge2] = new List<int>();
+
+            neighbors[edge2].Add(edge1);
         }
 
         long result = long.MinValue;
@@ -51,8 +69,10 @@ class Program
         }
 
 #if DEBUG
-        foreach (var item in neighbors)
-            Console.WriteLine("{0} -> {1}", item.Key, string.Join(" ", item.Value));
+        //foreach (var neighbor in neighbors)
+        //    Console.WriteLine("{0} -> {1}", neighbor.Key, string.Join(" ", neighbor.Value));
+
+        Console.WriteLine(DateTime.Now - date);
 #endif
 
         Console.WriteLine(result);

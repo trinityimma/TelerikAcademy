@@ -79,6 +79,7 @@ static class Program
         int level = 0;
 
         var queue = new Queue<Coordinates>();
+        field[start.Row][start.Col] = "x";
         queue.Enqueue(start);
 
         while (queue.Count != 0)
