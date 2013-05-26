@@ -5,8 +5,8 @@ using System.Text.RegularExpressions;
 
 class Program
 {
-    //static OrderedMultiDictionary<int, int> neighbors = new OrderedMultiDictionary<int, int>(allowDuplicateValues: false);
-    //static MultiDictionary<int, int> neighbors = new MultiDictionary<int, int>(allowDuplicateValues: false);
+    //static OrderedMultiDictionary<int, int> neighbors = new OrderedMultiDictionary<int, int>(allowDuplicateValues: true);
+    //static MultiDictionary<int, int> neighbors = new MultiDictionary<int, int>(allowDuplicateValues: true);
 
     static Dictionary<int, List<int>> neighbors = new Dictionary<int, List<int>>();
 
