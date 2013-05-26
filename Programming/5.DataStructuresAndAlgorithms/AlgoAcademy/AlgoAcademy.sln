@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.MaksimalenPyt", "7.Maksim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.LinkedOut", "8.LinkedOut\8.LinkedOut.csproj", "{127BC8B1-3892-417F-9082-A04F86A14507}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.Lastici", "9.Lastici\9.Lastici.csproj", "{E024DBAD-3360-4569-99AE-D2CC9FF32B15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.Energo", "10.Energo\10.Energo.csproj", "{B68FDB16-AC0B-4EAF-8BAC-619E7CC02C4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,14 @@ Global
 		{127BC8B1-3892-417F-9082-A04F86A14507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{127BC8B1-3892-417F-9082-A04F86A14507}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{127BC8B1-3892-417F-9082-A04F86A14507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E024DBAD-3360-4569-99AE-D2CC9FF32B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E024DBAD-3360-4569-99AE-D2CC9FF32B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E024DBAD-3360-4569-99AE-D2CC9FF32B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E024DBAD-3360-4569-99AE-D2CC9FF32B15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B68FDB16-AC0B-4EAF-8BAC-619E7CC02C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68FDB16-AC0B-4EAF-8BAC-619E7CC02C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68FDB16-AC0B-4EAF-8BAC-619E7CC02C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68FDB16-AC0B-4EAF-8BAC-619E7CC02C4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

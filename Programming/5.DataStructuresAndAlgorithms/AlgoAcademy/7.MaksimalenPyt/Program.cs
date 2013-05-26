@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -41,6 +41,7 @@ class Program
 #if DEBUG
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
 #endif
+
         var date = DateTime.Now;
 
         foreach (int i in Enumerable.Range(0, int.Parse(Console.ReadLine()) - 1))
