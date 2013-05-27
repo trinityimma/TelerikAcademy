@@ -21,7 +21,7 @@ class Program
         return result;
     }
 
-    // There test results in BGCoder are incorrect.
+    // The test results in BGCoder are incorrect.
     static void Main()
     {
 #if DEBUG

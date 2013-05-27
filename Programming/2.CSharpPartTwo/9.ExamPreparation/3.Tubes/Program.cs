@@ -29,20 +29,18 @@ class Program
 
     static void BinarySearch()
     {
-        int l = 0;
-        int r = (int)2e9;
+        int min = 0;
+        int max = (int)2e9;
 
-        while (l < r)
+        while (min < max)
         {
-            int m = (l + r) / 2;
+            int middle = min + (max - min + 1) / 2;
 
-            if (GetMaxTubes(m) < M) r = m;
-            else l = m + 1;
+            if (GetMaxTubes(middle) < M) max = middle - 1;
+            else min = middle;
         }
 
-        if (GetMaxTubes(l) < M) l--;
-
-        best = l;
+        best = min;
     }
 
     static void Output()
