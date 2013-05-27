@@ -35,7 +35,7 @@ static class Program
                     foreach (char c in uniqueChars.Skip(1))
                         matched.IntersectWith(dict[c]);
 
-                    return string.Format("{0} -> {1}", line, matched.Count());
+                    return string.Format("{0} -> {1}", line, matched.Count);
                 })
         ));
 
