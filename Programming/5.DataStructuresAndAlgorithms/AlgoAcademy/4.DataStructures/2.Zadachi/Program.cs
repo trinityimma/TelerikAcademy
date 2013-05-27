@@ -26,16 +26,12 @@ class Program
             if (line == "Solve")
             {
                 if (tasks.Count == 0)
-                {
                     output.AppendLine("Rest");
-                    continue;
-                }
 
-                var task = tasks.GetFirst();
-                tasks.RemoveFirst();
-
-                output.AppendLine(task.Item1);
+                else
+                    output.AppendLine(tasks.RemoveFirst().Item1);
             }
+
             else
             {
                 var match = line.Split();
