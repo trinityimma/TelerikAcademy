@@ -8,8 +8,8 @@ static class Program
     {
         bool[] result = new bool[26];
 
-        for (int i = 0; i < word.Length; i++)
-            result[word[i] - 'a'] = true;
+        foreach (char c in word)
+            result[c - 'a'] = true;
 
         return result;
     }
