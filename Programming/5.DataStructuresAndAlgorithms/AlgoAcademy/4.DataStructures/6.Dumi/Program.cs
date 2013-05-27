@@ -1,10 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 static class Program
 {
+    static bool[] GetWordData(string word)
+    {
+        bool[] result = new bool[26];
+
+        for (int i = 0; i < word.Length; i++)
+            result[word[i] - 'a'] = true;
+
+        return result;
+    }
+
     static void Main()
     {
 #if DEBUG
@@ -13,34 +22,36 @@ static class Program
 
         var date = DateTime.Now;
 
-        var words = Enumerable.Range(0, int.Parse(Console.ReadLine()))
+        var input = Enumerable.Range(0, int.Parse(Console.ReadLine()))
             .Select(_ => Regex.Split(Console.ReadLine().ToLower(), @"[^a-z]+"))
-            .SelectMany(x => x);
+            .SelectMany(x => x)
+            .Distinct()
+            .ToArray();
 
-        var dict = Enumerable.Range('a', 'z').ToDictionary(i => i, _ => new HashSet<string>());
-
-        foreach (string word in words)
-            foreach (char letter in word)
-                dict[letter].Add(word);
+        var words = input.Select(word => GetWordData(word)).ToArray();
 
         Console.WriteLine(string.Join(Environment.NewLine,
             Enumerable.Range(0, int.Parse(Console.ReadLine()))
                 .Select(_ => Console.ReadLine())
                 .Select(line =>
                 {
-                    var uniqueChars = line.ToLower().ToCharArray().Distinct();
+                    var currentWord = GetWordData(line.ToLower());
 
-                    var matched = new HashSet<string>(dict[uniqueChars.First()]);
+                    var matched = words.Where(word =>
+                    {
+                        for (int i = 0; i < 26; i++)
+                            if (currentWord[i] && !word[i])
+                                return false;
 
-                    foreach (char c in uniqueChars.Skip(1))
-                        matched.IntersectWith(dict[c]);
+                        return true;
+                    });
 
-                    return string.Format("{0} -> {1}", line, matched.Count);
+                    return string.Format("{0} -> {1}", line, matched.Count());
                 })
         ));
 
 #if DEBUG
-        Console.WriteLine(DateTime.Now - date);
+        Console.WriteLine(DateTime.Now - date); // 00:00:00.4050565 vs 00:00:65.4732165 w/ dict
 #endif
     }
 }
