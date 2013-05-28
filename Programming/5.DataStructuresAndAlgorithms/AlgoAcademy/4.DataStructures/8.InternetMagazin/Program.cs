@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
-using Wintellect.PowerCollections;
 using System.Text.RegularExpressions;
+using Wintellect.PowerCollections;
 
 class Product : IComparable<Product>
 {
@@ -173,17 +173,12 @@ class Program
 
         var date = DateTime.Now;
 
-        var result = string.Join(Environment.NewLine,
-            Enumerable.Range(0, int.Parse(Console.ReadLine()))
+        var result = string.Join(Environment.NewLine, Enumerable.Range(0, int.Parse(Console.ReadLine()))
             .Select(i => Regex.Match(Console.ReadLine(), @"^(\w+) (.+)$").Groups)
             .Select(group => commands[group[1].Value](group[2].Value.Split(';')))
         );
 
-        //(string)typeof(Program).GetMethod(match[1].Value).Invoke(null, new object[] { match[2].Value.Split(';') });
-
-#if DEBUG
         Console.WriteLine(result);
-#endif
 
 #if DEBUG
         Console.WriteLine(DateTime.Now - date); // Naive List<Product> implementation got 80/100 points.
