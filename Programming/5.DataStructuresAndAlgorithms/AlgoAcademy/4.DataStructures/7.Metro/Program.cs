@@ -180,7 +180,10 @@ class Program
             if (passengers > trainCapacity)
             {
                 output.AppendFormat(string.Join(" | ",
-                    cameraInfo.Item1.ToString(DateFormat), cameraInfo.Item2, cameraInfo.Item5 == Direction.Forward ? ">>" : "<<", passengers
+                    cameraInfo.Item1.ToString(DateFormat),
+                    cameraInfo.Item2,
+                    cameraInfo.Item5 == Direction.Forward ? ">>" : "<<",
+                    passengers
                 )).AppendLine();
             }
         }
