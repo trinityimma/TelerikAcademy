@@ -131,8 +131,8 @@
 
 ## Data Structures and Algorithms
 
-1. TBA
+1. [Linear Data Structures](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures/README.md)) - 29.05.2013
 
 ## JavaScript Libraries
 
-1. TBA
+1. High-Quality Programming Code
