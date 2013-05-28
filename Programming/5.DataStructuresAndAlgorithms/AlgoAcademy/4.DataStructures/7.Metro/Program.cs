@@ -124,9 +124,8 @@ class Program
     {
         foreach (var startTrain in trains.ToArray())
         {
-            var schedule = (startTrain.Key.Item3 == Direction.Forward ?
-                trainScheduleForward : trainScheduleBackwards
-            );
+            var schedule = startTrain.Key.Item3 == Direction.Forward ?
+                trainScheduleForward : trainScheduleBackwards;
 
             var passengers = startTrain.Value; // 0
 
@@ -144,7 +143,6 @@ class Program
                 {
                     passengers += cameraInfo.Item3 - cameraInfo.Item4;
                     passengers = Math.Max(0, passengers);
-
                 }
                 else if (stop.Value == trainScheduleDuration)
                 {
@@ -169,7 +167,7 @@ class Program
 #endif
     }
 
-    static void ShowCapacity()
+    static void ShowOverCapacity()
     {
         var output = new StringBuilder();
 
@@ -187,11 +185,14 @@ class Program
             }
         }
 
+        if (output.Length == 0)
+            output.AppendLine("OK");
+
 #if DEBUG
         Console.WriteLine("# OUTPUT");
 #endif
 
-        Console.Write(output.Length != 0 ? output.ToString() : ("OK" + Environment.NewLine));
+        Console.Write(output);
     }
 
     static void Main()
@@ -211,6 +212,6 @@ class Program
 
         SimulateTrainMovement();
 
-        ShowCapacity();
+        ShowOverCapacity();
     }
 }
