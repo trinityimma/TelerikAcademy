@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.Dumi", "6.Dumi\6.Dumi.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.Metro", "7.Metro\7.Metro.csproj", "{4DFA65B1-02F5-4175-B80A-E26BE0EF3C16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.InternetMagazin", "8.InternetMagazin\8.InternetMagazin.csproj", "{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{4DFA65B1-02F5-4175-B80A-E26BE0EF3C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DFA65B1-02F5-4175-B80A-E26BE0EF3C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DFA65B1-02F5-4175-B80A-E26BE0EF3C16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
