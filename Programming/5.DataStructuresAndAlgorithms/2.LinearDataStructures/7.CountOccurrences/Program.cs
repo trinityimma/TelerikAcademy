@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ class Program
 {
     static Dictionary<T, int> GroupByOccurence<T>(IEnumerable<T> elements)
     {
-        return elements.GroupBy(el => el).ToDictionary(pair => pair.Key, n => n.Count());
+        return elements.GroupBy(el => el).ToDictionary(group => group.Key, group => group.Count());
     }
 
     static void Main()

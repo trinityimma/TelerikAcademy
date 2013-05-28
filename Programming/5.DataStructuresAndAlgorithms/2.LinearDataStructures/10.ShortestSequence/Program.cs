@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Diagnostics;
 using System.Collections.Generic;
@@ -11,31 +11,36 @@ static class Program
         return list.Select(item => item).ToList();
     }
 
+    static Func<int, int>[] operations =
+    {
+        x => x + 1,
+        x => x + 2,
+        x => x * 2,
+    };
+
     static void Main()
     {
         int start = 5;
-        int end = 5000;
-
-        Func<int, int>[] operations =
-        {
-            x => x + 1,
-            x => x + 2,
-            x => x * 2,
-        };
+        int end = 250;
 
         Debug.Assert(end > start);
 
         var results = new List<IList<int>>();
 
         var visited = new HashSet<int>();
-
         var sequences = new Queue<IList<int>>();
-        sequences.Enqueue(new List<int>() { start });
+
+        visited.Add(start);
+        sequences.Enqueue(new int[] { start });
+
+        int level = 1;
 
         while (sequences.Count != 0)
         {
             var nextSequences = new Queue<IList<int>>();
             var currentVisited = new HashSet<int>();
+
+            level++;
 
             while (sequences.Count != 0)
             {
@@ -48,10 +53,10 @@ static class Program
                     if (currentNumber > end || visited.Contains(currentNumber))
                         continue;
 
-                    currentVisited.Add(currentNumber);
-
                     var nextSequence = currentSequence.Clone();
                     nextSequence.Add(currentNumber);
+
+                    currentVisited.Add(currentNumber);
                     nextSequences.Enqueue(nextSequence);
 
                     if (currentNumber == end)
@@ -59,14 +64,15 @@ static class Program
                 }
             }
 
-            foreach (var number in currentVisited)
-                visited.Add(number);
+            visited.UnionWith(currentVisited);
 
-            if (currentVisited.Contains(end))
+            if (results.Count != 0)
                 nextSequences.Clear();
 
             sequences = nextSequences;
         }
+
+        Console.WriteLine("Sequence length: {0}", level);
 
         foreach (var sequence in results)
             Console.WriteLine(string.Join(" ", sequence));
