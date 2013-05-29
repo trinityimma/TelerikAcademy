@@ -8,15 +8,15 @@ class Program
         int[] numbers = { 2, 3, 2, 3, 2, 3, 4, 3, 3 };
 
         int? majorityElement = null;
-        int count = 0;
+        int stack = 0;
 
         foreach (int n in numbers)
         {
-            if (count == 0) majorityElement = n;
-            count += (n == majorityElement) ? 1 : -1;
+            if (stack == 0) majorityElement = n;
+            stack += (n == majorityElement) ? 1 : -1;
         }
 
-        count = numbers.Where(n => n == majorityElement).Count();
+        int count = numbers.Where(n => n == majorityElement).Count();
         if (!(count > (numbers.Length / 2)))
             majorityElement = null;
 
