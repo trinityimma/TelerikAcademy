@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.Metro", "7.Metro\7.Metro.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.InternetMagazin", "8.InternetMagazin\8.InternetMagazin.csproj", "{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.PyrzholenKombineksorator", "9.PyrzholenKombineksorator\9.PyrzholenKombineksorator.csproj", "{C601809F-E7A0-4E88-9BF9-F2B79FE9FE59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B28F49BE-A9D3-45A1-87B2-5FBBD31C3178}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C601809F-E7A0-4E88-9BF9-F2B79FE9FE59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C601809F-E7A0-4E88-9BF9-F2B79FE9FE59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C601809F-E7A0-4E88-9BF9-F2B79FE9FE59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C601809F-E7A0-4E88-9BF9-F2B79FE9FE59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

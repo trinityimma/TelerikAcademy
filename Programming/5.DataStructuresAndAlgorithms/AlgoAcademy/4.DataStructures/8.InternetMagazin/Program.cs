@@ -7,10 +7,10 @@ using Wintellect.PowerCollections;
 class Product : IComparable<Product>
 {
     public string Name { get; private set; }
-    public decimal Price { get; private set; }
+    public double Price { get; private set; } // TODO
     public string Producer { get; private set; }
 
-    public Product(string name, decimal price, string producer)
+    public Product(string name, double price, string producer)
     {
         this.Name = name;
         this.Price = price;
@@ -21,13 +21,13 @@ class Product : IComparable<Product>
     {
         int result = 0;
 
-        result = string.Compare(this.Name, other.Name);
+        result = this.Name.CompareTo(other.Name);
         if (result != 0) return result;
 
-        result = decimal.Compare(this.Price, other.Price);
+        result = this.Price.CompareTo(other.Price);
         if (result != 0) return result;
 
-        result = string.Compare(this.Producer, other.Producer);
+        result = this.Producer.CompareTo(other.Producer);
         if (result != 0) return result;
 
         return result;
@@ -62,14 +62,14 @@ class Program
     static MultiDictionary<Tuple<string, string>, Product> productsByNameAndProducer =
         new MultiDictionary<Tuple<string, string>, Product>(true);
 
-    static OrderedMultiDictionary<decimal, Product> productsByPrice =
-        new OrderedMultiDictionary<decimal, Product>(true);
+    static OrderedMultiDictionary<double, Product> productsByPrice =
+        new OrderedMultiDictionary<double, Product>(true);
 
     static string AddProduct(string[] parameters)
     {
         var product = new Product(
             parameters[0],
-            decimal.Parse(parameters[1]),
+            double.Parse(parameters[1]),
             parameters[2]
         );
 
@@ -154,8 +154,8 @@ class Program
 
     static string FindProductsByPriceRange(string[] parameters)
     {
-        var min = decimal.Parse(parameters[0]);
-        var max = decimal.Parse(parameters[1]);
+        var min = double.Parse(parameters[0]);
+        var max = double.Parse(parameters[1]);
 
         var result = productsByPrice.Range(min, true, max, true).Values.OrderBy(p => p);
 
@@ -178,7 +178,7 @@ class Program
             .Select(group => commands[group[1].Value](group[2].Value.Split(';')))
         );
 
-        Console.WriteLine(result);
+        //Console.WriteLine(result);
 
 #if DEBUG
         Console.WriteLine(DateTime.Now - date); // Naive List<Product> implementation got 80/100 points.
