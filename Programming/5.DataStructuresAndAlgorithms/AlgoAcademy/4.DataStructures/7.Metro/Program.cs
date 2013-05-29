@@ -9,6 +9,8 @@ class Program
 {
     static readonly string DateFormat = "d.M.yyyy H:mm";
 
+    static int n = 0;
+
     static IList<KeyValuePair<string, int>> stationsInfo = null;
     static IList<Tuple<DateTime, int, int, int, char>> camerasInfo = null;
     static int trainCapacity = 0;
@@ -18,14 +20,14 @@ class Program
 
     static int trainScheduleDuration = 0;
 
-    static Dictionary<Tuple<DateTime, int, char>, int> trains = new Dictionary<Tuple<DateTime, int, char>, int>();
+    static Dictionary<Tuple<DateTime, char>, int[]> trains = new Dictionary<Tuple<DateTime, char>, int[]>();
 
     static Dictionary<string, int> stationsByName = null;
     static Dictionary<int, string> stationsByIndex = null;
 
     static void ParseInput()
     {
-        int n = int.Parse(Console.ReadLine());
+        n = int.Parse(Console.ReadLine());
 
         stationsInfo = Regex.Matches(
                 ("0 --> " + Console.ReadLine()).Replace(" --> ", "►"),
@@ -107,70 +109,47 @@ class Program
 #endif
     }
 
-    static void MatchTrains()
-    {
-        foreach (var trainInfo in camerasInfo)
-        {
-            var startDate = trainInfo.Item1.AddMinutes(-1 *
-                (trainInfo.Item5 == '>' ? trainScheduleForward : trainScheduleBackwards)[trainInfo.Item2]
-            );
-
-            var train = new Tuple<DateTime, int, char>(startDate, -1, trainInfo.Item5);
-
-            trains[train] = 0;
-        }
-
-#if DEBUG
-        //Console.WriteLine("# TRAINS AT START");
-
-        //Console.WriteLine(string.Join(Environment.NewLine, trains));
-        //Console.WriteLine();
-#endif
-    }
-
     static void SimulateTrainMovement()
     {
-        var camerasInfoDict = camerasInfo.ToDictionary(
-            info =>
-                new Tuple<DateTime, int, char>(
-                    info.Item1, info.Item2, info.Item5
-                ),
-            info =>
-                info.Item3 - info.Item4
-        );
-
-        foreach (var startTrain in trains.ToArray())
+        foreach (var cameraInfo in camerasInfo)
         {
-            var schedule = startTrain.Key.Item3 == '>' ?
-                trainScheduleForward : trainScheduleBackwards;
+            var start = cameraInfo.Item1.AddMinutes(-1 *
+                (cameraInfo.Item5 == '>' ? trainScheduleForward : trainScheduleBackwards)[cameraInfo.Item2]
+            );
 
-            var passengers = startTrain.Value; // 0
+            var train = new Tuple<DateTime, char>(start, cameraInfo.Item5);
 
-            foreach (var stop in schedule)
+            if (!trains.ContainsKey(train))
+                trains[train] = new int[n];
+
+            trains[train][cameraInfo.Item2] = cameraInfo.Item4 - cameraInfo.Item3;
+        }
+
+        foreach (var train in trains)
+        {
+            int passengers = 0;
+
+            if (train.Key.Item2 == '>')
             {
-                var date = startTrain.Key.Item1.AddMinutes(stop.Value);
-
-                int delta = 0;
-
-                bool found = camerasInfoDict.TryGetValue(
-                    new Tuple<DateTime, int, char>(date, stop.Key, startTrain.Key.Item3),
-                    out delta
-                );
-
-                if (found)
+                for (int i = 0; i < train.Value.Length; i++)
                 {
-                    passengers += delta;
-                    passengers = Math.Max(0, passengers);
+                    passengers -= train.Value[i];
+                    passengers = Math.Max(passengers, 0);
+                    train.Value[i] = passengers;
                 }
-                else continue;
 
-                var currentTrain = new Tuple<DateTime, int, char>(
-                    date,
-                    stop.Key,
-                    startTrain.Key.Item3
-                );
+                train.Value[train.Value.Length - 1] = 0;
+            }
+            else
+            {
+                for (int i = train.Value.Length - 1; i >= 0; i--)
+                {
+                    passengers -= train.Value[i];
+                    passengers = Math.Max(passengers, 0);
+                    train.Value[i] = passengers;
+                }
 
-                trains[currentTrain] = passengers;
+                train.Value[0] = 0;
             }
         }
 
@@ -188,16 +167,20 @@ class Program
 
         foreach (var cameraInfo in camerasInfo)
         {
-            int passengers = trains[new Tuple<DateTime, int, char>(
-                cameraInfo.Item1, cameraInfo.Item2, cameraInfo.Item5
-            )];
+            var start = cameraInfo.Item1.AddMinutes(-1 *
+                (cameraInfo.Item5 == '>' ? trainScheduleForward : trainScheduleBackwards)[cameraInfo.Item2]
+            );
+
+            int passengers = trains[new Tuple<DateTime, char>(
+                start, cameraInfo.Item5
+            )][cameraInfo.Item2];
 
             if (passengers > trainCapacity)
             {
                 output.AppendFormat(string.Join(" | ",
                     cameraInfo.Item1.ToString(DateFormat),
                     stationsByIndex[cameraInfo.Item2],
-                    cameraInfo.Item5 == '>' ? ">>" : "<<",
+                    new string(cameraInfo.Item5, 2),
                     passengers
                 )).AppendLine();
             }
@@ -223,27 +206,9 @@ class Program
 
         ParseInput();
 
-#if DEBUG
-        Console.WriteLine(DateTime.Now - date);
-#endif
-
         MakeSchedule();
 
-#if DEBUG
-        Console.WriteLine(DateTime.Now - date);
-#endif
-
-        MatchTrains();
-
-#if DEBUG
-        Console.WriteLine(DateTime.Now - date);
-#endif
-
         SimulateTrainMovement();
-
-#if DEBUG
-        Console.WriteLine(DateTime.Now - date);
-#endif
 
         ShowOverCapacity();
 
