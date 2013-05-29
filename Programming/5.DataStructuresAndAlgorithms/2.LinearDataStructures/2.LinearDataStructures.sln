@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.RecurrentSequence", "9.Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.ShortestSequence", "10.ShortestSequence\10.ShortestSequence.csproj", "{8F9113F6-16B1-4971-89F5-CB5BA5DA1509}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "14.Labyrinth", "14.Labyrinth\14.Labyrinth.csproj", "{1DEF0D0F-6CE9-4E98-AAE9-FFB22D200D9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{8F9113F6-16B1-4971-89F5-CB5BA5DA1509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F9113F6-16B1-4971-89F5-CB5BA5DA1509}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F9113F6-16B1-4971-89F5-CB5BA5DA1509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DEF0D0F-6CE9-4E98-AAE9-FFB22D200D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DEF0D0F-6CE9-4E98-AAE9-FFB22D200D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DEF0D0F-6CE9-4E98-AAE9-FFB22D200D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DEF0D0F-6CE9-4E98-AAE9-FFB22D200D9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
