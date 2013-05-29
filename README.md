@@ -10,7 +10,7 @@
 | 2.  | [C# - Part II](#c---part-ii)                                        | [CSS Styling](#css-styling)                     |
 | 3.  | [Object-Oriented Programming](#object-oriented-programming)         | [JavaScript - Part I](#javascript---part-i)     |
 | 4.  | [High-Quality Code](#high-quality-code)                             | [JavaScript - Part II](#javascript---part-ii)   |
-| 5.  | [Data Structures and Algorithms](#data-structures-and-algorithms)   | [JavaScript Libraries](#javascript-libraries)   |
+| 5.  | [Data Structures and Algorithms](#data-structures-and-algorithms)   | [JavaScript Applications](#javascript-applications)   |
 
 ## C# - Part I
 
@@ -133,6 +133,6 @@
 
 1. [Linear Data Structures](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures/README.md)) - 29.05.2013
 
-## JavaScript Libraries
+## JavaScript Applications
 
 1. High-Quality Programming Code
