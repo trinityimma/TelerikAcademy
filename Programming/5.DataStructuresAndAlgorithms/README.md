@@ -49,3 +49,5 @@
 
     Console.WriteLine(CalcSum(matrix, 0));
     ```
+
+    Assume the input matrix has size of `n` * `m`.
