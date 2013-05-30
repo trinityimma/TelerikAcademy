@@ -32,7 +32,7 @@
 
 	Using the `Queue<T>` class write a program to print its first 50 members for given `N`.
 
-	Example: `N=2 -> 2, 3, 5, 4, 4, 7, 5, 6, 11, 7, 5, 9, 6, ...`
+	Example: `N = 2 -> 2, 3, 5, 4, 4, 7, 5, 6, 11, 7, 5, 9, 6, ...`
 * \* We are given numbers N and M and the following operations:
 	* N = N+1
 	* N = N+2
