@@ -18,7 +18,6 @@
         return count;
     }
     ```
-
 * What is the expected running time of the following C# code? Explain why.
 
     ```c#
@@ -35,7 +34,6 @@
     ```
 
     Assume the input matrix has size of `n` * `m`.
-
 * \* What is the expected running time of the following C# code? Explain why.
 
     ```c#
