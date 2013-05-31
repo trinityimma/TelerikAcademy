@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 class Program
 {
-    static void Init<T>(Dictionary<T, int> dict, T value)
+    static void Increment<T>(Dictionary<T, int> dict, T value)
     {
         if (!dict.ContainsKey(value))
             dict[value] = 0;
+
+        dict[value]++;
     }
 
     static T FindMax<T>(Dictionary<T, int> dict)
@@ -49,25 +51,12 @@ class Program
 
             var names = parts[0].Split();
 
-            Init(d1, names[0]);
-            d1[names[0]]++;
-
-            Init(d2, names[1]);
-            d2[names[1]]++;
-
-            int v3 = int.Parse(parts[1]);
-            Init(d3, v3);
-            d3[v3]++;
-
-            Init(d4, parts[2]);
-            d4[parts[2]]++;
-
-            Init(d5, parts[3]);
-            d5[parts[3]]++;
-
-            int v6 = int.Parse(parts[4]);
-            Init(d6, v6);
-            d6[v6]++;
+            Increment(d1, names[0]);
+            Increment(d2, names[1]);
+            Increment(d3, int.Parse(parts[1]));
+            Increment(d4, parts[2]);
+            Increment(d5, parts[3]);
+            Increment(d6, int.Parse(parts[4]));
         }
 
 #if DEBUG
