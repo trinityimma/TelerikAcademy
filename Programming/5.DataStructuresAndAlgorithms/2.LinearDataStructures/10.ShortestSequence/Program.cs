@@ -44,12 +44,7 @@ class ReversedLinkedList<T> : IEnumerable<T>
 
 static class Program
 {
-    static Func<int, int>[] operations =
-    {
-        x => x + 1,
-        x => x + 2,
-        x => x * 2,
-    };
+    static Func<int, int>[] operations = { x => x + 1, x => x + 2, x => x * 2, };
 
     static void Main()
     {
@@ -58,7 +53,7 @@ static class Program
 
         Debug.Assert(end > start);
 
-        var results = new List<Node<int>>();
+        var results = new List<IEnumerable<int>>();
 
         var visited = new HashSet<int>();
         var currentQueue = new Queue<Node<int>>();
@@ -96,7 +91,7 @@ static class Program
                     nextQueue.Enqueue(nextNode);
 
                     if (nextNumber == end)
-                        results.Add(nextNode);
+                        results.Add(new ReversedLinkedList<int>(nextNode).Reverse());
                 }
             }
 
@@ -111,6 +106,6 @@ static class Program
         Console.WriteLine("Sequence length: {0}", level);
 
         foreach (var sequence in results)
-            Console.WriteLine(string.Join(" ", new ReversedLinkedList<int>(sequence).Reverse()));
+            Console.WriteLine(string.Join(" -> ", sequence));
     }
 }
