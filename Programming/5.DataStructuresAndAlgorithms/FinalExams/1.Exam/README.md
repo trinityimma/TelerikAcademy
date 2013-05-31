@@ -1,1 +1,1 @@
-(BGCoder)[http://bgcoder.com/Contest/Practice/33]
+[BGCoder](http://bgcoder.com/Contest/Practice/33)
