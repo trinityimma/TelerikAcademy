@@ -6,7 +6,7 @@ class Program
 {
     static void Main()
     {
-        Stack<int> numbers = new Stack<int>();
+        var numbers = new Stack<int>();
 
         for (string line = null; (line = Console.ReadLine()) != string.Empty; )
             numbers.Push(int.Parse(line));
