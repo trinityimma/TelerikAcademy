@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using System.Diagnostics;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -96,7 +95,7 @@ class Program
             currentWave = nextWave;
         }
 
-        //Console.WriteLine("Sequences length: {0}", level);
+        //Console.WriteLine("Sequences length: {0}.", level);
 
         return results;
     }
