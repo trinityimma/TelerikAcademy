@@ -39,7 +39,7 @@ class ReversedLinkedList<T> : IEnumerable<T>
 
 static class Program
 {
-    static Func<int, int>[] operations = { x => x + 1, x => x + 2, x => x * 2, };
+    static readonly Func<int, int>[] operations = { x => x + 1, x => x + 2, x => x * 2, };
 
     static void Main()
     {
@@ -51,23 +51,24 @@ static class Program
         var results = new List<IEnumerable<int>>();
 
         var visited = new HashSet<int>();
-        var currentQueue = new Queue<Node<int>>();
+        var currentWave = new Queue<Node<int>>();
 
         visited.Add(start);
-        currentQueue.Enqueue(new Node<int>(start));
+        currentWave.Enqueue(new Node<int>(start));
 
         int level = 1;
 
-        while (currentQueue.Count != 0)
+        while (currentWave.Count != 0)
         {
-            var nextQueue = new Queue<Node<int>>();
-            var currentVisited = new HashSet<int>();
+            var nextWave = new Queue<Node<int>>();
+
+            var nextVisited = new HashSet<int>();
 
             level++;
 
-            while (currentQueue.Count != 0)
+            while (currentWave.Count != 0)
             {
-                var currentNode = currentQueue.Dequeue();
+                var currentNode = currentWave.Dequeue();
 
                 foreach (var operation in operations)
                 {
@@ -82,20 +83,23 @@ static class Program
                     var nextNode = new Node<int>(nextNumber);
                     nextNode.Previous = currentNode;
 
-                    currentVisited.Add(nextNumber);
-                    nextQueue.Enqueue(nextNode);
+                    nextVisited.Add(nextNumber);
+                    nextWave.Enqueue(nextNode);
 
                     if (nextNumber == end)
-                        results.Add(new ReversedLinkedList<int>(nextNode).Reverse());
+                    {
+                        var sequence = new ReversedLinkedList<int>(nextNode);
+                        results.Add(sequence.Reverse());
+                    }
                 }
             }
 
-            visited.UnionWith(currentVisited);
+            visited.UnionWith(nextVisited);
 
             if (results.Count != 0)
-                nextQueue.Clear();
+                nextWave.Clear();
 
-            currentQueue = nextQueue;
+            currentWave = nextWave;
         }
 
         Console.WriteLine("Sequence length: {0}", level);
