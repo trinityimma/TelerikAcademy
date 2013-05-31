@@ -6,20 +6,23 @@ class Program
 {
     static void Main()
     {
+        var results = new List<int>();
+
         Queue<int> numbers = new Queue<int>();
 
-        int s = 2;
-        numbers.Enqueue(s);
+        numbers.Enqueue(2);
 
-        while (numbers.Count < 50)
+        for (int i = 0; i < 50; i++)
         {
+            int s = numbers.Dequeue();
+            
+            results.Add(s);
+
             numbers.Enqueue(s + 1);
             numbers.Enqueue(2 * s + 1);
             numbers.Enqueue(s + 2);
-
-            s++;
         }
 
-        Console.WriteLine(string.Join(" ", numbers.Take(50)));
+        Console.WriteLine(string.Join(" ", results));
     }
 }
