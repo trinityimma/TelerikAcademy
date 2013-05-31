@@ -27,13 +27,8 @@ class ReversedLinkedList<T> : IEnumerable<T>
 
     public IEnumerator<T> GetEnumerator()
     {
-        var current = this.Last;
-
-        while (current != null)
-        {
+        for (Node<T> current = this.Last; current != null; current = current.Previous)
             yield return current.Value;
-            current = current.Previous;
-        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()
