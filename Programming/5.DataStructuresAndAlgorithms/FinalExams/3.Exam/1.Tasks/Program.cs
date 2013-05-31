@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Text;
 using Wintellect.PowerCollections;
 
 class Program
 {
+    // Almost the same as Programming/5.DataStructuresAndAlgorithms/AlgoAcademy/4.DataStructures/2.Zadachi/Program.cs
     static void Main()
     {
 #if DEBUG
@@ -14,10 +15,21 @@ class Program
         var date = DateTime.Now;
 
         var tasks = new OrderedBag<Tuple<string, int>>((task1, task2) =>
-            task1.Item2.CompareTo(task2.Item2) * 2 + task1.Item1.CompareTo(task2.Item1)
-        );
+        {
+            int compared = 0;
+
+            compared = task1.Item2.CompareTo(task2.Item2);
+            if (compared != 0) return compared;
+
+            compared = task1.Item1.CompareTo(task2.Item1);
+            if (compared != 0) return compared;
+
+            return compared;
+        });
 
         var output = new StringBuilder();
+
+        var separator = new char[] { ' ' };
 
         foreach (int i in Enumerable.Range(0, int.Parse(Console.ReadLine())))
         {
@@ -34,7 +46,7 @@ class Program
 
             else
             {
-                var match = line.Split();
+                var match = line.Split(separator, 3);
 
                 tasks.Add(new Tuple<string, int>(match[2], int.Parse(match[1])));
             }

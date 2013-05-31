@@ -7,6 +7,7 @@ namespace FreeContentCatalog
 {
     public class CommandExecutor : ICommandExecutor
     {
+        // TODO: Refactor
         private static readonly Dictionary<CommandType, Action<ICatalog, ICommand, StringBuilder>> commandAction =
             new Dictionary<CommandType, Action<ICatalog, ICommand, StringBuilder>>()
         {

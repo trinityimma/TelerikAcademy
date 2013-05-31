@@ -35,17 +35,18 @@ namespace FreeContentCatalog
 
         public int UpdateContent(string oldUrl, string newUrl)
         {
-            var matchedElements = this.url[oldUrl].ToList();
+            var matchedElements = this.url[oldUrl];
 
             foreach (Content content in matchedElements)
             {
                 content.Url = newUrl;
             }
 
+            var copied = matchedElements.ToArray();
             this.url.Remove(oldUrl);
-            this.url.AddMany(newUrl, matchedElements);
+            this.url.AddMany(newUrl, copied);
 
-            return matchedElements.Count;
+            return copied.Length;
         }
     }
 }

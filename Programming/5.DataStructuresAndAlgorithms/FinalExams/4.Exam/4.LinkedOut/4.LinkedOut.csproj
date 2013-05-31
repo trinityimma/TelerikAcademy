@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B3AF19DD-1A9E-426E-8048-673DA92B5336}</ProjectGuid>
+    <ProjectGuid>{ACD08400-A4CD-4C10-95FB-5582C01C2C42}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_2.MostCommon</RootNamespace>
-    <AssemblyName>2.MostCommon</AssemblyName>
+    <RootNamespace>_4.LinkedOut</RootNamespace>
+    <AssemblyName>4.LinkedOut</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
