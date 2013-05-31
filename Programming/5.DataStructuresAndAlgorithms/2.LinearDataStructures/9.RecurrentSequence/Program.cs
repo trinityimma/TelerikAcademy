@@ -8,7 +8,7 @@ class Program
     {
         var results = new List<int>();
 
-        Queue<int> numbers = new Queue<int>();
+        var numbers = new Queue<int>();
 
         numbers.Enqueue(2);
 
