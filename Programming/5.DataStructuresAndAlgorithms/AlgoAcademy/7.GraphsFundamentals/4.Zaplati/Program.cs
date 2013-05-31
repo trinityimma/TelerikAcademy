@@ -13,7 +13,7 @@ class Program
             return dp[row].Value;
 
         long sallary = input[row]
-            .Select((i, col) => col)
+            .Select((col, i) => i)
             .Where(col => input[row][col])
             .Sum(col => CalcSallary(col));
 
