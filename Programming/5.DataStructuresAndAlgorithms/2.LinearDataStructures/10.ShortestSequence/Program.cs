@@ -1,7 +1,46 @@
 using System;
 using System.Linq;
 using System.Diagnostics;
+using System.Collections;
 using System.Collections.Generic;
+
+class Node<T>
+{
+    public T Value { get; set; }
+
+    public Node<T> Previous { get; set; }
+
+    public Node(T value)
+    {
+        this.Value = value;
+    }
+}
+
+class ReversedLinkedList<T> : IEnumerable<T>
+{
+    public Node<T> Last { get; set; }
+
+    public ReversedLinkedList(Node<T> last)
+    {
+        this.Last = last;
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        var current = this.Last;
+
+        while (current != null)
+        {
+            yield return current.Value;
+            current = current.Previous;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+}
 
 static class Program
 {
@@ -21,60 +60,63 @@ static class Program
     static void Main()
     {
         int start = 5;
-        int end = 250;
+        int end = 16;
 
         Debug.Assert(end > start);
 
-        var results = new List<IList<int>>();
+        var results = new List<Node<int>>();
 
         var visited = new HashSet<int>();
-        var sequences = new Queue<IList<int>>();
+        var currentQueue = new Queue<Node<int>>();
 
         visited.Add(start);
-        sequences.Enqueue(new int[] { start });
+        currentQueue.Enqueue(new Node<int>(start));
 
         int level = 1;
 
-        while (sequences.Count != 0)
+        while (currentQueue.Count != 0)
         {
-            var nextSequences = new Queue<IList<int>>();
+            var nextQueue = new Queue<Node<int>>();
             var currentVisited = new HashSet<int>();
 
             level++;
 
-            while (sequences.Count != 0)
+            while (currentQueue.Count != 0)
             {
-                var currentSequence = sequences.Dequeue();
+                var currentNode = currentQueue.Dequeue();
 
                 foreach (var operation in operations)
                 {
-                    int currentNumber = operation(currentSequence.Last());
+                    int nextNumber = operation(currentNode.Value);
 
-                    if (currentNumber > end || visited.Contains(currentNumber))
+                    if (nextNumber > end)
                         continue;
 
-                    var nextSequence = currentSequence.Clone();
-                    nextSequence.Add(currentNumber);
+                    if (visited.Contains(nextNumber))
+                        continue;
 
-                    currentVisited.Add(currentNumber);
-                    nextSequences.Enqueue(nextSequence);
+                    var nextNode = new Node<int>(nextNumber);
+                    nextNode.Previous = currentNode;
 
-                    if (currentNumber == end)
-                        results.Add(nextSequence);
+                    currentVisited.Add(nextNumber);
+                    nextQueue.Enqueue(nextNode);
+
+                    if (nextNumber == end)
+                        results.Add(nextNode);
                 }
             }
 
             visited.UnionWith(currentVisited);
 
             if (results.Count != 0)
-                nextSequences.Clear();
+                nextQueue.Clear();
 
-            sequences = nextSequences;
+            currentQueue = nextQueue;
         }
 
         Console.WriteLine("Sequence length: {0}", level);
 
         foreach (var sequence in results)
-            Console.WriteLine(string.Join(" ", sequence));
+            Console.WriteLine(string.Join(" ", new ReversedLinkedList<int>(sequence).Reverse()));
     }
 }
