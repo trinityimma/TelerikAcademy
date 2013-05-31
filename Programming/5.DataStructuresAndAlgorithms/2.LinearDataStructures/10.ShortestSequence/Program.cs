@@ -44,12 +44,6 @@ class ReversedLinkedList<T> : IEnumerable<T>
 
 static class Program
 {
-    static IList<T> Clone<T>(this IList<T> list)
-        where T : struct
-    {
-        return list.Select(item => item).ToList();
-    }
-
     static Func<int, int>[] operations =
     {
         x => x + 1,
