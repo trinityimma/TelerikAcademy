@@ -42,8 +42,6 @@ class Program
     static IList<IEnumerable<T>> GetShortestSequences<T>(T start, T end, IList<Func<T, T>> operations)
         where T : IComparable<T>
     {
-        Debug.Assert(end.CompareTo(start) > 0);
-
         var results = new List<IEnumerable<T>>();
 
         var visited = new HashSet<T>();
