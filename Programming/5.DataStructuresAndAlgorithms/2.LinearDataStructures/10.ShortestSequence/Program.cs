@@ -39,7 +39,12 @@ class ReversedLinkedList<T> : IEnumerable<T>
 
 static class Program
 {
-    static readonly Func<int, int>[] operations = { x => x + 1, x => x + 2, x => x * 2, };
+    static readonly Func<int, int>[] operations =
+    {
+        x => x + 1,
+        x => x + 2,
+        x => x * 2,
+    };
 
     static void Main()
     {
