@@ -98,7 +98,8 @@ class Program
             currentWave = nextWave;
         }
 
-        Console.WriteLine("Sequence length: {0}", level);
+        //Console.WriteLine("Sequences length: {0}", level);
+
         return results;
     }
 
