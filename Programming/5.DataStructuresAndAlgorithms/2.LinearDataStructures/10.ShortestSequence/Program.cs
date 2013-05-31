@@ -39,35 +39,26 @@ class ReversedLinkedList<T> : IEnumerable<T>
 
 class Program
 {
-    static Func<int, int>[] operations =
+    static IList<IEnumerable<T>> GetShortestSequences<T>(T start, T end, IList<Func<T, T>> operations)
+        where T : IComparable<T>
     {
-        x => x + 1,
-        x => x + 2,
-        x => x * 2,
-    };
+        Debug.Assert(end.CompareTo(start) > 0);
 
-    static void Main()
-    {
-        int start = 5;
-        int end = 16;
+        var results = new List<IEnumerable<T>>();
 
-        Debug.Assert(end > start);
-
-        var results = new List<IEnumerable<int>>();
-
-        var visited = new HashSet<int>();
-        var currentWave = new Queue<Node<int>>();
+        var visited = new HashSet<T>();
+        var currentWave = new Queue<Node<T>>();
 
         visited.Add(start);
-        currentWave.Enqueue(new Node<int>(start));
+        currentWave.Enqueue(new Node<T>(start));
 
         int level = 1;
 
         while (currentWave.Count != 0)
         {
-            var nextWave = new Queue<Node<int>>();
+            var nextWave = new Queue<Node<T>>();
 
-            var nextVisited = new HashSet<int>();
+            var nextVisited = new HashSet<T>();
 
             level++;
 
@@ -77,23 +68,23 @@ class Program
 
                 foreach (var operation in operations)
                 {
-                    int nextNumber = operation(currentNode.Value);
+                    T nextElement = operation(currentNode.Value);
 
-                    if (nextNumber > end)
+                    if (nextElement.CompareTo(end) > 0)
                         continue;
 
-                    if (visited.Contains(nextNumber))
+                    if (visited.Contains(nextElement))
                         continue;
 
-                    var nextNode = new Node<int>(nextNumber);
+                    var nextNode = new Node<T>(nextElement);
                     nextNode.Previous = currentNode;
 
-                    nextVisited.Add(nextNumber);
+                    nextVisited.Add(nextElement);
                     nextWave.Enqueue(nextNode);
 
-                    if (nextNumber == end)
+                    if (nextElement.Equals(end))
                     {
-                        var sequence = new ReversedLinkedList<int>(nextNode);
+                        var sequence = new ReversedLinkedList<T>(nextNode);
                         results.Add(sequence.Reverse());
                     }
                 }
@@ -108,8 +99,19 @@ class Program
         }
 
         Console.WriteLine("Sequence length: {0}", level);
+        return results;
+    }
 
-        foreach (var sequence in results)
+    static void Main()
+    {
+        Func<int, int>[] operations = 
+        {
+            x => x + 1,
+            x => x + 2,
+            x => x * 2,
+        };
+
+        foreach (var sequence in GetShortestSequences(5, 16, operations))
             Console.WriteLine(string.Join(" -> ", sequence));
     }
 }
