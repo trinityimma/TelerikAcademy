@@ -46,7 +46,7 @@ class Program
                 }
             }
 
-            // Removing repating is actually slower?
+            // Removing repeating is actually slower?
         }
 
         return distances;
