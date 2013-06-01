@@ -75,7 +75,7 @@ class Program
 
             foreach (var neighborNode in graph[currentNode.To])
             {
-                int currentDistance = currentNode.Distance + neighborNode.Distance;
+                int currentDistance = distances[currentNode.To] + neighborNode.Distance;
 
                 if (currentDistance < distances[neighborNode.To])
                 {
