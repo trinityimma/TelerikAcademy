@@ -60,41 +60,28 @@ class Program
 {
     static IList<IList<Node>> graph = null;
 
-    private static int[] Dijkstra(int start)
+    private static IList<int> Dijkstra(int start)
     {
-        var distances = Enumerable.Range(0, graph.Count)
-            .Select(i => int.MaxValue)
-            .ToArray();
-
-        var visited = new HashSet<int>();
+        var distances = Enumerable.Repeat(int.MaxValue, graph.Count).ToArray();
 
         var queue = new PriorityQueue<Node>();
 
         distances[start] = 0;
-        visited.Add(start);
         queue.Enqueue(new Node(start, 0));
 
         while (queue.Count != 0)
         {
-            var u = queue.Dequeue();
-            visited.Add(u.To);
+            var currentNode = queue.Dequeue();
 
-            foreach (var v in graph[u.To])
+            foreach (var neighborNode in graph[currentNode.To])
             {
-                int newDistance = distances[u.To] + v.Distance;
+                int currentDistance = currentNode.Distance + neighborNode.Distance;
 
-                if (distances[v.To] > newDistance)
+                if (currentDistance < distances[neighborNode.To])
                 {
-                    distances[v.To] = newDistance;
-
-                    var next = new Node(v.To, newDistance);
-                    queue.Enqueue(next);
+                    distances[neighborNode.To] = currentDistance;
+                    queue.Enqueue(new Node(neighborNode.To, currentDistance));
                 }
-            }
-
-            while (queue.Count != 0 && visited.Contains(queue.Peek().To))
-            {
-                queue.Dequeue();
             }
         }
 
