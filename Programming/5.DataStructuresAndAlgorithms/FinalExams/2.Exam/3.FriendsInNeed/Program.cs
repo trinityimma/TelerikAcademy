@@ -3,42 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Wintellect.PowerCollections;
 
-class PriorityQueue<T> where T : IComparable<T>
-{
-    private readonly OrderedBag<T> bag = null;
-
-    public int Count
-    {
-        get { return bag.Count; }
-    }
-
-    public PriorityQueue()
-    {
-        this.bag = new OrderedBag<T>();
-    }
-
-    public void Enqueue(T element)
-    {
-        this.bag.Add(element);
-    }
-
-    public T Dequeue()
-    {
-        return this.bag.RemoveFirst();
-    }
-
-    public void Clear()
-    {
-        this.bag.Clear();
-    }
-
-    public T Peek()
-    {
-        return this.bag.GetFirst();
-    }
-}
-
-struct Node : IComparable<Node>
+struct Node
 {
     public int To { get; set; }
     public int Distance { get; set; }
@@ -48,11 +13,6 @@ struct Node : IComparable<Node>
     {
         this.To = vertex;
         this.Distance = distance;
-    }
-
-    public int CompareTo(Node other)
-    {
-        return this.Distance.CompareTo(other.Distance);
     }
 }
 
@@ -64,14 +24,16 @@ class Program
     {
         var distances = Enumerable.Repeat(int.MaxValue, graph.Count).ToArray();
 
-        var queue = new PriorityQueue<Node>();
+        var queue = new OrderedBag<Node>((node1, node2) =>
+            node1.Distance.CompareTo(node2.Distance)
+        );
 
         distances[start] = 0;
-        queue.Enqueue(new Node(start, 0));
+        queue.Add(new Node(start, 0));
 
         while (queue.Count != 0)
         {
-            var currentNode = queue.Dequeue();
+            var currentNode = queue.RemoveFirst();
 
             foreach (var neighborNode in graph[currentNode.To])
             {
@@ -80,9 +42,11 @@ class Program
                 if (currentDistance < distances[neighborNode.To])
                 {
                     distances[neighborNode.To] = currentDistance;
-                    queue.Enqueue(new Node(neighborNode.To, currentDistance));
+                    queue.Add(new Node(neighborNode.To, currentDistance));
                 }
             }
+
+            // Removing repating is actually slower?
         }
 
         return distances;
