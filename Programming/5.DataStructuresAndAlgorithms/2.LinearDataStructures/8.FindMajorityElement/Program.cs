@@ -16,7 +16,7 @@ class Program
             stack += (n == majorityElement) ? 1 : -1;
         }
 
-        int count = numbers.Where(n => n == majorityElement).Count();
+        int count = numbers.Count(n => n == majorityElement);
         if (!(count > (numbers.Length / 2)))
             majorityElement = null;
 
