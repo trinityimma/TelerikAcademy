@@ -5,7 +5,6 @@ using System.Collections.Generic;
 class Program
 {
     static Dictionary<string, int> decoded = null;
-    static KeyValuePair<int, int>[] coords = null;
 
     static HashSet<int>[] graph = null;
 
@@ -22,11 +21,11 @@ class Program
         return result;
     }
 
-    static double Distance(KeyValuePair<int, int> coords1, KeyValuePair<int, int> coords2)
+    static double Distance(Tuple<int, int> coords1, Tuple<int, int> coords2)
     {
         return Math.Sqrt(
-            (coords1.Key - coords2.Key) * (coords1.Key - coords2.Key) +
-            (coords1.Value - coords2.Value) * (coords1.Value - coords2.Value)
+            (coords1.Item1 - coords2.Item1) * (coords1.Item1 - coords2.Item1) +
+            (coords1.Item2 - coords2.Item2) * (coords1.Item2 - coords2.Item2)
         );
     }
 
@@ -57,10 +56,10 @@ class Program
             .Select(i => Console.ReadLine().Split())
             .ToDictionary(parts => parts[0], parts => int.Parse(parts[1]));
 
-        coords = Enumerable.Range(0, int.Parse(Console.ReadLine()))
+        var coords = Enumerable.Range(0, int.Parse(Console.ReadLine()))
             .Select(i => Console.ReadLine().Split())
             .Select(parts =>
-                new KeyValuePair<int, int>(
+                new Tuple<int, int>(
                     ParseCoordinate(parts[0]),
                     ParseCoordinate(parts[1])
                 )
