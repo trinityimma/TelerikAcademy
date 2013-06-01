@@ -3,48 +3,102 @@ using System.Linq;
 using System.Collections.Generic;
 using Wintellect.PowerCollections;
 
+class PriorityQueue<T> where T : IComparable<T>
+{
+    private readonly OrderedBag<T> bag = null;
+
+    public int Count
+    {
+        get { return bag.Count; }
+    }
+
+    public PriorityQueue()
+    {
+        this.bag = new OrderedBag<T>();
+    }
+
+    public void Enqueue(T element)
+    {
+        this.bag.Add(element);
+    }
+
+    public T Dequeue()
+    {
+        return this.bag.RemoveFirst();
+    }
+
+    public void Clear()
+    {
+        this.bag.Clear();
+    }
+
+    public T Peek()
+    {
+        return this.bag.GetFirst();
+    }
+}
+
+struct Node : IComparable<Node>
+{
+    public int To { get; set; }
+    public int Distance { get; set; }
+
+    public Node(int vertex, int distance)
+        : this()
+    {
+        this.To = vertex;
+        this.Distance = distance;
+    }
+
+    public int CompareTo(Node other)
+    {
+        return this.Distance.CompareTo(other.Distance);
+    }
+}
+
 class Program
 {
-    static MultiDictionary<int, KeyValuePair<int, int>> minTree = new MultiDictionary<int, KeyValuePair<int, int>>(true);
+    static IList<IList<Node>> graph = null;
 
-    static HashSet<int> hospitals = null;
-
-    static int Bfs(int start)
+    private static int[] Dijkstra(int start)
     {
-        int result = 0;
+        var distances = Enumerable.Range(0, graph.Count)
+            .Select(i => int.MaxValue)
+            .ToArray();
 
         var visited = new HashSet<int>();
 
-        var queue = new Queue<Tuple<int, int>>();
+        var queue = new PriorityQueue<Node>();
 
-        var first = new Tuple<int, int>(start, 0);
-
-        visited.Add(first.Item1);
-        queue.Enqueue(first);
+        distances[start] = 0;
+        visited.Add(start);
+        queue.Enqueue(new Node(start, 0));
 
         while (queue.Count != 0)
         {
-            var current = queue.Dequeue();
+            var u = queue.Dequeue();
+            visited.Add(u.To);
 
-            foreach (var neighbor in minTree[current.Item1])
+            foreach (var v in graph[u.To])
             {
-                if (visited.Contains(neighbor.Key))
-                    continue;
+                int newDistance = distances[u.To] + v.Distance;
 
-                var next = new Tuple<int, int>(
-                    neighbor.Key,
-                    current.Item2 + neighbor.Value
-                );
+                if (distances[v.To] > newDistance)
+                {
+                    distances[v.To] = newDistance;
 
-                if (!hospitals.Contains(neighbor.Key))
-                    result += next.Item2;
+                    var next = new Node(v.To, newDistance);
+                    queue.Enqueue(next);
+                }
+            }
 
-                visited.Add(next.Item1);
-                queue.Enqueue(next);
+            while (queue.Count != 0 && visited.Contains(queue.Peek().To))
+            {
+                queue.Dequeue();
             }
         }
 
-        return result;
+        return distances;
     }
 
     static void Main()
@@ -53,65 +107,44 @@ class Program
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
 #endif
 
+        var date = DateTime.Now;
+
         int[] numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-        hospitals = new HashSet<int>(
-            Console.ReadLine().Split().Select(int.Parse)
+        var hospitals = new HashSet<int>(
+            Console.ReadLine().Split().Select(line => int.Parse(line) - 1)
         );
 
-        var edges = new List<KeyValuePair<Tuple<int, int>, int>>();
+        var edges = Enumerable.Range(0, numbers[1])
+            .Select(i =>
+                Console.ReadLine()
+                    .Split()
+                    .Select(int.Parse)
+                    .ToArray()
+            ).ToArray();
 
-        foreach (int i in Enumerable.Range(0, numbers[1]))
+        graph = Enumerable.Range(0, numbers[0])
+            .Select(i => new List<Node>())
+            .ToArray();
+
+        foreach (var edge in edges)
         {
-            var parts = Console.ReadLine().Split().Select(int.Parse).ToArray();
-
-            edges.Add(new KeyValuePair<Tuple<int, int>, int>(
-                new Tuple<int, int>(parts[0], parts[1]),
-                parts[2]
-            ));
+            graph[edge[0] - 1].Add(new Node(edge[1] - 1, edge[2]));
+            graph[edge[1] - 1].Add(new Node(edge[0] - 1, edge[2]));
         }
 
-        var trees = new HashSet<HashSet<int>>();
+        var results = hospitals.Select(Dijkstra);
 
-        foreach (int node in Enumerable.Range(1, numbers[0]))
-        {
-            var tree = new HashSet<int>();
-            tree.Add(node);
+        int min = results.Select(distances =>
+            distances.Where((distance, i) =>
+                !hospitals.Contains(i)
+            ).Sum()
+        ).Min();
 
-            trees.Add(tree);
-        }
+        Console.WriteLine(min);
 
-        foreach (var currentEdge in edges.OrderBy(kvp => kvp.Value))
-        {
-            var tree1 = trees.First(tree => tree.Contains(currentEdge.Key.Item1));
-            var tree2 = trees.Last(tree => tree.Contains(currentEdge.Key.Item2));
-
-            if (tree1 == tree2)
-                continue;
-
-            tree1.UnionWith(tree2);
-            trees.Remove(tree2);
-
-            minTree.Add(currentEdge.Key.Item1,
-                new KeyValuePair<int, int>(currentEdge.Key.Item2, currentEdge.Value)
-            );
-
-            minTree.Add(currentEdge.Key.Item2,
-                new KeyValuePair<int, int>(currentEdge.Key.Item1, currentEdge.Value)
-            );
-
-            if (trees.Count == 1)
-                break;
-        }
-
-        int result = int.MaxValue;
-
-        foreach (int hospital in hospitals)
-        {
-            int currentResult = Bfs(hospital);
-            result = Math.Min(currentResult, result);
-        }
-
-        Console.WriteLine(result);
+#if DEBUG
+        Console.WriteLine(DateTime.Now - date);
+#endif
     }
 }
