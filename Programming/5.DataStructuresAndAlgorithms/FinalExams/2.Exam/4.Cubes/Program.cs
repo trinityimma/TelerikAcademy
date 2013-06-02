@@ -9,5 +9,9 @@ class Program
 #if DEBUG
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
 #endif
+
+        var sides = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+
     }
 }
