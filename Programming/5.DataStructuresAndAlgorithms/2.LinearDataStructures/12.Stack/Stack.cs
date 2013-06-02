@@ -26,13 +26,13 @@ class Stack<T> : IEnumerable<T>
     public void Push(T value)
     {
         if (this.elements.Length < this.pointer + 2)
-            this.Reserve(this.pointer + 2);
+            this.EnsureCapacity(this.pointer + 2);
 
         this.pointer++;
         this.elements[this.pointer] = value;
     }
 
-    public void Reserve(int size)
+    private void EnsureCapacity(int size)
     {
         if (!(this.elements.Length < size))
             return;
