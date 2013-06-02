@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 
@@ -34,7 +33,7 @@ struct Coordinates
 
 static class Program
 {
-    static readonly ICollection<Coordinates> directions = new Coordinates[]
+    static readonly ICollection<Coordinates> Directions = new Coordinates[]
     {
         new Coordinates( 0,  1),
         new Coordinates( 1,  0),
@@ -69,7 +68,7 @@ static class Program
             {
                 Coordinates currentCoordinates = currentQueue.Dequeue();
 
-                foreach (Coordinates currentDirection in directions)
+                foreach (Coordinates currentDirection in Directions)
                 {
                     Coordinates nextCoordinates = currentCoordinates + currentDirection;
 

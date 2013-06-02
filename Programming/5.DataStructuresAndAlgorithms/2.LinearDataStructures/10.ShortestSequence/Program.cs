@@ -32,7 +32,7 @@ class ReversedLinkedList<T> : IEnumerable<T>
 
     IEnumerator IEnumerable.GetEnumerator()
     {
-        return GetEnumerator();
+        return this.GetEnumerator();
     }
 }
 
