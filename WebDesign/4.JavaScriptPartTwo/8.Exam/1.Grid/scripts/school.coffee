@@ -26,7 +26,7 @@ class Course
         @students = []
 
     addStudents: (students) ->
-        @numberOfStudents +=students.length
+        @numberOfStudents += students.length
         @students.push student for student in students
 
         return @
