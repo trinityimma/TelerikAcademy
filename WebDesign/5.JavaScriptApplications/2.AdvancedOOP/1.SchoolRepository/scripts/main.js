@@ -20,7 +20,7 @@
   console.log('DEMO');
 
   (function() {
-    var classes, i, schools, student, students, teacher, _i, _j, _len, _ref;
+    var classes, i, klass, schools, student, students, teacher, _i, _j, _len, _len1, _ref;
     teacher = new Teacher('Nikolay', 'Kostov', 20, 'Software');
     students = (function() {
       var _i, _results;
@@ -40,17 +40,18 @@
       }
       return _results;
     })();
-    for (i = _i = 0; _i < 4; i = ++_i) {
+    for (i = _i = 0, _len = classes.length; _i < _len; i = ++_i) {
+      klass = classes[i];
       _ref = students.slice(i * 10, (i + 1) * 10);
-      for (_j = 0, _len = _ref.length; _j < _len; _j++) {
+      for (_j = 0, _len1 = _ref.length; _j < _len1; _j++) {
         student = _ref[_j];
-        classes[i].addStudent(student);
+        klass.addStudent(student);
       }
     }
     schools = [new School('PMG', 'Burgas', 100), new School('TUES', 'Sofia', 200), new School('Telerik Academy', 'Sofia', 500)];
     schools[0].addClass(classes[0], classes[1]);
     schools[1].addClass(classes[2]);
-    schools[1].addClass(classes[3]);
+    schools[2].addClass(classes[3]);
     return console.log(schools);
   })();
 

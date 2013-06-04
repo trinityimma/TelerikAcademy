@@ -25,8 +25,8 @@ do ->
 
     classes = (new Class(i, teacher, _.random(20, 30)) for i in ['JS I', 'JS II', 'SEO', 'S&D'])
 
-    for i in [0...4]
-        classes[i].addStudent student for student in students[(i * 10)...((i + 1) * 10)]
+    for klass, i in classes
+        klass.addStudent(student) for student in students[(i * 10)...((i + 1) * 10)]
 
     schools = [
         new School 'PMG', 'Burgas', 100
