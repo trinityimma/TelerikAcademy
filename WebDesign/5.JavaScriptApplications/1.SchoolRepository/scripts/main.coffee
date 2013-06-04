@@ -34,7 +34,8 @@ do ->
         new School 'Telerik Academy', 'Sofia', 500
     ]
 
-    schools[0].addClass classes[0..2]
-    schools[1].addClass [classes[3]]
+    schools[0].addClass classes[0], classes[1]
+    schools[1].addClass classes[2]
+    schools[1].addClass classes[3]
 
     console.log schools

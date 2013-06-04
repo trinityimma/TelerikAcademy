@@ -48,8 +48,9 @@
       }
     }
     schools = [new School('PMG', 'Burgas', 100), new School('TUES', 'Sofia', 200), new School('Telerik Academy', 'Sofia', 500)];
-    schools[0].addClass(classes.slice(0, 3));
-    schools[1].addClass([classes[3]]);
+    schools[0].addClass(classes[0], classes[1]);
+    schools[1].addClass(classes[2]);
+    schools[1].addClass(classes[3]);
     return console.log(schools);
   })();
 
