@@ -36,6 +36,6 @@ do ->
 
     schools[0].addClass classes[0], classes[1]
     schools[1].addClass classes[2]
-    schools[1].addClass classes[3]
+    schools[2].addClass classes[3]
 
     console.log schools
