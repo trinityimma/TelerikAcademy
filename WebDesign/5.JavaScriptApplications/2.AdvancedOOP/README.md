@@ -1,14 +1,15 @@
 ## Advanced OOP
 
 Implement a repository to keep students and teachers in schools
-    * Each school has a name, town and classes of students
-    * Students have firstname, last name, age and grade
-    * Teachers have firstname, last name, age and speciality
-    * Students and Teachers can introduce themselves by printing all their non-function properties in the format PropertyName: PropertyValue
-    * Student introducement - Name: Peter Ivanov, Age: 13, grade: 7
-    * Classes have name, capacity of students, a set of students and a form-teacher
 
-    Implement a repository to keep students and teachers in schools
+* Each school has a name, town and classes of students
+* Students have firstname, last name, age and grade
+* Teachers have firstname, last name, age and speciality
+* Students and Teachers can introduce themselves by printing all their non-function properties in the format PropertyName: PropertyValue
+* Student introducement - Name: Peter Ivanov, Age: 13, grade: 7
+* Classes have name, capacity of students, a set of students and a form-teacher
+
+Implement a repository to keep students and teachers in schools
 
 1. Implement the schools repository using Prototypal OOP
 * Implement the schools repository using Classical OOP
@@ -23,4 +24,4 @@ Implement a repository to keep students and teachers in schools
     * Urls have a title and a url
     * The favorite sites bar should have a functionality to display urls and folders
     * If an url is clicked, it should be open in new tab in the browser
-    * Use Classical OOP with Class.create()
+    * Use Classical OOP with `Class.create()`
