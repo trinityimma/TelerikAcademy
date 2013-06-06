@@ -59,7 +59,7 @@ class Program
 Kireto                  | Varna    | 052 23 45 67
 Daniela Ivanova Petrova | Karnobat | 0899 999 888
 Bat Gancho              | Sofia    | 02 946 946 946
-Bat Gancho              | Plovdiv    | 02 946 946 946
+Bat Gancho              | Plovdiv  | 02 946 946 946
 "));
 
         for (string line = null; (line = Console.ReadLine()) != null; )
