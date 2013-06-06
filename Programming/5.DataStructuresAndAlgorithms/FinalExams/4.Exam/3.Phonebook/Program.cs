@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Wintellect.PowerCollections;
 
-class Entry : IComparable<Entry>
+class Entry
 {
     public string Name { get; private set; }
     public ISet<string> Phones { get; private set; }
@@ -25,11 +25,6 @@ class Entry : IComparable<Entry>
     public override string ToString()
     {
         return string.Format("[{0}: {1}]", this.Name, string.Join(", ", this.Phones));
-    }
-
-    public int CompareTo(Entry other)
-    {
-        return this.Name.CompareTo(other.Name); // TODO: Lower case
     }
 }
 
@@ -62,10 +57,8 @@ class Program
 {
     static readonly StringBuilder output = new StringBuilder();
 
-    static readonly OrderedSet<Entry> sorted = new OrderedSet<Entry>();
-
-    static readonly IDictionary<string, Entry> byName =
-        new Dictionary<string, Entry>(StringComparer.InvariantCultureIgnoreCase);
+    static readonly SortedList<string, Entry> byName =
+        new SortedList<string, Entry>(StringComparer.InvariantCultureIgnoreCase);
 
     static readonly MultiDictionary<string, Entry> byPhone =
         new MultiDictionary<string, Entry>(false);
@@ -90,7 +83,6 @@ class Program
             var entry = new Entry(name);
 
             byName.Add(name, entry);
-            sorted.Add(entry);
         }
 
         foreach (var phone in phones)
@@ -140,7 +132,7 @@ class Program
 
         for (int i = 0; i < count; i++)
         {
-            entries.Add(sorted[i + start]);
+            entries.Add(byName.Values[i + start]);
         }
 
         return string.Join(Environment.NewLine, entries);
