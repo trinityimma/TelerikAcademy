@@ -145,7 +145,7 @@
 
 ## JavaScript Applications
 
-1. Good practices - 29.05.2013
+1. Good Practices - 29.05.2013
 2. [Advanced OOP](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP/README.md)) - 30.05.2013
 3. [JavaScript Libraries](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP/README.md)) - 05.06.2013
 4. [jQuery Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview/README.md)) - 05.06.2013
