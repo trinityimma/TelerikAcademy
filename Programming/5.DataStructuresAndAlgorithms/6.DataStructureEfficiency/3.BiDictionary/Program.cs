@@ -63,7 +63,7 @@ class BiDictionary<TKey1, TKey2, TValue>
         get
         {
             Debug.Assert(
-                byKey1.KeyValuePairs.Count == byKey2.KeyValuePairs.Count &&
+                byKey1.KeyValuePairs.Count == byKey1Key2.KeyValuePairs.Count &&
                 byKey2.KeyValuePairs.Count == byKey1Key2.KeyValuePairs.Count
             );
 
