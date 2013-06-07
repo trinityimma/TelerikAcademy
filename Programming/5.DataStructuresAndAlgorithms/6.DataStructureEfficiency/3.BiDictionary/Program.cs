@@ -6,7 +6,7 @@ using Wintellect.PowerCollections;
 
 class BiDictionary<TKey1, TKey2, TValue>
 {
-    private struct Entry
+    private class Entry
     {
         public TKey1 Key1 { get; private set; }
 
@@ -15,7 +15,6 @@ class BiDictionary<TKey1, TKey2, TValue>
         public TValue Value { get; private set; }
 
         public Entry(TKey1 key1, TKey2 key2, TValue value)
-            : this()
         {
             this.Key1 = key1;
             this.Key2 = key2;
