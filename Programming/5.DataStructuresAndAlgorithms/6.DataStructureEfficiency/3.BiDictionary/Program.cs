@@ -6,7 +6,9 @@ using Wintellect.PowerCollections;
 
 class BiDictionary<TKey1, TKey2, TValue>
 {
-    private class Entry
+    private const bool AllowDuplicates = true;
+
+    private class Entry : IEquatable<Entry>
     {
         public TKey1 Key1 { get; private set; }
 
@@ -20,16 +22,40 @@ class BiDictionary<TKey1, TKey2, TValue>
             this.Key2 = key2;
             this.Value = value;
         }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as Entry);
+        }
+
+        public bool Equals(Entry other)
+        {
+            return other != null &&
+                this.Key1.Equals(other.Key1) &&
+                this.Key2.Equals(other.Key2) &&
+                this.Value.Equals(other.Value);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                int hashCode = this.Key1.GetHashCode();
+                hashCode = (hashCode * 397) ^ this.Key2.GetHashCode();
+                hashCode = (hashCode * 397) ^ this.Value.GetHashCode();
+                return hashCode;
+            }
+        }
     }
 
     private readonly MultiDictionary<TKey1, Entry> byKey1 =
-        new MultiDictionary<TKey1, Entry>(true);
+        new MultiDictionary<TKey1, Entry>(AllowDuplicates);
 
     private readonly MultiDictionary<TKey2, Entry> byKey2 =
-        new MultiDictionary<TKey2, Entry>(true);
+        new MultiDictionary<TKey2, Entry>(AllowDuplicates);
 
     private readonly MultiDictionary<Tuple<TKey1, TKey2>, Entry> byKey1Key2 =
-        new MultiDictionary<Tuple<TKey1, TKey2>, Entry>(true);
+        new MultiDictionary<Tuple<TKey1, TKey2>, Entry>(AllowDuplicates);
 
     public int Count
     {
