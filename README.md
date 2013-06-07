@@ -150,3 +150,11 @@
 3. [JavaScript Libraries](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP/README.md)) - 05.06.2013
 4. [jQuery Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview/README.md)) - 05.06.2013
 5. [Promises and Asynchronous Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/5.PromisesAndAsynchronousProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/5.PromisesAndAsynchronousProgramming/README.md)) - 06.06.2013
+6. jQuery Plugins
+7. Unit Testing
+8. HTTP and AJAX
+9. Consuming External Data and AJAX
+10. Using third-party JavaScript APIs
+11. [Teamwork](https://code.google.com/p/team-nectarine-snake/) - 17.06.2013
+12. Exam Preparation
+13. Exam
