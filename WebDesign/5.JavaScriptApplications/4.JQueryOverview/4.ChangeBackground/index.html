@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>Change Background</title>
+    <style>
+        body {
+            -webkit-transition: background 100ms;
+               -moz-transition: background 100ms;
+                 -o-transition: background 100ms;
+                    transition: background 100ms;
+        }
+    </style>
+</head>
+
+<body ng-controller="Ctrl" ng-style="style">
+    <label>
+        <input type="range" min="0" max="16777215" ng-model="number" ng-change="change()" />
+        <span>{{ style }}</span>
+    </label>
+
+    <script src="http://epeli.github.io/underscore.string/lib/underscore.string.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

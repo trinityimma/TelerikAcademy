@@ -2,25 +2,26 @@
 <html ng-app>
 <head>
     <meta charset="utf-8" />
-    <title>People</title>
+    <title>People Table</title>
+    <style>
+        .ng-cloak { display: none; }
+    </style>
 </head>
 
 <body>
-    <div ng-controller="PeopleCtrl">
-        <table border="1" cellspacing="0">
-            <tr>
-                <th>First Name</th>
-                <th>Second Name</th>
-                <th>Grade</th>
-            </tr>
+    <table ng-controller="PeopleCtrl" class="ng-cloak" border="1" cellspacing="0">
+        <tr>
+            <th>First Name</th>
+            <th>Second Name</th>
+            <th>Grade</th>
+        </tr>
 
-            <tr ng-repeat="person in people">
-                <td>{{ person.firstName }}</td>
-                <td>{{ person.secondName }}</td>
-                <td>{{ person.grade }}</td>
-            </tr>
-        </table>
-    </div>
+        <tr ng-repeat="person in people">
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.secondName }}</td>
+            <td>{{ person.grade }}</td>
+        </tr>
+    </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
     <script>

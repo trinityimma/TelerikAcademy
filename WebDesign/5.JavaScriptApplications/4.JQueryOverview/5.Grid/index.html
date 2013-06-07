@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>Grid</title>
+    <link href="styles/bootstrap.css" rel="stylesheet" />
+    <style>
+        body {
+            margin-top: 20px;
+        }
+
+        .table {
+            margin: 20px;
+            width: auto!important;
+        }
+
+        .table th {
+            padding: 0;
+            padding: 8px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .table th:hover {
+            background: #eee;
+            text-decoration: none;
+        }
+
+        .table .nested {
+            background: #dee;
+        }
+
+        .table .nested:hover {
+            background: #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task 1, 2, 3, 7</h2>
+    <div id="grid-view-holder"></div>
+
+    <h2>Task 4, 5, 6</h2>
+    <div id="schools-grid"></div>
+
+    <script src="scripts/dom-module.js"></script>
+    <script src="scripts/grid.js"></script>
+    <script src="scripts/school.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
