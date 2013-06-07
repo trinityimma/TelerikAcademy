@@ -149,12 +149,12 @@ class Program
     {
         var bidictionary = new BiDictionary<string, int, string>();
 
-        bidictionary.Add("pesho", 1, "javascript");
-        bidictionary.Add("gosho", 2, "java");
+        bidictionary.Add("pesho", 1, "JavaScript");
+        bidictionary.Add("gosho", 2, "Java");
         bidictionary.Add("nakov", 3, "C#");
         bidictionary.Add("nakov", 3, "C#");
         bidictionary.Add("gosho", 3, "Coffee");
-        bidictionary.Add("nakov", 4, "Python");
+        bidictionary.Add("nakov", 1, "Python");
 
         Console.WriteLine(string.Join(" ", bidictionary.GetByFirstKey("nakov")));
         Console.WriteLine(string.Join(" ", bidictionary.GetBySecondKey(3)));
@@ -162,13 +162,13 @@ class Program
 
         Console.WriteLine(bidictionary.Count);
 
-        bidictionary.RemoveByFirstKey("pesho");
+        bidictionary.RemoveByFirstKey("gosho");
         Console.WriteLine(bidictionary.Count);
 
         bidictionary.RemoveBySecondKey(3);
         Console.WriteLine(bidictionary.Count);
 
-        bidictionary.RemoveByFirstAndSecondKey("nakov", 4);
+        bidictionary.RemoveByFirstAndSecondKey("nakov", 1);
         Console.WriteLine(bidictionary.Count);
     }
 }
