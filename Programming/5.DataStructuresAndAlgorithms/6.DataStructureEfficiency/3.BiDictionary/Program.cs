@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Diagnostics;
 using System.Collections.Generic;
+using Wintellect.PowerCollections;
 
 class BiDictionary<TKey1, TKey2, TValue>
 {
@@ -18,17 +20,20 @@ class BiDictionary<TKey1, TKey2, TValue>
         }
     }
 
-    private readonly IDictionary<TKey1, Entry> byKey1 = new Dictionary<TKey1, Entry>();
-    private readonly IDictionary<TKey2, Entry> byKey2 = new Dictionary<TKey2, Entry>();
-    private readonly IDictionary<Tuple<TKey1, TKey2>, Entry> byKey1Key2 = new Dictionary<Tuple<TKey1, TKey2>, Entry>();
+    private readonly MultiDictionary<TKey1, Entry> byKey1 = new MultiDictionary<TKey1, Entry>(false);
+    private readonly MultiDictionary<TKey2, Entry> byKey2 = new MultiDictionary<TKey2, Entry>(false);
+    private readonly MultiDictionary<Tuple<TKey1, TKey2>, Entry> byKey1Key2 = new MultiDictionary<Tuple<TKey1, TKey2>, Entry>(false);
 
     public int Count
     {
         get
         {
-            Debug.Assert(byKey1.Count == byKey2.Count && byKey2.Count == byKey1Key2.Count);
+            Debug.Assert(
+                byKey1.KeyValuePairs.Count == byKey2.KeyValuePairs.Count &&
+                byKey2.KeyValuePairs.Count == byKey1Key2.KeyValuePairs.Count
+            );
 
-            return this.byKey1Key2.Count;
+            return this.byKey1Key2.KeyValuePairs.Count;
         }
     }
 
@@ -43,55 +48,67 @@ class BiDictionary<TKey1, TKey2, TValue>
         this.byKey1Key2.Add(key1key2, entry);
     }
 
-    public TValue GetByFirstKey(TKey1 key1)
+    public ICollection<TValue> GetByFirstKey(TKey1 key1)
     {
-        return this.byKey1[key1].Value;
+        return this.byKey1[key1].Select(entry => entry.Value).ToArray();
     }
 
     public void RemoveByFirstKey(TKey1 key1)
     {
-        var entry = this.byKey1[key1];
+        var entries = this.byKey1[key1];
 
-        this.byKey1.Remove(entry.Key1);
-        this.byKey2.Remove(entry.Key2);
+        foreach (var entry in entries)
+        {
+            this.byKey2.Remove(entry.Key2, entry);
 
-        var key1key2 = new Tuple<TKey1, TKey2>(entry.Key1, entry.Key2);
-        this.byKey1Key2.Remove(key1key2);
+            var key1key2 = new Tuple<TKey1, TKey2>(entry.Key1, entry.Key2);
+            this.byKey1Key2.Remove(key1key2, entry);
+        }
+
+        this.byKey1.Remove(key1);
     }
 
-    public TValue GetBySecondKey(TKey2 key2)
+    public ICollection<TValue> GetBySecondKey(TKey2 key2)
     {
-        return this.byKey2[key2].Value;
+        return this.byKey2[key2].Select(entry => entry.Value).ToArray();
     }
 
     public void RemoveBySecondKey(TKey2 key2)
     {
-        var entry = this.byKey2[key2];
+        var entries = this.byKey2[key2];
 
-        this.byKey1.Remove(entry.Key1);
-        this.byKey2.Remove(entry.Key2);
+        foreach (var entry in entries)
+        {
+            this.byKey1.Remove(entry.Key1, entry);
 
-        var key1key2 = new Tuple<TKey1, TKey2>(entry.Key1, entry.Key2);
-        this.byKey1Key2.Remove(key1key2);
+            var key1key2 = new Tuple<TKey1, TKey2>(entry.Key1, entry.Key2);
+            this.byKey1Key2.Remove(key1key2, entry);
+        }
+
+        this.byKey2.Remove(key2);
     }
 
-    public TValue GetByFirstAndSecondKey(TKey1 key1, TKey2 key2)
+    public ICollection<TValue> GetByFirstAndSecondKey(TKey1 key1, TKey2 key2)
     {
         var key1key2 = new Tuple<TKey1, TKey2>(key1, key2);
 
-        return this.byKey1Key2[key1key2].Value;
+        return this.byKey1Key2[key1key2].Select(entry => entry.Value).ToArray();
     }
 
     public void RemoveByFirstAndSecondKey(TKey1 key1, TKey2 key2)
     {
         var key1key2 = new Tuple<TKey1, TKey2>(key1, key2);
-        var entry = this.byKey1Key2[key1key2];
+        var entries = this.byKey1Key2[key1key2];
 
-        this.byKey1.Remove(entry.Key1);
-        this.byKey2.Remove(entry.Key2);
+        foreach (var entry in entries)
+        {
+            this.byKey1.Remove(entry.Key1, entry);
+            this.byKey2.Remove(entry.Key2, entry);
+        }
 
         this.byKey1Key2.Remove(key1key2);
     }
+
 }
 
 class Program
@@ -103,20 +120,28 @@ class Program
         bidictionary.Add("pesho", 1, "javascript");
         bidictionary.Add("gosho", 2, "java");
         bidictionary.Add("nakov", 3, "C#");
+        bidictionary.Add("nakov", 3, "C#");
+        bidictionary.Add("gosho", 3, "Coffee");
+        bidictionary.Add("nakov", 4, "Python");
 
-        Console.WriteLine(bidictionary.GetByFirstAndSecondKey("nakov", 3));
-        Console.WriteLine(bidictionary.GetByFirstKey("nakov"));
-        Console.WriteLine(bidictionary.GetBySecondKey(3));
+        Console.WriteLine(string.Join(Environment.NewLine, bidictionary.GetByFirstKey("nakov")));
+        Console.WriteLine();
+
+        Console.WriteLine(string.Join(Environment.NewLine, bidictionary.GetBySecondKey(3)));
+        Console.WriteLine();
+
+        Console.WriteLine(string.Join(Environment.NewLine, bidictionary.GetByFirstAndSecondKey("nakov", 3)));
+        Console.WriteLine();
 
         Console.WriteLine(bidictionary.Count);
 
         bidictionary.RemoveByFirstKey("pesho");
         Console.WriteLine(bidictionary.Count);
 
-        bidictionary.RemoveBySecondKey(2);
+        bidictionary.RemoveBySecondKey(3);
         Console.WriteLine(bidictionary.Count);
 
-        bidictionary.RemoveByFirstAndSecondKey("nakov", 3);
+        bidictionary.RemoveByFirstAndSecondKey("nakov", 4);
         Console.WriteLine(bidictionary.Count);
     }
 }
