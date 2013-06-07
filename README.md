@@ -141,7 +141,7 @@
 8. Dynamic Programming
 9. Graphs and Algorithms
 10. Other Algorithms
-11. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/FinalExams) | [Algo Academy]()https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/AlgoAcademy
+11. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/FinalExams) | [Algo Academy](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/AlgoAcademy)
 
 ## JavaScript Applications
 
