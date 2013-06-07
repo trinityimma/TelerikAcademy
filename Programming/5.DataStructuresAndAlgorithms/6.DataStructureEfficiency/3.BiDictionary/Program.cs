@@ -11,9 +11,7 @@ class BiDictionary<TKey1, TKey2, TValue>
     private class Entry : IEquatable<Entry>
     {
         public TKey1 Key1 { get; private set; }
-
         public TKey2 Key2 { get; private set; }
-
         public TValue Value { get; private set; }
 
         public Entry(TKey1 key1, TKey2 key2, TValue value)
@@ -40,22 +38,27 @@ class BiDictionary<TKey1, TKey2, TValue>
         {
             unchecked
             {
-                int hashCode = this.Key1.GetHashCode();
+                int hashCode = 0;
+
+                hashCode = (hashCode * 397) ^ this.Key1.GetHashCode();
                 hashCode = (hashCode * 397) ^ this.Key2.GetHashCode();
                 hashCode = (hashCode * 397) ^ this.Value.GetHashCode();
+
                 return hashCode;
             }
         }
     }
 
-    private readonly MultiDictionary<TKey1, Entry> byKey1 =
-        new MultiDictionary<TKey1, Entry>(AllowDuplicates);
+    private readonly MultiDictionary<TKey1, Entry> byKey1 = null;
+    private readonly MultiDictionary<TKey2, Entry> byKey2 = null;
+    private readonly MultiDictionary<Tuple<TKey1, TKey2>, Entry> byKey1Key2 = null;
 
-    private readonly MultiDictionary<TKey2, Entry> byKey2 =
-        new MultiDictionary<TKey2, Entry>(AllowDuplicates);
-
-    private readonly MultiDictionary<Tuple<TKey1, TKey2>, Entry> byKey1Key2 =
-        new MultiDictionary<Tuple<TKey1, TKey2>, Entry>(AllowDuplicates);
+    public BiDictionary(bool allowDuplicateValues)
+    {
+        this.byKey1 = new MultiDictionary<TKey1, Entry>(allowDuplicateValues);
+        this.byKey2 = new MultiDictionary<TKey2, Entry>(allowDuplicateValues);
+        this.byKey1Key2 = new MultiDictionary<Tuple<TKey1, TKey2>, Entry>(allowDuplicateValues);
+    }
 
     public int Count
     {
@@ -147,7 +150,7 @@ class Program
 {
     static void Main()
     {
-        var bidictionary = new BiDictionary<string, int, string>();
+        var bidictionary = new BiDictionary<string, int, string>(allowDuplicateValues: true);
 
         bidictionary.Add("pesho", 1, "JavaScript");
         bidictionary.Add("gosho", 2, "Java");
