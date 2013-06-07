@@ -6,13 +6,16 @@ using Wintellect.PowerCollections;
 
 class BiDictionary<TKey1, TKey2, TValue>
 {
-    private class Entry
+    private struct Entry
     {
         public TKey1 Key1 { get; private set; }
+
         public TKey2 Key2 { get; private set; }
+
         public TValue Value { get; private set; }
 
         public Entry(TKey1 key1, TKey2 key2, TValue value)
+            : this()
         {
             this.Key1 = key1;
             this.Key2 = key2;
@@ -20,9 +23,14 @@ class BiDictionary<TKey1, TKey2, TValue>
         }
     }
 
-    private readonly MultiDictionary<TKey1, Entry> byKey1 = new MultiDictionary<TKey1, Entry>(false);
-    private readonly MultiDictionary<TKey2, Entry> byKey2 = new MultiDictionary<TKey2, Entry>(false);
-    private readonly MultiDictionary<Tuple<TKey1, TKey2>, Entry> byKey1Key2 = new MultiDictionary<Tuple<TKey1, TKey2>, Entry>(false);
+    private readonly MultiDictionary<TKey1, Entry> byKey1 =
+        new MultiDictionary<TKey1, Entry>(true);
+
+    private readonly MultiDictionary<TKey2, Entry> byKey2 =
+        new MultiDictionary<TKey2, Entry>(true);
+
+    private readonly MultiDictionary<Tuple<TKey1, TKey2>, Entry> byKey1Key2 =
+        new MultiDictionary<Tuple<TKey1, TKey2>, Entry>(true);
 
     public int Count
     {
@@ -108,7 +116,6 @@ class BiDictionary<TKey1, TKey2, TValue>
 
         this.byKey1Key2.Remove(key1key2);
     }
-
 }
 
 class Program
@@ -124,14 +131,9 @@ class Program
         bidictionary.Add("gosho", 3, "Coffee");
         bidictionary.Add("nakov", 4, "Python");
 
-        Console.WriteLine(string.Join(Environment.NewLine, bidictionary.GetByFirstKey("nakov")));
-        Console.WriteLine();
-
-        Console.WriteLine(string.Join(Environment.NewLine, bidictionary.GetBySecondKey(3)));
-        Console.WriteLine();
-
-        Console.WriteLine(string.Join(Environment.NewLine, bidictionary.GetByFirstAndSecondKey("nakov", 3)));
-        Console.WriteLine();
+        Console.WriteLine(string.Join(" ", bidictionary.GetByFirstKey("nakov")));
+        Console.WriteLine(string.Join(" ", bidictionary.GetBySecondKey(3)));
+        Console.WriteLine(string.Join(" ", bidictionary.GetByFirstAndSecondKey("nakov", 3)));
 
         Console.WriteLine(bidictionary.Count);
 
