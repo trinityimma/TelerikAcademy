@@ -1,4 +1,4 @@
-## Dictionaries, Hash Tables and Sets
+## Dictionaries, Hash Tables and Sets
 
 1. Write a program that counts in a given array of double values the number of occurrences of each value. Use `Dictionary<TKey,TValue>`.
 
