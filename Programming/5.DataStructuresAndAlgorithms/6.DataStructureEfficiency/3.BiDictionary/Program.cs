@@ -6,8 +6,6 @@ using Wintellect.PowerCollections;
 
 class BiDictionary<TKey1, TKey2, TValue>
 {
-    private const bool AllowDuplicates = true;
-
     private class Entry : IEquatable<Entry>
     {
         public TKey1 Key1 { get; private set; }
