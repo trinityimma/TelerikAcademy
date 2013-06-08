@@ -5,8 +5,6 @@ using System.Collections.Generic;
 
 class Program
 {
-    static long[,] triangle = null;
-
     static void Main()
     {
 #if DEBUG
@@ -20,7 +18,7 @@ class Program
         Console.ReadLine();
         int n = int.Parse(Console.ReadLine());
 
-        triangle = new long[n + 1, n + 1];
+        var triangle = new long[n + 1, n + 1];
 
         for (int row = 0; row <= n; row++)
         {
