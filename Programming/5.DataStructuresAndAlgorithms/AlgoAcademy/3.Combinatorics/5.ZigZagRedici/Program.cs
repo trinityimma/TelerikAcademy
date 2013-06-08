@@ -1,33 +1,55 @@
 ﻿using System;
+using System.Linq;
+using System.Diagnostics;
 
 class Program
 {
-    static void Check(int[] arr)
-    {
-        for (int i = 0; i < arr.Length; i++) Console.Write(arr[i] + 1 + (i == arr.Length - 1 ? "\n" : " "));
-    }
+    static int[] numbers = null;
 
-    static void Variation(int[] arr, int n, int i)
+    static bool[] used = null;
+
+    static int result = 0;
+
+    static void Variation(int i, int previous, int direction)
     {
-        if (i == arr.Length)
+        if (i == numbers.Length)
         {
-            Check(arr);
+            result++;
+
+            Debug.WriteLine(string.Join(" ", numbers));
+
             return;
         }
 
-        for (int j = 0; j < n; j++)
+        for (int j = previous + direction; 0 <= j && j < used.Length; j += direction)
         {
-            arr[i] = j;
+            if (used[j]) continue;
 
-            Variation(arr, n, i + 1);
+            numbers[i] = j;
+
+            used[j] = true;
+            Variation(i + 1, j, -1 * direction);
+            used[j] = false;
         }
     }
 
     static void Main()
     {
-        int n = int.Parse(Console.ReadLine());
-        int[] arr = new int[int.Parse(Console.ReadLine())];
+#if DEBUG
+        Console.SetIn(new System.IO.StreamReader("../../input.txt"));
+        Debug.Listeners.Add(new ConsoleTraceListener());
+#endif
 
-        Variation(arr, n, 0);
+        var input = Console.ReadLine()
+            .Split()
+            .Select(int.Parse)
+            .ToArray();
+
+        numbers = new int[input[1]]; // 2
+        used = new bool[input[0]]; // 4
+
+        Variation(0, -1, 1);
+
+        Console.WriteLine(result);
     }
 }
