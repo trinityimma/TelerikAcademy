@@ -1,7 +1,7 @@
 ## Conditional Statements
 
 1. Write an `if` statement that examines two integer variables and exchanges their values if the first one is greater than the second one.
-* Write a program that shows the sign (+ or -) of the product of three real numbers without calculating it. Use a sequence of `if` statements.
+* Write a program that shows the sign (`+` or `-`) of the product of three real numbers without calculating it. Use a sequence of `if` statements.
 * Write a program that finds the biggest of three integers using nested `if` statements.
 * Sort 3 real values in descending order using nested `if` statements.
 * Write a program that asks for a digit and depending on the input shows the name of that digit (in English) using a `switch` statement.
