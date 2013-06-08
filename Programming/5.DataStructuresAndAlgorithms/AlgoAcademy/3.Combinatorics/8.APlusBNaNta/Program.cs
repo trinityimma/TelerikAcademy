@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using System.Linq;
 using System.Diagnostics;
 using System.Collections.Generic;
 
@@ -28,9 +27,7 @@ class Program
             triangle[row, 0] = 1;
 
             for (int col = 1; col < row; col++)
-            {
                 triangle[row, col] = triangle[row - 1, col - 1] + triangle[row - 1, col];
-            }
 
             triangle[row, row] = 1;
         }
@@ -39,14 +36,13 @@ class Program
         for (int row = 0; row <= n; row++)
         {
             for (int col = 0; col <= row; col++)
-            {
                 Console.Write(triangle[row, col]);
-            }
+            
             Console.WriteLine();
         }
 #endif
 
-        List<string> polynomial = new List<string>();
+        var polynomial = new List<string>();
 
         for (int col = 0; col <= n; col++)
         {
