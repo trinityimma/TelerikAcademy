@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.RedicaTsvetniTopcheta", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.ZigZagRedici", "5.ZigZagRedici\5.ZigZagRedici.csproj", "{28206952-FBBF-49AA-8D78-17EDBDC3D4C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.APlusBNaNta", "8.APlusBNaNta\8.APlusBNaNta.csproj", "{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{28206952-FBBF-49AA-8D78-17EDBDC3D4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28206952-FBBF-49AA-8D78-17EDBDC3D4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28206952-FBBF-49AA-8D78-17EDBDC3D4C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
