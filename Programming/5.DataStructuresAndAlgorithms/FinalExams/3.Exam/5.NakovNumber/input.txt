@@ -1,0 +1,1 @@
+﻿"NAKOV B", "A B C", "B A E", "D F"
