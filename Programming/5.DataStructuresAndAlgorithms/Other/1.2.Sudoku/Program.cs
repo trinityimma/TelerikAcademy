@@ -38,15 +38,15 @@ class Program
             if (sudoku.Select(row => row[col]).Distinct().Count() != 9)
                 return false;
 
-        for (int row = 0; row < 9; row += 3)
+        for (int row = 0; row < 3; row++)
         {
-            var rows = sudoku.Skip(row).Take(3).ToArray();
+            var rows = sudoku.Skip(row * 3).Take(3).ToArray();
 
-            for (int col = 0; col < 9; col += 3)
+            for (int col = 0; col < 3; col++)
             {
                 var area = rows.Select(currentRow =>
-                    currentRow.Skip(col).Take(3)
-                ).SelectMany(cell => cell);
+                    currentRow.Skip(col * 3).Take(3)
+                ).SelectMany(cell => cell).ToArray();
 
                 if (area.Distinct().Count() != 9)
                     return false;
@@ -68,7 +68,7 @@ class Program
 
         var area = rows.Select(currentRow =>
             currentRow.Skip((coordinates.Col / 3) * 3).Take(3)
-        ).SelectMany(cell => cell);
+        ).SelectMany(cell => cell).ToArray();
 
         if (area.Contains(value))
             return false;
@@ -93,9 +93,7 @@ class Program
         if (current == empty.Count)
         {
             if (IsSolved())
-            {
                 throw new NotImplementedException(); // TODO
-            }
 
             return;
         }
@@ -116,7 +114,9 @@ class Program
 
     static void Print()
     {
-        Console.WriteLine(string.Join(Environment.NewLine, sudoku.Select(row => new string(row))));
+        Console.WriteLine(string.Join(Environment.NewLine,
+            sudoku.Select(row => string.Concat(row))
+        ));
     }
 
     static void Main()
