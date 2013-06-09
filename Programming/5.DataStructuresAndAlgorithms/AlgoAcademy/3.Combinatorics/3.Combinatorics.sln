@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.RobotiziranaZombiKamila"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "9.DvoichniDyrvesa", "9.DvoichniDyrvesa\9.DvoichniDyrvesa.csproj", "{A2265964-E2D6-4B6F-A54D-B58C9396F3E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.Krygove", "7.Krygove\7.Krygove.csproj", "{169B2E1D-0F75-4990-93A9-C569CCD27579}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,10 @@ Global
 		{A2265964-E2D6-4B6F-A54D-B58C9396F3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2265964-E2D6-4B6F-A54D-B58C9396F3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2265964-E2D6-4B6F-A54D-B58C9396F3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169B2E1D-0F75-4990-93A9-C569CCD27579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169B2E1D-0F75-4990-93A9-C569CCD27579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169B2E1D-0F75-4990-93A9-C569CCD27579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169B2E1D-0F75-4990-93A9-C569CCD27579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
