@@ -1,64 +1,46 @@
 ﻿using System;
 using System.Linq;
-using System.Diagnostics;
 using System.Collections.Generic;
 
 class Program
 {
-    static int[] indices = null;
-    static int[] numbers = null;
-
-    static bool[] used = null;
-
-    static int result = 0;
-
-    static void Variation(int i)
+    static long Multiply(int start, int end)
     {
-        if (i == indices.Length)
-        {
-            result += indices.Select(x => numbers[x]).Sum();
+        long result = 1;
 
-            Debug.WriteLine(string.Join(" ", indices.Select(x => numbers[x])));
+        for (int i = start; i <= end; i++)
+            result *= i;
 
-            return;
-        }
+        return result;
+    }
 
-        for (int j = 0; j < used.Length; j++)
-        {
-            if (used[j]) continue;
+    static long Binom(int n, int k)
+    {
+        var nominator = Multiply(n - k + 1, n);
+        var denominator = Multiply(1, k);
 
-            indices[i] = j;
+        return (nominator / denominator);
+    }
 
-            used[j] = true;
-            Variation(i + 1);
-            used[j] = false;
-        }
+    static long Sum(IEnumerable<int> numbers)
+    {
+        return numbers.Aggregate<int, long>(0, (current, t) => current + t);
     }
 
     static void Main()
     {
 #if DEBUG
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
-        Debug.Listeners.Add(new ConsoleTraceListener());
 #endif
 
         foreach (int i in Enumerable.Range(0, int.Parse(Console.ReadLine())))
         {
             var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
-            int n = input[0];
-            int k = input[1];
+            var n = input[0];
+            var k = input[1];
+            var numbers = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-            string line = Console.ReadLine();
-            numbers = line.Split().Select(int.Parse).ToArray();
-
-            indices = new int[n - k];
-
-            used = new bool[n];
-
-            result = 0;
-
-            Variation(0);
-
+            var result = Binom(n - 1, k) * Sum(numbers);
             Console.WriteLine(result);
         }
     }
