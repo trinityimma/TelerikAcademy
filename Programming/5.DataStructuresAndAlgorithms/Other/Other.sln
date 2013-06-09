@@ -5,6 +5,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.2.Sudoku", "1.2.Sudoku\1.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.2.TicTacToe", "2.2.TicTacToe\2.2.TicTacToe.csproj", "{ABE54C4D-9EE6-497D-B8E3-9A718FDEDE12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.2.SevenSegmentDisplay", "3.2.SevenSegmentDisplay\3.2.SevenSegmentDisplay.csproj", "{E4462B05-00F9-4CEA-88B2-EAC5B62DFBE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.2.MessageInABottle", "4.2.MessageInABottle\4.2.MessageInABottle.csproj", "{7F9E5B65-C979-4703-B7A0-FDC18BFA3F78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +23,14 @@ Global
 		{ABE54C4D-9EE6-497D-B8E3-9A718FDEDE12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABE54C4D-9EE6-497D-B8E3-9A718FDEDE12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABE54C4D-9EE6-497D-B8E3-9A718FDEDE12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4462B05-00F9-4CEA-88B2-EAC5B62DFBE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4462B05-00F9-4CEA-88B2-EAC5B62DFBE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4462B05-00F9-4CEA-88B2-EAC5B62DFBE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4462B05-00F9-4CEA-88B2-EAC5B62DFBE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F9E5B65-C979-4703-B7A0-FDC18BFA3F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F9E5B65-C979-4703-B7A0-FDC18BFA3F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F9E5B65-C979-4703-B7A0-FDC18BFA3F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F9E5B65-C979-4703-B7A0-FDC18BFA3F78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
