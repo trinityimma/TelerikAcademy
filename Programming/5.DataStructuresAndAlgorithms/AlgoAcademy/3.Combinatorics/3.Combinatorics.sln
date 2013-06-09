@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.ZigZagRedici", "5.ZigZagR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "8.APlusBNaNta", "8.APlusBNaNta\8.APlusBNaNta.csproj", "{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.SumaNaPodredici", "6.SumaNaPodredici\6.SumaNaPodredici.csproj", "{4F12F2C0-86A6-435F-9CBA-6C072A0DE971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.RobotiziranaZombiKamila", "10.RobotiziranaZombiKamila\10.RobotiziranaZombiKamila.csproj", "{269E332A-6DAC-483A-91A5-C4CAC469AEC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,14 @@ Global
 		{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAE0E45D-A045-4C8C-8A39-25DEBE7E6D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F12F2C0-86A6-435F-9CBA-6C072A0DE971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F12F2C0-86A6-435F-9CBA-6C072A0DE971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F12F2C0-86A6-435F-9CBA-6C072A0DE971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F12F2C0-86A6-435F-9CBA-6C072A0DE971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{269E332A-6DAC-483A-91A5-C4CAC469AEC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{269E332A-6DAC-483A-91A5-C4CAC469AEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{269E332A-6DAC-483A-91A5-C4CAC469AEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{269E332A-6DAC-483A-91A5-C4CAC469AEC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
