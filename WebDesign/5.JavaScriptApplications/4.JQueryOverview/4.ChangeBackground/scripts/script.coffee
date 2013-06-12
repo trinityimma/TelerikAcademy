@@ -1,13 +1,17 @@
-# TODO: Refactor, use watch
+APP = angular.module 'app', []
 
-_convertNumberToHex = (number) ->
-    '#' + _.str.lpad((+number).toString(16), 6, '0').toUpperCase()
+APP.directive 'colorRange', ->
+    require: 'ngModel'
 
-@Ctrl = ($scope) ->
-    $scope.style =
-        background: '#FFFFFF'
+    link: (scope, elm, attrs, ctrl) ->
+        elm.attr 'min', 0
+        elm.attr 'max', (1 << 24) - 1
 
-    $scope.number = (1 << 24) - 1
+        ctrl.$formatters.push ($modelValue) ->
+            parseInt($modelValue.substr(1), 16)
 
-    $scope.change = ->
-        $scope.style.background = _convertNumberToHex($scope.number)
+        ctrl.$parsers.push ($viewValue) ->
+            '#' + _.str.lpad((+$viewValue).toString(16), 6, '0').toUpperCase()
+
+APP.controller 'Ctrl', ($scope) ->
+    $scope.color = '#0F0FFF'

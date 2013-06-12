@@ -1,8 +1,24 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 
 class Program
 {
+    static Dictionary<Tuple<int, int>, int> dp = new Dictionary<Tuple<int, int>, int>();
+
+    static int SuperSum(int k, int n)
+    {
+        var kn = new Tuple<int, int>(k, n);
+
+        if (dp.ContainsKey(kn))
+            return dp[kn];
+
+        if (k == 0)
+            return n;
+
+        return dp[kn] = Enumerable.Range(1, n).Select(i => SuperSum(k - 1, i)).Sum();
+    }
+
     static void Main()
     {
 #if DEBUG
@@ -11,12 +27,6 @@ class Program
 
         var input = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-        var sum = Enumerable.Range(1, input[1]).ToArray();
-
-        for (int i = 1; i < input[0]; i++)
-            for (int j = 0, s = 0; j < input[1]; j++)
-                sum[j] = s += sum[j];
-
-        Console.WriteLine(sum.Sum());
+        Console.WriteLine(SuperSum(input[0], input[1]));
     }
 }

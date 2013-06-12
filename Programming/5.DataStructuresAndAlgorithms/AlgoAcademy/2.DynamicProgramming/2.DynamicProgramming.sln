@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Tribonacci", "1.Tribonacc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.SuperSuma", "2.SuperSuma\2.SuperSuma.csproj", "{C04371C8-98E8-4383-965C-86EDA3A35E06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Skobi", "3.Skobi\3.Skobi.csproj", "{46635C9E-04F6-4449-BC8E-8EA07B5FB150}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{C04371C8-98E8-4383-965C-86EDA3A35E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C04371C8-98E8-4383-965C-86EDA3A35E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C04371C8-98E8-4383-965C-86EDA3A35E06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46635C9E-04F6-4449-BC8E-8EA07B5FB150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46635C9E-04F6-4449-BC8E-8EA07B5FB150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46635C9E-04F6-4449-BC8E-8EA07B5FB150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46635C9E-04F6-4449-BC8E-8EA07B5FB150}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

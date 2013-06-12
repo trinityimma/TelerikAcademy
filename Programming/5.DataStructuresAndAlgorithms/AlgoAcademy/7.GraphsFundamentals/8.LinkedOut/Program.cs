@@ -10,9 +10,12 @@ class Program
 
     static HashSet<string> visited = new HashSet<string>();
 
-    static IDictionary<string, int> Bfs(string start, HashSet<string> friends)
+    static IDictionary<string, int> Bfs(string start, ICollection<string> friends)
     {
-        IDictionary<string, int> results = new Dictionary<string, int>();
+        IDictionary<string, int> results = friends.ToDictionary(friend => friend, friend => -1);
+
+        if (!neighbors.ContainsKey(start))
+            return results;
 
         var queue = new Queue<string>();
 
@@ -31,15 +34,12 @@ class Program
             {
                 string current = queue.Dequeue();
 
-                if (!neighbors.ContainsKey(current))
-                    continue;
-
                 foreach (string neighbor in neighbors[current])
                 {
                     if (visited.Contains(neighbor))
                         continue;
 
-                    if (friends.Contains(neighbor))
+                    if (results.ContainsKey(neighbor) && results[neighbor] == -1)
                         results[neighbor] = level;
 
                     visited.Add(neighbor);
@@ -86,15 +86,15 @@ class Program
         //    Console.WriteLine("{0} -> {1}", neighbor.Key, string.Join(" ", neighbor.Value));
 #endif
 
-        var friends = new HashSet<string>();
-        foreach (int i in Enumerable.Range(0, int.Parse(Console.ReadLine())))
-            friends.Add(Console.ReadLine());
+        var friends = Enumerable.Range(0, int.Parse(Console.ReadLine()))
+            .Select(i => Console.ReadLine())
+            .ToArray();
 
         IDictionary<string, int> results = Bfs(start, friends);
 
         Console.WriteLine(string.Join(Environment.NewLine,
-            friends.Select(friend => results.ContainsKey(friend) ? results[friend] : -1))
-        );
+            results.Select(kvp => kvp.Value)
+        ));
 
 #if DEBUG
         // Dictionary<string, List<string>> is with 0.03 faster and passes all tests
