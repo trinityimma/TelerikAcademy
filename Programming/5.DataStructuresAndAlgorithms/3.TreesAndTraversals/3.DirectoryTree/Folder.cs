@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
+using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 
 class Folder
 {
     public string Name { get; private set; }
+
     public IList<File> Files { get; private set; }
+
     public IList<Folder> NestedFolders { get; private set; }
 
     public Folder(string name)
@@ -26,9 +29,9 @@ class Folder
         this.NestedFolders.Add(folder);
     }
 
-    public ulong GetSize()
+    public long GetSize()
     {
-        ulong result = 0;
+        long result = 0;
 
         foreach (var file in this.Files)
             result += file.Size;
@@ -41,14 +44,11 @@ class Folder
 
     public override string ToString()
     {
-        var info = new StringBuilder();
+        var result = new List<string>();
 
-        foreach (var file in this.Files)
-            info.AppendLine(file.ToString());
+        result.AddRange(this.Files.Select(file => file.ToString()));
+        result.AddRange(this.NestedFolders.Select(folder => folder.ToString()));
 
-        foreach (var folder in this.NestedFolders)
-            info.AppendLine(folder.ToString());
-
-        return info.ToString();
+        return string.Join(Environment.NewLine, result);
     }
 }
