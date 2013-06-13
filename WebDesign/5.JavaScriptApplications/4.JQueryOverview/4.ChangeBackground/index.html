@@ -74,39 +74,6 @@
 
     <script src="http://epeli.github.io/underscore.string/lib/underscore.string.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
-    <script>
-        (function() {
-            var APP = APP = angular.module('app', []);
-
-            APP.directive('byte', function() {
-                return {
-                    require: 'ngModel',
-
-                    link: function(scope, elm, attrs, ctrl) {
-                        elm.attr('min', 0);
-                        elm.attr('max', 255);
-                        
-                        ctrl.$formatters.push(function($modelValue) {
-                            return parseInt($modelValue, 16);
-                        });
-                        
-                        ctrl.$parsers.push(function($viewValue) {
-                            return _.str.lpad((+$viewValue).toString(16), 2, '0').toUpperCase();
-                        });
-                    }
-                };
-            });
-
-            APP.controller('Ctrl', function($scope) {
-                $scope.r = '00';
-                $scope.g = 'FF';
-                $scope.b = '00';
-                
-                $scope.getBackground = function() {
-                    return '#' + $scope.r + $scope.g + $scope.b
-                }
-            });
-        }());
-    </script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
