@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Change Background</title>
     <style>
-    	.ng-cloak { display: none; }
+		.ng-cloak { display: none; }
 	
         body {
             -webkit-transition: background 100ms;
@@ -17,6 +17,8 @@
 
 		form {
 			background: #fff;
+			border: 3px solid #999;
+			border-radius: 5px;
             display: inline-block;
             padding: 10px;
 		}
@@ -26,7 +28,9 @@
 			padding: 0;
 			margin: 0;
         }
-        
+		
+		p { margin-bottom: 0; }
+
         input[type = "number"] { width: 3.5em; }
 		
 		code {
@@ -65,7 +69,7 @@
             </li>
         </ul>
 		
-		<code>{{ getBackground() }}</code>
+		<p>Color: <code>{{ getBackground() }}</code></p>
     </form>
 
     <script src="http://epeli.github.io/underscore.string/lib/underscore.string.js"></script>
