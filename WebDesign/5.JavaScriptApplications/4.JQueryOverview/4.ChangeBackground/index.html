@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>Change Background</title>
     <style>
-		.ng-cloak { display: none; }
-	
+        .ng-cloak { display: none; }
+    
         body {
             -webkit-transition: background 100ms;
                -moz-transition: background 100ms;
@@ -15,29 +15,29 @@
             text-align: center;
         }
 
-		form {
-			background: #fff;
-			border: 3px solid #999;
-			border-radius: 5px;
+        form {
+            background: #fff;
+            border: 3px solid #999;
+            border-radius: 5px;
             display: inline-block;
             padding: 10px;
-		}
-		
+        }
+        
         ul {
             list-style: none;
-			padding: 0;
-			margin: 0;
+            padding: 0;
+            margin: 0;
         }
-		
-		p { margin-bottom: 0; }
+        
+        p { margin-bottom: 0; }
 
         input[type = "number"] { width: 3.5em; }
-		
-		code {
-			background: #000;
-			color: #fff;
-			padding: 3px;
-		}
+        
+        code {
+            background: #000;
+            color: #fff;
+            padding: 3px;
+        }
     </style>
 </head>
 
@@ -46,7 +46,7 @@
         <ul>
             <li>
                 <label>
-					<span>R: </span>
+                    <span>R: </span>
                     <input type="range" ng-model="r" data-byte />
                     <input type="number" ng-model="r" data-byte />
                 </label>
@@ -54,7 +54,7 @@
 
             <li>
                 <label>
-					<span>G: </span>
+                    <span>G: </span>
                     <input type="range" ng-model="g" data-byte />
                     <input type="number" ng-model="g" data-byte />
                 </label>
@@ -62,14 +62,14 @@
 
             <li>
                 <label>
-					<span>B: </span>
+                    <span>B: </span>
                     <input type="range" ng-model="b" data-byte />
                     <input type="number" ng-model="b" data-byte />
                 </label>
             </li>
         </ul>
-		
-		<p>Color: <code>{{ getBackground() }}</code></p>
+        
+        <p>Color: <code>{{ getBackground() }}</code></p>
     </form>
 
     <script src="http://epeli.github.io/underscore.string/lib/underscore.string.js"></script>
@@ -101,10 +101,10 @@
                 $scope.r = '00';
                 $scope.g = 'FF';
                 $scope.b = '00';
-				
-				$scope.getBackground = function() {
-					return '#' + $scope.r + $scope.g + $scope.b
-				}
+                
+                $scope.getBackground = function() {
+                    return '#' + $scope.r + $scope.g + $scope.b
+                }
             });
         }());
     </script>
