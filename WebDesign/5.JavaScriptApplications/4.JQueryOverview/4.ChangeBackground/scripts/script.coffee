@@ -1,17 +1,22 @@
-APP = angular.module 'app', []
+APP = angular.module('app', [])
 
-APP.directive 'colorRange', ->
+APP.directive 'byte', ->
     require: 'ngModel'
 
     link: (scope, elm, attrs, ctrl) ->
         elm.attr 'min', 0
-        elm.attr 'max', (1 << 24) - 1
+        elm.attr 'max', 255
 
         ctrl.$formatters.push ($modelValue) ->
-            parseInt($modelValue.substr(1), 16)
+            parseInt $modelValue, 16
 
         ctrl.$parsers.push ($viewValue) ->
-            '#' + _.str.lpad((+$viewValue).toString(16), 6, '0').toUpperCase()
+            _.str.lpad((+$viewValue).toString(16), 2, '0').toUpperCase()
 
 APP.controller 'Ctrl', ($scope) ->
-    $scope.color = '#0F0FFF'
+    $scope.r = '00'
+    $scope.g = 'FF'
+    $scope.b = '00'
+
+    $scope.getBackground = ->
+        '#' + $scope.r + $scope.g + $scope.b
