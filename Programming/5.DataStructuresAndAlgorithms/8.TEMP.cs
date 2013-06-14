@@ -22,7 +22,6 @@ class Variation<T> : IEnumerable<IEnumerable<T>>
         {
             yield return this.indices.Select(i => this.elements[i]);
         }
-
         else
         {
             for (int i = 0; i < this.indices.Count; i++)
@@ -30,9 +29,7 @@ class Variation<T> : IEnumerable<IEnumerable<T>>
                 this.indices[start] = i;
 
                 foreach (var item in this.Generate(start + 1))
-                {
                     yield return item;
-                }
             }
         }
     }
@@ -64,23 +61,20 @@ class Combination<T> : IEnumerable<IEnumerable<T>>
         this.indices = new int[n];
     }
 
-    private IEnumerable<IEnumerable<T>> Generate(int i, int next)
+    private IEnumerable<IEnumerable<T>> Generate(int start, int next)
     {
-        if (i == this.indices.Count)
+        if (start == this.indices.Count)
         {
             yield return this.indices.Select(x => this.elements[x]);
         }
-
         else
         {
-            for (int j = next; j < this.elements.Count; j++)
+            for (int i = next; i < this.elements.Count; i++)
             {
-                this.indices[i] = j;
+                this.indices[start] = i;
 
-                foreach (var item in this.Generate(i + 1, j + 1))
-                {
+                foreach (var item in this.Generate(start + 1, i + 1))
                     yield return item;
-                }
             }
         }
     }
@@ -118,7 +112,6 @@ class Permutation<T> : IEnumerable<IEnumerable<T>>
         {
             yield return this.indices.Select(i => this.elements[i]);
         }
-
         else
         {
             for (int i = 0; i < this.indices.Count; i++)
@@ -130,9 +123,7 @@ class Permutation<T> : IEnumerable<IEnumerable<T>>
                 this.used[i] = true;
 
                 foreach (var item in this.Generate(start + 1))
-                {
                     yield return item;
-                }
 
                 this.used[i] = false;
             }
@@ -180,9 +171,7 @@ class DuplicateCombination<T> : IEnumerable<IEnumerable<T>>
                 this.indices[i] = j;
 
                 foreach (var item in this.Generate(i + 1, j))
-                {
                     yield return item;
-                }
             }
         }
     }
@@ -213,7 +202,7 @@ class Program
         //foreach (var item in new Permutation<string>(numbers))
         //    Console.WriteLine(string.Join(" ", item));
 
-        foreach (var item in new DuplicateCombination<string>(numbers, 2))
-            Console.WriteLine(string.Join(" ", item));
+        //foreach (var item in new DuplicateCombination<string>(numbers, 2))
+        //    Console.WriteLine(string.Join(" ", item));
     }
 }
