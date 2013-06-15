@@ -28,34 +28,6 @@ class Program
 
     static IList<Coordinates> empty = null;
 
-    static bool IsSolved()
-    {
-        for (int row = 0; row < 9; row++)
-            if (sudoku[row].Distinct().Count() != 9)
-                return false;
-
-        for (int col = 0; col < 9; col++)
-            if (sudoku.Select(row => row[col]).Distinct().Count() != 9)
-                return false;
-
-        for (int row = 0; row < 3; row++)
-        {
-            var rows = sudoku.Skip(row * 3).Take(3).ToArray();
-
-            for (int col = 0; col < 3; col++)
-            {
-                var area = rows.Select(currentRow =>
-                    currentRow.Skip(col * 3).Take(3)
-                ).SelectMany(cell => cell).ToArray();
-
-                if (area.Distinct().Count() != 9)
-                    return false;
-            }
-        }
-
-        return true;
-    }
-
     static bool IsValid(Coordinates coordinates, char value)
     {
         if (sudoku[coordinates.Row].Contains(value))
@@ -91,12 +63,7 @@ class Program
     static void Permutation(int current)
     {
         if (current == empty.Count)
-        {
-            if (IsSolved())
-                throw new NotImplementedException(); // TODO
-
-            return;
-        }
+            throw new NotImplementedException(); // TODO
 
         for (int i = 1; i <= 9; i++)
         {
