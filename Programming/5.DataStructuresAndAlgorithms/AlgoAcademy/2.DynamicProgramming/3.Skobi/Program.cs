@@ -47,7 +47,6 @@ class Program
 
     static void Main()
     {
-
 #if DEBUG
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
 #endif
@@ -57,23 +56,19 @@ class Program
         dp = new BigInteger[input.Length, input.Length];
 
         for (int row = 0; row < dp.GetLength(0); row++)
-        {
             for (int col = 0; col < dp.GetLength(1); col++)
-            {
                 dp[row, col] = -1;
-            }
-        }
 
         Console.WriteLine(Variations(0));
 
-
+#if DEBUG
         for (int row = 0; row < dp.GetLength(0); row++)
         {
             for (int col = 0; col < dp.GetLength(1); col++)
-            {
                 Console.Write("{0, 3} ", dp[row, col]);
-            }
+
             Console.WriteLine();
         }
+#endif
     }
 }

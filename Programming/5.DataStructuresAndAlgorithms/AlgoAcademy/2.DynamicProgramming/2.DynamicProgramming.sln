@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.SuperSuma", "2.SuperSuma\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3.Skobi", "3.Skobi\3.Skobi.csproj", "{46635C9E-04F6-4449-BC8E-8EA07B5FB150}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.Kitara", "4.Kitara\4.Kitara.csproj", "{1F5C9652-9B3D-43F6-9B21-AD0E1CB24535}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{46635C9E-04F6-4449-BC8E-8EA07B5FB150}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46635C9E-04F6-4449-BC8E-8EA07B5FB150}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46635C9E-04F6-4449-BC8E-8EA07B5FB150}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F5C9652-9B3D-43F6-9B21-AD0E1CB24535}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5C9652-9B3D-43F6-9B21-AD0E1CB24535}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5C9652-9B3D-43F6-9B21-AD0E1CB24535}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5C9652-9B3D-43F6-9B21-AD0E1CB24535}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
