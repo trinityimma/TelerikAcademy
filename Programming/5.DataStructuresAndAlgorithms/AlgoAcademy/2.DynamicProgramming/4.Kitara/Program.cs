@@ -10,31 +10,28 @@ class Program
     static int maxVolume = 0;
     static int result = -1;
 
-    static int[,] dp = null;
+    static bool[,] visited = null;
 
-    static int Solve(int start)
+    static void Solve(int start)
     {
         if (start == current.Length)
         {
             result = Math.Max(result, current.Last());
-            return current.Last();
+            return;
         }
 
-        if (dp[current[start - 1], start] != -1)
-            return dp[current[start - 1], start];
-
-        int currentResult = 0;
+        if (visited[current[start - 1], start])
+            return;
 
         current[start] = current[start - 1] + deltas[start - 1];
         if (current[start] <= maxVolume)
-            currentResult += Solve(start + 1);
+            Solve(start + 1);
 
         current[start] = current[start - 1] - deltas[start - 1];
         if (0 <= current[start])
-            currentResult += Solve(start + 1);
+            Solve(start + 1);
 
-        dp[current[start - 1], start] = currentResult;
-        return currentResult;
+        visited[current[start - 1], start] = true;
     }
 
     static void Main()
@@ -49,15 +46,21 @@ class Program
         maxVolume = int.Parse(Console.ReadLine());
 
         current = new int[deltas.Length + 1];
-        dp = new int[maxVolume + 1, deltas.Length + 1];
-
-        for (int row = 0; row < dp.GetLength(0); row++)
-            for (int col = 0; col < dp.GetLength(1); col++)
-                dp[row, col] = -1;
+        visited = new bool[maxVolume + 1, deltas.Length + 1];
 
         current[0] = startVolume;
         Solve(1);
 
         Console.WriteLine(result);
+
+#if DEBUG
+        for (int row = 0; row < visited.GetLength(0); row++)
+        {
+            for (int col = 0; col < visited.GetLength(1); col++)
+                Console.Write("{0} ", visited[row, col] ? 1 : 0);
+
+            Console.WriteLine();
+        }
+#endif
     }
 }
