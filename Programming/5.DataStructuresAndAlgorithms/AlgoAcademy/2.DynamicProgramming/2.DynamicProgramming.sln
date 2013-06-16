@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.Kitara", "4.Kitara\4.Kita
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "5.IgrataNaZhivota", "5.IgrataNaZhivota\5.IgrataNaZhivota.csproj", "{6D391EEF-BBB7-4A8C-85D1-1723BCBCBB92}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "6.TaenEzik", "6.TaenEzik\6.TaenEzik.csproj", "{FE45F9B7-7905-489C-ABB2-310BE8E9F9E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{6D391EEF-BBB7-4A8C-85D1-1723BCBCBB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D391EEF-BBB7-4A8C-85D1-1723BCBCBB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D391EEF-BBB7-4A8C-85D1-1723BCBCBB92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE45F9B7-7905-489C-ABB2-310BE8E9F9E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE45F9B7-7905-489C-ABB2-310BE8E9F9E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE45F9B7-7905-489C-ABB2-310BE8E9F9E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE45F9B7-7905-489C-ABB2-310BE8E9F9E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
