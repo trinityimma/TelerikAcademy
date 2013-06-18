@@ -30,6 +30,7 @@ class Program
         }
 
         dp[start] = tasksSolved;
+
         for (int i = 2; i >= 1; i--)
         {
             var next = start + i;
@@ -66,7 +67,8 @@ class Program
         Solve(0, pleasantness[0], pleasantness[0], 1);
         path.Pop();
 
-        Debug.WriteLine("DP: " + string.Join(" ", dp.Take(pleasantness.Length).Select(x => x != int.MaxValue ? x.ToString() : "-")));
+        Debug.WriteLine("DP: " + string.Join(" ",
+            dp.Take(pleasantness.Length).Select(x => x != int.MaxValue ? x.ToString() : "-")));
 
         Console.WriteLine(minTasksSolved);
     }
