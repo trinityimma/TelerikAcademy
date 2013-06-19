@@ -20,20 +20,10 @@ class Program
         BigInteger result = 0;
 
         if (input[start] == '?' || input[start] == '(')
-        {
-            char prev = input[start];
-            input[start] = '(';
             result += Variations(start + 1, stack + 1);
-            input[start] = prev;
-        }
 
         if (input[start] == '?' || input[start] == ')')
-        {
-            char prev = input[start];
-            input[start] = ')';
             result += Variations(start + 1, stack - 1);
-            input[start] = prev;
-        }
 
         dp[start, stack] = result;
         return result;
