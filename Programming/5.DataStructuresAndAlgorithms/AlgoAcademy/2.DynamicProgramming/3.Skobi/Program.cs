@@ -7,9 +7,7 @@ class Program
 
     static char[] input;
 
-    static long stack = 0;
-
-    static BigInteger Variations(int start)
+    static BigInteger Variations(int start, int stack)
     {
         if (stack < 0) return 0;
 
@@ -23,22 +21,18 @@ class Program
 
         if (input[start] == '?' || input[start] == '(')
         {
-            stack++;
             char prev = input[start];
             input[start] = '(';
-            result += Variations(start + 1);
+            result += Variations(start + 1, stack + 1);
             input[start] = prev;
-            stack--;
         }
 
         if (input[start] == '?' || input[start] == ')')
         {
-            stack--;
             char prev = input[start];
             input[start] = ')';
-            result += Variations(start + 1);
+            result += Variations(start + 1, stack - 1);
             input[start] = prev;
-            stack++;
         }
 
         dp[start, stack] = result;
@@ -59,7 +53,7 @@ class Program
             for (int col = 0; col < dp.GetLength(1); col++)
                 dp[row, col] = -1;
 
-        Console.WriteLine(Variations(0));
+        Console.WriteLine(Variations(0, 0));
 
 #if DEBUG
         for (int row = 0; row < dp.GetLength(0); row++)
