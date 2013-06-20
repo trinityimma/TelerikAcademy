@@ -1,81 +1,46 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
-
-struct Coordinates
-{
-    public int Row { get; private set; }
-    public int Col { get; private set; }
-
-    public Coordinates(int row, int col)
-        : this()
-    {
-        this.Row = row;
-        this.Col = col;
-    }
-
-    public static Coordinates operator +(Coordinates a, Coordinates b)
-    {
-        return new Coordinates(
-            a.Row + b.Row,
-            a.Col + b.Col
-        );
-    }
-
-    public static Coordinates operator -(Coordinates a, Coordinates b)
-    {
-        return new Coordinates(
-            a.Row - b.Row,
-            a.Col - b.Col
-        );
-    }
-
-    public override string ToString()
-    {
-        return string.Format("Row: {0}, Col: {1}", this.Row, this.Col);
-    }
-}
+using System.Diagnostics;
 
 class Program
 {
-    static readonly ICollection<Coordinates> Directions = new[]
-    {
-        new Coordinates(-1, -1),
-        new Coordinates(-1,  0),
-        new Coordinates(-1,  1),
-
-        new Coordinates( 0, -1),
-        new Coordinates( 0,  1),
-        
-        new Coordinates( 1, -1),
-        new Coordinates( 1,  0),
-        new Coordinates( 1,  1),
-    };
-
     static int n = 0;
-    static IList<IList<bool>> field = null;
+    static int[][] field = null;
 
-    static ICollection<bool> GetNeighbors(Coordinates coordinates)
+    static int GetNeighbors(int row, int col)
     {
-        return Directions
-            .Select(d => coordinates + d)
-            .Where(p => IsInRange(field, p))
-            .Select(p => field[p.Row][p.Col])
-            .Where(p => p)
-            .ToArray();
+        var result = 0;
+        if (row > 0)
+        {
+            if (col > 0) result += field[row - 1][col - 1];
+            result += field[row - 1][col];
+            if (col + 1 < field[row].Length) result += field[row - 1][col + 1];
+        }
+
+        if (col > 0) result += field[row][col - 1];
+        if (col + 1 < field[row].Length) result += field[row][col + 1];
+
+        if (row + 1 < field.Length)
+        {
+            if (col > 0) result += field[row + 1][col - 1];
+            result += field[row + 1][col];
+            if (col + 1 < field[row].Length) result += field[row + 1][col + 1];
+        }
+
+        return result;
     }
 
-    static void SimulateCell(IList<IList<bool>> cloned, Coordinates coordinates)
+    private static void SimulateCell(int[][] cloned, int row, int col)
     {
-        var neighbors = GetNeighbors(coordinates);
+        var neighbors = GetNeighbors(row, col);
 
-        if (!field[coordinates.Row][coordinates.Col])
-            if (neighbors.Count == 3)
-                cloned[coordinates.Row][coordinates.Col] = true;
+        if (field[row][col] == 0)
+            if (neighbors == 3)
+                cloned[row][col] = 1;
 
-        if (field[coordinates.Row][coordinates.Col])
-            if (!(neighbors.Count == 2 || neighbors.Count == 3))
-                cloned[coordinates.Row][coordinates.Col] = false;
+        if (field[row][col] == 1)
+            if (!(neighbors == 2 || neighbors == 3))
+                cloned[row][col] = 0;
     }
 
     static void Simulate()
@@ -86,33 +51,42 @@ class Program
         {
             var cloned = Clone(field);
 
-            for (int row = 0; row < field.Count; row++)
-                for (int col = 0; col < field[row].Count; col++)
-                    SimulateCell(cloned, new Coordinates(row, col));
+            for (int row = 0; row < field.Length; row++)
+            {
+                for (int col = 0; col < field[row].Length; col++)
+                {
+                    SimulateCell(cloned, row, col);
+                }
+            }
 
             field = cloned;
             Print();
         }
     }
-
-    static IList<IList<T>> Clone<T>(IList<IList<T>> matrix)
+    static T[][] Clone<T>(T[][] matrix)
         where T : struct
     {
-        return matrix.Select(row => row.Select(cell => cell).ToArray()).ToArray();
-    }
+        var result = new T[matrix.Length][];
 
-    static bool IsInRange<T>(IList<IList<T>> matrix, Coordinates coordinates)
-    {
-        return (0 <= coordinates.Row) && (coordinates.Row < matrix.Count) &&
-               (0 <= coordinates.Col) && (coordinates.Col < matrix[0].Count);
+        for (int row = 0; row < field.Length; row++)
+        {
+            result[row] = new T[matrix[row].Length];
+
+            for (int col = 0; col < field[row].Length; col++)
+            {
+                result[row][col] = matrix[row][col];
+            }
+        }
+
+        return result;
     }
 
     static void Print()
     {
 #if DEBUG
-        //for (int row = 0; row < field.Count; row++)
+        //for (int row = 0; row < field.Length; row++)
         //{
-        //    for (int col = 0; col < field[row].Count; col++)
+        //    for (int col = 0; col < field[row].Length; col++)
         //        Console.Write(field[row][col] ? 1 : 0);
 
         //    Console.WriteLine();
@@ -126,7 +100,10 @@ class Program
     {
 #if DEBUG
         Console.SetIn(new System.IO.StreamReader("../../input.txt"));
+        Debug.Listeners.Add(new ConsoleTraceListener());
 #endif
+
+        var date = DateTime.Now;
 
         n = int.Parse(Console.ReadLine());
 
@@ -134,11 +111,13 @@ class Program
 
         field = Enumerable.Range(0, rows)
             .Select(i =>
-                Console.ReadLine().Split().Select(x => int.Parse(x) == 1).ToArray()
+                Console.ReadLine().Split().Select(int.Parse).ToArray()
             ).ToArray();
 
         Simulate();
 
-        Console.WriteLine(field.SelectMany(p => p).Count(p => p));
+        Console.WriteLine(field.SelectMany(p => p).Count(p => p == 1));
+
+        Debug.WriteLine(DateTime.Now - date);
     }
 }
