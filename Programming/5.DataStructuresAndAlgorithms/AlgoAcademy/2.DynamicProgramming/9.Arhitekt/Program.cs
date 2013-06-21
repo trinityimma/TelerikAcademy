@@ -1,24 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using System.Text;
 
 class Program
 {
     static int[][] blocks = null;
 
-    static bool[] used = null;
+    static Dictionary<string, int> dp =
+        new Dictionary<string, int>();
 
-    static int Solve(int height, int rows, int cols)
+    static int Solve(string state, int height, int rows, int cols)
     {
-        //Debug.WriteLine(string.Join(" ", height, rows, cols));
+        var tuple = state + ";" + rows + ";" + cols;
+
+        if (dp.ContainsKey(tuple) && dp[tuple] > height)
+        {
+            return dp[tuple];
+        }
+
+        dp[tuple] = height;
 
         var result = height;
 
+        var sb = state.ToCharArray();
+
         for (int i = 0; i < blocks.Length; i++)
         {
-            if (used[i]) continue;
+            if (sb[i] == '1') continue;
 
-            used[i] = true;
+            sb[i] = '1';
 
             for (int j = 0; j < 3; j++)
             {
@@ -28,27 +40,22 @@ class Program
 
                 if (x < y)
                 {
-                    Swap(ref x, ref y);
+                    int t = y;
+                    y = x;
+                    x = t;
                 }
 
-                if (rows >= x && cols >= y)
+                if (x <= rows && y <= cols)
                 {
-                    var solve = Solve(height + z, x, y);
+                    var solve = Solve(new string(sb), height + z, x, y);
                     result = Math.Max(solve, result);
                 }
             }
 
-            used[i] = false;
+            sb[i] = '0';
         }
 
         return result;
-    }
-
-    static void Swap(ref int y, ref int x)
-    {
-        int t = y;
-        y = x;
-        x = t;
     }
 
     static void Main()
@@ -58,12 +65,14 @@ class Program
         Debug.Listeners.Add(new ConsoleTraceListener());
 #endif
 
+        var date = DateTime.Now;
+
         blocks = Enumerable.Range(0, int.Parse(Console.ReadLine()))
             .Select(i => Console.ReadLine().Split().Select(int.Parse).ToArray())
             .ToArray();
 
-        used = new bool[blocks.Length];
+        Console.WriteLine(Solve(string.Concat(Enumerable.Repeat('0', blocks.Length)), 0, int.MaxValue, int.MaxValue));
 
-        Console.WriteLine(Solve(0, int.MaxValue, int.MaxValue));
+        Debug.WriteLine(DateTime.Now - date);
     }
 }
