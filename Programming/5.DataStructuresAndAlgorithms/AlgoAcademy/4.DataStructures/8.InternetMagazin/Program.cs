@@ -1,187 +1,258 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
 using Wintellect.PowerCollections;
 
-class Product : IComparable<Product>
+public class Product
 {
     public string Name { get; private set; }
-    public double Price { get; private set; } // TODO
+
     public string Producer { get; private set; }
 
-    public Product(string name, double price, string producer)
+    public double Price { get; private set; } // TODO: Decimal
+
+    public Product(string name, string producer, double price)
     {
         this.Name = name;
-        this.Price = price;
         this.Producer = producer;
-    }
-
-    public int CompareTo(Product other)
-    {
-        int result = 0;
-
-        result = this.Name.CompareTo(other.Name);
-        if (result != 0) return result;
-
-        result = this.Price.CompareTo(other.Price);
-        if (result != 0) return result;
-
-        result = this.Producer.CompareTo(other.Producer);
-        if (result != 0) return result;
-
-        return result;
+        this.Price = price;
     }
 
     public override string ToString()
     {
-        return "{" + string.Join(";",
-            this.Name, this.Producer, this.Price.ToString("0.00")
-        ) + "}";
+        var result = "{" + this.Name + ";" + this.Producer + ";" + this.Price.ToString("0.00") + "}";
+        return result;
     }
 }
 
-class Program
+public class ShoppingCenter
 {
-    static Dictionary<string, Func<string[], string>> commands =
-        new Dictionary<string, Func<string[], string>>()
-    {
-        { "AddProduct", AddProduct },
-        { "DeleteProducts", DeleteProducts },
-        { "FindProductsByName", FindProductsByName },
-        { "FindProductsByProducer", FindProductsByProducer },
-        { "FindProductsByPriceRange", FindProductsByPriceRange },
-    };
-
-    static MultiDictionary<string, Product> productsByName =
+    private readonly MultiDictionary<string, Product> byName =
         new MultiDictionary<string, Product>(true);
 
-    static MultiDictionary<string, Product> productsByProducer =
+    private readonly MultiDictionary<string, Product> byProducer =
         new MultiDictionary<string, Product>(true);
 
-    static MultiDictionary<Tuple<string, string>, Product> productsByNameAndProducer =
+    private readonly MultiDictionary<Tuple<string, string>, Product> byNameAndProducer =
         new MultiDictionary<Tuple<string, string>, Product>(true);
 
-    static OrderedMultiDictionary<double, Product> productsByPrice =
-        new OrderedMultiDictionary<double, Product>(true);
-
-    static string AddProduct(string[] parameters)
-    {
-        var product = new Product(
-            parameters[0],
-            double.Parse(parameters[1]),
-            parameters[2]
+    private readonly OrderedMultiDictionary<double, Product> byPrice =
+        new OrderedMultiDictionary<double, Product>(true,
+            (x, y) => x.CompareTo(y),
+            (x, y) => 0
         );
 
-        productsByName.Add(product.Name, product);
-
-        productsByProducer.Add(product.Producer, product);
-
-        productsByNameAndProducer.Add(
-            new Tuple<string, string>(product.Name, product.Producer),
-            product
+    private void CheckCount()
+    {
+        Debug.Assert(
+            this.byName.KeyValuePairs.Count == this.byProducer.KeyValuePairs.Count &&
+            this.byName.KeyValuePairs.Count == this.byNameAndProducer.KeyValuePairs.Count &&
+            this.byName.KeyValuePairs.Count == this.byPrice.KeyValuePairs.Count
         );
-
-        productsByPrice.Add(product.Price, product);
-
-        return "Product added";
     }
 
-    static string DeleteProducts(string[] parameters)
+    public void AddProduct(Product product)
     {
-        int result = 0;
+        this.byName[product.Name].Add(product);
+        this.byProducer[product.Producer].Add(product);
+        this.byNameAndProducer[Tuple.Create(product.Name, product.Producer)].Add(product);
+        this.byPrice[product.Price].Add(product);
 
-        if (parameters.Length == 1)
+        CheckCount();
+    }
+
+    public IEnumerable<Product> FindProductsByName(string name)
+    {
+        var products = this.byName[name];
+        return products;
+    }
+
+    public IEnumerable<Product> FindProductsByProducer(string producer)
+    {
+        var products = this.byProducer[producer];
+        return products;
+    }
+
+    public IEnumerable<Product> FindProductsByPriceRange(double min, double max)
+    {
+        var products = this.byPrice.Range(min, true, max, true).Values;
+        return products;
+    }
+
+    public int DeleteProducts(string producer)
+    {
+        var products = this.byProducer[producer];
+        var count = products.Count;
+
+        foreach (var product in products)
         {
-            var matchedProducts = productsByProducer[parameters[0]];
-
-            foreach (var product in matchedProducts)
-            {
-                productsByName.Remove(product.Name, product);
-                productsByNameAndProducer.Remove(
-                    new Tuple<string, string>(product.Name, product.Producer),
-                    product
-                );
-                productsByPrice.Remove(product.Price, product);
-            }
-
-            result = matchedProducts.Count;
-            productsByProducer.Remove(parameters[0]);
+            this.byName[product.Name].Remove(product);
+            this.byNameAndProducer[Tuple.Create(product.Name, product.Producer)].Remove(product);
+            this.byPrice[product.Price].Remove(product);
         }
 
-        else if (parameters.Length == 2)
+        this.byProducer.Remove(producer);
+
+        CheckCount();
+        return count;
+    }
+
+    public int DeleteProducts(string name, string producer)
+    {
+        var nameAndProducer = Tuple.Create(name, producer);
+
+        var products = this.byNameAndProducer[nameAndProducer];
+        var count = products.Count;
+
+        foreach (var product in products)
         {
-            var nameAndProducer = new Tuple<string, string>(parameters[0], parameters[1]);
-
-            var matchedProducts = productsByNameAndProducer[nameAndProducer];
-
-            foreach (var product in matchedProducts)
-            {
-                productsByName.Remove(product.Name, product);
-                productsByProducer.Remove(product.Producer, product);
-                productsByPrice.Remove(product.Price, product);
-            }
-
-            result = matchedProducts.Count;
-            productsByNameAndProducer.Remove(nameAndProducer);
+            this.byName[product.Name].Remove(product);
+            this.byProducer[product.Producer].Remove(product);
+            this.byPrice[product.Price].Remove(product);
         }
 
-        if (result == 0)
-            return "No products found";
+        this.byNameAndProducer.Remove(nameAndProducer);
 
-        return string.Format("{0} products deleted", result);
+        CheckCount();
+        return count;
     }
+}
 
-    static string FindProductsByName(string[] parameters)
+public static class Program
+{
+    private static readonly StringBuilder Output = new StringBuilder();
+
+    private static void PrintProducts(IEnumerable<Product> products)
     {
-        var result = productsByName[parameters[0]].OrderBy(p => p);
+        if (!products.Any())
+        {
+            Output.AppendLine("No products found");
+            return;
+        }
 
-        if (!result.Any())
-            return "No products found";
+        var sorted = products
+            .OrderBy(x => x.Name)
+            .ThenBy(x => x.Producer)
+            .ThenBy(x => x.Price);
 
-        return string.Join(Environment.NewLine, result);
+        foreach (var product in sorted)
+        {
+            Output.AppendLine(product.ToString());
+        }
     }
 
-    static string FindProductsByProducer(string[] parameters)
-    {
-        var result = productsByProducer[parameters[0]].OrderBy(p => p);
-
-        if (!result.Any())
-            return "No products found";
-
-        return string.Join(Environment.NewLine, result);
-    }
-
-    static string FindProductsByPriceRange(string[] parameters)
-    {
-        var min = double.Parse(parameters[0]);
-        var max = double.Parse(parameters[1]);
-
-        var result = productsByPrice.Range(min, true, max, true).Values.OrderBy(p => p);
-
-        if (!result.Any())
-            return "No products found";
-
-        return string.Join(Environment.NewLine, result);
-    }
-
-    static void Main()
+    public static void Main()
     {
 #if DEBUG
-        Console.SetIn(new System.IO.StreamReader("../../input.txt"));
+        Console.SetIn(new StreamReader("../../input.txt"));
+        Debug.Listeners.Add(new ConsoleTraceListener());
 #endif
 
         var date = DateTime.Now;
 
-        var result = string.Join(Environment.NewLine, Enumerable.Range(0, int.Parse(Console.ReadLine()))
-            .Select(i => Regex.Match(Console.ReadLine(), @"^(\w+) (.+)$").Groups)
-            .Select(group => commands[group[1].Value](group[2].Value.Split(';')))
-        );
+        var separator = new[] { ' ' };
 
-        //Console.WriteLine(result);
+        var shoppingCenter = new ShoppingCenter();
+
+        foreach (int i in Enumerable.Range(0, int.Parse(Console.ReadLine())))
+        {
+            var line = Console.ReadLine();
+            var splitted = line.Split(separator, 2);
+            var name = splitted[0];
+            var parameters = splitted[1].Split(';');
 
 #if DEBUG
-        Console.WriteLine(DateTime.Now - date); // Naive List<Product> implementation got 80/100 points.
+            Output.AppendLine();
+            Output.AppendLine(line);
 #endif
+
+            switch (name)
+            {
+                case "AddProduct":
+                    {
+                        var product = new Product(
+                            name: parameters[0],
+                            price: double.Parse(parameters[1]),
+                            producer: parameters[2]
+                        );
+
+                        shoppingCenter.AddProduct(product);
+
+                        Output.AppendLine("Product added");
+                        break;
+                    }
+
+                case "FindProductsByName":
+                    {
+                        var products = shoppingCenter.FindProductsByName(parameters[0]);
+
+                        PrintProducts(products);
+
+                        break;
+                    }
+
+                case "FindProductsByProducer":
+                    {
+                        var products = shoppingCenter.FindProductsByProducer(parameters[0]);
+
+                        PrintProducts(products);
+
+                        break;
+                    }
+
+                case "FindProductsByPriceRange":
+                    {
+                        var products = shoppingCenter.FindProductsByPriceRange(
+                            min: double.Parse(parameters[0]),
+                            max: double.Parse(parameters[1])
+                        );
+
+                        PrintProducts(products);
+
+                        break;
+                    }
+
+                case "DeleteProducts":
+                    {
+                        int result;
+
+                        switch (parameters.Length)
+                        {
+                            case 1:
+                                result = shoppingCenter.DeleteProducts(parameters[0]);
+                                break;
+
+                            case 2:
+                                result = shoppingCenter.DeleteProducts(parameters[0], parameters[1]);
+                                break;
+
+                            default:
+                                throw new ArgumentException("DeleteProducts");
+                        }
+
+                        if (result == 0)
+                        {
+                            Output.AppendLine("No products found");
+                            break;
+                        }
+
+                        Output.AppendLine(result + " products deleted");
+
+                        break;
+                    }
+
+                default:
+                    throw new ArgumentException("Invalid command: " + name);
+            }
+        }
+
+#if !DEBUG || DEBUG
+        Console.Write(Output);
+#endif
+
+        Debug.WriteLine(DateTime.Now - date);
     }
 }
