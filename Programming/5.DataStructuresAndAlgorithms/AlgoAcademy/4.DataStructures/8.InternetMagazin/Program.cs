@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
+using System.Collections.Generic;
 using Wintellect.PowerCollections;
 
 public class Product
@@ -12,7 +12,7 @@ public class Product
 
     public string Producer { get; private set; }
 
-    public decimal Price { get; private set; } // TODO: Decimal
+    public decimal Price { get; private set; }
 
     public Product(string name, string producer, decimal price)
     {
@@ -217,29 +217,36 @@ public static class Program
 
                 case "DeleteProducts":
                     {
-                        int result;
+                        int deletedCount;
 
                         switch (parameters.Length)
                         {
                             case 1:
-                                result = shoppingCenter.DeleteProducts(parameters[0]);
+                                deletedCount = shoppingCenter.DeleteProducts(
+                                    producer: parameters[0]
+                                );
+
                                 break;
 
                             case 2:
-                                result = shoppingCenter.DeleteProducts(parameters[0], parameters[1]);
+                                deletedCount = shoppingCenter.DeleteProducts(
+                                    name: parameters[0],
+                                    producer: parameters[1]
+                                );
+
                                 break;
 
                             default:
                                 throw new ArgumentException("DeleteProducts");
                         }
 
-                        if (result == 0)
+                        if (deletedCount == 0)
                         {
                             Output.AppendLine("No products found");
                             break;
                         }
 
-                        Output.AppendLine(result + " products deleted");
+                        Output.AppendLine(deletedCount + " products deleted");
 
                         break;
                     }
