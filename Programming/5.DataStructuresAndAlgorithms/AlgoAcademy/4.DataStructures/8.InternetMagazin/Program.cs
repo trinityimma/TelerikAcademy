@@ -12,9 +12,9 @@ public class Product
 
     public string Producer { get; private set; }
 
-    public double Price { get; private set; } // TODO: Decimal
+    public decimal Price { get; private set; } // TODO: Decimal
 
-    public Product(string name, string producer, double price)
+    public Product(string name, string producer, decimal price)
     {
         this.Name = name;
         this.Producer = producer;
@@ -39,8 +39,8 @@ public class ShoppingCenter
     private readonly MultiDictionary<Tuple<string, string>, Product> byNameAndProducer =
         new MultiDictionary<Tuple<string, string>, Product>(true);
 
-    private readonly OrderedMultiDictionary<double, Product> byPrice =
-        new OrderedMultiDictionary<double, Product>(true,
+    private readonly OrderedMultiDictionary<decimal, Product> byPrice =
+        new OrderedMultiDictionary<decimal, Product>(true,
             (x, y) => x.CompareTo(y),
             (x, y) => 0
         );
@@ -76,7 +76,7 @@ public class ShoppingCenter
         return products;
     }
 
-    public IEnumerable<Product> FindProductsByPriceRange(double min, double max)
+    public IEnumerable<Product> FindProductsByPriceRange(decimal min, decimal max)
     {
         var products = this.byPrice.Range(min, true, max, true).Values;
         return products;
@@ -175,7 +175,7 @@ public static class Program
                     {
                         var product = new Product(
                             name: parameters[0],
-                            price: double.Parse(parameters[1]),
+                            price: decimal.Parse(parameters[1]),
                             producer: parameters[2]
                         );
 
@@ -206,8 +206,8 @@ public static class Program
                 case "FindProductsByPriceRange":
                     {
                         var products = shoppingCenter.FindProductsByPriceRange(
-                            min: double.Parse(parameters[0]),
-                            max: double.Parse(parameters[1])
+                            min: decimal.Parse(parameters[0]),
+                            max: decimal.Parse(parameters[1])
                         );
 
                         PrintProducts(products);
