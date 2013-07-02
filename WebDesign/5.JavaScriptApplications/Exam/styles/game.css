@@ -1,0 +1,100 @@
+/*.towers .badge {
+    -webkit-transition-property: background,color;
+    -moz-transition-property: background,color;
+    -o-transition-property: background,color;
+    transition-property: background,color;
+    -webkit-transition-duration: 300ms;
+    -moz-transition-duration: 300ms;
+    -o-transition-duration: 300ms;
+    transition-duration: 300ms;
+}*/
+
+.blurred {
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    filter: blur(2px);
+}
+
+h3 .badge {
+    position: relative;
+    top: -3px;
+}
+
+.field td {
+    height: 50px;
+    padding: 0;
+    color: #999;
+    text-align: center;
+    font-size: 25px;
+
+    -webkit-transition-property: background, color;
+    -moz-transition-property: background, color;
+    -o-transition-property: background, color;
+    transition-property: background, color;
+}
+
+.field .ranger,
+.field .warrior {
+    font-size: 24px;
+    line-height: 50px;
+    position: relative;
+}
+
+.field .ranger:after,
+.field .warrior:after {
+    color: #666;
+    position: absolute;
+}
+
+.field .ranger:after {
+    left: 17px;
+    content: 'R';
+}
+.field .warrior:after {
+    left: 14px;
+    content: 'W';
+}
+
+.field .movable:not(.ranger):not(.warrior) {
+    cursor: pointer;
+    background-color: #fcf8e3;
+    color: #966;
+}
+
+.field .rangeable:not(.ranger):not(.warrior) {
+    cursor: pointer;
+    background-color: #F1E07E;
+    color: #966;
+}
+
+.field .rangeable.movable:not(.ranger):not(.warrior) {
+    cursor: pointer;
+    background-color: #B1E48B;
+    color: #966;
+}
+
+
+.field .blue {
+    background-color: #d9edf7;
+    color: #444;
+}
+.field.active-blue .blue:hover,
+.field.active-blue .blue.picked {
+    cursor: pointer;
+    background-color: #89C8E7;
+    color: #444;
+}
+.field .red {
+    background-color: #f2dede;
+    color: #444;
+}
+.field.active-red .red:hover,
+.field.active-red .red.picked {
+    cursor: pointer;
+    background-color: #D69898;
+    color: #444;
+}
+
+.field .picked {
+    cursor: default!important;
+}

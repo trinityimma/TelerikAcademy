@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar">
             <div class="navbar-inner">
-                <span class="brand">Battle Field</span>
+                <span class="brand">Bulls and Cows</span>
 
                 <ul class="nav">
                     <li><a href="javascript: void 0" class="js-show-create-game">Create Game</a></li>
@@ -18,54 +18,41 @@
         <div class="row">
             <div class="span3">
                 <h3>Active games</h3>
-                <ul class="js-my-active-games my-active-games nav nav-tabs nav-stacked"></ul>
+                <ul class="js-my-active-games nav nav-tabs nav-stacked"></ul>
 
                 <h3>Open games</h3>
                 <ul class="js-open-games nav nav-tabs nav-stacked"></ul>
             </div>
 
             <div class="span6">
-                <h3>
-                    <strong>Title:</strong> <span class="js-battle-field-title badge badge-info"></span> |
-                    <strong>Turn:</strong> <span class="js-battle-field-turn badge badge-info"></span>
-                    <strong>In turn:</strong> <span class="js-battle-field-in-turn badge badge-info"></span>
-                </h3>
-
-                <table class="js-battle-field field table table-bordered"></table>
+                <h3>Bulls and Cows</h3>
             </div>
 
             <div class="span3">
                 <h3>Messages</h3>
 
                 <pre class="js-messages-feed pre-scrollable">
+
                 </pre>
             </div>
         </div>
-
-         <footer class="footer">
-            <p class="pull-left">Battle Field Game</p>
-            <p class="pull-right muted"><small>© jasssonpet 2013</small></p>
-         </footer>
     </div>
 </div>
 
 <script id="js-game-item-template" type="template">
-    <li data-id="{{ id }}" data-status="{{ status }}" data-creator="{{ creator }}">
+    <li data-id="{{ id }}">
         <a href="#">
             <strong>Title:</strong> {{ title }}<br />
-            <strong>Creator:</strong> {{ creator }}<br />
-
-            {{#status}}
-                <strong>Status:</strong> {{ status }}
-            {{/status}}
+            <strong>Creator:</strong> {{ creatorNickname }}
         </a>
     </li>
 </script>
 
 <script id="js-create-game-template" type="template">
     <form class="js-create-game" onsubmit="javascript: void 0">
-        <input type="text" name="title" placeholder="Game Title" />
-        <input type="password" name="password" placeholder="Optional password" />
+        <input type="text" name="title" placeholder="Title" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="text" name="number" placeholder="Number" />
 
         <input type="submit" value="Create" class="btn btn-primary" />
     </form>
@@ -90,11 +77,12 @@
         <h3 id="join-game-label">Join game</h3>
     </div>
     <div class="modal-body">
-        <input type="password" class="input-block-level" name="password" placeholder="Optional password" />
+        <input required autofocus type="text" name="number" placeholder="Number" />
+        <input type="password" name="password" placeholder="Password" />
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-        <input type="submit" class="btn btn-primary" value="Join" />
+        <button type="submit" class="btn btn-primary">Join</button>
     </div>
 </form>
 

@@ -1,4 +1,4 @@
-@persister = new Persister 'http://localhost:22954/api/', @http, (str) ->
+persister = new Persister 'http://localhost:40643/api/', @http, (str) ->
     CryptoJS.SHA1(str).toString()
 
 # persister.register(

@@ -7,11 +7,11 @@
       this.rootURL = rootURL;
       this.http = http;
       this.encode = encode;
-      if (localStorage.sessionKey != null) {
-        this.sessionKey = localStorage.sessionKey;
+      if (sessionStorage.sessionKey != null) {
+        this.sessionKey = sessionStorage.sessionKey;
       }
-      if (localStorage.nickname != null) {
-        this.nickname = localStorage.nickname;
+      if (sessionStorage.nickname != null) {
+        this.nickname = sessionStorage.nickname;
       }
     }
 
@@ -21,12 +21,11 @@
       url = this.rootURL + 'user/login/';
       data = _.clone(data);
       data.authCode = this.encode(data.username + data.password);
-      delete data.password;
       return this.http.postJSON(url, data).done(function(data) {
         _this.sessionKey = data.sessionKey;
         _this.nickname = data.nickname;
-        localStorage.sessionKey = data.sessionKey;
-        return localStorage.nickname = data.nickname;
+        sessionStorage.sessionKey = data.sessionKey;
+        return sessionStorage.nickname = data.nickname;
       });
     };
 
@@ -35,7 +34,6 @@
       url = this.rootURL + 'user/register/';
       data = _.clone(data);
       data.authCode = this.encode(data.username + data.password);
-      delete data.password;
       return this.http.postJSON(url, data);
     };
 
@@ -45,9 +43,9 @@
       url = this.rootURL + 'user/logout/' + this.sessionKey;
       return this.http.getJSON(url).done(function() {
         delete _this.sessionKey;
-        delete localStorage.sessionKey;
+        delete sessionStorage.sessionKey;
         delete _this.nickname;
-        return delete localStorage.nickname;
+        return delete sessionStorage.nickname;
       });
     };
 
@@ -89,18 +87,6 @@
       return this.http.postJSON(url, data);
     };
 
-    Persister.prototype.startGame = function(id) {
-      var url;
-      url = this.rootURL + 'game/' + id + '/start/' + this.sessionKey;
-      return this.http.getJSON(url);
-    };
-
-    Persister.prototype.getGameField = function(id) {
-      var url;
-      url = this.rootURL + 'game/' + id + '/field/' + this.sessionKey;
-      return this.http.getJSON(url);
-    };
-
     Persister.prototype.getOpenGames = function() {
       var url;
       url = this.rootURL + 'game/open/' + this.sessionKey;
@@ -111,37 +97,6 @@
       var url;
       url = this.rootURL + 'game/my-active/' + this.sessionKey;
       return this.http.getJSON(url);
-    };
-
-    Persister.prototype.getMyColor = function(id, success, fail) {
-      var nickname;
-      nickname = this.getNickname();
-      return this.getMyActiveGames().done(function(games) {
-        var color, creator;
-        creator = games.filter(function(game) {
-          return game.id === id;
-        })[0].creator;
-        color = creator === nickname ? 'red' : 'blue';
-        return success(color);
-      });
-    };
-
-    Persister.prototype.battleMove = function(data, id) {
-      var url;
-      url = this.rootURL + 'battle/' + id + '/move/' + this.sessionKey;
-      return this.http.postJSON(url, data);
-    };
-
-    Persister.prototype.battleAttack = function(data, id) {
-      var url;
-      url = this.rootURL + 'battle/' + id + '/attack/' + this.sessionKey;
-      return this.http.postJSON(url, data);
-    };
-
-    Persister.prototype.battleDefend = function(data, id) {
-      var url;
-      url = this.rootURL + 'battle/' + id + '/defend/' + this.sessionKey;
-      return this.http.postJSON(url, data);
     };
 
     Persister.prototype.getUnreadMessages = function() {

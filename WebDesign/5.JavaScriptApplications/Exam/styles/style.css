@@ -26,3 +26,42 @@ form .text-error {
     height: auto;
     font-size: 16px;
 }
+
+[data-status = "in-progress"] {
+    background: #dff0d7;
+}
+
+[data-status = "in-progress"].active a {
+    background: none;
+}
+
+[data-status = "open"] {
+    background: #fcf8e3;
+}
+
+.footer {
+    padding: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.hide-text {
+    position: absolute;
+    top: -10000px;
+}
+.centered { text-align: center }
+
+.my-active-games .active a,
+.my-active-games .active a:hover {
+    cursor: default;
+    background: #333;
+    color: #fff;
+}
+
+.my-active-games [data-status="open"] li,
+.my-active-games [data-status="open"] a,
+.my-active-games [data-status="open"] li:hover,
+.my-active-games [data-status="open"] a:hover {
+    background-color: #fff;
+    color: #08C;
+    cursor: default;
+}
