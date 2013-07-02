@@ -22,9 +22,7 @@
         form.find('input, button').removeAttr('disabled');
         form.append(text);
         console.log('Register error.');
-        return setTimeout(function() {
-          return text.fadeOut();
-        }, 2000);
+        return text.delay(2000).fadeOut();
       });
     }, 500);
   });

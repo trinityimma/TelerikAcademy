@@ -24,8 +24,6 @@ form.submit (e) ->
 
             console.log 'Register error.'
 
-            setTimeout ->
-                text.fadeOut()
-            , 2000
+            text.delay(2000).fadeOut()
         )
     , 500

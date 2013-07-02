@@ -1,6 +1,17 @@
-.form-modal {
-    margin: 0 auto 20px;
+body {
     margin-top: 40px;
+}
+
+.popover form {
+    margin: 5px 0;
+}
+
+form .text-error {
+    margin-top: 20px;
+}
+
+.form-modal {
+    margin: 0 auto;
     padding: 19px 29px 29px;
     max-width: 300px;
     background: #f5f5f5;
@@ -14,8 +25,4 @@
     padding: 7px 9px;
     height: auto;
     font-size: 16px;
-}
-
-.form-modal .text-error {
-    margin-top: 20px;
 }

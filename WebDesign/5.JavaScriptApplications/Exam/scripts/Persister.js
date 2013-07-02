@@ -10,6 +10,9 @@
       if (sessionStorage.sessionKey != null) {
         this.sessionKey = sessionStorage.sessionKey;
       }
+      if (sessionStorage.nickname != null) {
+        this.nickname = sessionStorage.nickname;
+      }
     }
 
     Persister.prototype.login = function(data) {
@@ -20,7 +23,9 @@
       data.authCode = this.encode(data.username + data.password);
       return this.http.postJSON(url, data).done(function(data) {
         _this.sessionKey = data.sessionKey;
-        return sessionStorage.sessionKey = data.sessionKey;
+        _this.nickname = data.nickname;
+        sessionStorage.sessionKey = data.sessionKey;
+        return sessionStorage.nickname = data.nickname;
       });
     };
 
@@ -38,20 +43,34 @@
       url = this.rootURL + 'user/logout/' + this.sessionKey;
       return this.http.getJSON(url).done(function() {
         delete _this.sessionKey;
-        return delete sessionStorage.sessionKey;
+        delete sessionStorage.sessionKey;
+        delete _this.nickname;
+        return delete sessionStorage.nickname;
       });
     };
 
+    Persister.prototype.scores = function() {
+      var url;
+      url = this.rootURL + 'user/scores/' + this.sessionKey;
+      return this.http.getJSON(url);
+    };
+
     Persister.prototype.isLoggedIn = function() {
-      return !!this.sessionKey;
+      return this.sessionKey != null;
+    };
+
+    Persister.prototype.getNickname = function() {
+      return this.nickname;
     };
 
     Persister.prototype.createGame = function(data) {
       var url;
       url = this.rootURL + 'game/create/' + this.sessionKey;
       data = _.clone(data);
-      if (data.password != null) {
+      if ((data.password != null) && data.password !== '') {
         data.password = this.encode(data.password);
+      } else {
+        delete data.password;
       }
       return this.http.postJSON(url, data);
     };
@@ -60,8 +79,10 @@
       var url;
       url = this.rootURL + 'game/join/' + this.sessionKey;
       data = _.clone(data);
-      if (data.password != null) {
+      if ((data.password != null) && data.password !== '') {
         data.password = this.encode(data.password);
+      } else {
+        delete data.password;
       }
       return this.http.postJSON(url, data);
     };
@@ -75,6 +96,18 @@
     Persister.prototype.getMyActiveGames = function() {
       var url;
       url = this.rootURL + 'game/my-active/' + this.sessionKey;
+      return this.http.getJSON(url);
+    };
+
+    Persister.prototype.getUnreadMessages = function() {
+      var url;
+      url = this.rootURL + 'messages/unread/' + this.sessionKey;
+      return this.http.getJSON(url);
+    };
+
+    Persister.prototype.getAllMessages = function() {
+      var url;
+      url = this.rootURL + 'messages/all/' + this.sessionKey;
       return this.http.getJSON(url);
     };
 

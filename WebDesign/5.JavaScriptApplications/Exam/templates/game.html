@@ -1,26 +1,22 @@
 <div class="js-game">
-    <div class="navbar">
-        <div class="navbar-inner">
-            <span class="brand">Bulls and Cows</span>
-
-            <button class="btn btn-danger pull-right js-logout">
-                Logout <i class="icon-exclamation-sign icon-white"></i>
-            </button>
-        </div>
-    </div>
-
     <div class="container">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <span class="brand">Bulls and Cows</span>
+
+                <ul class="nav">
+                    <li><a href="javascript: void 0" class="js-show-create-game">Create Game</a></li>
+                    <li><a href="javascript: void 0" class="js-show-scores">Scores</a></li>
+                </ul>
+
+                <button class="btn btn-danger pull-right js-logout">
+                    Logout <span class="js-nickname"></span>
+                </button>
+            </div>
+        </div>
+
         <div class="row">
             <div class="span3">
-                <h3>Create game</h3>
-                <form class="js-create-game">
-                    <input type="text" name="title" placeholder="Title" />
-                    <input type="password" name="password" placeholder="Password" />
-                    <input type="text" name="number" placeholder="Number" />
-
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </form>
-
                 <h3>Active games</h3>
                 <ul class="js-my-active-games nav nav-tabs nav-stacked"></ul>
 
@@ -28,15 +24,23 @@
                 <ul class="js-open-games nav nav-tabs nav-stacked"></ul>
             </div>
 
-            <div class="span9">
+            <div class="span6">
                 <h3>Bulls and Cows</h3>
+            </div>
+
+            <div class="span3">
+                <h3>Messages</h3>
+
+                <pre class="js-messages-feed pre-scrollable">
+
+                </pre>
             </div>
         </div>
     </div>
 </div>
 
-<script id="js-game-item" type="mustache/template">
-    <li>
+<script id="js-game-item-template" type="template">
+    <li data-id="{{ id }}">
         <a href="#">
             <strong>Title:</strong> {{ title }}<br />
             <strong>Creator:</strong> {{ creatorNickname }}
@@ -44,17 +48,37 @@
     </li>
 </script>
 
-<form class="js-join-game modal hide fade" tabindex="-1" role="dialog" aria-labelledby="join-game-label" aria-hidden="true">
+<script id="js-create-game-template" type="template">
+    <form class="js-create-game" onsubmit="javascript: void 0">
+        <input type="text" name="title" placeholder="Title" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="text" name="number" placeholder="Number" />
+
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </form>
+</script>
+
+<div id="scores" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="scores-label" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="scores-label">Scores</h3>
+    </div>
+    <div class="modal-body">
+        <p>Loading...</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
+
+<form class="js-join-game modal hide fade" tabindex="-1" role="dialog" aria-labelledby="join-game-label" aria-hidden="true" onsubmit="javascript: void 0">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <h3 id="join-game-label">Join game</h3>
     </div>
     <div class="modal-body">
-        <input required autofocus type="text"
-            name="number" placeholder="Number" />
-
-        <input required type="password"
-            name="password" placeholder="Password" />
+        <input required autofocus type="text" name="number" placeholder="Number" />
+        <input type="password" name="password" placeholder="Password" />
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
