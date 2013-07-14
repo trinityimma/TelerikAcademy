@@ -24,7 +24,7 @@ class Program
 
             Console.WriteLine(escapedQuery);
 
-            var pattern = "%" + escapedQuery + "%"; // TODO
+            var pattern = "%" + escapedQuery + "%";
 
             var sql = string.Format("SELECT productName FROM Products WHERE productName LIKE '{0}' ESCAPE '☺'", pattern);
             var cmd = new SqlCommand(sql, dbCon);
