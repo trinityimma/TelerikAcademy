@@ -154,10 +154,10 @@
 4. [jQuery Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview/README.md)) - 05.06.2013
 5. Promises and Asynchronous Programming - 06.06.2013
 6. [jQuery Plugins]((https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/6.JQueryPlugins)) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/6.JQueryPlugins/README.md)) - 12.06.2013
-7. Unit Testing - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/7.UnitTesting/README.md)_ - 13.06.2013
+7. Unit Testing - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/7.UnitTesting/README.md)) - 13.06.2013
 8. HTTP and AJAX - 19.06.2013
 9. Consuming External Data and AJAX - 19.06.2013
-10. Using third-party APIs - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/10.UsingThirdPartyAPIs/README.md)_ - 20.06.2013
+10. Using third-party APIs - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/10.UsingThirdPartyAPIs/README.md)) - 20.06.2013
 11. [Teamwork](https://code.google.com/p/team-nectarine-snake/) - 17.06.2013
 12. Exam Preparation - 27.06.2013
 13. Exam - 02.07.2013
