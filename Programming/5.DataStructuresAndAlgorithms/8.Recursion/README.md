@@ -38,6 +38,5 @@
         { 5, 5, 1, 3 }  { 5, 5, 3, 1 }
     ```
     Ensure your program efficiently avoids duplicated permutations. Test it with `{ 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 }`.
-
     * Hint: http://hardprogrammer.blogspot.com/2006/11/permutaciones-con-repeticin.html
 * Write a recursive program to solve the "8 Queens Puzzle" with backtracking. Learn more at: http://en.wikipedia.org/wiki/Eight_queens_puzzle
