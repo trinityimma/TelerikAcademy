@@ -3,7 +3,7 @@
 1. A text file `students.txt` holds information about students and their courses in the following format:
 
     | First Name | Last Name | Course |
-    | ------------------------------- |
+    | ---------- | --------- | ------ |
     | Kiril      | Ivanov    | C#     |
     | Stefka     | Nikolova  | SQL    |
     | Stela      | Mineva    | Java   |
