@@ -19,8 +19,8 @@
     * Example: `n = 4, k = 2 -> (1 2), (1 3), (1 4), (2 3), (2 4), (3 4)`
 * Write a recursive program for generating and printing all **permutations** of the numbers 1, 2, ..., n for given integer number n.
     * Example: `n = 3 -> { 1, 2, 3 }, { 1, 3, 2 }, { 2, 1, 3 }, { 2, 3, 1 }, { 3, 1, 2 },{ 3, 2, 1 }`
-* Write a recursive program for generating and printing all ordered k-element subsets from n-element set (**variations** V<sup>k</sup><sub>n</sub>).
-    * Example: `n = 3, k = 2, set = { hi, a, b } -> (hi hi), (hi a), (hi b), (a hi), (a a), (a b), (b hi), (b a), (b b)
+* Write a recursive program for generating and printing all ordered k-element subsets from n-element set **(variations V<sup>k</sup><sub>n</sub>)**.
+    * Example: `n = 3, k = 2, set = { hi, a, b } -> (hi hi), (hi a), (hi b), (a hi), (a a), (a b), (b hi), (b a), (b b)`
 * Write a program for generating and printing all **subsets of k strings** from given set of strings.
     * Example: `s = { test, rock, fun }, k = 2 -> (test rock),  (test fun),  (rock fun)`
 * We are given a matrix of passable and non-passable cells. Write a recursive program for finding all paths between two cells in the matrix.
