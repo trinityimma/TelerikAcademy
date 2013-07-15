@@ -157,7 +157,7 @@
 7. Unit Testing - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/7.UnitTesting/README.md)) - 13.06.2013
 8. HTTP and AJAX - 19.06.2013
 9. Consuming External Data and AJAX - 19.06.2013
-10. Using third-party APIs - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/10.UsingThirdPartyAPIs/README.md)) - 20.06.2013
+10. Using Third-Party APIs - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/10.UsingThirdPartyAPIs/README.md)) - 20.06.2013
 11. [Teamwork](https://code.google.com/p/team-nectarine-snake/) - 17.06.2013
 12. Exam Preparation - 27.06.2013
 13. Exam - 02.07.2013
