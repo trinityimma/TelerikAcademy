@@ -131,33 +131,33 @@
 
 ## Data Structures and Algorithms
 
-1. Data Structures Algorithms and Complexity - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/1.DataStructuresAlgorithmsAndComplexity/README.md)) - 29.05.2013
-2. [Linear Data Structures](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures/README.md)) - 29.05.2013
-3. [Trees and Traversals](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/3.TreesAndTraversals) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/3.TreesAndTraversals/README.md)) - 30.05.2013
-4. [Dictionaries, Hash Tables and Sets](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/4.DictionariesHashTablesSets) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/4.DictionariesHashTablesSets/README.md)) - 05.06.2013
-5. [Advanced Data Structures](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/5.AdvancedDataStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/5.AdvancedDataStructures/README.md)) - 06.06.2013
-6. [Data Structure Efficiency](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/6.DataStructureEfficiency) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/6.DataStructureEfficiency/README.md)) - 06.06.2013
-7. [Sorting and Searching Algorithms](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/7.SortingAndSearchingAlgorithms) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/7.SortingAndSearchingAlgorithms/README.md)) - 06.06.2013
-8. Recursion - 12.06.2013
-9. Combinatorics - 12.06.2013
-10. Dynamic Programming - 13.06.2013
-11. Graphs and Algorithms - 19.06.2013
-12. Other Algorithms - 19.06.2013
-13. [Exam Preparation] (https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/FinalExams) | [Algo Academy](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/AlgoAcademy) - 20.06.2013
-14. Exam - 25.06.2013
+1. Data Structures Algorithms and Complexity - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/1.DataStructuresAlgorithmsAndComplexity/README.md)) - 29.05.2013
+2. [Linear Data Structures](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/2.LinearDataStructures/README.md)) - 29.05.2013
+3. [Trees and Traversals](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/3.TreesAndTraversals) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/3.TreesAndTraversals/README.md)) - 30.05.2013
+4. [Dictionaries, Hash Tables and Sets](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/4.DictionariesHashTablesSets) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/4.DictionariesHashTablesSets/README.md)) - 05.06.2013
+5. [Advanced Data Structures](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/5.AdvancedDataStructures) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/5.AdvancedDataStructures/README.md)) - 06.06.2013
+6. [Data Structure Efficiency](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/6.DataStructureEfficiency) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/6.DataStructureEfficiency/README.md)) - 06.06.2013
+7. [Sorting and Searching Algorithms](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/7.SortingAndSearchingAlgorithms) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/7.SortingAndSearchingAlgorithms/README.md)) - 06.06.2013
+8. [Recursion](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/8.Recursion) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/8.Recursion/README.md)) - 12.06.2013
+9. [Combinatorics](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/9.Combinatorics) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/9.Combinatorics/README.md)) - 12.06.2013
+10. [Dynamic Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/10.DynamicProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/10.DynamicProgramming/README.md)) - 13.06.2013
+11. [Graphs and Algorithms](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/11.GraphsAndAlgorithms) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/11.GraphsAndAlgorithms/README.md)) - 19.06.2013
+12. [Other Algorithms](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/12.OtherAlgorithms) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/12.OtherAlgorithms/README.md)) - 19.06.2013
+13. [Exam Preparation](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/FinalExams) | [Algo Academy](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/AlgoAcademy) - 20.06.2013
+14. [Exam](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/5.DataStructuresAndAlgorithms/14.Exam) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/5.DataStructuresAndAlgorithms/14.Exam/README.md)) - 25.06.2013
 
 ## JavaScript Applications
 
 1. Good Practices - 29.05.2013
-2. [Advanced OOP](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP/README.md)) - 30.05.2013
-3. [JavaScript Libraries](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP/README.md)) - 05.06.2013
-4. [jQuery Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview/README.md)) - 05.06.2013
-5. [Promises and Asynchronous Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/5.PromisesAndAsynchronousProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/5.PromisesAndAsynchronousProgramming/README.md)) - 06.06.2013
-6. jQuery Plugins - 12.06.2013
-7. Unit Testing - 13.06.2013
+2. [Advanced OOP](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/5.JavaScriptApplications/2.AdvancedOOP/README.md)) - 30.05.2013
+3. JavaScript Libraries - 05.06.2013
+4. [jQuery Overview](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/5.JavaScriptApplications/4.JQueryOverview/README.md)) - 05.06.2013
+5. Promises and Asynchronous Programming - 06.06.2013
+6. [jQuery Plugins](https://github.com/jasssonpet/TelerikAcademy/tree/master/WebDesign/5.JavaScriptApplications/6.JQueryPlugins) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/5.JavaScriptApplications/6.JQueryPlugins/README.md)) - 12.06.2013
+7. Unit Testing - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/5.JavaScriptApplications/7.UnitTesting/README.md)) - 13.06.2013
 8. HTTP and AJAX - 19.06.2013
 9. Consuming External Data and AJAX - 19.06.2013
-10. Using third-party JavaScript APIs - 20.06.2013
+10. Using Third-Party APIs - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/WebDesign/5.JavaScriptApplications/10.UsingThirdPartyAPIs/README.md)) - 20.06.2013
 11. [Teamwork](https://code.google.com/p/team-nectarine-snake/) - 17.06.2013
 12. Exam Preparation - 27.06.2013
 13. Exam - 02.07.2013
