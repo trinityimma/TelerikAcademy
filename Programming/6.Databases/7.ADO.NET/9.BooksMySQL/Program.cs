@@ -31,8 +31,7 @@ class Program
 
             // INSERT
             {
-                var cmd = new MySqlCommand("INSERT INTO books VALUES(@id, @title, @author, @publishDate, @isbn)", dbCon);
-                cmd.Parameters.AddWithValue("@id", "3"); // TODO auto increment
+                var cmd = new MySqlCommand("INSERT INTO books VALUES(@title, @author, @publishDate, @isbn)", dbCon);
                 cmd.Parameters.AddWithValue("@title", "JS");
                 cmd.Parameters.AddWithValue("@author", "Pesho");
                 cmd.Parameters.AddWithValue("@publishDate", "2010-01-01");
