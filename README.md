@@ -4,13 +4,13 @@
     <img src="http://academy.telerik.com/images/default-album/telerik-academy-banner.jpg?sfvrsn=2" alt="Академия на Телерик" />
 </a>
 
-|     | Programming                                                         | Web Design                                      |
-| --- | ------------------------------------------------------------------- | ----------------------------------------------- |
-| 1.  | [C# - Part I](#c---part-i)                                          | [HTML Basics](#html-basics)                     |
-| 2.  | [C# - Part II](#c---part-ii)                                        | [CSS Styling](#css-styling)                     |
-| 3.  | [Object-Oriented Programming](#object-oriented-programming)         | [JavaScript - Part I](#javascript---part-i)     |
-| 4.  | [High-Quality Code](#high-quality-code)                             | [JavaScript - Part II](#javascript---part-ii)   |
-| 5.  | [Data Structures and Algorithms](#data-structures-and-algorithms)   | [JavaScript Applications](#javascript-applications)   |
+|     | Programming                                                         | Web Design                                          |
+| --- | ------------------------------------------------------------------- | -----------------------------------------------     |
+| 1.  | [C# - Part I](#c---part-i)                                          | [HTML Basics](#html-basics)                         |
+| 2.  | [C# - Part II](#c---part-ii)                                        | [CSS Styling](#css-styling)                         |
+| 3.  | [Object-Oriented Programming](#object-oriented-programming)         | [JavaScript - Part I](#javascript---part-i)         |
+| 4.  | [High-Quality Code](#high-quality-code)                             | [JavaScript - Part II](#javascript---part-ii)       |
+| 5.  | [Data Structures and Algorithms](#data-structures-and-algorithms)   | [JavaScript Applications](#javascript-applications) |
 
 ## C# - Part I
 
