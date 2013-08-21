@@ -11,7 +11,7 @@
     * The text is as follows: We are living in an yellow submarine. We don't have anything else. Inside the submarine is very tight. So we are drinking all the day. We will move out of it in 5 days.
     * The result is: 9.
 * You are given a text. Write a program that changes the text in all regions surrounded by the tags `<upcase>` and `</upcase>` to uppercase. The tags cannot be nested.
-    *  Example: We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.
+    *  Example: `We are living in a <upcase>yellow submarine</upcase>. We don't have <upcase>anything</upcase> else.`
     * The expected result: We are living in a YELLOW SUBMARINE. We don't have ANYTHING else.
 * Write a program that reads from the console a string of maximum 20 characters. If the length of the string is less than 20, the rest of the characters should be filled with `'*'`. Print the result string into the console.
 * Write a program that encodes and decodes a string using given encryption key (cipher). The key consists of a sequence of characters. The encoding/decoding is done by performing XOR (exclusive or) operation over the first letter of the string with the first of the key, the second – with the second, etc. When the last key character is reached, the next is the first.
