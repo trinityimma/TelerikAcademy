@@ -12,7 +12,7 @@
 | 4.  | [High-Quality Code](#high-quality-code)                             | [JavaScript - Part II](#javascript---part-ii)       |
 | 5.  | [Data Structures and Algorithms](#data-structures-and-algorithms)   | [JavaScript Applications](#javascript-applications) |
 
-## C# - Part II
+## C# - Part I
 
 1. [Introduction to Programming](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/1.IntroductionToProgramming/README.md)) - 27.10.2012
 2. [Primitive Data Types and Variables](https://github.com/jasssonpet/TelerikAcademy/tree/master/Programming/1.CSharpPartOne/2.PrimitiveDataTypesAndVariables) - ([assignment](https://github.com/jasssonpet/TelerikAcademy/blob/master/Programming/1.CSharpPartOne/2.PrimitiveDataTypesAndVariables/README.md)) - 03.11.2012
